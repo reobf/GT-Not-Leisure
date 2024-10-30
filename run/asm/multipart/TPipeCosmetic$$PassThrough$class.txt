@@ -1,0 +1,133 @@
+// class version 50.0 (50)
+// access flags 0x401
+public abstract class TPipeCosmetic$$PassThrough$class {
+
+
+  // access flags 0x9
+  public static $init$(LTPipeCosmetic$$PassThrough;)V
+    RETURN
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static bindPart(LTPipeCosmetic$$PassThrough;Lcodechicken/multipart/TMultiPart;)V
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE TPipeCosmetic$$PassThrough.TPipeCosmetic$$PassThrough$$super$bindPart (Lcodechicken/multipart/TMultiPart;)V
+    ALOAD 1
+    INSTANCEOF com/rwtema/extrautils/tileentity/transfernodes/pipes/IPipeCosmetic
+    IFEQ L0
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST com/rwtema/extrautils/tileentity/transfernodes/pipes/IPipeCosmetic
+    INVOKEINTERFACE TPipeCosmetic$$PassThrough.TPipeCosmetic$$PassThrough$$impl_$eq (Lcom/rwtema/extrautils/tileentity/transfernodes/pipes/IPipeCosmetic;)V
+   L0
+   FRAME FULL [TPipeCosmetic$$PassThrough codechicken/multipart/TMultiPart] []
+    RETURN
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x9
+  public static partRemoved(LTPipeCosmetic$$PassThrough;Lcodechicken/multipart/TMultiPart;I)V
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    INVOKEINTERFACE TPipeCosmetic$$PassThrough.TPipeCosmetic$$PassThrough$$super$partRemoved (Lcodechicken/multipart/TMultiPart;I)V
+    ALOAD 1
+    ALOAD 0
+    INVOKEINTERFACE TPipeCosmetic$$PassThrough.TPipeCosmetic$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/pipes/IPipeCosmetic;
+    IF_ACMPNE L0
+    ALOAD 0
+    ACONST_NULL
+    INVOKEINTERFACE TPipeCosmetic$$PassThrough.TPipeCosmetic$$PassThrough$$impl_$eq (Lcom/rwtema/extrautils/tileentity/transfernodes/pipes/IPipeCosmetic;)V
+   L0
+   FRAME FULL [TPipeCosmetic$$PassThrough codechicken/multipart/TMultiPart I] []
+    RETURN
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x9
+  public static canAddPart(LTPipeCosmetic$$PassThrough;Lcodechicken/multipart/TMultiPart;)Z
+    ALOAD 0
+    INVOKEINTERFACE TPipeCosmetic$$PassThrough.TPipeCosmetic$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/pipes/IPipeCosmetic;
+    IFNULL L0
+    ALOAD 1
+    INSTANCEOF com/rwtema/extrautils/tileentity/transfernodes/pipes/IPipeCosmetic
+    IFEQ L0
+    ICONST_0
+    IRETURN
+   L0
+   FRAME FULL [TPipeCosmetic$$PassThrough codechicken/multipart/TMultiPart] []
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE TPipeCosmetic$$PassThrough.TPipeCosmetic$$PassThrough$$super$canAddPart (Lcodechicken/multipart/TMultiPart;)Z
+    IRETURN
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x9
+  public static baseTexture(LTPipeCosmetic$$PassThrough;)Lnet/minecraft/util/IIcon;
+    ALOAD 0
+    INVOKEINTERFACE TPipeCosmetic$$PassThrough.TPipeCosmetic$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/pipes/IPipeCosmetic;
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/pipes/IPipeCosmetic.baseTexture ()Lnet/minecraft/util/IIcon;
+    ARETURN
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static baseSize(LTPipeCosmetic$$PassThrough;)F
+    ALOAD 0
+    INVOKEINTERFACE TPipeCosmetic$$PassThrough.TPipeCosmetic$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/pipes/IPipeCosmetic;
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/pipes/IPipeCosmetic.baseSize ()F
+    FRETURN
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static invPipeTexture(LTPipeCosmetic$$PassThrough;Lnet/minecraftforge/common/util/ForgeDirection;)Lnet/minecraft/util/IIcon;
+    ALOAD 0
+    INVOKEINTERFACE TPipeCosmetic$$PassThrough.TPipeCosmetic$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/pipes/IPipeCosmetic;
+    ALOAD 1
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/pipes/IPipeCosmetic.invPipeTexture (Lnet/minecraftforge/common/util/ForgeDirection;)Lnet/minecraft/util/IIcon;
+    ARETURN
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x9
+  public static socketTexture(LTPipeCosmetic$$PassThrough;Lnet/minecraftforge/common/util/ForgeDirection;)Lnet/minecraft/util/IIcon;
+    ALOAD 0
+    INVOKEINTERFACE TPipeCosmetic$$PassThrough.TPipeCosmetic$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/pipes/IPipeCosmetic;
+    ALOAD 1
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/pipes/IPipeCosmetic.socketTexture (Lnet/minecraftforge/common/util/ForgeDirection;)Lnet/minecraft/util/IIcon;
+    ARETURN
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x9
+  public static pipeTexture(LTPipeCosmetic$$PassThrough;Lnet/minecraftforge/common/util/ForgeDirection;Z)Lnet/minecraft/util/IIcon;
+    ALOAD 0
+    INVOKEINTERFACE TPipeCosmetic$$PassThrough.TPipeCosmetic$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/pipes/IPipeCosmetic;
+    ALOAD 1
+    ILOAD 2
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/pipes/IPipeCosmetic.pipeTexture (Lnet/minecraftforge/common/util/ForgeDirection;Z)Lnet/minecraft/util/IIcon;
+    ARETURN
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x9
+  public static copyFrom(LTPipeCosmetic$$PassThrough;Lcodechicken/multipart/TileMultipart;)V
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE TPipeCosmetic$$PassThrough.TPipeCosmetic$$PassThrough$$super$copyFrom (Lcodechicken/multipart/TileMultipart;)V
+    ALOAD 1
+    INSTANCEOF TPipeCosmetic$$PassThrough
+    IFEQ L0
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE TPipeCosmetic$$PassThrough.TPipeCosmetic$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/pipes/IPipeCosmetic;
+    INVOKEINTERFACE TPipeCosmetic$$PassThrough.TPipeCosmetic$$PassThrough$$impl_$eq (Lcom/rwtema/extrautils/tileentity/transfernodes/pipes/IPipeCosmetic;)V
+   L0
+    RETURN
+    MAXSTACK = 2
+    MAXLOCALS = 2
+}

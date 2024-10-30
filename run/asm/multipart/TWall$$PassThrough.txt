@@ -1,0 +1,35 @@
+// class version 50.0 (50)
+// access flags 0x601
+public abstract interface TWall$$PassThrough implements com/rwtema/extrautils/multipart/microblock/IWall  {
+
+
+  // access flags 0x401
+  public abstract TWall$$PassThrough$$impl()Lcom/rwtema/extrautils/multipart/microblock/IWall;
+
+  // access flags 0x401
+  public abstract TWall$$PassThrough$$impl_$eq(Lcom/rwtema/extrautils/multipart/microblock/IWall;)V
+
+  // access flags 0x401
+  public abstract bindPart(Lcodechicken/multipart/TMultiPart;)V
+
+  // access flags 0x401
+  public abstract TWall$$PassThrough$$super$bindPart(Lcodechicken/multipart/TMultiPart;)V
+
+  // access flags 0x401
+  public abstract partRemoved(Lcodechicken/multipart/TMultiPart;I)V
+
+  // access flags 0x401
+  public abstract TWall$$PassThrough$$super$partRemoved(Lcodechicken/multipart/TMultiPart;I)V
+
+  // access flags 0x401
+  public abstract canAddPart(Lcodechicken/multipart/TMultiPart;)Z
+
+  // access flags 0x401
+  public abstract TWall$$PassThrough$$super$canAddPart(Lcodechicken/multipart/TMultiPart;)Z
+
+  // access flags 0x401
+  public abstract copyFrom(Lcodechicken/multipart/TileMultipart;)V
+
+  // access flags 0x401
+  public abstract TWall$$PassThrough$$super$copyFrom(Lcodechicken/multipart/TileMultipart;)V
+}

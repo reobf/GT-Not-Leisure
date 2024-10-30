@@ -1,0 +1,38 @@
+// class version 50.0 (50)
+// access flags 0x601
+public abstract interface TFilterPipe$$PassThrough implements com/rwtema/extrautils/tileentity/transfernodes/pipes/IFilterPipe  {
+
+
+  // access flags 0x401
+  public abstract TFilterPipe$$PassThrough$$impl()Lcom/rwtema/extrautils/tileentity/transfernodes/pipes/IFilterPipe;
+
+  // access flags 0x401
+  public abstract TFilterPipe$$PassThrough$$impl_$eq(Lcom/rwtema/extrautils/tileentity/transfernodes/pipes/IFilterPipe;)V
+
+  // access flags 0x401
+  public abstract bindPart(Lcodechicken/multipart/TMultiPart;)V
+
+  // access flags 0x401
+  public abstract TFilterPipe$$PassThrough$$super$bindPart(Lcodechicken/multipart/TMultiPart;)V
+
+  // access flags 0x401
+  public abstract partRemoved(Lcodechicken/multipart/TMultiPart;I)V
+
+  // access flags 0x401
+  public abstract TFilterPipe$$PassThrough$$super$partRemoved(Lcodechicken/multipart/TMultiPart;I)V
+
+  // access flags 0x401
+  public abstract canAddPart(Lcodechicken/multipart/TMultiPart;)Z
+
+  // access flags 0x401
+  public abstract TFilterPipe$$PassThrough$$super$canAddPart(Lcodechicken/multipart/TMultiPart;)Z
+
+  // access flags 0x401
+  public abstract getFilterInventory(Lnet/minecraft/world/IBlockAccess;III)Lnet/minecraft/inventory/IInventory;
+
+  // access flags 0x401
+  public abstract copyFrom(Lcodechicken/multipart/TileMultipart;)V
+
+  // access flags 0x401
+  public abstract TFilterPipe$$PassThrough$$super$copyFrom(Lcodechicken/multipart/TileMultipart;)V
+}

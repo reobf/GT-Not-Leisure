@@ -1,0 +1,41 @@
+// class version 50.0 (50)
+// access flags 0x601
+public abstract interface TAntiMobTorch$$PassThrough implements com/rwtema/extrautils/tileentity/IAntiMobTorch  {
+
+
+  // access flags 0x401
+  public abstract TAntiMobTorch$$PassThrough$$impl()Lcom/rwtema/extrautils/tileentity/IAntiMobTorch;
+
+  // access flags 0x401
+  public abstract TAntiMobTorch$$PassThrough$$impl_$eq(Lcom/rwtema/extrautils/tileentity/IAntiMobTorch;)V
+
+  // access flags 0x401
+  public abstract bindPart(Lcodechicken/multipart/TMultiPart;)V
+
+  // access flags 0x401
+  public abstract TAntiMobTorch$$PassThrough$$super$bindPart(Lcodechicken/multipart/TMultiPart;)V
+
+  // access flags 0x401
+  public abstract partRemoved(Lcodechicken/multipart/TMultiPart;I)V
+
+  // access flags 0x401
+  public abstract TAntiMobTorch$$PassThrough$$super$partRemoved(Lcodechicken/multipart/TMultiPart;I)V
+
+  // access flags 0x401
+  public abstract canAddPart(Lcodechicken/multipart/TMultiPart;)Z
+
+  // access flags 0x401
+  public abstract TAntiMobTorch$$PassThrough$$super$canAddPart(Lcodechicken/multipart/TMultiPart;)Z
+
+  // access flags 0x401
+  public abstract getHorizontalTorchRangeSquared()F
+
+  // access flags 0x401
+  public abstract getVerticalTorchRangeSquared()F
+
+  // access flags 0x401
+  public abstract copyFrom(Lcodechicken/multipart/TileMultipart;)V
+
+  // access flags 0x401
+  public abstract TAntiMobTorch$$PassThrough$$super$copyFrom(Lcodechicken/multipart/TileMultipart;)V
+}

@@ -1,0 +1,335 @@
+// class version 50.0 (50)
+// access flags 0x401
+public abstract class TNode$$PassThrough$class {
+
+
+  // access flags 0x9
+  public static $init$(LTNode$$PassThrough;)V
+    RETURN
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static bindPart(LTNode$$PassThrough;Lcodechicken/multipart/TMultiPart;)V
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$super$bindPart (Lcodechicken/multipart/TMultiPart;)V
+    ALOAD 1
+    INSTANCEOF com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode
+    IFEQ L0
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$impl_$eq (Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;)V
+   L0
+   FRAME FULL [TNode$$PassThrough codechicken/multipart/TMultiPart] []
+    RETURN
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x9
+  public static partRemoved(LTNode$$PassThrough;Lcodechicken/multipart/TMultiPart;I)V
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$super$partRemoved (Lcodechicken/multipart/TMultiPart;I)V
+    ALOAD 1
+    ALOAD 0
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;
+    IF_ACMPNE L0
+    ALOAD 0
+    ACONST_NULL
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$impl_$eq (Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;)V
+   L0
+   FRAME FULL [TNode$$PassThrough codechicken/multipart/TMultiPart I] []
+    RETURN
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x9
+  public static canAddPart(LTNode$$PassThrough;Lcodechicken/multipart/TMultiPart;)Z
+    ALOAD 0
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;
+    IFNULL L0
+    ALOAD 1
+    INSTANCEOF com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode
+    IFEQ L0
+    ICONST_0
+    IRETURN
+   L0
+   FRAME FULL [TNode$$PassThrough codechicken/multipart/TMultiPart] []
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$super$canAddPart (Lcodechicken/multipart/TMultiPart;)Z
+    IRETURN
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x9
+  public static getFilterInventory(LTNode$$PassThrough;Lnet/minecraft/world/IBlockAccess;III)Lnet/minecraft/inventory/IInventory;
+    ALOAD 0
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;
+    ALOAD 1
+    ILOAD 2
+    ILOAD 3
+    ILOAD 4
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode.getFilterInventory (Lnet/minecraft/world/IBlockAccess;III)Lnet/minecraft/inventory/IInventory;
+    ARETURN
+    MAXSTACK = 5
+    MAXLOCALS = 5
+
+  // access flags 0x9
+  public static getPipeType(LTNode$$PassThrough;)Ljava/lang/String;
+    ALOAD 0
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode.getPipeType ()Ljava/lang/String;
+    ARETURN
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static limitTransfer(LTNode$$PassThrough;Lnet/minecraft/tileentity/TileEntity;Lnet/minecraftforge/common/util/ForgeDirection;Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeBuffer;)I
+    ALOAD 0
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;
+    ALOAD 1
+    ALOAD 2
+    ALOAD 3
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode.limitTransfer (Lnet/minecraft/tileentity/TileEntity;Lnet/minecraftforge/common/util/ForgeDirection;Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeBuffer;)I
+    IRETURN
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0x9
+  public static isPowered(LTNode$$PassThrough;)Z
+    ALOAD 0
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode.isPowered ()Z
+    IRETURN
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static getNodeY(LTNode$$PassThrough;)I
+    ALOAD 0
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode.getNodeY ()I
+    IRETURN
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static getPipeY(LTNode$$PassThrough;)I
+    ALOAD 0
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode.getPipeY ()I
+    IRETURN
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static getPipeDir(LTNode$$PassThrough;)I
+    ALOAD 0
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode.getPipeDir ()I
+    IRETURN
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static getUpgrades(LTNode$$PassThrough;)Ljava/util/List;
+    ALOAD 0
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode.getUpgrades ()Ljava/util/List;
+    ARETURN
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static getNodeType(LTNode$$PassThrough;)Ljava/lang/String;
+    ALOAD 0
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode.getNodeType ()Ljava/lang/String;
+    ARETURN
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static getPipeX(LTNode$$PassThrough;)I
+    ALOAD 0
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode.getPipeX ()I
+    IRETURN
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static bufferChanged(LTNode$$PassThrough;)V
+    ALOAD 0
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode.bufferChanged ()V
+    RETURN
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static canInput(LTNode$$PassThrough;Lnet/minecraft/world/IBlockAccess;IIILnet/minecraftforge/common/util/ForgeDirection;)Z
+    ALOAD 0
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;
+    ALOAD 1
+    ILOAD 2
+    ILOAD 3
+    ILOAD 4
+    ALOAD 5
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode.canInput (Lnet/minecraft/world/IBlockAccess;IIILnet/minecraftforge/common/util/ForgeDirection;)Z
+    IRETURN
+    MAXSTACK = 6
+    MAXLOCALS = 6
+
+  // access flags 0x9
+  public static shouldConnectToTile(LTNode$$PassThrough;Lnet/minecraft/world/IBlockAccess;IIILnet/minecraftforge/common/util/ForgeDirection;)Z
+    ALOAD 0
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;
+    ALOAD 1
+    ILOAD 2
+    ILOAD 3
+    ILOAD 4
+    ALOAD 5
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode.shouldConnectToTile (Lnet/minecraft/world/IBlockAccess;IIILnet/minecraftforge/common/util/ForgeDirection;)Z
+    IRETURN
+    MAXSTACK = 6
+    MAXLOCALS = 6
+
+  // access flags 0x9
+  public static getNodeX(LTNode$$PassThrough;)I
+    ALOAD 0
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode.getNodeX ()I
+    IRETURN
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static canOutput(LTNode$$PassThrough;Lnet/minecraft/world/IBlockAccess;IIILnet/minecraftforge/common/util/ForgeDirection;)Z
+    ALOAD 0
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;
+    ALOAD 1
+    ILOAD 2
+    ILOAD 3
+    ILOAD 4
+    ALOAD 5
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode.canOutput (Lnet/minecraft/world/IBlockAccess;IIILnet/minecraftforge/common/util/ForgeDirection;)Z
+    IRETURN
+    MAXSTACK = 6
+    MAXLOCALS = 6
+
+  // access flags 0x9
+  public static checkRedstone(LTNode$$PassThrough;)Z
+    ALOAD 0
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode.checkRedstone ()Z
+    IRETURN
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static getNodeDir(LTNode$$PassThrough;)Lnet/minecraftforge/common/util/ForgeDirection;
+    ALOAD 0
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode.getNodeDir ()Lnet/minecraftforge/common/util/ForgeDirection;
+    ARETURN
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static recalcRedstone(LTNode$$PassThrough;)Z
+    ALOAD 0
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode.recalcRedstone ()Z
+    IRETURN
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static getNodeZ(LTNode$$PassThrough;)I
+    ALOAD 0
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode.getNodeZ ()I
+    IRETURN
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static getOutputDirections(LTNode$$PassThrough;Lnet/minecraft/world/IBlockAccess;IIILnet/minecraftforge/common/util/ForgeDirection;Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeBuffer;)Ljava/util/ArrayList;
+    ALOAD 0
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;
+    ALOAD 1
+    ILOAD 2
+    ILOAD 3
+    ILOAD 4
+    ALOAD 5
+    ALOAD 6
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode.getOutputDirections (Lnet/minecraft/world/IBlockAccess;IIILnet/minecraftforge/common/util/ForgeDirection;Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeBuffer;)Ljava/util/ArrayList;
+    ARETURN
+    MAXSTACK = 7
+    MAXLOCALS = 7
+
+  // access flags 0x9
+  public static transferItems(LTNode$$PassThrough;Lnet/minecraft/world/IBlockAccess;IIILnet/minecraftforge/common/util/ForgeDirection;Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeBuffer;)Z
+    ALOAD 0
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;
+    ALOAD 1
+    ILOAD 2
+    ILOAD 3
+    ILOAD 4
+    ALOAD 5
+    ALOAD 6
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode.transferItems (Lnet/minecraft/world/IBlockAccess;IIILnet/minecraftforge/common/util/ForgeDirection;Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeBuffer;)Z
+    IRETURN
+    MAXSTACK = 7
+    MAXLOCALS = 7
+
+  // access flags 0x9
+  public static getModel(LTNode$$PassThrough;Lnet/minecraftforge/common/util/ForgeDirection;)Lcom/rwtema/extrautils/block/BoxModel;
+    ALOAD 0
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;
+    ALOAD 1
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode.getModel (Lnet/minecraftforge/common/util/ForgeDirection;)Lcom/rwtema/extrautils/block/BoxModel;
+    ARETURN
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x9
+  public static getNode(LTNode$$PassThrough;)Lcom/rwtema/extrautils/tileentity/transfernodes/TileEntityTransferNode;
+    ALOAD 0
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode.getNode ()Lcom/rwtema/extrautils/tileentity/transfernodes/TileEntityTransferNode;
+    ARETURN
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static getPipeZ(LTNode$$PassThrough;)I
+    ALOAD 0
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode.getPipeZ ()I
+    IRETURN
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static copyFrom(LTNode$$PassThrough;Lcodechicken/multipart/TileMultipart;)V
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$super$copyFrom (Lcodechicken/multipart/TileMultipart;)V
+    ALOAD 1
+    INSTANCEOF TNode$$PassThrough
+    IFEQ L0
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;
+    INVOKEINTERFACE TNode$$PassThrough.TNode$$PassThrough$$impl_$eq (Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;)V
+   L0
+    RETURN
+    MAXSTACK = 2
+    MAXLOCALS = 2
+}

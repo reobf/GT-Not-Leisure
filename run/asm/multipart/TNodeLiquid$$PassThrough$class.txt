@@ -1,0 +1,161 @@
+// class version 50.0 (50)
+// access flags 0x401
+public abstract class TNodeLiquid$$PassThrough$class {
+
+
+  // access flags 0x9
+  public static $init$(LTNodeLiquid$$PassThrough;)V
+    RETURN
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static bindPart(LTNodeLiquid$$PassThrough;Lcodechicken/multipart/TMultiPart;)V
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE TNodeLiquid$$PassThrough.TNodeLiquid$$PassThrough$$super$bindPart (Lcodechicken/multipart/TMultiPart;)V
+    ALOAD 1
+    INSTANCEOF com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeLiquid
+    IFEQ L0
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeLiquid
+    INVOKEINTERFACE TNodeLiquid$$PassThrough.TNodeLiquid$$PassThrough$$impl_$eq (Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeLiquid;)V
+   L0
+   FRAME FULL [TNodeLiquid$$PassThrough codechicken/multipart/TMultiPart] []
+    RETURN
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x9
+  public static partRemoved(LTNodeLiquid$$PassThrough;Lcodechicken/multipart/TMultiPart;I)V
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    INVOKEINTERFACE TNodeLiquid$$PassThrough.TNodeLiquid$$PassThrough$$super$partRemoved (Lcodechicken/multipart/TMultiPart;I)V
+    ALOAD 1
+    ALOAD 0
+    INVOKEINTERFACE TNodeLiquid$$PassThrough.TNodeLiquid$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeLiquid;
+    IF_ACMPNE L0
+    ALOAD 0
+    ACONST_NULL
+    INVOKEINTERFACE TNodeLiquid$$PassThrough.TNodeLiquid$$PassThrough$$impl_$eq (Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeLiquid;)V
+   L0
+   FRAME FULL [TNodeLiquid$$PassThrough codechicken/multipart/TMultiPart I] []
+    RETURN
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x9
+  public static canAddPart(LTNodeLiquid$$PassThrough;Lcodechicken/multipart/TMultiPart;)Z
+    ALOAD 0
+    INVOKEINTERFACE TNodeLiquid$$PassThrough.TNodeLiquid$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeLiquid;
+    IFNULL L0
+    ALOAD 1
+    INSTANCEOF com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeLiquid
+    IFEQ L0
+    ICONST_0
+    IRETURN
+   L0
+   FRAME FULL [TNodeLiquid$$PassThrough codechicken/multipart/TMultiPart] []
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE TNodeLiquid$$PassThrough.TNodeLiquid$$PassThrough$$super$canAddPart (Lcodechicken/multipart/TMultiPart;)Z
+    IRETURN
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x9
+  public static getTankInfo(LTNodeLiquid$$PassThrough;Lnet/minecraftforge/common/util/ForgeDirection;)[Lnet/minecraftforge/fluids/FluidTankInfo;
+    ALOAD 0
+    INVOKEINTERFACE TNodeLiquid$$PassThrough.TNodeLiquid$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeLiquid;
+    ALOAD 1
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeLiquid.getTankInfo (Lnet/minecraftforge/common/util/ForgeDirection;)[Lnet/minecraftforge/fluids/FluidTankInfo;
+    ARETURN
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x9
+  public static getNode(LTNodeLiquid$$PassThrough;)Lcom/rwtema/extrautils/tileentity/transfernodes/TileEntityTransferNodeLiquid;
+    ALOAD 0
+    INVOKEINTERFACE TNodeLiquid$$PassThrough.TNodeLiquid$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeLiquid;
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeLiquid.getNode ()Lcom/rwtema/extrautils/tileentity/transfernodes/TileEntityTransferNodeLiquid;
+    ARETURN
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static drain(LTNodeLiquid$$PassThrough;Lnet/minecraftforge/common/util/ForgeDirection;Lnet/minecraftforge/fluids/FluidStack;Z)Lnet/minecraftforge/fluids/FluidStack;
+    ALOAD 0
+    INVOKEINTERFACE TNodeLiquid$$PassThrough.TNodeLiquid$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeLiquid;
+    ALOAD 1
+    ALOAD 2
+    ILOAD 3
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeLiquid.drain (Lnet/minecraftforge/common/util/ForgeDirection;Lnet/minecraftforge/fluids/FluidStack;Z)Lnet/minecraftforge/fluids/FluidStack;
+    ARETURN
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0x9
+  public static fill(LTNodeLiquid$$PassThrough;Lnet/minecraftforge/common/util/ForgeDirection;Lnet/minecraftforge/fluids/FluidStack;Z)I
+    ALOAD 0
+    INVOKEINTERFACE TNodeLiquid$$PassThrough.TNodeLiquid$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeLiquid;
+    ALOAD 1
+    ALOAD 2
+    ILOAD 3
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeLiquid.fill (Lnet/minecraftforge/common/util/ForgeDirection;Lnet/minecraftforge/fluids/FluidStack;Z)I
+    IRETURN
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0x9
+  public static drain(LTNodeLiquid$$PassThrough;Lnet/minecraftforge/common/util/ForgeDirection;IZ)Lnet/minecraftforge/fluids/FluidStack;
+    ALOAD 0
+    INVOKEINTERFACE TNodeLiquid$$PassThrough.TNodeLiquid$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeLiquid;
+    ALOAD 1
+    ILOAD 2
+    ILOAD 3
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeLiquid.drain (Lnet/minecraftforge/common/util/ForgeDirection;IZ)Lnet/minecraftforge/fluids/FluidStack;
+    ARETURN
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0x9
+  public static canFill(LTNodeLiquid$$PassThrough;Lnet/minecraftforge/common/util/ForgeDirection;Lnet/minecraftforge/fluids/Fluid;)Z
+    ALOAD 0
+    INVOKEINTERFACE TNodeLiquid$$PassThrough.TNodeLiquid$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeLiquid;
+    ALOAD 1
+    ALOAD 2
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeLiquid.canFill (Lnet/minecraftforge/common/util/ForgeDirection;Lnet/minecraftforge/fluids/Fluid;)Z
+    IRETURN
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x9
+  public static canDrain(LTNodeLiquid$$PassThrough;Lnet/minecraftforge/common/util/ForgeDirection;Lnet/minecraftforge/fluids/Fluid;)Z
+    ALOAD 0
+    INVOKEINTERFACE TNodeLiquid$$PassThrough.TNodeLiquid$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeLiquid;
+    ALOAD 1
+    ALOAD 2
+    INVOKEINTERFACE com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeLiquid.canDrain (Lnet/minecraftforge/common/util/ForgeDirection;Lnet/minecraftforge/fluids/Fluid;)Z
+    IRETURN
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x9
+  public static copyFrom(LTNodeLiquid$$PassThrough;Lcodechicken/multipart/TileMultipart;)V
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE TNodeLiquid$$PassThrough.TNodeLiquid$$PassThrough$$super$copyFrom (Lcodechicken/multipart/TileMultipart;)V
+    ALOAD 1
+    INSTANCEOF TNodeLiquid$$PassThrough
+    IFEQ L0
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE TNodeLiquid$$PassThrough.TNodeLiquid$$PassThrough$$impl ()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeLiquid;
+    INVOKEINTERFACE TNodeLiquid$$PassThrough.TNodeLiquid$$PassThrough$$impl_$eq (Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeLiquid;)V
+   L0
+    RETURN
+    MAXSTACK = 2
+    MAXLOCALS = 2
+}

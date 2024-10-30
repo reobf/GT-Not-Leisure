@@ -1,0 +1,59 @@
+// class version 50.0 (50)
+// access flags 0x601
+public abstract interface TPipe$$PassThrough implements com/rwtema/extrautils/tileentity/transfernodes/pipes/IPipe  {
+
+
+  // access flags 0x401
+  public abstract TPipe$$PassThrough$$impl()Lcom/rwtema/extrautils/tileentity/transfernodes/pipes/IPipe;
+
+  // access flags 0x401
+  public abstract TPipe$$PassThrough$$impl_$eq(Lcom/rwtema/extrautils/tileentity/transfernodes/pipes/IPipe;)V
+
+  // access flags 0x401
+  public abstract bindPart(Lcodechicken/multipart/TMultiPart;)V
+
+  // access flags 0x401
+  public abstract TPipe$$PassThrough$$super$bindPart(Lcodechicken/multipart/TMultiPart;)V
+
+  // access flags 0x401
+  public abstract partRemoved(Lcodechicken/multipart/TMultiPart;I)V
+
+  // access flags 0x401
+  public abstract TPipe$$PassThrough$$super$partRemoved(Lcodechicken/multipart/TMultiPart;I)V
+
+  // access flags 0x401
+  public abstract canAddPart(Lcodechicken/multipart/TMultiPart;)Z
+
+  // access flags 0x401
+  public abstract TPipe$$PassThrough$$super$canAddPart(Lcodechicken/multipart/TMultiPart;)Z
+
+  // access flags 0x401
+  public abstract getFilterInventory(Lnet/minecraft/world/IBlockAccess;III)Lnet/minecraft/inventory/IInventory;
+
+  // access flags 0x401
+  public abstract getPipeType()Ljava/lang/String;
+
+  // access flags 0x401
+  public abstract limitTransfer(Lnet/minecraft/tileentity/TileEntity;Lnet/minecraftforge/common/util/ForgeDirection;Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeBuffer;)I
+
+  // access flags 0x401
+  public abstract canInput(Lnet/minecraft/world/IBlockAccess;IIILnet/minecraftforge/common/util/ForgeDirection;)Z
+
+  // access flags 0x401
+  public abstract shouldConnectToTile(Lnet/minecraft/world/IBlockAccess;IIILnet/minecraftforge/common/util/ForgeDirection;)Z
+
+  // access flags 0x401
+  public abstract canOutput(Lnet/minecraft/world/IBlockAccess;IIILnet/minecraftforge/common/util/ForgeDirection;)Z
+
+  // access flags 0x401
+  public abstract getOutputDirections(Lnet/minecraft/world/IBlockAccess;IIILnet/minecraftforge/common/util/ForgeDirection;Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeBuffer;)Ljava/util/ArrayList;
+
+  // access flags 0x401
+  public abstract transferItems(Lnet/minecraft/world/IBlockAccess;IIILnet/minecraftforge/common/util/ForgeDirection;Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeBuffer;)Z
+
+  // access flags 0x401
+  public abstract copyFrom(Lcodechicken/multipart/TileMultipart;)V
+
+  // access flags 0x401
+  public abstract TPipe$$PassThrough$$super$copyFrom(Lcodechicken/multipart/TileMultipart;)V
+}

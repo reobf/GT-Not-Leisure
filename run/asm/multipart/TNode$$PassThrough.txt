@@ -1,0 +1,107 @@
+// class version 50.0 (50)
+// access flags 0x601
+public abstract interface TNode$$PassThrough implements com/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode  {
+
+
+  // access flags 0x401
+  public abstract TNode$$PassThrough$$impl()Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;
+
+  // access flags 0x401
+  public abstract TNode$$PassThrough$$impl_$eq(Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INode;)V
+
+  // access flags 0x401
+  public abstract bindPart(Lcodechicken/multipart/TMultiPart;)V
+
+  // access flags 0x401
+  public abstract TNode$$PassThrough$$super$bindPart(Lcodechicken/multipart/TMultiPart;)V
+
+  // access flags 0x401
+  public abstract partRemoved(Lcodechicken/multipart/TMultiPart;I)V
+
+  // access flags 0x401
+  public abstract TNode$$PassThrough$$super$partRemoved(Lcodechicken/multipart/TMultiPart;I)V
+
+  // access flags 0x401
+  public abstract canAddPart(Lcodechicken/multipart/TMultiPart;)Z
+
+  // access flags 0x401
+  public abstract TNode$$PassThrough$$super$canAddPart(Lcodechicken/multipart/TMultiPart;)Z
+
+  // access flags 0x401
+  public abstract getFilterInventory(Lnet/minecraft/world/IBlockAccess;III)Lnet/minecraft/inventory/IInventory;
+
+  // access flags 0x401
+  public abstract getPipeType()Ljava/lang/String;
+
+  // access flags 0x401
+  public abstract limitTransfer(Lnet/minecraft/tileentity/TileEntity;Lnet/minecraftforge/common/util/ForgeDirection;Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeBuffer;)I
+
+  // access flags 0x401
+  public abstract isPowered()Z
+
+  // access flags 0x401
+  public abstract getNodeY()I
+
+  // access flags 0x401
+  public abstract getPipeY()I
+
+  // access flags 0x401
+  public abstract getPipeDir()I
+
+  // access flags 0x401
+  public abstract getUpgrades()Ljava/util/List;
+
+  // access flags 0x401
+  public abstract getNodeType()Ljava/lang/String;
+
+  // access flags 0x401
+  public abstract getPipeX()I
+
+  // access flags 0x401
+  public abstract bufferChanged()V
+
+  // access flags 0x401
+  public abstract canInput(Lnet/minecraft/world/IBlockAccess;IIILnet/minecraftforge/common/util/ForgeDirection;)Z
+
+  // access flags 0x401
+  public abstract shouldConnectToTile(Lnet/minecraft/world/IBlockAccess;IIILnet/minecraftforge/common/util/ForgeDirection;)Z
+
+  // access flags 0x401
+  public abstract getNodeX()I
+
+  // access flags 0x401
+  public abstract canOutput(Lnet/minecraft/world/IBlockAccess;IIILnet/minecraftforge/common/util/ForgeDirection;)Z
+
+  // access flags 0x401
+  public abstract checkRedstone()Z
+
+  // access flags 0x401
+  public abstract getNodeDir()Lnet/minecraftforge/common/util/ForgeDirection;
+
+  // access flags 0x401
+  public abstract recalcRedstone()Z
+
+  // access flags 0x401
+  public abstract getNodeZ()I
+
+  // access flags 0x401
+  public abstract getOutputDirections(Lnet/minecraft/world/IBlockAccess;IIILnet/minecraftforge/common/util/ForgeDirection;Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeBuffer;)Ljava/util/ArrayList;
+
+  // access flags 0x401
+  public abstract transferItems(Lnet/minecraft/world/IBlockAccess;IIILnet/minecraftforge/common/util/ForgeDirection;Lcom/rwtema/extrautils/tileentity/transfernodes/nodebuffer/INodeBuffer;)Z
+
+  // access flags 0x401
+  public abstract getModel(Lnet/minecraftforge/common/util/ForgeDirection;)Lcom/rwtema/extrautils/block/BoxModel;
+
+  // access flags 0x401
+  public abstract getNode()Lcom/rwtema/extrautils/tileentity/transfernodes/TileEntityTransferNode;
+
+  // access flags 0x401
+  public abstract getPipeZ()I
+
+  // access flags 0x401
+  public abstract copyFrom(Lcodechicken/multipart/TileMultipart;)V
+
+  // access flags 0x401
+  public abstract TNode$$PassThrough$$super$copyFrom(Lcodechicken/multipart/TileMultipart;)V
+}
