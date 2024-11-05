@@ -40,3 +40,6 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+*.mca
+*.dat_old
+*.dat

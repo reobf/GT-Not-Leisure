@@ -8,7 +8,6 @@ import com.science.gtnl.ScienceNotLeisure;
 
 import gregtech.api.util.GTLanguageManager;
 
-@Deprecated
 public class TextLocalization {
 
     public static final String ModName = ScienceNotLeisure.MODNAME;
@@ -142,4 +141,11 @@ public class TextLocalization {
     public static final String Tooltip_LargeSteamCircuitAssembler_0 = texter(
         "Primitive technology!",
         "Tooltip_LargeSteamCircuitAssembler_0");
+
+    public static final String NameGenerationEarthEngine = texter(
+        "Generation Earth Engine",
+        "NameGenerationEarthEngine");
+    public static final String GenerationEarthEngineRecipeType = texter(
+        "Recombination Fusion Reactor",
+        "GenerationEarthEngineRecipeType");
 }

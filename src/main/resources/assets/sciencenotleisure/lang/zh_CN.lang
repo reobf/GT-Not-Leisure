@@ -47,6 +47,9 @@ Tooltip_LargeSteamMachine_1=仅消耗正常需求62.5%的蒸汽
 Tooltip_LargeSteamMachine_2=一次可处理多达16个物品
 Tooltip_LargeSteamCircuitAssembler_0=原始科技！
 
+NameGenerationEarthEngine=初代目行星发动机
+GenerationEarthEngineRecipeType=重聚变反应堆
+
 tooltips.TestItem0.line1=A test item, so cute.
 
 gtnl.sterile.maintenance=自动无菌维护仓
@@ -55,6 +58,21 @@ gt.blockmachines.gtnl.sterilemaintenance.desc.1=修复所有东西，除了它�
 gt.blockmachines.gtnl.sterilemaintenance.desc.2=更上一层楼！
 require_clean_room=该配方需要超净间。
 require_sterile_environment=该配方需要无菌环境。
+
+gtnl.ae2.IntegratedOutputHatchME=输出总成 (ME)
+gt.blockmachines.gtnl.IntegratedOutputHatchME.desc.0=多方块的物品和流体输出
+
+gtnl.ae2.InfinityOutputBusME=无限输出总线 (ME)
+gtnl.ae2.InfinityOutputME=无限输出仓 (ME)
+
+gtnl.ae2.MTEHatchOutputME=输出仓 (ME)
+
+gt.blockmachines.gtnl.InfinityOutputBusME.desc.0=多方块的物品输出
+gt.blockmachines.gtnl.InfinityOutputME.desc.0=多方块的流体输出
+gt.blockmachines.gtnl.InfinityOutputME.desc.1=直接存储到ME网络中
+gt.blockmachines.gtnl.InfinityOutputME.desc.2=当前缓存容量:
+gt.blockmachines.gtnl.InfinityOutputME.desc.3=2^1024
+gt.blockmachines.gtnl.InfinityOutputME.desc.4=使用剪线钳右键单击以更改连接行为
 
 HIGH_PRESSURE_TOOLTIP_NOTICE=高压模式下处理速度和蒸汽消耗翻倍
 StructureTooComplex=结构太复杂了！

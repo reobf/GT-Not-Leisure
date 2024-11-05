@@ -544,7 +544,7 @@ public class MaterialPool implements Runnable {
         new short[] { 60, 74, 243 },
         "Periodicium",
         subscriptNumbers(
-            "(HCNOFPSClSeBrI)(HeNeArKrXeRn)(BSiGeAsSbTeAt)(AlGaInSnTlPbBiPo)((TiVCrMnFeCoNiCuZn)(ZrNbMoTcRuRhPdAgCd)(HfTaWReOsIrPtAuHg))(BeMgCaSrBaRa)(ScY(LaCePrNdPmSmEuGd)(TbDyHoErTmYbLu))(LiNaKRbCsFr)((AcThPaUNpPuAmCm)(BkCfEsFmMdNoLr)(LfDbSgBhHsMtDsRgCnNfFlMcLvTsOg)(KeRpNqNq+Nq*SuAdSpDOhDeQtMaD*IcIf*NtHyEn)(TtЖ〄Fs⚶Hy⚶✢⸎✦◆✦⌘☯\uD80C\uDF70 \uD80C\uDF71 \uD80C\uDF72 \uD80C\uDF73 \uD80C\uDF74 \uD80C\uDF75 \uD80C\uDF76 \uD80C\uDF77 \uD80C\uDF78☯⌘⚷⚙⚷Ni4Ti6Fc⚙҈҉«»Rt*۞)"),
+            "(HCNOFPSClSeBrI)(HeNeArKrXeRn)(BSiGeAsSbTeAt)(AlGaInSnTlPbBiPo)((TiVCrMnFeCoNiCuZn)(ZrNbMoTcRuRhPdAgCd)(HfTaWReOsIrPtAuHg))(BeMgCaSrBaRa)(ScY(LaCePrNdPmSmEuGd)(TbDyHoErTmYbLu))(LiNaKRbCsFr)((AcThPaUNpPuAmCm)(BkCfEsFmMdNoLr)(LfDbSgBhHsMtDsRgCnNfFlMcLvOg)(KeRpNqNq+Nq*SuAdSpDOhDeQtMaD*IcIf*NtHyEn)(TsЖTtЖ〄Fs⚶Hy⚶✢⸎✦◆✦⌘☯\uD80C\uDF70 \uD80C\uDF71 \uD80C\uDF72 \uD80C\uDF73 \uD80C\uDF74 \uD80C\uDF75 \uD80C\uDF76 \uD80C\uDF77 \uD80C\uDF78☯⌘⚷⚙⚷Ni4Ti6Fc⚙҈҉«»Rt*۞)"),
         new Werkstoff.Stats().setToxic(true),
         Werkstoff.Types.ELEMENT,
         new Werkstoff.GenerationFeatures().addMetalItems()

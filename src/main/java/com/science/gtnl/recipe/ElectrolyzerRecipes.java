@@ -7,12 +7,12 @@ import com.science.gtnl.common.materials.MaterialPool;
 
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.recipe.RecipeMap;
-import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.util.GTModHandler;
+import gtPlusPlus.api.recipe.GTPPRecipeMaps;
 
 public class ElectrolyzerRecipes implements IRecipePool {
 
-    final RecipeMap<?> electrolyzer = RecipeMaps.electrolyzerNonCellRecipes;
+    final RecipeMap<?> electrolyzer = GTPPRecipeMaps.electrolyzerNonCellRecipes;
 
     @Override
     public void loadRecipes() {

@@ -5,8 +5,8 @@ import static com.science.gtnl.common.block.BasicBlocks.MetaBlock01;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 
+import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.common.block.Casings.MetaItemBlockCasing;
-import com.science.gtnl.common.item.GTNLItemList;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import gtPlusPlus.core.item.base.itemblock.ItemBlockMeta;
