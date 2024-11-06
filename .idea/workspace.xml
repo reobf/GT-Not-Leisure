@@ -5,19 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5462d6df-5ab2-496d-b03a-539d6854c2fd" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/Utils/ItemID.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/Utils/StructureUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/GeneralFrontend.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/RecipeMapBackend.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/RecipeRegister.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTECombinedOutputHatch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/GenerationEarthEngine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/multiMachineClasses/MultiMachineBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/multiMachineClasses/ParallelHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/multiMachineClasses/ProcessingLogic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dependencies.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/dependencies.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/GregTech.lang" beforeDir="false" afterPath="$PROJECT_DIR$/run/GregTech.lang" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TEnergyConnected$$PassThrough$class.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TEnergyConnected$$PassThrough.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TEnergyReceiver$$PassThrough$class.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TEnergyReceiver$$PassThrough.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TEnergySink$$PassThrough$class.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TEnergySink$$PassThrough.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TEnergySource$$PassThrough$class.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TEnergySource$$PassThrough.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TFluidHandler$$PassThrough$class.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TFluidHandler$$PassThrough.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TSidedEnvironment$$PassThrough$class.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TSidedEnvironment$$PassThrough.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TSidedInventory$$PassThrough$class.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TSidedInventory$$PassThrough.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TTileStorageMonitorable$$PassThrough$class.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TTileStorageMonitorable$$PassThrough.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/run/config/AppliedEnergistics2/CustomRecipes.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/AppliedEnergistics2/CustomRecipes.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/config/AppliedEnergistics2/recipes/items.csv" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/AppliedEnergistics2/recipes/items.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/config/DreamCoreMod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/DreamCoreMod.properties" afterDir="false" />
@@ -31,6 +36,7 @@
       <change beforePath="$PROJECT_DIR$/run/config/NEI/client.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/NEI/client.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/config/TinkersConstruct.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/TinkersConstruct.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/config/bartworks.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/bartworks.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/config/cofh/core/common.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/cofh/core/common.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/config/hodgepodge.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/hodgepodge.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/config/splash.properties" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/splash.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/2024-10-30-1.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2024-10-30-1.log.gz" afterDir="false" />
@@ -41,7 +47,6 @@
       <change beforePath="$PROJECT_DIR$/run/logs/2024-10-30-6.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2024-10-30-6.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/2024-10-30-7.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2024-10-30-7.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/GregTech.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/GregTech.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/logs/PlayerActivity.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/PlayerActivity.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/fml-client-1.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/fml-client-1.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/fml-client-2.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/fml-client-2.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/fml-client-3.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/fml-client-3.log" afterDir="false" />
@@ -151,17 +156,9 @@
       <change beforePath="$PROJECT_DIR$/run/saves/新的世界/region/r.0.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/新的世界/region/r.0.0.mca" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/saves/新的世界/session.lock" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/新的世界/session.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/saves/新的世界/stats/aeace7c8-5960-4441-be91-2594c917a1fc.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/新的世界/stats/aeace7c8-5960-4441-be91-2594c917a1fc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/ScienceNotLeisure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/ScienceNotLeisure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/Utils/TextLocalization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/Utils/TextLocalization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/block/BlockRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/block/BlockRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/item/GTNLItemList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/GTNLItemList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/materials/MaterialPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/materials/MaterialPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/LargeSteamCircuitAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/SteamMulti/LargeSteamCircuitAssembler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEIntegratedOutputHatch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEIntegratedOutputHatchME.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/MachineLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/MachineLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/recipe/ElectrolyzerRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/recipe/ElectrolyzerRecipes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/recipe/ScriptAvaritia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/recipe/ScriptAvaritia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/en_US.lang" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/en_US.lang" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/zh_CN.lang" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/zh_CN.lang" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLBlocks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLMachines.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLMachines.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLRecipeTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLRecipeTypes.java" afterDir="false" />
@@ -220,6 +217,12 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="GT-Not-Leisure" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="help" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="GT-Not-Leisure" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="rfg utilities" type="c8890929:TasksNode$1" />
               </path>
               <path>
@@ -245,8 +248,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -277,12 +280,14 @@
     &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
     &quot;Gradle.'GT-Not-Leisure' 中的测试.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.0. Build and Test.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.1. Run Client.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.1. Run Client.executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.5. Apply spotless.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.GT-Not-Leisure [clean build].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.GT-Not-Leisure [clean].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.GT-Not-Leisure [dependencies].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.GT-Not-Leisure [processIdeaSettings].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.GT-Not-Leisure [runVanillaClient].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GT-Not-Leisure [spotlessCheck].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.加载 Gradle 依赖项.executor&quot;: &quot;Run&quot;,
     &quot;JavaClassFindUsagesOptions.isSearchForTextOccurrences&quot;: &quot;false&quot;,
     &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
@@ -325,11 +330,11 @@
       <recent name="com.science.gtnl.common.machine" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.science.gtnl.common.machine" />
       <recent name="com.science.gtnl.Utils" />
       <recent name="com.science.gtnl.machine.multiMachineClasses" />
       <recent name="com.science.gtnl.machine" />
       <recent name="com.science.gtnl.common" />
-      <recent name="com.science.gtnl.recipe" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -775,35 +780,35 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="'GT-Not-Leisure' 中的测试" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="GT-Not-Leisure [spotlessCheck]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value=":test" />
+            <option value="spotlessCheck" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.GT-Not-Leisure [clean]" />
+        <item itemvalue="Gradle.GT-Not-Leisure [spotlessCheck]" />
         <item itemvalue="Gradle.GT-Not-Leisure [dependencies]" />
         <item itemvalue="Gradle.GT-Not-Leisure [clean build]" />
         <item itemvalue="Gradle.GT-Not-Leisure [runVanillaClient]" />
-        <item itemvalue="Gradle.'GT-Not-Leisure' 中的测试" />
       </list>
     </recent_temporary>
   </component>
@@ -848,7 +853,9 @@
       <workItem from="1730454042967" duration="6652000" />
       <workItem from="1730523815146" duration="4821000" />
       <workItem from="1730638820428" duration="2261000" />
-      <workItem from="1730721404163" duration="10807000" />
+      <workItem from="1730721404163" duration="39707000" />
+      <workItem from="1730862503416" duration="1906000" />
+      <workItem from="1730876158386" duration="1574000" />
     </task>
     <servers />
   </component>
@@ -926,8 +933,29 @@
           <properties class="java.util.ConcurrentModificationException" package="java.util" />
           <option name="timeStamp" value="2" />
         </breakpoint>
+        <line-breakpoint enabled="true" log-message="true" log-stack="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEHatchOutputME.java</url>
+          <line>58</line>
+          <log-expression disabled="true" expression="0" language="JAVA" />
+          <properties field="FluidBaseCapacity" class="com.science.gtnl.common.machine.MTEHatchOutputME">
+            <option name="WATCH_ACCESS" value="true" />
+          </properties>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.science.gtnl.common.machine.MTEHatchOutputME" memberName="FluidBaseCapacity" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

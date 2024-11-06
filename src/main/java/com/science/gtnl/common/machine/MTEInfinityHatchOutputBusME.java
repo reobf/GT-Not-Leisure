@@ -52,7 +52,6 @@ import gregtech.api.util.GTUtility;
 
 public class MTEInfinityHatchOutputBusME extends MTEHatchOutputBus implements IPowerChannelState {
 
-    // 使用 2^1024 作为 baseCapacity 的值
     private BigInteger baseCapacity = BigInteger.valueOf(2)
         .pow(1024);
 
