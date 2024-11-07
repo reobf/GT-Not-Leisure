@@ -5,3 +5,14 @@ minecraft {
     extraRunJvmArguments.add("-Xmx8G")
     extraRunJvmArguments.add("-Xms8G")
 }
+
+dependencies {
+    // 其他依赖项...
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    implementation "org.spongepowered:mixin:0.8.2"
+}
+
+tasks.withType(JavaCompile) {
+    options.annotationProcessorPath = configurations.annotationProcessor
+}

@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -35,7 +34,7 @@ public class StructureUtils {
                         // 解析并保留空格和逗号后无空格
                         String[] row = line.split(",");
                         structure.add(row);
-                        System.out.println(Arrays.toString(row)); // 调试输出每行的内容
+                        // 已删除的调试输出行: System.out.println(Arrays.toString(row));
                     }
                 }
             } catch (IOException e) {

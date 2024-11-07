@@ -133,3 +133,4 @@ require_sterile_environment=This recipe requires a sterile environment.
 gtnl.AutoConfigurationMaintenanceHatch.UI.text.01=Processing time
 gtnl.autoconfiguration.maintenance=Auto Configuration Maintenance Hatch
 Waila.ConfigurationBaseSpeedControllerBase.1=Processing time
+gtnl.Hatch.QuadrupleOutputHatchEV=Quadruple Output Hatch (EV)

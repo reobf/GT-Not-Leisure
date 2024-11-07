@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5462d6df-5ab2-496d-b03a-539d6854c2fd" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEQuadrupleOutputHatch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/mixin/MTETieredMachineBlockMixin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependencies.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/dependencies.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/GregTech.lang" beforeDir="false" afterPath="$PROJECT_DIR$/run/GregTech.lang" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/asm/multipart/TEnergyConnected$$PassThrough$class.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/run/asm/multipart/TEnergyConnected$$PassThrough.txt" beforeDir="false" />
@@ -37,15 +42,63 @@
       <change beforePath="$PROJECT_DIR$/run/config/TinkersConstruct.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/TinkersConstruct.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/config/bartworks.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/bartworks.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/config/cofh/core/common.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/cofh/core/common.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/config/forgeChunkLoading.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/forgeChunkLoading.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/config/hodgepodge.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/hodgepodge.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/config/splash.properties" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/splash.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-30-1.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2024-10-30-1.log.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-30-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2024-10-30-2.log.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-30-3.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2024-10-30-3.log.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-30-4.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2024-10-30-4.log.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-30-5.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2024-10-30-5.log.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-30-6.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2024-10-30-6.log.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-30-7.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2024-10-30-7.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-21-1.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-21-2.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-21-3.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-21-4.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-21-5.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-21-6.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-21-7.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-22-1.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-22-2.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-22-3.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-22-4.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-22-5.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-22-6.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-22-7.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-23-1.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-23-2.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-23-3.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-23-4.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-23-5.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-23-6.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-23-7.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-24-1.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-24-2.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-24-3.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-24-4.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-24-5.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-24-6.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-24-7.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-27-1.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-27-2.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-27-3.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-27-4.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-27-5.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-27-6.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-27-7.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-28-1.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-28-2.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-28-3.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-28-4.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-28-5.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-29-1.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-29-2.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-29-3.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-29-4.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-29-5.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-29-6.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-29-7.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-30-1.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-30-2.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-30-3.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-30-4.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-30-5.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-30-6.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2024-10-30-7.log.gz" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/GregTech.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/GregTech.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/fml-client-1.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/fml-client-1.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/fml-client-2.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/fml-client-2.log" afterDir="false" />
@@ -156,9 +209,13 @@
       <change beforePath="$PROJECT_DIR$/run/saves/新的世界/region/r.0.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/新的世界/region/r.0.0.mca" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/saves/新的世界/session.lock" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/新的世界/session.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/saves/新的世界/stats/aeace7c8-5960-4441-be91-2594c917a1fc.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/新的世界/stats/aeace7c8-5960-4441-be91-2594c917a1fc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEIntegratedOutputHatch.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEIntegratedOutputHatchME.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/Utils/StructureUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/Utils/StructureUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/GTNLItemList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/GTNLItemList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEInfinityHatchOutputBusME.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEInfinityHatchOutputBusME.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEInfinityHatchOutputME.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEInfinityHatchOutputME.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/MachineLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/MachineLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/en_US.lang" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/en_US.lang" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/zh_CN.lang" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/zh_CN.lang" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLBlocks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLMachines.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLMachines.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLRecipeTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLRecipeTypes.java" afterDir="false" />
@@ -249,6 +306,7 @@
       <list>
         <option value="Interface" />
         <option value="Enum" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -275,44 +333,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Gradle.'GT-Not-Leisure' 中的测试.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.0. Build and Test.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.1. Run Client.executor&quot;: &quot;Debug&quot;,
-    &quot;Gradle.5. Apply spotless.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GT-Not-Leisure [clean build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GT-Not-Leisure [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GT-Not-Leisure [dependencies].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GT-Not-Leisure [processIdeaSettings].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GT-Not-Leisure [runVanillaClient].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GT-Not-Leisure [spotlessCheck].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.加载 Gradle 依赖项.executor&quot;: &quot;Run&quot;,
-    &quot;JavaClassFindUsagesOptions.isSearchForTextOccurrences&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Github/GTNHLib-0.5.17-dev.jar&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDK&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.48349056&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;http.proxy&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Gradle.'GT-Not-Leisure' 中的测试.executor": "Run",
+    "Gradle.0. Build and Test.executor": "Run",
+    "Gradle.1. Run Client.executor": "Debug",
+    "Gradle.5. Apply spotless.executor": "Run",
+    "Gradle.GT-Not-Leisure [clean build].executor": "Run",
+    "Gradle.GT-Not-Leisure [clean].executor": "Run",
+    "Gradle.GT-Not-Leisure [dependencies].executor": "Run",
+    "Gradle.GT-Not-Leisure [processIdeaSettings].executor": "Run",
+    "Gradle.GT-Not-Leisure [runVanillaClient].executor": "Run",
+    "Gradle.GT-Not-Leisure [spotlessCheck].executor": "Run",
+    "Gradle.加载 Gradle 依赖项.executor": "Run",
+    "JavaClassFindUsagesOptions.isSearchForTextOccurrences": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.preview.features.used": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/Github/GTNHLib-0.5.17-dev.jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDK",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.48349056",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.science.gtnl.Annotation" />
       <recent name="com.science.gtnl.common.machine.metaTileEntity.hatch" />
       <recent name="com.science.gtnl.common.machine" />
     </key>
@@ -805,8 +864,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.GT-Not-Leisure [clean]" />
-        <item itemvalue="Gradle.GT-Not-Leisure [spotlessCheck]" />
         <item itemvalue="Gradle.GT-Not-Leisure [dependencies]" />
+        <item itemvalue="Gradle.GT-Not-Leisure [spotlessCheck]" />
         <item itemvalue="Gradle.GT-Not-Leisure [clean build]" />
         <item itemvalue="Gradle.GT-Not-Leisure [runVanillaClient]" />
       </list>
@@ -855,7 +914,8 @@
       <workItem from="1730638820428" duration="2261000" />
       <workItem from="1730721404163" duration="39707000" />
       <workItem from="1730862503416" duration="1906000" />
-      <workItem from="1730876158386" duration="1574000" />
+      <workItem from="1730876158386" duration="19573000" />
+      <workItem from="1730905372639" duration="37852000" />
     </task>
     <servers />
   </component>
@@ -933,14 +993,94 @@
           <properties class="java.util.ConcurrentModificationException" package="java.util" />
           <option name="timeStamp" value="2" />
         </breakpoint>
-        <line-breakpoint enabled="true" log-message="true" log-stack="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEHatchOutputME.java</url>
-          <line>58</line>
-          <log-expression disabled="true" expression="0" language="JAVA" />
-          <properties field="FluidBaseCapacity" class="com.science.gtnl.common.machine.MTEHatchOutputME">
+        <line-breakpoint type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEQuadrupleOutputHatch.java</url>
+          <line>30</line>
+          <properties field="mCapacityPer" class="com.science.gtnl.common.machine.MTEQuadrupleOutputHatch">
             <option name="WATCH_ACCESS" value="true" />
           </properties>
-          <option name="timeStamp" value="16" />
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEQuadrupleOutputHatch.java</url>
+          <line>29</line>
+          <properties field="fluidTanks" class="com.science.gtnl.common.machine.MTEQuadrupleOutputHatch">
+            <option name="WATCH_ACCESS" value="true" />
+          </properties>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEQuadrupleOutputHatch.java</url>
+          <line>28</line>
+          <properties field="mStoredFluid" class="com.science.gtnl.common.machine.MTEQuadrupleOutputHatch">
+            <option name="WATCH_ACCESS" value="true" />
+          </properties>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEInfinityHatchOutputME.java</url>
+          <line>33</line>
+          <properties field="mDescriptionArray" class="com.science.gtnl.common.machine.MTEInfinityHatchOutputME" />
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEQuadrupleOutputHatch.java</url>
+          <line>75</line>
+          <properties class="com.science.gtnl.common.machine.MTEQuadrupleOutputHatch" method="getMaxType">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEQuadrupleOutputHatch.java</url>
+          <line>114</line>
+          <properties class="com.science.gtnl.common.machine.MTEQuadrupleOutputHatch" method="getCapacityPerTank">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEQuadrupleOutputHatch.java</url>
+          <line>119</line>
+          <properties class="com.science.gtnl.common.machine.MTEQuadrupleOutputHatch" method="getFluid">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/MachineLoader.java</url>
+          <line>63</line>
+          <properties class="com.science.gtnl.machine.MachineLoader" method="registerQuadrupleOutputHatch">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEInfinityHatchOutputME.java</url>
+          <line>37</line>
+          <properties class="com.science.gtnl.common.machine.MTEInfinityHatchOutputME" method="&lt;init&gt;">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEInfinityHatchOutputME.java</url>
+          <line>50</line>
+          <properties class="com.science.gtnl.common.machine.MTEInfinityHatchOutputME" method="&lt;init&gt;">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEInfinityHatchOutputME.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -954,8 +1094,15 @@
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="com.science.gtnl.common.machine.MTEHatchOutputME" memberName="FluidBaseCapacity" />
+        <PinnedItemInfo parentTag="com.science.gtnl.common.machine.MTEInfinityHatchOutputME" memberName="mDescriptionArray" />
       </pinned-members>
     </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="GradleRunConfiguration">
+        <watch expression="this.baseCapacity" language="JAVA" />
+        <watch expression="fluidTanks" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

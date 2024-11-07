@@ -1,5 +1,7 @@
 package com.science.gtnl.common.machine;
 
+import static net.minecraft.util.StatCollector.translateToLocal;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.math.BigInteger;
@@ -11,8 +13,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
 
+import org.jetbrains.annotations.NotNull;
+
 import com.glodblock.github.common.item.FCBaseItemCell;
 import com.glodblock.github.common.storage.IStorageFluidCell;
+import com.science.gtnl.Utils.TextUtils;
 
 import appeng.api.AEApi;
 import appeng.api.storage.data.IAEFluidStack;
@@ -26,19 +31,25 @@ import gregtech.common.tileentities.machines.MTEHatchOutputME;
 
 public class MTEInfinityHatchOutputME extends MTEHatchOutputME {
 
+    public String[] mDescriptionArray;
+
     private final BigInteger baseCapacity;
 
-    public MTEInfinityHatchOutputME(int aID, String aName, String aNameRegional) {
-        super(
-            aID,
-            aName,
-            aNameRegional);
+    public MTEInfinityHatchOutputME(int aID, String aName, String aNameRegional, int aTier) {
+        super(aID, aName, aNameRegional);
+        //此处需要使用别的方法覆盖MTEHatchOutputME类的mDescriptionArray或改写MTETieredMachineBlock.mDescriptionArray
+        this.mDescriptionArray = new String[] { TextUtils.AE,
+            translateToLocal("gt.blockmachines.gtnl.InfinityOutputME.desc.0"),
+            translateToLocal("gt.blockmachines.gtnl.InfinityOutputME.desc.1"),
+            translateToLocal("gt.blockmachines.gtnl.InfinityOutputME.desc.2") + EnumChatFormatting.YELLOW
+                + translateToLocal("gt.blockmachines.gtnl.InfinityOutputME.desc.3"),
+            translateToLocal("gt.blockmachines.gtnl.InfinityOutputME.desc.4") };
         this.baseCapacity = BigInteger.valueOf(2)
             .pow(1024);
     }
 
     public MTEInfinityHatchOutputME(String aName, int aTier, String[] aDescription, ITexture[][][] aTextures) {
-        super(aName, aTier, aDescription, aTextures);
+        super(aName, getSlots(aTier), aDescription, aTextures);
         this.baseCapacity = BigInteger.valueOf(2)
             .pow(1024);
     }
@@ -89,14 +100,24 @@ public class MTEInfinityHatchOutputME extends MTEHatchOutputME {
 
     @Override
     public boolean onRightclick(IGregTechTileEntity aBaseMetaTileEntity, EntityPlayer aPlayer) {
+        if (!aBaseMetaTileEntity.isServerSide()) {
+            return false; // 只在服务器端处理
+        }
+
+        List<String> fluidInfo = getCachedFluids();
+        for (String info : fluidInfo) {
+            aPlayer.addChatComponentMessage(new ChatComponentText(info));
+        }
+
+        return true;
+    }
+
+    private @NotNull List<String> getCachedFluids() {
         List<String> fluidInfo = new ArrayList<>();
         fluidInfo.add(
             "The bus is " + ((getProxy() != null && getProxy().isActive()) ? EnumChatFormatting.GREEN + "online"
                 : EnumChatFormatting.RED + "offline") + EnumChatFormatting.RESET);
         IWideReadableNumberConverter nc = ReadableNumberConverter.INSTANCE;
-
-        BigInteger cacheCapacity = baseCapacity;
-        fluidInfo.add("Fluid cache capacity: " + nc.toWideReadableForm(cacheCapacity.longValue()) + " mB");
 
         IItemList<IAEFluidStack> fluidCache = getParentFluidCache();
 
@@ -111,16 +132,11 @@ public class MTEInfinityHatchOutputME extends MTEHatchOutputME {
                         .getLocalizedName() + ": "
                         + EnumChatFormatting.GOLD
                         + nc.toWideReadableForm(s.getStackSize())
-                        + " mB"
+                        + " L"
                         + EnumChatFormatting.RESET);
                 if (++counter > 100) break;
             }
         }
-
-        for (String info : fluidInfo) {
-            aPlayer.addChatMessage(new ChatComponentText(info));
-        }
-
-        return true;
+        return fluidInfo;
     }
 }

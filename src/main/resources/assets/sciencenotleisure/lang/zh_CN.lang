@@ -59,6 +59,10 @@ gt.blockmachines.gtnl.sterilemaintenance.desc.2=更上一层楼！
 require_clean_room=该配方需要超净间。
 require_sterile_environment=该配方需要无菌环境。
 
+gtnl.Hatch.QuadrupleOutputHatchEV=四重输出仓 (EV)
+
+gtnl.ae2.MTEHatchOutputME=输出仓 (ME)
+
 gtnl.ae2.IntegratedOutputHatchME=输出总成 (ME)
 gt.blockmachines.gtnl.IntegratedOutputHatchME.desc.0=多方块的物品和流体输出
 

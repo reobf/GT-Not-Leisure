@@ -1,15 +1,15 @@
 package com.science.gtnl.machine;
 
 import static com.science.gtnl.common.CustomItemList.*;
+import static gregtech.api.enums.MetaTileEntityIDs.QUADRUPLE_INPUT_HATCHES_EV;
 
+import com.science.gtnl.common.machine.*;
+import gregtech.api.enums.ItemList;
+import gregtech.api.metatileentity.implementations.MTEHatchMultiInput;
 import net.minecraft.item.ItemStack;
 
 import com.science.gtnl.Utils.TextLocalization;
 import com.science.gtnl.common.GTNLItemList;
-import com.science.gtnl.common.machine.MTEHatchSterileMaintenance;
-import com.science.gtnl.common.machine.MTEInfinityHatchOutputBusME;
-import com.science.gtnl.common.machine.MTEInfinityHatchOutputME;
-import com.science.gtnl.common.machine.MTEIntegratedOutputHatchME;
 import com.science.gtnl.machine.SteamMulti.LargeSteamCircuitAssembler;
 
 import tectech.thing.metaTileEntity.hatch.MTEHatchCapacitor;
@@ -33,7 +33,7 @@ public class MachineLoader {
                 .getStackForm(1L));
 
         MTEInfinityHatchOutputME.set(
-            new MTEInfinityHatchOutputME(21005, "gtnl.ae2.InfinityOutputME", "Infinity Output Hatch (ME)")
+            new MTEInfinityHatchOutputME(21005, "gtnl.ae2.InfinityOutputME", "Infinity Output Hatch (ME)", 3)
                 .getStackForm(1L));
 
         MTEIntegratedOutputHatchME.set(
@@ -61,8 +61,13 @@ public class MachineLoader {
 
     private static void registerOutputCombined() {}
 
-    public static void run() {
-        registerOutputCombined();
+    private static void registerQuadrupleOutputHatch() {
+        GTNLItemList.QuadrupleOutputHatchEV.set(
+            new MTEQuadrupleOutputHatch(21007, "gtnl.Hatch.QuadrupleOutputHatchEV", "Quadruple Output Hatch (EV)", 4).getStackForm(1L));
     }
 
+    public static void run() {
+        registerQuadrupleOutputHatch();
+        registerOutputCombined();
+    }
 }

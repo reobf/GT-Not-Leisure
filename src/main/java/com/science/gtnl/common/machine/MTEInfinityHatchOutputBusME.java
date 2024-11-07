@@ -4,12 +4,11 @@ import static gregtech.api.enums.Textures.BlockIcons.OVERLAY_ME_HATCH;
 import static gregtech.api.enums.Textures.BlockIcons.OVERLAY_ME_HATCH_ACTIVE;
 import static net.minecraft.util.StatCollector.translateToLocal;
 
+import java.lang.reflect.Field;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.EnumSet;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.annotation.Nullable;
 
@@ -49,6 +48,7 @@ import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.implementations.MTEHatchOutputBus;
 import gregtech.api.render.TextureFactory;
 import gregtech.api.util.GTUtility;
+import journeymap.shadow.org.jetbrains.annotations.NotNull;
 
 public class MTEInfinityHatchOutputBusME extends MTEHatchOutputBus implements IPowerChannelState {
 
@@ -193,22 +193,53 @@ public class MTEInfinityHatchOutputBusME extends MTEHatchOutputBus implements IP
         if (!aBaseMetaTileEntity.isServerSide()) {
             return false; // 只在服务器端处理
         }
-        Map<String, Long> itemMap = getCachedItems();
-        for (Map.Entry<String, Long> entry : itemMap.entrySet()) {
-            aPlayer.addChatComponentMessage(new ChatComponentText(entry.getKey() + ": " + entry.getValue() + " items"));
+
+        List<String> itemInfo = getCachedItems();
+        for (String info : itemInfo) {
+            aPlayer.addChatComponentMessage(new ChatComponentText(info));
         }
+
         return true;
     }
 
-    private Map<String, Long> getCachedItems() {
-        Map<String, Long> itemMap = new HashMap<>();
-        for (IAEItemStack item : itemCache) {
-            String itemName = item.getItem()
-                .getItemStackDisplayName(item.getItemStack());
-            long itemCount = item.getStackSize();
-            itemMap.put(itemName, itemMap.getOrDefault(itemName, 0L) + itemCount);
+    private IItemList<IAEItemStack> getParentItemCache() {
+        try {
+            Field field = MTEInfinityHatchOutputBusME.class.getDeclaredField("itemCache");
+            field.setAccessible(true);
+            return (IItemList<IAEItemStack>) field.get(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return AEApi.instance()
+                .storage()
+                .createItemList();
         }
-        return itemMap;
+    }
+
+    private @NotNull List<String> getCachedItems() {
+        List<String> itemInfo = new ArrayList<>();
+        itemInfo.add(
+            "The bus is " + ((getProxy() != null && getProxy().isActive()) ? EnumChatFormatting.GREEN + "online"
+                : EnumChatFormatting.RED + "offline") + EnumChatFormatting.RESET);
+
+        IItemList<IAEItemStack> itemCache = getParentItemCache();
+
+        if (itemCache.isEmpty()) {
+            itemInfo.add("The bus has no cached items");
+        } else {
+            itemInfo.add(String.format("The bus contains %d cached items: ", itemCache.size()));
+            int counter = 0;
+            for (IAEItemStack s : itemCache) {
+                itemInfo.add(
+                    s.getItemStack()
+                        .getDisplayName() + ": "
+                        + EnumChatFormatting.GOLD
+                        + s.getStackSize()
+                        + " items"
+                        + EnumChatFormatting.RESET);
+                if (++counter > 100) break;
+            }
+        }
+        return itemInfo;
     }
 
     @Override
