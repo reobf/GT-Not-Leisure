@@ -5,29 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5462d6df-5ab2-496d-b03a-539d6854c2fd" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEQuadrupleOutputHatch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/mixin/MTETieredMachineBlockMixin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dependencies.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/dependencies.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/GregTech.lang" beforeDir="false" afterPath="$PROJECT_DIR$/run/GregTech.lang" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TEnergyConnected$$PassThrough$class.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TEnergyConnected$$PassThrough.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TEnergyReceiver$$PassThrough$class.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TEnergyReceiver$$PassThrough.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TEnergySink$$PassThrough$class.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TEnergySink$$PassThrough.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TEnergySource$$PassThrough$class.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TEnergySource$$PassThrough.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TFluidHandler$$PassThrough$class.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TFluidHandler$$PassThrough.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TSidedEnvironment$$PassThrough$class.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TSidedEnvironment$$PassThrough.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TSidedInventory$$PassThrough$class.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TSidedInventory$$PassThrough.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TTileStorageMonitorable$$PassThrough$class.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/asm/multipart/TTileStorageMonitorable$$PassThrough.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/run/config/AppliedEnergistics2/CustomRecipes.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/AppliedEnergistics2/CustomRecipes.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/config/AppliedEnergistics2/recipes/items.csv" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/AppliedEnergistics2/recipes/items.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/config/DreamCoreMod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/DreamCoreMod.properties" afterDir="false" />
@@ -41,7 +21,6 @@
       <change beforePath="$PROJECT_DIR$/run/config/NEI/client.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/NEI/client.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/config/TinkersConstruct.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/TinkersConstruct.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/config/bartworks.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/bartworks.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/config/cofh/core/common.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/cofh/core/common.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/config/forgeChunkLoading.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/forgeChunkLoading.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/config/hodgepodge.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/hodgepodge.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/config/splash.properties" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/splash.properties" afterDir="false" />
@@ -100,6 +79,7 @@
       <change beforePath="$PROJECT_DIR$/run/logs/2024-10-30-6.log.gz" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/2024-10-30-7.log.gz" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/GregTech.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/GregTech.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/PlayerActivity.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/PlayerActivity.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/fml-client-1.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/fml-client-1.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/fml-client-2.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/fml-client-2.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/fml-client-3.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/fml-client-3.log" afterDir="false" />
@@ -209,13 +189,7 @@
       <change beforePath="$PROJECT_DIR$/run/saves/新的世界/region/r.0.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/新的世界/region/r.0.0.mca" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/saves/新的世界/session.lock" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/新的世界/session.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/saves/新的世界/stats/aeace7c8-5960-4441-be91-2594c917a1fc.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/新的世界/stats/aeace7c8-5960-4441-be91-2594c917a1fc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/Utils/StructureUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/Utils/StructureUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/GTNLItemList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/GTNLItemList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEInfinityHatchOutputBusME.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEInfinityHatchOutputBusME.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEInfinityHatchOutputME.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEInfinityHatchOutputME.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/MachineLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/MachineLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/en_US.lang" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/en_US.lang" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/zh_CN.lang" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/zh_CN.lang" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/recipe/ScriptAvaritia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/recipe/ScriptAvaritia.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLBlocks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLMachines.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLMachines.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLRecipeTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLRecipeTypes.java" afterDir="false" />
@@ -252,6 +226,9 @@
             </after_sync>
           </activation>
         </task>
+        <task path="$PROJECT_DIR$/../GTLCore">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -274,25 +251,7 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="GT-Not-Leisure" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="help" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="GT-Not-Leisure" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="rfg utilities" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="GT-Not-Leisure" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="vanilla minecraft" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="GT-Not-Leisure" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="verification" type="c8890929:TasksNode$1" />
+                <item name="modded minecraft" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -333,42 +292,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Gradle.'GT-Not-Leisure' 中的测试.executor": "Run",
-    "Gradle.0. Build and Test.executor": "Run",
-    "Gradle.1. Run Client.executor": "Debug",
-    "Gradle.5. Apply spotless.executor": "Run",
-    "Gradle.GT-Not-Leisure [clean build].executor": "Run",
-    "Gradle.GT-Not-Leisure [clean].executor": "Run",
-    "Gradle.GT-Not-Leisure [dependencies].executor": "Run",
-    "Gradle.GT-Not-Leisure [processIdeaSettings].executor": "Run",
-    "Gradle.GT-Not-Leisure [runVanillaClient].executor": "Run",
-    "Gradle.GT-Not-Leisure [spotlessCheck].executor": "Run",
-    "Gradle.加载 Gradle 依赖项.executor": "Run",
-    "JavaClassFindUsagesOptions.isSearchForTextOccurrences": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.preview.features.used": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/Github/GTNHLib-0.5.17-dev.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDK",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.48349056",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Gradle.'GT-Not-Leisure' 中的测试.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.0. Build and Test.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.1. Run Client.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.5. Apply spotless.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GT-Not-Leisure [clean build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GT-Not-Leisure [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GT-Not-Leisure [dependencies].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GT-Not-Leisure [processIdeaSettings].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GT-Not-Leisure [runVanillaClient].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GT-Not-Leisure [spotlessCheck].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.加载 Gradle 依赖项.executor&quot;: &quot;Run&quot;,
+    &quot;JavaClassFindUsagesOptions.isSearchForTextOccurrences&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Github/GT-Not-Leisure&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;项目&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.48349056&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.science.gtnl.Annotation" />
@@ -406,7 +365,7 @@
       <option name="MAIN_CLASS_NAME" value="GradleStart" />
       <module name="GT-Not-Leisure.ideVirtualMain" />
       <option name="PROGRAM_PARAMETERS" value="&quot;--username&quot; &quot;ABKQPO&quot; &quot;--version&quot; &quot;1.7.10&quot; &quot;--gameDir&quot; &quot;E:\Github\GT-Not-Leisure\run&quot; &quot;--assetsDir&quot; &quot;C:\Users\123\.gradle\caches\retro_futura_gradle\assets&quot; &quot;--assetIndex&quot; &quot;1.7.10&quot; &quot;--uuid&quot; &quot;aeace7c8-5960-4441-be91-2594c917a1fc&quot; &quot;--userProperties&quot; &quot;{}&quot; &quot;--accessToken&quot; &quot;0&quot;" />
-      <option name="VM_PARAMETERS" value="&quot;-ea:com.science.gtnl&quot; &quot;-Xmx8G&quot; &quot;-Xms8G&quot; &quot;-Dfml.ignoreInvalidMinecraftCertificates=true&quot; &quot;-Djava.library.path=E:\Github\GT-Not-Leisure\run\natives\lwjgl2;C:\Program Files\Java\jdk-21\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\Program Files\Bandizip\;D:\dotnet;D:\gradle-8.5\bin;D:\scrcpy-server-v;D:\Git\cmd;D:\nodejs\;D:\anaconda3;D:\anaconda3\Scripts;D:\anaconda3\Library\bin;D:\anaconda3\Library\mingw-w64\bin;C:\Users\123\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\123\AppData\Local\Programs\Python\Python311\;C:\Users\123\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\123\AppData\Local\Programs\Python\Python310\;C:\Users\123\AppData\Local\Microsoft\WindowsApps;C:\Users\123\AppData\Local\GitHubDesktop\bin;C:\Users\123\AppData\Roaming\npm;D:\Microsoft VS Code\bin;D:\ffmpeg-6.0-full_build\bin;;D:\IntelliJ IDEA 2024.2.3\bin;;.&quot;" />
+      <option name="VM_PARAMETERS" value="&quot;-ea:com.science.gtnl&quot; &quot;-Xmx8G&quot; &quot;-Xms8G&quot; &quot;-Dfml.ignoreInvalidMinecraftCertificates=true&quot; &quot;-Djava.library.path=E:\Github\GT-Not-Leisure\run\natives\lwjgl2;C:\Program Files\Java\jdk-21\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\Program Files\Bandizip\;D:\dotnet;D:\gradle-8.5\bin;D:\scrcpy-server-v;D:\Git\cmd;D:\nodejs\;D:\anaconda3;D:\anaconda3\Scripts;D:\anaconda3\Library\bin;D:\anaconda3\Library\mingw-w64\bin;C:\Users\123\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\123\AppData\Local\Programs\Python\Python311\;C:\Users\123\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\123\AppData\Local\Programs\Python\Python310\;C:\Users\123\AppData\Local\Microsoft\WindowsApps;C:\Users\123\AppData\Local\GitHubDesktop\bin;C:\Users\123\AppData\Roaming\npm;D:\Microsoft VS Code\bin;D:\ffmpeg-6.0-full_build\bin;;D:\IntelliJ IDEA 2024.2.3\bin;;D:\IntelliJ IDEA Community Edition 2024.2.4\bin;;.&quot;" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/run" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -915,7 +874,8 @@
       <workItem from="1730721404163" duration="39707000" />
       <workItem from="1730862503416" duration="1906000" />
       <workItem from="1730876158386" duration="19573000" />
-      <workItem from="1730905372639" duration="37852000" />
+      <workItem from="1730905372639" duration="42266000" />
+      <workItem from="1731069020108" duration="641000" />
     </task>
     <servers />
   </component>
@@ -995,7 +955,7 @@
         </breakpoint>
         <line-breakpoint type="java-field">
           <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEQuadrupleOutputHatch.java</url>
-          <line>30</line>
+          <line>31</line>
           <properties field="mCapacityPer" class="com.science.gtnl.common.machine.MTEQuadrupleOutputHatch">
             <option name="WATCH_ACCESS" value="true" />
           </properties>
@@ -1003,7 +963,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-field">
           <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEQuadrupleOutputHatch.java</url>
-          <line>29</line>
+          <line>30</line>
           <properties field="fluidTanks" class="com.science.gtnl.common.machine.MTEQuadrupleOutputHatch">
             <option name="WATCH_ACCESS" value="true" />
           </properties>
@@ -1011,7 +971,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-field">
           <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEQuadrupleOutputHatch.java</url>
-          <line>28</line>
+          <line>29</line>
           <properties field="mStoredFluid" class="com.science.gtnl.common.machine.MTEQuadrupleOutputHatch">
             <option name="WATCH_ACCESS" value="true" />
           </properties>
@@ -1025,7 +985,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEQuadrupleOutputHatch.java</url>
-          <line>75</line>
+          <line>76</line>
           <properties class="com.science.gtnl.common.machine.MTEQuadrupleOutputHatch" method="getMaxType">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -1034,7 +994,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEQuadrupleOutputHatch.java</url>
-          <line>114</line>
+          <line>115</line>
           <properties class="com.science.gtnl.common.machine.MTEQuadrupleOutputHatch" method="getCapacityPerTank">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -1043,7 +1003,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEQuadrupleOutputHatch.java</url>
-          <line>119</line>
+          <line>120</line>
           <properties class="com.science.gtnl.common.machine.MTEQuadrupleOutputHatch" method="getFluid">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
