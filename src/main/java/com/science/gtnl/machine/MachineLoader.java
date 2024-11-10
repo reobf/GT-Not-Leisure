@@ -1,15 +1,12 @@
 package com.science.gtnl.machine;
 
 import static com.science.gtnl.common.CustomItemList.*;
-import static gregtech.api.enums.MetaTileEntityIDs.QUADRUPLE_INPUT_HATCHES_EV;
 
+import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.common.machine.*;
-import gregtech.api.enums.ItemList;
-import gregtech.api.metatileentity.implementations.MTEHatchMultiInput;
 import net.minecraft.item.ItemStack;
 
 import com.science.gtnl.Utils.TextLocalization;
-import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.machine.SteamMulti.LargeSteamCircuitAssembler;
 
 import tectech.thing.metaTileEntity.hatch.MTEHatchCapacitor;
@@ -19,6 +16,7 @@ public class MachineLoader {
 
     public static ItemStack LargeSteamCircuitAssembler;
     public static ItemStack GenerationEarthEngine;
+    public static ItemStack BloodSoulSacrificialArray;
 
     public static void loadMachines() {
         hatch_AutoSterileMaintenanceHatch.set(
@@ -51,6 +49,12 @@ public class MachineLoader {
             "NameGenerationEarthEngine",
             TextLocalization.NameGenerationEarthEngine).getStackForm(1);
         GTNLItemList.GenerationEarthEngine.set(GenerationEarthEngine);
+
+        BloodSoulSacrificialArray = new BloodSoulSacrificialArray(
+            21008,
+            "NameBloodSoulSacrificialArray",
+            TextLocalization.NameBloodSoulSacrificialArray).getStackForm(1);
+        GTNLItemList.BloodSoulSacrificialArray.set(BloodSoulSacrificialArray);
 
         // ===================================================================================================
         // MetaTE init

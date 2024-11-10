@@ -7,6 +7,7 @@ import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
 
+import com.science.gtnl.common.RecipeRegister;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntityBeacon;
@@ -110,6 +111,9 @@ public class GenerationEarthEngine extends GTPPMultiBlockBase<GenerationEarthEng
         tt.addMachineType(getMachineType())
             .addInfo("Even though years have passed, it still stands firm")
             .addInfo("The product of the pinnacle of human technology!")
+            .addSeparator()
+            .addInfo(TextLocalization.StructureTooComplex)
+            .addInfo(TextLocalization.BLUE_PRINT_INFO)
             .beginStructureBlock(643, 218, 643, true)
             .addController("Front Center")
             .addInputBus("Any Casing", 1)
@@ -219,7 +223,7 @@ public class GenerationEarthEngine extends GTPPMultiBlockBase<GenerationEarthEng
 
     @Override
     public RecipeMap<?> getRecipeMap() {
-        return RecipeMaps.assemblerRecipes;
+        return RecipeRegister.RecombinationFusionReactorRecipes;
     }
 
     @Override

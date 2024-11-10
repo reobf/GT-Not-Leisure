@@ -14,7 +14,6 @@ import gregtech.api.util.GTUtility;
 public enum CustomItemList implements IItemContainer {
 
     MTEIntegratedOutputHatchME,
-    MTEHatchOutputME,
     MTEInfinityHatchOutputBusME,
     MTEInfinityHatchOutputME,
     hatch_AutoSterileMaintenanceHatch;

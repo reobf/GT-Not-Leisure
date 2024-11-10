@@ -1,5 +1,7 @@
 package com.science.gtnl.common;
 
+import gregtech.api.util.GTLanguageManager;
+import gregtech.api.util.GTUtility;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -8,10 +10,16 @@ import com.science.gtnl.Utils.Utils;
 
 import gregtech.api.util.GTLog;
 
+import java.util.Locale;
+
+import static gregtech.api.enums.GTValues.NI;
+
 public enum GTNLItemList {
 
+    TestItem0,
     TestCasing,
     TestMetaBlock01_0,
+    NewHorizonsCoil,
     LargeSteamCircuitAssembler,
     SteamAssemblyCasing,
     // endregion
@@ -47,8 +55,7 @@ public enum GTNLItemList {
     QuadrupleOutputHatchUXV,
     QuadrupleOutputHatchMAX,
 
-    Hatch_Output_ME,
-
+    BloodSoulSacrificialArray,
     GenerationEarthEngine;
 
     private boolean mHasNotBeenSet;
@@ -133,4 +140,32 @@ public enum GTNLItemList {
             mWarned = true;
         }
     }
+
+    public ItemStack getWithName(long aAmount, String aDisplayName, Object... aReplacements) {
+        ItemStack rStack = get(1, aReplacements);
+        if (GTUtility.isStackInvalid(rStack)) return NI;
+
+        // CamelCase alphanumeric words from aDisplayName
+        StringBuilder tCamelCasedDisplayNameBuilder = new StringBuilder();
+        final String[] tDisplayNameWords = aDisplayName.split("\\W");
+        for (String tWord : tDisplayNameWords) {
+            if (!tWord.isEmpty()) tCamelCasedDisplayNameBuilder.append(
+                tWord.substring(0, 1)
+                    .toUpperCase(Locale.US));
+            if (tWord.length() > 1) tCamelCasedDisplayNameBuilder.append(
+                tWord.substring(1)
+                    .toLowerCase(Locale.US));
+        }
+        if (tCamelCasedDisplayNameBuilder.length() == 0) {
+            // CamelCased DisplayName is empty, so use hash of aDisplayName
+            tCamelCasedDisplayNameBuilder.append(((Long) (long) aDisplayName.hashCode()));
+        }
+
+        // Construct a translation key from UnlocalizedName and CamelCased DisplayName
+        final String tKey = rStack.getUnlocalizedName() + ".with." + tCamelCasedDisplayNameBuilder + ".name";
+
+        rStack.setStackDisplayName(GTLanguageManager.addStringLocalization(tKey, aDisplayName));
+        return GTUtility.copyAmount(aAmount, rStack);
+    }
+
 }

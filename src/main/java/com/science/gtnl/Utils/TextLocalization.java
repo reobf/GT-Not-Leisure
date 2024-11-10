@@ -34,27 +34,7 @@ public class TextLocalization {
     public static final String mNoTileEntityToolTip = GTLanguageManager
         .addStringLocalization("gt.notileentityinthisblock", "This is NOT a TileEntity!");
 
-    public static final String name_Nxer = "" + EnumChatFormatting.RED
-        + EnumChatFormatting.BOLD
-        + EnumChatFormatting.ITALIC
-        + EnumChatFormatting.UNDERLINE
-        + "N"
-        + EnumChatFormatting.GREEN
-        + EnumChatFormatting.BOLD
-        + EnumChatFormatting.ITALIC
-        + EnumChatFormatting.UNDERLINE
-        + "x"
-        + EnumChatFormatting.AQUA
-        + EnumChatFormatting.BOLD
-        + EnumChatFormatting.ITALIC
-        + EnumChatFormatting.UNDERLINE
-        + "e"
-        + EnumChatFormatting.BLUE
-        + EnumChatFormatting.BOLD
-        + EnumChatFormatting.ITALIC
-        + EnumChatFormatting.UNDERLINE
-        + "r";
-
+    public static final String StructureTooComplex = texter("The structure is too complex!", "StructureTooComplex");
     public static final String textCasing = texter("Casing", "textCasing");
     public static final String textUseBlueprint = texter(
         "Use " + EnumChatFormatting.BLUE
@@ -148,4 +128,11 @@ public class TextLocalization {
     public static final String GenerationEarthEngineRecipeType = texter(
         "Recombination Fusion Reactor",
         "GenerationEarthEngineRecipeType");
+
+    public static final String NameBloodSoulSacrificialArray = texter(
+        "Blood SoulSacrificial Array",
+        "NameBloodSoulSacrificialArray");
+    public static final String BloodSoulSacrificialArrayRecipeType = texter(
+        "Blood Soul Trading Recipes / Blood Demon Injection",
+        "BloodSoulSacrificialArrayRecipeType");
 }

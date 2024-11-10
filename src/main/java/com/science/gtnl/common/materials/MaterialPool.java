@@ -514,7 +514,7 @@ public class MaterialPool implements Runnable {
         TextureSet.SET_SHINY);
 
     public static final Werkstoff Germaniumtungstennitride = new Werkstoff(
-        new short[] { 148, 182, 189 },
+        new short[] { 111, 11, 160 },
         "Germaniumtungstennitride",
         subscriptNumbers("Ge3W3N10"),
         new Werkstoff.Stats().setToxic(true),

@@ -76,11 +76,6 @@ public class CustomRecipeBuilder {
     @Nullable
     protected IRecipeMetadataStorage metadataStorage;
 
-    /**
-     * 设置配方的元数据。它可以用于配方发射器执行特殊操作，或存储在已构建的配方中并用于实际的配方处理。
-     * <p>
-     * {@link GTRecipeConstants} 有一系列的元数据键。你也可以自己创建一个。
-     */
     public <T> CustomRecipeBuilder metadata(RecipeMetadataKey<T> key, T value) {
         if (skip) return this;
         if (metadataStorage == null) {
