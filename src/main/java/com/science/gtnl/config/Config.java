@@ -381,7 +381,7 @@ public class Config {
     // endregion
 
     public static boolean activateMegaSpaceStation = false;
-    public static boolean activateCombatStats = true;
+    public static boolean activateCombatStats = false;
     public static boolean Enable_LargeCanner = true;
     public static boolean Enable_LightningSpire = true;
 

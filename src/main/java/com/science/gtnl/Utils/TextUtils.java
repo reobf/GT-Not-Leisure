@@ -11,6 +11,7 @@ public class TextUtils {
     public static final String SCIENCE_NOT_LEISURE = TextUtils.full_color("Science Not Leisure");
     public static final String STERILE = SCIENCE_NOT_LEISURE + EnumChatFormatting.DARK_PURPLE + ": Sterile";
     public static final String AE = SCIENCE_NOT_LEISURE + EnumChatFormatting.BLUE + ": Applied Energistics 2";
+    public static final String SRP = SCIENCE_NOT_LEISURE + EnumChatFormatting.BLUE + ": Structural Reconstruction Plan";
 
     public static String formatting(String input, ChatFormatting[] colours, double delay) {
         StringBuilder sb = new StringBuilder(input.length() * 3);

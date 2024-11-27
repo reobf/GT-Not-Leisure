@@ -5,32 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5462d6df-5ab2-496d-b03a-539d6854c2fd" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/CustomBlockBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/item/items/BasicItems.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/item/items/ItemAdder01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/item/items/ItemAdder_Basic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/BloodSoulSacrificialArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/recipe/ReFusionReactorRecipes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/block/Render/BlockStar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/block/Render/RealArtificialStarRender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/block/TileStar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/loader/LazyStaticsInitLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/DSP/DSP_Values.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/RealArtificialStar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/misc/CheckRecipeResults/CheckRecipeResults.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/misc/CheckRecipeResults/SimpleResultWithText.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/misc/MachineShutDownReasons/SimpleShutDownReasons.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/misc/OverclockType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/ClientProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/ClientProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/CommonProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/CommonProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/ScienceNotLeisure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/ScienceNotLeisure.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/Utils/TextLocalization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/Utils/TextLocalization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/CustomItemList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/CustomItemList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/Utils/TextUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/Utils/TextUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/GTNLItemList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/GTNLItemList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/RecipeMapBackend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/GTNL_RecipeMapBackend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/RecipeRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/RecipeRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/block/BasicBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/block/BasicBlocks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/block/BlockRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/block/BlockRegister.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/item/ItemRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/item/ItemRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/materials/MaterialPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/materials/MaterialPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/item/items/BasicItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/item/items/BasicItems.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/config/Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/loader/MaterialLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/loader/MaterialLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/loader/RecipeLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/loader/RecipeLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/GenerationEarthEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/GenerationEarthEngine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/MachineLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/MachineLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/recipe/CustomRecipeBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/recipe/CustomRecipeBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/recipe/SomeMachineTileEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/en_US.lang" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/en_US.lang" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/SteamMulti/LargeSteamCircuitAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/SteamMulti/LargeSteamCircuitAssembler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/mixin/MTETieredMachineBlockMixin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/mixin/MTETieredMachineBlockMixin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/zh_CN.lang" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/zh_CN.lang" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/multiblock/1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/multiblock/2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/multiblock/整理多方块.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/multiblock/整理多方块.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/multiblock/移除每行前字符.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/multiblock/移除每行前字符.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLBlocks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLMachines.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLMachines.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLRecipeTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLRecipeTypes.java" afterDir="false" />
@@ -91,8 +94,7 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="GT-Not-Leisure" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="verification" type="c8890929:TasksNode$1" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
               </path>
             </expand>
             <select />
@@ -133,43 +135,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Gradle.'GT-Not-Leisure' 中的测试.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.0. Build and Test.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.1. Run Client.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.5. Apply spotless.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GT-Not-Leisure [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GT-Not-Leisure [clean build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GT-Not-Leisure [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GT-Not-Leisure [dependencies].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GT-Not-Leisure [processIdeaSettings].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GT-Not-Leisure [runVanillaClient].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GT-Not-Leisure [spotlessCheck].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.加载 Gradle 依赖项.executor&quot;: &quot;Run&quot;,
-    &quot;JavaClassFindUsagesOptions.isSearchForTextOccurrences&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Github/123Technology&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.48349056&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Gradle.'GT-Not-Leisure' 中的测试.executor": "Run",
+    "Gradle.0. Build and Test.executor": "Run",
+    "Gradle.1. Run Client.executor": "Run",
+    "Gradle.5. Apply spotless.executor": "Run",
+    "Gradle.GT-Not-Leisure [build].executor": "Run",
+    "Gradle.GT-Not-Leisure [clean build].executor": "Run",
+    "Gradle.GT-Not-Leisure [clean].executor": "Run",
+    "Gradle.GT-Not-Leisure [dependencies].executor": "Run",
+    "Gradle.GT-Not-Leisure [processIdeaSettings].executor": "Run",
+    "Gradle.GT-Not-Leisure [runVanillaClient].executor": "Run",
+    "Gradle.GT-Not-Leisure [spotlessCheck].executor": "Run",
+    "Gradle.加载 Gradle 依赖项.executor": "Run",
+    "JavaClassFindUsagesOptions.isSearchForTextOccurrences": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.preview.features.used": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/Github/123Technology",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.48349056",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.science.gtnl.Annotation" />
@@ -191,11 +193,11 @@
       <recent name="com.science.gtnl.common.machine" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.science.gtnl.common.block.Render" />
+      <recent name="com.science.gtnl.common.block" />
+      <recent name="com.science.gtnl.machine.DSP" />
+      <recent name="com.science.gtnl.machine" />
       <recent name="com.science.gtnl.common.item.items" />
-      <recent name="com.science.gtnl.common" />
-      <recent name="com.science.gtnl.common.machine" />
-      <recent name="com.science.gtnl.Utils" />
-      <recent name="com.science.gtnl.machine.multiMachineClasses" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -208,7 +210,7 @@
       <option name="MAIN_CLASS_NAME" value="GradleStart" />
       <module name="GT-Not-Leisure.ideVirtualMain" />
       <option name="PROGRAM_PARAMETERS" value="&quot;--username&quot; &quot;ABKQPO&quot; &quot;--version&quot; &quot;1.7.10&quot; &quot;--gameDir&quot; &quot;E:\Github\GT-Not-Leisure\run&quot; &quot;--assetsDir&quot; &quot;C:\Users\123\.gradle\caches\retro_futura_gradle\assets&quot; &quot;--assetIndex&quot; &quot;1.7.10&quot; &quot;--uuid&quot; &quot;aeace7c8-5960-4441-be91-2594c917a1fc&quot; &quot;--userProperties&quot; &quot;{}&quot; &quot;--accessToken&quot; &quot;0&quot;" />
-      <option name="VM_PARAMETERS" value="&quot;-ea:com.science.gtnl&quot; &quot;-Xmx8G&quot; &quot;-Xms8G&quot; &quot;-Dfml.ignoreInvalidMinecraftCertificates=true&quot; &quot;-Djava.library.path=E:\Github\GT-Not-Leisure\run\natives\lwjgl2;C:\Program Files\Java\jdk-21\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\Program Files\Bandizip\;D:\dotnet;D:\gradle-8.5\bin;D:\scrcpy-server-v;D:\Git\cmd;D:\nodejs\;D:\anaconda3;D:\anaconda3\Scripts;D:\anaconda3\Library\bin;D:\anaconda3\Library\mingw-w64\bin;C:\Users\123\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\123\AppData\Local\Programs\Python\Python311\;C:\Users\123\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\123\AppData\Local\Programs\Python\Python310\;C:\Users\123\AppData\Local\Microsoft\WindowsApps;C:\Users\123\AppData\Local\GitHubDesktop\bin;C:\Users\123\AppData\Roaming\npm;D:\Microsoft VS Code\bin;D:\ffmpeg-6.0-full_build\bin;;D:\IntelliJ IDEA 2024.2.3\bin;;D:\IntelliJ IDEA Community Edition 2024.2.4\bin;;.&quot;" />
+      <option name="VM_PARAMETERS" value="&quot;-ea:com.science.gtnl&quot; &quot;-Xmx8G&quot; &quot;-Xms8G&quot; &quot;-Dfml.ignoreInvalidMinecraftCertificates=true&quot; &quot;-Djava.library.path=E:\Github\GT-Not-Leisure\run\natives\lwjgl2;C:\Program Files\Java\jdk-21\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\Program Files\Bandizip\;D:\dotnet;D:\gradle-8.5\bin;D:\scrcpy-server-v;D:\Git\cmd;D:\nodejs\;D:\anaconda3;D:\anaconda3\Scripts;D:\anaconda3\Library\bin;D:\anaconda3\Library\mingw-w64\bin;D:\ffmpeg\bin;C:\Users\123\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\123\AppData\Local\Programs\Python\Python311\;C:\Users\123\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\123\AppData\Local\Programs\Python\Python310\;C:\Users\123\AppData\Local\Microsoft\WindowsApps;C:\Users\123\AppData\Local\GitHubDesktop\bin;C:\Users\123\AppData\Roaming\npm;D:\Microsoft VS Code\bin;D:\ffmpeg\bin;D:\IntelliJ IDEA 2024.2.3\bin;;D:\IntelliJ IDEA Community Edition 2024.2.4\bin;;C:\Users\123\.dotnet\tools;.&quot;" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/run" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -844,7 +846,7 @@
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEQuadrupleOutputHatch.java</url>
           <line>120</line>
-          <properties class="com.science.gtnl.common.machine.MTEQuadrupleOutputHatch">
+          <properties class="com.science.gtnl.common.machine.MTEQuadrupleOutputHatch" method="getFluid">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -852,7 +854,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/MachineLoader.java</url>
-          <line>67</line>
+          <line>74</line>
           <properties class="com.science.gtnl.machine.MachineLoader" method="registerQuadrupleOutputHatch">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

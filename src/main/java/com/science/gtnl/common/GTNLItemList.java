@@ -1,22 +1,22 @@
 package com.science.gtnl.common;
 
-import gregtech.api.util.GTLanguageManager;
-import gregtech.api.util.GTUtility;
+import static gregtech.api.enums.GTValues.NI;
+
+import java.util.Locale;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 import com.science.gtnl.Utils.Utils;
 
+import gregtech.api.util.GTLanguageManager;
 import gregtech.api.util.GTLog;
-
-import java.util.Locale;
-
-import static gregtech.api.enums.GTValues.NI;
+import gregtech.api.util.GTUtility;
 
 public enum GTNLItemList {
 
-    TestItem0,
+    TrollFace,
     TestCasing,
     TestMetaBlock01_0,
     NewHorizonsCoil,
@@ -55,7 +55,13 @@ public enum GTNLItemList {
     QuadrupleOutputHatchUXV,
     QuadrupleOutputHatchMAX,
 
+    Antimatter,
+    AntimatterFuelRod,
+    StrangeAnnihilationFuelRod,
+    StellarConstructionFrameMaterial,
+
     BloodSoulSacrificialArray,
+    RealArtificialStar,
     GenerationEarthEngine;
 
     private boolean mHasNotBeenSet;

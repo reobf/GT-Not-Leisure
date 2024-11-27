@@ -12,12 +12,6 @@ import static gregtech.api.enums.HatchElement.OutputBus;
 import java.util.Arrays;
 import java.util.Collection;
 
-import com.science.gtnl.Utils.TextLocalization;
-import com.science.gtnl.Utils.TextUtils;
-import com.science.gtnl.common.RecipeRegister;
-import com.science.gtnl.machine.multiMachineClasses.MultiMachineBase;
-import gregtech.api.objects.GTRenderedTexture;
-import gregtech.common.blocks.BlockCasings1;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -29,16 +23,22 @@ import org.jetbrains.annotations.NotNull;
 import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
+import com.science.gtnl.Utils.TextLocalization;
+import com.science.gtnl.Utils.TextUtils;
+import com.science.gtnl.common.RecipeRegister;
+import com.science.gtnl.machine.multiMachineClasses.MultiMachineBase;
 
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.Textures;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
+import gregtech.api.objects.GTRenderedTexture;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.HatchElementBuilder;
 import gregtech.api.util.MultiblockTooltipBuilder;
+import gregtech.common.blocks.BlockCasings1;
 import gregtech.common.blocks.BlockCasings8;
 import vazkii.botania.common.block.ModBlocks;
 
@@ -88,7 +88,9 @@ public class BloodSoulSacrificialArray extends MultiMachineBase<BloodSoulSacrifi
     @Override
     public final void onScrewdriverRightClick(ForgeDirection side, EntityPlayer aPlayer, float aX, float aY, float aZ) {
         this.mode = (byte) ((this.mode + 1) % 2);
-        GTUtility.sendChatToPlayer(aPlayer, StatCollector.translateToLocal("BloodSoulSacrificialArray.modeMsg." + this.mode));
+        GTUtility.sendChatToPlayer(
+            aPlayer,
+            StatCollector.translateToLocal("BloodSoulSacrificialArray.modeMsg." + this.mode));
 
     }
 
@@ -215,7 +217,7 @@ public class BloodSoulSacrificialArray extends MultiMachineBase<BloodSoulSacrifi
 
     @Override
     public ITexture[] getTexture(final IGregTechTileEntity aBaseMetaTileEntity, final ForgeDirection side,
-                                 final ForgeDirection facing, final int aColorIndex, final boolean aActive, final boolean aRedstone) {
+        final ForgeDirection facing, final int aColorIndex, final boolean aActive, final boolean aRedstone) {
         if (side == facing) {
             return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()),
                 aActive ? BSSAgetFrontOverlayActive() : BSSAgetFrontOverlay() };

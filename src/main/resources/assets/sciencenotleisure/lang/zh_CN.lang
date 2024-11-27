@@ -3,6 +3,7 @@ itemGroup.GTNoteLeisure=GT不再业余
 MetaBlockCasing01.0.name=测试机械方块
 MetaBlockCasing01.1.name=蒸汽装配机械方块
 MetaBlock01.0.name=测试方块
+MetaItem01.0.name=愚人脸
 
 tile.Stargate.0.name=压缩星门
 tile.Stargate.1.name=压缩星门-一重
@@ -30,14 +31,14 @@ tile.Stargate_Coil_Compressed.9.name=压缩星门线圈-九重
 
 textFrontCenter=正面中央
 textAnyCasing=任意机械方块
-textSteamInputHatch=蒸汽仓
 textTier=等级
 textBasic=基础 
 textHighPressure=高压 
 textBronzePlatedBricks= 镀铜砖块
 textBronzePipeCasing= 青铜管道方块
-textSteelPipeCasing= 钢管道方块
 textSolidSteelMachineCasing= 脱氧钢机械方块
+textSteamInputHatch= 蒸汽输入仓
+textSteelPipeCasing= 钢管道方块
 textSteamAssemblyCasing= 蒸汽装配机械方块
 
 NameLargeSteamCircuitAssembler=大型蒸汽电路组装机
@@ -49,6 +50,8 @@ Tooltip_LargeSteamCircuitAssembler_0=原始科技！
 
 NameGenerationEarthEngine=初代目行星发动机
 gtnl.recipe.RecombinationFusionReactorRecipes=重聚变反应堆
+Tooltip_GenerationEarthEngine_00=尽管多年过去了，它仍然屹立不倒
+Tooltip_GenerationEarthEngine_01=人类技术巅峰之作！
 NameBloodSoulSacrificialArray=血魂祭祀阵
 BloodSoulSacrificialArray.modeMsg.0=血魂交易
 BloodSoulSacrificialArray.modeMsg.1=血魔注入
@@ -56,7 +59,8 @@ gtnl.recipe.BloodSoulTradingRecipes=血魂交易
 gtnl.recipe.BloodDemonInjectionRecipes=血魔注入
 BloodSoulSacrificialArrayRecipeType=血魂交易 / 血魔注入
 
-tooltips.TestItem0.line1=A test item, so cute.
+tooltips.TrollFace=Never Gonna Give You Up~
+ReFusionReactorRecipes.1=可望不可及，不是么？
 
 gtnl.sterile.maintenance=自动无菌维护仓
 gt.blockmachines.gtnl.sterilemaintenance.desc.0=用于自动维护无菌环境
@@ -91,6 +95,52 @@ BLUE_PRINT_INFO=请参考§9Structure§1Lib§7全息投影，构建主体结构
 gtnl.AutoConfigurationMaintenanceHatch.UI.text.01=处理耗时
 gtnl.autoconfiguration.maintenance=可配置自动维护仓
 Waila.ConfigurationBaseSpeedControllerBase.1=处理耗时
+
+RealArtificialStar.getInfoData.00=连续运行奖励
+RealArtificialStar.getInfoData.01=发电倍率
+RealArtificialStar.getInfoData.02=空间场等级
+RealArtificialStar.getInfoData.03=时间场等级
+RealArtificialStar.getInfoData.04=稳定场等级
+RealArtificialStar.getInfoData.05=回收原料几率
+NameRealArtificialStar=真·湮灭发电机
+Tooltip_RealArtificialStar_Controller=真·湮灭发电机的控制器方块
+ArtificialStar.enableRender.0=关闭特效渲染
+ArtificialStar.enableRender.1=开启特效渲染
+gtnl.recipe.ArtificialStarGeneratingRecipes=戴森球计划: 湮灭发电机
+Tooltip_RealArtificialStar_00=§d§l只是替换了TST的结构，其余功能一致
+Tooltip_RealArtificialStar_01=§d§l你只需要让正反质子束从两端静静地穿
+Tooltip_RealArtificialStar_02=§d§l 过磁场进入约束球就可以了, 轻松愉快!
+Tooltip_RealArtificialStar_03=它简单的外形归功于理论的优雅.
+Tooltip_RealArtificialStar_04=实际产生能量受三种等级方块影响.
+Tooltip_RealArtificialStar_05=同时, 更高等级会提高回收原料的概率.
+Tooltip_RealArtificialStar_06=保持连续运行也会提高能量输出.
+Tooltip_RealArtificialStar_07=只允许且必须安装一个输入总线.
+Tooltip_RealArtificialStar_08=能量将直接输出到无线EU网络.
+Tooltip_RealArtificialStar_09=使用螺丝刀开启/关闭动画特效.
+Tooltip_RealArtificialStar_02_01=输出系数 = 时间场等级^0.25 * 空间场等级^0.25 * 1.588186^(稳定场等级 - 2)
+Tooltip_RealArtificialStar_02_02=实际输出EU = 配方数值 * 输出系数 * 连续运行奖励系数
+Tooltip_RealArtificialStar_02_03=原料回收概率 = 时间场等级 * 空间场等级 * 稳定场等级 / 1000
+Tooltip_RealArtificialStar_02_04=输入的燃料将会一次性消耗掉, 然后运行 6.4s (默认), 并输出对应数值的 EU.
+Tooltip_RealArtificialStar_02_05=在连续运行时, 每次运行连续运行奖励系数提高 1%% .
+Tooltip_RealArtificialStar_02_06=连续运行奖励系数最大值 150%% , 中断后降到 100%% .
+Tooltip_RealArtificialStarInfo_01=17604x 硅岩合金机械方块
+Tooltip_RealArtificialStarInfo_02=11539x 极端密度空间弯曲机械方块
+Tooltip_RealArtificialStarInfo_03=2839x 屏蔽加速器机械方块
+Tooltip_RealArtificialStarInfo_04=1336x 戴森球能量接收基座机械方块
+Tooltip_RealArtificialStarInfo_05=1021x 压缩聚变线圈方块MK-II
+Tooltip_RealArtificialStarInfo_06=977x 维度桥接方块或压缩时空场发生器
+Tooltip_RealArtificialStarInfo_07=628x 戴森球控制中心基座机械方块
+Tooltip_RealArtificialStarInfo_08=555x 时空扭曲机械方块或稳定立场发生器
+Tooltip_RealArtificialStarInfo_09=253x 量子玻璃
+Tooltip_RealArtificialStarInfo_10=213x 戴森球控制中心环形机械方块
+Tooltip_RealArtificialStarInfo_11=152x 终极遏制场发生器或时间膨胀场发生器
+Tooltip_RealArtificialStarInfo_12=26x 维度注入机械方块
+Tooltip_RealArtificialStarInfo_13=输入总线：任意维度注入机械方块
+Tooltip_RealArtificialStarInfo_14=输出总线：任意维度注入机械方块
+tile.RealArtificialStarRender.name=真·湮灭发电机渲染器
+Waila.RealArtificialStar.1=当前发电 : 
+NEI.RealAntimatterFuelRodGeneratingRecipe.01=有概率回收部分材料. 概率受模块等级影响.
+NEI.RealArtificialStarGeneratingRecipes.specialValue.pre=产生 : 
 
 item.testitem.name=测试物品
 

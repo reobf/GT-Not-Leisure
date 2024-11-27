@@ -37,7 +37,7 @@ public class MTEInfinityHatchOutputME extends MTEHatchOutputME {
 
     public MTEInfinityHatchOutputME(int aID, String aName, String aNameRegional, int aTier) {
         super(aID, aName, aNameRegional);
-        //此处需要使用别的方法覆盖MTEHatchOutputME类的mDescriptionArray或改写MTETieredMachineBlock.mDescriptionArray
+        // 此处需要使用别的方法覆盖MTEHatchOutputME类的mDescriptionArray或改写MTETieredMachineBlock.mDescriptionArray
         this.mDescriptionArray = new String[] { TextUtils.AE,
             translateToLocal("gt.blockmachines.gtnl.InfinityOutputME.desc.0"),
             translateToLocal("gt.blockmachines.gtnl.InfinityOutputME.desc.1"),

@@ -1,13 +1,14 @@
 package com.science.gtnl.machine;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
+import static com.science.gtnl.Utils.TextLocalization.Tooltip_GenerationEarthEngine_00;
+import static com.science.gtnl.Utils.TextLocalization.Tooltip_GenerationEarthEngine_01;
 import static goodgenerator.loader.Loaders.compactFusionCoil;
 import static goodgenerator.loader.Loaders.magneticFluxCasing;
 import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
 
-import com.science.gtnl.common.RecipeRegister;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntityBeacon;
@@ -22,6 +23,7 @@ import com.gtnewhorizons.gtnhintergalactic.block.IGBlocks;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.TextLocalization;
 import com.science.gtnl.Utils.TextUtils;
+import com.science.gtnl.common.RecipeRegister;
 
 import crazypants.enderio.EnderIO;
 import gregtech.api.GregTechAPI;
@@ -34,7 +36,6 @@ import gregtech.api.logic.ProcessingLogic;
 import gregtech.api.metatileentity.implementations.MTEHatch;
 import gregtech.api.objects.GTRenderedTexture;
 import gregtech.api.recipe.RecipeMap;
-import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
@@ -109,8 +110,8 @@ public class GenerationEarthEngine extends GTPPMultiBlockBase<GenerationEarthEng
     protected MultiblockTooltipBuilder createTooltip() {
         MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
         tt.addMachineType(getMachineType())
-            .addInfo("Even though years have passed, it still stands firm")
-            .addInfo("The product of the pinnacle of human technology!")
+            .addInfo(Tooltip_GenerationEarthEngine_00)
+            .addInfo(Tooltip_GenerationEarthEngine_01)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)

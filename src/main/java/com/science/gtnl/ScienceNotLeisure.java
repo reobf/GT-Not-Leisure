@@ -4,14 +4,13 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.science.gtnl.Utils.TextHandler;
-import com.science.gtnl.common.item.ItemRegister;
-import com.science.gtnl.config.Config;
 import com.science.gtnl.devTools.PathHelper;
+import com.science.gtnl.loader.LazyStaticsInitLoader;
+import com.science.gtnl.loader.MachineLoader;
 import com.science.gtnl.loader.MaterialLoader;
 import com.science.gtnl.loader.OreDictLoader;
 import com.science.gtnl.loader.RecipeLoader;
 import com.science.gtnl.loader.ScriptLoader;
-import com.science.gtnl.machine.MachineLoader;
 import com.science.gtnl.machine.machineclass.IMCForNEI;
 import com.science.gtnl.recipe.GTNLRecipeRemover;
 
@@ -86,6 +85,7 @@ public class ScienceNotLeisure {
     // load "Do your mod setup. Build whatever data structures you care about. Register recipes." (Remove if not needed)
     public void init(FMLInitializationEvent event) {
         proxy.init(event);
+        new LazyStaticsInitLoader().initStaticsOnInit();
         MachineLoader.loadMachines();
         MachineLoader.run();
         IMCForNEI.IMCSender();
@@ -105,6 +105,8 @@ public class ScienceNotLeisure {
         GTNLRecipeRemover.run();
         OreDictLoader.loadOreDictionary();
         RecipeLoader.loadRecipes();
+
+        new LazyStaticsInitLoader().initStaticsOnCompleteInit();
 
         TextHandler.serializeLangMap(isInDevMode);
     }
@@ -127,9 +129,6 @@ public class ScienceNotLeisure {
         TextHandler.initLangMap(isInDevMode);
 
         proxy.preInit(event);
-        MaterialLoader.load();// Load MaterialPool
-        if (Config.activateCombatStats) {
-            ItemRegister.registry();
-        }
+        MaterialLoader.load();
     }
 }

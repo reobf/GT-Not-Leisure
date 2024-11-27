@@ -1,13 +1,16 @@
 package com.science.gtnl.recipe;
 
-import com.science.gtnl.common.RecipeRegister;
-import gregtech.api.enums.GTValues;
-import gregtech.api.enums.ItemList;
-import gregtech.api.recipe.RecipeMap;
-import gregtech.api.util.GTUtility;
+import static com.science.gtnl.Utils.TextHandler.texter;
+import static com.science.gtnl.common.GTNLItemList.TrollFace;
+import static gregtech.api.util.GTModHandler.getModItem;
+
 import net.minecraftforge.fluids.FluidRegistry;
 
-import static gregtech.api.util.GTModHandler.getModItem;
+import com.science.gtnl.common.RecipeRegister;
+
+import gregtech.api.enums.GTValues;
+import gregtech.api.recipe.RecipeMap;
+import gregtech.api.util.GTUtility;
 
 public class ReFusionReactorRecipes implements IRecipePool {
 
@@ -16,8 +19,10 @@ public class ReFusionReactorRecipes implements IRecipePool {
     @Override
     public void loadRecipes() {
         GTValues.RA.stdBuilder()
-            .itemInputsUnsafe(GTUtility.copyAmountUnsafe(2147483647, getModItem("gregtech", "gt.metaitem.01", 1, 2299)))
-            .itemOutputs(ItemList.Display_ITS_FREE.getWithName(1L, "可望不可及，不是么？"))
+            .itemInputsUnsafe(GTUtility.copyAmountUnsafe(1, getModItem("gregtech", "gt.metaitem.01", 1, 2299)))
+            .itemOutputs(
+                TrollFace.get(1)
+                    .setStackDisplayName(texter("It's just out of reach, isn't it?", "ReFusionReactorRecipes.1")))
             .fluidOutputs(
                 FluidRegistry.getFluidStack("molten.magmatter", 2147483647),
                 FluidRegistry.getFluidStack("molten.magnetohydrodynamicallyconstrainedstarmatter", 2147483647),
@@ -35,8 +40,8 @@ public class ReFusionReactorRecipes implements IRecipePool {
                 FluidRegistry.getFluidStack("antimatter", 2147483647))
             .outputChances(1)
             .noOptimize()
-            .duration(631139040)
-            .eut(2147483647)
+            .duration(1)
+            .eut(1)
             .addTo(RFP);
     }
 }

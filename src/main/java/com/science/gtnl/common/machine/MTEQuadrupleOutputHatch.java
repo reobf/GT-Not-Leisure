@@ -1,18 +1,7 @@
 package com.science.gtnl.common.machine;
 
-import com.cleanroommc.modularui.utils.fluid.FluidStackTank;
-import com.gtnewhorizons.modularui.api.ModularUITextures;
-import com.gtnewhorizons.modularui.api.math.Pos2d;
-import com.gtnewhorizons.modularui.api.screen.ModularWindow;
-import com.gtnewhorizons.modularui.api.screen.UIBuildContext;
-import com.gtnewhorizons.modularui.common.widget.FluidSlotWidget;
-import gregtech.api.interfaces.ITexture;
-import gregtech.api.interfaces.modularui.IAddUIWidgets;
-import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
-import gregtech.api.metatileentity.MetaTileEntity;
-import gregtech.api.metatileentity.implementations.MTEHatchOutput;
-import gregtech.api.render.TextureFactory;
-import gregtech.api.util.GTUtility;
+import static gregtech.api.enums.Textures.BlockIcons.OVERLAY_INPUT_HATCH_2x2;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -22,9 +11,22 @@ import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.IFluidContainerItem;
 
-import static gregtech.api.enums.Textures.BlockIcons.OVERLAY_INPUT_HATCH_2x2;
+import com.cleanroommc.modularui.utils.fluid.FluidStackTank;
+import com.gtnewhorizons.modularui.api.ModularUITextures;
+import com.gtnewhorizons.modularui.api.math.Pos2d;
+import com.gtnewhorizons.modularui.api.screen.ModularWindow;
+import com.gtnewhorizons.modularui.api.screen.UIBuildContext;
+import com.gtnewhorizons.modularui.common.widget.FluidSlotWidget;
 
-//此处无法判断同一仓室下多个槽位，导致只能输出一种流体并填满第一个槽位，推测可能无法检查其他槽位
+import gregtech.api.interfaces.ITexture;
+import gregtech.api.interfaces.modularui.IAddUIWidgets;
+import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
+import gregtech.api.metatileentity.MetaTileEntity;
+import gregtech.api.metatileentity.implementations.MTEHatchOutput;
+import gregtech.api.render.TextureFactory;
+import gregtech.api.util.GTUtility;
+
+// 此处无法判断同一仓室下多个槽位，导致只能输出一种流体并填满第一个槽位，推测可能无法检查其他槽位
 public class MTEQuadrupleOutputHatch extends MTEHatchOutput implements IAddUIWidgets {
 
     private FluidStack[] mStoredFluid;
@@ -51,7 +53,8 @@ public class MTEQuadrupleOutputHatch extends MTEHatchOutput implements IAddUIWid
         initializeFluidTanks(4);
     }
 
-    public MTEQuadrupleOutputHatch(String aName, int aSlot, int aTier, String[] aDescription, ITexture[][][] aTextures) {
+    public MTEQuadrupleOutputHatch(String aName, int aSlot, int aTier, String[] aDescription,
+        ITexture[][][] aTextures) {
         super(aName, 4, aTier, aDescription, aTextures);
         mStoredFluid = new FluidStack[4];
         fluidTanks = new FluidStackTank[4];
@@ -127,7 +130,8 @@ public class MTEQuadrupleOutputHatch extends MTEHatchOutput implements IAddUIWid
 
     @Override
     public int fill(FluidStack aFluid, boolean doFill) {
-        if (aFluid == null || aFluid.getFluid().getID() <= 0 || aFluid.amount <= 0 || !canTankBeFilled() || !isFluidInputAllowed(aFluid)) return 0;
+        if (aFluid == null || aFluid.getFluid()
+            .getID() <= 0 || aFluid.amount <= 0 || !canTankBeFilled() || !isFluidInputAllowed(aFluid)) return 0;
 
         int totalFilled = 0;
 
@@ -190,7 +194,8 @@ public class MTEQuadrupleOutputHatch extends MTEHatchOutput implements IAddUIWid
 
     @Override
     public void onScrewdriverRightClick(ForgeDirection side, EntityPlayer aPlayer, float aX, float aY, float aZ) {
-        if (!getBaseMetaTileEntity().getCoverInfoAtSide(side).isGUIClickable()) return;
+        if (!getBaseMetaTileEntity().getCoverInfoAtSide(side)
+            .isGUIClickable()) return;
         if (aPlayer.isSneaking()) {
             mMode = (byte) ((mMode + 4) % 5);
         } else {
@@ -268,7 +273,8 @@ public class MTEQuadrupleOutputHatch extends MTEHatchOutput implements IAddUIWid
     @Override
     public void addUIWidgets(ModularWindow.Builder builder, UIBuildContext buildContext) {
         final int SLOT_NUMBER = 4;
-        final Pos2d[] positions = new Pos2d[] { new Pos2d(70, 25), new Pos2d(88, 25), new Pos2d(70, 43), new Pos2d(88, 43), };
+        final Pos2d[] positions = new Pos2d[] { new Pos2d(70, 25), new Pos2d(88, 25), new Pos2d(70, 43),
+            new Pos2d(88, 43), };
 
         for (int i = 0; i < SLOT_NUMBER; i++) {
             builder.widget(
@@ -320,7 +326,8 @@ public class MTEQuadrupleOutputHatch extends MTEHatchOutput implements IAddUIWid
     }
 
     public boolean tryToLockHatch(EntityPlayer aPlayer, ForgeDirection side) {
-        if (!getBaseMetaTileEntity().getCoverInfoAtSide(side).isGUIClickable()) return false;
+        if (!getBaseMetaTileEntity().getCoverInfoAtSide(side)
+            .isGUIClickable()) return false;
         if (lockedFluidName == null) return false;
         final ItemStack tCurrentItem = aPlayer.inventory.getCurrentItem();
         if (tCurrentItem == null) return false;
@@ -328,15 +335,26 @@ public class MTEQuadrupleOutputHatch extends MTEHatchOutput implements IAddUIWid
         if (tFluid == null && tCurrentItem.getItem() instanceof IFluidContainerItem)
             tFluid = ((IFluidContainerItem) tCurrentItem.getItem()).getFluid(tCurrentItem);
         if (tFluid != null) {
-            if (lockedFluidName != null && !lockedFluidName.equals(tFluid.getFluid().getName())) {
-                GTUtility.sendChatToPlayer(aPlayer, String.format("%s %s",
-                    GTUtility.trans("151.3", "Hatch is locked to a different fluid. To change the locking, empty it and made it locked to the next fluid with a screwdriver. Currently locked to"),
-                    StatCollector.translateToLocal(lockedFluidName)));
+            if (lockedFluidName != null && !lockedFluidName.equals(
+                tFluid.getFluid()
+                    .getName())) {
+                GTUtility.sendChatToPlayer(
+                    aPlayer,
+                    String.format(
+                        "%s %s",
+                        GTUtility.trans(
+                            "151.3",
+                            "Hatch is locked to a different fluid. To change the locking, empty it and made it locked to the next fluid with a screwdriver. Currently locked to"),
+                        StatCollector.translateToLocal(lockedFluidName)));
             } else {
-                lockedFluidName = tFluid.getFluid().getName();
-                GTUtility.sendChatToPlayer(aPlayer, String.format("%s (%s)",
-                    GTUtility.trans("151.2", "Outputs 1 specific Fluid"),
-                    tFluid.getLocalizedName()));
+                lockedFluidName = tFluid.getFluid()
+                    .getName();
+                GTUtility.sendChatToPlayer(
+                    aPlayer,
+                    String.format(
+                        "%s (%s)",
+                        GTUtility.trans("151.2", "Outputs 1 specific Fluid"),
+                        tFluid.getLocalizedName()));
             }
             return true;
         }
@@ -344,7 +362,8 @@ public class MTEQuadrupleOutputHatch extends MTEHatchOutput implements IAddUIWid
     }
 
     @Override
-    public boolean onRightclick(IGregTechTileEntity aBaseMetaTileEntity, EntityPlayer aPlayer, ForgeDirection side, float aX, float aY, float aZ) {
+    public boolean onRightclick(IGregTechTileEntity aBaseMetaTileEntity, EntityPlayer aPlayer, ForgeDirection side,
+        float aX, float aY, float aZ) {
         if (tryToLockHatch(aPlayer, side)) return true;
         return super.onRightclick(aBaseMetaTileEntity, aPlayer, side, aX, aY, aZ);
     }

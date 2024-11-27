@@ -17,6 +17,7 @@ public class MaterialLoader {
 
         ItemRegister.registry();
         BlockRegister.registry();
+
         WerkstoffAdderRegistry.addWerkstoffAdder(new MaterialPool());
 
     }

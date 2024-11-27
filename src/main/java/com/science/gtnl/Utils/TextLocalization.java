@@ -127,7 +127,13 @@ public class TextLocalization {
         "NameGenerationEarthEngine");
     public static final String GenerationEarthEngineRecipeType = texter(
         "Recombination Fusion Reactor",
-        "GenerationEarthEngineRecipeType");
+        "gtnl.recipe.RecombinationFusionReactorRecipes");
+    public static final String Tooltip_GenerationEarthEngine_00 = texter(
+        "Even though years have passed, it still stands firm",
+        "Tooltip_GenerationEarthEngine_00");
+    public static final String Tooltip_GenerationEarthEngine_01 = texter(
+        "The product of the pinnacle of human technology!",
+        "Tooltip_GenerationEarthEngine_01");
 
     public static final String NameBloodSoulSacrificialArray = texter(
         "Blood SoulSacrificial Array",
@@ -135,4 +141,108 @@ public class TextLocalization {
     public static final String BloodSoulSacrificialArrayRecipeType = texter(
         "Blood Soul Trading Recipes / Blood Demon Injection",
         "BloodSoulSacrificialArrayRecipeType");
+
+    public static final String NameRealArtificialStar = texter("Real Artificial Star", "NameRealArtificialStar");
+    public static final String Tooltip_RealArtificialStar_MachineType = texter(
+        "Dyson Sphere Program: Annihilation Generator",
+        "gtnl.recipe.ArtificialStarGeneratingRecipes");
+    public static final String Tooltip_RealArtificialStar_Controller = texter(
+        "Controller block for the Real Artificial Star",
+        "Tooltip_RealArtificialStar_Controller");
+    public static final String Tooltip_RealArtificialStar_00 = texter(
+        EnumChatFormatting.LIGHT_PURPLE + ""
+            + EnumChatFormatting.BOLD
+            + "Just replaced the structure of TST, the rest of the functions are the same",
+        "Tooltip_RealArtificialStar_00");
+    public static final String Tooltip_RealArtificialStar_01 = texter(
+        EnumChatFormatting.LIGHT_PURPLE + ""
+            + EnumChatFormatting.BOLD
+            + "All you need to do is to let the proton and antiproton beams",
+        "Tooltip_RealArtificialStar_01");
+    public static final String Tooltip_RealArtificialStar_02 = texter(
+        EnumChatFormatting.LIGHT_PURPLE + ""
+            + EnumChatFormatting.BOLD
+            + " pass silently from both ends into the annihilation constrainer. Easy peasy!",
+        "Tooltip_RealArtificialStar_02");
+    public static final String Tooltip_RealArtificialStar_03 = texter(
+        "It owes its simple shape to the elegance of the theory.",
+        "Tooltip_RealArtificialStar_03");
+    public static final String Tooltip_RealArtificialStar_04 = texter(
+        "Actual output power is affected by 3 types tiered block.",
+        "Tooltip_RealArtificialStar_04");
+    public static final String Tooltip_RealArtificialStar_05 = texter(
+        "At the same time, higher tier increase the probability of recovering materials.",
+        "Tooltip_RealArtificialStar_05");
+    public static final String Tooltip_RealArtificialStar_06 = texter(
+        "Continuous operation improves power generation.",
+        "Tooltip_RealArtificialStar_06");
+    public static final String Tooltip_RealArtificialStar_07 = texter(
+        "Only and must install 1 input bus.",
+        "Tooltip_RealArtificialStar_07");
+    public static final String Tooltip_RealArtificialStar_08 = texter(
+        "Energy will output to Wireless EU Net directly.",
+        "Tooltip_RealArtificialStar_08");
+    public static final String Tooltip_RealArtificialStar_09 = texter(
+        "Use screwdriver to enable/disable animations.",
+        "Tooltip_RealArtificialStar_09");
+    public static final String Tooltip_RealArtificialStar_02_01 = texter(
+        "Output multiplier = tTime^0.25 * tDim^0.25 * 1.588186^(tStabilisation - 2)",
+        "Tooltip_RealArtificialStar_02_01");
+    public static final String Tooltip_RealArtificialStar_02_02 = texter(
+        "Actual Generating EU = recipe value * output multiplier * Rewards for continuous operation",
+        "Tooltip_RealArtificialStar_02_02");
+    public static final String Tooltip_RealArtificialStar_02_03 = texter(
+        "Recovering probability = tTime * tDim * tStabilisation / 1000",
+        "Tooltip_RealArtificialStar_02_03");
+    public static final String Tooltip_RealArtificialStar_02_04 = texter(
+        "Input fuels will be consumed at once, process 6.4s (default), and output the corresponding EU.",
+        "Tooltip_RealArtificialStar_02_04");
+    public static final String Tooltip_RealArtificialStar_02_05 = texter(
+        "Rewards multiplier 1%% increase per run when continuous operation.",
+        "Tooltip_RealArtificialStar_02_05");
+    public static final String Tooltip_RealArtificialStar_02_06 = texter(
+        "Maximum is 150%% , Minimum is 100%% when uncontinuous.",
+        "Tooltip_RealArtificialStar_02_06");
+    public static final String Tooltip_RealArtificialStarInfo_01 = texter(
+        "17604x Radiant Naquadah Alloy Casing",
+        "Tooltip_RealArtificialStarInfo_01");
+    public static final String Tooltip_RealArtificialStarInfo_02 = texter(
+        "11539x Extreme Density Space-Bending Casing",
+        "Tooltip_RealArtificialStarInfo_02");
+    public static final String Tooltip_RealArtificialStarInfo_03 = texter(
+        "2839x Shielded Accelerator Casing",
+        "Tooltip_RealArtificialStarInfo_03");
+    public static final String Tooltip_RealArtificialStarInfo_04 = texter(
+        "1336x Dyson Swarm Energy Receiver Base Casing",
+        "Tooltip_RealArtificialStarInfo_04");
+    public static final String Tooltip_RealArtificialStarInfo_05 = texter(
+        "1021x Compact Fusion Coil Coil MK-II Finaltype",
+        "Tooltip_RealArtificialStarInfo_05");
+    public static final String Tooltip_RealArtificialStarInfo_06 = texter(
+        "977x Dimensional Bridge or Spacetime Compression Field Generator",
+        "Tooltip_RealArtificialStarInfo_06");
+    public static final String Tooltip_RealArtificialStarInfo_07 = texter(
+        "628x Dyson Swarm Control Center Base Casing",
+        "Tooltip_RealArtificialStarInfo_07");
+    public static final String Tooltip_RealArtificialStarInfo_08 = texter(
+        "555x Stabilisation Field Generator",
+        "Tooltip_RealArtificialStarInfo_08");
+    public static final String Tooltip_RealArtificialStarInfo_09 = texter(
+        "253x Quantum Glass",
+        "Tooltip_RealArtificialStarInfo_09");
+    public static final String Tooltip_RealArtificialStarInfo_10 = texter(
+        "213x Dyson Swarm Control Center Toroid Casing",
+        "Tooltip_RealArtificialStarInfo_10");
+    public static final String Tooltip_RealArtificialStarInfo_11 = texter(
+        "152x Time Acceleration Field Generator",
+        "Tooltip_RealArtificialStarInfo_11");
+    public static final String Tooltip_RealArtificialStarInfo_12 = texter(
+        "26x Dimensional Injection Casing",
+        "Tooltip_RealArtificialStarInfo_12");
+    public static final String Tooltip_RealArtificialStarInfo_13 = texter(
+        "Input Bus: Any Dimensional Injection Casing",
+        "Tooltip_RealArtificialStarInfo_13");
+    public static final String Tooltip_RealArtificialStarInfo_14 = texter(
+        "Output Bus: Any Dimensional Injection Casing",
+        "Tooltip_RealArtificialStarInfo_14");
 }

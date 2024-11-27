@@ -6,6 +6,7 @@ import com.science.gtnl.common.block.Casings.MetaBlockCasing;
 
 public class BasicBlocks {
 
+    public static Block BlockStar;
     public static final Block MetaBlock01 = new BlockBase01("MetaBlock01", "MetaBlock01");
     public static final MetaBlockCasing MetaBlockCasing01 = new MetaBlockCasing("MetaBlockCasing01", (byte) 0);
 }

@@ -1,8 +1,8 @@
 package com.science.gtnl.common.item.items;
 
-import com.science.gtnl.client.CreativeTabsLoader;
-import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
+
+import com.science.gtnl.client.CreativeTabsLoader;
 
 public final class BasicItems {
 
@@ -10,5 +10,4 @@ public final class BasicItems {
         "MetaItem01Base",
         "MetaItem01",
         CreativeTabsLoader.GTNoteLeisure).setTextureName("sciencenotleisure:MetaItem01/0");
-
 }

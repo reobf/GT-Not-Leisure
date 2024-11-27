@@ -1,16 +1,18 @@
 package com.science.gtnl.common.block;
 
+import static com.science.gtnl.common.block.BasicBlocks.BlockStar;
 import static com.science.gtnl.common.block.BasicBlocks.MetaBlock01;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.StatCollector;
 
 import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.common.block.Casings.MetaItemBlockCasing;
+import com.science.gtnl.common.block.Render.BlockStar;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import gtPlusPlus.core.item.base.itemblock.ItemBlockMeta;
-import net.minecraft.util.StatCollector;
 
 public class BlockRegister {
 
@@ -30,6 +32,9 @@ public class BlockRegister {
         new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" });
 
     public static void registryBlocks() {
+
+        BlockStar = new BlockStar();
+        GameRegistry.registerTileEntity(TileStar.class, "RealArtificialStarRender");
 
         GameRegistry.registerBlock(MetaBlock01, ItemBlockBase01.class, MetaBlock01.getUnlocalizedName());
 
@@ -62,20 +67,23 @@ public class BlockRegister {
         GTNLItemList.StargateTier9.set(new ItemStack(StargateTier9));
         GameRegistry.registerBlock(Stargate_Coil_Compressed, ItemBlockMeta.class, "StargateCoilCompressed");
         GTNLItemList.Stargate_Coil_Compressed.set(new ItemStack(Stargate_Coil_Compressed));
+
     }
-
-
 
     public static void registryBlockContainers() {
 
         GTNLItemList.TestMetaBlock01_0.set(ItemBlockBase01.initMetaBlock01("TestMetaBlock01_0", 0));
-        GTNLItemList.NewHorizonsCoil.set(ItemBlockBase01.initMetaBlock01("NewHorizonsCoil", 1, new String[] {
-            StatCollector.translateToLocal("gt.coilheattooltip"),
-                "179,769,313,486,231,590,772,930,519,078,902,473,361,797,697,894,230,657,273,430,081.",
-                "157,732,675,805,500,963,132,708,477,322,407,536,021,120,113,879,871,393,357,658,789,",
-                "768,814,416,622,492,847,430,639,474,124,377,767,893,424,865,485,276,302,219,601,246,",
-                "094,119,453,082,952,085,005,768,838,150,682,342,462,881,473,913,110,540,827,237,163,",
-                "350,510,684,586,298,239,947,245,938,479,716,304,835,356,329,624,224,137,216" + StatCollector.translateToLocal("gt.coilunittooltip")}));
+        GTNLItemList.NewHorizonsCoil.set(
+            ItemBlockBase01.initMetaBlock01(
+                "NewHorizonsCoil",
+                1,
+                new String[] { StatCollector.translateToLocal("gt.coilheattooltip"),
+                    "179,769,313,486,231,590,772,930,519,078,902,473,361,797,697,894,230,657,273,430,081.",
+                    "157,732,675,805,500,963,132,708,477,322,407,536,021,120,113,879,871,393,357,658,789,",
+                    "768,814,416,622,492,847,430,639,474,124,377,767,893,424,865,485,276,302,219,601,246,",
+                    "094,119,453,082,952,085,005,768,838,150,682,342,462,881,473,913,110,540,827,237,163,",
+                    "350,510,684,586,298,239,947,245,938,479,716,304,835,356,329,624,224,137,216"
+                        + StatCollector.translateToLocal("gt.coilunittooltip") }));
         GTNLItemList.TestCasing
             .set(MetaBlockConstructors.initMetaBlockCasing("Test Casing", (byte) 0, BasicBlocks.MetaBlockCasing01));
         GTNLItemList.SteamAssemblyCasing.set(
@@ -88,4 +96,3 @@ public class BlockRegister {
         registryBlockContainers();
     }
 }
-

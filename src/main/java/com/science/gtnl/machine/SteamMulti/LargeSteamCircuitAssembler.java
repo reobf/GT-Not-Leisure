@@ -70,7 +70,7 @@ public class LargeSteamCircuitAssembler extends MTESteamMultiBase<LargeSteamCirc
         return TextLocalization.CircuitAssembler;
     }
 
-    private static final String STRUCTUR_PIECE_MAIN = "main";
+    private static final String STRUCTURE_PIECE_MAIN = "main";
 
     private IStructureDefinition<LargeSteamCircuitAssembler> STRUCTURE_DEFINITION = null;
 
@@ -164,9 +164,8 @@ public class LargeSteamCircuitAssembler extends MTESteamMultiBase<LargeSteamCirc
     @Override
     public IStructureDefinition<LargeSteamCircuitAssembler> getStructureDefinition() {
         if (STRUCTURE_DEFINITION == null) {
-
             STRUCTURE_DEFINITION = StructureDefinition.<LargeSteamCircuitAssembler>builder()
-                .addShape(STRUCTUR_PIECE_MAIN, transpose(shape))
+                .addShape(STRUCTURE_PIECE_MAIN, transpose(shape))
                 .addElement('A', ofBlock(MetaBlockCasing01, 1))
                 .addElement(
                     'B',
@@ -212,14 +211,20 @@ public class LargeSteamCircuitAssembler extends MTESteamMultiBase<LargeSteamCirc
 
     @Override
     public void construct(ItemStack stackSize, boolean hintsOnly) {
-        this.buildPiece(STRUCTUR_PIECE_MAIN, stackSize, hintsOnly, HORIZONTAL_OFF_SET, VERTICAL_OFF_SET, DEPTH_OFF_SET);
+        this.buildPiece(
+            STRUCTURE_PIECE_MAIN,
+            stackSize,
+            hintsOnly,
+            HORIZONTAL_OFF_SET,
+            VERTICAL_OFF_SET,
+            DEPTH_OFF_SET);
     }
 
     @Override
     public int survivalConstruct(ItemStack stackSize, int elementBudget, ISurvivalBuildEnvironment env) {
         if (this.mMachine) return -1;
         return this.survivialBuildPiece(
-            STRUCTUR_PIECE_MAIN,
+            STRUCTURE_PIECE_MAIN,
             stackSize,
             HORIZONTAL_OFF_SET,
             VERTICAL_OFF_SET,
@@ -234,7 +239,7 @@ public class LargeSteamCircuitAssembler extends MTESteamMultiBase<LargeSteamCirc
         tierPipeCasing = -1;
         tierMachineCasing = -1;
         tCountCasing = 0;
-        if (!checkPiece(STRUCTUR_PIECE_MAIN, HORIZONTAL_OFF_SET, VERTICAL_OFF_SET, DEPTH_OFF_SET)) return false;
+        if (!checkPiece(STRUCTURE_PIECE_MAIN, HORIZONTAL_OFF_SET, VERTICAL_OFF_SET, DEPTH_OFF_SET)) return false;
         if (tierPipeCasing < 0 && tierMachineCasing < 0) return false;
         if (tierPipeCasing == 1 && tierMachineCasing == 1 && tCountCasing >= 75 && checkHatches()) {
             updateHatchTexture();
