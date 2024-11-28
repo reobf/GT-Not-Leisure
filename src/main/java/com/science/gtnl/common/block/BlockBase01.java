@@ -43,7 +43,7 @@ public class BlockBase01 extends Block {
     // -----------------------
     // region member variables
 
-    private String unlocalizedName;
+    public String unlocalizedName;
 
     // endregion
     // -----------------------

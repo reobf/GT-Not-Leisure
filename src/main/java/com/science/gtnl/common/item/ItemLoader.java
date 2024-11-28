@@ -224,11 +224,11 @@ public class ItemLoader {
         }
     }
 
-    private static void IRegistry(Item item, String name) {
+    public static void IRegistry(Item item, String name) {
         GameRegistry.registerItem(item, name);
     }
 
-    private boolean shouldNotUnify() {
+    public boolean shouldNotUnify() {
         // 根据你的逻辑确定是否不进行统一
         return true; // 这里简单返回true作为示例
     }

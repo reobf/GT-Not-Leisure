@@ -70,13 +70,13 @@ public class LargeSteamCircuitAssembler extends MTESteamMultiBase<LargeSteamCirc
         return TextLocalization.CircuitAssembler;
     }
 
-    private static final String STRUCTURE_PIECE_MAIN = "main";
+    public static final String STRUCTURE_PIECE_MAIN = "main";
 
-    private IStructureDefinition<LargeSteamCircuitAssembler> STRUCTURE_DEFINITION = null;
+    public IStructureDefinition<LargeSteamCircuitAssembler> STRUCTURE_DEFINITION = null;
 
-    private static final String LSCA_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/large_steam_circuit_assembler"; // 文件路径
+    public static final String LSCA_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/large_steam_circuit_assembler"; // 文件路径
 
-    private String[][] shape;
+    public String[][] shape;
 
     public LargeSteamCircuitAssembler(String aName) {
         super(aName);
@@ -88,17 +88,17 @@ public class LargeSteamCircuitAssembler extends MTESteamMultiBase<LargeSteamCirc
         this.shape = StructureUtils.readStructureFromFile(LSCA_STRUCTURE_FILE_PATH);
     }
 
-    private static final int HORIZONTAL_OFF_SET = 1;
-    private static final int VERTICAL_OFF_SET = 2;
-    private static final int DEPTH_OFF_SET = 0;
+    public static final int HORIZONTAL_OFF_SET = 1;
+    public static final int VERTICAL_OFF_SET = 2;
+    public static final int DEPTH_OFF_SET = 0;
 
-    private boolean isBroken = true;
+    public boolean isBroken = true;
 
-    private int tierPipeCasing = -1;
-    private int tierMachineCasing = -1;
-    private int tierMachine = 1;
+    public int tierPipeCasing = -1;
+    public int tierMachineCasing = -1;
+    public int tierMachine = 1;
 
-    private int tCountCasing = 0;
+    public int tCountCasing = 0;
 
     public int getTierMachineCasing(Block block, int meta) {
         if (block == sBlockCasings1 && 10 == meta) {
@@ -125,7 +125,7 @@ public class LargeSteamCircuitAssembler extends MTESteamMultiBase<LargeSteamCirc
         for (MTEHatch h : mInputHatches) h.updateTexture(getCasingTextureID());
     }
 
-    private int getCasingTextureID() {
+    public int getCasingTextureID() {
         if (tierPipeCasing == 2 || tierMachineCasing == 2)
             return ((BlockCasings2) GregTechAPI.sBlockCasings2).getTextureIndex(0);
         return ((BlockCasings1) GregTechAPI.sBlockCasings1).getTextureIndex(10);
@@ -254,7 +254,7 @@ public class LargeSteamCircuitAssembler extends MTESteamMultiBase<LargeSteamCirc
         return false;
     }
 
-    private boolean checkHatches() {
+    public boolean checkHatches() {
         return !mSteamInputFluids.isEmpty() && !mSteamInputs.isEmpty()
             && !mSteamOutputs.isEmpty()
             && mOutputHatches.isEmpty()

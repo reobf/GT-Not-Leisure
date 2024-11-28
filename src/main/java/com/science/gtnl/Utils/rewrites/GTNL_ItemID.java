@@ -14,9 +14,9 @@ import gregtech.api.util.GTUtility;
 public class GTNL_ItemID extends GTUtility.ItemId {
 
     // region Member Variables
-    private Item item;
-    private int metaData;
-    private NBTTagCompound nbt;
+    public Item item;
+    public int metaData;
+    public NBTTagCompound nbt;
     // endregion
 
     // region Class Constructors

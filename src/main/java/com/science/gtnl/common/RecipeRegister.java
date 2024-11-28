@@ -36,6 +36,14 @@ public class RecipeRegister {
         .disableOptimize()
         .build();
 
+    public static final RecipeMap<RecipeMapBackend> AlchemicChemistrySetRecipes = RecipeMapBuilder
+        .of("gtnl.recipe.AlchemicChemistrySetRecipes")
+        .maxIO(5, 1, 1, 1)
+        .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
+        .neiHandlerInfo(builder -> builder.setDisplayStack(GTNLItemList.BloodSoulSacrificialArray.get(1)))
+        .disableOptimize()
+        .build();
+
     public static final RecipeMap<RecipeMapBackend> RealArtificialStarRecipes = RecipeMapBuilder
         .of("gtnl.recipe.ArtificialStarGeneratingRecipes")
         .maxIO(1, 1, 0, 0)

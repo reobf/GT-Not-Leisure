@@ -25,8 +25,8 @@ import gregtech.api.util.GTUtility;
 
 public class MTEIntegratedOutputHatch extends MTEHatchOutput implements IAddUIWidgets, IItemLockable, IDataCopyable {
 
-    private static final String DATA_STICK_DATA_TYPE = "integratedOutputFilter";
-    private static final String LOCKED_ITEM_NBT_KEY = "lockedItem";
+    public static final String DATA_STICK_DATA_TYPE = "integratedOutputFilter";
+    public static final String LOCKED_ITEM_NBT_KEY = "lockedItem";
 
     protected ItemStack lockedItem = null;
 

@@ -38,7 +38,7 @@ public class ItemAdder01 extends ItemAdder_Basic {
     public static final Set<Integer> Meta01Set = new HashSet<>();
     public static final Map<Integer, String[]> MetaItemTooltipsMap01 = new HashMap<>();
 
-    private final String unlocalizedName;
+    public final String unlocalizedName;
 
     /**
      * Create the basic item MetaItem01.

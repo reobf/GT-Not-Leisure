@@ -24,8 +24,6 @@ public enum GTNLItemList {
     SteamAssemblyCasing,
     // endregion
     Stargate_Coil,
-    Stargate_Behind,
-    New_Horizons_Coil,
     StargateTier0,
     StargateTier1,
     StargateTier2,
@@ -64,11 +62,11 @@ public enum GTNLItemList {
     RealArtificialStar,
     GenerationEarthEngine;
 
-    private boolean mHasNotBeenSet;
-    private boolean mDeprecated;
-    private boolean mWarned;
+    public boolean mHasNotBeenSet;
+    public boolean mDeprecated;
+    public boolean mWarned;
 
-    private ItemStack mStack;
+    public ItemStack mStack;
 
     // endregion
 
@@ -137,7 +135,7 @@ public enum GTNLItemList {
         return mStack;
     }
 
-    private void sanityCheck() {
+    public void sanityCheck() {
         if (mHasNotBeenSet)
             throw new IllegalAccessError("The Enum '" + name() + "' has not been set to an Item at this time!");
         if (mDeprecated && !mWarned) {

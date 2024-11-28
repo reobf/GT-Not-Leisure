@@ -28,6 +28,8 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
     version = ScienceNotLeisure.VERSION,
     name = ScienceNotLeisure.MODNAME,
     dependencies = "required-after:IC2;" + "required-after:structurelib;"
+        + "required-after:AWWayofTime;"
+        + "required-after:BloodArsenal;"
         + "required-after:modularui;"
         + "after:GalacticraftCore;"
         + "required-after:bartworks;"

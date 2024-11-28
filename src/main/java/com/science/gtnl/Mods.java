@@ -17,7 +17,7 @@ public enum Mods {
 
     public final String ID;
     public final String resourceDomain;
-    private Boolean modLoaded;
+    public Boolean modLoaded;
 
     Mods(String ID) {
         this.ID = ID;

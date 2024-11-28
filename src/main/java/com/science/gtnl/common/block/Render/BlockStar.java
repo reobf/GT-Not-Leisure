@@ -4,10 +4,14 @@ import java.util.ArrayList;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+import net.minecraftforge.client.model.IModelCustom;
+
+import org.lwjgl.opengl.GL11;
 
 import com.science.gtnl.common.block.TileStar;
 
@@ -22,7 +26,7 @@ public class BlockStar extends Block {
         this.setResistance(20f);
         this.setHardness(-1.0f);
         this.setBlockName("RealArtificialStarRender");
-        this.setLightLevel(100.0f);
+        this.setLightLevel(1.0f);
         GameRegistry.registerBlock(this, getUnlocalizedName());
     }
 
@@ -60,5 +64,35 @@ public class BlockStar extends Block {
     @Override
     public ArrayList<ItemStack> getDrops(World world, int x, int y, int z, int meta, int fortune) {
         return new ArrayList<>();
+    }
+
+    @Override
+    public int getRenderType() {
+        return StarRender.renderID;
+    }
+
+    @SideOnly(Side.CLIENT)
+    public void renderAsItem(TileStar tileStar) {
+        if (!tileStar.getModels()
+            .isEmpty()) {
+            IModelCustom model = tileStar.getModels()
+                .get(0);
+            GL11.glPushMatrix();
+            GL11.glDisable(GL11.GL_LIGHTING);
+            GL11.glDisable(GL11.GL_CULL_FACE);
+            GL11.glEnable(GL11.GL_BLEND);
+            GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+            Minecraft.getMinecraft()
+                .getTextureManager()
+                .bindTexture(tileStar.getTexture(0));
+            GL11.glScaled(0.25, 0.25, 0.25);
+            GL11.glRotated(tileStar.targetRotationSpeed, 1, 1, 1);
+            model.renderAll();
+            GL11.glDisable(GL11.GL_BLEND);
+            GL11.glDepthMask(true);
+            GL11.glEnable(GL11.GL_CULL_FACE);
+            GL11.glEnable(GL11.GL_LIGHTING);
+            GL11.glPopMatrix();
+        }
     }
 }

@@ -71,10 +71,10 @@ import tectech.thing.casing.TTCasingsContainer;
 public class RealArtificialStar extends MultiMachineBase<RealArtificialStar>
     implements IWirelessEnergyHatchInformation {
 
-    private static final String STRUCTURE_PIECE_MAIN = "main";
-    private IStructureDefinition<RealArtificialStar> STRUCTURE_DEFINITION = null;
-    private static final String RAS_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/real_artificial_star";
-    private String[][] shape;
+    public static final String STRUCTURE_PIECE_MAIN = "main";
+    public IStructureDefinition<RealArtificialStar> STRUCTURE_DEFINITION = null;
+    public static final String RAS_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/real_artificial_star";
+    public String[][] shape;
 
     // region Class Constructor
     public RealArtificialStar(int aID, String aName, String aNameRegional) {
@@ -114,19 +114,19 @@ public class RealArtificialStar extends MultiMachineBase<RealArtificialStar>
     // endregion
 
     // region Processing Logic
-    private String ownerName;
-    private UUID ownerUUID;
-    private long storageEU = 0;
-    private int tierDimensionField = -1;
-    private int tierTimeField = -1;
-    private int tierStabilisationField = -1;
-    private double outputMultiplier = 1;
-    private short recoveryChance = 0;
-    private byte rewardContinuous = 0;
-    private long currentOutputEU = 0;
-    private final DecimalFormat decimalFormat = new DecimalFormat("#.0");
-    private boolean isRendering = false;
-    private byte enableRender = EnableRenderDefaultArtificialStar;
+    public String ownerName;
+    public UUID ownerUUID;
+    public long storageEU = 0;
+    public int tierDimensionField = -1;
+    public int tierTimeField = -1;
+    public int tierStabilisationField = -1;
+    public double outputMultiplier = 1;
+    public short recoveryChance = 0;
+    public byte rewardContinuous = 0;
+    public long currentOutputEU = 0;
+    public final DecimalFormat decimalFormat = new DecimalFormat("#.0");
+    public boolean isRendering = false;
+    public byte enableRender = EnableRenderDefaultArtificialStar;
 
     @Override
     public void getWailaBody(ItemStack itemStack, List<String> currentTip, IWailaDataAccessor accessor,
@@ -284,7 +284,7 @@ public class RealArtificialStar extends MultiMachineBase<RealArtificialStar>
     }
 
     // Artificial Star Output multiplier
-    private void calculateOutputMultiplier() {
+    public void calculateOutputMultiplier() {
         // tTime^0.25 * tDim^0.25 * 1.588186^(tStabilisation-2)
         // (100^0.25)*(1.588186^(10-2))) = 128.000
         // 1.588186^(-1) = 0.629
@@ -394,9 +394,9 @@ public class RealArtificialStar extends MultiMachineBase<RealArtificialStar>
             true);
     }
 
-    private final int horizontalOffSet = 62;
-    private final int verticalOffSet = 88;
-    private final int depthOffSet = 15;
+    public final int horizontalOffSet = 62;
+    public final int verticalOffSet = 88;
+    public final int depthOffSet = 15;
 
     @Override
     public IStructureDefinition<RealArtificialStar> getStructureDefinition() {

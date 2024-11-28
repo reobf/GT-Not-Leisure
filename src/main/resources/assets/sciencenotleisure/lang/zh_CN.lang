@@ -52,12 +52,16 @@ NameGenerationEarthEngine=初代目行星发动机
 gtnl.recipe.RecombinationFusionReactorRecipes=重聚变反应堆
 Tooltip_GenerationEarthEngine_00=尽管多年过去了，它仍然屹立不倒
 Tooltip_GenerationEarthEngine_01=人类技术巅峰之作！
+
 NameBloodSoulSacrificialArray=血魂祭祀阵
 BloodSoulSacrificialArray.modeMsg.0=血魂交易
 BloodSoulSacrificialArray.modeMsg.1=血魔注入
+BloodSoulSacrificialArray.modeMsg.2=秘法炼金
 gtnl.recipe.BloodSoulTradingRecipes=血魂交易
 gtnl.recipe.BloodDemonInjectionRecipes=血魔注入
-BloodSoulSacrificialArrayRecipeType=血魂交易 / 血魔注入
+gtnl.recipe.AlchemicChemistrySetRecipes=秘法炼金
+BloodSoulSacrificialArrayRecipeType=血魂交易 / 血魔注入 / 秘法炼金
+Tooltip_BloodSoulSacrificialArray_00=献祭你的灵魂...
 
 tooltips.TrollFace=Never Gonna Give You Up~
 ReFusionReactorRecipes.1=可望不可及，不是么？

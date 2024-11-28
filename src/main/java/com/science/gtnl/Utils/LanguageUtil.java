@@ -24,11 +24,11 @@ import com.google.common.collect.Iterables;
  */
 public class LanguageUtil {
 
-    private static final Logger LOGGER = LogManager.getLogger("abcAFCR LanguageUtil logger");
+    public static final Logger LOGGER = LogManager.getLogger("abcAFCR LanguageUtil logger");
 
     // a language map of "reveal all the details",
     // ensure language integrity when I18n cannot get value of resources correctly
-    private final Map<String, String> safetyLangMap;
+    public final Map<String, String> safetyLangMap;
 
     /**
      * Construct a LanguageUtil object with language map of "reveal all the details"
@@ -125,7 +125,7 @@ public class LanguageUtil {
         return map;
     }
 
-    private static List<String> getLangList(String fullLangPath) {
+    public static List<String> getLangList(String fullLangPath) {
 
         List<String> list = null;
 
@@ -140,7 +140,7 @@ public class LanguageUtil {
         return list;
     }
 
-    private static class LanguageUtilException extends RuntimeException {
+    public static class LanguageUtilException extends RuntimeException {
 
         public LanguageUtilException(Logger logger, String s) {
             super(s);

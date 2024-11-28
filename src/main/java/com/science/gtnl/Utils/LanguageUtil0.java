@@ -21,11 +21,11 @@ import com.google.common.collect.Iterables;
 
 public class LanguageUtil0 {
 
-    private static Map<String, String> zhCN;
-    private static Map<String, String> currentLang;
-    private static List<String> itemNameKey;
-    private static List<String> blockNameKey;
-    private static Map<String, String> nameKey2DescriptionKey;
+    public static Map<String, String> zhCN;
+    public static Map<String, String> currentLang;
+    public static List<String> itemNameKey;
+    public static List<String> blockNameKey;
+    public static Map<String, String> nameKey2DescriptionKey;
 
     static {
         init();
@@ -59,7 +59,7 @@ public class LanguageUtil0 {
         return name == null ? zhCN.get(nameKey) : name;
     }
 
-    private static Map<String, String> parseLangFile() {
+    public static Map<String, String> parseLangFile() {
         return parseLangFile("zh_CN");
     }
 
@@ -92,7 +92,7 @@ public class LanguageUtil0 {
         return map;
     }
 
-    private static List<String> getLangList(String fullLangPath) {
+    public static List<String> getLangList(String fullLangPath) {
         InputStream langIS = LanguageUtil0.class.getResourceAsStream(fullLangPath);
         if (langIS == null) return null;
 
@@ -112,7 +112,7 @@ public class LanguageUtil0 {
         return list;
     }
 
-    private static void init() {
+    public static void init() {
         zhCN = parseLangFile();
         String currentLangCode = Minecraft.getMinecraft()
             .getLanguageManager()

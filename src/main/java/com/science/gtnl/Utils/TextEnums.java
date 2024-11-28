@@ -191,8 +191,8 @@ public enum TextEnums {
         return translateToLocalFormatted(key);
     }
 
-    private final String text;
-    private final String key;
+    public final String text;
+    public final String key;
 
     TextEnums(String key) {
         this.key = key;

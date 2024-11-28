@@ -13,7 +13,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class CustomBlockBase extends BlockBase {
 
-    private final long ordinalValue;
+    public final long ordinalValue;
 
     public CustomBlockBase(String name, String textureName, long ordinalValue) {
         super(name, textureName);

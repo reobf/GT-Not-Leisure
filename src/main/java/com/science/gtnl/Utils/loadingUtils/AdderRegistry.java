@@ -4,9 +4,9 @@ import java.util.HashSet;
 
 public class AdderRegistry {
 
-    private static final HashSet<Runnable> toRun = new HashSet<>();
+    public static final HashSet<Runnable> toRun = new HashSet<>();
 
-    private AdderRegistry() {}
+    public AdderRegistry() {}
 
     public static void addAdder(Runnable adder) {
         toRun.add(adder);

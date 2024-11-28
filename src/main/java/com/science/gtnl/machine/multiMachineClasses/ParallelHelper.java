@@ -38,108 +38,108 @@ import ic2.core.Ic2Items;
 public class ParallelHelper extends gregtech.api.util.ParallelHelper {
 
     // region Variables
-    private static final double MAX_BATCH_MODE_TICK_TIME = 128;
+    public static final double MAX_BATCH_MODE_TICK_TIME = 128;
     /**
      * Machine used for calculation
      */
-    private IVoidable machine;
+    public IVoidable machine;
     /**
      * Machine used for single recipe locking calculation
      */
-    private IRecipeLockable singleRecipeMachine;
+    public IRecipeLockable singleRecipeMachine;
     /**
      * Is locked to a single recipe?
      */
-    private boolean isRecipeLocked;
+    public boolean isRecipeLocked;
     /**
      * Recipe used when trying to calculate parallels
      */
-    private GTRecipe recipe;
+    public GTRecipe recipe;
     /**
      * EUt available to the multiblock (This should be the total eut available)
      */
-    private long availableEUt;
+    public long availableEUt;
     /**
      * The current parallel possible for the multiblock
      */
-    private int currentParallel = 0;
+    public int currentParallel = 0;
     /**
      * The maximum possible parallel possible for the multiblock
      */
-    private int maxParallel = 1;
+    public int maxParallel = 1;
     /**
      * The Batch Modifier applied when batch mode is enabled. 1 does nothing. 2 doubles max possible
      * parallel, but also duration
      */
-    private int batchModifier = 1;
+    public int batchModifier = 1;
     /**
      * The inputs of the multiblock for the current recipe check
      */
-    private ItemStack[] itemInputs;
+    public ItemStack[] itemInputs;
     /**
      * The outputs of the recipe with the applied parallel
      */
-    private ItemStack[] itemOutputs;
+    public ItemStack[] itemOutputs;
     /**
      * The inputs of the multiblock for the current recipe check
      */
-    private FluidStack[] fluidInputs;
+    public FluidStack[] fluidInputs;
     /**
      * The outputs of the recipe with the applied parallel
      */
-    private FluidStack[] fluidOutputs;
+    public FluidStack[] fluidOutputs;
     /**
      * Does the multi have void protection enabled for items
      */
-    private boolean protectExcessItem;
+    public boolean protectExcessItem;
     /**
      * Does the multi have void protection enabled for fluids
      */
-    private boolean protectExcessFluid;
+    public boolean protectExcessFluid;
     /**
      * Should the Parallel Helper automatically consume for the multi
      */
-    private boolean consume;
+    public boolean consume;
     /**
      * Is batch mode turned on?
      */
-    private boolean batchMode;
+    public boolean batchMode;
     /**
      * Should the Parallel Helper automatically calculate the outputs of the recipe with current parallel?
      */
-    private boolean calculateOutputs;
+    public boolean calculateOutputs;
     /**
      * Has the Parallel Helper been built?
      */
-    private boolean built;
+    public boolean built;
     /**
      * What is the duration multiplier with batch mode enabled
      */
-    private double durationMultiplier;
+    public double durationMultiplier;
     /**
      * Modifier which is applied on the recipe eut. Useful for GT++ machines
      */
-    private float eutModifier = 1;
+    public float eutModifier = 1;
     /**
      * Method for calculating max parallel from given inputs.
      */
-    private MaxParallelCalculator maxParallelCalculator = ParallelHelper::maxParallelCalculatedByInputs;
-//    private MaxParallelCalculator maxParallelCalculator = GTRecipe::maxParallelCalculatedByInputs;
+    public MaxParallelCalculator maxParallelCalculator = ParallelHelper::maxParallelCalculatedByInputs;
+//    public MaxParallelCalculator maxParallelCalculator = GTRecipe::maxParallelCalculatedByInputs;
     /**
      * Method for consuming inputs after determining how many parallels it can execute.
      */
-    private InputConsumer inputConsumer = ParallelHelper::consumeInput;
+    public InputConsumer inputConsumer = ParallelHelper::consumeInput;
 
     /**
      * Calculator to use for overclocking
      */
-    private OverclockCalculator calculator;
+    public OverclockCalculator calculator;
 
-    private CheckRecipeResult result = CheckRecipeResultRegistry.NONE;
+    public CheckRecipeResult result = CheckRecipeResultRegistry.NONE;
 
-    private Function<Integer, ItemStack[]> customItemOutputCalculation;
+    public Function<Integer, ItemStack[]> customItemOutputCalculation;
 
-    private Function<Integer, FluidStack[]> customFluidOutputCalculation;
+    public Function<Integer, FluidStack[]> customFluidOutputCalculation;
 
     // endregion
     public ParallelHelper() {

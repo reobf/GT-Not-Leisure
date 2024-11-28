@@ -18,8 +18,8 @@ public enum CustomItemList implements IItemContainer {
     MTEInfinityHatchOutputME,
     hatch_AutoSterileMaintenanceHatch;
 
-    private ItemStack mStack;
-    private boolean mHasNotBeenSet = true;
+    public ItemStack mStack;
+    public boolean mHasNotBeenSet = true;
 
     // public static Fluid sOilExtraHeavy, sOilHeavy, sOilMedium, sOilLight, sNaturalGas;
 

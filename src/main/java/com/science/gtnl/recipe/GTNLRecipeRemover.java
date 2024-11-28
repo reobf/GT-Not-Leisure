@@ -22,10 +22,10 @@ import tectech.loader.recipe.AssemblyLine;
 
 public class GTNLRecipeRemover {
 
-    private static boolean bufferingRecipes = true;
-    private static final ArrayList<IRecipe> tList = (ArrayList<IRecipe>) CraftingManager.getInstance()
+    public static boolean bufferingRecipes = true;
+    public static final ArrayList<IRecipe> tList = (ArrayList<IRecipe>) CraftingManager.getInstance()
         .getRecipeList();
-    private static final HashMap<GTUtility.ItemId, List<Function<IRecipe, Boolean>>> bufferMap = new HashMap<>();
+    public static final HashMap<GTUtility.ItemId, List<Function<IRecipe, Boolean>>> bufferMap = new HashMap<>();
 
     public static void run() {
         final long timeStart = System.currentTimeMillis();
@@ -44,7 +44,7 @@ public class GTNLRecipeRemover {
         MainRegistry.Logger.info("Recipes removal took " + timeToLoad + " ms.");
     }
 
-    private static void removeDreamcraftAssemblyLineRecipe(ItemStack aOutput) {
+    public static void removeDreamcraftAssemblyLineRecipe(ItemStack aOutput) {
         addToBuffer(getItemsHashed(aOutput, false), recipe -> {
             // 检查配方是否属于 dreamcraft 中 AssemblyLine 类型
             if (isDreamcraftAssemblyLineRecipe(recipe)) {
@@ -55,13 +55,13 @@ public class GTNLRecipeRemover {
         });
     }
 
-    private static boolean isDreamcraftAssemblyLineRecipe(IRecipe recipe) {
+    public static boolean isDreamcraftAssemblyLineRecipe(IRecipe recipe) {
         // 检查配方是否是 dreamcraft 的 AssemblyLine 类型
         // 这里假设 AssemblyLineRecipe 类存在，替换为实际类名
         return recipe instanceof AssemblyLine;
     }
 
-    private static void addToBuffer(HashSet<GTUtility.ItemId> outputs, Function<IRecipe, Boolean> whenToRemove) {
+    public static void addToBuffer(HashSet<GTUtility.ItemId> outputs, Function<IRecipe, Boolean> whenToRemove) {
         for (GTUtility.ItemId output : outputs) {
             bufferMap.computeIfAbsent(output, o -> new ArrayList<>())
                 .add(whenToRemove);
@@ -69,7 +69,7 @@ public class GTNLRecipeRemover {
         if (!bufferingRecipes) stopBuffering();
     }
 
-    private static HashSet<GTUtility.ItemId> getItemsHashed(Object item, boolean includeWildcardVariants) {
+    public static HashSet<GTUtility.ItemId> getItemsHashed(Object item, boolean includeWildcardVariants) {
         HashSet<GTUtility.ItemId> hashedItems = new HashSet<>();
         if (item instanceof ItemStack) {
             ItemStack iCopy = ((ItemStack) item).copy();
@@ -104,7 +104,7 @@ public class GTNLRecipeRemover {
         return hashedItems;
     }
 
-    private static void stopBuffering() {
+    public static void stopBuffering() {
         int i = tList.size();
         tList.removeIf(r -> {
             ItemStack rCopy = r.getRecipeOutput();

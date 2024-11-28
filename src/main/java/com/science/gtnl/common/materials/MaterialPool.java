@@ -14,7 +14,7 @@ import gregtech.api.enums.TextureSet;
 public class MaterialPool implements Runnable {
 
     // ID manager
-    private static final int offsetID_01 = 20_000;
+    public static final int offsetID_01 = 20_000;
 
     public static final Werkstoff Hexanitrohexaazaisowurtzitane = new Werkstoff(
         new short[] { 47, 53, 57 },

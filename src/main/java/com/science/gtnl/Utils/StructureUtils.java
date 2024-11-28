@@ -11,8 +11,8 @@ import java.util.concurrent.ConcurrentHashMap;
 public class StructureUtils {
 
     // 全局路径
-    private static final String BASE_PATH = "/assets/";
-    private static final ConcurrentHashMap<String, List<String[]>> MULTIBLOCK_CACHE = new ConcurrentHashMap<>();
+    public static final String BASE_PATH = "/assets/";
+    public static final ConcurrentHashMap<String, List<String[]>> MULTIBLOCK_CACHE = new ConcurrentHashMap<>();
 
     /**
      * 从文件读取多方块结构

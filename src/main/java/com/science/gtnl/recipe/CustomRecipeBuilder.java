@@ -21,7 +21,7 @@ import gregtech.api.util.GTRecipeConstants;
 
 public class CustomRecipeBuilder {
 
-    private final GTRecipeBuilder baseBuilder;
+    public final GTRecipeBuilder baseBuilder;
 
     public CustomRecipeBuilder(GTRecipeBuilder baseBuilder) {
         this.baseBuilder = baseBuilder;
@@ -103,7 +103,7 @@ public class CustomRecipeBuilder {
         return key.cast(metadataStorage.getMetadataOrDefault(key, defaultValue));
     }
 
-    private void applyDefaultSpecialValues(GTRecipe recipe) {
+    public void applyDefaultSpecialValues(GTRecipe recipe) {
         if (recipe.mSpecialValue != 0) return;
         int specialValue = 0;
         if (getMetadataOrDefault(GTRecipeConstants.LOW_GRAVITY, false)) specialValue -= 100;

@@ -1,13 +1,45 @@
 package com.science.gtnl.common.block;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.model.IModelCustom;
+
+import com.science.gtnl.common.block.Render.RealArtificialStarRender;
 
 public class TileStar extends TileEntity {
 
+    // 当前的旋转角度
     public double Rotation = 0;
-    public double size = 12;
+    // 当前的大小
+    public double size = 0;
+    // 目标大小
+    public double targetSize = 12;
+    // 初始大小
+    public double initialSize = 0;
+    // 初始旋转速度
+    public double initialRotationSpeed = 0;
+    // 目标旋转速度
+    public double targetRotationSpeed = 0.5;
+    // 记录已更新的tick
+    public int ticks = 0;
+    // 变大的时间（以tick为单位）
+    public int duration = 100;
+    // 当前放大到第几个模型
+    public int currentModelIndex = 0;
+    // 模型列表
+    public final List<IModelCustom> models = new ArrayList<>();
+    // 纹理列表
+    public final List<ResourceLocation> textures = new ArrayList<>();
+
+    public TileStar() {
+        models.add(RealArtificialStarRender.MODEL1);
+        textures.add(RealArtificialStarRender.STARTEXTURE1);
+    }
 
     @Override
     public AxisAlignedBB getRenderBoundingBox() {
@@ -22,18 +54,67 @@ public class TileStar extends TileEntity {
     @Override
     public void writeToNBT(NBTTagCompound nbt) {
         super.writeToNBT(nbt);
-        nbt.setDouble("renderStatus", size);
+        // 将当前大小和旋转角度写入NBT数据
+        nbt.setDouble("size", size);
+        nbt.setDouble("Rotation", Rotation);
+        nbt.setInteger("currentModelIndex", currentModelIndex);
+        // 将模型状态写入NBT数据
+        nbt.setInteger("modelsCount", models.size());
     }
 
     @Override
     public void readFromNBT(NBTTagCompound nbt) {
         super.readFromNBT(nbt);
+        // 从NBT数据中读取大小和旋转角度
         size = nbt.getDouble("size");
+        Rotation = nbt.getDouble("Rotation");
+        currentModelIndex = nbt.getInteger("currentModelIndex");
+        // 从NBT数据中读取模型状态
+        int modelsCount = nbt.getInteger("modelsCount");
+        models.clear();
+        textures.clear();
+        for (int i = 0; i < modelsCount; i++) {
+            models.add(RealArtificialStarRender.MODEL1); // 这里可以根据需要添加不同的模型
+            textures.add(RealArtificialStarRender.STARTEXTURE1); // 相应的纹理
+        }
     }
 
     @Override
     public void updateEntity() {
         super.updateEntity();
-        Rotation = (Rotation + 0.1) % 360d;
+        // 使用缓动函数实现平滑渐变
+        if (currentModelIndex < models.size()) {
+            if (ticks < duration) {
+                double t = (double) ticks / duration;
+                double easedT = cubicEaseOut(t);
+                size = initialSize + (targetSize - initialSize) * easedT;
+                Rotation += initialRotationSpeed + (targetRotationSpeed - initialRotationSpeed) * easedT;
+                ticks++;
+            } else {
+                // 当前模型达到目标值后，开始下一个模型的放大
+                size = targetSize;
+                Rotation = (Rotation + targetRotationSpeed) % 360d;
+                currentModelIndex++;
+                ticks = 0;
+            }
+        } else {
+            // 所有模型都已经放大完成，保持恒定旋转速度
+            Rotation = (Rotation + targetRotationSpeed) % 360d;
+        }
+    }
+
+    // 获取模型列表
+    public List<IModelCustom> getModels() {
+        return models;
+    }
+
+    // 获取纹理列表
+    public ResourceLocation getTexture(int index) {
+        return textures.get(index);
+    }
+
+    // 三次缓动函数（先快后慢）
+    public double cubicEaseOut(double t) {
+        return 1 - Math.pow(1 - t, 3);
     }
 }

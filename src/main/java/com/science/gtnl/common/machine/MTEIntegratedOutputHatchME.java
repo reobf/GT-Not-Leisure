@@ -32,10 +32,10 @@ import gregtech.common.tileentities.machines.MTEHatchOutputME;
 
 public class MTEIntegratedOutputHatchME extends MTEHatchOutputME {
 
-    private long baseCapacity;
+    public long baseCapacity;
 
-    private BaseActionSource requestSource = null;
-    private @Nullable AENetworkProxy gridProxy = null;
+    public BaseActionSource requestSource = null;
+    public @Nullable AENetworkProxy gridProxy = null;
     final IItemList<IAEItemStack> itemCache = AEApi.instance()
         .storage()
         .createItemList();
@@ -96,7 +96,7 @@ public class MTEIntegratedOutputHatchME extends MTEHatchOutputME {
     }
 
     // 实现更新代理侧的逻辑
-    private void updateGridProxySides() {
+    public void updateGridProxySides() {
         if (additionalConnection) {
             getProxy().setValidSides(EnumSet.complementOf(EnumSet.of(ForgeDirection.UNKNOWN)));
         } else {
@@ -109,7 +109,7 @@ public class MTEIntegratedOutputHatchME extends MTEHatchOutputME {
         return aStack.stackSize == 0;
     }
 
-    private long getCachedAmount() {
+    public long getCachedAmount() {
         long itemAmount = 0;
         for (IAEItemStack item : itemCache) {
             itemAmount += item.getStackSize();
@@ -133,7 +133,7 @@ public class MTEIntegratedOutputHatchME extends MTEHatchOutputME {
         return stack.stackSize;
     }
 
-    private void flushCachedStack() {
+    public void flushCachedStack() {
         AENetworkProxy proxy = getProxy();
         if (proxy == null) {
             return;
@@ -154,7 +154,7 @@ public class MTEIntegratedOutputHatchME extends MTEHatchOutputME {
         lastOutputTick = tickCounter;
     }
 
-    private BaseActionSource getRequest() {
+    public BaseActionSource getRequest() {
         if (requestSource == null) requestSource = new MachineSource((IActionHost) getBaseMetaTileEntity());
         return requestSource;
     }

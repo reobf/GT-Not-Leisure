@@ -52,11 +52,11 @@ import journeymap.shadow.org.jetbrains.annotations.NotNull;
 
 public class MTEInfinityHatchOutputBusME extends MTEHatchOutputBus implements IPowerChannelState {
 
-    private BigInteger baseCapacity = BigInteger.valueOf(2)
+    public BigInteger baseCapacity = BigInteger.valueOf(2)
         .pow(1024);
 
-    private BaseActionSource requestSource = null;
-    private @Nullable AENetworkProxy gridProxy = null;
+    public BaseActionSource requestSource = null;
+    public @Nullable AENetworkProxy gridProxy = null;
     final IItemList<IAEItemStack> itemCache = AEApi.instance()
         .storage()
         .createItemList();
@@ -110,7 +110,7 @@ public class MTEInfinityHatchOutputBusME extends MTEHatchOutputBus implements IP
         return aStack.stackSize == 0;
     }
 
-    private long getCachedAmount() {
+    public long getCachedAmount() {
         long itemAmount = 0;
         for (IAEItemStack item : itemCache) {
             itemAmount += item.getStackSize();
@@ -118,7 +118,7 @@ public class MTEInfinityHatchOutputBusME extends MTEHatchOutputBus implements IP
         return itemAmount;
     }
 
-    private BigInteger getCacheCapacity() {
+    public BigInteger getCacheCapacity() {
         return baseCapacity;
     }
 
@@ -149,7 +149,7 @@ public class MTEInfinityHatchOutputBusME extends MTEHatchOutputBus implements IP
         return stack.stackSize;
     }
 
-    private BaseActionSource getRequest() {
+    public BaseActionSource getRequest() {
         if (requestSource == null) requestSource = new MachineSource((IActionHost) getBaseMetaTileEntity());
         return requestSource;
     }
@@ -159,7 +159,7 @@ public class MTEInfinityHatchOutputBusME extends MTEHatchOutputBus implements IP
         return isOutputFacing(forgeDirection) ? AECableType.SMART : AECableType.NONE;
     }
 
-    private void updateValidGridProxySides() {
+    public void updateValidGridProxySides() {
         if (additionalConnection) {
             getProxy().setValidSides(EnumSet.complementOf(EnumSet.of(ForgeDirection.UNKNOWN)));
         } else {
@@ -202,7 +202,7 @@ public class MTEInfinityHatchOutputBusME extends MTEHatchOutputBus implements IP
         return true;
     }
 
-    private IItemList<IAEItemStack> getParentItemCache() {
+    public IItemList<IAEItemStack> getParentItemCache() {
         try {
             Field field = MTEInfinityHatchOutputBusME.class.getDeclaredField("itemCache");
             field.setAccessible(true);
@@ -215,7 +215,7 @@ public class MTEInfinityHatchOutputBusME extends MTEHatchOutputBus implements IP
         }
     }
 
-    private @NotNull List<String> getCachedItems() {
+    public @NotNull List<String> getCachedItems() {
         List<String> itemInfo = new ArrayList<>();
         itemInfo.add(
             "The bus is " + ((getProxy() != null && getProxy().isActive()) ? EnumChatFormatting.GREEN + "online"
@@ -261,7 +261,7 @@ public class MTEInfinityHatchOutputBusME extends MTEHatchOutputBus implements IP
         return this.gridProxy;
     }
 
-    private void flushCachedStack() {
+    public void flushCachedStack() {
         AENetworkProxy proxy = getProxy();
         if (proxy == null) {
             return;

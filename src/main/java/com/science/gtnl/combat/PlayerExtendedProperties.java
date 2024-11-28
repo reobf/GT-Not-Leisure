@@ -18,7 +18,7 @@ import com.science.gtnl.common.item.ICombatGear;
 public final class PlayerExtendedProperties implements IExtendedEntityProperties {
 
     public Map<String, Float> CombatStats = new HashMap<String, Float>();
-    private final EntityPlayer player;
+    public final EntityPlayer player;
 
     public PlayerExtendedProperties(EntityPlayer pl) {
         for (String name : StatsDefination.AllStats) {

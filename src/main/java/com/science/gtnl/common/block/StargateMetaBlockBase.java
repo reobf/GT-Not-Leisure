@@ -13,8 +13,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class StargateMetaBlockBase extends BlockBase {
 
-    private String[] TextureName;
-    private IIcon[] Texture;
+    public String[] TextureName;
+    public IIcon[] Texture;
 
     public StargateMetaBlockBase(String UnlocalizedName, String[] TextureName) {
         super(UnlocalizedName, "stargate_coil_compressed");

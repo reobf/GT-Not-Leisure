@@ -16,9 +16,9 @@ import gregtech.api.recipe.check.CheckRecipeResult;
 
 public class SimpleResultWithText implements CheckRecipeResult {
 
-    private boolean success;
-    private String key;
-    private boolean persistsOnShutdown;
+    public boolean success;
+    public String key;
+    public boolean persistsOnShutdown;
 
     SimpleResultWithText(boolean success, String key, boolean persistsOnShutdown) {
         this.success = success;

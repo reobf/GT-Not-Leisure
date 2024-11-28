@@ -73,16 +73,13 @@ public class MachineLoader {
             TextLocalization.NameRealArtificialStar).getStackForm(1);
         GTNLItemList.RealArtificialStar.set(RealArtificialStar);
 
-        // ===================================================================================================
-        // MetaTE init
-        // ===================================================================================================
         MTEHatchRack.run();
         MTEHatchCapacitor.run();
     }
 
-    private static void registerOutputCombined() {}
+    public static void registerOutputCombined() {}
 
-    private static void registerQuadrupleOutputHatch() {
+    public static void registerQuadrupleOutputHatch() {
         GTNLItemList.QuadrupleOutputHatchEV.set(
             new MTEQuadrupleOutputHatch(21009, "gtnl.Hatch.QuadrupleOutputHatchEV", "Quadruple Output Hatch (EV)", 4)
                 .getStackForm(1L));

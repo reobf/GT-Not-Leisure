@@ -53,6 +53,7 @@ dependencies {
     implementation('com.github.GTNewHorizons:supersolarpanels:1.1.3:dev')
     implementation('curse.maven:advsolar-362768:2885953')
     implementation('com.github.GTNewHorizons:Electro-Magic-Tools:1.5.16:dev')
+    implementation('com.github.GTNewHorizons:BloodArsenal:1.3.2:dev')
     compileOnly('curse.maven:witchery-69673:2234410')
     implementation('com.github.GTNewHorizons:WitcheryExtras:1.2.2:dev')
     implementation('com.google.auto.value:auto-value-annotations:1.10.1')

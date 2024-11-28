@@ -141,6 +141,9 @@ public class TextLocalization {
     public static final String BloodSoulSacrificialArrayRecipeType = texter(
         "Blood Soul Trading Recipes / Blood Demon Injection",
         "BloodSoulSacrificialArrayRecipeType");
+    public static final String Tooltip_BloodSoulSacrificialArray_00 = texter(
+        "§4§oSaSacrifice your soul...",
+        "Tooltip_BloodSoulSacrificialArray_00");
 
     public static final String NameRealArtificialStar = texter("Real Artificial Star", "NameRealArtificialStar");
     public static final String Tooltip_RealArtificialStar_MachineType = texter(

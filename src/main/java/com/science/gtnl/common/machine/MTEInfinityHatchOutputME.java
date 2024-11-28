@@ -33,7 +33,7 @@ public class MTEInfinityHatchOutputME extends MTEHatchOutputME {
 
     public String[] mDescriptionArray;
 
-    private final BigInteger baseCapacity;
+    public final BigInteger baseCapacity;
 
     public MTEInfinityHatchOutputME(int aID, String aName, String aNameRegional, int aTier) {
         super(aID, aName, aNameRegional);
@@ -59,7 +59,7 @@ public class MTEInfinityHatchOutputME extends MTEHatchOutputME {
         return new MTEInfinityHatchOutputME(mName, mTier, mDescriptionArray, mTextures);
     }
 
-    private BigInteger getCacheCapacity() {
+    public BigInteger getCacheCapacity() {
         ItemStack upgradeItemStack = mInventory[0];
         if (upgradeItemStack != null && upgradeItemStack.getItem() instanceof IStorageFluidCell) {
             return BigInteger.valueOf(((FCBaseItemCell) upgradeItemStack.getItem()).getBytes(upgradeItemStack))
@@ -68,7 +68,7 @@ public class MTEInfinityHatchOutputME extends MTEHatchOutputME {
         return baseCapacity;
     }
 
-    private long getParentCachedAmount() {
+    public long getParentCachedAmount() {
         try {
             Method method = MTEHatchOutputME.class.getDeclaredMethod("getCachedAmount");
             method.setAccessible(true);
@@ -79,7 +79,7 @@ public class MTEInfinityHatchOutputME extends MTEHatchOutputME {
         }
     }
 
-    private IItemList<IAEFluidStack> getParentFluidCache() {
+    public IItemList<IAEFluidStack> getParentFluidCache() {
         try {
             Field field = MTEHatchOutputME.class.getDeclaredField("fluidCache");
             field.setAccessible(true);
@@ -112,7 +112,7 @@ public class MTEInfinityHatchOutputME extends MTEHatchOutputME {
         return true;
     }
 
-    private @NotNull List<String> getCachedFluids() {
+    public @NotNull List<String> getCachedFluids() {
         List<String> fluidInfo = new ArrayList<>();
         fluidInfo.add(
             "The bus is " + ((getProxy() != null && getProxy().isActive()) ? EnumChatFormatting.GREEN + "online"

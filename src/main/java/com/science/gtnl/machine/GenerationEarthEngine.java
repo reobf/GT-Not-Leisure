@@ -11,7 +11,6 @@ import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntityBeacon;
 import net.minecraftforge.common.util.ForgeDirection;
 
 import com.gtnewhorizon.structurelib.alignment.constructable.ISurvivalConstructable;
@@ -50,21 +49,21 @@ public class GenerationEarthEngine extends GTPPMultiBlockBase<GenerationEarthEng
 
     protected GTRecipe lastRecipeToBuffer;
 
-    private static final int HORIZONTAL_OFF_SET = 321;
-    private static final int VERTICAL_OFF_SET = 321;
-    private static final int DEPTH_OFF_SET = 17;
+    public static final int HORIZONTAL_OFF_SET = 321;
+    public static final int VERTICAL_OFF_SET = 321;
+    public static final int DEPTH_OFF_SET = 17;
 
-    private int tCountCasing = 0;
+    public int tCountCasing = 0;
 
-    private int casing;
+    public int casing;
 
-    private IStructureDefinition<GenerationEarthEngine> STRUCTURE_DEFINITION = null;
+    public IStructureDefinition<GenerationEarthEngine> STRUCTURE_DEFINITION = null;
 
-    private static final String STRUCTUR_PIECE_MAIN = "main";
+    public static final String STRUCTURE_PIECE_MAIN = "main";
 
-    private static final String GEE_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/generation_earth_engine"; // 文件路径
+    public static final String GEE_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/generation_earth_engine"; // 文件路径
 
-    private String[][] shape;
+    public String[][] shape;
 
     public GenerationEarthEngine(String aName) {
         super(aName);
@@ -134,7 +133,7 @@ public class GenerationEarthEngine extends GTPPMultiBlockBase<GenerationEarthEng
         for (MTEHatch h : mInputBusses) h.updateTexture(getCasingTextureID());
     }
 
-    private int getCasingTextureID() {
+    public int getCasingTextureID() {
         return ((BlockCasings1) GregTechAPI.sBlockCasings1).getTextureIndex(12);
     }
 
@@ -160,7 +159,7 @@ public class GenerationEarthEngine extends GTPPMultiBlockBase<GenerationEarthEng
     public IStructureDefinition<GenerationEarthEngine> getStructureDefinition() {
         if (STRUCTURE_DEFINITION == null) {
             STRUCTURE_DEFINITION = StructureDefinition.<GenerationEarthEngine>builder()
-                .addShape(STRUCTUR_PIECE_MAIN, transpose(shape))
+                .addShape(STRUCTURE_PIECE_MAIN, transpose(shape))
                 .addElement('A', ofBlock(sBlockCasings8, 7))
                 .addElement('B', ofBlock(compactFusionCoil, 3))
                 .addElement('C', ofBlock(sSolenoidCoilCasings, 8))
@@ -179,7 +178,7 @@ public class GenerationEarthEngine extends GTPPMultiBlockBase<GenerationEarthEng
                         .casingIndex(TAE.getIndexFromPage(8, 5))
                         .dot(1)
                         .buildAndChain(onElementPass(x -> ++x.casing, ofBlock(ModBlocks.blockCasings2Misc, 12))))
-                .addElement('M', ofSpecificTileAdder((t, te) -> true, TileEntityBeacon.class, Blocks.beacon, 0))
+                .addElement('M', ofBlock(Blocks.beacon, 1))
                 .addElement('N', ofBlock(EnderIO.blockIngotStorageEndergy, 3))
                 .build();
         }
@@ -188,14 +187,20 @@ public class GenerationEarthEngine extends GTPPMultiBlockBase<GenerationEarthEng
 
     @Override
     public void construct(ItemStack stackSize, boolean hintsOnly) {
-        this.buildPiece(STRUCTUR_PIECE_MAIN, stackSize, hintsOnly, HORIZONTAL_OFF_SET, VERTICAL_OFF_SET, DEPTH_OFF_SET);
+        this.buildPiece(
+            STRUCTURE_PIECE_MAIN,
+            stackSize,
+            hintsOnly,
+            HORIZONTAL_OFF_SET,
+            VERTICAL_OFF_SET,
+            DEPTH_OFF_SET);
     }
 
     @Override
     public int survivalConstruct(ItemStack stackSize, int elementBudget, ISurvivalBuildEnvironment env) {
         if (this.mMachine) return -1;
         return this.survivialBuildPiece(
-            STRUCTUR_PIECE_MAIN,
+            STRUCTURE_PIECE_MAIN,
             stackSize,
             HORIZONTAL_OFF_SET,
             VERTICAL_OFF_SET,
@@ -206,7 +211,7 @@ public class GenerationEarthEngine extends GTPPMultiBlockBase<GenerationEarthEng
             true);
     }
 
-    private boolean checkHatches() {
+    public boolean checkHatches() {
         return !mInputHatches.isEmpty() && !mInputBusses.isEmpty()
             && !mOutputBusses.isEmpty()
             && mOutputHatches.isEmpty();
@@ -214,7 +219,7 @@ public class GenerationEarthEngine extends GTPPMultiBlockBase<GenerationEarthEng
 
     public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
         tCountCasing = 0;
-        if (!checkPiece(STRUCTUR_PIECE_MAIN, HORIZONTAL_OFF_SET, VERTICAL_OFF_SET, DEPTH_OFF_SET)) return false;
+        if (!checkPiece(STRUCTURE_PIECE_MAIN, HORIZONTAL_OFF_SET, VERTICAL_OFF_SET, DEPTH_OFF_SET)) return false;
         if (tCountCasing >= 1000000 && checkHatches()) {
             updateHatchTexture();
             return true;

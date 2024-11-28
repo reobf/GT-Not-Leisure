@@ -1,5 +1,7 @@
 package com.science.gtnl.common.block.Render;
 
+import java.util.List;
+
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
@@ -18,9 +20,9 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RealArtificialStarRender extends TileEntitySpecialRenderer {
 
-    private static final ResourceLocation STARTEXTURE = new ResourceLocation(
+    public static final ResourceLocation STARTEXTURE1 = new ResourceLocation(
         "sciencenotleisure:model/ArtificialStarRender.png");
-    private static final IModelCustom STAR = AdvancedModelLoader
+    public static final IModelCustom MODEL1 = AdvancedModelLoader
         .loadModel(new ResourceLocation("sciencenotleisure:model/ArtificialStarRender.obj"));
 
     public RealArtificialStarRender() {
@@ -34,22 +36,28 @@ public class RealArtificialStarRender extends TileEntitySpecialRenderer {
         GL11.glPushMatrix();
         GL11.glTranslated(x + 0.5, y + 0.5, z + 0.5);
         GL11.glRotated(star.Rotation, 1, 1, 1);
-        renderStar(size);
+        renderStar(star, size);
         GL11.glPopMatrix();
     }
 
-    private void renderStar(double size) {
-        GL11.glDisable(GL11.GL_LIGHTING);
-        GL11.glDisable(GL11.GL_CULL_FACE);
-        GL11.glEnable(GL11.GL_BLEND);
-        GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
-        this.bindTexture(STARTEXTURE);
-        GL11.glScaled(size, size, size);
-        OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, 240f, 240f);
-        STAR.renderAll();
-        GL11.glDisable(GL11.GL_BLEND);
-        GL11.glDepthMask(true);
-        GL11.glEnable(GL11.GL_CULL_FACE);
-        GL11.glEnable(GL11.GL_LIGHTING);
+    public void renderStar(TileStar tileStar, double size) {
+        List<IModelCustom> models = tileStar.getModels();
+        for (int i = 0; i < models.size(); i++) {
+            IModelCustom model = models.get(i);
+            GL11.glPushMatrix();
+            GL11.glDisable(GL11.GL_LIGHTING);
+            GL11.glDisable(GL11.GL_CULL_FACE);
+            GL11.glEnable(GL11.GL_BLEND);
+            GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+            this.bindTexture(tileStar.getTexture(i));
+            GL11.glScaled(size, size, size);
+            OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, 240f, 240f);
+            model.renderAll();
+            GL11.glDisable(GL11.GL_BLEND);
+            GL11.glDepthMask(true);
+            GL11.glEnable(GL11.GL_CULL_FACE);
+            GL11.glEnable(GL11.GL_LIGHTING);
+            GL11.glPopMatrix();
+        }
     }
 }

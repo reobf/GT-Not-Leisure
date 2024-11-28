@@ -15,9 +15,9 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemAdder_Basic extends Item {
 
-    private List<String> tooltips = new ArrayList<>();
+    public List<String> tooltips = new ArrayList<>();
 
-    private String unlocalizedName;
+    public String unlocalizedName;
 
     public ItemAdder_Basic(String Name, String MetaName, CreativeTabs aCreativeTabs/* , String aIconPath */) {
         super();

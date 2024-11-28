@@ -30,7 +30,7 @@ public class IMCForNEI {
         if (LoaderReference.EnderIO) sendCatalyst("mobsinfo.mobhandler", "gregtech:gt.blockmachines:23536");
     }
 
-    private static void sendCatalyst(String aName, String aStack, int aPriority) {
+    public static void sendCatalyst(String aName, String aStack, int aPriority) {
         NBTTagCompound aNBT = new NBTTagCompound();
         aNBT.setString("handlerID", aName);
         aNBT.setString("itemName", aStack);
@@ -38,7 +38,7 @@ public class IMCForNEI {
         FMLInterModComms.sendMessage("NotEnoughItems", "registerCatalystInfo", aNBT);
     }
 
-    private static void sendCatalyst(String aName, String aStack) {
+    public static void sendCatalyst(String aName, String aStack) {
         sendCatalyst(aName, aStack, 0);
     }
 }

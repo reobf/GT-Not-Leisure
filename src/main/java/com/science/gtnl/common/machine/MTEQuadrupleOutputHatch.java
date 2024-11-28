@@ -29,11 +29,11 @@ import gregtech.api.util.GTUtility;
 // 此处无法判断同一仓室下多个槽位，导致只能输出一种流体并填满第一个槽位，推测可能无法检查其他槽位
 public class MTEQuadrupleOutputHatch extends MTEHatchOutput implements IAddUIWidgets {
 
-    private FluidStack[] mStoredFluid;
-    private FluidStackTank[] fluidTanks;
+    public FluidStack[] mStoredFluid;
+    public FluidStackTank[] fluidTanks;
     public int mCapacityPer;
-    private byte mMode = 0;
-    private String lockedFluidName = null;
+    public byte mMode = 0;
+    public String lockedFluidName = null;
 
     public MTEQuadrupleOutputHatch(int aID, String aName, String aNameRegional, int aTier) {
         super(
@@ -62,7 +62,7 @@ public class MTEQuadrupleOutputHatch extends MTEHatchOutput implements IAddUIWid
         initializeFluidTanks(4);
     }
 
-    private void initializeFluidTanks(int aSlot) {
+    public void initializeFluidTanks(int aSlot) {
         for (int i = 0; i < aSlot; i++) {
             final int index = i;
             fluidTanks[i] = new FluidStackTank(

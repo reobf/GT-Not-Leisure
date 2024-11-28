@@ -2,8 +2,8 @@ package com.science.gtnl.Utils.recipes;
 
 public class CheckRecipeResult {
 
-    private boolean cleanRoomRequired;
-    private boolean sterileEnvironmentRequired;
+    public boolean cleanRoomRequired;
+    public boolean sterileEnvironmentRequired;
 
     public boolean isCleanRoomRequired() {
         return cleanRoomRequired;

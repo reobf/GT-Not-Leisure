@@ -18,8 +18,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlocksStargate extends Block {
 
-    private String[] TextureName;
-    private IIcon[] Texture;
+    public String[] TextureName;
+    public IIcon[] Texture;
 
     public BlocksStargate(int Tier) {
         super(Material.iron);
