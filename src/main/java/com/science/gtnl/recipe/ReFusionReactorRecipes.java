@@ -4,11 +4,11 @@ import static com.science.gtnl.Utils.TextHandler.texter;
 import static com.science.gtnl.common.GTNLItemList.TrollFace;
 import static gregtech.api.util.GTModHandler.getModItem;
 
+import com.science.gtnl.Utils.recipes.RecipeBuilder;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.science.gtnl.common.RecipeRegister;
 
-import gregtech.api.enums.GTValues;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.util.GTUtility;
 
@@ -18,8 +18,8 @@ public class ReFusionReactorRecipes implements IRecipePool {
 
     @Override
     public void loadRecipes() {
-        GTValues.RA.stdBuilder()
-            .itemInputsUnsafe(GTUtility.copyAmountUnsafe(1, getModItem("gregtech", "gt.metaitem.01", 1, 2299)))
+        RecipeBuilder.builder()
+            .itemInputs(GTUtility.copyAmountUnsafe(1, getModItem("gregtech", "gt.metaitem.01", 1, 2299)))
             .itemOutputs(
                 TrollFace.get(1)
                     .setStackDisplayName(texter("It's just out of reach, isn't it?", "ReFusionReactorRecipes.1")))

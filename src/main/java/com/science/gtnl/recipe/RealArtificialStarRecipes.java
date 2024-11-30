@@ -42,8 +42,8 @@ public class RealArtificialStarRecipes implements IRecipePool {
             .addTo(RAS);
 
         GTValues.RA.stdBuilder()
-            .itemInputs(Antimatter.get(1))
-            .specialValue((int) (EUEveryAntimatter / Integer.MAX_VALUE))
+            .itemInputs(DepletedExcitedNaquadahFuelRod.get(1))
+            .specialValue((int) (EUEveryDepletedExcitedNaquadahFuelRod / Integer.MAX_VALUE))
             .eut(0)
             .duration(0)
             .addTo(RAS);

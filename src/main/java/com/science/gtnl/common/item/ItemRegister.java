@@ -24,8 +24,8 @@ public class ItemRegister {
     public static void registryItemContainers() {
         GTNLItemList.TrollFace
             .set(initItem01("TrollFace", 0, new String[] { texter("Never Gonna Give You Up~", "tooltips.TrollFace") }));
-        GTNLItemList.Antimatter.set(
-            initItem01("Antimatter", 1, new String[] { texter("A test item, no use.", "tooltips.TestItem0.line1") }));
+        GTNLItemList.DepletedExcitedNaquadahFuelRod.set(
+            initItem01("Depleted Excited Naquadah Fuel Rod", 1, new String[] { texter("A test item, no use.", "tooltips.DepletedExcitedNaquadahFuelRod") }));
         GTNLItemList.AntimatterFuelRod.set(
             initItem01(
                 "Antimatter Fuel Rod",

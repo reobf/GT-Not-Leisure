@@ -6,15 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5462d6df-5ab2-496d-b03a-539d6854c2fd" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dependencies.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/dependencies.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/ScienceNotLeisure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/ScienceNotLeisure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/Utils/TextLocalization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/Utils/TextLocalization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/loader/MachineLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/loader/MachineLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/BloodSoulSacrificialArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/BloodSoulSacrificialArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/GenerationEarthEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/GenerationEarthEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/en_US.lang" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/en_US.lang" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/zh_CN.lang" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/zh_CN.lang" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/multiblock/blood_soul_sacrificial_array.mb" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/multiblock/blood_soul_sacrificial_array.mb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/recipe/ReFusionReactorRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/recipe/ReFusionReactorRecipes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLBlocks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLMachines.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLMachines.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLRecipeTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLRecipeTypes.java" afterDir="false" />
@@ -56,7 +48,23 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="GT-Not-Leisure" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="GT-Not-Leisure" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="GT-Not-Leisure" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>

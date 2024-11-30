@@ -95,18 +95,18 @@ public class RealArtificialStar extends MultiMachineBase<RealArtificialStar>
     // endregion
 
     // region Statics
-    protected static GTNL_ItemID Antimatter;
+    protected static GTNL_ItemID DepletedExcitedNaquadahFuelRod;
     protected static GTNL_ItemID AntimatterFuelRod;
     protected static GTNL_ItemID StrangeAnnihilationFuelRod;
-    protected static long MaxOfAntimatter;
+    protected static long MaxOfDepletedExcitedNaquadahFuelRod;
     protected static long MaxOfAntimatterFuelRod;
     protected static long MaxOfStrangeAnnihilationFuelRod;
 
     public static void initStatics() {
-        Antimatter = GTNL_ItemID.createNoNBT(GTNLItemList.Antimatter.get(1));
+        DepletedExcitedNaquadahFuelRod = GTNL_ItemID.createNoNBT(GTNLItemList.DepletedExcitedNaquadahFuelRod.get(1));
         AntimatterFuelRod = GTNL_ItemID.createNoNBT(GTNLItemList.AntimatterFuelRod.get(1));
         StrangeAnnihilationFuelRod = GTNL_ItemID.createNoNBT(GTNLItemList.StrangeAnnihilationFuelRod.get(1));
-        MaxOfAntimatter = Config.EUEveryAntimatter / Integer.MAX_VALUE;
+        MaxOfDepletedExcitedNaquadahFuelRod = Config.EUEveryDepletedExcitedNaquadahFuelRod / Integer.MAX_VALUE;
         MaxOfAntimatterFuelRod = Config.EUEveryAntimatterFuelRod / Integer.MAX_VALUE;
         MaxOfStrangeAnnihilationFuelRod = Config.EUEveryStrangeAnnihilationFuelRod / Integer.MAX_VALUE;
     }
@@ -203,8 +203,8 @@ public class RealArtificialStar extends MultiMachineBase<RealArtificialStar>
         // * Integer.MAX_VALUE
         currentOutputEU = 0;
         for (ItemStack items : getStoredInputs()) {
-            if (Antimatter.equalItemStack(items)) {
-                currentOutputEU += MaxOfAntimatter * items.stackSize;
+            if (DepletedExcitedNaquadahFuelRod.equalItemStack(items)) {
+                currentOutputEU += MaxOfDepletedExcitedNaquadahFuelRod * items.stackSize;
                 flag = true;
             } else if (AntimatterFuelRod.equalItemStack(items)) {
                 currentOutputEU += MaxOfAntimatterFuelRod * items.stackSize;

@@ -53,7 +53,7 @@ public enum GTNLItemList {
     QuadrupleOutputHatchUXV,
     QuadrupleOutputHatchMAX,
 
-    Antimatter,
+    DepletedExcitedNaquadahFuelRod,
     AntimatterFuelRod,
     StrangeAnnihilationFuelRod,
     StellarConstructionFrameMaterial,
