@@ -25,7 +25,11 @@ public class ItemRegister {
         GTNLItemList.TrollFace
             .set(initItem01("TrollFace", 0, new String[] { texter("Never Gonna Give You Up~", "tooltips.TrollFace") }));
         GTNLItemList.DepletedExcitedNaquadahFuelRod.set(
-            initItem01("§bDepleted Excited Naquadah Fuel Rod", 1, new String[] { texter("§oUltimate Form of Naquadah Fuel.", "tooltips.DepletedExcitedNaquadahFuelRod") }));
+            initItem01(
+                "§bDepleted Excited Naquadah Fuel Rod",
+                1,
+                new String[] {
+                    texter("§oUltimate Form of Naquadah Fuel.", "tooltips.DepletedExcitedNaquadahFuelRod") }));
         GTNLItemList.BlazeCube.set(
             initItem01(
                 "§eBlaze Cube",

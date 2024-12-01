@@ -4,9 +4,9 @@ import static com.science.gtnl.Utils.TextHandler.texter;
 import static com.science.gtnl.common.GTNLItemList.TrollFace;
 import static gregtech.api.util.GTModHandler.getModItem;
 
-import com.science.gtnl.Utils.recipes.RecipeBuilder;
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.science.gtnl.Utils.recipes.RecipeBuilder;
 import com.science.gtnl.common.RecipeRegister;
 
 import gregtech.api.recipe.RecipeMap;
