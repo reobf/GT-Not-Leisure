@@ -89,7 +89,7 @@ public class TextLocalization {
         Tooltips_Upgrades_UV, Tooltips_Upgrades_UHV, Tooltips_Upgrades_UEV, Tooltips_Upgrades_UIV,
         Tooltips_Upgrades_UMV, Tooltips_Upgrades_UXV, Tooltips_Upgrades_MAX };
 
-    public static final String CircuitAssembler = texter("Circuit Assembler", "CircuitAssembler");
+    public static final String CircuitAssemblerRecipeType = texter("Circuit Assembler", "CircuitAssemblerRecipeType");
     public static final String textSteamAssemblyCasing = texter(" Steam Assembly Casing", "textSteamAssemblyCasing");
     public static final String textSteamInputHatch = texter("Steam Input Hatch", "textSteamInputHatch");
     public static final String textTier = texter("Tier", "textTier");
@@ -101,6 +101,7 @@ public class TextLocalization {
     public static final String textSolidSteelMachineCasing = texter(
         " Solid Steel Machine Casing",
         "textSolidSteelMachineCasing");
+
     public static final String HIGH_PRESSURE_TOOLTIP_NOTICE = texter(
         "Processing Speed & Steam Consumption is doubled under High Pressure",
         "HIGH_PRESSURE_TOOLTIP_NOTICE");

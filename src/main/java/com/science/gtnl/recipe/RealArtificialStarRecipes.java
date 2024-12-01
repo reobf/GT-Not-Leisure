@@ -16,14 +16,8 @@ public class RealArtificialStarRecipes implements IRecipePool {
     @Override
     public void loadRecipes() {
         GTValues.RA.stdBuilder()
-            .itemInputs(AntimatterFuelRod.get(1))
-            .itemOutputs(
-                StellarConstructionFrameMaterial.get(1)
-                    .setStackDisplayName(
-                        texter(
-                            "Chance to recover some raw materials. Probability is affected by module tier.",
-                            "NEI.RealAntimatterFuelRodGeneratingRecipe.01")))
-            .specialValue((int) (EUEveryAntimatterFuelRod / Integer.MAX_VALUE))
+            .itemInputs(BlazeCube.get(1))
+            .specialValue((int) (EUEveryBlazeCube / Integer.MAX_VALUE))
             .eut(0)
             .duration(0)
             .addTo(RAS);

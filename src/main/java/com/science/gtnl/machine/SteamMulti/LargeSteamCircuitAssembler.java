@@ -1,6 +1,7 @@
 package com.science.gtnl.machine.SteamMulti;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
+import static com.science.gtnl.Utils.TextLocalization.*;
 import static com.science.gtnl.common.block.BasicBlocks.MetaBlockCasing01;
 import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.enums.HatchElement.InputHatch;
@@ -67,7 +68,7 @@ public class LargeSteamCircuitAssembler extends MTESteamMultiBase<LargeSteamCirc
 
     @Override
     public String getMachineType() {
-        return TextLocalization.CircuitAssembler;
+        return TextLocalization.CircuitAssemblerRecipeType;
     }
 
     public static final String STRUCTURE_PIECE_MAIN = "main";
@@ -307,13 +308,15 @@ public class LargeSteamCircuitAssembler extends MTESteamMultiBase<LargeSteamCirc
 
     @Override
     protected MultiblockTooltipBuilder createTooltip() {
-        MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
-        tt.addMachineType(getMachineType())
-            .addInfo("25% faster than using single block steam machines of the same pressure")
-            .addInfo("Only consumes steam at 62.5% of the L/s normally required")
-            .addInfo("Processes up to 16 items at once")
-            .addInfo("Processing Speed & Steam Consumption is doubled under High Pressure")
-            .addInfo("Primitive technology!")
+        final MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
+        tt.addMachineType(TextLocalization.CircuitAssemblerRecipeType)
+            .addInfo(Tooltip_LargeSteamMachine_0)
+            .addInfo(Tooltip_LargeSteamMachine_1)
+            .addInfo(Tooltip_LargeSteamMachine_2)
+            .addInfo(HIGH_PRESSURE_TOOLTIP_NOTICE)
+            .addInfo(Tooltip_LargeSteamCircuitAssembler_0)
+            .addSeparator()
+            .addInfo(TextLocalization.BLUE_PRINT_INFO)
             .beginStructureBlock(3, 4, 10, false)
             .addInputBus(EnumChatFormatting.GOLD + "1" + EnumChatFormatting.GRAY + TextLocalization.textAnyCasing, 1)
             .addInputHatch(EnumChatFormatting.GOLD + "1" + EnumChatFormatting.GRAY + TextLocalization.textAnyCasing, 1)

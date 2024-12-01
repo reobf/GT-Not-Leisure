@@ -54,35 +54,30 @@ public class TileStar extends TileEntity {
     @Override
     public void writeToNBT(NBTTagCompound nbt) {
         super.writeToNBT(nbt);
-        // 将当前大小和旋转角度写入NBT数据
         nbt.setDouble("size", size);
         nbt.setDouble("Rotation", Rotation);
         nbt.setInteger("currentModelIndex", currentModelIndex);
-        // 将模型状态写入NBT数据
         nbt.setInteger("modelsCount", models.size());
     }
 
     @Override
     public void readFromNBT(NBTTagCompound nbt) {
         super.readFromNBT(nbt);
-        // 从NBT数据中读取大小和旋转角度
         size = nbt.getDouble("size");
         Rotation = nbt.getDouble("Rotation");
         currentModelIndex = nbt.getInteger("currentModelIndex");
-        // 从NBT数据中读取模型状态
         int modelsCount = nbt.getInteger("modelsCount");
         models.clear();
         textures.clear();
         for (int i = 0; i < modelsCount; i++) {
-            models.add(RealArtificialStarRender.MODEL1); // 这里可以根据需要添加不同的模型
-            textures.add(RealArtificialStarRender.STARTEXTURE1); // 相应的纹理
+            models.add(RealArtificialStarRender.MODEL1);
+            textures.add(RealArtificialStarRender.STARTEXTURE1);
         }
     }
 
     @Override
     public void updateEntity() {
         super.updateEntity();
-        // 使用缓动函数实现平滑渐变
         if (currentModelIndex < models.size()) {
             if (ticks < duration) {
                 double t = (double) ticks / duration;
@@ -91,29 +86,24 @@ public class TileStar extends TileEntity {
                 Rotation += initialRotationSpeed + (targetRotationSpeed - initialRotationSpeed) * easedT;
                 ticks++;
             } else {
-                // 当前模型达到目标值后，开始下一个模型的放大
                 size = targetSize;
                 Rotation = (Rotation + targetRotationSpeed) % 360d;
                 currentModelIndex++;
                 ticks = 0;
             }
         } else {
-            // 所有模型都已经放大完成，保持恒定旋转速度
             Rotation = (Rotation + targetRotationSpeed) % 360d;
         }
     }
 
-    // 获取模型列表
     public List<IModelCustom> getModels() {
         return models;
     }
 
-    // 获取纹理列表
     public ResourceLocation getTexture(int index) {
         return textures.get(index);
     }
 
-    // 三次缓动函数（先快后慢）
     public double cubicEaseOut(double t) {
         return 1 - Math.pow(1 - t, 3);
     }

@@ -35,11 +35,9 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
         + "required-after:bartworks;"
         + "after:miscutils;"
         + "required-after:dreamcraft;"
-        + "required-after:Avaritia;"
         + "after:GalacticraftMars;"
         + "required-after:gregtech;"
-        + "required-after:SGCraft;"
-        + "before:TwistSpaceTechnology;"
+        + "after:TwistSpaceTechnology;"
         + "after:GalacticraftPlanets",
     acceptedMinecraftVersions = "1.7.10")
 

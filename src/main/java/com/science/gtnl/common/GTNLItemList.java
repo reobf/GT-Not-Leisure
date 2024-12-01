@@ -54,7 +54,7 @@ public enum GTNLItemList {
     QuadrupleOutputHatchMAX,
 
     DepletedExcitedNaquadahFuelRod,
-    AntimatterFuelRod,
+    BlazeCube,
     StrangeAnnihilationFuelRod,
     StellarConstructionFrameMaterial,
 

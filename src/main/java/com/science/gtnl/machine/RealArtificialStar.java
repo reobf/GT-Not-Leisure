@@ -96,18 +96,18 @@ public class RealArtificialStar extends MultiMachineBase<RealArtificialStar>
 
     // region Statics
     protected static GTNL_ItemID DepletedExcitedNaquadahFuelRod;
-    protected static GTNL_ItemID AntimatterFuelRod;
+    protected static GTNL_ItemID BlazeCube;
     protected static GTNL_ItemID StrangeAnnihilationFuelRod;
     protected static long MaxOfDepletedExcitedNaquadahFuelRod;
-    protected static long MaxOfAntimatterFuelRod;
+    protected static long MaxOfBlazeCube;
     protected static long MaxOfStrangeAnnihilationFuelRod;
 
     public static void initStatics() {
         DepletedExcitedNaquadahFuelRod = GTNL_ItemID.createNoNBT(GTNLItemList.DepletedExcitedNaquadahFuelRod.get(1));
-        AntimatterFuelRod = GTNL_ItemID.createNoNBT(GTNLItemList.AntimatterFuelRod.get(1));
+        BlazeCube = GTNL_ItemID.createNoNBT(GTNLItemList.BlazeCube.get(1));
         StrangeAnnihilationFuelRod = GTNL_ItemID.createNoNBT(GTNLItemList.StrangeAnnihilationFuelRod.get(1));
         MaxOfDepletedExcitedNaquadahFuelRod = Config.EUEveryDepletedExcitedNaquadahFuelRod / Integer.MAX_VALUE;
-        MaxOfAntimatterFuelRod = Config.EUEveryAntimatterFuelRod / Integer.MAX_VALUE;
+        MaxOfBlazeCube = Config.EUEveryBlazeCube / Integer.MAX_VALUE;
         MaxOfStrangeAnnihilationFuelRod = Config.EUEveryStrangeAnnihilationFuelRod / Integer.MAX_VALUE;
     }
 
@@ -206,9 +206,8 @@ public class RealArtificialStar extends MultiMachineBase<RealArtificialStar>
             if (DepletedExcitedNaquadahFuelRod.equalItemStack(items)) {
                 currentOutputEU += MaxOfDepletedExcitedNaquadahFuelRod * items.stackSize;
                 flag = true;
-            } else if (AntimatterFuelRod.equalItemStack(items)) {
-                currentOutputEU += MaxOfAntimatterFuelRod * items.stackSize;
-                recoveryAmount += items.stackSize;
+            } else if (BlazeCube.equalItemStack(items)) {
+                currentOutputEU += MaxOfBlazeCube * items.stackSize;
                 flag = true;
             } else if (StrangeAnnihilationFuelRod.equalItemStack(items)) {
                 currentOutputEU += MaxOfStrangeAnnihilationFuelRod * items.stackSize;

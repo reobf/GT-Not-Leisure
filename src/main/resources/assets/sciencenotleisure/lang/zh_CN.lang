@@ -4,7 +4,8 @@ MetaBlockCasing01.0.name=测试机械方块
 MetaBlockCasing01.1.name=蒸汽装配机械方块
 MetaBlock01.0.name=测试方块
 MetaItem01.0.name=愚人脸
-MetaItem01.1.name=激发的混合硅岩燃料棒
+MetaItem01.1.name=§b激发的混合硅岩燃料棒
+MetaItem01.2.name=§e炽骨立方块
 
 tile.Stargate.0.name=压缩星门
 tile.Stargate.1.name=压缩星门-一重
@@ -43,7 +44,7 @@ textSteelPipeCasing= 钢管道方块
 textSteamAssemblyCasing= 蒸汽装配机械方块
 
 NameLargeSteamCircuitAssembler=大型蒸汽电路组装机
-CircuitAssembler=电路组装机
+CircuitAssemblerRecipeType=电路组装机
 Tooltip_LargeSteamMachine_0=比同等级的单方块组装机快25%
 Tooltip_LargeSteamMachine_1=仅消耗正常需求62.5%的蒸汽
 Tooltip_LargeSteamMachine_2=一次可处理多达16个物品
@@ -65,7 +66,8 @@ BloodSoulSacrificialArrayRecipeType=血魂交易 / 血魔注入 / 秘法炼金
 Tooltip_BloodSoulSacrificialArray_00=献祭你的灵魂...
 
 tooltips.TrollFace=Never Gonna Give You Up~
-tooltips.DepletedExcitedNaquadahFuelRod=只是用来维持湮灭发电机的运行
+tooltips.DepletedExcitedNaquadahFuelRod=§o硅岩基燃料的最终形态。
+tooltips.BlazeCube=§o灵魂之火铸成，无尽炽热封存。
 ReFusionReactorRecipes.1=可望不可及，不是么？
 
 gtnl.sterile.maintenance=自动无菌维护仓
