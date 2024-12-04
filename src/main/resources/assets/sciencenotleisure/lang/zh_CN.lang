@@ -1,11 +1,11 @@
 itemGroup.GTNoteLeisure=GT不再业余
 
-MetaBlockCasing01.0.name=测试机械方块
-MetaBlockCasing01.1.name=蒸汽装配机械方块
-MetaBlock01.0.name=测试方块
-MetaItem01.0.name=愚人脸
-MetaItem01.1.name=§b激发的混合硅岩燃料棒
-MetaItem01.2.name=§e炽骨立方块
+MetaBlockCasing.0.name=测试机械方块
+MetaBlockCasing.1.name=蒸汽装配机械方块
+MetaBlock.0.name=测试方块
+MetaItem.0.name=愚人脸
+MetaItem.1.name=§b激发的混合硅岩燃料棒
+MetaItem.2.name=§e炽骨立方块
 
 tile.Stargate.0.name=压缩星门
 tile.Stargate.1.name=压缩星门-一重
@@ -18,7 +18,9 @@ tile.Stargate.7.name=压缩星门-七重
 tile.Stargate.8.name=压缩星门-八重
 tile.Stargate.9.name=压缩星门-九重
 
-MetaBlock01.1.name=新视野线圈
+MetaBlock.1.name=新视野线圈
+tile.Gaia_Glass.name=盖亚玻璃
+tile.Terra_Glass.name=泰拉玻璃
 tile.Stargate_Coil.name=星门线圈
 tile.Stargate_Coil_Compressed.0.name=压缩星门线圈
 tile.Stargate_Coil_Compressed.1.name=压缩星门线圈-一重
@@ -56,8 +58,8 @@ Tooltip_GenerationEarthEngine_00=尽管多年过去了，它仍然屹立不倒
 Tooltip_GenerationEarthEngine_01=人类技术巅峰之作！
 
 NameBloodSoulSacrificialArray=血魂祭祀阵
-BloodSoulSacrificialArray.modeMsg.0=血魂交易
-BloodSoulSacrificialArray.modeMsg.1=血魔注入
+BloodSoulSacrificialArray.modeMsg.0=血魔注入
+BloodSoulSacrificialArray.modeMsg.1=血魂交易
 BloodSoulSacrificialArray.modeMsg.2=秘法炼金
 gtnl.recipe.BloodSoulTradingRecipes=血魂交易
 gtnl.recipe.BloodDemonInjectionRecipes=血魔注入
@@ -65,10 +67,20 @@ gtnl.recipe.AlchemicChemistrySetRecipes=秘法炼金
 BloodSoulSacrificialArrayRecipeType=血魂交易 / 血魔注入 / 秘法炼金
 Tooltip_BloodSoulSacrificialArray_00=献祭你的灵魂...
 
+NameTeleportationArrayToAlfheim=精灵传送法阵
+gtnl.recipe.PortalToAlfheimRecipes=精灵传送门
+gtnl.recipe.NatureSpiritArrayRecipes=自然灵阵
+TeleportationArrayToAlfheim.modeMsg.0=精灵传送门
+TeleportationArrayToAlfheim.modeMsg.1=自然灵阵
+TeleportationArrayToAlfheimRecipeType=精灵传送门 / 自然灵阵
+Tooltip_TeleportationArrayToAlfheim_00=传说这个法阵可以稳定传输大量的物资
+death.attack.damage.gtnl.PortalToAlfheimExplode=被精灵传送法阵反噬了
+
 tooltips.TrollFace=Never Gonna Give You Up~
 tooltips.DepletedExcitedNaquadahFuelRod=§o硅岩基燃料的最终形态。
 tooltips.BlazeCube=§o灵魂之火铸成，无尽炽热封存。
-ReFusionReactorRecipes.1=可望不可及，不是么？
+RFRRRecipes.1=可望不可及，不是么？
+PTARRecipes.1=精灵不喜欢面包。
 
 gtnl.sterile.maintenance=自动无菌维护仓
 gt.blockmachines.gtnl.sterilemaintenance.desc.0=用于自动维护无菌环境
@@ -99,6 +111,7 @@ gt.blockmachines.gtnl.InfinityOutputME.desc.4=使用剪线钳右键单击以更�
 HIGH_PRESSURE_TOOLTIP_NOTICE=高压模式下处理速度和蒸汽消耗翻倍
 StructureTooComplex=结构太复杂了！
 BLUE_PRINT_INFO=请参考§9Structure§1Lib§7全息投影，构建主体结构
+textUseBlueprint=用§9蓝§b图§r预览
 
 gtnl.AutoConfigurationMaintenanceHatch.UI.text.01=处理耗时
 gtnl.autoconfiguration.maintenance=可配置自动维护仓

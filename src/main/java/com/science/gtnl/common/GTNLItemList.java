@@ -53,12 +53,16 @@ public enum GTNLItemList {
     QuadrupleOutputHatchUXV,
     QuadrupleOutputHatchMAX,
 
+    Gaia_Glass,
+    Terra_Glass,
+
     DepletedExcitedNaquadahFuelRod,
     BlazeCube,
     StrangeAnnihilationFuelRod,
     StellarConstructionFrameMaterial,
 
     BloodSoulSacrificialArray,
+    TeleportationArrayToAlfheim,
     RealArtificialStar,
     GenerationEarthEngine;
 

@@ -18,6 +18,7 @@ import com.science.gtnl.machine.BloodSoulSacrificialArray;
 import com.science.gtnl.machine.GenerationEarthEngine;
 import com.science.gtnl.machine.RealArtificialStar;
 import com.science.gtnl.machine.SteamMulti.LargeSteamCircuitAssembler;
+import com.science.gtnl.machine.TeleportationArrayToAlfheim;
 
 import tectech.thing.metaTileEntity.hatch.MTEHatchCapacitor;
 import tectech.thing.metaTileEntity.hatch.MTEHatchRack;
@@ -27,6 +28,7 @@ public class MachineLoader {
     public static ItemStack LargeSteamCircuitAssembler;
     public static ItemStack GenerationEarthEngine;
     public static ItemStack BloodSoulSacrificialArray;
+    public static ItemStack TeleportationArrayToAlfheim;
     public static ItemStack RealArtificialStar;
 
     public static void loadMachines() {
@@ -73,6 +75,12 @@ public class MachineLoader {
             TextLocalization.NameRealArtificialStar).getStackForm(1);
         GTNLItemList.RealArtificialStar.set(RealArtificialStar);
 
+        TeleportationArrayToAlfheim = new TeleportationArrayToAlfheim(
+            21009,
+            "NameTeleportationArrayToAlfheim",
+            TextLocalization.NameTeleportationArrayToAlfheim).getStackForm(1);
+        GTNLItemList.TeleportationArrayToAlfheim.set(TeleportationArrayToAlfheim);
+
         MTEHatchRack.run();
         MTEHatchCapacitor.run();
     }
@@ -81,7 +89,7 @@ public class MachineLoader {
 
     public static void registerQuadrupleOutputHatch() {
         GTNLItemList.QuadrupleOutputHatchEV.set(
-            new MTEQuadrupleOutputHatch(21009, "gtnl.Hatch.QuadrupleOutputHatchEV", "Quadruple Output Hatch (EV)", 4)
+            new MTEQuadrupleOutputHatch(21100, "gtnl.Hatch.QuadrupleOutputHatchEV", "Quadruple Output Hatch (EV)", 4)
                 .getStackForm(1L));
     }
 

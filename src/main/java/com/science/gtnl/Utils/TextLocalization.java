@@ -140,11 +140,21 @@ public class TextLocalization {
         "Blood SoulSacrificial Array",
         "NameBloodSoulSacrificialArray");
     public static final String BloodSoulSacrificialArrayRecipeType = texter(
-        "Blood Soul Trading Recipes / Blood Demon Injection",
+        "Blood Soul Trading / Blood Demon Injection / Alchemic Chemistry Set",
         "BloodSoulSacrificialArrayRecipeType");
     public static final String Tooltip_BloodSoulSacrificialArray_00 = texter(
         "§4§oSaSacrifice your soul...",
         "Tooltip_BloodSoulSacrificialArray_00");
+
+    public static final String NameTeleportationArrayToAlfheim = texter(
+        "Teleportation Array To Alfheim",
+        "NameTeleportationArrayToAlfheim");
+    public static final String TeleportationArrayToAlfheimRecipeType = texter(
+        "Portal To Alfheim / Nature Spirit Array",
+        "TeleportationArrayToAlfheimRecipeType");
+    public static final String Tooltip_TeleportationArrayToAlfheim_00 = texter(
+        "It is said that this Nature Spirit Array can stably transmit a large amount of materials.",
+        "Tooltip_TeleportationArrayToAlfheim_00");
 
     public static final String NameRealArtificialStar = texter("Real Artificial Star", "NameRealArtificialStar");
     public static final String Tooltip_RealArtificialStar_MachineType = texter(

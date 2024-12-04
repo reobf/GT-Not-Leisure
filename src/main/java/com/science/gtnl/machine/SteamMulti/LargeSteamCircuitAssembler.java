@@ -2,7 +2,7 @@ package com.science.gtnl.machine.SteamMulti;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
 import static com.science.gtnl.Utils.TextLocalization.*;
-import static com.science.gtnl.common.block.BasicBlocks.MetaBlockCasing01;
+import static com.science.gtnl.common.block.BasicBlocks.MetaBlockCasing;
 import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.enums.HatchElement.InputHatch;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
@@ -167,7 +167,7 @@ public class LargeSteamCircuitAssembler extends MTESteamMultiBase<LargeSteamCirc
         if (STRUCTURE_DEFINITION == null) {
             STRUCTURE_DEFINITION = StructureDefinition.<LargeSteamCircuitAssembler>builder()
                 .addShape(STRUCTURE_PIECE_MAIN, transpose(shape))
-                .addElement('A', ofBlock(MetaBlockCasing01, 1))
+                .addElement('A', ofBlock(MetaBlockCasing, 1))
                 .addElement(
                     'B',
                     ofChain(

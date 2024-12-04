@@ -14,7 +14,7 @@ import gregtech.api.util.GTUtility;
 
 public class ReFusionReactorRecipes implements IRecipePool {
 
-    final RecipeMap<?> RFP = RecipeRegister.RecombinationFusionReactorRecipes;
+    final RecipeMap<?> RFRR = RecipeRegister.RecombinationFusionReactorRecipes;
 
     @Override
     public void loadRecipes() {
@@ -22,7 +22,7 @@ public class ReFusionReactorRecipes implements IRecipePool {
             .itemInputs(GTUtility.copyAmountUnsafe(1, getModItem("gregtech", "gt.metaitem.01", 1, 2299)))
             .itemOutputs(
                 TrollFace.get(1)
-                    .setStackDisplayName(texter("It's just out of reach, isn't it?", "ReFusionReactorRecipes.1")))
+                    .setStackDisplayName(texter("It's just out of reach, isn't it?", "RFRRRecipes.1")))
             .fluidOutputs(
                 FluidRegistry.getFluidStack("molten.magmatter", 2147483647),
                 FluidRegistry.getFluidStack("molten.magnetohydrodynamicallyconstrainedstarmatter", 2147483647),
@@ -42,6 +42,6 @@ public class ReFusionReactorRecipes implements IRecipePool {
             .noOptimize()
             .duration(1)
             .eut(1)
-            .addTo(RFP);
+            .addTo(RFRR);
     }
 }

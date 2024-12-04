@@ -11,7 +11,7 @@ import net.minecraft.util.IIcon;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class StargateMetaBlockBase extends BlockBase {
+public class StargateMetaBlockBase extends BlockIron {
 
     public String[] TextureName;
     public IIcon[] Texture;

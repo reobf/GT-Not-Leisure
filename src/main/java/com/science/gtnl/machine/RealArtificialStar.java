@@ -208,7 +208,7 @@ public class RealArtificialStar extends MultiMachineBase<RealArtificialStar>
                 flag = true;
             } else if (BlazeCube.equalItemStack(items)) {
                 currentOutputEU += MaxOfBlazeCube * items.stackSize;
-                flag = true;
+
             } else if (StrangeAnnihilationFuelRod.equalItemStack(items)) {
                 currentOutputEU += MaxOfStrangeAnnihilationFuelRod * items.stackSize;
                 recoveryAmount += items.stackSize;

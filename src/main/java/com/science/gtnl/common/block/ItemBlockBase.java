@@ -2,7 +2,7 @@ package com.science.gtnl.common.block;
 
 import static com.science.gtnl.Utils.MetaItemStackUtils.initMetaItemStack;
 import static com.science.gtnl.Utils.MetaItemStackUtils.metaItemStackTooltipsAdd;
-import static com.science.gtnl.common.block.BasicBlocks.MetaBlock01;
+import static com.science.gtnl.common.block.BasicBlocks.MetaBlock;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -22,19 +22,19 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import gregtech.api.util.GTLanguageManager;
 
-public class ItemBlockBase01 extends ItemBlock {
+public class ItemBlockBase extends ItemBlock {
 
     // region statics
 
-    public static final Map<Integer, String[]> MetaBlockTooltipsMap01 = new HashMap<>();
+    public static final Map<Integer, String[]> MetaBlockTooltipsMap = new HashMap<>();
     // public static final Map<Integer, ItemStack> MetaBlockMap01 = new HashMap<>();
-    public static final Set<Integer> MetaBlockSet01 = new HashSet<>();
+    public static final Set<Integer> MetaBlockSet = new HashSet<>();
 
     // endregion
     // -----------------------
     // region Constructors
 
-    public ItemBlockBase01(Block aBlock) {
+    public ItemBlockBase(Block aBlock) {
         super(aBlock);
         setHasSubtypes(true);
         setMaxDamage(0);
@@ -45,15 +45,15 @@ public class ItemBlockBase01 extends ItemBlock {
     // -----------------------
     // region MetaBlock Generators
 
-    public static ItemStack initMetaBlock01(String i18nName, int Meta) {
-        return initMetaItemStack(i18nName, Meta, MetaBlock01, MetaBlockSet01);
+    public static ItemStack initMetaBlock(String i18nName, int Meta) {
+        return initMetaItemStack(i18nName, Meta, MetaBlock, MetaBlockSet);
     }
 
-    public static ItemStack initMetaBlock01(String i18nName, int Meta, String[] tooltips) {
+    public static ItemStack initMetaBlock(String i18nName, int Meta, String[] tooltips) {
         if (tooltips != null) {
-            metaItemStackTooltipsAdd(MetaBlockTooltipsMap01, Meta, tooltips);
+            metaItemStackTooltipsAdd(MetaBlockTooltipsMap, Meta, tooltips);
         }
-        return initMetaBlock01(i18nName, Meta);
+        return initMetaBlock(i18nName, Meta);
     }
 
     // endregion
@@ -81,8 +81,8 @@ public class ItemBlockBase01 extends ItemBlock {
     public void addInformation(ItemStack aItemStack, EntityPlayer p_77624_2_, List theTooltipsList,
         boolean p_77624_4_) {
         int meta = aItemStack.getItemDamage();
-        if (null != MetaBlockTooltipsMap01.get(meta)) {
-            String[] tooltips = MetaBlockTooltipsMap01.get(meta);
+        if (null != MetaBlockTooltipsMap.get(meta)) {
+            String[] tooltips = MetaBlockTooltipsMap.get(meta);
             theTooltipsList.addAll(Arrays.asList(tooltips));
         }
         theTooltipsList.add(mNoMobsToolTip);

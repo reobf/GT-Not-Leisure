@@ -5,6 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5462d6df-5ab2-496d-b03a-539d6854c2fd" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/BloodSoulSacrificialArrayTwo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/PortalToAlfheimExplosion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/PortalToAlfheimExplosionTrace.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/recipe/BloodSoulTradingRecipes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependencies.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/dependencies.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/CommonProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/CommonProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/ScienceNotLeisure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/ScienceNotLeisure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/GTNLItemList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/GTNLItemList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/RecipeRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/RecipeRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/loader/LazyStaticsInitLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/loader/LazyStaticsInitLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/loader/MachineLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/loader/MachineLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/loader/RecipeLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/loader/RecipeLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/RealArtificialStar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/RealArtificialStar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/en_US.lang" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/en_US.lang" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/zh_CN.lang" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/zh_CN.lang" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLBlocks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLMachines.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLMachines.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLRecipeTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLRecipeTypes.java" afterDir="false" />
@@ -101,43 +118,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Gradle.'GT-Not-Leisure' 中的测试.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.0. Build and Test.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.1. Run Client.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.5. Apply spotless.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GT-Not-Leisure [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GT-Not-Leisure [clean build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GT-Not-Leisure [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GT-Not-Leisure [dependencies].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GT-Not-Leisure [processIdeaSettings].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GT-Not-Leisure [runVanillaClient].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GT-Not-Leisure [spotlessCheck].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.加载 Gradle 依赖项.executor&quot;: &quot;Run&quot;,
-    &quot;JavaClassFindUsagesOptions.isSearchForTextOccurrences&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Github/123Technology&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.48349056&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Gradle.'GT-Not-Leisure' 中的测试.executor": "Run",
+    "Gradle.0. Build and Test.executor": "Run",
+    "Gradle.1. Run Client.executor": "Debug",
+    "Gradle.5. Apply spotless.executor": "Run",
+    "Gradle.GT-Not-Leisure [build].executor": "Run",
+    "Gradle.GT-Not-Leisure [clean build].executor": "Run",
+    "Gradle.GT-Not-Leisure [clean].executor": "Run",
+    "Gradle.GT-Not-Leisure [dependencies].executor": "Run",
+    "Gradle.GT-Not-Leisure [processIdeaSettings].executor": "Run",
+    "Gradle.GT-Not-Leisure [runVanillaClient].executor": "Run",
+    "Gradle.GT-Not-Leisure [spotlessCheck].executor": "Run",
+    "Gradle.加载 Gradle 依赖项.executor": "Run",
+    "JavaClassFindUsagesOptions.isSearchForTextOccurrences": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.preview.features.used": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/Github/GT-Not-Leisure/src/main/java/com/science/gtnl/machine/Explosion",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDK",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.48349056",
+    "settings.editor.selected.configurable": "Errors",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.science.gtnl.Annotation" />
@@ -145,11 +162,11 @@
       <recent name="com.science.gtnl.common.machine" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Github\GT-Not-Leisure\src\main\java\com\science\gtnl\machine\Explosion" />
       <recent name="E:\Github\GT-Not-Leisure\src\main\java\com\science\gtnl\common\block" />
       <recent name="E:\Github\GT-Not-Leisure\src\main\java\com\science\gtnl\common\items" />
       <recent name="E:\Github\GT-Not-Leisure\src\main\java\com\science\gtnl\common\items\ItemAdder" />
       <recent name="E:\Github\GT-Not-Leisure\src\main\java\com\science\gtnl\common" />
-      <recent name="E:\Github\GT-Not-Leisure\src\main\java\com\science\gtnl\common\machine" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Github\GT-Not-Leisure\src\main\java\com\science\gtnl" />
@@ -159,11 +176,11 @@
       <recent name="com.science.gtnl.common.machine" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.science.gtnl.Utils" />
+      <recent name="com.science.gtnl.machine" />
       <recent name="com.science.gtnl.recipe.Special" />
       <recent name="com.science.gtnl.common.block.Render" />
       <recent name="com.science.gtnl.common.block" />
-      <recent name="com.science.gtnl.machine.DSP" />
-      <recent name="com.science.gtnl.machine" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -171,12 +188,12 @@
       <command value="./gradlew clean build" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.0. Build and Test">
+  <component name="RunManager" selected="Gradle.1. Run Client">
     <configuration name="Run Client (IJ Native)" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="GradleStart" />
       <module name="GT-Not-Leisure.ideVirtualMain" />
       <option name="PROGRAM_PARAMETERS" value="&quot;--username&quot; &quot;ABKQPO&quot; &quot;--version&quot; &quot;1.7.10&quot; &quot;--gameDir&quot; &quot;E:\Github\GT-Not-Leisure\run&quot; &quot;--assetsDir&quot; &quot;C:\Users\123\.gradle\caches\retro_futura_gradle\assets&quot; &quot;--assetIndex&quot; &quot;1.7.10&quot; &quot;--uuid&quot; &quot;aeace7c8-5960-4441-be91-2594c917a1fc&quot; &quot;--userProperties&quot; &quot;{}&quot; &quot;--accessToken&quot; &quot;0&quot;" />
-      <option name="VM_PARAMETERS" value="&quot;-ea:com.science.gtnl&quot; &quot;-Xmx8G&quot; &quot;-Xms8G&quot; &quot;-Dfml.ignoreInvalidMinecraftCertificates=true&quot; &quot;-Djava.library.path=E:\Github\GT-Not-Leisure\run\natives\lwjgl2;C:\Program Files\Java\jdk-21\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\Program Files\Bandizip\;D:\dotnet;D:\gradle-8.5\bin;D:\scrcpy-server-v;D:\Git\cmd;D:\nodejs\;D:\anaconda3;D:\anaconda3\Scripts;D:\anaconda3\Library\bin;D:\anaconda3\Library\mingw-w64\bin;D:\ffmpeg\bin;C:\Users\123\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\123\AppData\Local\Programs\Python\Python311\;C:\Users\123\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\123\AppData\Local\Programs\Python\Python310\;C:\Users\123\AppData\Local\Microsoft\WindowsApps;C:\Users\123\AppData\Local\GitHubDesktop\bin;C:\Users\123\AppData\Roaming\npm;D:\Microsoft VS Code\bin;D:\ffmpeg\bin;D:\IntelliJ IDEA 2024.2.3\bin;;D:\IntelliJ IDEA Community Edition 2024.2.4\bin;;C:\Users\123\.dotnet\tools;.&quot;" />
+      <option name="VM_PARAMETERS" value="&quot;-ea:com.science.gtnl&quot; &quot;-Xmx32G&quot; &quot;-Xms8G&quot; &quot;-Dfml.ignoreInvalidMinecraftCertificates=true&quot; &quot;-Djava.library.path=E:\Github\GT-Not-Leisure\run\natives\lwjgl2;C:\Program Files\Java\jdk-21\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\Program Files\Bandizip\;D:\dotnet;D:\gradle-8.5\bin;D:\scrcpy-server-v;D:\Git\cmd;D:\nodejs\;D:\anaconda3;D:\anaconda3\Scripts;D:\anaconda3\Library\bin;D:\anaconda3\Library\mingw-w64\bin;D:\ffmpeg\bin;C:\Users\123\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\123\AppData\Local\Programs\Python\Python311\;C:\Users\123\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\123\AppData\Local\Programs\Python\Python310\;C:\Users\123\AppData\Local\Microsoft\WindowsApps;C:\Users\123\AppData\Local\GitHubDesktop\bin;C:\Users\123\AppData\Roaming\npm;D:\Microsoft VS Code\bin;D:\ffmpeg\bin;D:\IntelliJ IDEA 2024.2.3\bin;;D:\IntelliJ IDEA Community Edition 2024.2.4\bin;;C:\Users\123\.dotnet\tools;.&quot;" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/run" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -197,7 +214,7 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -219,7 +236,7 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -241,7 +258,7 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -631,6 +648,29 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Gradle.0. Build and Test" />
+      <item itemvalue="Gradle.1. Run Client" />
+      <item itemvalue="Gradle.1a. Run Client (Java 17)" />
+      <item itemvalue="Gradle.1b. Run Client (Java 17, Hotswap)" />
+      <item itemvalue="Gradle.1c. Run Client (Java 21)" />
+      <item itemvalue="Gradle.1d. Run Client (Java 21, Hotswap)" />
+      <item itemvalue="Gradle.2. Run Server" />
+      <item itemvalue="Gradle.2a. Run Server (Java 17)" />
+      <item itemvalue="Gradle.2b. Run Server (Java 17, Hotswap)" />
+      <item itemvalue="Gradle.2c. Run Server (Java 21)" />
+      <item itemvalue="Gradle.2d. Run Server (Java 21, Hotswap)" />
+      <item itemvalue="Gradle.3. Run Obfuscated Client" />
+      <item itemvalue="Gradle.4. Run Obfuscated Server" />
+      <item itemvalue="Gradle.5. Apply spotless" />
+      <item itemvalue="Gradle.GT-Not-Leisure [clean build]" />
+      <item itemvalue="Gradle.GT-Not-Leisure [clean]" />
+      <item itemvalue="Gradle.GT-Not-Leisure [dependencies]" />
+      <item itemvalue="Gradle.GT-Not-Leisure [runVanillaClient]" />
+      <item itemvalue="Gradle.GT-Not-Leisure [spotlessCheck]" />
+      <item itemvalue="应用程序.Run Client (IJ Native)" />
+      <item itemvalue="应用程序.Run Server (IJ Native)" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.GT-Not-Leisure [clean]" />
@@ -785,12 +825,6 @@
           </properties>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEInfinityHatchOutputME.java</url>
-          <line>33</line>
-          <properties field="mDescriptionArray" class="com.science.gtnl.common.machine.MTEInfinityHatchOutputME" />
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEQuadrupleOutputHatch.java</url>
           <line>79</line>
@@ -818,28 +852,10 @@
           </properties>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEInfinityHatchOutputME.java</url>
-          <line>37</line>
-          <properties class="com.science.gtnl.common.machine.MTEInfinityHatchOutputME" method="&lt;init&gt;">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEInfinityHatchOutputME.java</url>
-          <line>50</line>
-          <properties class="com.science.gtnl.common.machine.MTEInfinityHatchOutputME" method="&lt;init&gt;">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEInfinityHatchOutputME.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="36" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/BloodSoulSacrificialArrayTwo.java</url>
+          <line>155</line>
+          <option name="timeStamp" value="40" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

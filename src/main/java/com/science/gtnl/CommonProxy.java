@@ -14,7 +14,7 @@ public class CommonProxy {
     // preInit "Run before anything else. Read your config, create blocks, items, etc, and register them with the
     // GameRegistry." (Remove if not needed)
     public void preInit(FMLPreInitializationEvent event) {
-
+        Config.synchronizeConfiguration(event.getSuggestedConfigurationFile());
         new CreativeTabsLoader(event);
         new ItemLoader(event);
         new OreDictionaryLoader(event);
@@ -32,4 +32,5 @@ public class CommonProxy {
 
     // register server commands in this event handler (Remove if not needed)
     public void serverStarting(FMLServerStartingEvent event) {}
+
 }

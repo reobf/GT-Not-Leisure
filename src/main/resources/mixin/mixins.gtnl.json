@@ -4,8 +4,6 @@
   "package": "com.science.gtnl.mixin",
   "target": "@env(DEFAULT)",
   "compatibilityLevel": "JAVA_8",
-  "mixins": [
-    "MTETieredMachineBlockMixin"
-  ],
+  "mixins": [],
   "refmap": "mixins.gtnl.refmap.json"
 }

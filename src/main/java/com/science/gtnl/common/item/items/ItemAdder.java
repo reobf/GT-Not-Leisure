@@ -22,28 +22,28 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 /**
  * An ItemStack Generator used Meta Item System.
- * <li>Use {@link ItemAdder01#initItem01(String, int)} to create your Item at ItemList01.
+ * <li>Use {@link ItemAdder#initItem(String, int)} to create your Item at ItemList01.
  *
  */
-public class ItemAdder01 extends ItemAdder_Basic {
+public class ItemAdder extends ItemAdder_Basic {
 
     /**
      * An Item Map for managing basic items
      */
-    // public static Map<String, ItemAdder01> Item01Map = new HashMap<>();
+    // public static Map<String, ItemAdder> Item01Map = new HashMap<>();
 
     /**
      * A Set contains the meta value that has been used.
      */
-    public static final Set<Integer> Meta01Set = new HashSet<>();
-    public static final Map<Integer, String[]> MetaItemTooltipsMap01 = new HashMap<>();
+    public static final Set<Integer> MetaSet = new HashSet<>();
+    public static final Map<Integer, String[]> MetaItemTooltipsMap = new HashMap<>();
 
     public final String unlocalizedName;
 
     /**
-     * Create the basic item MetaItem01.
+     * Create the basic item MetaItem.
      */
-    public ItemAdder01(String aName, String aMetaName, CreativeTabs aCreativeTabs) {
+    public ItemAdder(String aName, String aMetaName, CreativeTabs aCreativeTabs) {
         super(aName, aMetaName, aCreativeTabs);
         this.unlocalizedName = aMetaName;
     }
@@ -56,19 +56,19 @@ public class ItemAdder01 extends ItemAdder_Basic {
      * @param aMeta The MetaValue of your creating item.
      * @return Return the Item with ItemStack form you create.
      */
-    public static ItemStack initItem01(String aName, int aMeta) {
+    public static ItemStack initItem(String aName, int aMeta) {
 
-        return MetaItemStackUtils.initMetaItemStack(aName, aMeta, BasicItems.MetaItem01, Meta01Set);
+        return MetaItemStackUtils.initMetaItemStack(aName, aMeta, BasicItems.MetaItem, MetaSet);
 
     }
 
-    public static ItemStack initItem01(String aName, int aMeta, String[] tooltips) {
+    public static ItemStack initItem(String aName, int aMeta, String[] tooltips) {
 
         if (tooltips != null) {
-            MetaItemStackUtils.metaItemStackTooltipsAdd(MetaItemTooltipsMap01, aMeta, tooltips);
+            MetaItemStackUtils.metaItemStackTooltipsAdd(MetaItemTooltipsMap, aMeta, tooltips);
         }
 
-        return initItem01(aName, aMeta);
+        return initItem(aName, aMeta);
 
     }
 
@@ -97,10 +97,10 @@ public class ItemAdder01 extends ItemAdder_Basic {
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister iconRegister) {
         super.registerIcons(iconRegister);
-        this.itemIcon = iconRegister.registerIcon("sciencenotleisure:MetaItem01/0");
-        for (int meta : Meta01Set) {
+        this.itemIcon = iconRegister.registerIcon("sciencenotleisure:MetaItem/0");
+        for (int meta : MetaSet) {
             ItemStaticDataClientOnly.iconsMap01
-                .put(meta, iconRegister.registerIcon("sciencenotleisure:MetaItem01/" + meta));
+                .put(meta, iconRegister.registerIcon("sciencenotleisure:MetaItem/" + meta));
         }
     }
 
@@ -124,14 +124,14 @@ public class ItemAdder01 extends ItemAdder_Basic {
     public void addInformation(ItemStack aItemStack, EntityPlayer p_77624_2_, List theTooltipsList,
         boolean p_77624_4_) {
         int meta = aItemStack.getItemDamage();
-        if (null != MetaItemTooltipsMap01.get(meta)) {
-            String[] tooltips = MetaItemTooltipsMap01.get(meta);
+        if (null != MetaItemTooltipsMap.get(meta)) {
+            String[] tooltips = MetaItemTooltipsMap.get(meta);
             theTooltipsList.addAll(Arrays.asList(tooltips));
         }
     }
 
     /**
-     * Override this method to show all ItemStack of MetaItem01.
+     * Override this method to show all ItemStack of MetaItem.
      *
      * @param aItem
      * @param aCreativeTabs
@@ -140,8 +140,8 @@ public class ItemAdder01 extends ItemAdder_Basic {
     @Override
     @SideOnly(Side.CLIENT)
     public void getSubItems(Item aItem, CreativeTabs aCreativeTabs, List aList) {
-        for (int Meta : Meta01Set) {
-            aList.add(new ItemStack(BasicItems.MetaItem01, 1, Meta));
+        for (int Meta : MetaSet) {
+            aList.add(new ItemStack(BasicItems.MetaItem, 1, Meta));
         }
     }
     // endregion

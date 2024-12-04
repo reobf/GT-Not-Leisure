@@ -6,12 +6,12 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.StatCollector;
 
-import com.science.gtnl.common.block.BlockBase;
+import com.science.gtnl.common.block.BlockIron;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class CustomBlockBase extends BlockBase {
+public class CustomBlockBase extends BlockIron {
 
     public final long ordinalValue;
 

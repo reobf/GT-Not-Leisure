@@ -1,7 +1,7 @@
 package com.science.gtnl.common.block;
 
 import static com.science.gtnl.common.block.BasicBlocks.BlockStar;
-import static com.science.gtnl.common.block.BasicBlocks.MetaBlock01;
+import static com.science.gtnl.common.block.BasicBlocks.MetaBlock;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
@@ -16,7 +16,9 @@ import gtPlusPlus.core.item.base.itemblock.ItemBlockMeta;
 
 public class BlockRegister {
 
-    public static Block Stargate_Coil = new BlockBase("Stargate_Coil", "stargate_coil");
+    public static Block Stargate_Coil = new BlockIron("Stargate_Coil", "stargate_coil");
+    public static Block Gaia_Glass = new BlockGlass("Gaia_Glass", "Gaia_Glass");
+    public static Block Terra_Glass = new BlockGlass("Terra_Glass", "Terra_Glass");
     public static Block StargateTier0 = new BlocksStargate(0);
     public static Block StargateTier1 = new BlocksStargate(1);
     public static Block StargateTier2 = new BlocksStargate(2);
@@ -36,13 +38,17 @@ public class BlockRegister {
         BlockStar = new BlockStar();
         GameRegistry.registerTileEntity(TileStar.class, "RealArtificialStarRender");
 
-        GameRegistry.registerBlock(MetaBlock01, ItemBlockBase01.class, MetaBlock01.getUnlocalizedName());
+        GameRegistry.registerBlock(MetaBlock, ItemBlockBase.class, MetaBlock.getUnlocalizedName());
 
         GameRegistry.registerBlock(
-            BasicBlocks.MetaBlockCasing01,
+            BasicBlocks.MetaBlockCasing,
             MetaItemBlockCasing.class,
-            BasicBlocks.MetaBlockCasing01.getUnlocalizedName());
+            BasicBlocks.MetaBlockCasing.getUnlocalizedName());
 
+        GameRegistry.registerBlock(Gaia_Glass, "GaiaGlass");
+        GTNLItemList.Gaia_Glass.set(new ItemStack(Gaia_Glass));
+        GameRegistry.registerBlock(Terra_Glass, "TerraGlass");
+        GTNLItemList.Terra_Glass.set(new ItemStack(Terra_Glass));
         GameRegistry.registerBlock(Stargate_Coil, "StargateCoil");
         GTNLItemList.Stargate_Coil.set(new ItemStack(Stargate_Coil));
         GameRegistry.registerBlock(StargateTier0, "StargateTier0");
@@ -72,9 +78,9 @@ public class BlockRegister {
 
     public static void registryBlockContainers() {
 
-        GTNLItemList.TestMetaBlock01_0.set(ItemBlockBase01.initMetaBlock01("TestMetaBlock01_0", 0));
+        GTNLItemList.TestMetaBlock01_0.set(ItemBlockBase.initMetaBlock("TestMetaBlock01_0", 0));
         GTNLItemList.NewHorizonsCoil.set(
-            ItemBlockBase01.initMetaBlock01(
+            ItemBlockBase.initMetaBlock(
                 "NewHorizonsCoil",
                 1,
                 new String[] { StatCollector.translateToLocal("gt.coilheattooltip"),
@@ -85,10 +91,9 @@ public class BlockRegister {
                     "350,510,684,586,298,239,947,245,938,479,716,304,835,356,329,624,224,137,216"
                         + StatCollector.translateToLocal("gt.coilunittooltip") }));
         GTNLItemList.TestCasing
-            .set(MetaBlockConstructors.initMetaBlockCasing("Test Casing", (byte) 0, BasicBlocks.MetaBlockCasing01));
+            .set(MetaBlockConstructors.initMetaBlockCasing("Test Casing", (byte) 0, BasicBlocks.MetaBlockCasing));
         GTNLItemList.SteamAssemblyCasing.set(
-            MetaBlockConstructors.initMetaBlockCasing("SteamAssemblyCasing", (byte) 1, BasicBlocks.MetaBlockCasing01));
-
+            MetaBlockConstructors.initMetaBlockCasing("SteamAssemblyCasing", (byte) 1, BasicBlocks.MetaBlockCasing));
     }
 
     public static void registry() {
