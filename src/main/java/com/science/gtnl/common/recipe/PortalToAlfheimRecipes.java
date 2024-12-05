@@ -155,7 +155,7 @@ public class PortalToAlfheimRecipes implements IRecipePool {
                 139,
                 1)
             .noOptimize()
-            .duration(20)
+            .duration(1200)
             .eut(2048)
             .addTo(PTAR);
     }

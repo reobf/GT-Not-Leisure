@@ -81,7 +81,7 @@ public class TeleportationArrayToAlfheim extends MultiMachineBase<TeleportationA
     }
 
     protected int getMaxParallelRecipes() {
-        return 2147483647;
+        return 1;
     }
 
     protected boolean isEnablePerfectOverclock() {
@@ -123,21 +123,20 @@ public class TeleportationArrayToAlfheim extends MultiMachineBase<TeleportationA
             if (Bread.equalItemStack(items)) {
                 Strength += 50L * items.stackSize;
                 shouldExplode = true;
+                items.stackSize = 0;
             }
-            items.stackSize = 0;
         }
 
         updateSlots();
-
         if (Strength > 500) {
             Strength = 500;
         }
 
         if (shouldExplode) {
             triggerExplosion(aBaseMetaTileEntity, Strength);
+            return CheckRecipeResultRegistry.SUCCESSFUL;
         }
-
-        return CheckRecipeResultRegistry.NO_RECIPE;
+        return super.checkProcessing();
     }
 
     public void triggerExplosion(IGregTechTileEntity aBaseMetaTileEntity, float strength) {

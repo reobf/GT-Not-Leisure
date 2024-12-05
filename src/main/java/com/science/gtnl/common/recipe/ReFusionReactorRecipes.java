@@ -19,7 +19,7 @@ public class ReFusionReactorRecipes implements IRecipePool {
     @Override
     public void loadRecipes() {
         RecipeBuilder.builder()
-            .itemInputs(GTUtility.copyAmountUnsafe(1, getModItem("gregtech", "gt.metaitem.01", 2147483647, 2299)))
+            .itemInputs(GTUtility.copyAmountUnsafe(2147483647, getModItem("gregtech", "gt.metaitem.01", 1, 2299)))
             .itemOutputs(
                 TrollFace.get(1)
                     .setStackDisplayName(texter("It's just out of reach, isn't it?", "RFRRRecipes.1")))

@@ -61,10 +61,11 @@ public class RecipeRegister {
         .disableOptimize()
         .build();
 
-    public static final RecipeMap<RecipeMapBackend> PortalToAlfheimRecipes = RecipeMapBuilder
-        .of("gtnl.recipe.PortalToAlfheimRecipes")
-        .maxIO(4, 35, 1, 0)
+    public static final RecipeMap<GTNL_RecipeMapBackend> PortalToAlfheimRecipes = RecipeMapBuilder
+        .of("gtnl.recipe.PortalToAlfheimRecipes", GTNL_RecipeMapBackend::new)
+        .maxIO(4, 36, 1, 0)
         .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
+        .frontend(GeneralFrontend::new)
         .neiHandlerInfo(
             builder -> builder.setDisplayStack(GTNLItemList.TeleportationArrayToAlfheim.get(1))
                 .setMaxRecipesPerPage(1))

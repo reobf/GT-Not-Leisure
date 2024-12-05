@@ -179,7 +179,6 @@ public abstract class MultiMachineBase<T extends MultiMachineBase<T>> extends MT
     @Nonnull
     @Override
     public CheckRecipeResult checkProcessing() {
-        // If no logic is found, try legacy checkRecipe
         if (processingLogic == null) {
             return checkRecipe(mInventory[1]) ? CheckRecipeResultRegistry.SUCCESSFUL
                 : CheckRecipeResultRegistry.NO_RECIPE;
@@ -189,7 +188,6 @@ public abstract class MultiMachineBase<T extends MultiMachineBase<T>> extends MT
 
         CheckRecipeResult result = doCheckRecipe();
         result = postCheckRecipe(result, processingLogic);
-        // inputs are consumed at this point
         updateSlots();
         if (!result.wasSuccessful()) return result;
 
