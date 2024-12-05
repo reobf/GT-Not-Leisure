@@ -5,56 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5462d6df-5ab2-496d-b03a-539d6854c2fd" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/hatch/MTEHatchCustomFluid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/ScienceNotLeisure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/ScienceNotLeisure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/Utils/TextLocalization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/Utils/TextLocalization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/GTNLItemList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/GTNLItemList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/RecipeRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/RecipeRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEHatchSterileMaintenance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/hatch/MTEHatchSterileMaintenance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEInfinityHatchOutputBusME.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/hatch/MTEInfinityHatchOutputBusME.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEInfinityHatchOutputME.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/hatch/MTEInfinityHatchOutputME.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEIntegratedOutputHatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/hatch/MTEIntegratedOutputHatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEIntegratedOutputHatchME.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/hatch/MTEIntegratedOutputHatchME.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/MTEQuadrupleOutputHatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/hatch/MTEQuadrupleOutputHatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/materials/MaterialPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/materials/MaterialPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/loader/LazyStaticsInitLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/loader/LazyStaticsInitLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/loader/MachineLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/loader/MachineLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/loader/RecipeLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/loader/RecipeLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/loader/ScriptLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/loader/ScriptLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/BloodSoulSacrificialArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/BloodSoulSacrificialArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/DSP/DSP_Values.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/DSP/DSP_Values.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/Explosion/PortalToAlfheimExplosion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/Explosion/PortalToAlfheimExplosion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/Explosion/PortalToAlfheimExplosionTrace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/Explosion/PortalToAlfheimExplosionTrace.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/GenerationEarthEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/GenerationEarthEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/RealArtificialStar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/RealArtificialStar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/SteamMulti/LargeSteamCircuitAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/SteamMulti/LargeSteamCircuitAssembler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/TeleportationArrayToAlfheim.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/TeleportationArrayToAlfheim.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/machineclass/IItemLockable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/machineclass/IItemLockable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/machineclass/IMCForNEI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/machineclass/IMCForNEI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/machineclass/LoaderReference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/machineclass/LoaderReference.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/machineclass/TT_MultiMachineBase_EM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/machineclass/TT_MultiMachineBase_EM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/multiMachineClasses/MultiMachineBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/multiMachineClasses/MultiMachineBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/multiMachineClasses/ParallelHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/multiMachineClasses/ParallelHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/multiMachineClasses/ProcessingLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/multiMachineClasses/ProcessingLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/machine/multiMachineClasses/SteamMultiMachineBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/multiMachineClasses/SteamMultiMachineBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/recipe/AlloyBlastSmelterRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/recipe/AlloyBlastSmelterRecipes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/recipe/AssemblerRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/recipe/AssemblerRecipes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/recipe/AssemblingLineRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/recipe/AssemblingLineRecipes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/recipe/ChemicalRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/recipe/ChemicalRecipes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/recipe/CompressorRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/recipe/CompressorRecipes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/recipe/CustomRecipeBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/recipe/CustomRecipeBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/recipe/ElectrolyzerRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/recipe/ElectrolyzerRecipes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/recipe/GTNLRecipeRemover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/recipe/GTNLRecipeRemover.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/recipe/IRecipePool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/recipe/IRecipePool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/recipe/MixerRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/recipe/MixerRecipes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/recipe/PortalToAlfheimRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/recipe/PortalToAlfheimRecipes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/recipe/ReFusionReactorRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/recipe/ReFusionReactorRecipes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/recipe/RealArtificialStarRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/recipe/RealArtificialStarRecipes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/recipe/ScriptAvaritia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/recipe/ScriptAvaritia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/recipe/Special/RealArtificialStar_SpecialValueFormatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/recipe/Special/RealArtificialStar_SpecialValueFormatter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/recipe/multiDehydratorRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/recipe/multiDehydratorRecipes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/zh_CN.lang" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/zh_CN.lang" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLBlocks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLMachines.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLMachines.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLRecipeTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLRecipeTypes.java" afterDir="false" />
@@ -175,7 +125,7 @@
     "git-widget-placeholder": "master",
     "ignore.preview.features.used": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/Github/Botania",
+    "last_opened_file_path": "E:/Github/GT-Not-Leisure/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -195,11 +145,11 @@
       <recent name="com.science.gtnl.common.machine" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Github\GT-Not-Leisure\src\main\resources" />
       <recent name="E:\Github\GT-Not-Leisure\src\main\java\com\science\gtnl\Utils" />
       <recent name="E:\Github\GT-Not-Leisure\src\main\java\com\science\gtnl\machine\Explosion" />
       <recent name="E:\Github\GT-Not-Leisure\src\main\java\com\science\gtnl\common\block" />
       <recent name="E:\Github\GT-Not-Leisure\src\main\java\com\science\gtnl\common\items" />
-      <recent name="E:\Github\GT-Not-Leisure\src\main\java\com\science\gtnl\common\items\ItemAdder" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Github\GT-Not-Leisure\src\main\java\com\science\gtnl" />
@@ -221,7 +171,7 @@
       <command value="./gradlew clean build" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.1. Run Client">
+  <component name="RunManager" selected="Gradle.0. Build and Test">
     <configuration name="Run Client (IJ Native)" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="GradleStart" />
       <module name="GT-Not-Leisure.ideVirtualMain" />
