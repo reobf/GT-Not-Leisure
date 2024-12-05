@@ -34,19 +34,19 @@
  * For more details, see https://docs.gradle.org/8.0.1/userguide/java_library_plugin.html#sec:java_library_configurations_graph
  */
 dependencies {
-    api('com.github.GTNewHorizons:GT5-Unofficial:5.09.50.53:dev')
+    api('com.github.GTNewHorizons:GT5-Unofficial:5.09.50.90:dev')
     api("com.github.GTNewHorizons:BrandonsCore:1.2.0-GTNH:dev")
     implementation('com.github.GTNewHorizons:Botania:1.11.5-GTNH:dev')
-    implementation('com.github.GTNewHorizons:AE2FluidCraft-Rework:1.3.43-gtnh:dev')
-    implementation('com.github.GTNewHorizons:GTNH-Intergalactic:1.4.23:dev')
-    implementation('com.github.GTNewHorizons:NewHorizonsCoreMod:2.6.70:dev')
-    implementation('com.github.GTNewHorizons:ServerUtilities:2.0.84:dev')
+    implementation('com.github.GTNewHorizons:AE2FluidCraft-Rework:1.3.50-gtnh:dev')
+    implementation('com.github.GTNewHorizons:GTNH-Intergalactic:1.4.28:dev')
+    implementation('com.github.GTNewHorizons:NewHorizonsCoreMod:2.6.87:dev')
+    implementation('com.github.GTNewHorizons:ServerUtilities:2.0.85:dev')
     implementation('com.github.GTNewHorizons:supersolarpanels:1.1.3:dev')
     implementation('curse.maven:advsolar-362768:2885953')
-    implementation('com.github.GTNewHorizons:BloodMagic:1.6.7:dev')
+    implementation('com.github.GTNewHorizons:BloodMagic:1.6.9:dev')
     implementation('com.github.GTNewHorizons:BloodArsenal:1.3.2:dev')
     implementation('com.github.GTNewHorizons:EnderIO:2.8.22:dev')
     implementation('com.google.auto.value:auto-value-annotations:1.10.1')
     annotationProcessor('com.google.auto.value:auto-value:1.10.1')
-    runtimeOnlyNonPublishable("com.github.GTNewHorizons:BlockRenderer6343:1.2.14:dev")
+    runtimeOnlyNonPublishable("com.github.GTNewHorizons:BlockRenderer6343:1.2.15:dev")
 }
