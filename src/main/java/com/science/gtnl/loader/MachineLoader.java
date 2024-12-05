@@ -9,17 +9,20 @@ import net.minecraft.item.ItemStack;
 
 import com.science.gtnl.Utils.TextLocalization;
 import com.science.gtnl.common.GTNLItemList;
-import com.science.gtnl.common.machine.MTEHatchSterileMaintenance;
-import com.science.gtnl.common.machine.MTEInfinityHatchOutputBusME;
-import com.science.gtnl.common.machine.MTEInfinityHatchOutputME;
-import com.science.gtnl.common.machine.MTEIntegratedOutputHatchME;
-import com.science.gtnl.common.machine.MTEQuadrupleOutputHatch;
-import com.science.gtnl.machine.BloodSoulSacrificialArray;
-import com.science.gtnl.machine.GenerationEarthEngine;
-import com.science.gtnl.machine.RealArtificialStar;
-import com.science.gtnl.machine.SteamMulti.LargeSteamCircuitAssembler;
-import com.science.gtnl.machine.TeleportationArrayToAlfheim;
+import com.science.gtnl.common.hatch.MTEHatchCustomFluid;
+import com.science.gtnl.common.hatch.MTEHatchSterileMaintenance;
+import com.science.gtnl.common.hatch.MTEInfinityHatchOutputBusME;
+import com.science.gtnl.common.hatch.MTEInfinityHatchOutputME;
+import com.science.gtnl.common.hatch.MTEIntegratedOutputHatchME;
+import com.science.gtnl.common.hatch.MTEQuadrupleOutputHatch;
+import com.science.gtnl.common.machine.BloodSoulSacrificialArray;
+import com.science.gtnl.common.machine.GenerationEarthEngine;
+import com.science.gtnl.common.machine.RealArtificialStar;
+import com.science.gtnl.common.machine.SteamMulti.LargeSteamCircuitAssembler;
+import com.science.gtnl.common.machine.TeleportationArrayToAlfheim;
 
+import gtPlusPlus.api.objects.Logger;
+import gtPlusPlus.core.util.minecraft.FluidUtils;
 import tectech.thing.metaTileEntity.hatch.MTEHatchCapacitor;
 import tectech.thing.metaTileEntity.hatch.MTEHatchRack;
 
@@ -85,16 +88,24 @@ public class MachineLoader {
         MTEHatchCapacitor.run();
     }
 
-    public static void registerOutputCombined() {}
-
-    public static void registerQuadrupleOutputHatch() {
+    public static void registerMTEHatch() {
         GTNLItemList.QuadrupleOutputHatchEV.set(
-            new MTEQuadrupleOutputHatch(21100, "gtnl.Hatch.QuadrupleOutputHatchEV", "Quadruple Output Hatch (EV)", 4)
+            new MTEQuadrupleOutputHatch(21500, "gtnl.Hatch.QuadrupleOutputHatchEV", "Quadruple Output Hatch (EV)", 4)
                 .getStackForm(1L));
+
+        GTNLItemList.FluidManaInputHatch.set(
+            new MTEHatchCustomFluid(
+                FluidUtils.getFluidStack("fluidmana", 1)
+                    .getFluid(),
+                512000,
+                21501,
+                "gtnl.Hatch.FluidManaInputHatch",
+                "Fluid Mana Input Hatch",
+                5).getStackForm(1L));
     }
 
     public static void run() {
-        registerQuadrupleOutputHatch();
-        registerOutputCombined();
+        Logger.INFO("GTNL Content | Registering Custom MTE Hatches.");
+        registerMTEHatch();
     }
 }

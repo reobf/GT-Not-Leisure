@@ -4,6 +4,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.science.gtnl.Utils.TextHandler;
+import com.science.gtnl.common.machine.machineclass.IMCForNEI;
+import com.science.gtnl.common.recipe.GTNLRecipeRemover;
 import com.science.gtnl.devTools.PathHelper;
 import com.science.gtnl.loader.LazyStaticsInitLoader;
 import com.science.gtnl.loader.MachineLoader;
@@ -11,8 +13,6 @@ import com.science.gtnl.loader.MaterialLoader;
 import com.science.gtnl.loader.OreDictLoader;
 import com.science.gtnl.loader.RecipeLoader;
 import com.science.gtnl.loader.ScriptLoader;
-import com.science.gtnl.machine.machineclass.IMCForNEI;
-import com.science.gtnl.recipe.GTNLRecipeRemover;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;

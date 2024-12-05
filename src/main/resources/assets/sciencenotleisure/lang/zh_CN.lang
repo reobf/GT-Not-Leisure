@@ -47,15 +47,16 @@ textSteamAssemblyCasing= 蒸汽装配机械方块
 
 NameLargeSteamCircuitAssembler=大型蒸汽电路组装机
 CircuitAssemblerRecipeType=电路组装机
-Tooltip_LargeSteamMachine_0=比同等级的单方块组装机快25%
-Tooltip_LargeSteamMachine_1=仅消耗正常需求62.5%的蒸汽
-Tooltip_LargeSteamMachine_2=一次可处理多达16个物品
+Tooltip_LargeSteamMachine_00=比同等级的单方块组装机快25%
+Tooltip_LargeSteamMachine_01=仅消耗正常需求62.5%的蒸汽
+Tooltip_LargeSteamMachine_02=一次可处理多达16个物品
 Tooltip_LargeSteamCircuitAssembler_0=原始科技！
 
 NameGenerationEarthEngine=初代目行星发动机
 gtnl.recipe.RecombinationFusionReactorRecipes=重聚变反应堆
 Tooltip_GenerationEarthEngine_00=尽管多年过去了，它仍然屹立不倒
 Tooltip_GenerationEarthEngine_01=人类技术巅峰之作！
+Tooltip_GenerationEarthEngine_Casing=任意批处理机械方块
 
 NameBloodSoulSacrificialArray=血魂祭祀阵
 BloodSoulSacrificialArray.modeMsg.0=血魔注入
@@ -66,6 +67,7 @@ gtnl.recipe.BloodDemonInjectionRecipes=血魔注入
 gtnl.recipe.AlchemicChemistrySetRecipes=秘法炼金
 BloodSoulSacrificialArrayRecipeType=血魂交易 / 血魔注入 / 秘法炼金
 Tooltip_BloodSoulSacrificialArray_00=献祭你的灵魂...
+Tooltip_BloodSoulSacrificialArray_Casing=任意黑钚采矿机械方块
 
 NameTeleportationArrayToAlfheim=精灵传送法阵
 gtnl.recipe.PortalToAlfheimRecipes=精灵传送门
@@ -74,6 +76,9 @@ TeleportationArrayToAlfheim.modeMsg.0=精灵传送门
 TeleportationArrayToAlfheim.modeMsg.1=自然灵阵
 TeleportationArrayToAlfheimRecipeType=精灵传送门 / 自然灵阵
 Tooltip_TeleportationArrayToAlfheim_00=传说这个法阵可以稳定传输大量的物资
+Tooltip_TeleportationArrayToAlfheim_01=需要液态魔力输入仓
+Tooltip_TeleportationArrayToAlfheim_02=每秒消耗100L液态魔力进行工作
+Tooltip_TeleportationArrayToAlfheim_Casing=任意放射硅岩合金机械方块
 death.attack.damage.gtnl.PortalToAlfheimExplode=被精灵传送法阵反噬了
 
 tooltips.TrollFace=Never Gonna Give You Up~
@@ -90,6 +95,7 @@ require_clean_room=该配方需要超净间。
 require_sterile_environment=该配方需要无菌环境。
 
 gtnl.Hatch.QuadrupleOutputHatchEV=四重输出仓 (EV)
+gtnl.Hatch.FluidManaInputHatch=魔力输入仓
 
 gtnl.ae2.MTEHatchOutputME=输出仓 (ME)
 
@@ -259,26 +265,5 @@ bw.PyromelliticDianhydride.noTrans=均苯二甲酸酐
 bw.Durene.noTrans=杜烯
 bw.Germaniumtungstennitride.noTrans=锗-钨氮化物
 bw.Polyetheretherketone.noTrans=聚醚醚酮
-bw.xxx.noTrans=
-bw.xxx.noTrans=
-bw.xxx.noTrans=
-bw.xxx.noTrans=
-bw.xxx.noTrans=
-bw.xxx.noTrans=
-bw.xxx.noTrans=
-bw.xxx.noTrans=
-bw.xxx.noTrans=
-bw.xxx.noTrans=
-bw.xxx.noTrans=
-bw.xxx.noTrans=
-bw.xxx.noTrans=
-bw.xxx.noTrans=
-bw.xxx.noTrans=
-bw.xxx.noTrans=
-bw.xxx.noTrans=
-bw.xxx.noTrans=
-bw.xxx.noTrans=
-bw.xxx.noTrans=
-bw.xxx.noTrans=
-bw.xxx.noTrans=
+bw.FluidMana.noTrans=液态魔力
 bw.Stargate.notTrans=星门

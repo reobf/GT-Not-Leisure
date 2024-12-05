@@ -1,7 +1,7 @@
 package com.science.gtnl.loader;
 
-import com.science.gtnl.machine.RealArtificialStar;
-import com.science.gtnl.machine.TeleportationArrayToAlfheim;
+import com.science.gtnl.common.machine.RealArtificialStar;
+import com.science.gtnl.common.machine.TeleportationArrayToAlfheim;
 import com.science.gtnl.misc.CheckRecipeResults.CheckRecipeResults;
 
 public class LazyStaticsInitLoader {

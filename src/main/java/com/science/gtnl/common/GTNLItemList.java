@@ -53,6 +53,8 @@ public enum GTNLItemList {
     QuadrupleOutputHatchUXV,
     QuadrupleOutputHatchMAX,
 
+    FluidManaInputHatch,
+
     Gaia_Glass,
     Terra_Glass,
 

@@ -35,7 +35,6 @@ public class TextLocalization {
         .addStringLocalization("gt.notileentityinthisblock", "This is NOT a TileEntity!");
 
     public static final String StructureTooComplex = texter("The structure is too complex!", "StructureTooComplex");
-    public static final String textCasing = texter("Casing", "textCasing");
     public static final String textUseBlueprint = texter(
         "Use " + EnumChatFormatting.BLUE
             + "Blue"
@@ -45,49 +44,6 @@ public class TextLocalization {
             + " to preview",
         "textUseBlueprint");
     public static final String textAnyCasing = texter("Any Casing", "textAnyCasing");
-    public static final String textTopCenter = texter("Top center", "textTopCenter");
-    public static final String textFrontCenter = texter("Front center", "textFrontCenter");
-    public static final String textFrontBottom = texter("Front bottom", "textFrontBottom");
-    public static final String textCenterOfLRSides = texter(
-        "Center area of left and right side",
-        "textCenterOfLRSides");
-
-    public static final String[] Tooltips_Upgrades_LV = new String[] {
-        texter("Extra 1%% Speed Up !", "PhotonControllerUpgradeLV.tooltips.01") };
-    public static final String[] Tooltips_Upgrades_MV = new String[] {
-        texter("Extra 2%% Speed Up !", "PhotonControllerUpgradeMV.tooltips.01") };
-    public static final String[] Tooltips_Upgrades_HV = new String[] {
-        texter("Extra 3%% Speed Up !", "PhotonControllerUpgradeHV.tooltips.01") };
-    public static final String[] Tooltips_Upgrades_EV = new String[] {
-        texter("Extra 4%% Speed Up !", "PhotonControllerUpgradeEV.tooltips.01") };
-    public static final String[] Tooltips_Upgrades_IV = new String[] {
-        texter("Extra 5%% Speed Up !", "PhotonControllerUpgradeIV.tooltips.01") };
-    public static final String[] Tooltips_Upgrades_LuV = new String[] {
-        texter("Extra 10%% Speed Up !", "PhotonControllerUpgradeLuV.tooltips.01") };
-    public static final String[] Tooltips_Upgrades_ZPM = new String[] {
-        texter("Extra 20%% Speed Up !", "PhotonControllerUpgradeZPM.tooltips.01") };
-    public static final String[] Tooltips_Upgrades_UV = new String[] {
-        texter("Extra 40%% Speed Up !", "PhotonControllerUpgradeUV.tooltips.01") };
-    public static final String[] Tooltips_Upgrades_UHV = new String[] {
-        texter("Extra 70%% Speed Up !", "PhotonControllerUpgradeUHV.tooltips.01") };
-    public static final String[] Tooltips_Upgrades_UEV = new String[] {
-        texter("Extra 100%% Speed Up !", "PhotonControllerUpgradeUEV.tooltips.01") };
-    public static final String[] Tooltips_Upgrades_UIV = new String[] {
-        texter("Extra 140%% Speed Up !", "PhotonControllerUpgradeUiV.tooltips.01") };
-    public static final String[] Tooltips_Upgrades_UMV = new String[] {
-        texter("Extra 190%% Speed Up !", "PhotonControllerUpgradeUMV.tooltips.01"),
-        texter("Enable Perfect Overclock !", "PhotonControllerUpgradeUMV.tooltips.02") };
-    public static final String[] Tooltips_Upgrades_UXV = new String[] {
-        texter("Extra 250%% Speed Up !", "PhotonControllerUpgradeUXV.tooltips.01"),
-        texter("Enable Perfect Overclock !", "PhotonControllerUpgradeUXV.tooltips.02") };
-    public static final String[] Tooltips_Upgrades_MAX = new String[] {
-        texter("Extra 320%% Speed Up !", "PhotonControllerUpgradeMAX.tooltips.01"),
-        texter("Enable Perfect Overclock !", "PhotonControllerUpgradeMAX.tooltips.02") };
-
-    public static final String[][] TooltipsUpgrades = new String[][] { Tooltips_Upgrades_LV, Tooltips_Upgrades_MV,
-        Tooltips_Upgrades_HV, Tooltips_Upgrades_EV, Tooltips_Upgrades_IV, Tooltips_Upgrades_LuV, Tooltips_Upgrades_ZPM,
-        Tooltips_Upgrades_UV, Tooltips_Upgrades_UHV, Tooltips_Upgrades_UEV, Tooltips_Upgrades_UIV,
-        Tooltips_Upgrades_UMV, Tooltips_Upgrades_UXV, Tooltips_Upgrades_MAX };
 
     public static final String CircuitAssemblerRecipeType = texter("Circuit Assembler", "CircuitAssemblerRecipeType");
     public static final String textSteamAssemblyCasing = texter(" Steam Assembly Casing", "textSteamAssemblyCasing");
@@ -106,20 +62,20 @@ public class TextLocalization {
         "Processing Speed & Steam Consumption is doubled under High Pressure",
         "HIGH_PRESSURE_TOOLTIP_NOTICE");
 
-    public static final String Tooltip_LargeSteamMachine_0 = texter(
+    public static final String Tooltip_LargeSteamCircuitAssembler_00 = texter(
         "25% faster than using single block steam machines of the same pressure",
-        "Tooltip_LargeSteamMachine_0");
-    public static final String Tooltip_LargeSteamMachine_1 = texter(
+        "Tooltip_LargeSteamCircuitAssembler_00");
+    public static final String Tooltip_LargeSteamCircuitAssembler_01 = texter(
         "Only consumes steam at 62.5% of the L/s normally required",
-        "Tooltip_LargeSteamMachine_1");
-    public static final String Tooltip_LargeSteamMachine_2 = texter(
+        "Tooltip_LargeSteamCircuitAssembler_01");
+    public static final String Tooltip_LargeSteamCircuitAssembler_02 = texter(
         "Processes up to 16 items at once",
-        "Tooltip_LargeSteamMachine_2");
+        "Tooltip_LargeSteamCircuitAssembler_02");
 
     public static final String NameLargeSteamCircuitAssembler = texter(
         "Large Steam Circuit Assembler",
         "NameLargeSteamCircuitAssembler");
-    public static final String Tooltip_LargeSteamCircuitAssembler_0 = texter(
+    public static final String Tooltip_LargeSteamCircuitAssembler_3 = texter(
         "Primitive technology!",
         "Tooltip_LargeSteamCircuitAssembler_0");
 
@@ -135,6 +91,9 @@ public class TextLocalization {
     public static final String Tooltip_GenerationEarthEngine_01 = texter(
         "The product of the pinnacle of human technology!",
         "Tooltip_GenerationEarthEngine_01");
+    public static final String Tooltip_GenerationEarthEngine_Casing = texter(
+        "Any Iron Plated Bricks",
+        "Tooltip_GenerationEarthEngine_Casing");
 
     public static final String NameBloodSoulSacrificialArray = texter(
         "Blood SoulSacrificial Array",
@@ -145,6 +104,9 @@ public class TextLocalization {
     public static final String Tooltip_BloodSoulSacrificialArray_00 = texter(
         "§4§oSaSacrifice your soul...",
         "Tooltip_BloodSoulSacrificialArray_00");
+    public static final String Tooltip_BloodSoulSacrificialArray_Casing = texter(
+        "Ang Mining Blck Plutonium Casing",
+        "Tooltip_BloodSoulSacrificialArray_Casing");
 
     public static final String NameTeleportationArrayToAlfheim = texter(
         "Teleportation Array To Alfheim",
@@ -155,6 +117,15 @@ public class TextLocalization {
     public static final String Tooltip_TeleportationArrayToAlfheim_00 = texter(
         "It is said that this Nature Spirit Array can stably transmit a large amount of materials.",
         "Tooltip_TeleportationArrayToAlfheim_00");
+    public static final String Tooltip_TeleportationArrayToAlfheim_01 = texter(
+        "Need Fluid Mana Input Hatch",
+        "Tooltip_TeleportationArrayToAlfheim_01");
+    public static final String Tooltip_TeleportationArrayToAlfheim_02 = texter(
+        "Consuming 100L of Fluid Mana per second during work",
+        "Tooltip_TeleportationArrayToAlfheim_02");
+    public static final String Tooltip_TeleportationArrayToAlfheim_Casing = texter(
+        "Any Radiant Naquadah Alloy Casing",
+        "Tooltip_TeleportationArrayToAlfheim_Casing");
 
     public static final String NameRealArtificialStar = texter("Real Artificial Star", "NameRealArtificialStar");
     public static final String Tooltip_RealArtificialStar_MachineType = texter(

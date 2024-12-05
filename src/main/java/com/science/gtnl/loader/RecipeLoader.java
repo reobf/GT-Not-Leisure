@@ -1,17 +1,17 @@
 package com.science.gtnl.loader;
 
-import com.science.gtnl.recipe.AlloyBlastSmelterRecipes;
-import com.science.gtnl.recipe.AssemblerRecipes;
-import com.science.gtnl.recipe.AssemblingLineRecipes;
-import com.science.gtnl.recipe.ChemicalRecipes;
-import com.science.gtnl.recipe.CompressorRecipes;
-import com.science.gtnl.recipe.ElectrolyzerRecipes;
-import com.science.gtnl.recipe.IRecipePool;
-import com.science.gtnl.recipe.MixerRecipes;
-import com.science.gtnl.recipe.PortalToAlfheimRecipes;
-import com.science.gtnl.recipe.ReFusionReactorRecipes;
-import com.science.gtnl.recipe.RealArtificialStarRecipes;
-import com.science.gtnl.recipe.multiDehydratorRecipes;
+import com.science.gtnl.common.recipe.AlloyBlastSmelterRecipes;
+import com.science.gtnl.common.recipe.AssemblerRecipes;
+import com.science.gtnl.common.recipe.AssemblingLineRecipes;
+import com.science.gtnl.common.recipe.ChemicalRecipes;
+import com.science.gtnl.common.recipe.CompressorRecipes;
+import com.science.gtnl.common.recipe.ElectrolyzerRecipes;
+import com.science.gtnl.common.recipe.IRecipePool;
+import com.science.gtnl.common.recipe.MixerRecipes;
+import com.science.gtnl.common.recipe.PortalToAlfheimRecipes;
+import com.science.gtnl.common.recipe.ReFusionReactorRecipes;
+import com.science.gtnl.common.recipe.RealArtificialStarRecipes;
+import com.science.gtnl.common.recipe.multiDehydratorRecipes;
 
 public class RecipeLoader {
 
