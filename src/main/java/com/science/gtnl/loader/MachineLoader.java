@@ -1,19 +1,10 @@
 package com.science.gtnl.loader;
 
-import static com.science.gtnl.common.CustomItemList.MTEInfinityHatchOutputBusME;
-import static com.science.gtnl.common.CustomItemList.MTEInfinityHatchOutputME;
-import static com.science.gtnl.common.CustomItemList.MTEIntegratedOutputHatchME;
-import static com.science.gtnl.common.CustomItemList.hatch_AutoSterileMaintenanceHatch;
-
 import net.minecraft.item.ItemStack;
 
 import com.science.gtnl.Utils.TextLocalization;
 import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.common.hatch.MTEHatchCustomFluid;
-import com.science.gtnl.common.hatch.MTEHatchSterileMaintenance;
-import com.science.gtnl.common.hatch.MTEInfinityHatchOutputBusME;
-import com.science.gtnl.common.hatch.MTEInfinityHatchOutputME;
-import com.science.gtnl.common.hatch.MTEIntegratedOutputHatchME;
 import com.science.gtnl.common.hatch.MTEQuadrupleOutputHatch;
 import com.science.gtnl.common.machine.BloodSoulSacrificialArray;
 import com.science.gtnl.common.machine.GenerationEarthEngine;
@@ -35,25 +26,24 @@ public class MachineLoader {
     public static ItemStack RealArtificialStar;
 
     public static void loadMachines() {
-        hatch_AutoSterileMaintenanceHatch.set(
-            new MTEHatchSterileMaintenance(
-                21001,
-                "gtnl.sterile.maintenance",
-                "Auto-Taping Sterile Maintenance Hatch",
-                14).getStackForm(1L));
 
-        MTEInfinityHatchOutputBusME.set(
-            new MTEInfinityHatchOutputBusME(21002, "gtnl.ae2.InfinityOutputBusME", "Infinity Output Bus (ME)", 4)
-                .getStackForm(1L));
-
-        MTEInfinityHatchOutputME.set(
-            new MTEInfinityHatchOutputME(21003, "gtnl.ae2.InfinityOutputME", "Infinity Output Hatch (ME)", 3)
-                .getStackForm(1L));
-
-        MTEIntegratedOutputHatchME.set(
-            new MTEIntegratedOutputHatchME(21004, "gtnl.ae2.IntegratedOutputHatchME", "Integrated Output Hatch (ME)")
-                .getStackForm(1L));
-
+        /*
+         * hatch_AutoSterileMaintenanceHatch.set(
+         * new MTEHatchSterileMaintenance(
+         * 21001,
+         * "gtnl.sterile.maintenance",
+         * "Auto-Taping Sterile Maintenance Hatch",
+         * 14).getStackForm(1L));
+         * MTEInfinityHatchOutputBusME.set(
+         * new MTEInfinityHatchOutputBusME(21002, "gtnl.ae2.InfinityOutputBusME", "Infinity Output Bus (ME)", 4)
+         * .getStackForm(1L));
+         * MTEInfinityHatchOutputME.set(
+         * new MTEInfinityHatchOutputME(21003, "gtnl.ae2.InfinityOutputME", "Infinity Output Hatch (ME)", 3)
+         * .getStackForm(1L));
+         * MTEIntegratedOutputHatchME.set(
+         * new MTEIntegratedOutputHatchME(21004, "gtnl.ae2.IntegratedOutputHatchME", "Integrated Output Hatch (ME)")
+         * .getStackForm(1L));
+         */
         LargeSteamCircuitAssembler = new LargeSteamCircuitAssembler(
             21005,
             "NameLargeSteamCircuitAssembler",
