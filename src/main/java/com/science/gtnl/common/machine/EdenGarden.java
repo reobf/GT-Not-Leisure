@@ -44,6 +44,7 @@ import org.jetbrains.annotations.NotNull;
 
 import com.gtnewhorizon.structurelib.alignment.IAlignmentLimits;
 import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
+import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.gtnewhorizons.modularui.api.ModularUITextures;
 import com.gtnewhorizons.modularui.api.drawable.Text;
@@ -129,6 +130,9 @@ public class EdenGarden extends MultiMachineBase<EdenGarden> {
     public static final String STRUCTURE_PIECE_MAIN = "main";
     public static String[][] shape;
     public static final String EG_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/eden_garden";
+    public final int horizontalOffSet = 6;
+    public final int verticalOffSet = 43;
+    public final int depthOffSet = 10;
     public static IStructureDefinition<EdenGarden> STRUCTURE_DEFINITION = null;
 
     protected boolean isEnablePerfectOverclock() {
@@ -176,21 +180,34 @@ public class EdenGarden extends MultiMachineBase<EdenGarden> {
     }
 
     @Override
-    public boolean checkMachine(IGregTechTileEntity iGregTechTileEntity, ItemStack itemStack) {
+    public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack itemStack) {
+        repairMachine();
         mCasing = 0;
-
-        if (!checkPiece(STRUCTURE_PIECE_MAIN, 6, 43, 10)) return false;
-
+        if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet)) return false;
         boolean valid = this.mMaintenanceHatches.size() == 1 && !this.mEnergyHatches.isEmpty() && this.mCasing >= 70;
 
         if (valid) this.updateSeedLimits();
-
         return valid;
     }
 
     @Override
-    public void construct(ItemStack itemStack, boolean b) {
-        buildPiece(STRUCTURE_PIECE_MAIN, itemStack, b, 6, 43, 10);
+    public void construct(ItemStack stackSize, boolean hintsOnly) {
+        this.buildPiece(STRUCTURE_PIECE_MAIN, stackSize, hintsOnly, horizontalOffSet, verticalOffSet, depthOffSet);
+    }
+
+    @Override
+    public int survivalConstruct(ItemStack stackSize, int elementBudget, ISurvivalBuildEnvironment env) {
+        if (this.mMachine) return -1;
+        return this.survivialBuildPiece(
+            STRUCTURE_PIECE_MAIN,
+            stackSize,
+            horizontalOffSet,
+            verticalOffSet,
+            depthOffSet,
+            elementBudget,
+            env,
+            false,
+            true);
     }
 
     @Override
@@ -222,19 +239,17 @@ public class EdenGarden extends MultiMachineBase<EdenGarden> {
     @Override
     public String[] getStructureDescription(ItemStack stackSize) {
         List<String> info = new ArrayList<>(Arrays.asList(super.getStructureDescription(stackSize)));
-        info.add("The dirt is from RandomThings, must be tilled");
-        info.add("Purple lamps are from ProjectRedIllumination. They can be powered and/or inverted");
         return info.toArray(new String[] {});
     }
 
     public EdenGarden(int aID, String aName, String aNameRegional) {
         super(aID, aName, aNameRegional);
-        this.shape = StructureUtils.readStructureFromFile(EG_STRUCTURE_FILE_PATH);
+        shape = StructureUtils.readStructureFromFile(EG_STRUCTURE_FILE_PATH);
     }
 
     public EdenGarden(String aName) {
         super(aName);
-        this.shape = StructureUtils.readStructureFromFile(EG_STRUCTURE_FILE_PATH);
+        shape = StructureUtils.readStructureFromFile(EG_STRUCTURE_FILE_PATH);
     }
 
     @Override
@@ -308,7 +323,6 @@ public class EdenGarden extends MultiMachineBase<EdenGarden> {
     }
 
     public void tryChangeSetupPhase(EntityPlayer aPlayer) {
-        // TODO: Create l10n entries for the setup phase change messages.
         if (this.mMaxProgresstime > 0) {
             GTUtility.sendChatToPlayer(aPlayer, "You can't enable/disable setup if the machine is working!");
             return;
@@ -357,10 +371,6 @@ public class EdenGarden extends MultiMachineBase<EdenGarden> {
             GTUtility.sendChatToPlayer(aPlayer, "No Humidity mode disabled.");
         }
     }
-
-    // endregion mode change standardisation
-
-    // region (de)serialisations
 
     @Override
     public void saveNBTData(NBTTagCompound aNBT) {
@@ -983,6 +993,4 @@ public class EdenGarden extends MultiMachineBase<EdenGarden> {
         }
         return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(CASING_INDEX) };
     }
-
-    // endregion ui
 }
