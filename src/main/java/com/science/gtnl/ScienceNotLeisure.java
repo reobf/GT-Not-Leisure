@@ -46,13 +46,11 @@ public class ScienceNotLeisure {
 
     public static final String MODID = "ScienceNotLeisure";
 
-    public static final String MODNAME = "ScienceNotLeisure";
+    public static final String MODNAME = "GTNotLeisure";
 
-    public static final String VERSION = "0.0.1";
+    public static final String VERSION = "0.1.0";
 
     public static final String Arthor = "HFstudio";
-
-    public static final String modDescription = "gtnl";
 
     public static final String RESOURCE_ROOT_ID = "sciencenotleisure";
 

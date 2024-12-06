@@ -58,18 +58,26 @@ public class TextLocalization {
         "Primitive technology!",
         "Tooltip_LargeSteamCircuitAssembler_03");
 
-    public static final String NameEdenGarden = texter("Eden Garden", "NameEdenGarden");
+    public static final String NameEdenGarden = texter("Ecological Singularity \"Edenscape\"", "NameEdenGarden");
     public static final String EdenGardenRecipeType = texter("Crop Farm", "gtnl.recipe.EdenGardenRecipeType");
-    public static final String Tooltip_EdenGarden_00 = texter("The light of hope for crops!", "Tooltip_EdenGarden_00");
+    public static final String Tooltip_EdenGarden_00 = texter(
+        "§e§oGod said, \"Let the land produce vegetation: seed-bearing plants and trees on the land that bear fruit with seed in it.\"",
+        "Tooltip_EdenGarden_00");
     public static final String Tooltip_EdenGarden_01 = texter(
-        "160000 times faster than Extreme Industrial Greenhouse!",
+        "§e§oAnd so the earth brought forth vegetation, with a variety of fruits and vegetables in abundance.",
         "Tooltip_EdenGarden_01");
     public static final String Tooltip_EdenGarden_02 = texter(
-        "No longer need fertilizers and herbicides!",
+        "§e§oThe seeds multiplied, filling the land with vibrant life.",
         "Tooltip_EdenGarden_02");
     public static final String Tooltip_EdenGarden_03 = texter(
-        "Each crop consumes 2000L of water",
+        "100 times faster than Extreme Industrial Greenhouse!",
         "Tooltip_EdenGarden_03");
+    public static final String Tooltip_EdenGarden_04 = texter(
+        "No longer need fertilizers and herbicides!",
+        "Tooltip_EdenGarden_04");
+    public static final String Tooltip_EdenGarden_05 = texter(
+        "Each crop consumes 2000L of water",
+        "Tooltip_EdenGarden_05");
     public static final String Tooltip_EdenGarden_Casing = texter(
         "Any Electric Compressor Casing",
         "Tooltip_EdenGarden_Casing");

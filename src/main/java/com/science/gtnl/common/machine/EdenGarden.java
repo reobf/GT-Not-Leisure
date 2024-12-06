@@ -102,7 +102,7 @@ public class EdenGarden extends MultiMachineBase<EdenGarden> {
 
     public static final int EIG_BALANCE_IC2_ACCELERATOR_TIER = VoltageIndex.EV;
     public static final int EIG_BALANCE_REGULAR_MODE_MIN_TIER = VoltageIndex.EV;
-    public static final double EIG_BALANCE_MAX_FERTILIZER_BOOST = 400.0d;
+    public static final double EIG_BALANCE_MAX_FERTILIZER_BOOST = 10.0d;
 
     public static final boolean debug = false;
 
@@ -223,6 +223,8 @@ public class EdenGarden extends MultiMachineBase<EdenGarden> {
             .addInfo(TextLocalization.Tooltip_EdenGarden_01)
             .addInfo(TextLocalization.Tooltip_EdenGarden_02)
             .addInfo(TextLocalization.Tooltip_EdenGarden_03)
+            .addInfo(TextLocalization.Tooltip_EdenGarden_04)
+            .addInfo(TextLocalization.Tooltip_EdenGarden_05)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)

@@ -53,12 +53,14 @@ Tooltip_LargeSteamCircuitAssembler_01=仅消耗正常需求62.5%的蒸汽
 Tooltip_LargeSteamCircuitAssembler_02=一次可处理多达16个物品
 Tooltip_LargeSteamCircuitAssembler_03=原始科技！
 
-NameEdenGarden=伊甸生态园
+NameEdenGarden=“伊甸”生态奇点
 gtnl.recipe.EdenGardenRecipeType=作物农场
-Tooltip_EdenGarden_00=农作物的希望之光！
-Tooltip_EdenGarden_01=比极限工业温室快160000倍！
-Tooltip_EdenGarden_02=不再需要肥料和除草剂！
-Tooltip_EdenGarden_03=每株作物消耗2000L水
+Tooltip_EdenGarden_00=§e§o神说：“陆地上要生出草木和各种蔬菜。” 
+Tooltip_EdenGarden_01=§e§o于是大地生出了草木，出现了各种瓜果蔬菜
+Tooltip_EdenGarden_02=§e§o籽实累累，整个大地上一片生机盎然。
+Tooltip_EdenGarden_03=比极限工业温室快100倍！
+Tooltip_EdenGarden_04=不再需要肥料和除草剂！
+Tooltip_EdenGarden_05=每株作物消耗2000L水
 Tooltip_EdenGarden_Casing=任意电力压缩机机械方块
 
 NameGenerationEarthEngine=初代目行星发动机
