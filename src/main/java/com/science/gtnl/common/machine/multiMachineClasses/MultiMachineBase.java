@@ -3,17 +3,20 @@ package com.science.gtnl.common.machine.multiMachineClasses;
 import static com.science.gtnl.Utils.TextHandler.texter;
 import static com.science.gtnl.Utils.Utils.filterValidMTEs;
 import static gregtech.api.util.GTUtility.validMTEList;
+import static kubatech.api.Variables.ln4;
 import static org.lwjgl.LWJGLUtil.log;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Nonnull;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
@@ -23,13 +26,31 @@ import org.jetbrains.annotations.NotNull;
 
 import com.gtnewhorizon.structurelib.alignment.constructable.IConstructable;
 import com.gtnewhorizon.structurelib.alignment.constructable.ISurvivalConstructable;
+import com.gtnewhorizons.modularui.api.math.MainAxisAlignment;
+import com.gtnewhorizons.modularui.api.math.Pos2d;
+import com.gtnewhorizons.modularui.api.screen.ITileWithModularUI;
+import com.gtnewhorizons.modularui.api.screen.ModularUIContext;
+import com.gtnewhorizons.modularui.api.screen.ModularWindow;
+import com.gtnewhorizons.modularui.api.screen.UIBuildContext;
+import com.gtnewhorizons.modularui.common.builder.UIBuilder;
+import com.gtnewhorizons.modularui.common.builder.UIInfo;
+import com.gtnewhorizons.modularui.common.internal.wrapper.ModularGui;
+import com.gtnewhorizons.modularui.common.internal.wrapper.ModularUIContainer;
+import com.gtnewhorizons.modularui.common.widget.Column;
+import com.gtnewhorizons.modularui.common.widget.DrawableWidget;
+import com.gtnewhorizons.modularui.common.widget.DynamicPositionedColumn;
+import com.gtnewhorizons.modularui.common.widget.DynamicPositionedRow;
+import com.gtnewhorizons.modularui.common.widget.Scrollable;
+import com.gtnewhorizons.modularui.common.widget.SlotWidget;
 import com.science.gtnl.Config;
 import com.science.gtnl.common.hatch.MTEHatchCustomFluid;
 
 import gregtech.api.enums.GTValues;
+import gregtech.api.gui.modularui.GTUITextures;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.logic.ProcessingLogic;
+import gregtech.api.metatileentity.BaseMetaTileEntity;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.implementations.MTEExtendedPowerMultiBlockBase;
 import gregtech.api.metatileentity.implementations.MTEHatch;
@@ -159,6 +180,115 @@ public abstract class MultiMachineBase<T extends MultiMachineBase<T>> extends MT
      */
     protected int getLimitedMaxParallel() {
         return getMaxParallelRecipes();
+    }
+
+    public int getVoltageTier() {
+        return (int) getVoltageTierExact();
+    }
+
+    public double getVoltageTierExact() {
+        return Math.log((double) getMaxInputEu() / 8d) / ln4 + 1e-8d;
+    }
+
+    @FunctionalInterface
+    protected interface ContainerConstructor<T extends MultiMachineBase<?>> {
+
+        ModularUIContainer of(ModularUIContext context, ModularWindow mainWindow, T multiBlock);
+    }
+
+    @SuppressWarnings("unchecked")
+    protected static <K extends MultiMachineBase<?>> UIInfo<?, ?> createMetaTileEntityUI(
+        MultiMachineBase.ContainerConstructor<K> containerConstructor) {
+        return UIBuilder.of()
+            .container((player, world, x, y, z) -> {
+                TileEntity te = world.getTileEntity(x, y, z);
+                if (te instanceof BaseMetaTileEntity) {
+                    IMetaTileEntity mte = ((BaseMetaTileEntity) te).getMetaTileEntity();
+                    if (!(mte instanceof MultiMachineBase)) return null;
+                    final UIBuildContext buildContext = new UIBuildContext(player);
+                    final ModularWindow window = ((ITileWithModularUI) te).createWindow(buildContext);
+                    return containerConstructor.of(new ModularUIContext(buildContext, te::markDirty), window, (K) mte);
+                }
+                return null;
+            })
+            .gui(((player, world, x, y, z) -> {
+                if (!world.isRemote) return null;
+                TileEntity te = world.getTileEntity(x, y, z);
+                if (te instanceof BaseMetaTileEntity) {
+                    IMetaTileEntity mte = ((BaseMetaTileEntity) te).getMetaTileEntity();
+                    if (!(mte instanceof MultiMachineBase)) return null;
+                    final UIBuildContext buildContext = new UIBuildContext(player);
+                    final ModularWindow window = ((ITileWithModularUI) te).createWindow(buildContext);
+                    return new ModularGui(
+                        containerConstructor.of(new ModularUIContext(buildContext, null), window, (K) mte));
+                }
+                return null;
+            }))
+            .build();
+    }
+
+    protected List<SlotWidget> slotWidgets = new ArrayList<>(1);
+
+    public void createInventorySlots() {
+        final SlotWidget inventorySlot = new SlotWidget(inventoryHandler, 1);
+        inventorySlot.setBackground(GTUITextures.SLOT_DARK_GRAY);
+        slotWidgets.add(inventorySlot);
+    }
+
+    @Override
+    public Pos2d getPowerSwitchButtonPos() {
+        return new Pos2d(174, 166 - (slotWidgets.size() * 18));
+    }
+
+    @Override
+    public Pos2d getStructureUpdateButtonPos() {
+        return new Pos2d(174, 148 - (slotWidgets.size() * 18));
+    }
+
+    @Override
+    public void addUIWidgets(ModularWindow.Builder builder, UIBuildContext buildContext) {
+        builder.widget(
+            new DrawableWidget().setDrawable(GTUITextures.PICTURE_SCREEN_BLACK)
+                .setPos(4, 4)
+                .setSize(190, 85));
+
+        slotWidgets.clear();
+        createInventorySlots();
+
+        Column slotsColumn = new Column();
+        for (int i = slotWidgets.size() - 1; i >= 0; i--) {
+            slotsColumn.widget(slotWidgets.get(i));
+        }
+        builder.widget(
+            slotsColumn.setAlignment(MainAxisAlignment.END)
+                .setPos(173, 167 - 1));
+
+        final DynamicPositionedColumn screenElements = new DynamicPositionedColumn();
+        drawTexts(screenElements, !slotWidgets.isEmpty() ? slotWidgets.get(0) : null);
+        builder.widget(
+            new Scrollable().setVerticalScroll()
+                .widget(screenElements.setPos(10, 0))
+                .setPos(0, 7)
+                .setSize(190, 79));
+
+        builder.widget(createPowerSwitchButton(builder))
+            .widget(createVoidExcessButton(builder))
+            .widget(createInputSeparationButton(builder))
+            .widget(createBatchModeButton(builder))
+            .widget(createLockToSingleRecipeButton(builder))
+            .widget(createStructureUpdateButton(builder));
+
+        DynamicPositionedRow configurationElements = new DynamicPositionedRow();
+        addConfigurationWidgets(configurationElements, buildContext);
+
+        builder.widget(
+            configurationElements.setSpace(2)
+                .setAlignment(MainAxisAlignment.SPACE_BETWEEN)
+                .setPos(getRecipeLockingButtonPos().add(18, 0)));
+    }
+
+    protected void addConfigurationWidgets(DynamicPositionedRow configurationElements, UIBuildContext buildContext) {
+
     }
 
     /**

@@ -313,7 +313,7 @@ public class LargeSteamCircuitAssembler extends MTESteamMultiBase<LargeSteamCirc
             .addInfo(TextLocalization.Tooltip_LargeSteamCircuitAssembler_01)
             .addInfo(TextLocalization.Tooltip_LargeSteamCircuitAssembler_02)
             .addInfo(TextLocalization.HIGH_PRESSURE_TOOLTIP_NOTICE)
-            .addInfo(TextLocalization.Tooltip_LargeSteamCircuitAssembler_3)
+            .addInfo(TextLocalization.Tooltip_LargeSteamCircuitAssembler_03)
             .addSeparator()
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
             .beginStructureBlock(3, 4, 10, false)

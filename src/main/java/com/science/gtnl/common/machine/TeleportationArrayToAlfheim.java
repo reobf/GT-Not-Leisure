@@ -85,7 +85,7 @@ public class TeleportationArrayToAlfheim extends MultiMachineBase<TeleportationA
     }
 
     protected boolean isEnablePerfectOverclock() {
-        return false;
+        return true;
     }
 
     @Override
@@ -118,7 +118,6 @@ public class TeleportationArrayToAlfheim extends MultiMachineBase<TeleportationA
         boolean shouldExplode = false;
         long Strength = 0;
         IGregTechTileEntity aBaseMetaTileEntity = getBaseMetaTileEntity();
-
         for (ItemStack items : getStoredInputs()) {
             if (Bread.equalItemStack(items)) {
                 Strength += 50L * items.stackSize;
@@ -126,12 +125,10 @@ public class TeleportationArrayToAlfheim extends MultiMachineBase<TeleportationA
                 items.stackSize = 0;
             }
         }
-
         updateSlots();
         if (Strength > 500) {
             Strength = 500;
         }
-
         if (shouldExplode) {
             triggerExplosion(aBaseMetaTileEntity, Strength);
             return CheckRecipeResultRegistry.SUCCESSFUL;

@@ -4,22 +4,10 @@ import static com.science.gtnl.Utils.TextHandler.texter;
 
 import net.minecraft.util.EnumChatFormatting;
 
-import com.science.gtnl.ScienceNotLeisure;
-
 import gregtech.api.util.GTLanguageManager;
 
 public class TextLocalization {
 
-    public static final String ModName = ScienceNotLeisure.MODNAME;
-    public static final String ModNameDesc = texter(
-        "Added by " + EnumChatFormatting.GREEN + ModName + EnumChatFormatting.GRAY,
-        "ModNameDesc");
-    public static final String HeatCapacity = texter("Heat Capacity: ", "HeatCapacity");
-    public static final String FluidCapacity = texter("Capacity: ", "FluidCapacity");
-    public static final String HatchTier = texter("Hatch Tier: ", "HatchTier");
-    public static final String Kelvin = texter(" K", "Kelvin");
-    public static final String Text_SeparatingLine = EnumChatFormatting.GOLD
-        + "-----------------------------------------";
     public static final String BLUE_PRINT_INFO = texter(
         "Follow the" + EnumChatFormatting.BLUE
             + " Structure"
@@ -33,16 +21,8 @@ public class TextLocalization {
         .addStringLocalization("gt.nomobspawnsonthisblock", "Mobs cannot Spawn on this Block");
     public static final String mNoTileEntityToolTip = GTLanguageManager
         .addStringLocalization("gt.notileentityinthisblock", "This is NOT a TileEntity!");
-
     public static final String StructureTooComplex = texter("The structure is too complex!", "StructureTooComplex");
-    public static final String textUseBlueprint = texter(
-        "Use " + EnumChatFormatting.BLUE
-            + "Blue"
-            + EnumChatFormatting.AQUA
-            + "print"
-            + EnumChatFormatting.RESET
-            + " to preview",
-        "textUseBlueprint");
+
     public static final String textAnyCasing = texter("Any Casing", "textAnyCasing");
 
     public static final String CircuitAssemblerRecipeType = texter("Circuit Assembler", "CircuitAssemblerRecipeType");
@@ -62,6 +42,9 @@ public class TextLocalization {
         "Processing Speed & Steam Consumption is doubled under High Pressure",
         "HIGH_PRESSURE_TOOLTIP_NOTICE");
 
+    public static final String NameLargeSteamCircuitAssembler = texter(
+        "Large Steam Circuit Assembler",
+        "NameLargeSteamCircuitAssembler");
     public static final String Tooltip_LargeSteamCircuitAssembler_00 = texter(
         "25% faster than using single block steam machines of the same pressure",
         "Tooltip_LargeSteamCircuitAssembler_00");
@@ -71,20 +54,32 @@ public class TextLocalization {
     public static final String Tooltip_LargeSteamCircuitAssembler_02 = texter(
         "Processes up to 16 items at once",
         "Tooltip_LargeSteamCircuitAssembler_02");
-
-    public static final String NameLargeSteamCircuitAssembler = texter(
-        "Large Steam Circuit Assembler",
-        "NameLargeSteamCircuitAssembler");
-    public static final String Tooltip_LargeSteamCircuitAssembler_3 = texter(
+    public static final String Tooltip_LargeSteamCircuitAssembler_03 = texter(
         "Primitive technology!",
-        "Tooltip_LargeSteamCircuitAssembler_0");
+        "Tooltip_LargeSteamCircuitAssembler_03");
+
+    public static final String NameEdenGarden = texter("Eden Garden", "NameEdenGarden");
+    public static final String EdenGardenRecipeType = texter("Crop Farm", "gtnl.recipe.EdenGardenRecipeType");
+    public static final String Tooltip_EdenGarden_00 = texter("The light of hope for crops!", "Tooltip_EdenGarden_00");
+    public static final String Tooltip_EdenGarden_01 = texter(
+        "160000 times faster than Extreme Industrial Greenhouse!",
+        "Tooltip_EdenGarden_01");
+    public static final String Tooltip_EdenGarden_02 = texter(
+        "No longer need fertilizers and herbicides!",
+        "Tooltip_EdenGarden_02");
+    public static final String Tooltip_EdenGarden_03 = texter(
+        "Each crop consumes 2000L of water",
+        "Tooltip_EdenGarden_03");
+    public static final String Tooltip_EdenGarden_Casing = texter(
+        "Any Electric Compressor Casing",
+        "Tooltip_EdenGarden_Casing");
 
     public static final String NameGenerationEarthEngine = texter(
         "Generation Earth Engine",
         "NameGenerationEarthEngine");
     public static final String GenerationEarthEngineRecipeType = texter(
         "Recombination Fusion Reactor",
-        "gtnl.recipe.RecombinationFusionReactorRecipes");
+        "gtnl.recipe.GenerationEarthEngineRecipeType");
     public static final String Tooltip_GenerationEarthEngine_00 = texter(
         "Even though years have passed, it still stands firm",
         "Tooltip_GenerationEarthEngine_00");

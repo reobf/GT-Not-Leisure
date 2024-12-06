@@ -19,6 +19,7 @@ public class BlockRegister {
     public static Block Stargate_Coil = new BlockIron("Stargate_Coil", "stargate_coil");
     public static Block Gaia_Glass = new BlockGlass("Gaia_Glass", "Gaia_Glass");
     public static Block Terra_Glass = new BlockGlass("Terra_Glass", "Terra_Glass");
+    public static Block Fortify_Glowstone = new BlockLight("Fortify_Glowstone", "Fortify_Glowstone");
     public static Block StargateTier0 = new BlocksStargate(0);
     public static Block StargateTier1 = new BlocksStargate(1);
     public static Block StargateTier2 = new BlocksStargate(2);
@@ -45,6 +46,8 @@ public class BlockRegister {
             MetaItemBlockCasing.class,
             BasicBlocks.MetaBlockCasing.getUnlocalizedName());
 
+        GameRegistry.registerBlock(Fortify_Glowstone, "FortifyGlowstone");
+        GTNLItemList.Fortify_Glowstone.set(new ItemStack(Fortify_Glowstone));
         GameRegistry.registerBlock(Gaia_Glass, "GaiaGlass");
         GTNLItemList.Gaia_Glass.set(new ItemStack(Gaia_Glass));
         GameRegistry.registerBlock(Terra_Glass, "TerraGlass");

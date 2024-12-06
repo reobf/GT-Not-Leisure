@@ -10,24 +10,11 @@ import java.util.Map;
 
 import com.science.gtnl.ScienceNotLeisure;
 
-/**
- * When Texts need auto generate .lang . Use this.
- */
 public class TextHandler {
 
-    /* The Map across all text<Key, Value> */
     public static Map<String, String> LangMap;
-    // public static Map<String, String> LangMapBackUp;
     public static Map<String, String> LangMapNeedToWrite = new HashMap<>();
 
-    /**
-     * When the String inputs need generate a .lang Key-Value at once,
-     * use this method instead directly String.
-     *
-     * @param aTextLine The String should input as default, input 1 line.
-     * @param aKey      The key of this Line. If no key input, will auto generate.
-     * @return Return the String as no this method until the text has been changed in file .lang.
-     */
     public static String texter(String aTextLine, String aKey) {
 
         /**

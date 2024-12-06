@@ -21,6 +21,7 @@ tile.Stargate.9.name=压缩星门-九重
 MetaBlock.1.name=新视野线圈
 tile.Gaia_Glass.name=盖亚玻璃
 tile.Terra_Glass.name=泰拉玻璃
+tile.Fortify_Glowstone.name=强化荧石
 tile.Stargate_Coil.name=星门线圈
 tile.Stargate_Coil_Compressed.0.name=压缩星门线圈
 tile.Stargate_Coil_Compressed.1.name=压缩星门线圈-一重
@@ -50,10 +51,18 @@ CircuitAssemblerRecipeType=电路组装机
 Tooltip_LargeSteamCircuitAssembler_00=比同等级的单方块组装机快25%
 Tooltip_LargeSteamCircuitAssembler_01=仅消耗正常需求62.5%的蒸汽
 Tooltip_LargeSteamCircuitAssembler_02=一次可处理多达16个物品
-Tooltip_LargeSteamCircuitAssembler_0=原始科技！
+Tooltip_LargeSteamCircuitAssembler_03=原始科技！
+
+NameEdenGarden=伊甸生态园
+gtnl.recipe.EdenGardenRecipeType=作物农场
+Tooltip_EdenGarden_00=农作物的希望之光！
+Tooltip_EdenGarden_01=比极限工业温室快160000倍！
+Tooltip_EdenGarden_02=不再需要肥料和除草剂！
+Tooltip_EdenGarden_03=每株作物消耗2000L水
+Tooltip_EdenGarden_Casing=任意电力压缩机机械方块
 
 NameGenerationEarthEngine=初代目行星发动机
-gtnl.recipe.RecombinationFusionReactorRecipes=重聚变反应堆
+gtnl.recipe.GenerationEarthEngineRecipeType=重聚变反应堆
 Tooltip_GenerationEarthEngine_00=尽管多年过去了，它仍然屹立不倒
 Tooltip_GenerationEarthEngine_01=人类技术巅峰之作！
 Tooltip_GenerationEarthEngine_Casing=任意批处理机械方块
@@ -105,7 +114,6 @@ gt.blockmachines.gtnl.IntegratedOutputHatchME.desc.0=多方块的物品和流体
 gtnl.ae2.InfinityOutputBusME=无限输出总线 (ME)
 gtnl.ae2.InfinityOutputME=无限输出仓 (ME)
 
-gtnl.ae2.MTEHatchOutputME=输出仓 (ME)
 
 gt.blockmachines.gtnl.InfinityOutputBusME.desc.0=多方块的物品输出
 gt.blockmachines.gtnl.InfinityOutputME.desc.0=多方块的流体输出

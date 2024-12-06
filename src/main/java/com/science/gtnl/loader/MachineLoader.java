@@ -7,6 +7,7 @@ import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.common.hatch.MTEHatchCustomFluid;
 import com.science.gtnl.common.hatch.MTEQuadrupleOutputHatch;
 import com.science.gtnl.common.machine.BloodSoulSacrificialArray;
+import com.science.gtnl.common.machine.EdenGarden;
 import com.science.gtnl.common.machine.GenerationEarthEngine;
 import com.science.gtnl.common.machine.RealArtificialStar;
 import com.science.gtnl.common.machine.SteamMulti.LargeSteamCircuitAssembler;
@@ -24,6 +25,7 @@ public class MachineLoader {
     public static ItemStack BloodSoulSacrificialArray;
     public static ItemStack TeleportationArrayToAlfheim;
     public static ItemStack RealArtificialStar;
+    public static ItemStack EdenGarden;
 
     public static void loadMachines() {
 
@@ -40,10 +42,11 @@ public class MachineLoader {
          * MTEInfinityHatchOutputME.set(
          * new MTEInfinityHatchOutputME(21003, "gtnl.ae2.InfinityOutputME", "Infinity Output Hatch (ME)", 3)
          * .getStackForm(1L));
-         * MTEIntegratedOutputHatchME.set(
-         * new MTEIntegratedOutputHatchME(21004, "gtnl.ae2.IntegratedOutputHatchME", "Integrated Output Hatch (ME)")
-         * .getStackForm(1L));
          */
+        EdenGarden = new EdenGarden(21004, "NameLargeSteamCircuitAssembler", TextLocalization.NameEdenGarden)
+            .getStackForm(1);
+        GTNLItemList.EdenGarden.set(EdenGarden);
+
         LargeSteamCircuitAssembler = new LargeSteamCircuitAssembler(
             21005,
             "NameLargeSteamCircuitAssembler",

@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.science.gtnl.Utils.TextHandler;
+import com.science.gtnl.Utils.eig.EIGBucketLoader;
 import com.science.gtnl.common.machine.machineclass.IMCForNEI;
 import com.science.gtnl.common.recipe.GTNLRecipeRemover;
 import com.science.gtnl.devTools.PathHelper;
@@ -96,6 +97,7 @@ public class ScienceNotLeisure {
     // postInit "Handle interaction with other mods, complete your setup based on this." (Remove if not needed)
     public void postInit(FMLPostInitializationEvent event) {
         proxy.postInit(event);
+        EIGBucketLoader.LoadEIGBuckets();
     }
 
     @Mod.EventHandler
@@ -130,5 +132,9 @@ public class ScienceNotLeisure {
 
         proxy.preInit(event);
         MaterialLoader.load();
+    }
+
+    public static void error(String message) {
+        LOG.error(message);
     }
 }

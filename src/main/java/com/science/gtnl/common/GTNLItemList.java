@@ -55,6 +55,7 @@ public enum GTNLItemList {
 
     FluidManaInputHatch,
 
+    Fortify_Glowstone,
     Gaia_Glass,
     Terra_Glass,
 
@@ -63,6 +64,7 @@ public enum GTNLItemList {
     StrangeAnnihilationFuelRod,
     StellarConstructionFrameMaterial,
 
+    EdenGarden,
     BloodSoulSacrificialArray,
     TeleportationArrayToAlfheim,
     RealArtificialStar,
