@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5462d6df-5ab2-496d-b03a-539d6854c2fd" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/recipe/NatureSpiritArrayRecipes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/ScienceNotLeisure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/ScienceNotLeisure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/Utils/TextLocalization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/Utils/TextLocalization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/EdenGarden.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/EdenGarden.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/GTNLItemList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/GTNLItemList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/item/ItemRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/item/ItemRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/recipe/AssemblerRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/recipe/AssemblerRecipes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/recipe/AssemblingLineRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/recipe/AssemblingLineRecipes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/recipe/PortalToAlfheimRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/recipe/PortalToAlfheimRecipes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/loader/RecipeLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/loader/RecipeLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/zh_CN.lang" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/zh_CN.lang" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mcmod.info" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mcmod.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLBlocks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLMachines.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLMachines.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLRecipeTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GTLCore/src/main/java/org/gtlcore/gtlcore/common/data/GTLRecipeTypes.java" afterDir="false" />

@@ -63,6 +63,7 @@ public enum GTNLItemList {
     BlazeCube,
     StrangeAnnihilationFuelRod,
     StellarConstructionFrameMaterial,
+    ActivatedGaiaPylon,
 
     EdenGarden,
     BloodSoulSacrificialArray,

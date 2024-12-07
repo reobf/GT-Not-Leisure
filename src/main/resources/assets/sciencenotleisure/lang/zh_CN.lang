@@ -6,6 +6,7 @@ MetaBlock.0.name=测试方块
 MetaItem.0.name=愚人脸
 MetaItem.1.name=§b激发的混合硅岩燃料棒
 MetaItem.2.name=§e炽骨立方块
+MetaItem.5.name=激活的盖亚水晶
 
 tile.Stargate.0.name=压缩星门
 tile.Stargate.1.name=压缩星门-一重

@@ -45,6 +45,7 @@ public class ItemRegister {
                 "Stellar Construction Frame Material",
                 4,
                 new String[] { texter("A test item, no use.", "tooltips.TestItem0.line1") }));
+        GTNLItemList.ActivatedGaiaPylon.set(initItem("Activated Gaia Pylon", 5));
     }
 
     public static void registry() {

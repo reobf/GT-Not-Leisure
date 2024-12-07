@@ -8,6 +8,7 @@ import com.science.gtnl.common.recipe.CompressorRecipes;
 import com.science.gtnl.common.recipe.ElectrolyzerRecipes;
 import com.science.gtnl.common.recipe.IRecipePool;
 import com.science.gtnl.common.recipe.MixerRecipes;
+import com.science.gtnl.common.recipe.NatureSpiritArrayRecipes;
 import com.science.gtnl.common.recipe.PortalToAlfheimRecipes;
 import com.science.gtnl.common.recipe.ReFusionReactorRecipes;
 import com.science.gtnl.common.recipe.RealArtificialStarRecipes;
@@ -19,7 +20,7 @@ public class RecipeLoader {
         IRecipePool[] recipePools = new IRecipePool[] { new ChemicalRecipes(), new ElectrolyzerRecipes(),
             new MixerRecipes(), new multiDehydratorRecipes(), new AssemblerRecipes(), new AlloyBlastSmelterRecipes(),
             new AssemblingLineRecipes(), new CompressorRecipes(), new ReFusionReactorRecipes(),
-            new RealArtificialStarRecipes(), new PortalToAlfheimRecipes() };
+            new RealArtificialStarRecipes(), new PortalToAlfheimRecipes(), new NatureSpiritArrayRecipes() };
         for (IRecipePool recipePool : recipePools) {
             recipePool.loadRecipes();
         }

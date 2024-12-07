@@ -359,5 +359,31 @@ public class AssemblerRecipes implements IRecipePool {
             .duration(200)
             .eut(480)
             .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTModHandler.getModItem("miscutils", "blockCompressedObsidian", 1, 6),
+                GTModHandler.getModItem("gregtech", "gt.blockframes", 4, 306),
+                GTModHandler.getModItem("ExtraUtilities", "decorativeBlock2", 1, 7))
+            .itemOutputs(GTModHandler.getModItem("ScienceNotLeisure", "FortifyGlowstone", 1))
+            .specialValue(0)
+            .noOptimize()
+            .duration(200)
+            .eut(7680)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTModHandler.getModItem("Botania", "pylon", 1, 2),
+                GTModHandler.getModItem("Botania", "pylon", 2, 1),
+                GTModHandler.getModItem("Botania", "pylon", 4, 0),
+                GTModHandler.getModItem("Botania", "manaResource", 16, 7),
+                GTModHandler.getModItem("Botania", "manaResource", 16, 8))
+            .itemOutputs(GTModHandler.getModItem("ScienceNotLeisure", "MetaItem", 1, 5))
+            .specialValue(0)
+            .noOptimize()
+            .duration(200)
+            .eut(7680)
+            .addTo(As);
     }
 }
