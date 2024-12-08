@@ -10,7 +10,6 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class StructureUtils {
 
-    // 全局路径
     public static final String BASE_PATH = "/assets/";
     public static final ConcurrentHashMap<String, List<String[]>> MULTIBLOCK_CACHE = new ConcurrentHashMap<>();
 
@@ -31,10 +30,8 @@ public class StructureUtils {
                 try (BufferedReader br = new BufferedReader(new InputStreamReader(is))) {
                     String line;
                     while ((line = br.readLine()) != null) {
-                        // 解析并保留空格和逗号后无空格
                         String[] row = line.split(",");
                         structure.add(row);
-                        // 已删除的调试输出行: System.out.println(Arrays.toString(row));
                     }
                 }
             } catch (IOException e) {

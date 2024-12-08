@@ -5,7 +5,6 @@ import static com.science.gtnl.Utils.ItemUtils.readItemStackFromNBT;
 import static com.science.gtnl.common.block.BlockRegister.Fortify_Glowstone;
 import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.enums.HatchElement.Energy;
-import static gregtech.api.enums.HatchElement.ExoticEnergy;
 import static gregtech.api.enums.HatchElement.InputBus;
 import static gregtech.api.enums.HatchElement.InputHatch;
 import static gregtech.api.enums.HatchElement.Maintenance;
@@ -157,7 +156,7 @@ public class EdenGarden extends MultiMachineBase<EdenGarden> {
                     'B',
                     ofChain(
                         buildHatchAdder(EdenGarden.class)
-                            .atLeast(InputBus, OutputBus, InputHatch, Maintenance, Energy.or(ExoticEnergy))
+                            .atLeast(InputBus, OutputBus, InputHatch, Maintenance, Energy)
                             .dot(1)
                             .casingIndex(((BlockCasings10) sBlockCasings10).getTextureIndex(4))
                             .build(),
@@ -181,7 +180,6 @@ public class EdenGarden extends MultiMachineBase<EdenGarden> {
 
     @Override
     public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack itemStack) {
-        repairMachine();
         mCasing = 0;
         if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet)) return false;
         boolean valid = this.mMaintenanceHatches.size() == 1 && !this.mEnergyHatches.isEmpty() && this.mCasing >= 70;
@@ -421,11 +419,9 @@ public class EdenGarden extends MultiMachineBase<EdenGarden> {
         super.loadNBTData(aNBT);
         int revision = aNBT.hasKey("version", 3) ? aNBT.getInteger("version") : 0;
         if (revision <= 0) {
-            // migrate old EIG with greenhouse slots to new Bucker mode and fix variable names
             this.setupPhase = aNBT.getInteger("setupphase");
             this.mode = aNBT.getBoolean("isIC2Mode") ? EIGModes.IC2 : EIGModes.Normal;
             this.useNoHumidity = aNBT.getBoolean("isNoHumidity");
-            // aggregate all seed types
             HashMap<String, EIGMigrationHolder> toMigrate = new HashMap<>();
             for (int i = 0; i < aNBT.getInteger("mStorageSize"); i++) {
                 EIGMigrationHolder holder = new EIGMigrationHolder(aNBT.getCompoundTag("mStorage." + i));
@@ -445,8 +441,6 @@ public class EdenGarden extends MultiMachineBase<EdenGarden> {
             new EIGDropTable(aNBT.getTagList("progress", 10)).addTo(this.dropTracker);
         }
     }
-
-    // endregion
 
     @Override
     public void onPostTick(IGregTechTileEntity aBaseMetaTileEntity, long aTick) {

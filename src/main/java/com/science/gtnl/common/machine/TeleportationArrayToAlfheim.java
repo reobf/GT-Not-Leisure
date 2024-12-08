@@ -93,6 +93,8 @@ public class TeleportationArrayToAlfheim extends MultiMachineBase<TeleportationA
         switch (mode) {
             case 1:
                 return RecipeRegister.NatureSpiritArrayRecipes;
+            case 2:
+                return RecipeRegister.ManaInfusionRecipes;
             default:
                 return RecipeRegister.PortalToAlfheimRecipes;
         }
@@ -101,12 +103,15 @@ public class TeleportationArrayToAlfheim extends MultiMachineBase<TeleportationA
     @NotNull
     @Override
     public Collection<RecipeMap<?>> getAvailableRecipeMaps() {
-        return Arrays.asList(RecipeRegister.NatureSpiritArrayRecipes, RecipeRegister.PortalToAlfheimRecipes);
+        return Arrays.asList(
+            RecipeRegister.NatureSpiritArrayRecipes,
+            RecipeRegister.ManaInfusionRecipes,
+            RecipeRegister.PortalToAlfheimRecipes);
     }
 
     @Override
     public final void onScrewdriverRightClick(ForgeDirection side, EntityPlayer aPlayer, float aX, float aY, float aZ) {
-        this.mode = (byte) ((this.mode + 1) % 2);
+        this.mode = (byte) ((this.mode + 1) % 4);
         GTUtility.sendChatToPlayer(
             aPlayer,
             StatCollector.translateToLocal("TeleportationArrayToAlfheim.modeMsg." + this.mode));
@@ -201,7 +206,7 @@ public class TeleportationArrayToAlfheim extends MultiMachineBase<TeleportationA
                     'E',
                     ofChain(
                         buildHatchAdder(TeleportationArrayToAlfheim.class)
-                            .atLeast(InputBus, OutputBus, InputHatch, OutputHatch, Maintenance, Energy.or(ExoticEnergy))
+                            .atLeast(InputBus, OutputBus, InputHatch, OutputHatch, Energy.or(ExoticEnergy))
                             .dot(1)
                             .casingIndex(((BlockCasings8) GregTechAPI.sBlockCasings8).getTextureIndex(10))
                             .build(),

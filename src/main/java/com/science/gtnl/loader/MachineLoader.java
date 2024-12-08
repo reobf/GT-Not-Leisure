@@ -10,7 +10,7 @@ import com.science.gtnl.common.machine.BloodSoulSacrificialArray;
 import com.science.gtnl.common.machine.EdenGarden;
 import com.science.gtnl.common.machine.GenerationEarthEngine;
 import com.science.gtnl.common.machine.RealArtificialStar;
-import com.science.gtnl.common.machine.SteamMulti.LargeSteamCircuitAssembler;
+import com.science.gtnl.common.machine.LargeSteamCircuitAssembler;
 import com.science.gtnl.common.machine.TeleportationArrayToAlfheim;
 
 import gtPlusPlus.api.objects.Logger;

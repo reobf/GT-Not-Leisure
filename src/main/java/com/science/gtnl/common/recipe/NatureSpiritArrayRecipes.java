@@ -17,7 +17,7 @@ public class NatureSpiritArrayRecipes implements IRecipePool {
     public void loadRecipes() {
         RecipeBuilder.builder()
             .itemInputs(GTModHandler.getModItem("Botania", "manaResource", 1, 0))
-            .fluidOutputs(FluidRegistry.getFluidStack("fluidmana", 3500))
+            .fluidOutputs(FluidRegistry.getFluidStack("fluidmana", 3300))
             .noOptimize()
             .duration(20)
             .eut(2048)
@@ -33,7 +33,7 @@ public class NatureSpiritArrayRecipes implements IRecipePool {
 
         RecipeBuilder.builder()
             .itemInputs(GTModHandler.getModItem("Botania", "manaResource", 1, 2))
-            .fluidOutputs(FluidRegistry.getFluidStack("fluidmana", 10500))
+            .fluidOutputs(FluidRegistry.getFluidStack("fluidmana", 44000))
             .noOptimize()
             .duration(20)
             .eut(2048)
@@ -41,7 +41,7 @@ public class NatureSpiritArrayRecipes implements IRecipePool {
 
         RecipeBuilder.builder()
             .itemInputs(GTUtility.getIntegratedCircuit(24))
-            .fluidOutputs(FluidRegistry.getFluidStack("fluidmana", 1000000))
+            .fluidOutputs(FluidRegistry.getFluidStack("fluidmana", 2147483647))
             .noOptimize()
             .duration(20)
             .eut(7864320)

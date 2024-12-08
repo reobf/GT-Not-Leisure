@@ -1,4 +1,4 @@
-package com.science.gtnl.common.machine.SteamMulti;
+package com.science.gtnl.common.machine;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
 import static com.science.gtnl.common.block.BasicBlocks.MetaBlockCasing;

@@ -81,4 +81,14 @@ public class RecipeRegister {
                 .setMaxRecipesPerPage(4))
         .disableOptimize()
         .build();
+
+    public static final RecipeMap<RecipeMapBackend> ManaInfusionRecipes = RecipeMapBuilder
+        .of("gtnl.recipe.ManaInfusionRecipes")
+        .maxIO(2, 1, 1, 0)
+        .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
+        .neiHandlerInfo(
+            builder -> builder.setDisplayStack(GTNLItemList.TeleportationArrayToAlfheim.get(1))
+                .setMaxRecipesPerPage(4))
+        .disableOptimize()
+        .build();
 }
