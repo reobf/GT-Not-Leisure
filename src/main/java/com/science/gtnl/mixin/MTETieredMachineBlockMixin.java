@@ -6,7 +6,12 @@ import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.util.GTStructureUtility.*;
 
 import com.science.gtnl.Utils.StructureUtils;
+import gregtech.api.enums.Textures;
+import gregtech.api.interfaces.ITexture;
+import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
+import gregtech.api.render.TextureFactory;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.util.ForgeDirection;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 
@@ -23,6 +28,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value = MTEMegaBlastFurnace.class, remap = false)
 public abstract class MTETieredMachineBlockMixin extends MegaMultiBlockBase<MTEMegaBlastFurnace>
@@ -99,5 +105,48 @@ public abstract class MTETieredMachineBlockMixin extends MegaMultiBlockBase<MTEM
     private void modifyConstruct(ItemStack stackSize, boolean hintsOnly, CallbackInfo ci) {
         this.buildPiece("main", stackSize, hintsOnly, 11, 41, 0);
         ci.cancel();
+    }
+
+    @Inject(method = "getTexture", at = @At("HEAD"), cancellable = true)
+    private void injectGetTexture(
+        IGregTechTileEntity aBaseMetaTileEntity,
+        ForgeDirection side,
+        ForgeDirection facing,
+        int aColorIndex,
+        boolean aActive,
+        boolean aRedstone,
+        CallbackInfoReturnable<ITexture[]> cir
+    ) {
+        if (side == facing) {
+            if (aActive) {
+                // 激活状态材质
+                cir.setReturnValue(new ITexture[]{
+                    Textures.BlockIcons.getCasingTextureForId(179),
+                    TextureFactory.builder()
+                        .addIcon(Textures.BlockIcons.OVERLAY_FRONT_ASSEMBLY_LINE_ACTIVE)
+                        .build(),
+                    TextureFactory.builder()
+                        .addIcon(Textures.BlockIcons.OVERLAY_FRONT_ASSEMBLY_LINE_ACTIVE_GLOW)
+                        .glow()
+                        .build()
+                });
+            } else {
+                // 未激活状态材质
+                cir.setReturnValue(new ITexture[]{
+                    Textures.BlockIcons.getCasingTextureForId(179),
+                    TextureFactory.builder()
+                        .addIcon(Textures.BlockIcons.OVERLAY_FRONT_ASSEMBLY_LINE)
+                        .build(),
+                    TextureFactory.builder()
+                        .addIcon(Textures.BlockIcons.OVERLAY_FRONT_ASSEMBLY_LINE_GLOW)
+                        .glow()
+                        .build()
+                });
+            }
+        } else {
+            cir.setReturnValue(new ITexture[]{
+                Textures.BlockIcons.getCasingTextureForId(179)
+            });
+        }
     }
 }
