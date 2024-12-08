@@ -10,12 +10,12 @@ import com.science.gtnl.common.recipe.IRecipePool;
 import com.science.gtnl.common.recipe.ManaInfusionRecipes;
 import com.science.gtnl.common.recipe.MixerRecipes;
 import com.science.gtnl.common.recipe.NatureSpiritArrayRecipes;
+import com.science.gtnl.common.recipe.PlasmaForgeRecipes;
 import com.science.gtnl.common.recipe.PortalToAlfheimRecipes;
 import com.science.gtnl.common.recipe.ReFusionReactorRecipes;
 import com.science.gtnl.common.recipe.RealArtificialStarRecipes;
-import com.science.gtnl.common.recipe.multiDehydratorRecipes;
 import com.science.gtnl.common.recipe.TranscendentPlasmaMixerRecipes;
-import com.science.gtnl.common.recipe.PlasmaForgeRecipes;
+import com.science.gtnl.common.recipe.multiDehydratorRecipes;
 
 public class RecipeLoader {
 

@@ -38,7 +38,8 @@ public class StructureUtils {
                 e.printStackTrace();
             }
             return structure;
-        }).toArray(new String[0][]);
+        })
+            .toArray(new String[0][]);
     }
 
     /**

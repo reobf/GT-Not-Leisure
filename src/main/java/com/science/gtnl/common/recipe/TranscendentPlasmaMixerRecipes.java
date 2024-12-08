@@ -1,11 +1,13 @@
 package com.science.gtnl.common.recipe;
 
+import net.minecraftforge.fluids.FluidRegistry;
+
 import com.science.gtnl.Utils.recipes.RecipeBuilder;
 import com.science.gtnl.common.materials.MaterialPool;
+
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.util.GTUtility;
-import net.minecraftforge.fluids.FluidRegistry;
 
 public class TranscendentPlasmaMixerRecipes implements IRecipePool {
 

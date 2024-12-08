@@ -155,8 +155,7 @@ public class EdenGarden extends MultiMachineBase<EdenGarden> {
                 .addElement(
                     'B',
                     ofChain(
-                        buildHatchAdder(EdenGarden.class)
-                            .atLeast(InputBus, OutputBus, InputHatch, Maintenance, Energy)
+                        buildHatchAdder(EdenGarden.class).atLeast(InputBus, OutputBus, InputHatch, Maintenance, Energy)
                             .dot(1)
                             .casingIndex(((BlockCasings10) sBlockCasings10).getTextureIndex(4))
                             .build(),
