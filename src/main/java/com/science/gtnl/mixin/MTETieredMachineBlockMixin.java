@@ -5,10 +5,13 @@ import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.util.GTStructureUtility.*;
 
+import bartworks.util.BWUtil;
 import com.science.gtnl.Utils.StructureUtils;
+import gregtech.api.enums.HeatingCoilLevel;
 import gregtech.api.enums.Textures;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
+import gregtech.api.metatileentity.implementations.MTEHatchOutput;
 import gregtech.api.render.TextureFactory;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.ForgeDirection;
@@ -30,6 +33,8 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import java.util.ArrayList;
+
 @Mixin(value = MTEMegaBlastFurnace.class, remap = false)
 public abstract class MTETieredMachineBlockMixin extends MegaMultiBlockBase<MTEMegaBlastFurnace>
     implements ISurvivalConstructable {
@@ -40,6 +45,9 @@ public abstract class MTETieredMachineBlockMixin extends MegaMultiBlockBase<MTEM
 
     @Shadow
     private static IStructureDefinition<MTEMegaBlastFurnace> STRUCTURE_DEFINITION;
+
+    @Shadow
+    private byte glassTier;
 
     /**
      * @author GT-NOT-Leisure
@@ -148,5 +156,10 @@ public abstract class MTETieredMachineBlockMixin extends MegaMultiBlockBase<MTEM
                 Textures.BlockIcons.getCasingTextureForId(179)
             });
         }
+    }
+
+    @Inject(method = "checkMachine", at = @At("HEAD"))
+    private void skipGlassTierCheck(IGregTechTileEntity iGregTechTileEntity, ItemStack itemStack, CallbackInfoReturnable<Boolean> cir) {
+        this.glassTier = 8;
     }
 }
