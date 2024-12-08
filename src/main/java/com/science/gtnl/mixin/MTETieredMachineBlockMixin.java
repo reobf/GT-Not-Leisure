@@ -5,6 +5,7 @@ import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.util.GTStructureUtility.*;
 
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.ForgeDirection;
 
@@ -17,6 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import com.gtnewhorizon.structurelib.alignment.constructable.ISurvivalConstructable;
+import com.gtnewhorizon.structurelib.structure.IItemSource;
 import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
@@ -25,6 +27,7 @@ import com.science.gtnl.mixin.Accessor.MTEMegaBlastFurnaceAccessor;
 import bartworks.common.tileentities.multis.mega.MTEMegaBlastFurnace;
 import bartworks.common.tileentities.multis.mega.MegaMultiBlockBase;
 import goodgenerator.loader.Loaders;
+import gregtech.api.enums.HeatingCoilLevel;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Textures;
 import gregtech.api.interfaces.ITexture;
@@ -45,6 +48,9 @@ public abstract class MTETieredMachineBlockMixin extends MegaMultiBlockBase<MTEM
     @Shadow
     private byte glassTier;
 
+    @Shadow
+    public abstract void setCoilLevel(HeatingCoilLevel aCoilLevel);
+
     /**
      * @author GT-NOT-Leisure
      * @reason 修改巨高炉结构
@@ -64,7 +70,7 @@ public abstract class MTETieredMachineBlockMixin extends MegaMultiBlockBase<MTEM
                 'A',
                 buildHatchAdder(MTEMegaBlastFurnace.class)
                     .atLeast(InputHatch, OutputHatch, InputBus, OutputBus, Maintenance, Energy.or(ExoticEnergy))
-                    .casingIndex(MTEMegaBlastFurnaceAccessor.getCasingIndex())
+                    .casingIndex(179)
                     .dot(1)
                     .buildAndChain(Loaders.FRF_Casings, 0))
             .addElement(
@@ -78,7 +84,7 @@ public abstract class MTETieredMachineBlockMixin extends MegaMultiBlockBase<MTEM
                             }
                             return 0;
                         }))
-                    .casingIndex(MTEMegaBlastFurnaceAccessor.getCasingIndex())
+                    .casingIndex(179)
                     .dot(1)
                     .buildAndChain(sBlockCasings2, 0))
             .addElement('C', ofBlock(sBlockCasings2, 12))
@@ -97,7 +103,7 @@ public abstract class MTETieredMachineBlockMixin extends MegaMultiBlockBase<MTEM
             .addElement('P', ofBlock(sBlockCasings8, 4))
             .addElement('Q', ofBlock(sBlockCasings8, 10))
             .addElement('R', ofFrame(Materials.Naquadah))
-            .addElement('S', Muffler.newAny(MTEMegaBlastFurnaceAccessor.getCasingIndex(), 2))
+            .addElement('S', Muffler.newAny(179, 1))
             .build();
         ci.cancel();
     }
@@ -106,6 +112,20 @@ public abstract class MTETieredMachineBlockMixin extends MegaMultiBlockBase<MTEM
     private void modifyConstruct(ItemStack stackSize, boolean hintsOnly, CallbackInfo ci) {
         this.buildPiece("main", stackSize, hintsOnly, 11, 41, 0);
         ci.cancel();
+    }
+
+    @Inject(method = "survivalConstruct", at = @At("HEAD"), cancellable = true)
+    private void modifySurvivalConstruct(ItemStack stackSize, int elementBudget, IItemSource source,
+        EntityPlayerMP actor, CallbackInfoReturnable<Integer> cir) {
+        if (this.mMachine) {
+            cir.setReturnValue(-1);
+            return;
+        }
+        int realBudget = elementBudget >= 200 ? elementBudget : Math.min(200, elementBudget * 5);
+        this.glassTier = 8;
+        this.setCoilLevel(HeatingCoilLevel.None);
+        int result = this.survivialBuildPiece("main", stackSize, 11, 41, 0, realBudget, source, actor, false, true);
+        cir.setReturnValue(result);
     }
 
     @Inject(method = "getTexture", at = @At("HEAD"), cancellable = true)
