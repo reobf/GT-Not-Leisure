@@ -1,8 +1,9 @@
 package com.science.gtnl.Utils;
 
-import com.gtnewhorizon.structurelib.structure.IStructureElement;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+
+import com.gtnewhorizon.structurelib.structure.IStructureElement;
 
 public class OffsetUtil {
 
@@ -16,7 +17,8 @@ public class OffsetUtil {
      * @param <T>     结构的类型
      * @return 应用偏移量的结构元素
      */
-    public static <T> IStructureElement<T> withOffset(IStructureElement<T> element, int offsetX, int offsetY, int offsetZ) {
+    public static <T> IStructureElement<T> withOffset(IStructureElement<T> element, int offsetX, int offsetY,
+        int offsetZ) {
         return new IStructureElement<T>() {
 
             @Override
@@ -36,4 +38,3 @@ public class OffsetUtil {
         };
     }
 }
-

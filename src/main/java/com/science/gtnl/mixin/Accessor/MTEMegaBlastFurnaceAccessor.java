@@ -2,11 +2,11 @@ package com.science.gtnl.mixin.Accessor;
 
 import java.util.ArrayList;
 
-import gregtech.api.enums.HeatingCoilLevel;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Accessor;
 
 import bartworks.common.tileentities.multis.mega.MTEMegaBlastFurnace;
+import gregtech.api.enums.HeatingCoilLevel;
 import gregtech.api.metatileentity.implementations.MTEHatchOutput;
 
 @Mixin(value = MTEMegaBlastFurnace.class, remap = false)
