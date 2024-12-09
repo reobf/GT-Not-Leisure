@@ -43,8 +43,7 @@ public class MachineLoader {
          * new MTEInfinityHatchOutputME(21003, "gtnl.ae2.InfinityOutputME", "Infinity Output Hatch (ME)", 3)
          * .getStackForm(1L));
          */
-        EdenGarden = new EdenGarden(21004, "NameEdenGarden", TextLocalization.NameEdenGarden)
-            .getStackForm(1);
+        EdenGarden = new EdenGarden(21004, "NameEdenGarden", TextLocalization.NameEdenGarden).getStackForm(1);
         GTNLItemList.EdenGarden.set(EdenGarden);
 
         LargeSteamCircuitAssembler = new LargeSteamCircuitAssembler(

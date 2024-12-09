@@ -1,13 +1,5 @@
 package com.science.gtnl.Utils;
 
-import com.google.common.base.Splitter;
-import com.google.common.collect.Iterables;
-import net.minecraft.client.resources.I18n;
-import org.apache.commons.io.Charsets;
-import org.apache.commons.io.IOUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
@@ -15,6 +7,16 @@ import java.util.IllegalFormatException;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
+
+import net.minecraft.client.resources.I18n;
+
+import org.apache.commons.io.Charsets;
+import org.apache.commons.io.IOUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.google.common.base.Splitter;
+import com.google.common.collect.Iterables;
 
 /**
  * Used to manipulate language file resources

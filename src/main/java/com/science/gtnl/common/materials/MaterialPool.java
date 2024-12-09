@@ -564,21 +564,20 @@ public class MaterialPool implements Runnable {
         new short[] { 60, 74, 243 },
         "Periodicium",
         subscriptNumbers(
-            "((H10C10N210O140F80P10S140Cl80Se140Br80I80)" +
-                "(He10Ne10Ar10Kr10Xe10Rn10)" +
-                "(B10Si10Ge10As210Sb210Te140At80)" +
-                "(Al10Ga10In10Sn10Tl10Pb10Bi10Po10)" +
-                "((Ti10V10Cr10Mn10Fe10Co10Ni10Cu10Zn10)" +
-                "(Zr10Nb10Mo10Tc10Ru10Rh10Pd10Ag10Cd10)" +
-                "(Hf10Ta10W10Re10Os10Ir10Pt10Au10Hg10))" +
-                "(Be10Mg10Ca10Sr10Ba10Ra10)" +
-                "(Sc10Y10(La10Ce10Pr10Nd10Pm10Sm10Eu10Gd10))" +
-                "(Tb10Dy10Ho10Er10Tm10Yb10Lu10)" +
-                "(Li10Na10K10Rb10Cs10Fr10)" +
-                "((Bk10Cf10Es10Fm10Md10No10Lr10)" +
-                "(Rf10Db10Sg10Bh10Hs10Mt10Ds10Rg10Cn10Nh10Fl10Mc10Lv10Ts10Og10)))" +
-                "((KeRpNqNq+Nq*SuAdSpDOhDeQtMaD*IcIf*NtHyEn)" +
-                "(TsЖTtЖ〄Fs⚶Hy⚶✢⸎✦◆✦⌘☯\uD80C\uDF70 \uD80C\uDF71 \uD80C\uDF72 \uD80C\uDF73 \uD80C\uDF74 \uD80C\uDF75 \uD80C\uDF76 \uD80C\uDF77 \uD80C\uDF78☯⌘⚷⚙⚷Ni4Ti6Fc⚙҈҉«»Rt*۞))"),
+            "((H10C10N210O140F80P10S140Cl80Se140Br80I80)" + "(He10Ne10Ar10Kr10Xe10Rn10)"
+                + "(B10Si10Ge10As210Sb210Te140At80)"
+                + "(Al10Ga10In10Sn10Tl10Pb10Bi10Po10)"
+                + "((Ti10V10Cr10Mn10Fe10Co10Ni10Cu10Zn10)"
+                + "(Zr10Nb10Mo10Tc10Ru10Rh10Pd10Ag10Cd10)"
+                + "(Hf10Ta10W10Re10Os10Ir10Pt10Au10Hg10))"
+                + "(Be10Mg10Ca10Sr10Ba10Ra10)"
+                + "(Sc10Y10(La10Ce10Pr10Nd10Pm10Sm10Eu10Gd10))"
+                + "(Tb10Dy10Ho10Er10Tm10Yb10Lu10)"
+                + "(Li10Na10K10Rb10Cs10Fr10)"
+                + "((Bk10Cf10Es10Fm10Md10No10Lr10)"
+                + "(Rf10Db10Sg10Bh10Hs10Mt10Ds10Rg10Cn10Nh10Fl10Mc10Lv10Ts10Og10)))"
+                + "((KeRpNqNq+Nq*SuAdSpDOhDeQtMaD*IcIf*NtHyEn)"
+                + "(TsЖTtЖ〄Fs⚶Hy⚶✢⸎✦◆✦⌘☯\uD80C\uDF70 \uD80C\uDF71 \uD80C\uDF72 \uD80C\uDF73 \uD80C\uDF74 \uD80C\uDF75 \uD80C\uDF76 \uD80C\uDF77 \uD80C\uDF78☯⌘⚷⚙⚷Ni4Ti6Fc⚙҈҉«»Rt*۞))"),
         new Werkstoff.Stats().setToxic(true),
         Werkstoff.Types.ELEMENT,
         new Werkstoff.GenerationFeatures().addMetalItems()
