@@ -79,19 +79,18 @@ public abstract class MTETieredMachineBlockMixin extends MegaMultiBlockBase<MTEM
             .addElement(
                 'B',
                 buildHatchAdder(MTEMegaBlastFurnace.class).atLeast(
-                        OutputHatch.withAdder(MTEMegaBlastFurnace::addOutputHatchToTopList)
-                            .withCount(t -> {
-                                if (t instanceof MTEMegaBlastFurnaceAccessor accessor) {
-                                    return accessor.getPollutionOutputHatches().size();
-                                }
-                                return 0;
-                            }))
+                    OutputHatch.withAdder(MTEMegaBlastFurnace::addOutputHatchToTopList)
+                        .withCount(t -> {
+                            if (t instanceof MTEMegaBlastFurnaceAccessor accessor) {
+                                return accessor.getPollutionOutputHatches()
+                                    .size();
+                            }
+                            return 0;
+                        }))
                     .casingIndex(((BlockCasings2) sBlockCasings2).getTextureIndex(0))
                     .dot(1)
                     .buildAndChain(sBlockCasings2, 0))
-            .addElement(
-                'S',
-                Muffler.newAny(((BlockCasings8) sBlockCasings8).getTextureIndex(10), 2))
+            .addElement('S', Muffler.newAny(((BlockCasings8) sBlockCasings8).getTextureIndex(10), 2))
             .addElement('C', ofBlock(sBlockCasings2, 12))
             .addElement('D', ofBlock(sBlockCasings2, 13))
             .addElement('E', ofBlock(sBlockCasings2, 14))
@@ -101,9 +100,7 @@ public abstract class MTETieredMachineBlockMixin extends MegaMultiBlockBase<MTEM
             .addElement('I', ofBlock(sBlockCasings3, 15))
             .addElement('J', ofBlock(sBlockCasings4, 3))
             .addElement('K', ofBlock(sBlockCasings4, 13))
-            .addElement(
-                'L',
-                ofCoil(MTEMegaBlastFurnace::setCoilLevel, MTEMegaBlastFurnace::getCoilLevel))
+            .addElement('L', ofCoil(MTEMegaBlastFurnace::setCoilLevel, MTEMegaBlastFurnace::getCoilLevel))
             .addElement('M', ofBlock(sBlockCasings8, 1))
             .addElement('N', ofBlock(sBlockCasings8, 2))
             .addElement('O', ofBlock(sBlockCasings8, 3))

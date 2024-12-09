@@ -96,6 +96,13 @@ Tooltip_TeleportationArrayToAlfheim_02=每秒消耗100L液态魔力进行工作
 Tooltip_TeleportationArrayToAlfheim_Casing=任意放射硅岩合金机械方块
 death.attack.damage.gtnl.PortalToAlfheimExplode=被精灵传送法阵反噬了
 
+NameLapotronChip=兰波顿工厂
+gtnl.recipe.LapotronChipRecipeType=兰波顿工厂
+gtnl.recipe.LapotronChipRecipes=兰波顿工厂
+Tooltip_LapotronChip_00=正在制作中
+Tooltip_LapotronChip_01=可以用于迅速搭建基础基地
+Tooltip_LapotronChip_Casing=任意放射硅岩合金机械方块
+
 tooltips.TrollFace=Never Gonna Give You Up~
 tooltips.DepletedExcitedNaquadahFuelRod=§o硅岩基燃料的最终形态。
 tooltips.BlazeCube=§o灵魂之火铸成，无尽炽热封存。

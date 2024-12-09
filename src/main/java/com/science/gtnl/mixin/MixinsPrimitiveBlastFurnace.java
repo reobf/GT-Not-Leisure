@@ -1,18 +1,20 @@
 package com.science.gtnl.mixin;
 
-import com.gtnewhorizon.structurelib.alignment.IAlignment;
-import com.gtnewhorizon.structurelib.alignment.constructable.ISurvivalConstructable;
-import gregtech.api.interfaces.modularui.IAddUIWidgets;
-import gregtech.api.interfaces.modularui.IGetTitleColor;
-import gregtech.api.interfaces.tileentity.RecipeMapWorkable;
-import gregtech.api.metatileentity.MetaTileEntity;
-import gregtech.common.tileentities.machines.multi.MTEPrimitiveBlastFurnace;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(value = MTEPrimitiveBlastFurnace.class,remap = false)
+import com.gtnewhorizon.structurelib.alignment.IAlignment;
+import com.gtnewhorizon.structurelib.alignment.constructable.ISurvivalConstructable;
+
+import gregtech.api.interfaces.modularui.IAddUIWidgets;
+import gregtech.api.interfaces.modularui.IGetTitleColor;
+import gregtech.api.interfaces.tileentity.RecipeMapWorkable;
+import gregtech.api.metatileentity.MetaTileEntity;
+import gregtech.common.tileentities.machines.multi.MTEPrimitiveBlastFurnace;
+
+@Mixin(value = MTEPrimitiveBlastFurnace.class, remap = false)
 public abstract class MixinsPrimitiveBlastFurnace extends MetaTileEntity
     implements IAlignment, ISurvivalConstructable, RecipeMapWorkable, IAddUIWidgets, IGetTitleColor {
 

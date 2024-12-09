@@ -1,8 +1,10 @@
 package com.science.gtnl.common.recipe;
 
-import com.science.gtnl.Utils.recipes.RecipeBuilder;
+import static gregtech.api.util.GTRecipeConstants.COIL_HEAT;
+
 import com.science.gtnl.common.materials.MaterialPool;
 
+import gregtech.api.enums.GTValues;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.util.GTModHandler;
@@ -13,7 +15,7 @@ public class PlasmaForgeRecipes implements IRecipePool {
 
     @Override
     public void loadRecipes() {
-        RecipeBuilder.builder()
+        GTValues.RA.stdBuilder()
             .itemInputs(
                 GTModHandler.getModItem("gregtech", "gt.blockmachines", 4, 124),
                 GTModHandler.getModItem("gregtech", "gt.metaitem.01", 4, 32415),
@@ -25,6 +27,7 @@ public class PlasmaForgeRecipes implements IRecipePool {
             .itemOutputs(GTModHandler.getModItem("ScienceNotLeisure", "MetaItem", 1, 1))
             .noOptimize()
             .duration(20)
+            .metadata(COIL_HEAT, 13501)
             .eut(31457280)
             .addTo(PFR);
     }

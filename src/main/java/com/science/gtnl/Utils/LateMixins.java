@@ -20,7 +20,6 @@ public class LateMixins implements ILateMixinLoader {
         return Arrays.asList(
             "MTETieredMachineBlockMixin",
             "Accessor.MTEMegaBlastFurnaceAccessor",
-            "MixinsPrimitiveBlastFurnace"
-        );
+            "MixinsPrimitiveBlastFurnace");
     }
 }
