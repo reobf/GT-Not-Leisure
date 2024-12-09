@@ -17,6 +17,10 @@ public class LateMixins implements ILateMixinLoader {
 
     @Override
     public List<String> getMixins(Set<String> loadedMods) {
-        return Arrays.asList("MTETieredMachineBlockMixin", "Accessor.MTEMegaBlastFurnaceAccessor");
+        return Arrays.asList(
+            "MTETieredMachineBlockMixin",
+            "Accessor.MTEMegaBlastFurnaceAccessor",
+            "MixinsPrimitiveBlastFurnace"
+        );
     }
 }
