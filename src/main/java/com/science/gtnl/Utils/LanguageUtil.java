@@ -147,5 +147,4 @@ public class LanguageUtil {
             logger.error(s);
         }
     }
-
 }
