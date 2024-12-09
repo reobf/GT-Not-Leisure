@@ -22,7 +22,6 @@ import com.gtnewhorizon.structurelib.structure.IItemSource;
 import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.FilpStructure;
-import com.science.gtnl.Utils.OffsetUtil;
 import com.science.gtnl.mixin.Accessor.MTEMegaBlastFurnaceAccessor;
 
 import bartworks.common.tileentities.multis.mega.MTEMegaBlastFurnace;
@@ -68,70 +67,49 @@ public abstract class MTETieredMachineBlockMixin extends MegaMultiBlockBase<MTEM
     @Inject(method = "<clinit>", at = @At("HEAD"), cancellable = true)
     private static void injectStructureDefinition(CallbackInfo ci) {
 
-        final int offsetX = 0;
-        final int offsetY = 0;
-        final int offsetZ = 0;
-
         STRUCTURE_DEFINITION = StructureDefinition.<MTEMegaBlastFurnace>builder()
             .addShape("main", createShape())
             .addElement(
                 'A',
-                OffsetUtil.withOffset(
-                    buildHatchAdder(MTEMegaBlastFurnace.class)
-                        .atLeast(InputHatch, OutputHatch, InputBus, OutputBus, Maintenance, Energy.or(ExoticEnergy))
-                        .casingIndex(179)
-                        .dot(1)
-                        .buildAndChain(Loaders.FRF_Casings, 0),
-                    offsetX,
-                    offsetY,
-                    offsetZ))
+                buildHatchAdder(MTEMegaBlastFurnace.class)
+                    .atLeast(InputHatch, OutputHatch, InputBus, OutputBus, Maintenance, Energy.or(ExoticEnergy))
+                    .casingIndex(179)
+                    .dot(1)
+                    .buildAndChain(Loaders.FRF_Casings, 0))
             .addElement(
                 'B',
-                OffsetUtil.withOffset(
-                    buildHatchAdder(MTEMegaBlastFurnace.class).atLeast(
+                buildHatchAdder(MTEMegaBlastFurnace.class).atLeast(
                         OutputHatch.withAdder(MTEMegaBlastFurnace::addOutputHatchToTopList)
                             .withCount(t -> {
                                 if (t instanceof MTEMegaBlastFurnaceAccessor accessor) {
-                                    return accessor.getPollutionOutputHatches()
-                                        .size();
+                                    return accessor.getPollutionOutputHatches().size();
                                 }
                                 return 0;
                             }))
-                        .casingIndex(((BlockCasings2) sBlockCasings2).getTextureIndex(0))
-                        .dot(1)
-                        .buildAndChain(sBlockCasings2, 0),
-                    offsetX,
-                    offsetY,
-                    offsetZ))
+                    .casingIndex(((BlockCasings2) sBlockCasings2).getTextureIndex(0))
+                    .dot(1)
+                    .buildAndChain(sBlockCasings2, 0))
             .addElement(
                 'S',
-                OffsetUtil.withOffset(
-                    Muffler.newAny(((BlockCasings8) sBlockCasings8).getTextureIndex(10), 2),
-                    offsetX,
-                    offsetY,
-                    offsetZ))
-            .addElement('C', OffsetUtil.withOffset(ofBlock(sBlockCasings2, 12), offsetX, offsetY, offsetZ))
-            .addElement('D', OffsetUtil.withOffset(ofBlock(sBlockCasings2, 13), offsetX, offsetY, offsetZ))
-            .addElement('E', OffsetUtil.withOffset(ofBlock(sBlockCasings2, 14), offsetX, offsetY, offsetZ))
-            .addElement('F', OffsetUtil.withOffset(ofBlock(sBlockCasings2, 15), offsetX, offsetY, offsetZ))
-            .addElement('G', OffsetUtil.withOffset(ofBlock(sBlockCasings3, 13), offsetX, offsetY, offsetZ))
-            .addElement('H', OffsetUtil.withOffset(ofBlock(sBlockCasings3, 14), offsetX, offsetY, offsetZ))
-            .addElement('I', OffsetUtil.withOffset(ofBlock(sBlockCasings3, 15), offsetX, offsetY, offsetZ))
-            .addElement('J', OffsetUtil.withOffset(ofBlock(sBlockCasings4, 3), offsetX, offsetY, offsetZ))
-            .addElement('K', OffsetUtil.withOffset(ofBlock(sBlockCasings4, 13), offsetX, offsetY, offsetZ))
+                Muffler.newAny(((BlockCasings8) sBlockCasings8).getTextureIndex(10), 2))
+            .addElement('C', ofBlock(sBlockCasings2, 12))
+            .addElement('D', ofBlock(sBlockCasings2, 13))
+            .addElement('E', ofBlock(sBlockCasings2, 14))
+            .addElement('F', ofBlock(sBlockCasings2, 15))
+            .addElement('G', ofBlock(sBlockCasings3, 13))
+            .addElement('H', ofBlock(sBlockCasings3, 14))
+            .addElement('I', ofBlock(sBlockCasings3, 15))
+            .addElement('J', ofBlock(sBlockCasings4, 3))
+            .addElement('K', ofBlock(sBlockCasings4, 13))
             .addElement(
                 'L',
-                OffsetUtil.withOffset(
-                    ofCoil(MTEMegaBlastFurnace::setCoilLevel, MTEMegaBlastFurnace::getCoilLevel),
-                    offsetX,
-                    offsetY,
-                    offsetZ))
-            .addElement('M', OffsetUtil.withOffset(ofBlock(sBlockCasings8, 1), offsetX, offsetY, offsetZ))
-            .addElement('N', OffsetUtil.withOffset(ofBlock(sBlockCasings8, 2), offsetX, offsetY, offsetZ))
-            .addElement('O', OffsetUtil.withOffset(ofBlock(sBlockCasings8, 3), offsetX, offsetY, offsetZ))
-            .addElement('P', OffsetUtil.withOffset(ofBlock(sBlockCasings8, 4), offsetX, offsetY, offsetZ))
-            .addElement('Q', OffsetUtil.withOffset(ofBlock(sBlockCasings8, 10), offsetX, offsetY, offsetZ))
-            .addElement('R', OffsetUtil.withOffset(ofFrame(Materials.Naquadah), offsetX, offsetY, offsetZ))
+                ofCoil(MTEMegaBlastFurnace::setCoilLevel, MTEMegaBlastFurnace::getCoilLevel))
+            .addElement('M', ofBlock(sBlockCasings8, 1))
+            .addElement('N', ofBlock(sBlockCasings8, 2))
+            .addElement('O', ofBlock(sBlockCasings8, 3))
+            .addElement('P', ofBlock(sBlockCasings8, 4))
+            .addElement('Q', ofBlock(sBlockCasings8, 10))
+            .addElement('R', ofFrame(Materials.Naquadah))
             .build();
 
         ci.cancel();
@@ -205,4 +183,10 @@ public abstract class MTETieredMachineBlockMixin extends MegaMultiBlockBase<MTEM
         CallbackInfoReturnable<Boolean> cir) {
         this.glassTier = 8;
     }
+
+    @Inject(method = "getStructureDefinition", at = @At("HEAD"), cancellable = true)
+    private void getStructureDefinition(CallbackInfoReturnable<IStructureDefinition<MTEMegaBlastFurnace>> cir) {
+        cir.setReturnValue(STRUCTURE_DEFINITION);
+    }
+
 }
