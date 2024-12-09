@@ -2,6 +2,7 @@ package com.science.gtnl.mixin.Accessor;
 
 import java.util.ArrayList;
 
+import gregtech.api.enums.HeatingCoilLevel;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Accessor;
 
@@ -19,12 +20,10 @@ public interface MTEMegaBlastFurnaceAccessor {
         throw new AssertionError();
     }
 
-    /**
-     * 暴露 `glassTier` 字段的 getter。
-     */
-    @Accessor("glassTier")
-    byte getGlassTier();
+    @Accessor("mCoilLevel") // 如果字段是私有的
+    HeatingCoilLevel getCoilLevel();
 
-    @Accessor("glassTier")
-    void setGlassTier(byte value);
+    @Accessor
+    void setMHeatingCapacity(int capacity);
+
 }
