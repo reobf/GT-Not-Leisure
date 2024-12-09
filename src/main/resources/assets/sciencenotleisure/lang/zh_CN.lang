@@ -49,8 +49,8 @@ textSteamAssemblyCasing= 蒸汽装配机械方块
 
 NameLargeSteamCircuitAssembler=大型蒸汽电路组装机
 CircuitAssemblerRecipeType=电路组装机
-Tooltip_LargeSteamCircuitAssembler_00=比同等级的单方块组装机快25%
-Tooltip_LargeSteamCircuitAssembler_01=仅消耗正常需求62.5%的蒸汽
+Tooltip_LargeSteamCircuitAssembler_00=比同等级的单方块组装机快25%%
+Tooltip_LargeSteamCircuitAssembler_01=仅消耗正常需求62.5%%的蒸汽
 Tooltip_LargeSteamCircuitAssembler_02=一次可处理多达16个物品
 Tooltip_LargeSteamCircuitAssembler_03=原始科技！
 
@@ -280,4 +280,4 @@ bw.Durene.noTrans=杜烯
 bw.Germaniumtungstennitride.noTrans=锗-钨氮化物
 bw.Polyetheretherketone.noTrans=聚醚醚酮
 bw.FluidMana.noTrans=液态魔力
-bw.Stargate.notTrans=星门
+bw.werkstoff.20201.name=星门

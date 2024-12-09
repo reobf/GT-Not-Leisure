@@ -46,10 +46,10 @@ public class TextLocalization {
         "Large Steam Circuit Assembler",
         "NameLargeSteamCircuitAssembler");
     public static final String Tooltip_LargeSteamCircuitAssembler_00 = texter(
-        "25% faster than using single block steam machines of the same pressure",
+        "25%% faster than using single block steam machines of the same pressure",
         "Tooltip_LargeSteamCircuitAssembler_00");
     public static final String Tooltip_LargeSteamCircuitAssembler_01 = texter(
-        "Only consumes steam at 62.5% of the L/s normally required",
+        "Only consumes steam at 62.5%% of the L/s normally required",
         "Tooltip_LargeSteamCircuitAssembler_01");
     public static final String Tooltip_LargeSteamCircuitAssembler_02 = texter(
         "Processes up to 16 items at once",
