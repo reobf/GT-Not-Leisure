@@ -1,5 +1,7 @@
 package com.science.gtnl.common.recipe;
 
+import static gregtech.api.enums.Mods.Botania;
+
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.science.gtnl.Utils.recipes.RecipeBuilder;
@@ -40,7 +42,7 @@ public class NatureSpiritArrayRecipes implements IRecipePool {
             .addTo(NSAR);
 
         RecipeBuilder.builder()
-            .itemInputs(GTUtility.getIntegratedCircuit(24))
+            .itemInputs(GTUtility.copyAmount(0, GTModHandler.getModItem(Botania.ID, "pool", 1, 1)))
             .fluidOutputs(FluidRegistry.getFluidStack("fluidmana", 2147483647))
             .noOptimize()
             .duration(20)

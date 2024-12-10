@@ -26,7 +26,7 @@ public enum GTNLItemList {
     SlicingBlades,
     NeutroniumPipeCasing,
     NeutroniumGearbox,
-    // endregion
+
     Stargate_Coil,
     StargateTier0,
     StargateTier1,
@@ -39,7 +39,6 @@ public enum GTNLItemList {
     StargateTier8,
     StargateTier9,
     Stargate_Coil_Compressed,
-    // region Member Variables
 
     QuadrupleOutputHatchULV,
     QuadrupleOutputHatchLV,
