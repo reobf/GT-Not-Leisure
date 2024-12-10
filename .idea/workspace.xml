@@ -781,7 +781,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733809399444</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Mixin土高炉并修改配方时间锁定为20tick">
+      <option name="closed" value="true" />
+      <created>1733809891504</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1733809891504</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -916,7 +924,7 @@
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/hatch/MTEQuadrupleOutputHatch.java</url>
           <line>123</line>
-          <properties class="com.science.gtnl.common.hatch.MTEQuadrupleOutputHatch">
+          <properties class="com.science.gtnl.common.hatch.MTEQuadrupleOutputHatch" method="getFluid">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
