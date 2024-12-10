@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5462d6df-5ab2-496d-b03a-539d6854c2fd" name="更改" comment="Mixin土高炉并修改配方时间锁定为20tick">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/mixin/Accessor/PrimitiveBlastFurnaceAccessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/mixin/MultiBlockStructure/PrimitiveBlastFurnace/MTEPrimitiveBlastFurnaceMixin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/mixin/MultiBlockStructure/PrimitiveBlastFurnace/MTEPrimitiveBlastFurnaceOffsetsMixin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/Utils/LateMixins.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/Utils/LateMixins.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/mixin/MTETieredMachineBlockMixin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/mixin/MultiBlockStructure/MTETieredMachineBlockMixin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/mixin/MixinsPrimitiveBlastFurnace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/mixin/MixinsPrimitiveBlastFurnace.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/multiblock/bricked_blast_furnace.mb" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/multiblock/bricked_blast_furnace.mb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mixins.ScienceNotLeisure.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mixins.ScienceNotLeisure.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mixins.ScienceNotLeisure.late.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mixins.ScienceNotLeisure.late.json" afterDir="false" />
-    </list>
+    <list default="true" id="5462d6df-5ab2-496d-b03a-539d6854c2fd" name="更改" comment="Mixin土高炉并修改配方时间锁定为20tick" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -735,7 +723,7 @@
       <workItem from="1733756232000" duration="770000" />
       <workItem from="1733757058231" duration="622000" />
       <workItem from="1733760031755" duration="159000" />
-      <workItem from="1733804728989" duration="4621000" />
+      <workItem from="1733804728989" duration="4921000" />
     </task>
     <task id="LOCAL-00001" summary="代码尝试">
       <option name="closed" value="true" />
@@ -785,7 +773,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733756769523</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Mixin土高炉并修改配方时间锁定为20tick">
+      <option name="closed" value="true" />
+      <created>1733809399444</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1733809399444</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
