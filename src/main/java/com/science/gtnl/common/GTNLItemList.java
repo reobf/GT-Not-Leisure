@@ -24,6 +24,8 @@ public enum GTNLItemList {
     SteamAssemblyCasing,
     HeatVent,
     SlicingBlades,
+    NeutroniumPipeCasing,
+    NeutroniumGearbox,
     // endregion
     Stargate_Coil,
     StargateTier0,
