@@ -116,45 +116,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Gradle.'GT-Not-Leisure' 中的测试.executor": "Run",
-    "Gradle.0. Build and Test.executor": "Run",
-    "Gradle.1. Run Client.executor": "Run",
-    "Gradle.1a. Run Client (Java 17).executor": "Run",
-    "Gradle.1d. Run Client (Java 21, Hotswap).executor": "Run",
-    "Gradle.5. Apply spotless.executor": "Run",
-    "Gradle.GT-Not-Leisure [build].executor": "Run",
-    "Gradle.GT-Not-Leisure [clean build].executor": "Run",
-    "Gradle.GT-Not-Leisure [clean].executor": "Run",
-    "Gradle.GT-Not-Leisure [dependencies].executor": "Run",
-    "Gradle.GT-Not-Leisure [processIdeaSettings].executor": "Run",
-    "Gradle.GT-Not-Leisure [runVanillaClient].executor": "Run",
-    "Gradle.GT-Not-Leisure [spotlessCheck].executor": "Run",
-    "Gradle.加载 Gradle 依赖项.executor": "Run",
-    "JavaClassFindUsagesOptions.isSearchForTextOccurrences": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "PrimitiveBlastFurnaceMixin",
-    "ignore.preview.features.used": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/Github/GT-Not-Leisure/src/main/java/com/science/gtnl/Utils/eig/buckets",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDK",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.48349056",
-    "settings.editor.selected.configurable": "Errors",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Gradle.'GT-Not-Leisure' 中的测试.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.0. Build and Test.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.1. Run Client.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.1a. Run Client (Java 17).executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.1d. Run Client (Java 21, Hotswap).executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.5. Apply spotless.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GT-Not-Leisure [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GT-Not-Leisure [clean build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GT-Not-Leisure [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GT-Not-Leisure [dependencies].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GT-Not-Leisure [processIdeaSettings].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GT-Not-Leisure [runVanillaClient].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GT-Not-Leisure [spotlessCheck].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.加载 Gradle 依赖项.executor&quot;: &quot;Run&quot;,
+    &quot;JavaClassFindUsagesOptions.isSearchForTextOccurrences&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;PrimitiveBlastFurnaceMixin&quot;,
+    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Github/GT-Not-Leisure/src/main/java/com/science/gtnl/Utils/eig/buckets&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDK&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.48349056&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.science.gtnl.Annotation" />
