@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5462d6df-5ab2-496d-b03a-539d6854c2fd" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="5462d6df-5ab2-496d-b03a-539d6854c2fd" name="更改" comment="Mixin土高炉并修改配方时间锁定为20tick">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/mixin/Accessor/PrimitiveBlastFurnaceAccessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/mixin/MultiBlockStructure/PrimitiveBlastFurnace/MTEPrimitiveBlastFurnaceMixin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/mixin/MultiBlockStructure/PrimitiveBlastFurnace/MTEPrimitiveBlastFurnaceOffsetsMixin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/materials/MaterialPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/materials/MaterialPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/zh_CN.lang" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/zh_CN.lang" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/Utils/LateMixins.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/Utils/LateMixins.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/mixin/MTETieredMachineBlockMixin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/mixin/MultiBlockStructure/MTETieredMachineBlockMixin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/mixin/MixinsPrimitiveBlastFurnace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/mixin/MixinsPrimitiveBlastFurnace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/multiblock/bricked_blast_furnace.mb" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/multiblock/bricked_blast_furnace.mb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mixins.ScienceNotLeisure.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mixins.ScienceNotLeisure.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mixins.ScienceNotLeisure.late.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mixins.ScienceNotLeisure.late.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,8 +58,7 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="GT-Not-Leisure" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
+                <item name="运行配置" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
             <select />
@@ -72,19 +78,24 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
     &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;ABKQPO&quot;
+    &quot;assignee&quot;: &quot;SafariXiu&quot;
   }
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/ABKQPO/GT-Not-Leisure.git&quot;,
-    &quot;accountId&quot;: &quot;cf1f166a-5f16-420f-bad1-d5191fe9ebe1&quot;
+    &quot;accountId&quot;: &quot;a87951af-b2c6-4021-9be8-3a4437541715&quot;
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
@@ -111,6 +122,8 @@
     "Gradle.'GT-Not-Leisure' 中的测试.executor": "Run",
     "Gradle.0. Build and Test.executor": "Run",
     "Gradle.1. Run Client.executor": "Run",
+    "Gradle.1a. Run Client (Java 17).executor": "Run",
+    "Gradle.1d. Run Client (Java 21, Hotswap).executor": "Run",
     "Gradle.5. Apply spotless.executor": "Run",
     "Gradle.GT-Not-Leisure [build].executor": "Run",
     "Gradle.GT-Not-Leisure [clean build].executor": "Run",
@@ -119,7 +132,6 @@
     "Gradle.GT-Not-Leisure [processIdeaSettings].executor": "Run",
     "Gradle.GT-Not-Leisure [runVanillaClient].executor": "Run",
     "Gradle.GT-Not-Leisure [spotlessCheck].executor": "Run",
-    "Gradle.下载源代码.executor": "Run",
     "Gradle.加载 Gradle 依赖项.executor": "Run",
     "JavaClassFindUsagesOptions.isSearchForTextOccurrences": "false",
     "Repository.Attach.Annotations": "false",
@@ -127,7 +139,7 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "PrimitiveBlastFurnaceMixin",
     "ignore.preview.features.used": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "E:/Github/GT-Not-Leisure/src/main/java/com/science/gtnl/Utils/eig/buckets",
@@ -139,7 +151,7 @@
     "project.structure.last.edited": "SDK",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.48349056",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "settings.editor.selected.configurable": "Errors",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -159,6 +171,9 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Github\GT-Not-Leisure\src\main\java\com\science\gtnl" />
     </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.science.gtnl.mixin.MultiBlockStructure" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.science.gtnl.common.item" />
       <recent name="com.science.gtnl.common.machine" />
@@ -176,12 +191,12 @@
       <command value="./gradlew clean build" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.1. Run Client">
+  <component name="RunManager" selected="Gradle.1a. Run Client (Java 17)">
     <configuration name="Run Client (IJ Native)" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="GradleStart" />
       <module name="GT-Not-Leisure.ideVirtualMain" />
-      <option name="PROGRAM_PARAMETERS" value="&quot;--username&quot; &quot;ABKQPO&quot; &quot;--version&quot; &quot;1.7.10&quot; &quot;--gameDir&quot; &quot;E:\Github\GT-Not-Leisure\run&quot; &quot;--assetsDir&quot; &quot;C:\Users\123\.gradle\caches\retro_futura_gradle\assets&quot; &quot;--assetIndex&quot; &quot;1.7.10&quot; &quot;--uuid&quot; &quot;aeace7c8-5960-4441-be91-2594c917a1fc&quot; &quot;--userProperties&quot; &quot;{}&quot; &quot;--accessToken&quot; &quot;0&quot;" />
-      <option name="VM_PARAMETERS" value="&quot;-ea:com.science.gtnl&quot; &quot;-Xmx8G&quot; &quot;-Xms8G&quot; &quot;-Dfml.ignoreInvalidMinecraftCertificates=true&quot; &quot;-Djava.library.path=E:\Github\GT-Not-Leisure\run\natives\lwjgl2;C:\Program Files\Java\jdk-21\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\Program Files\Bandizip\;D:\dotnet;D:\gradle-8.5\bin;D:\scrcpy-server-v;D:\Git\cmd;D:\nodejs\;D:\anaconda3;D:\anaconda3\Scripts;D:\anaconda3\Library\bin;D:\anaconda3\Library\mingw-w64\bin;D:\ffmpeg\bin;C:\Users\123\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\123\AppData\Local\Programs\Python\Python311\;C:\Users\123\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\123\AppData\Local\Programs\Python\Python310\;C:\Users\123\AppData\Local\Microsoft\WindowsApps;C:\Users\123\AppData\Local\GitHubDesktop\bin;C:\Users\123\AppData\Roaming\npm;D:\Microsoft VS Code\bin;D:\ffmpeg\bin;D:\IntelliJ IDEA 2024.2.3\bin;;D:\IntelliJ IDEA Community Edition 2024.2.4\bin;;C:\Users\123\.dotnet\tools;.&quot;" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;--username&quot; &quot;ABKQPO&quot; &quot;--version&quot; &quot;1.7.10&quot; &quot;--gameDir&quot; &quot;K:\moder\GT-Not-Leisure\run&quot; &quot;--assetsDir&quot; &quot;C:\Users\SafariXiu\.gradle\caches\retro_futura_gradle\assets&quot; &quot;--assetIndex&quot; &quot;1.7.10&quot; &quot;--uuid&quot; &quot;aeace7c8-5960-4441-be91-2594c917a1fc&quot; &quot;--userProperties&quot; &quot;{}&quot; &quot;--accessToken&quot; &quot;0&quot;" />
+      <option name="VM_PARAMETERS" value="&quot;-ea:com.science.gtnl&quot; &quot;-Xmx8G&quot; &quot;-Xms8G&quot; &quot;-Dfml.ignoreInvalidMinecraftCertificates=true&quot; &quot;-Djava.library.path=K:\moder\GT-Not-Leisure\run\natives\lwjgl2;C:\Program Files\Java\Java21\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\libnvvp;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\dotnet\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Git\cmd;\&quot;C:\Program Files\Java\jdk1.8.0_261\bin;C:\Program Files\Java\jdk1.8.0_261\jre\bin;\&quot;;C:\WINDOWS\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\Razer\ChromaBroadcast\bin;C:\Program Files\Razer\ChromaBroadcast\bin;C:\Users\SafariXiu\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\SafariXiu\AppData\Local\Programs\Python\Python311\;C:\Users\SafariXiu\AppData\Local\Microsoft\WindowsApps;C:\Users\SafariXiu\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\SafariXiu\.dotnet\tools;C:\Program Files\NVIDIA Corporation\Nsight Compute 2024.1.1\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\gradle-8.10.2\bin;C:\Program Files\Process Lasso\;C:\Users\SafariXiu\anaconda3;C:\Users\SafariXiu\anaconda3\Library\mingw-w64\bin;C:\Users\SafariXiu\anaconda3\Library\usr\bin;C:\Users\SafariXiu\anaconda3\Library\bin;C:\Users\SafariXiu\anaconda3\Scripts;C:\Users\SafariXiu\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\SafariXiu\AppData\Local\Programs\Python\Python311\;C:\Users\SafariXiu\AppData\Local\Microsoft\WindowsApps;C:\Users\SafariXiu\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\SafariXiu\.dotnet\tools;C:\Program Files\JetBrains\IntelliJ IDEA 2024.2.1\bin;;C:\Program Files\Java\jdk1.8.0_261\bin;C:\gradle-8.10.2\bin;;.&quot;" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/run" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -661,13 +676,21 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.GT-Not-Leisure [spotlessCheck]" />
+        <item itemvalue="Gradle.GT-Not-Leisure [runVanillaClient]" />
         <item itemvalue="Gradle.GT-Not-Leisure [dependencies]" />
         <item itemvalue="Gradle.GT-Not-Leisure [clean]" />
-        <item itemvalue="Gradle.GT-Not-Leisure [spotlessCheck]" />
         <item itemvalue="Gradle.GT-Not-Leisure [clean build]" />
-        <item itemvalue="Gradle.GT-Not-Leisure [runVanillaClient]" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -709,7 +732,60 @@
       <workItem from="1731069020108" duration="641000" />
       <workItem from="1731146020811" duration="600000" />
       <workItem from="1733337814168" duration="6000" />
+      <workItem from="1733756232000" duration="770000" />
+      <workItem from="1733757058231" duration="622000" />
+      <workItem from="1733760031755" duration="159000" />
+      <workItem from="1733804728989" duration="4621000" />
     </task>
+    <task id="LOCAL-00001" summary="代码尝试">
+      <option name="closed" value="true" />
+      <created>1733719979853</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1733719979853</updated>
+    </task>
+    <task id="LOCAL-00002" summary="巨型高炉mixin完成">
+      <option name="closed" value="true" />
+      <created>1733728611601</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1733728611601</updated>
+    </task>
+    <task id="LOCAL-00003" summary="修复巨型高炉在NEI中预览不显示的问题">
+      <option name="closed" value="true" />
+      <created>1733746026726</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1733746026726</updated>
+    </task>
+    <task id="LOCAL-00004" summary="添加对土高炉效率的mixin">
+      <option name="closed" value="true" />
+      <created>1733749463429</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1733749463429</updated>
+    </task>
+    <task id="LOCAL-00005" summary="添加对土高炉效率的mixin">
+      <option name="closed" value="true" />
+      <created>1733755334783</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1733755334783</updated>
+    </task>
+    <task id="LOCAL-00006" summary="保留土高炉结构代码">
+      <option name="closed" value="true" />
+      <created>1733756769523</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1733756769523</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -775,6 +851,15 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="代码尝试" />
+    <MESSAGE value="巨型高炉mixin完成" />
+    <MESSAGE value="修复巨型高炉在NEI中预览不显示的问题" />
+    <MESSAGE value="添加对土高炉效率的mixin" />
+    <MESSAGE value="保留土高炉结构代码" />
+    <MESSAGE value="Mixin土高炉并修改配方时间锁定为20tick" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mixin土高炉并修改配方时间锁定为20tick" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -835,20 +920,13 @@
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/hatch/MTEQuadrupleOutputHatch.java</url>
           <line>123</line>
-          <properties class="com.science.gtnl.common.hatch.MTEQuadrupleOutputHatch" method="getFluid">
+          <properties class="com.science.gtnl.common.hatch.MTEQuadrupleOutputHatch">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
-      <default-breakpoints>
-        <breakpoint type="python-exception">
-          <properties notifyOnTerminate="true" exception="BaseException">
-            <option name="notifyOnTerminate" value="true" />
-          </properties>
-        </breakpoint>
-      </default-breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
