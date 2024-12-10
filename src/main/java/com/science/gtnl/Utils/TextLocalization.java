@@ -98,6 +98,14 @@ public class TextLocalization {
         "Any Iron Plated Bricks",
         "Tooltip_GenerationEarthEngine_Casing");
 
+    public static final String NameLapotronChip = texter("Lapotron Chip", "NameLapotronChip");
+    public static final String LapotronChipRecipeType = texter("Lapotron Chip", "gtnl.recipe.LapotronChipRecipeType");
+    public static final String Tooltip_LapotronChip_00 = texter("WIP", "Tooltip_LapotronChip_00");
+    public static final String Tooltip_LapotronChip_01 = texter("WIP", "Tooltip_LapotronChip_01");
+    public static final String Tooltip_LapotronChip_Casing = texter(
+        "Any Radiant Naquadah Alloy Casing",
+        "Tooltip_LapotronChip_Casing");
+
     public static final String NameBloodSoulSacrificialArray = texter(
         "Blood SoulSacrificial Array",
         "NameBloodSoulSacrificialArray");

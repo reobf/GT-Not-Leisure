@@ -9,6 +9,7 @@ import com.science.gtnl.common.hatch.MTEQuadrupleOutputHatch;
 import com.science.gtnl.common.machine.BloodSoulSacrificialArray;
 import com.science.gtnl.common.machine.EdenGarden;
 import com.science.gtnl.common.machine.GenerationEarthEngine;
+import com.science.gtnl.common.machine.LapotronChip;
 import com.science.gtnl.common.machine.LargeSteamCircuitAssembler;
 import com.science.gtnl.common.machine.RealArtificialStar;
 import com.science.gtnl.common.machine.TeleportationArrayToAlfheim;
@@ -24,6 +25,7 @@ public class MachineLoader {
     public static ItemStack GenerationEarthEngine;
     public static ItemStack BloodSoulSacrificialArray;
     public static ItemStack TeleportationArrayToAlfheim;
+    public static ItemStack LapotronChip;
     public static ItemStack RealArtificialStar;
     public static ItemStack EdenGarden;
 
@@ -75,6 +77,9 @@ public class MachineLoader {
             "NameTeleportationArrayToAlfheim",
             TextLocalization.NameTeleportationArrayToAlfheim).getStackForm(1);
         GTNLItemList.TeleportationArrayToAlfheim.set(TeleportationArrayToAlfheim);
+
+        LapotronChip = new LapotronChip(21010, "NameLapotronChip", TextLocalization.NameLapotronChip).getStackForm(1);
+        GTNLItemList.LapotronChip.set(LapotronChip);
 
         MTEHatchRack.run();
         MTEHatchCapacitor.run();

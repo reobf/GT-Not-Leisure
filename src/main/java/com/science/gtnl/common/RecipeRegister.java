@@ -91,4 +91,14 @@ public class RecipeRegister {
                 .setMaxRecipesPerPage(4))
         .disableOptimize()
         .build();
+
+    public static final RecipeMap<RecipeMapBackend> LapotronChipRecipes = RecipeMapBuilder
+        .of("gtnl.recipe.LapotronChipRecipes")
+        .maxIO(9, 9, 3, 3)
+        .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
+        .neiHandlerInfo(
+            builder -> builder.setDisplayStack(GTNLItemList.LapotronChip.get(1))
+                .setMaxRecipesPerPage(4))
+        .disableOptimize()
+        .build();
 }

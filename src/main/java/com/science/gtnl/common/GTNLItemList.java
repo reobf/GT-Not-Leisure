@@ -68,6 +68,7 @@ public enum GTNLItemList {
     EdenGarden,
     BloodSoulSacrificialArray,
     TeleportationArrayToAlfheim,
+    LapotronChip,
     RealArtificialStar,
     GenerationEarthEngine;
 

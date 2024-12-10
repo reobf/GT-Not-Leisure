@@ -1,7 +1,5 @@
 package com.science.gtnl.Utils.eig.buckets;
 
-import static com.science.gtnl.common.block.BlockRegister.Fortify_Glowstone;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -157,15 +155,8 @@ public class EIGIC2Bucket extends EIGBucket {
             .getYCoord();
         xyz[2] += greenhouse.getBaseMetaTileEntity()
             .getZCoord();
-        boolean cheating = false;
         FakeTileEntityCrop crop;
         try {
-            if (world.getBlock(xyz[0], xyz[1] + 2, xyz[2]) != Fortify_Glowstone
-                || world.getBlockMetadata(xyz[0], xyz[1] + 2, xyz[2]) != 0) {
-                cheating = true;
-                return;
-            }
-
             crop = new FakeTileEntityCrop(this, greenhouse, xyz);
             if (!crop.isValid) return;
             CropCard cc = crop.getCrop();
@@ -271,8 +262,6 @@ public class EIGIC2Bucket extends EIGBucket {
             this.isValid = true;
         } catch (Exception e) {
             e.printStackTrace(System.err);
-        } finally {
-            if (!cheating) world.setBlock(xyz[0], xyz[1] + 2, xyz[2], Fortify_Glowstone, 0, 0);
         }
     }
 
