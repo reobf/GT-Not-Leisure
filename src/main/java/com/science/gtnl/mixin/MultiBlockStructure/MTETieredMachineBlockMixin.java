@@ -1,4 +1,4 @@
-package com.science.gtnl.mixin;
+package com.science.gtnl.mixin.MultiBlockStructure;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.ofBlock;
 import static gregtech.api.GregTechAPI.*;
