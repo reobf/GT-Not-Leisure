@@ -13,7 +13,7 @@ import gregtech.api.enums.TextureSet;
 public class MaterialPool implements Runnable {
 
     // ID manager
-    public static final int offsetID_01 = 20_000;
+    public static final int offsetID_01 = 25_000;
 
     public static final Werkstoff Hexanitrohexaazaisowurtzitane = new Werkstoff(
         new short[] { 47, 53, 57 },
@@ -36,7 +36,6 @@ public class MaterialPool implements Runnable {
             .onlyDust(),
         offsetID_01 + 2,
         TextureSet.SET_SHINY);
-    // spotless:off
 
     public static final Werkstoff SilicaGel = new Werkstoff(
         new short[] { 77, 173, 202 },
@@ -48,7 +47,6 @@ public class MaterialPool implements Runnable {
             .onlyDust(),
         offsetID_01 + 3,
         TextureSet.SET_SHINY);
-    // spotless:off
 
     public static final Werkstoff Ethylenediamine = new Werkstoff(
         new short[] { 26, 90, 113 },

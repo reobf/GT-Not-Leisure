@@ -22,6 +22,8 @@ public enum GTNLItemList {
     NewHorizonsCoil,
     LargeSteamCircuitAssembler,
     SteamAssemblyCasing,
+    HeatVent,
+    SlicingBlades,
     // endregion
     Stargate_Coil,
     StargateTier0,

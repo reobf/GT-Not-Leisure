@@ -96,7 +96,11 @@ public class BlockRegister {
         GTNLItemList.TestCasing
             .set(MetaBlockConstructors.initMetaBlockCasing("Test Casing", (byte) 0, BasicBlocks.MetaBlockCasing));
         GTNLItemList.SteamAssemblyCasing.set(
-            MetaBlockConstructors.initMetaBlockCasing("SteamAssemblyCasing", (byte) 1, BasicBlocks.MetaBlockCasing));
+            MetaBlockConstructors.initMetaBlockCasing("Steam Assembly Casing", (byte) 1, BasicBlocks.MetaBlockCasing));
+        GTNLItemList.HeatVent
+            .set(MetaBlockConstructors.initMetaBlockCasing("Heat Vent", (byte) 2, BasicBlocks.MetaBlockCasing));
+        GTNLItemList.SlicingBlades
+            .set(MetaBlockConstructors.initMetaBlockCasing("Slicing Blades", (byte) 3, BasicBlocks.MetaBlockCasing));
     }
 
     public static void registry() {

@@ -1,11 +1,13 @@
 package com.science.gtnl.mixin.Accessor;
 
-import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
-import gregtech.common.tileentities.machines.multi.MTEPrimitiveBlastFurnace;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Accessor;
 
-@Mixin(value = MTEPrimitiveBlastFurnace.class,remap = false)
+import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
+
+import gregtech.common.tileentities.machines.multi.MTEPrimitiveBlastFurnace;
+
+@Mixin(value = MTEPrimitiveBlastFurnace.class, remap = false)
 public interface PrimitiveBlastFurnaceAccessor {
 
     @Accessor("STRUCTURE_DEFINITION")

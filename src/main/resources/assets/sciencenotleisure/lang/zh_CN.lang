@@ -2,6 +2,8 @@ itemGroup.GTNoteLeisure=GT不再业余
 
 MetaBlockCasing.0.name=测试机械方块
 MetaBlockCasing.1.name=蒸汽装配机械方块
+MetaBlockCasing.2.name=散热片
+MetaBlockCasing.3.name=切片刀
 MetaBlock.0.name=测试方块
 MetaItem.0.name=愚人脸
 MetaItem.1.name=§b激发的混合硅岩燃料棒
