@@ -26,7 +26,6 @@ import com.science.gtnl.common.RecipeRegister;
 import com.science.gtnl.common.machine.multiMachineClasses.MultiMachineBase;
 
 import gregtech.api.GregTechAPI;
-import gregtech.api.enums.TAE;
 import gregtech.api.enums.Textures;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
@@ -38,6 +37,7 @@ import gregtech.api.recipe.RecipeMap;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.common.blocks.BlockCasings1;
+import gregtech.common.blocks.BlockCasings8;
 
 public class LapotronChip extends MultiMachineBase<LapotronChip> implements ISurvivalConstructable {
 
@@ -177,7 +177,7 @@ public class LapotronChip extends MultiMachineBase<LapotronChip> implements ISur
                     'E',
                     buildHatchAdder(LapotronChip.class)
                         .atLeast(InputBus, OutputBus, InputHatch, Maintenance, Energy, Energy.or(ExoticEnergy))
-                        .casingIndex(TAE.getIndexFromPage(8, 10))
+                        .casingIndex(((BlockCasings8) GregTechAPI.sBlockCasings8).getTextureIndex(10))
                         .dot(1)
                         .buildAndChain(onElementPass(x -> ++x.casing, ofBlock(sBlockCasings8, 10))))
                 .addElement('F', ofBlock(Fortify_Glowstone, 0))
@@ -304,7 +304,7 @@ public class LapotronChip extends MultiMachineBase<LapotronChip> implements ISur
 
     @Override
     protected ProcessingLogic createProcessingLogic() {
-        return new ProcessingLogic().setSpeedBonus(1F / 3F)
+        return new ProcessingLogic().setSpeedBonus(1F)
             .setMaxParallelSupplier(this::getMaxParallelRecipes);
     }
 

@@ -61,7 +61,7 @@ public class BloodSoulSacrificialArray extends MultiMachineBase<BloodSoulSacrifi
     }
 
     protected float getSpeedBonus() {
-        return 2147483647.0F;
+        return 1F;
     }
 
     protected int getMaxParallelRecipes() {

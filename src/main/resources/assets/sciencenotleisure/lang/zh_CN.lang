@@ -107,6 +107,8 @@ Tooltip_LapotronChip_00=正在制作中
 Tooltip_LapotronChip_01=可以用于迅速搭建基础基地
 Tooltip_LapotronChip_Casing=任意放射硅岩合金机械方块
 
+NameNeutroniumWireCutting=中子丝线切割机
+
 tooltips.TrollFace=Never Gonna Give You Up~
 tooltips.DepletedExcitedNaquadahFuelRod=§o硅岩基燃料的最终形态。
 tooltips.BlazeCube=§o灵魂之火铸成，无尽炽热封存。

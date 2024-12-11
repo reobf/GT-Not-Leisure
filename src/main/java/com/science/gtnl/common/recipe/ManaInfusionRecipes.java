@@ -1969,5 +1969,18 @@ public class ManaInfusionRecipes implements IRecipePool {
             .duration(20)
             .eut(2048)
             .addTo(MIR);
+
+        RecipeBuilder.builder()
+            .itemInputs(
+                GTUtility.copyAmount(0, GTModHandler.getModItem("Botania", "terraPlate", 1)),
+                GTModHandler.getModItem("Botania", "manaResource", 1, 0),
+                GTModHandler.getModItem("Botania", "manaResource", 1, 1),
+                GTModHandler.getModItem("Botania", "manaResource", 1, 2))
+            .itemOutputs(GTModHandler.getModItem("Botania", "manaResource", 1, 4))
+            .fluidInputs(FluidRegistry.getFluidStack("fluidmana", 500000))
+            .noOptimize()
+            .duration(20)
+            .eut(2048)
+            .addTo(MIR);
     }
 }

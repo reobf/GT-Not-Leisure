@@ -1,29 +1,29 @@
 package com.science.gtnl.common.machine;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
-import static goodgenerator.loader.Loaders.compactFusionCoil;
-import static goodgenerator.loader.Loaders.magneticFluxCasing;
 import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
+import static gregtech.api.util.GTStructureUtility.ofFrame;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.common.util.ForgeDirection;
 
 import com.gtnewhorizon.structurelib.alignment.constructable.ISurvivalConstructable;
 import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
-import com.gtnewhorizon.structurelib.structure.StructureUtility;
-import com.gtnewhorizons.gtnhintergalactic.block.IGBlocks;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.TextLocalization;
 import com.science.gtnl.Utils.TextUtils;
-import com.science.gtnl.common.RecipeRegister;
+import com.science.gtnl.common.block.BasicBlocks;
+import com.science.gtnl.common.machine.multiMachineClasses.MultiMachineBase;
 
-import crazypants.enderio.EnderIO;
+import bartworks.API.BorosilicateGlass;
+import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.GregTechAPI;
+import gregtech.api.enums.Materials;
 import gregtech.api.enums.Textures;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
@@ -32,93 +32,78 @@ import gregtech.api.logic.ProcessingLogic;
 import gregtech.api.metatileentity.implementations.MTEHatch;
 import gregtech.api.objects.GTRenderedTexture;
 import gregtech.api.recipe.RecipeMap;
+import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.common.blocks.BlockCasings1;
-import gregtech.common.blocks.BlockCasings8;
-import gtPlusPlus.core.block.ModBlocks;
-import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.base.GTPPMultiBlockBase;
-import kubatech.loaders.BlockLoader;
-import tectech.thing.block.BlockQuantumGlass;
+import gregtech.common.blocks.BlockCasings9;
 import tectech.thing.casing.TTCasingsContainer;
 
-public class GenerationEarthEngine extends GTPPMultiBlockBase<GenerationEarthEngine> implements ISurvivalConstructable {
+public class NeutroniumWireCutting extends MultiMachineBase<NeutroniumWireCutting> implements ISurvivalConstructable {
 
     protected GTRecipe lastRecipeToBuffer;
 
-    public static final int HORIZONTAL_OFF_SET = 321;
-    public static final int VERTICAL_OFF_SET = 321;
-    public static final int DEPTH_OFF_SET = 17;
+    public byte mGlassTier = 0;
+
+    public static final int HORIZONTAL_OFF_SET = 3;
+    public static final int VERTICAL_OFF_SET = 10;
+    public static final int DEPTH_OFF_SET = 0;
 
     public int tCountCasing = 0;
 
     public int casing;
 
-    public IStructureDefinition<GenerationEarthEngine> STRUCTURE_DEFINITION = null;
+    public IStructureDefinition<NeutroniumWireCutting> STRUCTURE_DEFINITION = null;
 
     public static final String STRUCTURE_PIECE_MAIN = "main";
 
-    public static final String GEE_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/generation_earth_engine"; // 文件路径
+    public static final String ICF_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/neutronium_wire_cutting"; // 文件路径
 
     public String[][] shape;
 
-    public GenerationEarthEngine(String aName) {
+    public NeutroniumWireCutting(String aName) {
         super(aName);
-        this.shape = StructureUtils.readStructureFromFile(GEE_STRUCTURE_FILE_PATH);
+        this.shape = StructureUtils.readStructureFromFile(ICF_STRUCTURE_FILE_PATH);
     }
 
-    public GenerationEarthEngine(int aID, String aName, String aNameRegional) {
+    public NeutroniumWireCutting(int aID, String aName, String aNameRegional) {
         super(aID, aName, aNameRegional);
-        this.shape = StructureUtils.readStructureFromFile(GEE_STRUCTURE_FILE_PATH);
+        this.shape = StructureUtils.readStructureFromFile(ICF_STRUCTURE_FILE_PATH);
     }
 
     @Override
-    public String getMachineType() {
-        return TextLocalization.GenerationEarthEngineRecipeType;
-    }
-
-    @Override
-    public IMetaTileEntity newMetaEntity(IGregTechTileEntity aTileEntity) {
-        return new GenerationEarthEngine(this.mName);
-    }
-
-    @Override
-    public boolean isCorrectMachinePart(ItemStack aStack) {
-        return true;
-    }
-
-    @Override
-    public int getDamageToComponent(ItemStack aStack) {
-        return 0;
-    }
-
-    @Override
-    public boolean explodesOnComponentBreak(ItemStack aStack) {
+    protected boolean isEnablePerfectOverclock() {
         return false;
     }
 
     @Override
-    public int getMaxEfficiency(ItemStack itemStack) {
-        return 10000;
+    protected float getSpeedBonus() {
+        return 1;
+    }
+
+    @Override
+    public IMetaTileEntity newMetaEntity(IGregTechTileEntity aTileEntity) {
+        return new NeutroniumWireCutting(this.mName);
     }
 
     @Override
     protected MultiblockTooltipBuilder createTooltip() {
         MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
-        tt.addMachineType(getMachineType())
-            .addInfo(TextLocalization.Tooltip_GenerationEarthEngine_00)
-            .addInfo(TextLocalization.Tooltip_GenerationEarthEngine_01)
+        tt.addMachineType(TextLocalization.LapotronChipRecipeType)
+            .addInfo(TextLocalization.Tooltip_LapotronChip_00)
+            .addInfo(TextLocalization.Tooltip_LapotronChip_01)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
-            .beginStructureBlock(643, 218, 643, true)
-            .addInputBus(TextLocalization.Tooltip_GenerationEarthEngine_Casing, 1)
-            .addOutputBus(TextLocalization.Tooltip_GenerationEarthEngine_Casing, 1)
-            .addInputHatch(TextLocalization.Tooltip_GenerationEarthEngine_Casing, 1)
-            .addEnergyHatch(TextLocalization.Tooltip_GenerationEarthEngine_Casing, 1)
-            .addMaintenanceHatch(TextLocalization.Tooltip_GenerationEarthEngine_Casing, 1)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE);
+            .beginStructureBlock(177, 121, 177, true)
+            .addInputBus(TextLocalization.Tooltip_LapotronChip_Casing, 1)
+            .addOutputBus(TextLocalization.Tooltip_LapotronChip_Casing, 1)
+            .addInputHatch(TextLocalization.Tooltip_LapotronChip_Casing, 1)
+            .addOutputHatch(TextLocalization.Tooltip_LapotronChip_Casing, 1)
+            .addEnergyHatch(TextLocalization.Tooltip_LapotronChip_Casing, 1)
+            .addMaintenanceHatch(TextLocalization.Tooltip_LapotronChip_Casing, 1)
+            .toolTipFinisher(TextUtils.SQY);
         return tt;
     }
 
@@ -130,14 +115,14 @@ public class GenerationEarthEngine extends GTPPMultiBlockBase<GenerationEarthEng
     }
 
     public int getCasingTextureID() {
-        return ((BlockCasings1) GregTechAPI.sBlockCasings1).getTextureIndex(12);
+        return ((BlockCasings1) GregTechAPI.sBlockCasings1).getTextureIndex(13);
     }
 
-    protected GTRenderedTexture GEEgetFrontOverlay() {
+    protected GTRenderedTexture LCgetFrontOverlay() {
         return new GTRenderedTexture(Textures.BlockIcons.OVERLAY_DTPF_OFF);
     }
 
-    protected GTRenderedTexture GEEgetFrontOverlayActive() {
+    protected GTRenderedTexture LCgetFrontOverlayActive() {
         return new GTRenderedTexture(Textures.BlockIcons.OVERLAY_DTPF_ON);
     }
 
@@ -146,36 +131,40 @@ public class GenerationEarthEngine extends GTPPMultiBlockBase<GenerationEarthEng
         final ForgeDirection facing, final int aColorIndex, final boolean aActive, final boolean aRedstone) {
         if (side == facing) {
             return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()),
-                aActive ? GEEgetFrontOverlayActive() : GEEgetFrontOverlay() };
+                aActive ? LCgetFrontOverlayActive() : LCgetFrontOverlay() };
         }
         return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()) };
     }
 
     @Override
-    public IStructureDefinition<GenerationEarthEngine> getStructureDefinition() {
+    public IStructureDefinition<NeutroniumWireCutting> getStructureDefinition() {
         if (STRUCTURE_DEFINITION == null) {
-            STRUCTURE_DEFINITION = StructureDefinition.<GenerationEarthEngine>builder()
+            STRUCTURE_DEFINITION = StructureDefinition.<NeutroniumWireCutting>builder()
                 .addShape(STRUCTURE_PIECE_MAIN, transpose(shape))
-                .addElement('A', ofBlock(sBlockCasings8, 7))
-                .addElement('B', ofBlock(compactFusionCoil, 3))
-                .addElement('C', ofBlock(sSolenoidCoilCasings, 8))
-                .addElement('D', ofBlock(TTCasingsContainer.StabilisationFieldGenerators, 8))
-                .addElement('E', ofBlock(magneticFluxCasing, 0))
-                .addElement('F', ofBlock(BlockQuantumGlass.INSTANCE, 0))
-                .addElement('G', ofBlock(sBlockCasings8, 13))
-                .addElement('H', ofBlock(sBlockCasings1, 13))
-                .addElement('I', ofBlock(sBlockCasings8, 2))
-                .addElement('J', StructureUtility.ofBlock(IGBlocks.SpaceElevatorCasing, 1))
-                .addElement('K', ofBlock(BlockLoader.defcCasingBlock, 11))
+                .addElement('A', BorosilicateGlass.ofBoroGlass((byte) 0, (t, v) -> t.mGlassTier = v, t -> t.mGlassTier))
+                .addElement('B', ofBlock(BasicBlocks.MetaBlockCasing, 2))
+                .addElement('C', ofBlockAnyMeta(GameRegistry.findBlock("IC2", "blockAlloyGlass")))
+                .addElement('D', ofBlock(sBlockCasings10, 6))
+                .addElement('E', ofBlock(sBlockCasings10, 7))
+                .addElement('F', ofBlock(sBlockCasings10, 11))
+                .addElement('G', ofBlock(sBlockCasings3, 11))
+                .addElement('H', ofBlock(sBlockCasings4, 10))
+                .addElement('I', ofBlock(sBlockCasings8, 7))
+                .addElement('J', ofBlock(sBlockCasings9, 3))
+                .addElement('K', ofBlock(sBlockCasings9, 6))
                 .addElement(
                     'L',
-                    buildHatchAdder(GenerationEarthEngine.class)
-                        .atLeast(InputBus, OutputBus, InputHatch, Maintenance, Energy, Energy.or(ExoticEnergy))
-                        .casingIndex(((BlockCasings8) GregTechAPI.sBlockCasings8).getTextureIndex(5))
+                    buildHatchAdder(NeutroniumWireCutting.class)
+                        .atLeast(InputBus, OutputBus, InputHatch, Energy, Energy.or(ExoticEnergy))
+                        .casingIndex(((BlockCasings9) GregTechAPI.sBlockCasings9).getTextureIndex(12))
                         .dot(1)
-                        .buildAndChain(onElementPass(x -> ++x.casing, ofBlock(ModBlocks.blockCasings2Misc, 12))))
-                .addElement('M', ofBlock(Blocks.beacon, 1))
-                .addElement('N', ofBlock(EnderIO.blockIngotStorageEndergy, 3))
+                        .buildAndChain(onElementPass(x -> ++x.casing, ofBlock(sBlockCasings9, 12))))
+                .addElement('M', ofBlock(TTCasingsContainer.sBlockCasingsTT, 0))
+                .addElement('N', ofBlock(TTCasingsContainer.sBlockCasingsTT, 6))
+                .addElement('O', ofFrame(Materials.Neutronium))
+                .addElement('P', ofBlockAnyMeta(GameRegistry.findBlock("miscutils", "blockFrameGtHastelloyN")))
+                .addElement('Q', ofBlock(BasicBlocks.MetaBlockCasing, 4))
+                .addElement('R', ofBlock(BasicBlocks.MetaBlockCasing, 5))
                 .build();
         }
         return STRUCTURE_DEFINITION;
@@ -214,9 +203,10 @@ public class GenerationEarthEngine extends GTPPMultiBlockBase<GenerationEarthEng
     }
 
     public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
+        repairMachine();
         tCountCasing = 0;
         if (!checkPiece(STRUCTURE_PIECE_MAIN, HORIZONTAL_OFF_SET, VERTICAL_OFF_SET, DEPTH_OFF_SET)) return false;
-        if (tCountCasing >= 1000000 && checkHatches()) {
+        if (tCountCasing >= 100 && checkHatches()) {
             updateHatchTexture();
             return true;
         }
@@ -225,28 +215,35 @@ public class GenerationEarthEngine extends GTPPMultiBlockBase<GenerationEarthEng
 
     @Override
     public RecipeMap<?> getRecipeMap() {
-        return RecipeRegister.RecombinationFusionReactorRecipes;
+        return RecipeMaps.cutterRecipes;
     }
 
     @Override
     protected ProcessingLogic createProcessingLogic() {
-        return new ProcessingLogic().setSpeedBonus(1F)
+        return new ProcessingLogic().setSpeedBonus(1F / 5F)
             .setMaxParallelSupplier(this::getMaxParallelRecipes);
     }
 
     @Override
     public int getMaxParallelRecipes() {
-        return 2 * (Math.max(1, GTUtility.getTier(getMaxInputVoltage())));
+        return ((mGlassTier + GTUtility.getTier(this.getMaxInputVoltage())) ^ 2);
     }
 
     @Override
-    public boolean supportsInputSeparation() {
-        return true;
+    public void saveNBTData(NBTTagCompound aNBT) {
+        super.saveNBTData(aNBT);
+        aNBT.setByte("mGlassTier", mGlassTier);
+    }
+
+    @Override
+    public void loadNBTData(NBTTagCompound aNBT) {
+        super.loadNBTData(aNBT);
+        mGlassTier = aNBT.getByte("mGlassTier");
     }
 
     @Override
     public String[] getInfoData() {
-        final String running = (this.mMaxProgresstime > 0 ? "Fusion running" : "Fusion stopped");
+        final String running = (this.mMaxProgresstime > 0 ? "Machine running" : "Machine stopped");
         final String maintenance = (this.getIdealStatus() == this.getRepairStatus() ? "No Maintenance issues"
             : "Needs Maintenance");
         String tSpecialText;
@@ -257,7 +254,7 @@ public class GenerationEarthEngine extends GTPPMultiBlockBase<GenerationEarthEng
             tSpecialText = "Currently processing: Nothing";
         }
 
-        return new String[] { "Generation Earth Engine", running, maintenance, tSpecialText };
+        return new String[] { "Industrial Cutting Factory", running, maintenance, tSpecialText };
     }
 
 }

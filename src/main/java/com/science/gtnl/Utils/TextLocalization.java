@@ -119,6 +119,10 @@ public class TextLocalization {
         "Ang Mining Blck Plutonium Casing",
         "Tooltip_BloodSoulSacrificialArray_Casing");
 
+    public static final String NameNeutroniumWireCutting = texter(
+        "Neutronium Wire Cutting",
+        "NameNeutroniumWireCutting");
+
     public static final String NameTeleportationArrayToAlfheim = texter(
         "Teleportation Array To Alfheim",
         "NameTeleportationArrayToAlfheim");

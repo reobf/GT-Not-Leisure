@@ -81,7 +81,7 @@ public class TeleportationArrayToAlfheim extends MultiMachineBase<TeleportationA
     }
 
     protected int getMaxParallelRecipes() {
-        return 1;
+        return 2147483647;
     }
 
     protected boolean isEnablePerfectOverclock() {
@@ -243,7 +243,7 @@ public class TeleportationArrayToAlfheim extends MultiMachineBase<TeleportationA
             .addOutputHatch(TextLocalization.Tooltip_TeleportationArrayToAlfheim_Casing, 1)
             .addEnergyHatch(TextLocalization.Tooltip_TeleportationArrayToAlfheim_Casing, 1)
             .addMaintenanceHatch(TextLocalization.Tooltip_TeleportationArrayToAlfheim_Casing, 1)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE);
+            .toolTipFinisher(TextUtils.SNLC);
         return tt;
     }
 

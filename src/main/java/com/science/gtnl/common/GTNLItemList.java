@@ -68,6 +68,7 @@ public enum GTNLItemList {
     StellarConstructionFrameMaterial,
     ActivatedGaiaPylon,
 
+    NeutroniumWireCutting,
     EdenGarden,
     BloodSoulSacrificialArray,
     TeleportationArrayToAlfheim,
