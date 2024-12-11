@@ -14,13 +14,13 @@ import com.science.gtnl.Utils.TextEnums;
 
 import gregtech.api.recipe.check.CheckRecipeResult;
 
-public class SimpleResultWithText implements CheckRecipeResult {
+public class GTNLSimpleResultWithText implements CheckRecipeResult {
 
     public boolean success;
     public String key;
     public boolean persistsOnShutdown;
 
-    SimpleResultWithText(boolean success, String key, boolean persistsOnShutdown) {
+    GTNLSimpleResultWithText(boolean success, String key, boolean persistsOnShutdown) {
         this.success = success;
         this.key = key;
         this.persistsOnShutdown = persistsOnShutdown;
@@ -28,7 +28,7 @@ public class SimpleResultWithText implements CheckRecipeResult {
 
     @Override
     public @NotNull String getID() {
-        return "SimpleResultWithText";
+        return "GTNLSimpleResultWithText";
     }
 
     @Override
@@ -61,7 +61,7 @@ public class SimpleResultWithText implements CheckRecipeResult {
     @Override
     @Nonnull
     public CheckRecipeResult newInstance() {
-        return new SimpleResultWithText(false, "", false);
+        return new GTNLSimpleResultWithText(false, "", false);
     }
 
     @Override
@@ -87,7 +87,7 @@ public class SimpleResultWithText implements CheckRecipeResult {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        if (o instanceof SimpleResultWithText that) {
+        if (o instanceof GTNLSimpleResultWithText that) {
             return success == that.success && Objects.equals(key, that.key)
                 && persistsOnShutdown == that.persistsOnShutdown;
         }
@@ -100,7 +100,7 @@ public class SimpleResultWithText implements CheckRecipeResult {
      */
     @Nonnull
     public static CheckRecipeResult ofSuccess(String key) {
-        return new SimpleResultWithText(true, key, false);
+        return new GTNLSimpleResultWithText(true, key, false);
     }
 
     /**
@@ -109,7 +109,7 @@ public class SimpleResultWithText implements CheckRecipeResult {
      */
     @Nonnull
     public static CheckRecipeResult ofFailure(String key) {
-        return new SimpleResultWithText(false, key, false);
+        return new GTNLSimpleResultWithText(false, key, false);
     }
 
     /**
@@ -117,6 +117,6 @@ public class SimpleResultWithText implements CheckRecipeResult {
      * with `{key}`. This is already registered to registry.
      */
     public static CheckRecipeResult ofFailurePersistOnShutdown(String key) {
-        return new SimpleResultWithText(false, key, true);
+        return new GTNLSimpleResultWithText(false, key, true);
     }
 }
