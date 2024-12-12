@@ -11,8 +11,6 @@ import com.science.gtnl.loader.IScriptLoader;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 
-@SuppressWarnings("PointlessArithmeticExpression")
-
 public class ScriptAvaritia implements IScriptLoader {
 
     @Override

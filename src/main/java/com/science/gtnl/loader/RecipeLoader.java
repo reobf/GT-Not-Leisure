@@ -3,8 +3,10 @@ package com.science.gtnl.loader;
 import com.science.gtnl.common.recipe.AlloyBlastSmelterRecipes;
 import com.science.gtnl.common.recipe.AssemblerRecipes;
 import com.science.gtnl.common.recipe.AssemblingLineRecipes;
+import com.science.gtnl.common.recipe.ChemicalBathRecipes;
 import com.science.gtnl.common.recipe.ChemicalRecipes;
 import com.science.gtnl.common.recipe.CompressorRecipes;
+import com.science.gtnl.common.recipe.CraftingTableRecipes;
 import com.science.gtnl.common.recipe.ElectrolyzerRecipes;
 import com.science.gtnl.common.recipe.IRecipePool;
 import com.science.gtnl.common.recipe.ManaInfusionRecipes;
@@ -24,7 +26,8 @@ public class RecipeLoader {
             new MixerRecipes(), new multiDehydratorRecipes(), new AssemblerRecipes(), new AlloyBlastSmelterRecipes(),
             new AssemblingLineRecipes(), new CompressorRecipes(), new ReFusionReactorRecipes(),
             new RealArtificialStarRecipes(), new PortalToAlfheimRecipes(), new NatureSpiritArrayRecipes(),
-            new ManaInfusionRecipes(), new TranscendentPlasmaMixerRecipes(), new PlasmaForgeRecipes() };
+            new ManaInfusionRecipes(), new TranscendentPlasmaMixerRecipes(), new PlasmaForgeRecipes(),
+            new CraftingTableRecipes(), new ChemicalBathRecipes() };
         for (IRecipePool recipePool : recipePools) {
             recipePool.loadRecipes();
         }

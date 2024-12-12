@@ -2,17 +2,21 @@ package com.science.gtnl.common.recipe;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.common.materials.MaterialPool;
 
 import gregtech.api.enums.GTValues;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.util.GTModHandler;
+import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 
 public class AssemblerRecipes implements IRecipePool {
 
-    final RecipeMap As = RecipeMaps.assemblerRecipes;
+    final RecipeMap<?> As = RecipeMaps.assemblerRecipes;
 
     @Override
     public void loadRecipes() {
@@ -384,6 +388,21 @@ public class AssemblerRecipes implements IRecipePool {
             .noOptimize()
             .duration(200)
             .eut(7680)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTUtility.getIntegratedCircuit(1),
+                GTModHandler.getModItem("gregtech", "gt.blockmachines", 1, 56),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 8, 17202),
+                GTModHandler.getModItem("Botania", "pylon", 4, 1),
+                GTModHandler.getModItem("Botania", "pool", 1, 3),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 2L))
+            .itemOutputs(GTNLItemList.FluidManaInputHatch.get(1))
+            .specialValue(0)
+            .noOptimize()
+            .duration(200)
+            .eut(30720)
             .addTo(As);
     }
 }

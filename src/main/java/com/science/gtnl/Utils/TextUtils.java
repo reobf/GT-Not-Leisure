@@ -12,9 +12,7 @@ public class TextUtils {
     public static final String STERILE = SCIENCE_NOT_LEISURE + EnumChatFormatting.DARK_PURPLE + ": Sterile";
     public static final String AE = SCIENCE_NOT_LEISURE + EnumChatFormatting.BLUE + ": Applied Energistics 2";
     public static final String SRP = SCIENCE_NOT_LEISURE + EnumChatFormatting.BLUE + ": Structural Reconstruction Plan";
-    public static final String SQY = SCIENCE_NOT_LEISURE + EnumChatFormatting.BLUE + "§r X §6§l§o犰狳科技";
-    public static final String SNLC = SCIENCE_NOT_LEISURE + EnumChatFormatting.BLUE
-        + "§r X §l§o§f年§6轮§f城§6计§f划 §r§fby 咸到老时变成鱼";
+    public static final String SQY = SCIENCE_NOT_LEISURE + EnumChatFormatting.BLUE + "§r X §6§l§o犰狳重工";
 
     public static String formatting(String input, ChatFormatting[] colours, double delay) {
         StringBuilder sb = new StringBuilder(input.length() * 3);

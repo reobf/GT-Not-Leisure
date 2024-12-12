@@ -11,6 +11,7 @@ import com.science.gtnl.common.machine.EdenGarden;
 import com.science.gtnl.common.machine.GenerationEarthEngine;
 import com.science.gtnl.common.machine.LapotronChip;
 import com.science.gtnl.common.machine.LargeSteamCircuitAssembler;
+import com.science.gtnl.common.machine.LargeSteamCrusher;
 import com.science.gtnl.common.machine.NeutroniumWireCutting;
 import com.science.gtnl.common.machine.RealArtificialStar;
 import com.science.gtnl.common.machine.TeleportationArrayToAlfheim;
@@ -30,6 +31,7 @@ public class MachineLoader {
     public static ItemStack RealArtificialStar;
     public static ItemStack EdenGarden;
     public static ItemStack NeutroniumWireCutting;
+    public static ItemStack LargeSteamCrusher;
 
     public static void loadMachines() {
 
@@ -88,6 +90,12 @@ public class MachineLoader {
             "NameNeutroniumWireCutting",
             TextLocalization.NameNeutroniumWireCutting).getStackForm(1);
         GTNLItemList.NeutroniumWireCutting.set(NeutroniumWireCutting);
+
+        LargeSteamCrusher = new LargeSteamCrusher(
+            21012,
+            "NameLargeSteamCrusher",
+            TextLocalization.NameLargeSteamCrusher).getStackForm(1);
+        GTNLItemList.LargeSteamCrusher.set(LargeSteamCrusher);
 
         MTEHatchRack.run();
         MTEHatchCapacitor.run();

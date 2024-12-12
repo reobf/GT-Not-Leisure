@@ -1,13 +1,17 @@
 package com.science.gtnl.common.recipe;
 
+import static gregtech.api.util.GTRecipeBuilder.HOURS;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeConstants.*;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.science.gtnl.Utils.enums.TierEU;
+import com.science.gtnl.common.GTNLItemList;
 
+import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTModHandler;
@@ -72,5 +76,34 @@ public class AssemblingLineRecipes implements IRecipePool {
             GTModHandler.getModItem("gregtech", "gt.blockmachines", 1, 21004),
             30 * SECONDS,
             (int) TierEU.RECIPE_UHV);
+
+        GTValues.RA.stdBuilder()
+            .metadata(RESEARCH_ITEM, GTModHandler.getModItem("Botania", "lexicon", 1, 0))
+            .metadata(RESEARCH_TIME, 4 * HOURS)
+            .itemInputs(
+                GTModHandler.getModItem("gregtech", "gt.blockmachines", 8, 17),
+                GTModHandler.getModItem("Botania", "pylon", 4, 2),
+                GTModHandler.getModItem("Botania", "pool", 16, 3),
+                GTModHandler.getModItem("Botania", "spreader", 8, 3),
+                GTModHandler.getModItem("gregtech", "gt.blockmachines", 64, 15465),
+                GTModHandler.getModItem("Botania", "alfheimPortal", 64, 0),
+                GTModHandler.getModItem("Botania", "runeAltar", 64, 0),
+                GTModHandler.getModItem("Botania", "corporeaSpark", 64, 0),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 16, 32696),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 16, 32676),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 16L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 8L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 4L),
+                GTModHandler.getModItem("gregtech", "gt.blockcasings8", 32, 10),
+                GTModHandler.getModItem("gregtech", "gt.blockcasings4", 32, 7),
+                GTModHandler.getModItem("Botania", "storage", 32, 0))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.elvenelementium", 144 * 64),
+                FluidRegistry.getFluidStack("molten.terrasteel", 144 * 32),
+                FluidRegistry.getFluidStack("molten.indalloy140", 256000))
+            .itemOutputs(GTNLItemList.TeleportationArrayToAlfheim.get(1))
+            .eut(TierEU.RECIPE_UV)
+            .duration(300 * SECONDS)
+            .addTo(AssemblyLine);
     }
 }

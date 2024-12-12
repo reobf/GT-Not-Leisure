@@ -123,6 +123,21 @@ public class TextLocalization {
         "Neutronium Wire Cutting",
         "NameNeutroniumWireCutting");
 
+    public static final String NameLargeSteamCrusher = texter("Large Steam Crusher", "NameLargeSteamCrusher");
+    public static final String LargeSteamCrusherRecipeType = texter("Macerator", "LargeSteamCrusherRecipeType");
+    public static final String Tooltip_LargeSteamCrusher_00 = texter(
+        "50%% faster than using single block steam machines of the same macerator",
+        "Tooltip_LargeSteamCrusher_00");
+    public static final String Tooltip_LargeSteamCrusher_01 = texter(
+        "Only consumes steam at 125%% of the L/s normally required",
+        "Tooltip_LargeSteamCrusher_01");
+    public static final String Tooltip_LargeSteamCrusher_02 = texter(
+        "Processes up to 32 items at once",
+        "Tooltip_LargeSteamCrusher_02");
+    public static final String Tooltip_LargeSteamCrusher_Casing = texter(
+        "Ang Bronze Plated Bricks or Solid Steel Machine Casing",
+        "Tooltip_LargeSteamCrusher_Casing");
+
     public static final String NameTeleportationArrayToAlfheim = texter(
         "Teleportation Array To Alfheim",
         "NameTeleportationArrayToAlfheim");

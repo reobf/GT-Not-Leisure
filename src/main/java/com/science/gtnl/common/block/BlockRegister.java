@@ -16,7 +16,9 @@ import gtPlusPlus.core.item.base.itemblock.ItemBlockMeta;
 
 public class BlockRegister {
 
-    public static Block Stargate_Coil = new BlockIron("Stargate_Coil", "stargate_coil");
+    public static Block Stargate_Coil = new BlockIron("Stargate_Coil", "Stargate_Coil");
+    public static Block Bronze_Brick_Casing = new BlockCasing2("Bronze_Brick_Casing", "Bronze_Brick_Casing");
+    public static Block Steel_Brick_Casing = new BlockCasing2("Steel_Brick_Casing", "Steel_Brick_Casing");
     public static Block Gaia_Glass = new BlockGlass("Gaia_Glass", "Gaia_Glass");
     public static Block Terra_Glass = new BlockGlass("Terra_Glass", "Terra_Glass");
     public static Block Fortify_Glowstone = new BlockLight("Fortify_Glowstone", "Fortify_Glowstone");
@@ -46,6 +48,10 @@ public class BlockRegister {
             MetaItemBlockCasing.class,
             BasicBlocks.MetaBlockCasing.getUnlocalizedName());
 
+        GameRegistry.registerBlock(Bronze_Brick_Casing, "BronzeBrickCasing");
+        GTNLItemList.Bronze_Brick_Casing.set(new ItemStack(Bronze_Brick_Casing));
+        GameRegistry.registerBlock(Steel_Brick_Casing, "SteelBrickCasing");
+        GTNLItemList.Steel_Brick_Casing.set(new ItemStack(Steel_Brick_Casing));
         GameRegistry.registerBlock(Fortify_Glowstone, "FortifyGlowstone");
         GTNLItemList.Fortify_Glowstone.set(new ItemStack(Fortify_Glowstone));
         GameRegistry.registerBlock(Gaia_Glass, "GaiaGlass");
@@ -74,9 +80,8 @@ public class BlockRegister {
         GTNLItemList.StargateTier8.set(new ItemStack(StargateTier8));
         GameRegistry.registerBlock(StargateTier9, "StargateTier9");
         GTNLItemList.StargateTier9.set(new ItemStack(StargateTier9));
-        GameRegistry.registerBlock(Stargate_Coil_Compressed, ItemBlockMeta.class, "StargateCoilCompressed");
+        GameRegistry.registerBlock(Stargate_Coil_Compressed, ItemBlockMeta.class, "Stargate Coil Compressed");
         GTNLItemList.Stargate_Coil_Compressed.set(new ItemStack(Stargate_Coil_Compressed));
-
     }
 
     public static void registryBlockContainers() {

@@ -25,9 +25,9 @@ public class BlocksStargate extends Block {
         super(Material.iron);
         this.setHardness(1.0F);
         this.setResistance(6000000.0F);
-        this.setBlockName("Stargate" + "." + Tier);
-        this.setBlockTextureName(RESOURCE_ROOT_ID + ":" + "stargate");
-        this.TextureName = new String[] { "front", "side", "top_bottom", "compressed_" + Tier };
+        this.setBlockName("Stargate" + Tier);
+        this.setBlockTextureName(RESOURCE_ROOT_ID + ":" + "Stargate/" + "Stargate");
+        this.TextureName = new String[] { "Front", "Side", "Bottom", "Compressed_" + Tier };
         this.setCreativeTab(CreativeTabsLoader.GTNoteLeisure);
     }
 

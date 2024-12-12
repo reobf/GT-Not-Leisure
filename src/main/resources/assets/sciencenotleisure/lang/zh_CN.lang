@@ -12,21 +12,23 @@ MetaItem.1.name=§b激发的混合硅岩燃料棒
 MetaItem.2.name=§e炽骨立方块
 MetaItem.5.name=激活的盖亚水晶
 
-tile.Stargate.0.name=压缩星门
-tile.Stargate.1.name=压缩星门-一重
-tile.Stargate.2.name=压缩星门-二重
-tile.Stargate.3.name=压缩星门-三重
-tile.Stargate.4.name=压缩星门-四重
-tile.Stargate.5.name=压缩星门-五重
-tile.Stargate.6.name=压缩星门-六重
-tile.Stargate.7.name=压缩星门-七重
-tile.Stargate.8.name=压缩星门-八重
-tile.Stargate.9.name=压缩星门-九重
+tile.Stargate0.name=压缩星门
+tile.Stargate1.name=压缩星门-一重
+tile.Stargate2.name=压缩星门-二重
+tile.Stargate3.name=压缩星门-三重
+tile.Stargate4.name=压缩星门-四重
+tile.Stargate5.name=压缩星门-五重
+tile.Stargate6.name=压缩星门-六重
+tile.Stargate7.name=压缩星门-七重
+tile.Stargate8.name=压缩星门-八重
+tile.Stargate9.name=压缩星门-九重
 
 MetaBlock.1.name=新视野线圈
 tile.Gaia_Glass.name=盖亚玻璃
 tile.Terra_Glass.name=泰拉玻璃
 tile.Fortify_Glowstone.name=强化荧石
+tile.Bronze_Brick_Casing.name=砖砌青铜外壳
+tile.Steel_Brick_Casing.name=砖砌钢外壳
 tile.Stargate_Coil.name=星门线圈
 tile.Stargate_Coil_Compressed.0.name=压缩星门线圈
 tile.Stargate_Coil_Compressed.1.name=压缩星门线圈-一重
@@ -54,7 +56,7 @@ textSteamAssemblyCasing= 蒸汽装配机械方块
 NameLargeSteamCircuitAssembler=大型蒸汽电路组装机
 CircuitAssemblerRecipeType=电路组装机
 Tooltip_LargeSteamCircuitAssembler_00=比同等级的单方块组装机快25%%
-Tooltip_LargeSteamCircuitAssembler_01=仅消耗正常需求62.5%%的蒸汽
+Tooltip_LargeSteamCircuitAssembler_01=仅消耗正常需求125%%的蒸汽
 Tooltip_LargeSteamCircuitAssembler_02=一次可处理多达16个物品
 Tooltip_LargeSteamCircuitAssembler_03=原始科技！
 
@@ -109,6 +111,13 @@ Tooltip_LapotronChip_Casing=任意放射硅岩合金机械方块
 
 NameNeutroniumWireCutting=中子丝线切割机
 
+NameLargeSteamCrusher=大型蒸汽破碎机
+LargeSteamCrusherRecipeType=研磨机
+Tooltip_LargeSteamCrusher_Casing=任意镀铜砖块或脱氧钢机械方块
+Tooltip_LargeSteamCrusher_00=比同等级的单方块研磨机快50%%
+Tooltip_LargeSteamCrusher_01=仅消耗正常需求125%%的蒸汽
+Tooltip_LargeSteamCrusher_02=一次可处理多达32个物品
+
 tooltips.TrollFace=Never Gonna Give You Up~
 tooltips.DepletedExcitedNaquadahFuelRod=§o硅岩基燃料的最终形态。
 tooltips.BlazeCube=§o灵魂之火铸成，无尽炽热封存。
@@ -132,7 +141,6 @@ gt.blockmachines.gtnl.IntegratedOutputHatchME.desc.0=多方块的物品和流体
 
 gtnl.ae2.InfinityOutputBusME=无限输出总线 (ME)
 gtnl.ae2.InfinityOutputME=无限输出仓 (ME)
-
 
 gt.blockmachines.gtnl.InfinityOutputBusME.desc.0=多方块的物品输出
 gt.blockmachines.gtnl.InfinityOutputME.desc.0=多方块的流体输出

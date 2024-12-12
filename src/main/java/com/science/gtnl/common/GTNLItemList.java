@@ -58,6 +58,8 @@ public enum GTNLItemList {
 
     FluidManaInputHatch,
 
+    Bronze_Brick_Casing,
+    Steel_Brick_Casing,
     Fortify_Glowstone,
     Gaia_Glass,
     Terra_Glass,
@@ -68,6 +70,7 @@ public enum GTNLItemList {
     StellarConstructionFrameMaterial,
     ActivatedGaiaPylon,
 
+    LargeSteamCrusher,
     NeutroniumWireCutting,
     EdenGarden,
     BloodSoulSacrificialArray,
