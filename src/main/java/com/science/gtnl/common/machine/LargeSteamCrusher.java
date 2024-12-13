@@ -145,6 +145,8 @@ public class LargeSteamCrusher extends MTESteamMultiBase<LargeSteamCrusher> impl
         for (MTEHatch h : mSteamInputs) h.updateTexture(getCasingTextureID());
         for (MTEHatch h : mSteamOutputs) h.updateTexture(getCasingTextureID());
         for (MTEHatch h : mSteamInputFluids) h.updateTexture(getCasingTextureID());
+        for (MTEHatch h : mInputBusses) h.updateTexture(getCasingTextureID());
+        for (MTEHatch h : mOutputBusses) h.updateTexture(getCasingTextureID());
     }
 
     public int getCasingTextureID() {
@@ -284,7 +286,10 @@ public class LargeSteamCrusher extends MTESteamMultiBase<LargeSteamCrusher> impl
         tierBrickCasing = -1;
         tCountCasing = 0;
         if (!checkPiece(STRUCTURE_PIECE_MAIN, HORIZONTAL_OFF_SET, VERTICAL_OFF_SET, DEPTH_OFF_SET)) return false;
-        if (tierGearCasing < 0 && tierMachineCasing < 0 && tierFrameCasing < 0 && tierPlatedCasing < 0) return false;
+        if (tierGearCasing < 0 && tierMachineCasing < 0
+            && tierFrameCasing < 0
+            && tierPlatedCasing < 0
+            && tierBrickCasing < 0) return false;
         if (tierGearCasing == 1 && tierMachineCasing == 1
             && tierFrameCasing == 1
             && tierPlatedCasing == 1

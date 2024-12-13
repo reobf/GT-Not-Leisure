@@ -55,9 +55,7 @@ public class RecipeRegister {
         .maxIO(1, 1, 0, 0)
         .neiSpecialInfoFormatter(RealArtificialStar_SpecialValueFormatter.INSTANCE)
         .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
-        .neiHandlerInfo(
-            builder -> builder.setDisplayStack(GTNLItemList.RealArtificialStar.get(1))
-                .setMaxRecipesPerPage(4))
+        .neiHandlerInfo(builder -> builder.setDisplayStack(GTNLItemList.RealArtificialStar.get(1)))
         .disableOptimize()
         .build();
 

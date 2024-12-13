@@ -230,11 +230,6 @@ public class ComponentAssembler extends MultiMachineBase<ComponentAssembler> imp
     }
 
     @Override
-    public int getPollutionPerSecond(ItemStack aStack) {
-        return 1200;
-    }
-
-    @Override
     protected void setProcessingLogicPower(ProcessingLogic logic) {
         logic.setAvailableVoltage(getMaxInputEu());
         logic.setAvailableAmperage(1);

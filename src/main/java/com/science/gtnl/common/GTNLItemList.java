@@ -76,6 +76,7 @@ public enum GTNLItemList {
     BloodSoulSacrificialArray,
     TeleportationArrayToAlfheim,
     LapotronChip,
+    LargeSteamFurnace,
     ComponentAssembler,
     RealArtificialStar,
     GenerationEarthEngine;

@@ -113,10 +113,10 @@ NameNeutroniumWireCutting=中子丝线切割机
 
 NameLargeSteamCrusher=大型蒸汽破碎机
 LargeSteamCrusherRecipeType=研磨机
-Tooltip_LargeSteamCrusher_Casing=任意镀铜砖块或脱氧钢机械方块
 Tooltip_LargeSteamCrusher_00=比同等级的单方块研磨机快50%%
 Tooltip_LargeSteamCrusher_01=仅消耗正常需求125%%的蒸汽
 Tooltip_LargeSteamCrusher_02=一次可处理多达32个物品
+Tooltip_LargeSteamCrusher_Casing=任意镀铜砖块或脱氧钢机械方块
 
 NameComponentAssembler=部件组装机
 ComponentAssemblerRecipeType=部件装配线
@@ -127,6 +127,13 @@ Tooltip_ComponentAssembler_03=最多安装2个能源仓！
 Tooltip_ComponentAssembler_04=玻璃等级限制了能源仓等级，UMV玻璃解锁所有等级
 Tooltip_ComponentAssembler_05=§o效率碾压其他组装机/装配线！
 Tooltip_ComponentAssembler_Casing=任意脱氧钢机械方块
+
+NameLargeSteamFurnace=大型蒸汽熔炉
+LargeSteamFurnaceRecipeType=熔炉
+Tooltip_LargeSteamFurnace_00=比同等级的单方块熔炉快50%%
+Tooltip_LargeSteamFurnace_01=仅消耗正常需求50%%的蒸汽
+Tooltip_LargeSteamFurnace_02=一次可处理多达32个物品
+Tooltip_LargeSteamFurnace_Casing=任意镀铜砖块或脱氧钢机械方块
 
 tooltips.TrollFace=Never Gonna Give You Up~
 tooltips.DepletedExcitedNaquadahFuelRod=§o硅岩基燃料的最终形态。

@@ -164,6 +164,21 @@ public class TextLocalization {
         "Ang Solid Steel Machine Casing",
         "Tooltip_ComponentAssembler_Casing");
 
+    public static final String NameLargeSteamFurnace = texter("Large Steam Furnace", "NameLargeSteamFurnace");
+    public static final String LargeSteamFurnaceRecipeType = texter("Furnace", "LargeSteamFurnaceRecipeType");
+    public static final String Tooltip_LargeSteamFurnace_00 = texter(
+        "50%% faster than using single block steam machines of the same furnace",
+        "Tooltip_LargeSteamFurnace_00");
+    public static final String Tooltip_LargeSteamFurnace_01 = texter(
+        "Only consumes steam at 50%% of the L/s normally required",
+        "Tooltip_LargeSteamFurnace_01");
+    public static final String Tooltip_LargeSteamFurnace_02 = texter(
+        "Processes up to 32 items at once",
+        "Tooltip_LargeSteamFurnace_02");
+    public static final String Tooltip_LargeSteamFurnace_Casing = texter(
+        "Ang Bronze Plated Bricks or Solid Steel Machine Casing",
+        "Tooltip_LargeSteamFurnace_Casing");
+
     public static final String NameTeleportationArrayToAlfheim = texter(
         "Teleportation Array To Alfheim",
         "NameTeleportationArrayToAlfheim");
