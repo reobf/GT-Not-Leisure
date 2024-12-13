@@ -12,6 +12,8 @@ import static gtPlusPlus.core.block.ModBlocks.blockCasings3Misc;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import javax.annotation.Nonnull;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -115,11 +117,11 @@ public class ComponentAssembler extends MultiMachineBase<ComponentAssembler> imp
     }
 
     protected int getMaxParallelRecipes() {
-        return 4;
+        return 16;
     }
 
     protected float getSpeedBonus() {
-        return 1.5F;
+        return 1F;
     }
 
     public ComponentAssembler(int aID, String aName, String aNameRegional) {
@@ -147,6 +149,7 @@ public class ComponentAssembler extends MultiMachineBase<ComponentAssembler> imp
             .addInfo(TextLocalization.Tooltip_ComponentAssembler_03)
             .addInfo(TextLocalization.Tooltip_ComponentAssembler_04)
             .addInfo(TextLocalization.Tooltip_ComponentAssembler_05)
+            .addPollutionAmount(getPollutionPerSecond(null))
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
@@ -215,7 +218,20 @@ public class ComponentAssembler extends MultiMachineBase<ComponentAssembler> imp
                 }
                 return CheckRecipeResultRegistry.SUCCESSFUL;
             }
-        };
+
+            @Override
+            @Nonnull
+            protected OverclockCalculator createOverclockCalculator(@NotNull GTRecipe recipe) {
+                return OverclockCalculator.ofNoOverclock(recipe)
+                    .setEUtDiscount(0.8)
+                    .setSpeedBoost(0.5);
+            }
+        }.setMaxParallelSupplier(this::getMaxParallelRecipes);
+    }
+
+    @Override
+    public int getPollutionPerSecond(ItemStack aStack) {
+        return 1200;
     }
 
     @Override
