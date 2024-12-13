@@ -6,7 +6,6 @@ import static com.science.gtnl.common.block.BlockRegister.Bronze_Brick_Casing;
 import static com.science.gtnl.common.block.BlockRegister.Steel_Brick_Casing;
 import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.GregTechAPI.sBlockFrames;
-import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
 import static gtPlusPlus.core.block.ModBlocks.blockCustomMachineCasings;
 
@@ -52,7 +51,9 @@ import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.recipe.check.CheckRecipeResult;
 import gregtech.api.recipe.check.CheckRecipeResultRegistry;
-import gregtech.api.util.*;
+import gregtech.api.util.GTRecipe;
+import gregtech.api.util.MultiblockTooltipBuilder;
+import gregtech.api.util.OverclockCalculator;
 import gregtech.common.blocks.BlockCasings1;
 import gregtech.common.blocks.BlockCasings2;
 import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.base.MTESteamMultiBase;
@@ -61,8 +62,6 @@ import mcp.mobius.waila.api.IWailaDataAccessor;
 
 public class LargeSteamFurnace extends MTESteamMultiBase<LargeSteamFurnace> implements ISurvivalConstructable {
 
-    private static final long RECIPE_EUT = 4;
-    private static final int RECIPE_DURATION = 512;
     private static final String STRUCTURE_PIECE_MAIN = "main";
     public IStructureDefinition<LargeSteamFurnace> STRUCTURE_DEFINITION = null;
     public static final String LSF_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/large_steam_furnace"; // 文件路径
