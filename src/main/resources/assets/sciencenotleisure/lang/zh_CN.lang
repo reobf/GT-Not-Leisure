@@ -118,6 +118,16 @@ Tooltip_LargeSteamCrusher_00=比同等级的单方块研磨机快50%%
 Tooltip_LargeSteamCrusher_01=仅消耗正常需求125%%的蒸汽
 Tooltip_LargeSteamCrusher_02=一次可处理多达32个物品
 
+NameComponentAssembler=部件组装机
+ComponentAssemblerRecipeType=部件装配线
+Tooltip_ComponentAssembler_00=批量组装基础部件(马达,泵)等
+Tooltip_ComponentAssembler_01=§e部件装配线外壳§r等级最高为UV
+Tooltip_ComponentAssembler_02=支持升压和超频
+Tooltip_ComponentAssembler_03=最多安装2个能源仓！
+Tooltip_ComponentAssembler_04=玻璃等级限制了能源仓等级，UMV玻璃解锁所有等级
+Tooltip_ComponentAssembler_05=§o效率碾压其他组装机/装配线！
+Tooltip_ComponentAssembler_Casing=任意脱氧钢机械方块
+
 tooltips.TrollFace=Never Gonna Give You Up~
 tooltips.DepletedExcitedNaquadahFuelRod=§o硅岩基燃料的最终形态。
 tooltips.BlazeCube=§o灵魂之火铸成，无尽炽热封存。

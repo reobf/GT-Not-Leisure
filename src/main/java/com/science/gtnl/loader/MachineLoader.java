@@ -7,6 +7,7 @@ import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.common.hatch.MTEHatchCustomFluid;
 import com.science.gtnl.common.hatch.MTEQuadrupleOutputHatch;
 import com.science.gtnl.common.machine.BloodSoulSacrificialArray;
+import com.science.gtnl.common.machine.ComponentAssembler;
 import com.science.gtnl.common.machine.EdenGarden;
 import com.science.gtnl.common.machine.GenerationEarthEngine;
 import com.science.gtnl.common.machine.LapotronChip;
@@ -32,6 +33,7 @@ public class MachineLoader {
     public static ItemStack EdenGarden;
     public static ItemStack NeutroniumWireCutting;
     public static ItemStack LargeSteamCrusher;
+    public static ItemStack ComponentAssembler;
 
     public static void loadMachines() {
 
@@ -96,6 +98,12 @@ public class MachineLoader {
             "NameLargeSteamCrusher",
             TextLocalization.NameLargeSteamCrusher).getStackForm(1);
         GTNLItemList.LargeSteamCrusher.set(LargeSteamCrusher);
+
+        ComponentAssembler = new ComponentAssembler(
+            21013,
+            "NameComponentAssembler",
+            TextLocalization.NameComponentAssembler).getStackForm(1);
+        GTNLItemList.ComponentAssembler.set(ComponentAssembler);
 
         MTEHatchRack.run();
         MTEHatchCapacitor.run();

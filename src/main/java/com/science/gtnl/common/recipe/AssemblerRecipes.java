@@ -269,7 +269,7 @@ public class AssemblerRecipes implements IRecipePool {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 GTModHandler.getModItem("gregtech", "gt.metaitem.02", 8, 19325),
-                GTModHandler.getModItem("bartworks", "gt.bwMetaGeneratedplate", 2, 20046),
+                GTModHandler.getModItem("bartworks", "gt.bwMetaGeneratedplate", 2, 25046),
                 GTModHandler.getModItem("miscutils", "itemPlateSiliconCarbide", 2))
             .fluidInputs(MaterialPool.Polyimide.getFluidOrGas(288))
             .itemOutputs(GTModHandler.getModItem("ScienceNotLeisure", "BiowareSMDTransistor", 16))

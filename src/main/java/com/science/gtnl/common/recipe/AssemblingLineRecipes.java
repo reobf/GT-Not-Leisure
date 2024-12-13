@@ -34,7 +34,7 @@ public class AssemblingLineRecipes implements IRecipePool {
                 GTModHandler.getModItem("ScienceNotLeisure", "BiowareSMDResistor", 8),
                 GTModHandler.getModItem("ScienceNotLeisure", "BiowareSMDTransistor", 8),
                 GTModHandler.getModItem("ScienceNotLeisure", "BiowareSMDInductor", 8),
-                GTModHandler.getModItem("bartworks", "gt.bwMetaGeneratedfoil", 2, 20047),
+                GTModHandler.getModItem("bartworks", "gt.bwMetaGeneratedfoil", 2, 25047),
                 GTModHandler.getModItem("gregtech", "gt.metaitem.03", 8, 32076),
                 GTModHandler.getModItem("gregtech", "gt.metaitem.03", 8, 32189),
                 GTModHandler.getModItem("gregtech", "gt.metaitem.02", 16, 19324),

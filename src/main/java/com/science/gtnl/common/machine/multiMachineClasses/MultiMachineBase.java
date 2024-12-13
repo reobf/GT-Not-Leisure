@@ -831,33 +831,21 @@ public abstract class MultiMachineBase<T extends MultiMachineBase<T>> extends MT
         return true;
     }
 
-    /**
-     * No more machine error
-     */
     @Override
     public boolean doRandomMaintenanceDamage() {
         return true;
     }
 
-    /**
-     * No more machine error
-     */
     @Override
     public void checkMaintenance() {}
 
-    /**
-     * No more machine error
-     */
     @Override
     public boolean getDefaultHasMaintenanceChecks() {
         return false;
     }
 
-    /**
-     * No more machine error
-     */
     @Override
-    public final boolean shouldCheckMaintenance() {
+    public boolean shouldCheckMaintenance() {
         return false;
     }
 

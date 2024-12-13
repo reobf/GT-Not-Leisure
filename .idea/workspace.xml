@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5462d6df-5ab2-496d-b03a-539d6854c2fd" name="更改" comment="Mixin土高炉并修改配方时间锁定为20tick">
+    <list default="true" id="5462d6df-5ab2-496d-b03a-539d6854c2fd" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/ComponentAssembler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dependencies.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/dependencies.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/Utils/TextUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/Utils/TextUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/TeleportationArrayToAlfheim.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/TeleportationArrayToAlfheim.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/Utils/TextLocalization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/Utils/TextLocalization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/GTNLItemList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/GTNLItemList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/multiMachineClasses/MultiMachineBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/multiMachineClasses/MultiMachineBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/recipe/AssemblerRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/recipe/AssemblerRecipes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/recipe/AssemblingLineRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/recipe/AssemblingLineRecipes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/recipe/NatureSpiritArrayRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/recipe/NatureSpiritArrayRecipes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/loader/MachineLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/loader/MachineLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/zh_CN.lang" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/zh_CN.lang" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/multiblock/整理多方块.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/multiblock/整理多方块.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,6 +139,7 @@
     &quot;Gradle.GT-Not-Leisure [runVanillaClient].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.GT-Not-Leisure [spotlessCheck].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.加载 Gradle 依赖项.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.构建 GT-Not-Leisure.executor&quot;: &quot;Run&quot;,
     &quot;JavaClassFindUsagesOptions.isSearchForTextOccurrences&quot;: &quot;false&quot;,
     &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
     &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
@@ -142,7 +150,7 @@
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Github/GTNH-Intergalactic&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Github/Applied-Energistics-2-Unofficial&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -191,7 +199,7 @@
       <command value="./gradlew clean build" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.1. Run Client">
+  <component name="RunManager" selected="Gradle.5. Apply spotless">
     <configuration name="Run Client (IJ Native)" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="GradleStart" />
       <module name="GT-Not-Leisure.ideVirtualMain" />
@@ -907,6 +915,18 @@
           </properties>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/block/BlockCasing2.java</url>
+          <line>20</line>
+          <properties field="TextureName" class="com.science.gtnl.common.block.BlockCasing2" />
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/block/BlockCasing2.java</url>
+          <line>21</line>
+          <properties field="Texture" class="com.science.gtnl.common.block.BlockCasing2" />
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/hatch/MTEQuadrupleOutputHatch.java</url>
           <line>79</line>
@@ -934,10 +954,86 @@
           </properties>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/block/BlockCasing2.java</url>
+          <line>23</line>
+          <properties class="com.science.gtnl.common.block.BlockCasing2" method="&lt;init&gt;">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/block/BlockCasing2.java</url>
+          <line>35</line>
+          <properties class="com.science.gtnl.common.block.BlockCasing2" method="getIcon">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/block/BlockCasing2.java</url>
+          <line>54</line>
+          <properties class="com.science.gtnl.common.block.BlockCasing2" method="registerBlockIcons">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/block/BlockCasing2.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/block/BlockCasing2.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/block/BlockCasing2.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/block/BlockCasing2.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/block/BlockCasing2.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/block/BlockCasing2.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/block/BlockCasing2.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/block/BlockCasing2.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
+        <PinnedItemInfo parentTag="com.science.gtnl.common.block.BlockIron" memberName="captureDrops" />
+        <PinnedItemInfo parentTag="com.science.gtnl.common.block.BlockIron" memberName="capturedDrops" />
         <PinnedItemInfo parentTag="com.science.gtnl.common.machine.MTEHatchOutputME" memberName="FluidBaseCapacity" />
         <PinnedItemInfo parentTag="com.science.gtnl.common.machine.MTEInfinityHatchOutputME" memberName="mDescriptionArray" />
       </pinned-members>
@@ -946,6 +1042,7 @@
       <configuration name="GradleRunConfiguration">
         <watch expression="this.baseCapacity" language="JAVA" />
         <watch expression="fluidTanks" language="JAVA" />
+        <watch expression="this" />
       </configuration>
     </watches-manager>
   </component>

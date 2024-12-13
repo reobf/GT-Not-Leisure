@@ -63,14 +63,6 @@ public class NatureSpiritArrayRecipes implements IRecipePool {
             .addTo(NSAR);
 
         RecipeBuilder.builder()
-            .itemInputs(GTModHandler.getModItem("Botania", "manaResource", 1, 2))
-            .fluidOutputs(FluidRegistry.getFluidStack("fluidmana", 44000))
-            .noOptimize()
-            .duration(20)
-            .eut(2048)
-            .addTo(NSAR);
-
-        RecipeBuilder.builder()
             .itemInputs(GTUtility.copyAmount(0, GTModHandler.getModItem(Botania.ID, "pool", 1, 1)))
             .fluidOutputs(FluidRegistry.getFluidStack("fluidmana", 2147483647))
             .noOptimize()

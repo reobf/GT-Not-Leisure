@@ -138,6 +138,32 @@ public class TextLocalization {
         "Ang Bronze Plated Bricks or Solid Steel Machine Casing",
         "Tooltip_LargeSteamCrusher_Casing");
 
+    public static final String NameComponentAssembler = texter("Component Assembler", "NameComponentAssembler");
+    public static final String ComponentAssemblerRecipeType = texter(
+        "High-Capacity Component Assembler",
+        "ComponentAssemblerRecipeType");
+    public static final String Tooltip_ComponentAssembler_00 = texter(
+        "Assembles basic components (motors, pumps, etc.) in large batches",
+        "Tooltip_ComponentAssembler_00");
+    public static final String Tooltip_ComponentAssembler_01 = texter(
+        "§eComponent Assembly Line Casing §rmax tier is UV",
+        "Tooltip_ComponentAssembler_01");
+    public static final String Tooltip_ComponentAssembler_02 = texter(
+        "Overclocking is not supported",
+        "Tooltip_ComponentAssembler_02");
+    public static final String Tooltip_ComponentAssembler_03 = texter(
+        "Up to 2 energy hatches at most!",
+        "Tooltip_ComponentAssembler_03");
+    public static final String Tooltip_ComponentAssembler_04 = texter(
+        "Energy hatch limited by glass tier, UMV Glass unlocks all",
+        "Tooltip_ComponentAssembler_04");
+    public static final String Tooltip_ComponentAssembler_05 = texter(
+        "§oMuch more efficient than other competing brands!",
+        "Tooltip_ComponentAssembler_05");
+    public static final String Tooltip_ComponentAssembler_Casing = texter(
+        "Ang Solid Steel Machine Casing",
+        "Tooltip_ComponentAssembler_Casing");
+
     public static final String NameTeleportationArrayToAlfheim = texter(
         "Teleportation Array To Alfheim",
         "NameTeleportationArrayToAlfheim");
