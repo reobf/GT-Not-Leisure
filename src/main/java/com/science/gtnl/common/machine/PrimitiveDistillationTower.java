@@ -51,12 +51,12 @@ import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.base.MTESteam
 public class PrimitiveDistillationTower extends MTESteamMultiBase<PrimitiveDistillationTower>
     implements ISurvivalConstructable {
 
-    protected static final int CASING_INDEX = ((BlockCasings2) GregTechAPI.sBlockCasings2).getTextureIndex(0);
-    protected static final String STRUCTURE_PIECE_BASE = "base";
-    protected static final String STRUCTURE_PIECE_LAYER = "layer";
-    protected static final String STRUCTURE_PIECE_LAYER_HINT = "layerHint";
-    protected static final String STRUCTURE_PIECE_TOP_HINT = "topHint";
-    private static final IStructureDefinition<PrimitiveDistillationTower> STRUCTURE_DEFINITION;
+    public static final int CASING_INDEX = ((BlockCasings2) GregTechAPI.sBlockCasings2).getTextureIndex(0);
+    public static final String STRUCTURE_PIECE_BASE = "base";
+    public static final String STRUCTURE_PIECE_LAYER = "layer";
+    public static final String STRUCTURE_PIECE_LAYER_HINT = "layerHint";
+    public static final String STRUCTURE_PIECE_TOP_HINT = "topHint";
+    public static final IStructureDefinition<PrimitiveDistillationTower> STRUCTURE_DEFINITION;
 
     static {
         IHatchElement<PrimitiveDistillationTower> layeredOutputHatch = OutputHatch
@@ -113,10 +113,10 @@ public class PrimitiveDistillationTower extends MTESteamMultiBase<PrimitiveDisti
             .build();
     }
 
-    protected final List<List<MTEHatchOutput>> mOutputHatchesByLayer = new ArrayList<>();
-    protected int mHeight;
-    protected int mCasing;
-    protected boolean mTopLayerFound;
+    public final List<List<MTEHatchOutput>> mOutputHatchesByLayer = new ArrayList<>();
+    public int mHeight;
+    public int mCasing;
+    public boolean mTopLayerFound;
 
     public PrimitiveDistillationTower(int aID, String aName, String aNameRegional) {
         super(aID, aName, aNameRegional);
@@ -126,7 +126,7 @@ public class PrimitiveDistillationTower extends MTESteamMultiBase<PrimitiveDisti
         super(aName);
     }
 
-    protected void updateHatchTexture() {
+    public void updateHatchTexture() {
         for (MTEHatch h : mSteamInputs) h.updateTexture(getCasingTextureID());
         for (MTEHatch h : mSteamOutputs) h.updateTexture(getCasingTextureID());
         for (MTEHatch h : mSteamInputFluids) h.updateTexture(getCasingTextureID());
@@ -166,7 +166,7 @@ public class PrimitiveDistillationTower extends MTESteamMultiBase<PrimitiveDisti
     }
 
     @Override
-    protected MultiblockTooltipBuilder createTooltip() {
+    public MultiblockTooltipBuilder createTooltip() {
         final MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
         tt.addMachineType(TextLocalization.PrimitiveDistillationTowerRecipeType)
             .addInfo(TextLocalization.Tooltip_PrimitiveDistillationTower_00)
@@ -184,12 +184,12 @@ public class PrimitiveDistillationTower extends MTESteamMultiBase<PrimitiveDisti
     }
 
     @Override
-    protected GTRenderedTexture getFrontOverlay() {
+    public GTRenderedTexture getFrontOverlay() {
         return new GTRenderedTexture(Textures.BlockIcons.OVERLAY_FRONT_DISTILLATION_TOWER);
     }
 
     @Override
-    protected GTRenderedTexture getFrontOverlayActive() {
+    public GTRenderedTexture getFrontOverlayActive() {
         return new GTRenderedTexture(Textures.BlockIcons.OVERLAY_FRONT_DISTILLATION_TOWER_ACTIVE);
     }
 
@@ -214,13 +214,13 @@ public class PrimitiveDistillationTower extends MTESteamMultiBase<PrimitiveDisti
     }
 
     @Override
-    protected ProcessingLogic createProcessingLogic() {
+    public ProcessingLogic createProcessingLogic() {
 
         return new ProcessingLogic() {
 
             @NotNull
             @Override
-            protected CheckRecipeResult validateRecipe(@Nonnull GTRecipe recipe) {
+            public CheckRecipeResult validateRecipe(@Nonnull GTRecipe recipe) {
                 if (availableVoltage < recipe.mEUt) {
                     return CheckRecipeResultRegistry.insufficientPower(recipe.mEUt);
                 } else return CheckRecipeResultRegistry.SUCCESSFUL;
@@ -228,7 +228,7 @@ public class PrimitiveDistillationTower extends MTESteamMultiBase<PrimitiveDisti
 
             @Override
             @Nonnull
-            protected OverclockCalculator createOverclockCalculator(@NotNull GTRecipe recipe) {
+            public OverclockCalculator createOverclockCalculator(@NotNull GTRecipe recipe) {
                 return OverclockCalculator.ofNoOverclock(recipe)
                     .setEUtDiscount(0.75)
                     .setSpeedBoost(0.8);
@@ -236,22 +236,22 @@ public class PrimitiveDistillationTower extends MTESteamMultiBase<PrimitiveDisti
         }.setMaxParallelSupplier(this::getMaxParallelRecipes);
     }
 
-    protected void onCasingFound() {
+    public void onCasingFound() {
         mCasing++;
     }
 
-    protected void onTopLayerFound(boolean aIsCasing) {
+    public void onTopLayerFound(boolean aIsCasing) {
         mTopLayerFound = true;
         if (aIsCasing) onCasingFound();
     }
 
-    protected int getCurrentLayerOutputHatchCount() {
+    public int getCurrentLayerOutputHatchCount() {
         return mOutputHatchesByLayer.size() < mHeight || mHeight <= 0 ? 0
             : mOutputHatchesByLayer.get(mHeight - 1)
                 .size();
     }
 
-    protected boolean addLayerOutputHatch(IGregTechTileEntity aTileEntity, int aBaseCasingIndex) {
+    public boolean addLayerOutputHatch(IGregTechTileEntity aTileEntity, int aBaseCasingIndex) {
         if (aTileEntity == null || aTileEntity.isDead()
             || !(aTileEntity.getMetaTileEntity() instanceof MTEHatchOutput tHatch)) return false;
         while (mOutputHatchesByLayer.size() < mHeight) mOutputHatchesByLayer.add(new ArrayList<>());
@@ -266,7 +266,7 @@ public class PrimitiveDistillationTower extends MTESteamMultiBase<PrimitiveDisti
     }
 
     @Override
-    protected IAlignmentLimits getInitialAlignmentLimits() {
+    public IAlignmentLimits getInitialAlignmentLimits() {
         return (d, r, f) -> (d.flag & (ForgeDirection.UP.flag | ForgeDirection.DOWN.flag)) == 0 && r.isNotRotated()
             && !f.isVerticallyFliped();
     }
@@ -312,7 +312,7 @@ public class PrimitiveDistillationTower extends MTESteamMultiBase<PrimitiveDisti
     }
 
     @Override
-    protected void addFluidOutputs(FluidStack[] outputFluids) {
+    public void addFluidOutputs(FluidStack[] outputFluids) {
         for (int i = 0; i < outputFluids.length && i < mOutputHatchesByLayer.size(); i++) {
             final FluidStack fluidStack = outputFluids[i];
             if (fluidStack == null) continue;
@@ -367,7 +367,7 @@ public class PrimitiveDistillationTower extends MTESteamMultiBase<PrimitiveDisti
     }
 
     @Override
-    protected SoundResource getProcessStartSound() {
+    public SoundResource getProcessStartSound() {
         return SoundResource.GT_MACHINES_DISTILLERY_LOOP;
     }
 }
