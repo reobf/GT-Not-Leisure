@@ -11,11 +11,15 @@ import com.science.gtnl.common.machine.ComponentAssembler;
 import com.science.gtnl.common.machine.EdenGarden;
 import com.science.gtnl.common.machine.GenerationEarthEngine;
 import com.science.gtnl.common.machine.LapotronChip;
+import com.science.gtnl.common.machine.LargeSteamAlloySmelter;
+import com.science.gtnl.common.machine.LargeSteamChemicalBath;
 import com.science.gtnl.common.machine.LargeSteamCircuitAssembler;
 import com.science.gtnl.common.machine.LargeSteamCrusher;
 import com.science.gtnl.common.machine.LargeSteamFurnace;
+import com.science.gtnl.common.machine.LargeSteamThermalCentrifuge;
 import com.science.gtnl.common.machine.NeutroniumWireCutting;
 import com.science.gtnl.common.machine.RealArtificialStar;
+import com.science.gtnl.common.machine.SteamCracking;
 import com.science.gtnl.common.machine.TeleportationArrayToAlfheim;
 
 import gtPlusPlus.api.objects.Logger;
@@ -36,6 +40,10 @@ public class MachineLoader {
     public static ItemStack LargeSteamCrusher;
     public static ItemStack ComponentAssembler;
     public static ItemStack LargeSteamFurnace;
+    public static ItemStack LargeSteamAlloySmelter;
+    public static ItemStack LargeSteamThermalCentrifuge;
+    public static ItemStack LargeSteamChemicalBath;
+    public static ItemStack SteamCracking;
 
     public static void loadMachines() {
 
@@ -112,6 +120,28 @@ public class MachineLoader {
             "NameLargeSteamFurnace",
             TextLocalization.NameLargeSteamFurnace).getStackForm(1);
         GTNLItemList.LargeSteamFurnace.set(LargeSteamFurnace);
+
+        LargeSteamAlloySmelter = new LargeSteamAlloySmelter(
+            21015,
+            "NameLargeSteamAlloySmelter",
+            TextLocalization.NameLargeSteamAlloySmelter).getStackForm(1);
+        GTNLItemList.LargeSteamAlloySmelter.set(LargeSteamAlloySmelter);
+
+        LargeSteamThermalCentrifuge = new LargeSteamThermalCentrifuge(
+            21016,
+            "NameLargeSteamThermalCentrifuge",
+            TextLocalization.NameLargeSteamThermalCentrifuge).getStackForm(1);
+        GTNLItemList.LargeSteamThermalCentrifuge.set(LargeSteamThermalCentrifuge);
+
+        SteamCracking = new SteamCracking(21017, "NameSteamCracking", TextLocalization.NameSteamCracking)
+            .getStackForm(1);
+        GTNLItemList.SteamCracking.set(SteamCracking);
+
+        LargeSteamChemicalBath = new LargeSteamChemicalBath(
+            21018,
+            "NameLargeSteamChemicalBath",
+            TextLocalization.NameLargeSteamChemicalBath).getStackForm(1);
+        GTNLItemList.LargeSteamChemicalBath.set(LargeSteamChemicalBath);
 
         MTEHatchRack.run();
         MTEHatchCapacitor.run();

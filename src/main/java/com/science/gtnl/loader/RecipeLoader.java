@@ -16,6 +16,7 @@ import com.science.gtnl.common.recipe.PlasmaForgeRecipes;
 import com.science.gtnl.common.recipe.PortalToAlfheimRecipes;
 import com.science.gtnl.common.recipe.ReFusionReactorRecipes;
 import com.science.gtnl.common.recipe.RealArtificialStarRecipes;
+import com.science.gtnl.common.recipe.SteamCrackerRecipes;
 import com.science.gtnl.common.recipe.TranscendentPlasmaMixerRecipes;
 import com.science.gtnl.common.recipe.multiDehydratorRecipes;
 
@@ -27,7 +28,7 @@ public class RecipeLoader {
             new AssemblingLineRecipes(), new CompressorRecipes(), new ReFusionReactorRecipes(),
             new RealArtificialStarRecipes(), new PortalToAlfheimRecipes(), new NatureSpiritArrayRecipes(),
             new ManaInfusionRecipes(), new TranscendentPlasmaMixerRecipes(), new PlasmaForgeRecipes(),
-            new CraftingTableRecipes(), new ChemicalBathRecipes() };
+            new CraftingTableRecipes(), new ChemicalBathRecipes(), new SteamCrackerRecipes() };
         for (IRecipePool recipePool : recipePools) {
             recipePool.loadRecipes();
         }

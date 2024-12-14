@@ -74,9 +74,7 @@ public class RecipeRegister {
         .of("gtnl.recipe.NatureSpiritArrayRecipes")
         .maxIO(1, 0, 0, 1)
         .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
-        .neiHandlerInfo(
-            builder -> builder.setDisplayStack(GTNLItemList.TeleportationArrayToAlfheim.get(1))
-                .setMaxRecipesPerPage(4))
+        .neiHandlerInfo(builder -> builder.setDisplayStack(GTNLItemList.TeleportationArrayToAlfheim.get(1)))
         .disableOptimize()
         .build();
 
@@ -84,9 +82,7 @@ public class RecipeRegister {
         .of("gtnl.recipe.ManaInfusionRecipes")
         .maxIO(4, 1, 1, 0)
         .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
-        .neiHandlerInfo(
-            builder -> builder.setDisplayStack(GTNLItemList.TeleportationArrayToAlfheim.get(1))
-                .setMaxRecipesPerPage(4))
+        .neiHandlerInfo(builder -> builder.setDisplayStack(GTNLItemList.TeleportationArrayToAlfheim.get(1)))
         .disableOptimize()
         .build();
 
@@ -94,9 +90,15 @@ public class RecipeRegister {
         .of("gtnl.recipe.LapotronChipRecipes")
         .maxIO(9, 9, 3, 3)
         .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
-        .neiHandlerInfo(
-            builder -> builder.setDisplayStack(GTNLItemList.LapotronChip.get(1))
-                .setMaxRecipesPerPage(4))
+        .neiHandlerInfo(builder -> builder.setDisplayStack(GTNLItemList.LapotronChip.get(1)))
+        .disableOptimize()
+        .build();
+
+    public static final RecipeMap<RecipeMapBackend> SteamCrackerRecipes = RecipeMapBuilder
+        .of("gtnl.recipe.SteamCrackerRecipes")
+        .maxIO(1, 0, 1, 1)
+        .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
+        .neiHandlerInfo(builder -> builder.setDisplayStack(GTNLItemList.SteamCracking.get(1)))
         .disableOptimize()
         .build();
 }

@@ -77,6 +77,10 @@ public enum GTNLItemList {
     TeleportationArrayToAlfheim,
     LapotronChip,
     LargeSteamFurnace,
+    LargeSteamThermalCentrifuge,
+    SteamCracking,
+    LargeSteamChemicalBath,
+    LargeSteamAlloySmelter,
     ComponentAssembler,
     RealArtificialStar,
     GenerationEarthEngine;

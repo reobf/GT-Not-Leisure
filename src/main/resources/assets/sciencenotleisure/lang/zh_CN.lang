@@ -135,6 +135,34 @@ Tooltip_LargeSteamFurnace_01=仅消耗正常需求50%%的蒸汽
 Tooltip_LargeSteamFurnace_02=一次可处理多达32个物品
 Tooltip_LargeSteamFurnace_Casing=任意镀铜砖块或脱氧钢机械方块
 
+NameLargeSteamAlloySmelter=大型蒸汽合金炉
+LargeSteamAlloySmelterRecipeType=合金炉
+Tooltip_LargeSteamAlloySmelter_00=比同等级的单方块合金炉快30%%
+Tooltip_LargeSteamAlloySmelter_01=仅消耗正常需求80%%的蒸汽
+Tooltip_LargeSteamAlloySmelter_02=一次可处理多达16个物品
+Tooltip_LargeSteamAlloySmelter_Casing=任意镀铜砖块或脱氧钢机械方块
+
+NameLargeSteamThermalCentrifuge=大型蒸汽热力离心机
+LargeSteamThermalCentrifugeRecipeType=热力离心
+Tooltip_LargeSteamThermalCentrifuge_00=比同等级的单方块热力离心机快75%%
+Tooltip_LargeSteamThermalCentrifuge_01=仅消耗正常需求80%%的蒸汽
+Tooltip_LargeSteamThermalCentrifuge_02=一次可处理多达32个物品
+Tooltip_LargeSteamThermalCentrifuge_Casing=任意镀铜砖块或脱氧钢机械方块
+
+NameSteamCracking=蒸汽裂化机
+SteamCrackingRecipeType=蒸汽裂化
+gtnl.recipe.SteamCrackerRecipes=蒸汽裂化
+Tooltip_SteamCracking_00=将含硫烃热裂解成蒸汽裂化烃
+Tooltip_SteamCracking_01=比化学反应釜更有效率
+Tooltip_SteamCracking_Casing=任意镀铜砖块或脱氧钢机械方块
+
+NameLargeSteamChemicalBath=大型蒸汽化学浸洗机
+LargeSteamChemicalBathRecipeType=化学浸洗机
+Tooltip_LargeSteamChemicalBath_00=比同等级的单方块化学浸洗机快80%%
+Tooltip_LargeSteamChemicalBath_01=仅消耗正常需求80%%的蒸汽
+Tooltip_LargeSteamChemicalBath_02=一次可处理多达16个物品
+Tooltip_LargeSteamChemicalBath_Casing=任意镀铜砖块或脱氧钢机械方块
+
 tooltips.TrollFace=Never Gonna Give You Up~
 tooltips.DepletedExcitedNaquadahFuelRod=§o硅岩基燃料的最终形态。
 tooltips.BlazeCube=§o灵魂之火铸成，无尽炽热封存。

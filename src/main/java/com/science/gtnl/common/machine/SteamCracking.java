@@ -1,11 +1,8 @@
 package com.science.gtnl.common.machine;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
-import static com.science.gtnl.common.block.BlockRegister.Bronze_Brick_Casing;
-import static com.science.gtnl.common.block.BlockRegister.Steel_Brick_Casing;
 import static gregtech.api.GregTechAPI.*;
-import static gregtech.api.enums.HatchElement.InputBus;
-import static gregtech.api.enums.HatchElement.OutputBus;
+import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
 import static gtPlusPlus.core.block.ModBlocks.blockCustomMachineCasings;
 
@@ -38,6 +35,7 @@ import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.TextLocalization;
 import com.science.gtnl.Utils.TextUtils;
+import com.science.gtnl.common.RecipeRegister;
 
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.Textures;
@@ -48,7 +46,6 @@ import gregtech.api.logic.ProcessingLogic;
 import gregtech.api.metatileentity.implementations.MTEHatch;
 import gregtech.api.objects.GTRenderedTexture;
 import gregtech.api.recipe.RecipeMap;
-import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.recipe.check.CheckRecipeResult;
 import gregtech.api.recipe.check.CheckRecipeResultRegistry;
 import gregtech.api.util.GTRecipe;
@@ -60,46 +57,44 @@ import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.base.MTESteam
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
 
-public class LargeSteamCrusher extends MTESteamMultiBase<LargeSteamCrusher> implements ISurvivalConstructable {
+public class SteamCracking extends MTESteamMultiBase<SteamCracking> implements ISurvivalConstructable {
 
     @Override
     public IMetaTileEntity newMetaEntity(IGregTechTileEntity aTileEntity) {
-        return new LargeSteamCrusher(this.mName);
+        return new SteamCracking(this.mName);
     }
 
     @Override
     public String getMachineType() {
-        return TextLocalization.LargeSteamCrusherRecipeType;
+        return TextLocalization.SteamCrackingRecipeType;
     }
 
     public static final String STRUCTURE_PIECE_MAIN = "main";
 
-    public IStructureDefinition<LargeSteamCrusher> STRUCTURE_DEFINITION = null;
+    public IStructureDefinition<SteamCracking> STRUCTURE_DEFINITION = null;
 
-    public static final String LSC_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/large_steam_crusher"; // 文件路径
+    public static final String LSCr_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/large_steam_cracking"; // 文件路径
 
     public String[][] shape;
 
-    public LargeSteamCrusher(String aName) {
+    public SteamCracking(String aName) {
         super(aName);
-        this.shape = StructureUtils.readStructureFromFile(LSC_STRUCTURE_FILE_PATH);
+        this.shape = StructureUtils.readStructureFromFile(LSCr_STRUCTURE_FILE_PATH);
     }
 
-    public LargeSteamCrusher(int aID, String aName, String aNameRegional) {
+    public SteamCracking(int aID, String aName, String aNameRegional) {
         super(aID, aName, aNameRegional);
-        this.shape = StructureUtils.readStructureFromFile(LSC_STRUCTURE_FILE_PATH);
+        this.shape = StructureUtils.readStructureFromFile(LSCr_STRUCTURE_FILE_PATH);
     }
 
     public static final int HORIZONTAL_OFF_SET = 3;
-    public static final int VERTICAL_OFF_SET = 6;
+    public static final int VERTICAL_OFF_SET = 2;
     public static final int DEPTH_OFF_SET = 0;
 
     public boolean isBroken = true;
 
-    public int tierGearCasing = -1;
-    public int tierBrickCasing = -1;
+    public int tierFireboxCasing = -1;
     public int tierPlatedCasing = -1;
-    public int tierFrameCasing = -1;
     public int tierMachineCasing = -1;
     public int tierMachine = 1;
 
@@ -117,27 +112,15 @@ public class LargeSteamCrusher extends MTESteamMultiBase<LargeSteamCrusher> impl
         return 0;
     }
 
-    public static int getTierBrickCasing(Block block, int meta) {
-        if (block == Bronze_Brick_Casing) return 1;
-        if (block == Steel_Brick_Casing) return 2;
-        return 0;
-    }
-
     public static int getTierPlatedCasing(Block block, int meta) {
         if (block == blockCustomMachineCasings && 0 == meta) return 1;
         if (block == sBlockCasings2 && 0 == meta) return 2;
         return 0;
     }
 
-    public static int getTierGearCasing(Block block, int meta) {
-        if (block == sBlockCasings2 && 2 == meta) return 1;
-        if (block == sBlockCasings2 && 3 == meta) return 2;
-        return 0;
-    }
-
-    public static int getTierFrameCasing(Block block, int meta) {
-        if (block == sBlockFrames && 300 == meta) return 1;
-        if (block == sBlockFrames && 305 == meta) return 2;
+    public static int gettierFireboxCasing(Block block, int meta) {
+        if (block == sBlockCasings3 && 13 == meta) return 1;
+        if (block == sBlockCasings3 && 14 == meta) return 2;
         return 0;
     }
 
@@ -146,14 +129,13 @@ public class LargeSteamCrusher extends MTESteamMultiBase<LargeSteamCrusher> impl
         for (MTEHatch h : mSteamOutputs) h.updateTexture(getCasingTextureID());
         for (MTEHatch h : mSteamInputFluids) h.updateTexture(getCasingTextureID());
         for (MTEHatch h : mInputBusses) h.updateTexture(getCasingTextureID());
-        for (MTEHatch h : mOutputBusses) h.updateTexture(getCasingTextureID());
+        for (MTEHatch h : mInputHatches) h.updateTexture(getCasingTextureID());
+        for (MTEHatch h : mOutputHatches) h.updateTexture(getCasingTextureID());
     }
 
     public int getCasingTextureID() {
-        if (tierGearCasing == 2 || tierMachineCasing == 2
-            || tierFrameCasing == 2
-            || tierPlatedCasing == 2
-            || tierBrickCasing == 2) return ((BlockCasings2) GregTechAPI.sBlockCasings2).getTextureIndex(0);
+        if (tierFireboxCasing == 2 || tierMachineCasing == 2 || tierPlatedCasing == 2)
+            return ((BlockCasings2) GregTechAPI.sBlockCasings2).getTextureIndex(0);
         return ((BlockCasings1) GregTechAPI.sBlockCasings1).getTextureIndex(10);
     }
 
@@ -169,12 +151,12 @@ public class LargeSteamCrusher extends MTESteamMultiBase<LargeSteamCrusher> impl
 
     @Override
     protected GTRenderedTexture getFrontOverlay() {
-        return new GTRenderedTexture(Textures.BlockIcons.OVERLAY_TOP_STEAM_MACERATOR);
+        return new GTRenderedTexture(Textures.BlockIcons.OVERLAY_FRONT_OIL_CRACKER);
     }
 
     @Override
     protected GTRenderedTexture getFrontOverlayActive() {
-        return new GTRenderedTexture(Textures.BlockIcons.OVERLAY_TOP_STEAM_MACERATOR_ACTIVE);
+        return new GTRenderedTexture(Textures.BlockIcons.OVERLAY_FRONT_OIL_CRACKER_ACTIVE);
     }
 
     @Override
@@ -188,23 +170,19 @@ public class LargeSteamCrusher extends MTESteamMultiBase<LargeSteamCrusher> impl
     }
 
     @Override
-    public IStructureDefinition<LargeSteamCrusher> getStructureDefinition() {
+    public IStructureDefinition<SteamCracking> getStructureDefinition() {
         if (STRUCTURE_DEFINITION == null) {
-            STRUCTURE_DEFINITION = StructureDefinition.<LargeSteamCrusher>builder()
+            STRUCTURE_DEFINITION = StructureDefinition.<SteamCracking>builder()
                 .addShape(STRUCTURE_PIECE_MAIN, transpose(shape))
                 .addElement(
                     'A',
                     ofChain(
-                        buildSteamInput(LargeSteamCrusher.class)
+                        buildSteamInput(SteamCracking.class)
                             .casingIndex(((BlockCasings1) GregTechAPI.sBlockCasings1).getTextureIndex(10))
                             .dot(1)
                             .build(),
-                        buildHatchAdder(LargeSteamCrusher.class)
-                            .atLeast(
-                                SteamHatchElement.InputBus_Steam,
-                                SteamHatchElement.OutputBus_Steam,
-                                InputBus,
-                                OutputBus)
+                        buildHatchAdder(SteamCracking.class)
+                            .atLeast(SteamHatchElement.InputBus_Steam, InputBus, OutputHatch, InputHatch)
                             .casingIndex(((BlockCasings1) GregTechAPI.sBlockCasings1).getTextureIndex(10))
                             .dot(1)
                             .buildAndChain(),
@@ -217,37 +195,20 @@ public class LargeSteamCrusher extends MTESteamMultiBase<LargeSteamCrusher> impl
                 .addElement(
                     'B',
                     ofBlocksTiered(
-                        LargeSteamCrusher::getTierGearCasing,
-                        ImmutableList.of(Pair.of(sBlockCasings2, 2), Pair.of(sBlockCasings2, 3)),
+                        SteamCracking::gettierFireboxCasing,
+                        ImmutableList.of(Pair.of(sBlockCasings3, 13), Pair.of(sBlockCasings3, 14)),
                         -1,
-                        (t, m) -> t.tierGearCasing = m,
-                        t -> t.tierGearCasing))
+                        (t, m) -> t.tierFireboxCasing = m,
+                        t -> t.tierFireboxCasing))
                 .addElement(
                     'C',
                     ofBlocksTiered(
-                        LargeSteamCrusher::getTierFrameCasing,
-                        ImmutableList.of(Pair.of(sBlockFrames, 300), Pair.of(sBlockFrames, 305)),
-                        -1,
-                        (t, m) -> t.tierFrameCasing = m,
-                        t -> t.tierFrameCasing))
-                .addElement(
-                    'D',
-                    ofBlocksTiered(
-                        LargeSteamCrusher::getTierPlatedCasing,
+                        SteamCracking::getTierPlatedCasing,
                         ImmutableList.of(Pair.of(blockCustomMachineCasings, 0), Pair.of(sBlockCasings2, 0)),
                         -1,
                         (t, m) -> t.tierPlatedCasing = m,
                         t -> t.tierPlatedCasing))
-                .addElement(
-                    'E',
-                    ofBlocksTiered(
-                        LargeSteamCrusher::getTierBrickCasing,
-                        ImmutableList.of(Pair.of(Bronze_Brick_Casing, 0), Pair.of(Steel_Brick_Casing, 0)),
-                        -1,
-                        (t, m) -> t.tierBrickCasing = m,
-                        t -> t.tierBrickCasing))
                 .build();
-
         }
         return STRUCTURE_DEFINITION;
     }
@@ -279,32 +240,23 @@ public class LargeSteamCrusher extends MTESteamMultiBase<LargeSteamCrusher> impl
     }
 
     public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
-        tierGearCasing = -1;
+        tierFireboxCasing = -1;
         tierMachineCasing = -1;
-        tierFrameCasing = -1;
         tierPlatedCasing = -1;
-        tierBrickCasing = -1;
         tCountCasing = 0;
         if (!checkPiece(STRUCTURE_PIECE_MAIN, HORIZONTAL_OFF_SET, VERTICAL_OFF_SET, DEPTH_OFF_SET)) return false;
-        if (tierGearCasing < 0 && tierMachineCasing < 0
-            && tierFrameCasing < 0
-            && tierPlatedCasing < 0
-            && tierBrickCasing < 0) return false;
-        if (tierGearCasing == 1 && tierMachineCasing == 1
-            && tierFrameCasing == 1
+        if (tierFireboxCasing < 0 && tierMachineCasing < 0 && tierPlatedCasing < 0) return false;
+        if (tierFireboxCasing == 1 && tierMachineCasing == 1
             && tierPlatedCasing == 1
-            && tierBrickCasing == 1
-            && tCountCasing >= 160
+            && tCountCasing >= 65
             && checkHatches()) {
             updateHatchTexture();
             tierMachine = 1;
             return true;
         }
-        if (tierGearCasing == 2 && tierMachineCasing == 2
-            && tierFrameCasing == 2
+        if (tierFireboxCasing == 2 && tierMachineCasing == 2
             && tierPlatedCasing == 2
-            && tierBrickCasing == 2
-            && tCountCasing >= 160
+            && tCountCasing >= 65
             && checkHatches()) {
             updateHatchTexture();
             tierMachine = 2;
@@ -320,22 +272,22 @@ public class LargeSteamCrusher extends MTESteamMultiBase<LargeSteamCrusher> impl
     @Override
     public int getMaxParallelRecipes() {
         if (tierMachine == 1) {
-            return 32;
+            return 8;
         } else if (tierMachine == 2) {
-            return 64;
+            return 16;
         }
-        return 32;
+        return 8;
     }
 
     @Override
     public RecipeMap<?> getRecipeMap() {
-        return RecipeMaps.maceratorRecipes;
+        return RecipeRegister.SteamCrackerRecipes;
     }
 
     @NotNull
     @Override
     public Collection<RecipeMap<?>> getAvailableRecipeMaps() {
-        return Arrays.asList(RecipeMaps.maceratorRecipes);
+        return Arrays.asList(RecipeRegister.SteamCrackerRecipes);
     }
 
     @Override
@@ -355,30 +307,29 @@ public class LargeSteamCrusher extends MTESteamMultiBase<LargeSteamCrusher> impl
             @Nonnull
             protected OverclockCalculator createOverclockCalculator(@NotNull GTRecipe recipe) {
                 return OverclockCalculator.ofNoOverclock(recipe)
-                    .setEUtDiscount(1.25 * tierMachine)
-                    .setSpeedBoost(0.5 / tierMachine);
+                    .setEUtDiscount(tierMachine)
+                    .setSpeedBoost(1 / tierMachine);
             }
         }.setMaxParallelSupplier(this::getMaxParallelRecipes);
     }
 
     @Override
     public int getTierRecipes() {
-        return 3;
+        return 1;
     }
 
     @Override
     protected MultiblockTooltipBuilder createTooltip() {
         final MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
-        tt.addMachineType(TextLocalization.LargeSteamCrusherRecipeType)
-            .addInfo(TextLocalization.Tooltip_LargeSteamCrusher_00)
-            .addInfo(TextLocalization.Tooltip_LargeSteamCrusher_01)
-            .addInfo(TextLocalization.Tooltip_LargeSteamCrusher_02)
+        tt.addMachineType(TextLocalization.SteamCrackingRecipeType)
+            .addInfo(TextLocalization.Tooltip_SteamCracking_00)
+            .addInfo(TextLocalization.Tooltip_SteamCracking_01)
             .addInfo(TextLocalization.HIGH_PRESSURE_TOOLTIP_NOTICE)
             .addSeparator()
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
-            .beginStructureBlock(7, 8, 11, false)
-            .addInputBus(TextLocalization.Tooltip_LargeSteamCrusher_Casing, 1)
-            .addOutputBus(TextLocalization.Tooltip_LargeSteamCrusher_Casing, 1)
+            .beginStructureBlock(7, 4, 4, false)
+            .addInputBus(TextLocalization.Tooltip_SteamCracking_Casing, 1)
+            .addOutputBus(TextLocalization.Tooltip_SteamCracking_Casing, 1)
             .toolTipFinisher(TextUtils.SQY);
         return tt;
     }

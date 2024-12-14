@@ -138,6 +138,75 @@ public class TextLocalization {
         "Ang Bronze Plated Bricks or Solid Steel Machine Casing",
         "Tooltip_LargeSteamCrusher_Casing");
 
+    public static final String NameLargeSteamAlloySmelter = texter(
+        "Large Steam Alloy Smelter",
+        "NameLargeSteamAlloySmelter");
+    public static final String LargeSteamAlloySmelterRecipeType = texter(
+        "Alloy Smelter",
+        "LargeSteamAlloySmelterRecipeType");
+    public static final String Tooltip_LargeSteamAlloySmelter_00 = texter(
+        "30%% faster than using single block steam machines of the same alloy smelter",
+        "Tooltip_LargeSteamAlloySmelter_00");
+    public static final String Tooltip_LargeSteamAlloySmelter_01 = texter(
+        "Only consumes steam at 80%% of the L/s normally required",
+        "Tooltip_LargeSteamAlloySmelter_01");
+    public static final String Tooltip_LargeSteamAlloySmelter_02 = texter(
+        "Processes up to 16 items at once",
+        "Tooltip_LargeSteamAlloySmelter_02");
+    public static final String Tooltip_LargeSteamAlloySmelter_Casing = texter(
+        "Ang Bronze Plated Bricks or Solid Steel Machine Casing",
+        "Tooltip_LargeSteamAlloySmelter_Casing");
+
+    public static final String NameLargeSteamThermalCentrifuge = texter(
+        "Large Steam Thermal Centrifuge",
+        "NameLargeSteamThermalCentrifuge");
+    public static final String LargeSteamThermalCentrifugeRecipeType = texter(
+        "Thermal Centrifuge",
+        "LargeSteamThermalCentrifugeRecipeType");
+    public static final String Tooltip_LargeSteamThermalCentrifuge_00 = texter(
+        "75%% faster than using single block steam machines of the same alloy smelter",
+        "Tooltip_LargeSteamThermalCentrifuge_00");
+    public static final String Tooltip_LargeSteamThermalCentrifuge_01 = texter(
+        "Only consumes steam at 80%% of the L/s normally required",
+        "Tooltip_LargeSteamThermalCentrifuge_01");
+    public static final String Tooltip_LargeSteamThermalCentrifuge_02 = texter(
+        "Processes up to 32 items at once",
+        "Tooltip_LargeSteamThermalCentrifuge_02");
+    public static final String Tooltip_LargeSteamThermalCentrifuge_Casing = texter(
+        "Ang Bronze Plated Bricks or Solid Steel Machine Casing",
+        "Tooltip_LargeSteamThermalCentrifuge_Casing");
+
+    public static final String NameSteamCracking = texter("Steam Cracking", "NameSteamCracking");
+    public static final String SteamCrackingRecipeType = texter("Steam Cracker", "SteamCrackingRecipeType");
+    public static final String Tooltip_SteamCracking_00 = texter(
+        "Thermally cracks sulfuric hydrocarbons into steam hydrocarbons",
+        "Tooltip_SteamCracking_00");
+    public static final String Tooltip_SteamCracking_01 = texter(
+        "More efficient than the chemical Reactor",
+        "Tooltip_SteamCracking_01");
+    public static final String Tooltip_SteamCracking_Casing = texter(
+        "Ang Bronze Plated Bricks or Solid Steel Machine Casing",
+        "Tooltip_SteamCracking_Casing");
+
+    public static final String NameLargeSteamChemicalBath = texter(
+        "Large Steam Thermal Centrifuge",
+        "NameLargeSteamChemicalBath");
+    public static final String LargeSteamChemicalBathRecipeType = texter(
+        "Thermal Centrifuge",
+        "LargeSteamChemicalBathRecipeType");
+    public static final String Tooltip_LargeSteamChemicalBath_00 = texter(
+        "80%% faster than using single block steam machines of the same chemical bath",
+        "Tooltip_LargeSteamChemicalBath_00");
+    public static final String Tooltip_LargeSteamChemicalBath_01 = texter(
+        "Only consumes steam at 80%% of the L/s normally required",
+        "Tooltip_LargeSteamChemicalBath_01");
+    public static final String Tooltip_LargeSteamChemicalBath_02 = texter(
+        "Processes up to 16 items at once",
+        "Tooltip_LargeSteamChemicalBath_02");
+    public static final String Tooltip_LargeSteamChemicalBath_Casing = texter(
+        "Ang Bronze Plated Bricks or Solid Steel Machine Casing",
+        "Tooltip_LargeSteamChemicalBath_Casing");
+
     public static final String NameComponentAssembler = texter("Component Assembler", "NameComponentAssembler");
     public static final String ComponentAssemblerRecipeType = texter(
         "High-Capacity Component Assembler",
