@@ -18,6 +18,7 @@ import com.science.gtnl.common.machine.LargeSteamCrusher;
 import com.science.gtnl.common.machine.LargeSteamFurnace;
 import com.science.gtnl.common.machine.LargeSteamThermalCentrifuge;
 import com.science.gtnl.common.machine.NeutroniumWireCutting;
+import com.science.gtnl.common.machine.PrimitiveDistillationTower;
 import com.science.gtnl.common.machine.RealArtificialStar;
 import com.science.gtnl.common.machine.SteamCracking;
 import com.science.gtnl.common.machine.TeleportationArrayToAlfheim;
@@ -44,6 +45,7 @@ public class MachineLoader {
     public static ItemStack LargeSteamThermalCentrifuge;
     public static ItemStack LargeSteamChemicalBath;
     public static ItemStack SteamCracking;
+    public static ItemStack PrimitiveDistillationTower;
 
     public static void loadMachines() {
 
@@ -142,6 +144,12 @@ public class MachineLoader {
             "NameLargeSteamChemicalBath",
             TextLocalization.NameLargeSteamChemicalBath).getStackForm(1);
         GTNLItemList.LargeSteamChemicalBath.set(LargeSteamChemicalBath);
+
+        PrimitiveDistillationTower = new PrimitiveDistillationTower(
+            21019,
+            "NamePrimitiveDistillationTower",
+            TextLocalization.NamePrimitiveDistillationTower).getStackForm(1);
+        GTNLItemList.PrimitiveDistillationTower.set(PrimitiveDistillationTower);
 
         MTEHatchRack.run();
         MTEHatchCapacitor.run();

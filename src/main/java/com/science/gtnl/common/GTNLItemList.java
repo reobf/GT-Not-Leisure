@@ -80,6 +80,7 @@ public enum GTNLItemList {
     LargeSteamThermalCentrifuge,
     SteamCracking,
     LargeSteamChemicalBath,
+    PrimitiveDistillationTower,
     LargeSteamAlloySmelter,
     ComponentAssembler,
     RealArtificialStar,

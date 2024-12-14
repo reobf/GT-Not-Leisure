@@ -207,6 +207,25 @@ public class TextLocalization {
         "Ang Bronze Plated Bricks or Solid Steel Machine Casing",
         "Tooltip_LargeSteamChemicalBath_Casing");
 
+    public static final String NamePrimitiveDistillationTower = texter(
+        "Primitive Distillation Tower",
+        "NamePrimitiveDistillationTower");
+    public static final String PrimitiveDistillationTowerRecipeType = texter(
+        "Distillation Tower",
+        "PrimitiveDistillationTowerRecipeType");
+    public static final String Tooltip_PrimitiveDistillationTower_00 = texter(
+        "Can only output 6 types of fluids!",
+        "Tooltip_PrimitiveDistillationTower_00");
+    public static final String Tooltip_PrimitiveDistillationTower_01 = texter(
+        "Only consumes steam at 75%% of the L/s normally required",
+        "Tooltip_PrimitiveDistillationTower_01");
+    public static final String Tooltip_PrimitiveDistillationTower_Casing_01 = texter(
+        "Ang Solid Steel Firebox Casing",
+        "Tooltip_PrimitiveDistillationTower_Casing_01");
+    public static final String Tooltip_PrimitiveDistillationTower_Casing_02 = texter(
+        "Ang Solid Steel Machine Casing",
+        "Tooltip_PrimitiveDistillationTower_Casing_02");
+
     public static final String NameComponentAssembler = texter("Component Assembler", "NameComponentAssembler");
     public static final String ComponentAssemblerRecipeType = texter(
         "High-Capacity Component Assembler",
