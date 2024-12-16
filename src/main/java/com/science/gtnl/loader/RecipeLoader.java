@@ -1,5 +1,6 @@
 package com.science.gtnl.loader;
 
+import com.science.gtnl.common.machine.OreProcessing.OP_NormalProcessing;
 import com.science.gtnl.common.recipe.AlloyBlastSmelterRecipes;
 import com.science.gtnl.common.recipe.AssemblerRecipes;
 import com.science.gtnl.common.recipe.AssemblingLineRecipes;
@@ -32,5 +33,6 @@ public class RecipeLoader {
         for (IRecipePool recipePool : recipePools) {
             recipePool.loadRecipes();
         }
+        new OP_NormalProcessing().enumOreProcessingRecipes();
     }
 }

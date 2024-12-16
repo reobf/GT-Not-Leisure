@@ -170,6 +170,10 @@ Tooltip_PrimitiveDistillationTower_01=仅消耗正常需求75%%的蒸汽
 Tooltip_PrimitiveDistillationTower_Casing_01=任意钢制燃烧室
 Tooltip_PrimitiveDistillationTower_Casing_02=任意脱氧钢机械方块
 
+NameCheatOreProcessingFactory=作弊者的究极集成矿处
+gtnl.recipe.CheatOreProcessingRecipes=作弊者的快速处理
+CheatOreProcessingFactoryRecipeType=给作弊者的快速矿物处理
+
 tooltips.TrollFace=Never Gonna Give You Up~
 tooltips.DepletedExcitedNaquadahFuelRod=§o硅岩基燃料的最终形态。
 tooltips.BlazeCube=§o灵魂之火铸成，无尽炽热封存。

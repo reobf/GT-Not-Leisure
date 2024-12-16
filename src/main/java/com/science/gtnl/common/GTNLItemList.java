@@ -84,6 +84,7 @@ public enum GTNLItemList {
     LargeSteamAlloySmelter,
     ComponentAssembler,
     RealArtificialStar,
+    CheatOreProcessingFactory,
     GenerationEarthEngine;
 
     public boolean mHasNotBeenSet;

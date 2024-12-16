@@ -226,6 +226,13 @@ public class TextLocalization {
         "Ang Solid Steel Machine Casing",
         "Tooltip_PrimitiveDistillationTower_Casing_02");
 
+    public static final String NameCheatOreProcessingFactory = texter(
+        "Cheat Ore Processing Factory",
+        "NameCheatOreProcessingFactory");
+    public static final String CheatOreProcessingFactoryRecipeType = texter(
+        "Quick mineral processing for cheaters",
+        "CheatOreProcessingFactoryRecipeType");
+
     public static final String NameComponentAssembler = texter("Component Assembler", "NameComponentAssembler");
     public static final String ComponentAssemblerRecipeType = texter(
         "High-Capacity Component Assembler",

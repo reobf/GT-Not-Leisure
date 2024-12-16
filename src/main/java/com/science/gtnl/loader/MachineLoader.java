@@ -7,6 +7,7 @@ import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.common.hatch.MTEHatchCustomFluid;
 import com.science.gtnl.common.hatch.MTEQuadrupleOutputHatch;
 import com.science.gtnl.common.machine.BloodSoulSacrificialArray;
+import com.science.gtnl.common.machine.CheatOreProcessingFactory;
 import com.science.gtnl.common.machine.ComponentAssembler;
 import com.science.gtnl.common.machine.EdenGarden;
 import com.science.gtnl.common.machine.GenerationEarthEngine;
@@ -46,6 +47,7 @@ public class MachineLoader {
     public static ItemStack LargeSteamChemicalBath;
     public static ItemStack SteamCracking;
     public static ItemStack PrimitiveDistillationTower;
+    public static ItemStack CheatOreProcessingFactory;
 
     public static void loadMachines() {
 
@@ -150,6 +152,12 @@ public class MachineLoader {
             "NamePrimitiveDistillationTower",
             TextLocalization.NamePrimitiveDistillationTower).getStackForm(1);
         GTNLItemList.PrimitiveDistillationTower.set(PrimitiveDistillationTower);
+
+        CheatOreProcessingFactory = new CheatOreProcessingFactory(
+            21919,
+            "NameCheatOreProcessingFactory",
+            TextLocalization.NameCheatOreProcessingFactory).getStackForm(1);
+        GTNLItemList.CheatOreProcessingFactory.set(CheatOreProcessingFactory);
 
         MTEHatchRack.run();
         MTEHatchCapacitor.run();

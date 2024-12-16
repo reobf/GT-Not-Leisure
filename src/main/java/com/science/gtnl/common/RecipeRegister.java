@@ -101,4 +101,12 @@ public class RecipeRegister {
         .neiHandlerInfo(builder -> builder.setDisplayStack(GTNLItemList.SteamCracking.get(1)))
         .disableOptimize()
         .build();
+
+    public static final RecipeMap<RecipeMapBackend> CheatOreProcessingRecipes = RecipeMapBuilder
+        .of("gtnl.recipe.CheatOreProcessingRecipes")
+        .maxIO(1, 9, 1, 0)
+        .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
+        .neiHandlerInfo(builder -> builder.setDisplayStack(GTNLItemList.CheatOreProcessingFactory.get(1)))
+        .disableOptimize()
+        .build();
 }
