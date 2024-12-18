@@ -1,11 +1,11 @@
 package com.science.gtnl.common.machine.DSP;
 
-import com.science.gtnl.config.Config;
+import com.science.gtnl.config.MainConfig;
 
 public final class DSP_Values {
 
-    public static final double secondsOfArtificialStarProgressCycleTime = Config.secondsOfArtificialStarProgressCycleTime;// default
+    public static final double secondsOfArtificialStarProgressCycleTime = MainConfig.secondsOfArtificialStarProgressCycleTime;// default
                                                                                                                           // 6.4
-    public static final byte EnableRenderDefaultArtificialStar = (byte) (Config.EnableRenderDefaultArtificialStar ? 1
+    public static final byte EnableRenderDefaultArtificialStar = (byte) (MainConfig.EnableRenderDefaultArtificialStar ? 1
         : 0);
 }

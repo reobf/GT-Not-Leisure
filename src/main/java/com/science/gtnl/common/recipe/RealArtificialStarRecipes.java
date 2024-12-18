@@ -2,7 +2,7 @@ package com.science.gtnl.common.recipe;
 
 import static com.science.gtnl.Utils.TextHandler.texter;
 import static com.science.gtnl.common.GTNLItemList.*;
-import static com.science.gtnl.config.Config.*;
+import static com.science.gtnl.config.MainConfig.*;
 
 import com.science.gtnl.common.RecipeRegister;
 

@@ -5,23 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5462d6df-5ab2-496d-b03a-539d6854c2fd" name="更改" comment="Mixin土高炉并修改配方时间锁定为20tick">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/CheatOreProcessingFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/OreProcessing/OP_Bartworks_OreHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/OreProcessing/OP_GTPP_OreHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/OreProcessing/OP_NormalProcessing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/OreProcessing/OP_Values.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2024_12_8_16_32____1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行签出之前于_2024_12_8_16_32_取消提交了更改_[更改]1/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/Utils/TextLocalization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/Utils/TextLocalization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/GTNLItemList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/GTNLItemList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/RecipeRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/RecipeRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/recipe/CraftingTableRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/common/recipe/CraftingTableRecipes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/loader/MachineLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/loader/MachineLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/loader/RecipeLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/loader/RecipeLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/science/gtnl/mixin/MixinsPrimitiveBlastFurnace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/science/gtnl/mixin/MixinsPrimitiveBlastFurnace.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/zh_CN.lang" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/lang/zh_CN.lang" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/multiblock/整理多方块.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/sciencenotleisure/multiblock/整理多方块.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,47 +112,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Gradle.'GT-Not-Leisure' 中的测试.executor": "Run",
-    "Gradle.0. Build and Test.executor": "Run",
-    "Gradle.1. Run Client.executor": "Debug",
-    "Gradle.1a. Run Client (Java 17).executor": "Run",
-    "Gradle.1d. Run Client (Java 21, Hotswap).executor": "Run",
-    "Gradle.5. Apply spotless.executor": "Run",
-    "Gradle.GT-Not-Leisure [build].executor": "Run",
-    "Gradle.GT-Not-Leisure [clean build].executor": "Run",
-    "Gradle.GT-Not-Leisure [clean].executor": "Run",
-    "Gradle.GT-Not-Leisure [dependencies].executor": "Run",
-    "Gradle.GT-Not-Leisure [processIdeaSettings].executor": "Run",
-    "Gradle.GT-Not-Leisure [runVanillaClient].executor": "Run",
-    "Gradle.GT-Not-Leisure [spotlessCheck].executor": "Run",
-    "Gradle.加载 Gradle 依赖项.executor": "Run",
-    "Gradle.构建 GT-Not-Leisure.executor": "Run",
-    "JavaClassFindUsagesOptions.isSearchForTextOccurrences": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.preview.features.used": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/Github/GT-Not-Leisure/src/main/java/com/science/gtnl/common/machine/OreProcessing",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDK",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.48349056",
-    "settings.editor.selected.configurable": "Errors",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Gradle.'GT-Not-Leisure' 中的测试.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.0. Build and Test.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.1. Run Client.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.1a. Run Client (Java 17).executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.1d. Run Client (Java 21, Hotswap).executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.5. Apply spotless.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GT-Not-Leisure [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GT-Not-Leisure [clean build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GT-Not-Leisure [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GT-Not-Leisure [dependencies].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GT-Not-Leisure [processIdeaSettings].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GT-Not-Leisure [runVanillaClient].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GT-Not-Leisure [spotlessCheck].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.加载 Gradle 依赖项.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.构建 GT-Not-Leisure.executor&quot;: &quot;Run&quot;,
+    &quot;JavaClassFindUsagesOptions.isSearchForTextOccurrences&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Github/Applied-Energistics-2-Unofficial&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDK&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.48349056&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.science.gtnl.Annotation" />
@@ -176,11 +160,11 @@
       <recent name="com.science.gtnl.common.machine" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Github\GT-Not-Leisure\src\main\java\com\science\gtnl\common\machine\OreProcessing" />
       <recent name="E:\Github\GT-Not-Leisure\src\main\java\com\science\gtnl\Utils\eig\buckets" />
       <recent name="E:\Github\GT-Not-Leisure\src\main\java\com\science\gtnl\Utils\eig" />
       <recent name="E:\Github\GT-Not-Leisure\src\main\java\com\science\gtnl\Utils" />
       <recent name="E:\Github\GT-Not-Leisure\src\main\resources" />
+      <recent name="E:\Github\GT-Not-Leisure\src\main\java\com\science\gtnl\machine\Explosion" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Github\GT-Not-Leisure\src\main\java\com\science\gtnl" />
@@ -193,11 +177,11 @@
       <recent name="com.science.gtnl.common.machine" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.science.gtnl.common.machine.OreProcessing" />
       <recent name="com.science.gtnl.common.machine" />
       <recent name="com.science.gtnl.common.block" />
       <recent name="com.science.gtnl.Utils.eig" />
       <recent name="com.science.gtnl.Utils.eig.bucket" />
+      <recent name="com.science.gtnl.Utils" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -205,7 +189,7 @@
       <command value="./gradlew clean build" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.5. Apply spotless">
+  <component name="RunManager" selected="Gradle.0. Build and Test">
     <configuration name="Run Client (IJ Native)" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="GradleStart" />
       <module name="GT-Not-Leisure.ideVirtualMain" />
@@ -947,67 +931,11 @@
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/hatch/MTEQuadrupleOutputHatch.java</url>
           <line>123</line>
-          <properties class="com.science.gtnl.common.hatch.MTEQuadrupleOutputHatch" method="getFluid">
+          <properties class="com.science.gtnl.common.hatch.MTEQuadrupleOutputHatch">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/CheatOreProcessingFactory.java</url>
-          <line>170</line>
-          <properties class="com.science.gtnl.common.machine.CheatOreProcessingFactory" method="checkProcessing_wirelessMode">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="72" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/CheatOreProcessingFactory.java</url>
-          <line>166</line>
-          <properties class="com.science.gtnl.common.machine.CheatOreProcessingFactory" method="checkProcessing">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="82" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/CheatOreProcessingFactory.java</url>
-          <line>182</line>
-          <option name="timeStamp" value="73" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/CheatOreProcessingFactory.java</url>
-          <line>180</line>
-          <option name="timeStamp" value="74" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/CheatOreProcessingFactory.java</url>
-          <line>176</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="77" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/CheatOreProcessingFactory.java</url>
-          <line>175</line>
-          <option name="timeStamp" value="78" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/CheatOreProcessingFactory.java</url>
-          <line>172</line>
-          <option name="timeStamp" value="79" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/CheatOreProcessingFactory.java</url>
-          <line>174</line>
-          <option name="timeStamp" value="80" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/science/gtnl/common/machine/CheatOreProcessingFactory.java</url>
-          <line>167</line>
-          <option name="timeStamp" value="81" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
