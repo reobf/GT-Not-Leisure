@@ -26,7 +26,7 @@ public class BlockStar extends Block {
         this.setResistance(20f);
         this.setHardness(-1.0f);
         this.setBlockName("RealArtificialStarRender");
-        this.setLightLevel(1.0f);
+        this.setLightLevel(15.0f);
         GameRegistry.registerBlock(this, getUnlocalizedName());
     }
 

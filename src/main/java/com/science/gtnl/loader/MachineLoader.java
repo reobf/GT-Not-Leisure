@@ -18,6 +18,7 @@ import com.science.gtnl.common.machine.LargeSteamCircuitAssembler;
 import com.science.gtnl.common.machine.LargeSteamCrusher;
 import com.science.gtnl.common.machine.LargeSteamFurnace;
 import com.science.gtnl.common.machine.LargeSteamThermalCentrifuge;
+import com.science.gtnl.common.machine.MeteorMiner;
 import com.science.gtnl.common.machine.NeutroniumWireCutting;
 import com.science.gtnl.common.machine.PrimitiveDistillationTower;
 import com.science.gtnl.common.machine.RealArtificialStar;
@@ -48,6 +49,7 @@ public class MachineLoader {
     public static ItemStack SteamCracking;
     public static ItemStack PrimitiveDistillationTower;
     public static ItemStack CheatOreProcessingFactory;
+    public static ItemStack MeteorMiner;
 
     public static void loadMachines() {
 
@@ -158,6 +160,9 @@ public class MachineLoader {
             "NameCheatOreProcessingFactory",
             TextLocalization.NameCheatOreProcessingFactory).getStackForm(1);
         GTNLItemList.CheatOreProcessingFactory.set(CheatOreProcessingFactory);
+
+        MeteorMiner = new MeteorMiner(21920, "NameMeteorMiner", TextLocalization.NameMeteorMiner).getStackForm(1);
+        GTNLItemList.MeteorMiner.set(MeteorMiner);
 
         MTEHatchRack.run();
         MTEHatchCapacitor.run();

@@ -316,6 +316,7 @@ public class LargeSteamChemicalBath extends MTESteamMultiBase<LargeSteamChemical
             .addInfo(TextLocalization.Tooltip_LargeSteamChemicalBath_02)
             .addInfo(TextLocalization.HIGH_PRESSURE_TOOLTIP_NOTICE)
             .addSeparator()
+            .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
             .beginStructureBlock(9, 5, 10, false)
             .addInputBus(TextLocalization.Tooltip_LargeSteamChemicalBath_Casing, 1)

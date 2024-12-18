@@ -310,6 +310,7 @@ public class LargeSteamAlloySmelter extends MTESteamMultiBase<LargeSteamAlloySme
             .addInfo(TextLocalization.Tooltip_LargeSteamAlloySmelter_02)
             .addInfo(TextLocalization.HIGH_PRESSURE_TOOLTIP_NOTICE)
             .addSeparator()
+            .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
             .beginStructureBlock(3, 3, 3, false)
             .addInputBus(TextLocalization.Tooltip_LargeSteamAlloySmelter_Casing, 1)

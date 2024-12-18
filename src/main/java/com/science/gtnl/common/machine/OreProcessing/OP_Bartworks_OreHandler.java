@@ -13,7 +13,6 @@ import com.science.gtnl.common.RecipeRegister;
 
 import bartworks.system.material.Werkstoff;
 import gregtech.api.enums.GTValues;
-import gregtech.api.enums.Materials;
 
 public class OP_Bartworks_OreHandler {
 
@@ -77,7 +76,6 @@ public class OP_Bartworks_OreHandler {
                 GTValues.RA.stdBuilder()
                     .itemInputs(werkstoff.get(rawOre, 1))
                     .itemOutputs(rawOreOutputs.toArray(new ItemStack[] {}))
-                    .fluidInputs(Materials.Lubricant.getFluid(2))
                     .eut(OreProcessRecipeEUt)
                     .duration(OreProcessRecipeDuration)
                     .addTo(RecipeRegister.CheatOreProcessingRecipes);

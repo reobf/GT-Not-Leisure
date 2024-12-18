@@ -1,5 +1,6 @@
 package com.science.gtnl;
 
+import com.science.gtnl.common.block.Render.MeteorMinerRenderer;
 import com.science.gtnl.common.block.Render.RealArtificialStarRender;
 import com.science.gtnl.common.block.Render.StarRender;
 
@@ -13,6 +14,7 @@ public class ClientProxy extends CommonProxy {
     public void init(FMLInitializationEvent event) {
         super.init(event);
         new RealArtificialStarRender();
+        new MeteorMinerRenderer();
         RenderingRegistry.registerBlockHandler(new StarRender());
     }
 
