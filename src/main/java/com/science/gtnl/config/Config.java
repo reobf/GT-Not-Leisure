@@ -4,7 +4,7 @@ import java.io.File;
 
 public class Config {
 
-    public static void init(File mainConfigFile, File itemsConfigFile, File fluidsConfigFile) {
+    public static void init(File mainConfigFile) {
         MainConfig.init(mainConfigFile);
     }
 

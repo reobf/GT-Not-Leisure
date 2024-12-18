@@ -1,5 +1,6 @@
 package com.science.gtnl;
 
+import com.science.gtnl.config.Config;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -22,6 +23,8 @@ import cpw.mods.fml.common.event.FMLLoadCompleteEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
+
+import java.io.File;
 
 // after
 @Mod(
@@ -123,14 +126,17 @@ public class ScienceNotLeisure {
     // GameRegistry." (Remove if not needed)
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        // process path
-        if (isInDevMode && useAutoGeneratingDevResourcePath) {
-            DevResource = PathHelper.initResourceAbsolutePath();
+        File configDir = new File(event.getModConfigurationDirectory(), "GTNotLeisure");
+
+        if (!configDir.exists()) {
+            configDir.mkdirs();
         }
-        TextHandler.initLangMap(isInDevMode);
+
+        File mainConfigFile = new File(configDir, "main.cfg");
+
+        Config.init(mainConfigFile);
 
         proxy.preInit(event);
-        MaterialLoader.load();
     }
 
     public static void error(String message) {
