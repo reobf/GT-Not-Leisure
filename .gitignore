@@ -43,3 +43,4 @@ bin/
 
 ### Client ###
 /run
+/.idea
