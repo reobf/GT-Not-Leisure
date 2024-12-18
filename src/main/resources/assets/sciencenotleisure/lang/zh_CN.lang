@@ -44,24 +44,13 @@ tile.Stargate_Coil_Compressed.7.name=压缩星门线圈-七重
 tile.Stargate_Coil_Compressed.8.name=压缩星门线圈-八重
 tile.Stargate_Coil_Compressed.9.name=压缩星门线圈-九重
 
-textFrontCenter=正面中央
-textAnyCasing=任意机械方块
-textTier=等级
-textBasic=基础 
-textHighPressure=高压 
-textBronzePlatedBricks= 镀铜砖块
-textBronzePipeCasing= 青铜管道方块
-textSolidSteelMachineCasing= 脱氧钢机械方块
-textSteamInputHatch= 蒸汽输入仓
-textSteelPipeCasing= 钢管道方块
-textSteamAssemblyCasing= 蒸汽装配机械方块
-
 NameLargeSteamCircuitAssembler=大型蒸汽电路组装机
-CircuitAssemblerRecipeType=电路组装机
+LargeSteamCircuitAssemblerRecipeType=电路组装机
 Tooltip_LargeSteamCircuitAssembler_00=比同等级的单方块组装机快25%%
 Tooltip_LargeSteamCircuitAssembler_01=仅消耗正常需求125%%的蒸汽
 Tooltip_LargeSteamCircuitAssembler_02=一次可处理多达16个物品
 Tooltip_LargeSteamCircuitAssembler_03=原始科技！
+Tooltip_LargeSteamCircuitAssembler_Casing=任意镀铜砖块或脱氧钢机械方块
 
 NameEdenGarden=“伊甸”生态奇点
 gtnl.recipe.EdenGardenRecipeType=作物农场
@@ -229,7 +218,7 @@ require_clean_room=该配方需要超净间。
 require_sterile_environment=该配方需要无菌环境。
 
 gtnl.Hatch.QuadrupleOutputHatchEV=四重输出仓 (EV)
-gtnl.Hatch.FluidManaInputHatch=魔力输入仓
+FluidManaInputHatch=魔力输入仓
 
 gtnl.ae2.MTEHatchOutputME=输出仓 (ME)
 

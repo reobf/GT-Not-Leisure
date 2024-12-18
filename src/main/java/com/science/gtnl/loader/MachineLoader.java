@@ -5,7 +5,6 @@ import net.minecraft.item.ItemStack;
 import com.science.gtnl.Utils.TextLocalization;
 import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.common.hatch.MTEHatchCustomFluid;
-import com.science.gtnl.common.hatch.MTEQuadrupleOutputHatch;
 import com.science.gtnl.common.machine.BloodSoulSacrificialArray;
 import com.science.gtnl.common.machine.CheatOreProcessingFactory;
 import com.science.gtnl.common.machine.ComponentAssembler;
@@ -169,9 +168,6 @@ public class MachineLoader {
     }
 
     public static void registerMTEHatch() {
-        GTNLItemList.QuadrupleOutputHatchEV.set(
-            new MTEQuadrupleOutputHatch(21500, "gtnl.Hatch.QuadrupleOutputHatchEV", "Quadruple Output Hatch (EV)", 4)
-                .getStackForm(1L));
 
         GTNLItemList.FluidManaInputHatch.set(
             new MTEHatchCustomFluid(
@@ -179,7 +175,7 @@ public class MachineLoader {
                     .getFluid(),
                 512000,
                 21501,
-                "gtnl.Hatch.FluidManaInputHatch",
+                TextLocalization.FluidManaInputHatch,
                 "Fluid Mana Input Hatch",
                 5).getStackForm(1L));
     }

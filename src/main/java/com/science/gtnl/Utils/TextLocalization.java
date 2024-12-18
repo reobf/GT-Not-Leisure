@@ -8,6 +8,7 @@ import gregtech.api.util.GTLanguageManager;
 
 public class TextLocalization {
 
+    public static final String StructureTooComplex = texter("The structure is too complex!", "StructureTooComplex");
     public static final String BLUE_PRINT_INFO = texter(
         "Follow the" + EnumChatFormatting.BLUE
             + " Structure"
@@ -21,22 +22,8 @@ public class TextLocalization {
         .addStringLocalization("gt.nomobspawnsonthisblock", "Mobs cannot Spawn on this Block");
     public static final String mNoTileEntityToolTip = GTLanguageManager
         .addStringLocalization("gt.notileentityinthisblock", "This is NOT a TileEntity!");
-    public static final String StructureTooComplex = texter("The structure is too complex!", "StructureTooComplex");
 
-    public static final String textAnyCasing = texter("Any Casing", "textAnyCasing");
-
-    public static final String CircuitAssemblerRecipeType = texter("Circuit Assembler", "CircuitAssemblerRecipeType");
-    public static final String textSteamAssemblyCasing = texter(" Steam Assembly Casing", "textSteamAssemblyCasing");
-    public static final String textSteamInputHatch = texter("Steam Input Hatch", "textSteamInputHatch");
-    public static final String textTier = texter("Tier", "textTier");
-    public static final String textBasic = texter("Basic ", "textBasic");
-    public static final String textHighPressure = texter("High Pressure ", "textHighPressure");
-    public static final String textBronzePipeCasing = texter(" Bronze Pipe Casing", "textBronzePipeCasing");
-    public static final String textBronzePlatedBricks = texter(" Bronze Plated Bricks", "textBronzePlatedBricks");
-    public static final String textSteelPipeCasing = texter(" Steel Pipe Casing", "textSteelPipeCasing");
-    public static final String textSolidSteelMachineCasing = texter(
-        " Solid Steel Machine Casing",
-        "textSolidSteelMachineCasing");
+    public static final String FluidManaInputHatch = texter("Fluid Mana Input Hatch", "FluidManaInputHatch");
 
     public static final String HIGH_PRESSURE_TOOLTIP_NOTICE = texter(
         "Processing Speed & Steam Consumption is doubled under High Pressure",
@@ -45,6 +32,9 @@ public class TextLocalization {
     public static final String NameLargeSteamCircuitAssembler = texter(
         "Large Steam Circuit Assembler",
         "NameLargeSteamCircuitAssembler");
+    public static final String LargeSteamCircuitAssemblerRecipeType = texter(
+        "Circuit Assembler",
+        "LargeSteamCircuitAssemblerRecipeType");
     public static final String Tooltip_LargeSteamCircuitAssembler_00 = texter(
         "25%% faster than using single block steam machines of the same pressure",
         "Tooltip_LargeSteamCircuitAssembler_00");
@@ -57,6 +47,9 @@ public class TextLocalization {
     public static final String Tooltip_LargeSteamCircuitAssembler_03 = texter(
         "Primitive technology!",
         "Tooltip_LargeSteamCircuitAssembler_03");
+    public static final String Tooltip_LargeSteamCircuitAssembler_Casing = texter(
+        "Ang Bronze Plated Bricks or Solid Steel Machine Casing",
+        "Tooltip_LargeSteamCircuitAssembler_Casing");
 
     public static final String NameEdenGarden = texter("Ecological Singularity \"Edenscape\"", "NameEdenGarden");
     public static final String EdenGardenRecipeType = texter("Crop Farm", "gtnl.recipe.EdenGardenRecipeType");

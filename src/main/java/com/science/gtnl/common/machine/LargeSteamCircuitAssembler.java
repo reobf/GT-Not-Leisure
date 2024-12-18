@@ -67,7 +67,7 @@ public class LargeSteamCircuitAssembler extends MTESteamMultiBase<LargeSteamCirc
 
     @Override
     public String getMachineType() {
-        return TextLocalization.CircuitAssemblerRecipeType;
+        return TextLocalization.LargeSteamCircuitAssemblerRecipeType;
     }
 
     public static final String STRUCTURE_PIECE_MAIN = "main";
@@ -306,7 +306,7 @@ public class LargeSteamCircuitAssembler extends MTESteamMultiBase<LargeSteamCirc
     @Override
     protected MultiblockTooltipBuilder createTooltip() {
         final MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
-        tt.addMachineType(TextLocalization.CircuitAssemblerRecipeType)
+        tt.addMachineType(TextLocalization.LargeSteamCircuitAssemblerRecipeType)
             .addInfo(TextLocalization.Tooltip_LargeSteamCircuitAssembler_00)
             .addInfo(TextLocalization.Tooltip_LargeSteamCircuitAssembler_01)
             .addInfo(TextLocalization.Tooltip_LargeSteamCircuitAssembler_02)
@@ -316,39 +316,9 @@ public class LargeSteamCircuitAssembler extends MTESteamMultiBase<LargeSteamCirc
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
             .beginStructureBlock(3, 4, 10, false)
-            .addInputBus(EnumChatFormatting.GOLD + "1" + EnumChatFormatting.GRAY + TextLocalization.textAnyCasing, 1)
-            .addInputHatch(EnumChatFormatting.GOLD + "1" + EnumChatFormatting.GRAY + TextLocalization.textAnyCasing, 1)
-            .addOutputBus(EnumChatFormatting.GOLD + "1" + EnumChatFormatting.GRAY + TextLocalization.textAnyCasing, 1)
-            .addStructureInfo(
-                EnumChatFormatting.WHITE + TextLocalization.textSteamInputHatch
-                    + EnumChatFormatting.GOLD
-                    + "1"
-                    + EnumChatFormatting.GRAY
-                    + TextLocalization.textAnyCasing)
-            .addStructureInfo("")
-            .addStructureInfo(
-                EnumChatFormatting.BLUE + TextLocalization.textBasic
-                    + EnumChatFormatting.DARK_PURPLE
-                    + TextLocalization.textTier)
-            .addStructureInfo(
-                EnumChatFormatting.GOLD + "75-83x" + EnumChatFormatting.GRAY + TextLocalization.textBronzePlatedBricks)
-            .addStructureInfo(
-                EnumChatFormatting.GOLD + "8x" + EnumChatFormatting.GRAY + TextLocalization.textBronzePipeCasing)
-            .addStructureInfo(
-                EnumChatFormatting.GOLD + "8x" + EnumChatFormatting.GRAY + TextLocalization.textSteamAssemblyCasing)
-            .addStructureInfo("")
-            .addStructureInfo(
-                EnumChatFormatting.BLUE + TextLocalization.textHighPressure
-                    + EnumChatFormatting.DARK_PURPLE
-                    + TextLocalization.textTier)
-            .addStructureInfo(
-                EnumChatFormatting.GOLD + "75-83x"
-                    + EnumChatFormatting.GRAY
-                    + TextLocalization.textSolidSteelMachineCasing)
-            .addStructureInfo(
-                EnumChatFormatting.GOLD + "8x" + EnumChatFormatting.GRAY + TextLocalization.textSteelPipeCasing)
-            .addStructureInfo(
-                EnumChatFormatting.GOLD + "8x" + EnumChatFormatting.GRAY + TextLocalization.textSteamAssemblyCasing)
+            .addInputBus(TextLocalization.Tooltip_LargeSteamCircuitAssembler_Casing, 1)
+            .addInputHatch(TextLocalization.Tooltip_LargeSteamCircuitAssembler_Casing, 1)
+            .addOutputBus(TextLocalization.Tooltip_LargeSteamCircuitAssembler_Casing, 1)
             .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE);
         return tt;
     }

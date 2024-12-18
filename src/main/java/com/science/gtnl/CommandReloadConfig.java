@@ -1,11 +1,12 @@
 package com.science.gtnl;
 
-import com.science.gtnl.Events.ConfigReloadedEvent;
-import com.science.gtnl.config.Config;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.util.ChatComponentText;
 import net.minecraftforge.common.MinecraftForge;
+
+import com.science.gtnl.Events.ConfigReloadedEvent;
+import com.science.gtnl.config.Config;
 
 public class CommandReloadConfig extends CommandBase {
 

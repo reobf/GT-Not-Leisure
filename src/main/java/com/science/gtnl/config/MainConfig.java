@@ -1,8 +1,8 @@
 package com.science.gtnl.config;
 
-import net.minecraftforge.common.config.Configuration;
-
 import java.io.File;
+
+import net.minecraftforge.common.config.Configuration;
 
 // spotless:off
 public class MainConfig {
@@ -13,7 +13,6 @@ public class MainConfig {
     public static boolean EnableRenderDefaultArtificialStar = true;
     public static long EUEveryStrangeAnnihilationFuelRod = 32768L * Integer.MAX_VALUE;
     public static boolean MultiBlockStructureEnable = false;
-
 
     private static Configuration config;
 
@@ -31,10 +30,10 @@ public class MainConfig {
         }
     }
 
-    public static void loadConfig(){
+    public static void loadConfig() {
 
         MultiBlockStructureEnable = config
-            .get("多方块结构修改","多方块修改开启",MultiBlockStructureEnable,"开启后使用本MOD重置的多方块结构，原结构将会被覆盖")
+            .get("多方块结构修改", "多方块修改开启", MultiBlockStructureEnable, "开启后使用本MOD重置的多方块结构，原结构将会被覆盖")
             .getBoolean(MultiBlockStructureEnable);
 
         if (config.hasChanged()) {

@@ -23,7 +23,6 @@ public class LateMixins implements ILateMixinLoader {
             "MultiBlockStructure.MTETieredMachineBlockMixin",
             "MultiBlockStructure.PrimitiveBlastFurnace.MTEPrimitiveBlastFurnaceMixin",
             "MultiBlockStructure.PrimitiveBlastFurnace.MTEPrimitiveBlastFurnaceOffsetsMixin",
-            "MultiBlockStructure.PrimitiveBlastFurnace.MixinsPrimitiveBlastFurnace"
-        );
+            "MultiBlockStructure.PrimitiveBlastFurnace.MixinsPrimitiveBlastFurnace");
     }
 }

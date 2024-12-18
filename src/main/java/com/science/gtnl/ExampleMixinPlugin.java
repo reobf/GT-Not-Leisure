@@ -1,14 +1,16 @@
 package com.science.gtnl;
 
-import com.science.gtnl.config.MainConfig;
+import java.util.List;
+import java.util.Set;
+
 import org.spongepowered.asm.lib.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 
-import java.util.List;
-import java.util.Set;
+import com.science.gtnl.config.MainConfig;
 
 public class ExampleMixinPlugin implements IMixinConfigPlugin {
+
     @Override
     public void onLoad(String mixinPackage) {
         System.out.print("[ExampleMixinPlugin] Loaded for pakage:" + mixinPackage);
@@ -21,11 +23,11 @@ public class ExampleMixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        if(mixinClassName.startsWith("com.science.gtnl.mixin.MultiBlockStructure")){
-            if(MainConfig.MultiBlockStructureEnable){
+        if (mixinClassName.startsWith("com.science.gtnl.mixin.MultiBlockStructure")) {
+            if (MainConfig.MultiBlockStructureEnable) {
                 System.out.println("Applying Mixin:" + mixinClassName);
                 return true;
-            }else {
+            } else {
                 System.out.println("Skipping Mixin:" + mixinClassName);
                 return false;
             }

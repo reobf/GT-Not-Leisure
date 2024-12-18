@@ -1,6 +1,7 @@
 package com.science.gtnl;
 
-import com.science.gtnl.config.Config;
+import java.io.File;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -8,6 +9,7 @@ import com.science.gtnl.Utils.TextHandler;
 import com.science.gtnl.Utils.eig.EIGBucketLoader;
 import com.science.gtnl.common.machine.machineclass.IMCForNEI;
 import com.science.gtnl.common.recipe.GTNLRecipeRemover;
+import com.science.gtnl.config.Config;
 import com.science.gtnl.devTools.PathHelper;
 import com.science.gtnl.loader.LazyStaticsInitLoader;
 import com.science.gtnl.loader.MachineLoader;
@@ -23,8 +25,6 @@ import cpw.mods.fml.common.event.FMLLoadCompleteEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
-
-import java.io.File;
 
 // after
 @Mod(
@@ -137,6 +137,7 @@ public class ScienceNotLeisure {
         Config.init(mainConfigFile);
 
         proxy.preInit(event);
+        MaterialLoader.load();
     }
 
     public static void error(String message) {
