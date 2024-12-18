@@ -1,4 +1,4 @@
-package com.science.gtnl.mixin;
+package com.science.gtnl.mixin.MultiBlockStructure.PrimitiveBlastFurnace;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

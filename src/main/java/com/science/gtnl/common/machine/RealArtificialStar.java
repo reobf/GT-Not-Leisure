@@ -47,7 +47,7 @@ import com.science.gtnl.Utils.rewrites.GTNL_ItemID;
 import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.common.block.BasicBlocks;
 import com.science.gtnl.common.machine.multiMachineClasses.MultiMachineBase;
-import com.science.gtnl.config.Config;
+import com.science.gtnl.config.MainConfig;
 
 import galaxyspace.core.register.GSBlocks;
 import gregtech.api.GregTechAPI;
@@ -105,9 +105,9 @@ public class RealArtificialStar extends MultiMachineBase<RealArtificialStar>
         DepletedExcitedNaquadahFuelRod = GTNL_ItemID.createNoNBT(GTNLItemList.DepletedExcitedNaquadahFuelRod.get(1));
         BlazeCube = GTNL_ItemID.createNoNBT(GTNLItemList.BlazeCube.get(1));
         StrangeAnnihilationFuelRod = GTNL_ItemID.createNoNBT(GTNLItemList.StrangeAnnihilationFuelRod.get(1));
-        MaxOfDepletedExcitedNaquadahFuelRod = Config.EUEveryDepletedExcitedNaquadahFuelRod / Integer.MAX_VALUE;
-        MaxOfBlazeCube = Config.EUEveryBlazeCube / Integer.MAX_VALUE;
-        MaxOfStrangeAnnihilationFuelRod = Config.EUEveryStrangeAnnihilationFuelRod / Integer.MAX_VALUE;
+        MaxOfDepletedExcitedNaquadahFuelRod = MainConfig.EUEveryDepletedExcitedNaquadahFuelRod / Integer.MAX_VALUE;
+        MaxOfBlazeCube = MainConfig.EUEveryBlazeCube / Integer.MAX_VALUE;
+        MaxOfStrangeAnnihilationFuelRod = MainConfig.EUEveryStrangeAnnihilationFuelRod / Integer.MAX_VALUE;
     }
 
     // endregion
