@@ -74,5 +74,30 @@ public class CraftingTableRecipes implements IRecipePool {
                 getModItem("gregtech", "gt.blockcasings2", 1, 13, missing), 'C',
                 getModItem("gregtech", "gt.metaitem.01", 1, 17305, missing), 'D',
                 GTNLItemList.PrecisionSteamMechanism.get(1) });
+
+        addCraftingRecipe(
+            GTNLItemList.LargeSteamCircuitAssembler.get(1),
+            new Object[] { "ABA", "BCB", "ABA", 'A', getModItem("gregtech", "gt.metaitem.01", 1, 18300, missing), 'B',
+                GTNLItemList.PrecisionSteamMechanism.get(1), 'C', GTNLItemList.SteamAssemblyCasing.get(1) });
+
+        addCraftingRecipe(
+            GTNLItemList.SteamAssemblyCasing.get(1),
+            new Object[] { "ABA", "ACA", "ABA", 'A', getModItem("gregtech", "gt.metaitem.01", 1, 17300, missing), 'B',
+                GTNLItemList.PrecisionSteamMechanism.get(1), 'C',
+                getModItem("gregtech", "gt.blockcasings2", 1, 2, missing) });
+
+        addCraftingRecipe(
+            GTNLItemList.SteamCracking.get(1),
+            new Object[] { "ABA", "DCD", "ABA", 'A', getModItem("gregtech", "gt.metaitem.01", 1, 17300, missing), 'B',
+                GTNLItemList.PrecisionSteamMechanism.get(1), 'C',
+                getModItem("gregtech", "gt.metaitem.02", 1, 21300, missing), 'D',
+                getModItem("gregtech", "gt.blockcasings3", 1, 13, missing) });
+
+        addCraftingRecipe(
+            GTNLItemList.LargeSteamThermalCentrifuge.get(1),
+            new Object[] { "ABA", "DCD", "ABA", 'A', getModItem("gregtech", "gt.metaitem.01", 1, 17300, missing), 'B',
+                getModItem("gregtech", "gt.metaitem.02", 1, 21300, missing), 'C',
+                getModItem("gregtech", "gt.blockcasings2", 1, 12, missing), 'D',
+                getModItem("gregtech", "gt.blockcasings3", 1, 13, missing) });
     }
 }
