@@ -46,6 +46,19 @@ public class ItemRegister {
                 4,
                 new String[] { texter("A test item, no use.", "tooltips.TestItem0.line1") }));
         GTNLItemList.ActivatedGaiaPylon.set(initItem("Activated Gaia Pylon", 5));
+        GTNLItemList.PrecisionSteamMechanism.set(initItem("Precision Steam Mechanism", 6));
+        GTNLItemList.MeteorMinerSchematic1.set(
+            initItem(
+                "Meteor Miner Tier 1 Schematic",
+                7,
+                new String[] {
+                    texter("Schematic needed to enable the Tier 1 Meteor Miner", "tooltips.MeteorMinerSchematic1") }));
+        GTNLItemList.MeteorMinerSchematic2.set(
+            initItem(
+                "Meteor Miner Tier 2 Schematic",
+                8,
+                new String[] {
+                    texter("Schematic needed to enable the Tier 2 Meteor Miner", "tooltips.MeteorMinerSchematic2") }));
     }
 
     public static void registry() {

@@ -27,7 +27,7 @@ public abstract class MixinsPrimitiveBlastFurnace extends MetaTileEntity
         MTEPrimitiveBlastFurnace self = (MTEPrimitiveBlastFurnace) (Object) this;
 
         if (self.mMaxProgresstime > 0) {
-            self.mMaxProgresstime = 40;
+            self.mMaxProgresstime = 20;
         }
     }
 }

@@ -252,6 +252,7 @@ public class LargeSteamFurnace extends MTESteamMultiBase<LargeSteamFurnace> impl
             .addInfo(TextLocalization.Tooltip_LargeSteamFurnace_02)
             .addInfo(TextLocalization.HIGH_PRESSURE_TOOLTIP_NOTICE)
             .addSeparator()
+            .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
             .beginStructureBlock(9, 8, 10, false)
             .addInputBus(TextLocalization.Tooltip_LargeSteamFurnace_Casing, 1)

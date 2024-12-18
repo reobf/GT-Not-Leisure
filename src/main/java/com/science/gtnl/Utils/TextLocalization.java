@@ -233,6 +233,65 @@ public class TextLocalization {
         "Quick mineral processing for cheaters",
         "CheatOreProcessingFactoryRecipeType");
 
+    public static final String NameMeteorMiner = texter("Meteor Miner", "NameMeteorMiner");
+    public static final String MeteorMinerRecipeType = texter("Meteor Miner", "MeteorMinerRecipeType");
+    public static final String Tooltip_MeteorMiner_00 = texter(
+        "To work properly the center of the meteor has to be 32 blocks above the highest block of the multi.",
+        "Tooltip_MeteorMiner_00");
+    public static final String Tooltip_MeteorMiner_01 = texter(
+        "The laser will mine in a radius of up to 30 blocks in each direction from the center of the meteor.",
+        "Tooltip_MeteorMiner_01");
+    public static final String Tooltip_MeteorMiner_02 = texter(
+        "All the chunks involved must be chunkloaded.",
+        "Tooltip_MeteorMiner_02");
+    public static final String Tooltip_MeteorMiner_03 = texter(
+        "The laser will automatically set its radius based on the meteorite,",
+        "Tooltip_MeteorMiner_03");
+    public static final String Tooltip_MeteorMiner_04 = texter(
+        "if it doesn't find any it will wait for a meteor to spawn, considering the block",
+        "Tooltip_MeteorMiner_04");
+    public static final String Tooltip_MeteorMiner_05 = texter(
+        "right above the center of the meteor (like Warded Glass).",
+        "Tooltip_MeteorMiner_05");
+    public static final String Tooltip_MeteorMiner_06 = texter(
+        "The reset button will restart the machine without optimizing the radius.",
+        "Tooltip_MeteorMiner_06");
+    public static final String Tooltip_MeteorMiner_07 = texter("§c§lTIER I", "Tooltip_MeteorMiner_07");
+    public static final String Tooltip_MeteorMiner_08 = texter(
+        "Mines one block every cycle.",
+        "Tooltip_MeteorMiner_08");
+    public static final String Tooltip_MeteorMiner_09 = texter(
+        "Default Fortune is 0, it can be increased by putting in the input bus special pickaxes:",
+        "Tooltip_MeteorMiner_09");
+    public static final String Tooltip_MeteorMiner_10 = texter(
+        "Fortune I: Pickaxe of the Core",
+        "Tooltip_MeteorMiner_10");
+    public static final String Tooltip_MeteorMiner_11 = texter("Fortune II: Bound Pickaxe", "Tooltip_MeteorMiner_11");
+    public static final String Tooltip_MeteorMiner_12 = texter(
+        "Fortune III: Terra Shatterer",
+        "Tooltip_MeteorMiner_12");
+    public static final String Tooltip_MeteorMiner_13 = texter("§c§lTIER II", "Tooltip_MeteorMiner_13");
+    public static final String Tooltip_MeteorMiner_14 = texter("Always has Fortune III", "Tooltip_MeteorMiner_14");
+    public static final String Tooltip_MeteorMiner_15 = texter("Mines one row every cycle", "Tooltip_MeteorMiner_15");
+    public static final String Tooltip_MeteorMiner_16 = texter(
+        "§9§lFinally some good Meteors!",
+        "Tooltip_MeteorMiner_16");
+    public static final String Tooltip_MeteorMiner_Casing_01_01 = texter(
+        "Center of the second layer above the ritual",
+        "Tooltip_MeteorMiner_Casing_01_01");
+    public static final String Tooltip_MeteorMiner_Casing_01_02 = texter(
+        "Any Structural Solar Casing around the controller",
+        "Tooltip_MeteorMiner_Casing_01_02");
+    public static final String Tooltip_MeteorMiner_Casing_01_03 = texter(
+        "Below the controller",
+        "Tooltip_MeteorMiner_Casing_01_03");
+    public static final String Tooltip_MeteorMiner_Casing_02_01 = texter(
+        "Highest layer of the ritual",
+        "Tooltip_MeteorMiner_Casing_02_01");
+    public static final String Tooltip_MeteorMiner_Casing_02_02 = texter(
+        "Any Neutronium Casing below the controller",
+        "Tooltip_MeteorMiner_Casing_02_02");
+
     public static final String NameComponentAssembler = texter("Component Assembler", "NameComponentAssembler");
     public static final String ComponentAssemblerRecipeType = texter(
         "High-Capacity Component Assembler",

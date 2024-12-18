@@ -32,7 +32,47 @@ public class CraftingTableRecipes implements IRecipePool {
         addCraftingRecipe(
             GTNLItemList.CheatOreProcessingFactory.get(1),
             new Object[] { "AAA", "ABA", "AAA", 'A',
-                getModItem("ScienceNotLeisure", "StargateSingularity", 1, 0, missing), 'B', "craftingToolWrench", 'B',
+                getModItem("ScienceNotLeisure", "StargateSingularity", 1, 0, missing), 'B',
                 GTNLItemList.LargeSteamCrusher.get(1) });
+
+        addCraftingRecipe(
+            GTNLItemList.LargeSteamFurnace.get(1),
+            new Object[] { "ABA", "CDC", "AEA", 'A', getModItem("gregtech", "gt.metaitem.01", 1, 17300, missing), 'B',
+                getModItem("gregtech", "gt.blockcasings2", 1, 12, missing), 'C',
+                getModItem("gregtech", "gt.blockcasings3", 1, 13, missing), 'D',
+                getModItem("minecraft", "cauldron", 1, 0, missing), 'E',
+                getModItem("gregtech", "gt.blockmachines", 1, 103, missing) });
+
+        addCraftingRecipe(
+            GTNLItemList.LargeSteamAlloySmelter.get(1),
+            new Object[] { "ABA", "CDC", "AEA", 'A', getModItem("gregtech", "gt.metaitem.01", 1, 17300, missing), 'B',
+                getModItem("miscutils", "itemBasicTurbine", 1, 1, missing), 'C',
+                getModItem("gregtech", "gt.blockcasings3", 1, 13, missing), 'D',
+                getModItem("minecraft", "cauldron", 1, 0, missing), 'E',
+                getModItem("gregtech", "gt.blockmachines", 1, 118, missing) });
+
+        addCraftingRecipe(
+            GTNLItemList.LargeSteamChemicalBath.get(1),
+            new Object[] { "ABA", "CDC", "FEF", 'A', getModItem("gregtech", "gt.metaitem.01", 1, 17300, missing), 'B',
+                getModItem("gregtech", "gt.blockmachines", 1, 5103, missing), 'C',
+                getModItem("gregtech", "gt.blockcasings2", 1, 12, missing), 'D',
+                getModItem("gregtech", "gt.metaitem.02", 1, 22300, missing), 'E',
+                getModItem("gregtech", "gt.metaitem.02", 1, 21300, missing), 'F',
+                getModItem("gregtech", "gt.blockmachines", 1, 5123, missing) });
+
+        addCraftingRecipe(
+            GTNLItemList.PrecisionSteamMechanism.get(1),
+            new Object[] { "ABA", "CDC", "EBE", 'A', getModItem("gregtech", "gt.metaitem.01", 1, 23300, missing), 'B',
+                getModItem("gregtech", "gt.metaitem.02", 1, 20300, missing), 'C',
+                getModItem("gregtech", "gt.metaitem.02", 1, 23035, missing), 'D',
+                getModItem("gregtech", "gt.metaitem.02", 1, 31305, missing), 'E',
+                getModItem("gregtech", "gt.metaitem.02", 1, 31300, missing) });
+
+        addCraftingRecipe(
+            GTNLItemList.PrimitiveDistillationTower.get(1),
+            new Object[] { "ABA", "ABA", "CDC", 'A', getModItem("gregtech", "gt.blockmachines", 1, 5132, missing), 'B',
+                getModItem("gregtech", "gt.blockcasings2", 1, 13, missing), 'C',
+                getModItem("gregtech", "gt.metaitem.01", 1, 17305, missing), 'D',
+                GTNLItemList.PrecisionSteamMechanism.get(1) });
     }
 }

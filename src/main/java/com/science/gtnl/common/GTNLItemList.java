@@ -26,6 +26,8 @@ public enum GTNLItemList {
     SlicingBlades,
     NeutroniumPipeCasing,
     NeutroniumGearbox,
+    MeteorMinerSchematic1,
+    MeteorMinerSchematic2,
 
     Stargate_Coil,
     StargateTier0,
@@ -63,13 +65,16 @@ public enum GTNLItemList {
     Fortify_Glowstone,
     Gaia_Glass,
     Terra_Glass,
+    Laser_Beacon,
 
     DepletedExcitedNaquadahFuelRod,
     BlazeCube,
     StrangeAnnihilationFuelRod,
     StellarConstructionFrameMaterial,
     ActivatedGaiaPylon,
+    PrecisionSteamMechanism,
 
+    MeteorMiner,
     LargeSteamCrusher,
     NeutroniumWireCutting,
     EdenGarden,

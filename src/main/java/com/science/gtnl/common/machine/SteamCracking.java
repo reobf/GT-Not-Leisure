@@ -326,6 +326,7 @@ public class SteamCracking extends MTESteamMultiBase<SteamCracking> implements I
             .addInfo(TextLocalization.Tooltip_SteamCracking_01)
             .addInfo(TextLocalization.HIGH_PRESSURE_TOOLTIP_NOTICE)
             .addSeparator()
+            .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
             .beginStructureBlock(7, 4, 4, false)
             .addInputBus(TextLocalization.Tooltip_SteamCracking_Casing, 1)

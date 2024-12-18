@@ -350,6 +350,7 @@ public class LargeSteamThermalCentrifuge extends MTESteamMultiBase<LargeSteamThe
             .addInfo(TextLocalization.Tooltip_LargeSteamThermalCentrifuge_02)
             .addInfo(TextLocalization.HIGH_PRESSURE_TOOLTIP_NOTICE)
             .addSeparator()
+            .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
             .beginStructureBlock(7, 5, 7, false)
             .addInputBus(TextLocalization.Tooltip_LargeSteamThermalCentrifuge_Casing, 1)
