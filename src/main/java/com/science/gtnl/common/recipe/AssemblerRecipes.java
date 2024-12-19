@@ -404,5 +404,41 @@ public class AssemblerRecipes implements IRecipePool {
             .duration(200)
             .eut(30720)
             .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTUtility.getIntegratedCircuit(2),
+                GTModHandler.getModItem("gregtech", "gt.blockmachines", 1, 1177),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 8, 17028),
+                GTModHandler.getModItem("gregtech", "gt.laserplate", 4, 0),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 2, 17028),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 2, 17028),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.02", 4, 31316),
+                GTModHandler.getModItem("gregtech", "gt.blockframes", 4, 306),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 2L))
+            .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 9216))
+            .itemOutputs(GTNLItemList.MeteorMiner.get(1))
+            .specialValue(0)
+            .noOptimize()
+            .duration(1200)
+            .eut(30720)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTModHandler.getModItem("gregtech", "gt.blockcasings", 1, 15),
+                GTModHandler.getModItem("dreamcraft", "item.LaserEmitter", 4, 0),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 4, 24500),
+                GTModHandler.getModItem("miscutils", "itemDehydratorCoilWire", 8, 2),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.03", 4, 32146),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 2, 32684),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 16, 17316))
+            .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 9216))
+            .itemOutputs(GTNLItemList.Laser_Beacon.get(1))
+            .specialValue(0)
+            .noOptimize()
+            .duration(400)
+            .eut(30720)
+            .addTo(As);
     }
 }

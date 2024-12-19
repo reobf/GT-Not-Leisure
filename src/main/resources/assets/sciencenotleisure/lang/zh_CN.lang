@@ -12,8 +12,8 @@ MetaItem.1.name=§b激发的混合硅岩燃料棒
 MetaItem.2.name=§e炽骨立方块
 MetaItem.5.name=激活的盖亚水晶
 MetaItem.6.name=精密蒸汽构件
-MetaItem.7.name=坠星矿机t1设计图
-MetaItem.8.name=坠星矿机t2设计图
+MetaItem.7.name=坠星采矿场I图纸
+MetaItem.8.name=坠星采矿场II图纸
 
 tile.Stargate0.name=压缩星门
 tile.Stargate1.name=压缩星门-一重
@@ -166,7 +166,7 @@ NameCheatOreProcessingFactory=作弊者的究极集成矿处
 gtnl.recipe.CheatOreProcessingRecipes=作弊者的快速处理
 CheatOreProcessingFactoryRecipeType=给作弊者的快速矿物处理
 
-NameMeteorMiner=坠星矿机
+NameMeteorMiner=坠星采矿场
 MeteorMinerRecipeType=坠星采矿
 Tooltip_MeteorMiner_00=为了正常工作，坠星中心的高度必须比多方块结构最高点高出32个方块
 Tooltip_MeteorMiner_01=激光将从坠星中心开始，在各个方向上对半径30个方块范围内的区域进行开采

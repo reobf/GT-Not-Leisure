@@ -105,5 +105,54 @@ public class AssemblingLineRecipes implements IRecipePool {
             .eut(TierEU.RECIPE_UV)
             .duration(300 * SECONDS)
             .addTo(AssemblyLine);
+
+        GTValues.RA.stdBuilder()
+            .metadata(RESEARCH_ITEM, GTModHandler.getModItem("GalaxySpace", "item.RocketControlComputer", 1, 4))
+            .metadata(RESEARCH_TIME, 2 * HOURS)
+            .itemInputs(
+                GTModHandler.getModItem("dreamcraft", "item.HeavyDutyPlateTier5", 8, 0),
+                GTModHandler.getModItem("bartworks", "gt.bwMetaGeneratedplate", 32, 88),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 4, 32606),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 4, 32615),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 4, 32635),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 4, 32655),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 4, 32685),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 4, 32695),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 8L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4L))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("lubricant", 128000),
+                FluidRegistry.getFluidStack("molten.solderingalloy", 18432),
+                FluidRegistry.getFluidStack("molten.tetraindiumditindibariumtitaniumheptacoppertetrakaidekaoxid", 2304))
+            .itemOutputs(GTNLItemList.MeteorMinerSchematic1.get(1))
+            .eut(TierEU.RECIPE_LuV)
+            .duration(30 * SECONDS)
+            .addTo(AssemblyLine);
+
+        GTValues.RA.stdBuilder()
+            .metadata(RESEARCH_ITEM, GTModHandler.getModItem("GalaxySpace", "item.RocketControlComputer", 1, 7))
+            .metadata(RESEARCH_TIME, 4 * HOURS)
+            .itemInputs(
+                GTModHandler.getModItem("dreamcraft", "item.HeavyDutyPlateTier7", 8, 0),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 32, 17317),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 8, 32608),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 8, 32617),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 8, 32637),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 8, 32657),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 8, 32687),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 8, 32677),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 8, 32697),
+                GTModHandler.getModItem("gregtech", "gt.blockframes", 32, 129),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 16L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 8L))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("lubricant", 256000),
+                FluidRegistry.getFluidStack("molten.indalloy140", 128000),
+                FluidRegistry.getFluidStack("molten.naquadahalloy", 144 * 128),
+                FluidRegistry.getFluidStack("molten.longasssuperconductornameforuvwire", 144 * 32))
+            .itemOutputs(GTNLItemList.MeteorMinerSchematic2.get(1))
+            .eut(TierEU.RECIPE_UHV)
+            .duration(120 * SECONDS)
+            .addTo(AssemblyLine);
     }
 }

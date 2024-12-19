@@ -42,10 +42,6 @@ public enum GTNLItemList {
     StargateTier9,
     Stargate_Coil_Compressed,
 
-    QuadrupleOutputHatchULV,
-    QuadrupleOutputHatchLV,
-    QuadrupleOutputHatchMV,
-    QuadrupleOutputHatchHV,
     QuadrupleOutputHatchEV,
     QuadrupleOutputHatchIV,
     QuadrupleOutputHatchLuV,
