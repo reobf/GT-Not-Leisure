@@ -9,6 +9,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
+import com.science.gtnl.client.CreativeTabsLoader;
 import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.common.block.Render.ItemBlockLaserBeacon;
 import com.science.gtnl.common.block.Render.TileEntityLaserBeacon;
@@ -28,7 +29,7 @@ public class BlockLaserBeacon extends Block implements ITileEntityProvider {
     public BlockLaserBeacon() {
         super(Material.iron);
         setBlockName("LaserBeacon");
-        this.setCreativeTab(GregTechAPI.TAB_GREGTECH);
+        this.setCreativeTab(CreativeTabsLoader.GTNoteLeisure);
         GTLanguageManager.addStringLocalization(getUnlocalizedName() + ".name", "Laser Inducing Beacon");
         GregTechAPI.registerMachineBlock(this, -1);
         GameRegistry.registerBlock(this, ItemBlockLaserBeacon.class, getUnlocalizedName());
@@ -61,7 +62,7 @@ public class BlockLaserBeacon extends Block implements ITileEntityProvider {
 
     @Override
     public String getUnlocalizedName() {
-        return "gt.laserbeacon";
+        return "tile.LaserBeacon";
     }
 
     private static final String TEXTURE_NAME_OVERLAY_ACTIVE = "sciencenotleisure:iconsets/LASER_BEACON";

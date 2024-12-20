@@ -7,7 +7,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
-import gregtech.api.util.GTLanguageManager;
+import com.science.gtnl.Utils.TextLocalization;
 
 public class ItemBlockLaserBeacon extends ItemBlock {
 
@@ -17,9 +17,6 @@ public class ItemBlockLaserBeacon extends ItemBlock {
 
     @Override
     public void addInformation(ItemStack stack, EntityPlayer player, List<String> tooltip, boolean f3_h) {
-        tooltip.add(
-            GTLanguageManager.addStringLocalization(
-                "gt.laserbeacontooltip",
-                "Produces a high precision laser from a powerful current"));
+        tooltip.add(TextLocalization.Tooltip_LaserBeacon);
     }
 }

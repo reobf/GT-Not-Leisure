@@ -3,7 +3,7 @@ package com.science.gtnl.common.machine;
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.ofBlock;
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.onElementPass;
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.transpose;
-import static com.science.gtnl.common.block.BasicBlocks.LaserBeaconRender;
+import static com.science.gtnl.common.block.BasicBlocks.BlockLaserBeacon;
 import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
@@ -149,7 +149,7 @@ public class MeteorMiner extends MTEEnhancedMultiBlockBase<MeteorMiner> implemen
                 .addElement('D', ofFrame(Materials.StainlessSteel))
                 .addElement('E', ofBlock(ModBlocks.blockSpecialMultiCasings, 6)) // Structural Solar Casings
                 .addElement('F', ofBlock(ModBlocks.blockSpecialMultiCasings, 8)) // Thermally Insulated Casing
-                .addElement('G', ofBlock(LaserBeaconRender, 0))
+                .addElement('G', ofBlock(BlockLaserBeacon, 0))
                 .addElement(
                     'H',
                     buildHatchAdder(MeteorMiner.class).atLeast(OutputBus, Energy, Maintenance)

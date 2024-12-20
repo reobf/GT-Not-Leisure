@@ -1,7 +1,7 @@
 package com.science.gtnl.common.block;
 
+import static com.science.gtnl.common.block.BasicBlocks.BlockLaserBeacon;
 import static com.science.gtnl.common.block.BasicBlocks.BlockStar;
-import static com.science.gtnl.common.block.BasicBlocks.LaserBeaconRender;
 import static com.science.gtnl.common.block.BasicBlocks.MetaBlock;
 
 import net.minecraft.block.Block;
@@ -44,8 +44,8 @@ public class BlockRegister {
         BlockStar = new BlockStar();
         GameRegistry.registerTileEntity(TileStar.class, "RealArtificialStarRender");
 
-        LaserBeaconRender = new BlockLaserBeacon();
-        GameRegistry.registerTileEntity(TileEntityLaserBeacon.class, "MeteorMinerRenderer");
+        BlockLaserBeacon = new BlockLaserBeacon();
+        GameRegistry.registerTileEntity(TileEntityLaserBeacon.class, "BlockLaserBeacon");
 
         GameRegistry.registerBlock(MetaBlock, ItemBlockBase.class, MetaBlock.getUnlocalizedName());
 

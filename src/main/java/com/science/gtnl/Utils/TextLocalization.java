@@ -23,6 +23,10 @@ public class TextLocalization {
     public static final String mNoTileEntityToolTip = GTLanguageManager
         .addStringLocalization("gt.notileentityinthisblock", "This is NOT a TileEntity!");
 
+    public static final String Tooltip_LaserBeacon = texter(
+        "Produces a high precision laser from a powerful current.",
+        "Tooltip_LaserBeacon");
+
     public static final String FluidManaInputHatch = texter("Fluid Mana Input Hatch", "FluidManaInputHatch");
 
     public static final String HIGH_PRESSURE_TOOLTIP_NOTICE = texter(
