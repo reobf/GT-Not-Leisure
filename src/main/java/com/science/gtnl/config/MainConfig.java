@@ -13,6 +13,8 @@ public class MainConfig {
     public static boolean EnableRenderDefaultArtificialStar = true;
     public static long EUEveryStrangeAnnihilationFuelRod = 32768L * Integer.MAX_VALUE;
     public static boolean MultiBlockStructureEnable = true;
+    public static boolean enablePortalToAlfheimBigBoom = true;
+    public static boolean DEFAULT_BATCH_MODE = false;
 
     private static Configuration config;
 
@@ -33,8 +35,20 @@ public class MainConfig {
     public static void loadConfig() {
 
         MultiBlockStructureEnable = config
-            .get("多方块结构修改", "多方块修改开启", MultiBlockStructureEnable, "开启后使用本MOD重置的多方块结构，原结构将会被覆盖")
+            .get(
+                "Modify multiblock structure",
+                "enable",
+                MultiBlockStructureEnable,
+                "Setting this to enable change multiblock structure.")
             .getBoolean(MultiBlockStructureEnable);
+
+        enablePortalToAlfheimBigBoom = config
+            .get(
+                "enable Portal To Alfheim Big Boom",
+                "enable",
+                enablePortalToAlfheimBigBoom,
+                "Setting this to false will reduce the Portal To Alfheim explosion to little more then a tnt blast")
+            .getBoolean(enablePortalToAlfheimBigBoom);
 
         if (config.hasChanged()) {
             config.save();

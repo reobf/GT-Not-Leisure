@@ -9,7 +9,7 @@ import com.science.gtnl.Utils.TextHandler;
 import com.science.gtnl.Utils.eig.EIGBucketLoader;
 import com.science.gtnl.common.machine.machineclass.IMCForNEI;
 import com.science.gtnl.common.recipe.GTNLRecipeRemover;
-import com.science.gtnl.config.Config;
+import com.science.gtnl.config.MainConfig;
 import com.science.gtnl.devTools.PathHelper;
 import com.science.gtnl.loader.LazyStaticsInitLoader;
 import com.science.gtnl.loader.MachineLoader;
@@ -134,7 +134,7 @@ public class ScienceNotLeisure {
 
         File mainConfigFile = new File(configDir, "main.cfg");
 
-        Config.init(mainConfigFile);
+        MainConfig.init(mainConfigFile);
 
         proxy.preInit(event);
         MaterialLoader.load();

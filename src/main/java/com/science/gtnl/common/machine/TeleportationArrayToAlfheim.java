@@ -27,7 +27,6 @@ import com.brandon3055.brandonscore.common.handlers.ProcessHandler;
 import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
-import com.science.gtnl.Config;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.TextLocalization;
 import com.science.gtnl.Utils.TextUtils;
@@ -36,6 +35,7 @@ import com.science.gtnl.common.RecipeRegister;
 import com.science.gtnl.common.hatch.MTEHatchCustomFluid;
 import com.science.gtnl.common.machine.Explosion.PortalToAlfheimExplosion;
 import com.science.gtnl.common.machine.multiMachineClasses.MultiMachineBase;
+import com.science.gtnl.config.MainConfig;
 
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.Textures;
@@ -142,7 +142,7 @@ public class TeleportationArrayToAlfheim extends MultiMachineBase<TeleportationA
     }
 
     public void triggerExplosion(IGregTechTileEntity aBaseMetaTileEntity, float strength) {
-        if (Config.enablePortalToAlfheimBigBoom) {
+        if (MainConfig.enablePortalToAlfheimBigBoom) {
             float power = strength;
             ProcessHandler.addProcess(
                 new PortalToAlfheimExplosion(
