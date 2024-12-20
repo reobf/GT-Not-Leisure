@@ -440,5 +440,24 @@ public class AssemblerRecipes implements IRecipePool {
             .duration(400)
             .eut(30720)
             .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTModHandler.getModItem("gregtech", "gt.blockmachines", 4, 215),
+                GTModHandler.getModItem("gregtech", "gt.blockmachines", 2, 32018),
+                GTModHandler.getModItem("gregtech", "gt.blockmachines", 1, 1170),
+                GTModHandler.getModItem("gregtech", "gt.blockframes", 16, 316),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 8, 32654),
+                GTModHandler.getModItem("gregtech", "gt.blockcasings2", 8, 5),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 8L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 10L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 12L))
+            .fluidInputs(FluidRegistry.getFluidStack("molten.indalloy140", 256000))
+            .itemOutputs(GTNLItemList.ComponentAssembler.get(1))
+            .specialValue(0)
+            .noOptimize()
+            .duration(600)
+            .eut(7680)
+            .addTo(As);
     }
 }
