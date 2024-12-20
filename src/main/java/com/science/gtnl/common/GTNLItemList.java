@@ -62,6 +62,8 @@ public enum GTNLItemList {
     Gaia_Glass,
     Terra_Glass,
     Laser_Beacon,
+    Laser_Cooling_Casing,
+    Antifreeze_Heatproof_Machine_Casing,
 
     DepletedExcitedNaquadahFuelRod,
     BlazeCube,

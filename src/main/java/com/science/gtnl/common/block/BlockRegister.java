@@ -112,6 +112,11 @@ public class BlockRegister {
             MetaBlockConstructors.initMetaBlockCasing("Neutronium Pipe Casing", (byte) 4, BasicBlocks.MetaBlockCasing));
         GTNLItemList.NeutroniumGearbox.set(
             MetaBlockConstructors.initMetaBlockCasing("Neutronium Gearbox", (byte) 5, BasicBlocks.MetaBlockCasing));
+        GTNLItemList.Laser_Cooling_Casing.set(
+            MetaBlockConstructors.initMetaBlockCasing("Laser Cooling Casing", (byte) 6, BasicBlocks.MetaBlockCasing));
+        GTNLItemList.Antifreeze_Heatproof_Machine_Casing.set(
+            MetaBlockConstructors
+                .initMetaBlockCasing("Antifreeze Heatproof Machine Casing", (byte) 7, BasicBlocks.MetaBlockCasing));
     }
 
     public static void registry() {
