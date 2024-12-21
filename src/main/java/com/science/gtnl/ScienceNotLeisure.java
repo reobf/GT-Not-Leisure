@@ -8,7 +8,6 @@ import org.apache.logging.log4j.Logger;
 import com.science.gtnl.Utils.TextHandler;
 import com.science.gtnl.Utils.eig.EIGBucketLoader;
 import com.science.gtnl.common.machine.machineclass.IMCForNEI;
-import com.science.gtnl.common.recipe.GTNLRecipeRemover;
 import com.science.gtnl.config.MainConfig;
 import com.science.gtnl.devTools.PathHelper;
 import com.science.gtnl.loader.LazyStaticsInitLoader;
@@ -105,7 +104,6 @@ public class ScienceNotLeisure {
     // postInit "Handle interaction with other mods, complete your setup based on this." (Remove if not needed)
     public void completeInit(FMLLoadCompleteEvent event) {
         ScriptLoader.run();
-        GTNLRecipeRemover.run();
         OreDictLoader.loadOreDictionary();
         RecipeLoader.loadRecipes();
 
