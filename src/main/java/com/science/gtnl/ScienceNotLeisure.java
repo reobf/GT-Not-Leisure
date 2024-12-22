@@ -2,7 +2,6 @@ package com.science.gtnl;
 
 import java.io.File;
 
-import com.science.gtnl.common.recipe.EyeOfHarmonyRecipes;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -25,8 +24,6 @@ import cpw.mods.fml.common.event.FMLLoadCompleteEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
-import tectech.loader.MainLoader;
-import tectech.recipe.EyeOfHarmonyRecipeStorage;
 
 // after
 @Mod(
@@ -141,14 +138,14 @@ public class ScienceNotLeisure {
         MaterialLoader.load();
     }
 
-/*
-     @Mod.EventHandler
-    @SuppressWarnings("unused")
- public void onLoadCompleted(FMLLoadCompleteEvent event) {
-       eyeOfHarmonyRecipe = new EyeOfHarmonyRecipes();
- }
-   public static EyeOfHarmonyRecipes eyeOfHarmonyRecipe = null;
- */
+    /*
+     * @Mod.EventHandler
+     * @SuppressWarnings("unused")
+     * public void onLoadCompleted(FMLLoadCompleteEvent event) {
+     * eyeOfHarmonyRecipe = new EyeOfHarmonyRecipes();
+     * }
+     * public static EyeOfHarmonyRecipes eyeOfHarmonyRecipe = null;
+     */
 
     public static void error(String message) {
         LOG.error(message);
