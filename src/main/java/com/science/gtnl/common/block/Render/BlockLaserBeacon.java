@@ -1,4 +1,4 @@
-package com.science.gtnl.common.block;
+package com.science.gtnl.common.block.Render;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
@@ -11,8 +11,6 @@ import net.minecraft.world.World;
 
 import com.science.gtnl.client.CreativeTabsLoader;
 import com.science.gtnl.common.GTNLItemList;
-import com.science.gtnl.common.block.Render.ItemBlockLaserBeacon;
-import com.science.gtnl.common.block.Render.TileEntityLaserBeacon;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;

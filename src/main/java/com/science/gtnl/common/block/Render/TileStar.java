@@ -1,4 +1,4 @@
-package com.science.gtnl.common.block;
+package com.science.gtnl.common.block.Render;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,8 +8,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.IModelCustom;
-
-import com.science.gtnl.common.block.Render.RealArtificialStarRender;
 
 public class TileStar extends TileEntity {
 

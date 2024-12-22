@@ -13,8 +13,6 @@ import net.minecraftforge.client.model.IModelCustom;
 
 import org.lwjgl.opengl.GL11;
 
-import com.science.gtnl.common.block.TileStar;
-
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -86,7 +84,6 @@ public class BlockStar extends Block {
                 .getTextureManager()
                 .bindTexture(tileStar.getTexture(0));
             GL11.glScaled(0.25, 0.25, 0.25);
-            GL11.glRotated(tileStar.targetRotationSpeed, 1, 1, 1);
             model.renderAll();
             GL11.glDisable(GL11.GL_BLEND);
             GL11.glDepthMask(true);

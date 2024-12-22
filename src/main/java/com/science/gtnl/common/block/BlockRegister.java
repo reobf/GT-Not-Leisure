@@ -4,6 +4,8 @@ import static com.science.gtnl.common.block.BasicBlocks.BlockLaserBeacon;
 import static com.science.gtnl.common.block.BasicBlocks.BlockStar;
 import static com.science.gtnl.common.block.BasicBlocks.MetaBlock;
 
+import com.science.gtnl.common.block.Render.BlockLaserBeacon;
+import com.science.gtnl.common.block.Render.TileStar;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.StatCollector;
