@@ -26,6 +26,7 @@ public enum GTNLItemList {
     SlicingBlades,
     NeutroniumPipeCasing,
     NeutroniumGearbox,
+    TungstenSteelGearbox,
     MeteorMinerSchematic1,
     MeteorMinerSchematic2,
 
@@ -62,6 +63,7 @@ public enum GTNLItemList {
     Gaia_Glass,
     Terra_Glass,
     Laser_Beacon,
+    Fusion_Glass,
     Laser_Cooling_Casing,
     Antifreeze_Heatproof_Machine_Casing,
 

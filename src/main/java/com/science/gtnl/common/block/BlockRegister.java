@@ -4,8 +4,6 @@ import static com.science.gtnl.common.block.BasicBlocks.BlockLaserBeacon;
 import static com.science.gtnl.common.block.BasicBlocks.BlockStar;
 import static com.science.gtnl.common.block.BasicBlocks.MetaBlock;
 
-import com.science.gtnl.common.block.Render.BlockLaserBeacon;
-import com.science.gtnl.common.block.Render.TileStar;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.StatCollector;
@@ -13,8 +11,10 @@ import net.minecraft.util.StatCollector;
 import com.science.gtnl.Utils.TextUtils;
 import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.common.block.Casings.MetaItemBlockCasing;
+import com.science.gtnl.common.block.Render.BlockLaserBeacon;
 import com.science.gtnl.common.block.Render.BlockStar;
 import com.science.gtnl.common.block.Render.TileEntityLaserBeacon;
+import com.science.gtnl.common.block.Render.TileStar;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import gtPlusPlus.core.item.base.itemblock.ItemBlockMeta;
@@ -26,6 +26,7 @@ public class BlockRegister {
     public static Block Steel_Brick_Casing = new BlockCasing2("Steel_Brick_Casing", "Steel_Brick_Casing");
     public static Block Gaia_Glass = new BlockGlass("Gaia_Glass", "Gaia_Glass");
     public static Block Terra_Glass = new BlockGlass("Terra_Glass", "Terra_Glass");
+    public static Block Fusion_Glass = new BlockGlass("Fusion_Glass", "Fusion_Glass");
     public static Block Fortify_Glowstone = new BlockLight("Fortify_Glowstone", "Fortify_Glowstone");
     public static Block StargateTier0 = new BlocksStargate(0);
     public static Block StargateTier1 = new BlocksStargate(1);
@@ -62,6 +63,8 @@ public class BlockRegister {
         GTNLItemList.Steel_Brick_Casing.set(new ItemStack(Steel_Brick_Casing));
         GameRegistry.registerBlock(Fortify_Glowstone, "FortifyGlowstone");
         GTNLItemList.Fortify_Glowstone.set(new ItemStack(Fortify_Glowstone));
+        GameRegistry.registerBlock(Fusion_Glass, "FusionGlass");
+        GTNLItemList.Fusion_Glass.set(new ItemStack(Fusion_Glass));
         GameRegistry.registerBlock(Gaia_Glass, "GaiaGlass");
         GTNLItemList.Gaia_Glass.set(new ItemStack(Gaia_Glass));
         GameRegistry.registerBlock(Terra_Glass, "TerraGlass");
@@ -119,6 +122,8 @@ public class BlockRegister {
         GTNLItemList.Antifreeze_Heatproof_Machine_Casing.set(
             MetaBlockConstructors
                 .initMetaBlockCasing("Antifreeze Heatproof Machine Casing", (byte) 7, BasicBlocks.MetaBlockCasing));
+        GTNLItemList.TungstenSteelGearbox.set(
+            MetaBlockConstructors.initMetaBlockCasing("Tungsten Steel Gearbox", (byte) 8, BasicBlocks.MetaBlockCasing));
     }
 
     public static void registry() {
