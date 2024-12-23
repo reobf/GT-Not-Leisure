@@ -90,6 +90,7 @@ public enum GTNLItemList {
     ComponentAssembler,
     RealArtificialStar,
     CheatOreProcessingFactory,
+    Desulfurizer,
     GenerationEarthEngine;
 
     public boolean mHasNotBeenSet;

@@ -8,6 +8,7 @@ import com.science.gtnl.common.recipe.ChemicalBathRecipes;
 import com.science.gtnl.common.recipe.ChemicalRecipes;
 import com.science.gtnl.common.recipe.CompressorRecipes;
 import com.science.gtnl.common.recipe.CraftingTableRecipes;
+import com.science.gtnl.common.recipe.DesulfurizerRecipes;
 import com.science.gtnl.common.recipe.ElectrolyzerRecipes;
 import com.science.gtnl.common.recipe.IRecipePool;
 import com.science.gtnl.common.recipe.ManaInfusionRecipes;
@@ -29,7 +30,8 @@ public class RecipeLoader {
             new AssemblingLineRecipes(), new CompressorRecipes(), new ReFusionReactorRecipes(),
             new RealArtificialStarRecipes(), new PortalToAlfheimRecipes(), new NatureSpiritArrayRecipes(),
             new ManaInfusionRecipes(), new TranscendentPlasmaMixerRecipes(), new PlasmaForgeRecipes(),
-            new CraftingTableRecipes(), new ChemicalBathRecipes(), new SteamCrackerRecipes() };
+            new CraftingTableRecipes(), new ChemicalBathRecipes(), new SteamCrackerRecipes(),
+            new DesulfurizerRecipes() };
         for (IRecipePool recipePool : recipePools) {
             recipePool.loadRecipes();
         }

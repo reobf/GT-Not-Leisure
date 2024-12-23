@@ -8,6 +8,7 @@ import com.science.gtnl.common.hatch.MTEHatchCustomFluid;
 import com.science.gtnl.common.machine.BloodSoulSacrificialArray;
 import com.science.gtnl.common.machine.CheatOreProcessingFactory;
 import com.science.gtnl.common.machine.ComponentAssembler;
+import com.science.gtnl.common.machine.Desulfurizer;
 import com.science.gtnl.common.machine.EdenGarden;
 import com.science.gtnl.common.machine.GenerationEarthEngine;
 import com.science.gtnl.common.machine.LapotronChip;
@@ -49,6 +50,7 @@ public class MachineLoader {
     public static ItemStack PrimitiveDistillationTower;
     public static ItemStack CheatOreProcessingFactory;
     public static ItemStack MeteorMiner;
+    public static ItemStack Desulfurizer;
 
     public static void loadMachines() {
 
@@ -162,6 +164,9 @@ public class MachineLoader {
 
         MeteorMiner = new MeteorMiner(21920, "NameMeteorMiner", TextLocalization.NameMeteorMiner).getStackForm(1);
         GTNLItemList.MeteorMiner.set(MeteorMiner);
+
+        Desulfurizer = new Desulfurizer(21921, "NameDesulfurizer", TextLocalization.NameDesulfurizer).getStackForm(1);
+        GTNLItemList.Desulfurizer.set(Desulfurizer);
 
         MTEHatchRack.run();
         MTEHatchCapacitor.run();

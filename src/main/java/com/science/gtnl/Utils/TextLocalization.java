@@ -185,6 +185,21 @@ public class TextLocalization {
         "Ang Bronze Plated Bricks or Solid Steel Machine Casing",
         "Tooltip_SteamCracking_Casing");
 
+    public static final String NameDesulfurizer = texter("Desulfurizer", "NameDesulfurizer");
+    public static final String DesulfurizerRecipeType = texter("Desulfurizer", "DesulfurizerRecipeType");
+    public static final String Tooltip_Desulfurizer_00 = texter(
+        "Gains eight multiplier per coil tier",
+        "Tooltip_Desulfurizer_00");
+    public static final String Tooltip_Desulfurizer_01 = texter(
+        "Gains 10%% speed bonus per coil tier",
+        "Tooltip_Desulfurizer_01");
+    public static final String Tooltip_Desulfurizer_02 = texter(
+        "It gains §cperfect overclock§7",
+        "Tooltip_Desulfurizer_02");
+    public static final String Tooltip_Desulfurizer_Casing = texter(
+        "Any Clean Stainless Steel Machine Casing",
+        "Tooltip_Desulfurizer_Casing");
+
     public static final String NameLargeSteamChemicalBath = texter(
         "Large Steam Thermal Centrifuge",
         "NameLargeSteamChemicalBath");

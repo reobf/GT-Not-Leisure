@@ -208,6 +208,14 @@ GT5U.gui.text.meteor_reset=§d重置完成！
 GT5U.gui.text.missing_schematic=§d缺失设计图
 Tooltip_LaserBeacon=利用强大的电流产生高精度激光
 
+NameDesulfurizer=脱硫机
+gtnl.recipe.DesulfurizerRecipes=脱硫
+DesulfurizerRecipeType=脱硫
+Tooltip_Desulfurizer_00=每提升一个线圈等级，并行加8
+Tooltip_Desulfurizer_01=每提升一个线圈等级，处理速度提升10%%
+Tooltip_Desulfurizer_02=机器可进行§c无损超频§7
+Tooltip_Desulfurizer_Casing=任意洁净不锈钢机械方块
+
 tooltips.TrollFace=Never Gonna Give You Up~
 tooltips.DepletedExcitedNaquadahFuelRod=§o硅岩基燃料的最终形态。
 tooltips.BlazeCube=§o灵魂之火铸成，无尽炽热封存。

@@ -109,4 +109,12 @@ public class RecipeRegister {
         .neiHandlerInfo(builder -> builder.setDisplayStack(GTNLItemList.CheatOreProcessingFactory.get(1)))
         .disableOptimize()
         .build();
+
+    public static final RecipeMap<RecipeMapBackend> DesulfurizerRecipes = RecipeMapBuilder
+        .of("gtnl.recipe.DesulfurizerRecipes")
+        .maxIO(0, 1, 1, 1)
+        .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
+        .neiHandlerInfo(builder -> builder.setDisplayStack(GTNLItemList.Desulfurizer.get(1)))
+        .disableOptimize()
+        .build();
 }
