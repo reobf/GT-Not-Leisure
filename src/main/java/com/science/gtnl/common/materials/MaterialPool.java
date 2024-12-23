@@ -558,6 +558,50 @@ public class MaterialPool implements Runnable {
         offsetID_01 + 49,
         TextureSet.SET_FLUID);
 
+    public static final Werkstoff RareEarthHydroxides = new Werkstoff(
+        new short[] { 114, 114, 9 },
+        "RareEarthHydroxides",
+        subscriptNumbers("?OH"),
+        new Werkstoff.Stats(),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().disable()
+            .addCells(),
+        offsetID_01 + 50,
+        TextureSet.SET_FLUID);
+
+    public static final Werkstoff RareEarthChlorides = new Werkstoff(
+        new short[] { 165, 161, 103 },
+        "RareEarthChlorides",
+        subscriptNumbers("?Cl"),
+        new Werkstoff.Stats(),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().disable()
+            .addCells(),
+        offsetID_01 + 51,
+        TextureSet.SET_FLUID);
+
+    public static final Werkstoff RareEarthOxide = new Werkstoff(
+        new short[] { 166, 166, 79 },
+        "RareEarthOxide",
+        subscriptNumbers("?O"),
+        new Werkstoff.Stats(),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().disable()
+            .onlyDust(),
+        offsetID_01 + 52,
+        TextureSet.SET_FLUID);
+
+    public static final Werkstoff RareEarthMetal = new Werkstoff(
+        new short[] { 148, 148, 148 },
+        "RareEarthMetal",
+        subscriptNumbers("?"),
+        new Werkstoff.Stats(),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().disable()
+            .onlyDust(),
+        offsetID_01 + 53,
+        TextureSet.SET_FLUID);
+
     public static final Werkstoff Periodicium = new Werkstoff(
         new short[] { 60, 74, 243 },
         "Periodicium",

@@ -201,4 +201,13 @@ public class Desulfurizer extends MultiMachineBase<Desulfurizer> implements ISur
         mHeatingCapacity = aCoilLevel;
     }
 
+    @Override
+    public boolean getDefaultHasMaintenanceChecks() {
+        return true;
+    }
+
+    @Override
+    public boolean shouldCheckMaintenance() {
+        return true;
+    }
 }

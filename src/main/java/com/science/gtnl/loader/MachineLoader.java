@@ -12,6 +12,7 @@ import com.science.gtnl.common.machine.Desulfurizer;
 import com.science.gtnl.common.machine.EdenGarden;
 import com.science.gtnl.common.machine.GenerationEarthEngine;
 import com.science.gtnl.common.machine.LapotronChip;
+import com.science.gtnl.common.machine.LargeCircuitAssembler;
 import com.science.gtnl.common.machine.LargeSteamAlloySmelter;
 import com.science.gtnl.common.machine.LargeSteamChemicalBath;
 import com.science.gtnl.common.machine.LargeSteamCircuitAssembler;
@@ -51,6 +52,7 @@ public class MachineLoader {
     public static ItemStack CheatOreProcessingFactory;
     public static ItemStack MeteorMiner;
     public static ItemStack Desulfurizer;
+    public static ItemStack LargeCircuitAssembler;
 
     public static void loadMachines() {
 
@@ -156,17 +158,23 @@ public class MachineLoader {
             TextLocalization.NamePrimitiveDistillationTower).getStackForm(1);
         GTNLItemList.PrimitiveDistillationTower.set(PrimitiveDistillationTower);
 
+        MeteorMiner = new MeteorMiner(21020, "NameMeteorMiner", TextLocalization.NameMeteorMiner).getStackForm(1);
+        GTNLItemList.MeteorMiner.set(MeteorMiner);
+
+        Desulfurizer = new Desulfurizer(21021, "NameDesulfurizer", TextLocalization.NameDesulfurizer).getStackForm(1);
+        GTNLItemList.Desulfurizer.set(Desulfurizer);
+
+        LargeCircuitAssembler = new LargeCircuitAssembler(
+            21022,
+            "NameLargeCircuitAssembler",
+            TextLocalization.NameLargeCircuitAssembler).getStackForm(1);
+        GTNLItemList.LargeCircuitAssembler.set(LargeCircuitAssembler);
+
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
             21919,
             "NameCheatOreProcessingFactory",
             TextLocalization.NameCheatOreProcessingFactory).getStackForm(1);
         GTNLItemList.CheatOreProcessingFactory.set(CheatOreProcessingFactory);
-
-        MeteorMiner = new MeteorMiner(21920, "NameMeteorMiner", TextLocalization.NameMeteorMiner).getStackForm(1);
-        GTNLItemList.MeteorMiner.set(MeteorMiner);
-
-        Desulfurizer = new Desulfurizer(21921, "NameDesulfurizer", TextLocalization.NameDesulfurizer).getStackForm(1);
-        GTNLItemList.Desulfurizer.set(Desulfurizer);
 
         MTEHatchRack.run();
         MTEHatchCapacitor.run();

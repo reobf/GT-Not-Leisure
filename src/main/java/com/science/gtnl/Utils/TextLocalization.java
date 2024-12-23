@@ -200,6 +200,34 @@ public class TextLocalization {
         "Any Clean Stainless Steel Machine Casing",
         "Tooltip_Desulfurizer_Casing");
 
+    public static final String NameLargeCircuitAssembler = texter(
+        "Large Circuit Assembler",
+        "NameLargeCircuitAssembler");
+    public static final String LargeCircuitAssemblerRecipeType = texter(
+        "Circuit Assembler",
+        "LargeCircuitAssemblerRecipeType");
+    public static final String Tooltip_LargeCircuitAssembler_00 = texter(
+        "Gains four parallel per voltage tier",
+        "Tooltip_LargeCircuitAssembler_00");
+    public static final String Tooltip_LargeCircuitAssembler_01 = texter(
+        "Initial Parallel Behavior 32",
+        "Tooltip_LargeCircuitAssembler_01");
+    public static final String Tooltip_LargeCircuitAssembler_02 = texter(
+        "160%% faster than using single block machines of the same voltage",
+        "Tooltip_LargeCircuitAssembler_02");
+    public static final String Tooltip_LargeCircuitAssembler_03 = texter(
+        "Only uses 90%% of the EU/t normally required",
+        "Tooltip_LargeCircuitAssembler_03");
+    public static final String Tooltip_LargeCircuitAssembler_04 = texter(
+        "Energy hatch limited by glass tier, UV Glass unlocks all",
+        "Tooltip_LargeCircuitAssembler_04");
+    public static final String Tooltip_LargeCircuitAssembler_05 = texter(
+        "Only one Energy Hatch!",
+        "Tooltip_LargeCircuitAssembler_05");
+    public static final String Tooltip_LargeCircuitAssembler_Casing = texter(
+        "Any Multi-Use Casing",
+        "Tooltip_LargeCircuitAssembler_Casing");
+
     public static final String NameLargeSteamChemicalBath = texter(
         "Large Steam Thermal Centrifuge",
         "NameLargeSteamChemicalBath");
@@ -251,7 +279,7 @@ public class TextLocalization {
         "To work properly the center of the meteor has to be 32 blocks above the highest block of the multi.",
         "Tooltip_MeteorMiner_00");
     public static final String Tooltip_MeteorMiner_01 = texter(
-        "The laser will mine in a radius of up to 30 blocks in each direction from the center of the meteor.",
+        "The laser will mine in a radius of up to 50 blocks in each direction from the center of the meteor.",
         "Tooltip_MeteorMiner_01");
     public static final String Tooltip_MeteorMiner_02 = texter(
         "All the chunks involved must be chunkloaded.",
