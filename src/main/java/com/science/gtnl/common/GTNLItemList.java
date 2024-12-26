@@ -92,6 +92,7 @@ public enum GTNLItemList {
     CheatOreProcessingFactory,
     Desulfurizer,
     LargeCircuitAssembler,
+    PetrochemicalPlant,
     GenerationEarthEngine;
 
     public boolean mHasNotBeenSet;

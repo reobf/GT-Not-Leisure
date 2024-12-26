@@ -228,6 +228,29 @@ public class TextLocalization {
         "Any Multi-Use Casing",
         "Tooltip_LargeCircuitAssembler_Casing");
 
+    public static final String NamePetrochemicalPlant = texter("Petrochemical Plant", "NamePetrochemicalPlant");
+    public static final String PetrochemicalPlantRecipeType = texter(
+        "Petrochemical Plant",
+        "PetrochemicalPlantRecipeType");
+    public static final String Tooltip_PetrochemicalPlant_00 = texter(
+        "Gains 16 multiplier per coil tier",
+        "Tooltip_PetrochemicalPlant_00");
+    public static final String Tooltip_PetrochemicalPlant_01 = texter(
+        "Final output : Recipe output * Coil level * Voltage tier * 10",
+        "Tooltip_PetrochemicalPlant_01");
+    public static final String Tooltip_PetrochemicalPlant_02 = texter(
+        "It gains §cperfect overclock§7",
+        "Tooltip_PetrochemicalPlant_02");
+    public static final String Tooltip_PetrochemicalPlant_03 = texter(
+        "With the advancement of technology, extraction should no longer be minimal",
+        "Tooltip_PetrochemicalPlant_03");
+    public static final String Tooltip_PetrochemicalPlant_Casing = texter(
+        "Any Pressure Containment Casing",
+        "Tooltip_PetrochemicalPlant_Casing");
+    public static final String Tooltip_PetrochemicalPlant_Muffler = texter(
+        "Any Top Pressure Containment Casing",
+        "Tooltip_PetrochemicalPlant_Muffler");
+
     public static final String NameLargeSteamChemicalBath = texter(
         "Large Steam Thermal Centrifuge",
         "NameLargeSteamChemicalBath");

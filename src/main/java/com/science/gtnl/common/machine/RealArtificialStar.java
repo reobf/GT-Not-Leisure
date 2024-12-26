@@ -365,7 +365,6 @@ public class RealArtificialStar extends MultiMachineBase<RealArtificialStar>
         tierStabilisationField = -1;
         if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet)) return false;
         if (tierDimensionField < 0 || tierTimeField < 0 || tierStabilisationField < 0) return false;
-        // Only allow and must be 1 input bus
         if (this.mInputBusses.size() != 1) return false;
         calculateOutputMultiplier();
         recoveryChance = (short) (tierDimensionField * tierTimeField * tierStabilisationField);

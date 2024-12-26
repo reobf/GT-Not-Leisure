@@ -21,6 +21,7 @@ import com.science.gtnl.common.machine.LargeSteamFurnace;
 import com.science.gtnl.common.machine.LargeSteamThermalCentrifuge;
 import com.science.gtnl.common.machine.MeteorMiner;
 import com.science.gtnl.common.machine.NeutroniumWireCutting;
+import com.science.gtnl.common.machine.PetrochemicalPlant;
 import com.science.gtnl.common.machine.PrimitiveDistillationTower;
 import com.science.gtnl.common.machine.RealArtificialStar;
 import com.science.gtnl.common.machine.SteamCracking;
@@ -53,6 +54,7 @@ public class MachineLoader {
     public static ItemStack MeteorMiner;
     public static ItemStack Desulfurizer;
     public static ItemStack LargeCircuitAssembler;
+    public static ItemStack PetrochemicalPlant;
 
     public static void loadMachines() {
 
@@ -169,6 +171,12 @@ public class MachineLoader {
             "NameLargeCircuitAssembler",
             TextLocalization.NameLargeCircuitAssembler).getStackForm(1);
         GTNLItemList.LargeCircuitAssembler.set(LargeCircuitAssembler);
+
+        PetrochemicalPlant = new PetrochemicalPlant(
+            21023,
+            "NamePetrochemicalPlant",
+            TextLocalization.NamePetrochemicalPlant).getStackForm(1);
+        GTNLItemList.PetrochemicalPlant.set(PetrochemicalPlant);
 
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
             21919,

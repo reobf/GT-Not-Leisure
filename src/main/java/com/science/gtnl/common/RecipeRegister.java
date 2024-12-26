@@ -117,4 +117,13 @@ public class RecipeRegister {
         .neiHandlerInfo(builder -> builder.setDisplayStack(GTNLItemList.Desulfurizer.get(1)))
         .disableOptimize()
         .build();
+
+    public static final RecipeMap<GTNL_RecipeMapBackend> PetrochemicalPlantRecipes = RecipeMapBuilder
+        .of("gtnl.recipe.PetrochemicalPlantRecipes", GTNL_RecipeMapBackend::new)
+        .maxIO(0, 0, 2, 12)
+        .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
+        .frontend(GeneralFrontend::new)
+        .neiHandlerInfo(builder -> builder.setDisplayStack(GTNLItemList.PetrochemicalPlant.get(1)))
+        .disableOptimize()
+        .build();
 }
