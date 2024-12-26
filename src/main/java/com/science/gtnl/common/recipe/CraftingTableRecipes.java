@@ -20,12 +20,12 @@ public class CraftingTableRecipes implements IRecipePool {
                 getModItem("gregtech", "gt.metaitem.02", 1, 31343, missing) });
 
         addCraftingRecipe(
-            GTNLItemList.Bronze_Brick_Casing.get(1),
+            GTNLItemList.BronzeBrickCasing.get(1),
             new Object[] { "AAA", "ABA", "ACA", 'A', getModItem("gregtech", "gt.metaitem.01", 1, 17300, missing), 'B',
                 "craftingToolWrench", 'C', getModItem("minecraft", "brick_block", 1, 0, missing) });
 
         addCraftingRecipe(
-            GTNLItemList.Steel_Brick_Casing.get(1),
+            GTNLItemList.SteelBrickCasing.get(1),
             new Object[] { "AAA", "ABA", "ACA", 'A', getModItem("gregtech", "gt.metaitem.01", 1, 17305, missing), 'B',
                 "craftingToolWrench", 'C', getModItem("minecraft", "brick_block", 1, 0, missing) });
 

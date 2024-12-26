@@ -45,7 +45,7 @@ import com.science.gtnl.Utils.TextUtils;
 import com.science.gtnl.Utils.Utils;
 import com.science.gtnl.Utils.rewrites.GTNL_ItemID;
 import com.science.gtnl.common.GTNLItemList;
-import com.science.gtnl.common.block.BasicBlocks;
+import com.science.gtnl.common.block.Casings.BasicBlocks;
 import com.science.gtnl.common.machine.multiMachineClasses.MultiMachineBase;
 import com.science.gtnl.config.MainConfig;
 

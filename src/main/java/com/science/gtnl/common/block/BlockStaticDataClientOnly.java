@@ -12,6 +12,12 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class BlockStaticDataClientOnly {
 
     @SideOnly(Side.CLIENT)
-    public static Map<Integer, IIcon> iconsBlockMap01 = new HashMap<>();
+    public static Map<Integer, IIcon> iconsBlockMapBase = new HashMap<>();
+
+    @SideOnly(Side.CLIENT)
+    public static Map<Integer, IIcon> iconsBlockMapGlow = new HashMap<>();
+
+    @SideOnly(Side.CLIENT)
+    public static Map<Integer, IIcon> iconsBlockMapGlass = new HashMap<>();
 
 }

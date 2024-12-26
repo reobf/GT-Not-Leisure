@@ -1,8 +1,6 @@
 package com.science.gtnl.common.block;
 
-import static com.science.gtnl.common.block.BasicBlocks.BlockLaserBeacon;
-import static com.science.gtnl.common.block.BasicBlocks.BlockStar;
-import static com.science.gtnl.common.block.BasicBlocks.MetaBlock;
+import static com.science.gtnl.common.block.Casings.BasicBlocks.*;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
@@ -10,7 +8,15 @@ import net.minecraft.util.StatCollector;
 
 import com.science.gtnl.Utils.TextUtils;
 import com.science.gtnl.common.GTNLItemList;
-import com.science.gtnl.common.block.Casings.MetaItemBlockCasing;
+import com.science.gtnl.common.block.Casings.Base.ItemBlockBase;
+import com.science.gtnl.common.block.Casings.BasicBlocks;
+import com.science.gtnl.common.block.Casings.Casing.MetaBlockConstructors;
+import com.science.gtnl.common.block.Casings.Casing.MetaItemBlockCasing;
+import com.science.gtnl.common.block.Casings.Column.ItemBlockColumn;
+import com.science.gtnl.common.block.Casings.Glass.ItemBlockGlass;
+import com.science.gtnl.common.block.Casings.Glow.ItemBlockGlow;
+import com.science.gtnl.common.block.Casings.Special.BlocksStargate;
+import com.science.gtnl.common.block.Casings.Special.StargateMetaBlockBase;
 import com.science.gtnl.common.block.Render.BlockLaserBeacon;
 import com.science.gtnl.common.block.Render.BlockStar;
 import com.science.gtnl.common.block.Render.TileEntityLaserBeacon;
@@ -21,13 +27,6 @@ import gtPlusPlus.core.item.base.itemblock.ItemBlockMeta;
 
 public class BlockRegister {
 
-    public static Block Stargate_Coil = new BlockIron("Stargate_Coil", "Stargate_Coil");
-    public static Block Bronze_Brick_Casing = new BlockCasing2("Bronze_Brick_Casing", "Bronze_Brick_Casing");
-    public static Block Steel_Brick_Casing = new BlockCasing2("Steel_Brick_Casing", "Steel_Brick_Casing");
-    public static Block Gaia_Glass = new BlockGlass("Gaia_Glass", "Gaia_Glass");
-    public static Block Terra_Glass = new BlockGlass("Terra_Glass", "Terra_Glass");
-    public static Block Fusion_Glass = new BlockGlass("Fusion_Glass", "Fusion_Glass");
-    public static Block Fortify_Glowstone = new BlockLight("Fortify_Glowstone", "Fortify_Glowstone");
     public static Block StargateTier0 = new BlocksStargate(0);
     public static Block StargateTier1 = new BlocksStargate(1);
     public static Block StargateTier2 = new BlocksStargate(2);
@@ -51,26 +50,15 @@ public class BlockRegister {
         GameRegistry.registerTileEntity(TileEntityLaserBeacon.class, "BlockLaserBeacon");
 
         GameRegistry.registerBlock(MetaBlock, ItemBlockBase.class, MetaBlock.getUnlocalizedName());
+        GameRegistry.registerBlock(MetaBlockGlow, ItemBlockGlow.class, MetaBlockGlow.getUnlocalizedName());
+        GameRegistry.registerBlock(MetaBlockGlass, ItemBlockGlass.class, MetaBlockGlass.getUnlocalizedName());
+        GameRegistry.registerBlock(MetaBlockColumn, ItemBlockColumn.class, MetaBlockColumn.getUnlocalizedName());
 
         GameRegistry.registerBlock(
             BasicBlocks.MetaBlockCasing,
             MetaItemBlockCasing.class,
             BasicBlocks.MetaBlockCasing.getUnlocalizedName());
 
-        GameRegistry.registerBlock(Bronze_Brick_Casing, "BronzeBrickCasing");
-        GTNLItemList.Bronze_Brick_Casing.set(new ItemStack(Bronze_Brick_Casing));
-        GameRegistry.registerBlock(Steel_Brick_Casing, "SteelBrickCasing");
-        GTNLItemList.Steel_Brick_Casing.set(new ItemStack(Steel_Brick_Casing));
-        GameRegistry.registerBlock(Fortify_Glowstone, "FortifyGlowstone");
-        GTNLItemList.Fortify_Glowstone.set(new ItemStack(Fortify_Glowstone));
-        GameRegistry.registerBlock(Fusion_Glass, "FusionGlass");
-        GTNLItemList.Fusion_Glass.set(new ItemStack(Fusion_Glass));
-        GameRegistry.registerBlock(Gaia_Glass, "GaiaGlass");
-        GTNLItemList.Gaia_Glass.set(new ItemStack(Gaia_Glass));
-        GameRegistry.registerBlock(Terra_Glass, "TerraGlass");
-        GTNLItemList.Terra_Glass.set(new ItemStack(Terra_Glass));
-        GameRegistry.registerBlock(Stargate_Coil, "StargateCoil");
-        GTNLItemList.Stargate_Coil.set(new ItemStack(Stargate_Coil));
         GameRegistry.registerBlock(StargateTier0, "StargateTier0");
         GTNLItemList.StargateTier0.set(new ItemStack(StargateTier0));
         GameRegistry.registerBlock(StargateTier1, "StargateTier1");
@@ -105,6 +93,17 @@ public class BlockRegister {
                 new String[] { StatCollector.translateToLocal("gt.coilheattooltip"), TextUtils.NewHorizonsCoil_00,
                     TextUtils.NewHorizonsCoil_01, TextUtils.NewHorizonsCoil_02, TextUtils.NewHorizonsCoil_03,
                     TextUtils.NewHorizonsCoil_04 + StatCollector.translateToLocal("gt.coilunittooltip") }));
+        GTNLItemList.StargateCoil.set(ItemBlockBase.initMetaBlock("StargateCoil", 2));
+
+        GTNLItemList.FortifyGlowstone.set(ItemBlockGlow.initMetaBlockGlow("Fortify_Glowstone", 0));
+
+        GTNLItemList.GaiaGlass.set(ItemBlockGlass.initMetaBlockGlass("GaiaGlass", 0));
+        GTNLItemList.TerraGlass.set(ItemBlockGlass.initMetaBlockGlass("TerraGlass", 1));
+        GTNLItemList.FusionGlass.set(ItemBlockGlass.initMetaBlockGlass("FusionGlass", 2));
+
+        GTNLItemList.BronzeBrickCasing.set(ItemBlockColumn.initMetaBlock("BronzeBrickCasing", 0));
+        GTNLItemList.SteelBrickCasing.set(ItemBlockColumn.initMetaBlock("SteelBrickCasing", 1));
+
         GTNLItemList.TestCasing
             .set(MetaBlockConstructors.initMetaBlockCasing("Test Casing", (byte) 0, BasicBlocks.MetaBlockCasing));
         GTNLItemList.SteamAssemblyCasing.set(
@@ -124,6 +123,7 @@ public class BlockRegister {
                 .initMetaBlockCasing("Antifreeze Heatproof Machine Casing", (byte) 7, BasicBlocks.MetaBlockCasing));
         GTNLItemList.TungstenSteelGearbox.set(
             MetaBlockConstructors.initMetaBlockCasing("Tungsten Steel Gearbox", (byte) 8, BasicBlocks.MetaBlockCasing));
+
     }
 
     public static void registry() {

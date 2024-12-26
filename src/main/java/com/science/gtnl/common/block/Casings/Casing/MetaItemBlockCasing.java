@@ -1,9 +1,8 @@
-package com.science.gtnl.common.block.Casings;
+package com.science.gtnl.common.block.Casings.Casing;
 
 import net.minecraft.block.Block;
 
 import com.science.gtnl.common.block.IMetaBlock;
-import com.science.gtnl.common.block.MetaItemBlockBase;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

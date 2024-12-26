@@ -18,9 +18,9 @@ public class ChemicalBathRecipes implements IRecipePool {
     @Override
     public void loadRecipes() {
         RecipeBuilder.builder()
-            .itemInputs(GTNLItemList.Terra_Glass.get(1))
+            .itemInputs(GTNLItemList.TerraGlass.get(1))
             .fluidInputs(FluidRegistry.getFluidStack("molten.gaiaspirit", 288))
-            .itemOutputs(GTNLItemList.Gaia_Glass.get(1))
+            .itemOutputs(GTNLItemList.GaiaGlass.get(1))
             .specialValue(0)
             .noOptimize()
             .duration(200)
@@ -30,7 +30,7 @@ public class ChemicalBathRecipes implements IRecipePool {
         RecipeBuilder.builder()
             .itemInputs(getModItem("Botania", "elfGlass", 1, 0, missing))
             .fluidInputs(FluidRegistry.getFluidStack("molten.terrasteel", 576))
-            .itemOutputs(GTNLItemList.Terra_Glass.get(1))
+            .itemOutputs(GTNLItemList.TerraGlass.get(1))
             .specialValue(0)
             .noOptimize()
             .duration(200)

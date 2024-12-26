@@ -1,4 +1,4 @@
-package com.science.gtnl.common.block.Casings;
+package com.science.gtnl.common.block.Casings.Casing;
 
 public class MetaBlockCasing extends MetaBlockCasingBase {
 

@@ -17,7 +17,7 @@ import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.TextLocalization;
 import com.science.gtnl.Utils.TextUtils;
-import com.science.gtnl.common.block.BasicBlocks;
+import com.science.gtnl.common.block.Casings.BasicBlocks;
 import com.science.gtnl.common.machine.multiMachineClasses.MultiMachineBase;
 
 import bartworks.API.BorosilicateGlass;

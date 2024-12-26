@@ -1,9 +1,8 @@
-package com.science.gtnl.common.block;
+package com.science.gtnl.common.block.Casings.Casing;
 
 import net.minecraft.item.ItemStack;
 
 import com.science.gtnl.Utils.MetaItemStackUtils;
-import com.science.gtnl.common.block.Casings.MetaBlockCasingBase;
 
 import gregtech.api.enums.Textures;
 import gregtech.api.render.TextureFactory;

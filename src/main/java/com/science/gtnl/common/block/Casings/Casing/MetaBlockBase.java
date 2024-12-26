@@ -1,4 +1,4 @@
-package com.science.gtnl.common.block;
+package com.science.gtnl.common.block.Casings.Casing;
 
 import static com.science.gtnl.ScienceNotLeisure.RESOURCE_ROOT_ID;
 
@@ -20,6 +20,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 import com.science.gtnl.client.CreativeTabsLoader;
+import com.science.gtnl.common.block.IMetaBlock;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

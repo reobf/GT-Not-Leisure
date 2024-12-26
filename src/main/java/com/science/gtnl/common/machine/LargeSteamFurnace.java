@@ -2,8 +2,7 @@ package com.science.gtnl.common.machine;
 
 import static bartworks.system.material.WerkstoffLoader.BWBlockCasingsAdvanced;
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
-import static com.science.gtnl.common.block.BlockRegister.Bronze_Brick_Casing;
-import static com.science.gtnl.common.block.BlockRegister.Steel_Brick_Casing;
+import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaBlockColumn;
 import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.GregTechAPI.sBlockFrames;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
@@ -126,7 +125,7 @@ public class LargeSteamFurnace extends MTESteamMultiBase<LargeSteamFurnace> impl
                     'F',
                     ofBlocksTiered(
                         LargeSteamFurnace::getTierBrickCasing,
-                        ImmutableList.of(Pair.of(Bronze_Brick_Casing, 0), Pair.of(Steel_Brick_Casing, 0)),
+                        ImmutableList.of(Pair.of(MetaBlockColumn, 0), Pair.of(MetaBlockColumn, 1)),
                         -1,
                         (t, m) -> t.tierBrickCasing = m,
                         t -> t.tierBrickCasing))
@@ -175,8 +174,8 @@ public class LargeSteamFurnace extends MTESteamMultiBase<LargeSteamFurnace> impl
     }
 
     public static int getTierBrickCasing(Block block, int meta) {
-        if (block == Bronze_Brick_Casing) return 1;
-        if (block == Steel_Brick_Casing) return 2;
+        if (block == MetaBlockColumn && 0 == meta) return 1;
+        if (block == MetaBlockColumn && 1 == meta) return 2;
         return 0;
     }
 

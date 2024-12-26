@@ -1,4 +1,4 @@
-package com.science.gtnl.common.block;
+package com.science.gtnl.common.block.Casings.Casing;
 
 import static com.science.gtnl.Utils.TextLocalization.mNoMobsToolTip;
 import static com.science.gtnl.Utils.TextLocalization.mNoTileEntityToolTip;

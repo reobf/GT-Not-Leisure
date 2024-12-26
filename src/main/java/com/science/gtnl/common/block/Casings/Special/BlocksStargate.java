@@ -1,4 +1,4 @@
-package com.science.gtnl.common.block;
+package com.science.gtnl.common.block.Casings.Special;
 
 import static com.science.gtnl.ScienceNotLeisure.RESOURCE_ROOT_ID;
 
@@ -16,32 +16,35 @@ import com.science.gtnl.client.CreativeTabsLoader;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockCasing2 extends Block {
+public class BlocksStargate extends Block {
 
     public String[] TextureName;
     public IIcon[] Texture;
 
-    public BlockCasing2(String UnlocalizedName, String TextureName) {
+    public BlocksStargate(int Tier) {
         super(Material.iron);
         this.setHardness(1.0F);
         this.setResistance(6000000.0F);
-        this.setBlockName(UnlocalizedName);
-        this.setBlockTextureName(RESOURCE_ROOT_ID + ":" + "MetaBlockCasing2/" + TextureName);
-        this.TextureName = new String[] { "Side", "Top", "Bottom" };
+        this.setBlockName("Stargate" + Tier);
+        this.setBlockTextureName(RESOURCE_ROOT_ID + ":" + "Stargate/" + "Stargate");
+        this.TextureName = new String[] { "Front", "Side", "Bottom", "Compressed_" + Tier };
         this.setCreativeTab(CreativeTabsLoader.GTNoteLeisure);
     }
 
     @SideOnly(Side.CLIENT)
     @Override
     public IIcon getIcon(int side, int meta) {
-        return side == 1 ? this.Texture[1] // 顶部纹理
-            : (side == 0 ? this.Texture[2] // 底部纹理
-                : this.Texture[0]); // 侧面纹理
+        return side == 1 ? this.Texture[3]
+            : (side == 0 ? this.Texture[2]
+                : (meta == 2 && side == 2 ? this.Texture[0]
+                    : (meta == 3 && side == 5 ? this.Texture[0]
+                        : (meta == 0 && side == 3 ? this.Texture[0]
+                            : (meta == 1 && side == 4 ? this.Texture[0] : this.Texture[1])))));
     }
 
     @Override
     public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase placer, ItemStack stack) {
-        int l = MathHelper.floor_double((placer.rotationYaw * 4.0F / 360.0F) + 2.5D) & 3;
+        int l = MathHelper.floor_double((double) (placer.rotationYaw * 4.0F / 360.0F) + 2.5D) & 3;
         world.setBlockMetadataWithNotify(x, y, z, l, 2);
     }
 
@@ -54,6 +57,7 @@ public class BlockCasing2 extends Block {
     @Override
     public void registerBlockIcons(IIconRegister reg) {
         this.Texture = new IIcon[TextureName.length];
+
         for (int i = 0; i < this.Texture.length; ++i) {
             this.Texture[i] = reg.registerIcon(this.getTextureName() + "_" + TextureName[i]);
         }

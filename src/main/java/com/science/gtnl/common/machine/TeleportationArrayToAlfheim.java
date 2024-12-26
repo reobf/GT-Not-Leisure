@@ -1,8 +1,7 @@
 package com.science.gtnl.common.machine;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
-import static com.science.gtnl.common.block.BlockRegister.Gaia_Glass;
-import static com.science.gtnl.common.block.BlockRegister.Terra_Glass;
+import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaBlockGlass;
 import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
@@ -219,8 +218,8 @@ public class TeleportationArrayToAlfheim extends MultiMachineBase<TeleportationA
                             .dot(1)
                             .build()))
                 .addElement('F', ofBlock(TTCasingsContainer.sBlockCasingsTT, 0))
-                .addElement('G', ofBlock(Gaia_Glass, 0))
-                .addElement('H', ofBlock(Terra_Glass, 0))
+                .addElement('G', ofBlock(MetaBlockGlass, 0))
+                .addElement('H', ofBlock(MetaBlockGlass, 1))
                 .build();
         }
         return STRUCTURE_DEFINITION;

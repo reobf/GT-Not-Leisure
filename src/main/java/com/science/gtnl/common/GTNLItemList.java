@@ -30,7 +30,7 @@ public enum GTNLItemList {
     MeteorMinerSchematic1,
     MeteorMinerSchematic2,
 
-    Stargate_Coil,
+    StargateCoil,
     StargateTier0,
     StargateTier1,
     StargateTier2,
@@ -57,13 +57,13 @@ public enum GTNLItemList {
 
     FluidManaInputHatch,
 
-    Bronze_Brick_Casing,
-    Steel_Brick_Casing,
-    Fortify_Glowstone,
-    Gaia_Glass,
-    Terra_Glass,
-    Laser_Beacon,
-    Fusion_Glass,
+    LaserBeacon,
+    BronzeBrickCasing,
+    SteelBrickCasing,
+    FortifyGlowstone,
+    GaiaGlass,
+    TerraGlass,
+    FusionGlass,
     Laser_Cooling_Casing,
     Antifreeze_Heatproof_Machine_Casing,
 

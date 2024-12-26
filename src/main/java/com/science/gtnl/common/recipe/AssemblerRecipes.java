@@ -434,7 +434,7 @@ public class AssemblerRecipes implements IRecipePool {
                 GTModHandler.getModItem("gregtech", "gt.metaitem.01", 2, 32684),
                 GTModHandler.getModItem("gregtech", "gt.metaitem.01", 16, 17316))
             .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 9216))
-            .itemOutputs(GTNLItemList.Laser_Beacon.get(1))
+            .itemOutputs(GTNLItemList.LaserBeacon.get(1))
             .specialValue(0)
             .noOptimize()
             .duration(400)

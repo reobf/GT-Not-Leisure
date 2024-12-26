@@ -9,14 +9,19 @@ MetaBlockCasing.5.name=中子齿轮箱机械方块
 MetaBlockCasing.6.name=激光冷却机械方块
 MetaBlockCasing.7.name=防冻隔热机械方块
 MetaBlockCasing.8.name=钨钢齿轮箱机械方块
+
 MetaBlock.0.name=测试方块
-MetaItem.0.name=愚人脸
-MetaItem.1.name=§b激发的混合硅岩燃料棒
-MetaItem.2.name=§e炽骨立方块
-MetaItem.5.name=激活的盖亚水晶
-MetaItem.6.name=精密蒸汽构件
-MetaItem.7.name=坠星采矿场I图纸
-MetaItem.8.name=坠星采矿场II图纸
+MetaBlock.1.name=新视野线圈
+MetaBlock.2.name=星门线圈
+
+MetaBlockGlow.0.name=强化萤石机械方块
+
+MetaBlockGlass.0.name=盖亚玻璃
+MetaBlockGlass.1.name=泰拉玻璃
+MetaBlockGlass.2.name=聚变玻璃
+
+MetaBlockColumn.0.name=砖砌青铜外壳
+MetaBlockColumn.1.name=砖砌钢外壳
 
 tile.Stargate0.name=压缩星门
 tile.Stargate1.name=压缩星门-一重
@@ -29,15 +34,6 @@ tile.Stargate7.name=压缩星门-七重
 tile.Stargate8.name=压缩星门-八重
 tile.Stargate9.name=压缩星门-九重
 
-MetaBlock.1.name=新视野线圈
-tile.Gaia_Glass.name=盖亚玻璃
-tile.Terra_Glass.name=泰拉玻璃
-tile.Fusion_Glass.name=聚变玻璃
-tile.Fortify_Glowstone.name=强化荧石
-tile.Bronze_Brick_Casing.name=砖砌青铜外壳
-tile.Steel_Brick_Casing.name=砖砌钢外壳
-tile.LaserBeacon.name=激光诱导信标
-tile.Stargate_Coil.name=星门线圈
 tile.Stargate_Coil_Compressed.0.name=压缩星门线圈
 tile.Stargate_Coil_Compressed.1.name=压缩星门线圈-一重
 tile.Stargate_Coil_Compressed.2.name=压缩星门线圈-二重
@@ -48,6 +44,132 @@ tile.Stargate_Coil_Compressed.6.name=压缩星门线圈-六重
 tile.Stargate_Coil_Compressed.7.name=压缩星门线圈-七重
 tile.Stargate_Coil_Compressed.8.name=压缩星门线圈-八重
 tile.Stargate_Coil_Compressed.9.name=压缩星门线圈-九重
+
+tile.LaserBeacon.name=激光诱导信标
+tile.RealArtificialStarRender.name=真·湮灭发电机渲染器
+
+FluidManaInputHatch=魔力输入仓
+
+MetaItem.0.name=愚人脸
+MetaItem.1.name=§b激发的混合硅岩燃料棒
+MetaItem.2.name=§e炽骨立方块
+MetaItem.5.name=激活的盖亚水晶
+MetaItem.6.name=精密蒸汽构件
+MetaItem.7.name=坠星采矿场I图纸
+MetaItem.8.name=坠星采矿场II图纸
+
+item.testitem.name=测试物品
+
+item.VerySimpleCircuit.name=极简控制电路
+item.SimpleCircuit.name=简单控制电路
+item.BasicCircuit.name=基础控制电路
+item.AdvancedCircuit.name=高级控制电路
+item.EliteCircuit.name=精英控制电路
+
+item.CircuitResonaticULV.name=原始磁共振电路
+item.CircuitResonaticLV.name=基础磁共振电路
+item.CircuitResonaticMV.name=进阶磁共振电路
+item.CircuitResonaticHV.name=先进磁共振电路
+item.CircuitResonaticEV.name=数据磁共振电路
+item.CircuitResonaticIV.name=精英磁共振电路
+item.CircuitResonaticLuV.name=大师磁共振电路
+item.CircuitResonaticZPM.name=顶级磁共振电路
+item.CircuitResonaticUV.name=超导磁共振电路
+item.CircuitResonaticUHV.name=终极磁共振电路
+item.CircuitResonaticUEV.name=生物磁共振电路
+item.CircuitResonaticUIV.name=光学磁共振电路
+
+item.BiowareSMDCapacitor.name=生物贴片电容
+item.BiowareSMDTransistor.name=生物贴片晶体管
+item.BiowareSMDInductor.name=生物贴片电感
+item.BiowareSMDResistor.name=生物贴片电阻
+item.BiowareSMDDiode.name=生物贴片二极管
+
+item.CosmicSMDCapacitor.name=寰宇贴片电容
+item.CosmicSMDTransistor.name=寰宇贴片晶体管
+item.CosmicSMDInductor.name=寰宇贴片电感
+item.CosmicSMDResistor.name=寰宇贴片电阻
+item.CosmicSMDDiode.name=寰宇贴片二极管
+
+item.ExoticSMDCapacitor.name=天顶星贴片电容
+item.ExoticSMDTransistor.name=天顶星贴片晶体管
+item.ExoticSMDInductor.name=天顶星贴片电感
+item.ExoticSMDResistor.name=天顶星贴片电阻
+item.ExoticSMDDiode.name=天顶星贴片二极管
+
+item.TemporallySMDCapacitor.name=超时空贴片电容
+item.TemporallySMDTransistor.name=超时空贴片晶体管
+item.TemporallySMDInductor.name=超时空贴片电感
+item.TemporallySMDResistor.name=超时空贴片电阻
+item.TemporallySMDDiode.name=超时空贴片二极管
+
+item.StargateCompressedSingularity.name=压缩星门奇点
+item.StargateSingularity.name=星门奇点
+
+bw.Hexanitrohexaazaisowurtzitane.notTrans=六硝基六氮杂异伍兹烷
+bw.CrudeHexanitrohexaazaisowurtzitane.notTrans=粗制六硝基六氮杂异伍兹烷
+bw.Ethylenediamine.notTrans=乙二胺
+bw.Ethanolamine.notTrans=乙醇胺
+bw.SilicaGel.notTrans=硅胶
+bw.SilicaGelBase.notTrans=硅胶基质
+bw.FluoroboricAcide.notTrans=氟硼酸
+bw.NitroniumTetrafluoroborate.notTrans=四氟硝铵
+bw.NitronsoniumTetrafluoroborate.notTrans=四氟硼酸亚硝铵
+bw.BoronFluoride.notTrans=氟化硼
+bw.SodiumTetrafluoroborate.notTrans=四氟硼酸钠
+bw.BoronTrioxide.notTrans=氧化硼
+bw.Dibenzyltetraacetylhexaazaisowurtzitane.notTrans=二卞基四乙酰六氮杂异纤锌烷
+bw.Benzaldehyde.notTrans=苯甲醇
+bw.HydrobromicAcid.notTrans=氢溴酸
+bw.SuccinimidylAcetate.notTrans=琥珀酰亚胺醋酯
+bw.Hexabenzylhexaazaisowurtzitane.notTrans=六苄基六氮杂异伍兹烷
+bw.NHydroxysuccinimide.notTrans=羟基丁二酰亚胺
+bw.Periodicium.notTrans=錭錤錶
+bw.SuccinicAnhydride.notTrans=丁二酸酐
+bw.HydroxylamineHydrochloride.notTrans=盐酸羟胺
+bw.BariumChloride.notTrans=氯化钡
+bw.HydroxylammoniumSulfate.notTrans=羟胺硫酸盐
+bw.HydroboromicAcid.notTrans=氢溴酸
+bw.PotassiumHydroxylaminedisulfonate.notTrans=羟胺二磺酸钾
+bw.PotassiumSulfate.notTrans=硫酸钾
+bw.PotassiumBisulfite.notTrans=亚硫酸氢钾
+bw.NitrousAcid.notTrans=亚硝酸
+bw.SodiumNitrite.notTrans=亚硝酸钠
+bw.CoAcAbCatalyst.notTrans=Co/AC-AB催化剂粉
+bw.SodiumNitrateSolution.notTrans=硝酸铵溶液
+bw.Benzylamine.notTrans=苄胺
+bw.Glyoxal.notTrans=乙二醛
+bw.Acetonitrile.notTrans=乙腈
+bw.AmmoniumChloride.notTrans=氯化铵
+bw.Hexamethylenetetramine.notTrans=环六亚甲基四胺
+bw.BenzylChloride.notTrans=氯化苄
+bw.SuccinicAcid.notTrans=琥珀酸
+bw.MaleicAnhydride.notTrans=顺丁烯二酸酐
+bw.Tetraacetyldinitrohexaazaisowurtzitane.notTrans=四乙酰二硝基六氮杂异戊二烯
+bw.SuperMutatedLivingSolder.notTrans=超突变活性焊料
+bw.Polyimide.noTrans=聚酰亚胺
+bw.PloyamicAcid.noTrans=聚酰胺酸（PAA）
+bw.Oxydianiline.noTrans=二氨基二苯醚
+bw.PyromelliticDianhydride.noTrans=均苯二甲酸酐
+bw.Durene.noTrans=杜烯
+bw.Germaniumtungstennitride.noTrans=锗-钨氮化物
+bw.Polyetheretherketone.noTrans=聚醚醚酮
+bw.FluidMana.noTrans=液态魔力
+bw.werkstoff.20201.name=星门
+
+tooltips.TrollFace=Never Gonna Give You Up~
+tooltips.DepletedExcitedNaquadahFuelRod=§o硅岩基燃料的最终形态。
+tooltips.BlazeCube=§o灵魂之火铸成，无尽炽热封存。
+tooltips.MeteorMinerSchematic1=启用坠星采矿场I所需的图纸
+tooltips.MeteorMinerSchematic2=启用坠星采矿场II所需的图纸
+
+RFRRRecipes.1=可望不可及，不是么？
+PTARRecipes.1=精灵不喜欢面包。
+
+HIGH_PRESSURE_TOOLTIP_NOTICE=高压模式下处理速度和蒸汽消耗翻倍
+StructureTooComplex=结构太复杂了！
+BLUE_PRINT_INFO=请参考§9Structure§1Lib§7全息投影，构建主体结构
+textUseBlueprint=用§9蓝§b图§r预览
 
 NameLargeSteamCircuitAssembler=大型蒸汽电路组装机
 LargeSteamCircuitAssemblerRecipeType=电路组装机
@@ -236,54 +358,6 @@ Tooltip_LargeCircuitAssembler_04=玻璃等级限制了能源仓等级，UV玻璃
 Tooltip_LargeCircuitAssembler_05=只能安装一个能源仓！
 Tooltip_LargeCircuitAssembler_Casing=任意多功能机械方块
 
-tooltips.TrollFace=Never Gonna Give You Up~
-tooltips.DepletedExcitedNaquadahFuelRod=§o硅岩基燃料的最终形态。
-tooltips.BlazeCube=§o灵魂之火铸成，无尽炽热封存。
-tooltips.MeteorMinerSchematic1=启用坠星采矿场I所需的图纸
-tooltips.MeteorMinerSchematic2=启用坠星采矿场II所需的图纸
-RFRRRecipes.1=可望不可及，不是么？
-PTARRecipes.1=精灵不喜欢面包。
-
-gtnl.sterile.maintenance=自动无菌维护仓
-gt.blockmachines.gtnl.sterilemaintenance.desc.0=用于自动维护无菌环境
-gt.blockmachines.gtnl.sterilemaintenance.desc.1=修复所有东西，除了它自己。
-gt.blockmachines.gtnl.sterilemaintenance.desc.2=更上一层楼！
-require_clean_room=该配方需要超净间。
-require_sterile_environment=该配方需要无菌环境。
-
-gtnl.Hatch.QuadrupleOutputHatchEV=四重输出仓 (EV)
-FluidManaInputHatch=魔力输入仓
-
-gtnl.ae2.MTEHatchOutputME=输出仓 (ME)
-
-gtnl.ae2.IntegratedOutputHatchME=输出总成 (ME)
-gt.blockmachines.gtnl.IntegratedOutputHatchME.desc.0=多方块的物品和流体输出
-
-gtnl.ae2.InfinityOutputBusME=无限输出总线 (ME)
-gtnl.ae2.InfinityOutputME=无限输出仓 (ME)
-
-gt.blockmachines.gtnl.InfinityOutputBusME.desc.0=多方块的物品输出
-gt.blockmachines.gtnl.InfinityOutputME.desc.0=多方块的流体输出
-gt.blockmachines.gtnl.InfinityOutputME.desc.1=直接存储到ME网络中
-gt.blockmachines.gtnl.InfinityOutputME.desc.2=当前缓存容量:
-gt.blockmachines.gtnl.InfinityOutputME.desc.3=2^1024
-gt.blockmachines.gtnl.InfinityOutputME.desc.4=使用剪线钳右键单击以更改连接行为
-
-HIGH_PRESSURE_TOOLTIP_NOTICE=高压模式下处理速度和蒸汽消耗翻倍
-StructureTooComplex=结构太复杂了！
-BLUE_PRINT_INFO=请参考§9Structure§1Lib§7全息投影，构建主体结构
-textUseBlueprint=用§9蓝§b图§r预览
-
-gtnl.AutoConfigurationMaintenanceHatch.UI.text.01=处理耗时
-gtnl.autoconfiguration.maintenance=可配置自动维护仓
-Waila.ConfigurationBaseSpeedControllerBase.1=处理耗时
-
-RealArtificialStar.getInfoData.00=连续运行奖励
-RealArtificialStar.getInfoData.01=发电倍率
-RealArtificialStar.getInfoData.02=空间场等级
-RealArtificialStar.getInfoData.03=时间场等级
-RealArtificialStar.getInfoData.04=稳定场等级
-RealArtificialStar.getInfoData.05=回收原料几率
 NameRealArtificialStar=真·湮灭发电机
 Tooltip_RealArtificialStar_Controller=真·湮灭发电机的控制器方块
 ArtificialStar.enableRender.0=关闭特效渲染
@@ -319,106 +393,12 @@ Tooltip_RealArtificialStarInfo_11=152x 终极遏制场发生器或时间膨胀�
 Tooltip_RealArtificialStarInfo_12=26x 维度注入机械方块
 Tooltip_RealArtificialStarInfo_13=输入总线：任意维度注入机械方块
 Tooltip_RealArtificialStarInfo_14=输出总线：任意维度注入机械方块
-tile.RealArtificialStarRender.name=真·湮灭发电机渲染器
-Waila.RealArtificialStar.1=当前发电 : 
+Waila.RealArtificialStar.1=当前发电 :
+RealArtificialStar.getInfoData.00=连续运行奖励
+RealArtificialStar.getInfoData.01=发电倍率
+RealArtificialStar.getInfoData.02=空间场等级
+RealArtificialStar.getInfoData.03=时间场等级
+RealArtificialStar.getInfoData.04=稳定场等级
+RealArtificialStar.getInfoData.05=回收原料几率
 NEI.RealAntimatterFuelRodGeneratingRecipe.01=有概率回收部分材料. 概率受模块等级影响.
 NEI.RealArtificialStarGeneratingRecipes.specialValue.pre=产生 : 
-
-item.testitem.name=测试物品
-
-item.VerySimpleCircuit.name=极简控制电路
-item.SimpleCircuit.name=简单控制电路
-item.BasicCircuit.name=基础控制电路
-item.AdvancedCircuit.name=高级控制电路
-item.EliteCircuit.name=精英控制电路
-
-item.CircuitResonaticULV.name=原始磁共振电路
-item.CircuitResonaticLV.name=基础磁共振电路
-item.CircuitResonaticMV.name=进阶磁共振电路
-item.CircuitResonaticHV.name=先进磁共振电路
-item.CircuitResonaticEV.name=数据磁共振电路
-item.CircuitResonaticIV.name=精英磁共振电路
-item.CircuitResonaticLuV.name=大师磁共振电路
-item.CircuitResonaticZPM.name=顶级磁共振电路
-item.CircuitResonaticUV.name=超导磁共振电路
-item.CircuitResonaticUHV.name=终极磁共振电路
-item.CircuitResonaticUEV.name=生物磁共振电路
-item.CircuitResonaticUIV.name=光学磁共振电路
-
-item.BiowareSMDCapacitor.name=生物贴片电容
-item.BiowareSMDTransistor.name=生物贴片晶体管
-item.BiowareSMDInductor.name=生物贴片电感
-item.BiowareSMDResistor.name=生物贴片电阻
-item.BiowareSMDDiode.name=生物贴片二极管
-
-item.CosmicSMDCapacitor.name=寰宇贴片电容
-item.CosmicSMDTransistor.name=寰宇贴片晶体管
-item.CosmicSMDInductor.name=寰宇贴片电感
-item.CosmicSMDResistor.name=寰宇贴片电阻
-item.CosmicSMDDiode.name=寰宇贴片二极管
-
-item.ExoticSMDCapacitor.name=天顶星贴片电容
-item.ExoticSMDTransistor.name=天顶星贴片晶体管
-item.ExoticSMDInductor.name=天顶星贴片电感
-item.ExoticSMDResistor.name=天顶星贴片电阻
-item.ExoticSMDDiode.name=天顶星贴片二极管
-
-item.TemporallySMDCapacitor.name=超时空贴片电容
-item.TemporallySMDTransistor.name=超时空贴片晶体管
-item.TemporallySMDInductor.name=超时空贴片电感
-item.TemporallySMDResistor.name=超时空贴片电阻
-item.TemporallySMDDiode.name=超时空贴片二极管
-
-item.StargateCompressedSingularity.name=压缩星门奇点
-item.StargateSingularity.name=星门奇点
-
-bw.Hexanitrohexaazaisowurtzitane.notTrans=六硝基六氮杂异伍兹烷
-bw.CrudeHexanitrohexaazaisowurtzitane.notTrans=粗制六硝基六氮杂异伍兹烷
-bw.Ethylenediamine.notTrans=乙二胺
-bw.Ethanolamine.notTrans=乙醇胺
-bw.SilicaGel.notTrans=硅胶
-bw.SilicaGelBase.notTrans=硅胶基质
-bw.FluoroboricAcide.notTrans=氟硼酸
-bw.NitroniumTetrafluoroborate.notTrans=四氟硝铵
-bw.NitronsoniumTetrafluoroborate.notTrans=四氟硼酸亚硝铵
-bw.BoronFluoride.notTrans=氟化硼
-bw.SodiumTetrafluoroborate.notTrans=四氟硼酸钠
-bw.BoronTrioxide.notTrans=氧化硼
-bw.Dibenzyltetraacetylhexaazaisowurtzitane.notTrans=二卞基四乙酰六氮杂异纤锌烷
-bw.Benzaldehyde.notTrans=苯甲醇
-bw.HydrobromicAcid.notTrans=氢溴酸
-bw.SuccinimidylAcetate.notTrans=琥珀酰亚胺醋酯
-bw.Hexabenzylhexaazaisowurtzitane.notTrans=六苄基六氮杂异伍兹烷
-bw.NHydroxysuccinimide.notTrans=羟基丁二酰亚胺
-bw.Periodicium.notTrans=錭錤錶
-bw.SuccinicAnhydride.notTrans=丁二酸酐
-bw.HydroxylamineHydrochloride.notTrans=盐酸羟胺
-bw.BariumChloride.notTrans=氯化钡
-bw.HydroxylammoniumSulfate.notTrans=羟胺硫酸盐
-bw.HydroboromicAcid.notTrans=氢溴酸
-bw.PotassiumHydroxylaminedisulfonate.notTrans=羟胺二磺酸钾
-bw.PotassiumSulfate.notTrans=硫酸钾
-bw.PotassiumBisulfite.notTrans=亚硫酸氢钾
-bw.NitrousAcid.notTrans=亚硝酸
-bw.SodiumNitrite.notTrans=亚硝酸钠
-bw.CoAcAbCatalyst.notTrans=Co/AC-AB催化剂粉
-bw.SodiumNitrateSolution.notTrans=硝酸铵溶液
-bw.Benzylamine.notTrans=苄胺
-bw.Glyoxal.notTrans=乙二醛
-bw.Acetonitrile.notTrans=乙腈
-bw.AmmoniumChloride.notTrans=氯化铵
-bw.Hexamethylenetetramine.notTrans=环六亚甲基四胺
-bw.BenzylChloride.notTrans=氯化苄
-bw.SuccinicAcid.notTrans=琥珀酸
-bw.MaleicAnhydride.notTrans=顺丁烯二酸酐
-bw.Tetraacetyldinitrohexaazaisowurtzitane.notTrans=四乙酰二硝基六氮杂异戊二烯
-bw.SuperMutatedLivingSolder.notTrans=超突变活性焊料
-bw.Polyimide.noTrans=聚酰亚胺
-bw.PloyamicAcid.noTrans=聚酰胺酸（PAA）
-bw.Oxydianiline.noTrans=二氨基二苯醚
-bw.PyromelliticDianhydride.noTrans=均苯二甲酸酐
-bw.Durene.noTrans=杜烯
-bw.Germaniumtungstennitride.noTrans=锗-钨氮化物
-bw.Polyetheretherketone.noTrans=聚醚醚酮
-bw.FluidMana.noTrans=液态魔力
-bw.werkstoff.20201.name=星门

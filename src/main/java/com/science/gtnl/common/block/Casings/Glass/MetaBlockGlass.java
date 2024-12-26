@@ -1,7 +1,7 @@
-package com.science.gtnl.common.block;
+package com.science.gtnl.common.block.Casings.Glass;
 
 import static com.science.gtnl.Utils.TextHandler.texter;
-import static com.science.gtnl.common.block.ItemBlockBase.MetaBlockSet;
+import static com.science.gtnl.common.block.Casings.Glass.ItemBlockGlass.MetaBlockSet;
 
 import java.util.List;
 
@@ -13,30 +13,35 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.Facing;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 
 import com.science.gtnl.client.CreativeTabsLoader;
+import com.science.gtnl.common.block.BlockStaticDataClientOnly;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockBase extends Block {
+public class MetaBlockGlass extends Block {
 
     // region Constructors
-    protected BlockBase(Material materialIn) {
+    protected MetaBlockGlass(Material materialIn) {
         super(materialIn);
     }
 
-    public BlockBase() {
-        this(Material.iron);
+    public MetaBlockGlass() {
+        this(Material.glass);
+        this.setHardness(1.0F);
+        this.setLightOpacity(0);
+        this.setResistance(5.0F);
         this.setCreativeTab(CreativeTabsLoader.GTNoteLeisure);
     }
 
-    public BlockBase(String unlocalizedName, String localName) {
+    public MetaBlockGlass(String unlocalizedName, String localName) {
         this();
         this.unlocalizedName = unlocalizedName;
-        texter(localName, "blockBase01." + unlocalizedName + ".name");
+        texter(localName, "MetaBlockGlass." + unlocalizedName + ".name");
     }
 
     // endregion
@@ -68,18 +73,18 @@ public class BlockBase extends Block {
     @Override
     @SideOnly(Side.CLIENT)
     public IIcon getIcon(int side, int meta) {
-        return meta < BlockStaticDataClientOnly.iconsBlockMap01.size()
-            ? BlockStaticDataClientOnly.iconsBlockMap01.get(meta)
-            : BlockStaticDataClientOnly.iconsBlockMap01.get(0);
+        return meta < BlockStaticDataClientOnly.iconsBlockMapGlass.size()
+            ? BlockStaticDataClientOnly.iconsBlockMapGlass.get(meta)
+            : BlockStaticDataClientOnly.iconsBlockMapGlass.get(0);
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister reg) {
-        this.blockIcon = reg.registerIcon("sciencenotleisure:MetaBlocks/0");
+        this.blockIcon = reg.registerIcon("sciencenotleisure:MetaBlockGlass/0");
         for (int Meta : MetaBlockSet) {
-            BlockStaticDataClientOnly.iconsBlockMap01
-                .put(Meta, reg.registerIcon("sciencenotleisure:MetaBlocks/" + Meta));
+            BlockStaticDataClientOnly.iconsBlockMapGlass
+                .put(Meta, reg.registerIcon("sciencenotleisure:MetaBlockGlass/" + Meta));
         }
     }
 
@@ -89,6 +94,46 @@ public class BlockBase extends Block {
         for (int Meta : MetaBlockSet) {
             list.add(new ItemStack(aItem, 1, Meta));
         }
+    }
+
+    @Override
+    public boolean isNormalCube(IBlockAccess aWorld, int aX, int aY, int aZ) {
+        return false;
+    }
+
+    @Override
+    public boolean isOpaqueCube() {
+        return false;
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public int getRenderBlockPass() {
+        return 1;
+    }
+
+    @Override
+    public boolean renderAsNormalBlock() {
+        return false;
+    }
+
+    @SideOnly(Side.CLIENT)
+    @Override
+    public boolean shouldSideBeRendered(IBlockAccess worldIn, int x, int y, int z, int side) {
+        Block block = worldIn.getBlock(x, y, z);
+
+        if (worldIn.getBlockMetadata(x, y, z) != worldIn.getBlockMetadata(
+            x - Facing.offsetsXForSide[side],
+            y - Facing.offsetsYForSide[side],
+            z - Facing.offsetsZForSide[side])) {
+            return true;
+        }
+
+        if (block == this) {
+            return false;
+        }
+
+        return super.shouldSideBeRendered(worldIn, x, y, z, side);
     }
 
     @Override

@@ -1,7 +1,7 @@
 package com.science.gtnl.common.machine;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
-import static com.science.gtnl.common.block.BlockRegister.Fortify_Glowstone;
+import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaBlockGlow;
 import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.enums.Mods.ExtraUtilities;
@@ -180,7 +180,7 @@ public class LapotronChip extends MultiMachineBase<LapotronChip> implements ISur
                         .casingIndex(((BlockCasings8) GregTechAPI.sBlockCasings8).getTextureIndex(10))
                         .dot(1)
                         .buildAndChain(onElementPass(x -> ++x.casing, ofBlock(sBlockCasings8, 10))))
-                .addElement('F', ofBlock(Fortify_Glowstone, 0))
+                .addElement('F', ofBlock(MetaBlockGlow, 0))
                 .addElement(
                     'G',
                     withChannel(

@@ -1,4 +1,4 @@
-package com.science.gtnl.common.block.Casings;
+package com.science.gtnl.common.block.Casings.Casing;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
@@ -8,7 +8,6 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 import com.science.gtnl.common.block.ICasing;
-import com.science.gtnl.common.block.MetaBlockBase;
 
 import gregtech.api.GregTechAPI;
 import gregtech.api.util.GTUtility;

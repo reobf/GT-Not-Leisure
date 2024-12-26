@@ -1,8 +1,8 @@
-package com.science.gtnl.common.block;
+package com.science.gtnl.common.block.Casings.Column;
 
 import static com.science.gtnl.Utils.MetaItemStackUtils.initMetaItemStack;
 import static com.science.gtnl.Utils.MetaItemStackUtils.metaItemStackTooltipsAdd;
-import static com.science.gtnl.common.block.BasicBlocks.MetaBlock;
+import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaBlockColumn;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -22,7 +22,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import gregtech.api.util.GTLanguageManager;
 
-public class ItemBlockBase extends ItemBlock {
+public class ItemBlockColumn extends ItemBlock {
 
     // region statics
 
@@ -34,7 +34,7 @@ public class ItemBlockBase extends ItemBlock {
     // -----------------------
     // region Constructors
 
-    public ItemBlockBase(Block aBlock) {
+    public ItemBlockColumn(Block aBlock) {
         super(aBlock);
         setHasSubtypes(true);
         setMaxDamage(0);
@@ -46,7 +46,7 @@ public class ItemBlockBase extends ItemBlock {
     // region MetaBlock Generators
 
     public static ItemStack initMetaBlock(String i18nName, int Meta) {
-        return initMetaItemStack(i18nName, Meta, MetaBlock, MetaBlockSet);
+        return initMetaItemStack(i18nName, Meta, MetaBlockColumn, MetaBlockSet);
     }
 
     public static ItemStack initMetaBlock(String i18nName, int Meta, String[] tooltips) {

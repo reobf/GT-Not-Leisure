@@ -3,7 +3,7 @@ package com.science.gtnl.common.machine;
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.ofBlock;
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.onElementPass;
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.transpose;
-import static com.science.gtnl.common.block.BasicBlocks.BlockLaserBeacon;
+import static com.science.gtnl.common.block.Casings.BasicBlocks.BlockLaserBeacon;
 import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
