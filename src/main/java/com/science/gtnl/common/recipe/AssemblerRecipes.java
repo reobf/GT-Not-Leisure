@@ -369,7 +369,7 @@ public class AssemblerRecipes implements IRecipePool {
                 GTModHandler.getModItem("miscutils", "blockCompressedObsidian", 1, 6),
                 GTModHandler.getModItem("gregtech", "gt.blockframes", 4, 306),
                 GTModHandler.getModItem("ExtraUtilities", "decorativeBlock2", 1, 7))
-            .itemOutputs(GTModHandler.getModItem("ScienceNotLeisure", "FortifyGlowstone", 1))
+            .itemOutputs(GTNLItemList.FortifyGlowstone.get(1))
             .specialValue(0)
             .noOptimize()
             .duration(200)
