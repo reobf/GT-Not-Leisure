@@ -6,11 +6,14 @@ import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
 import static gregtech.api.util.GTStructureUtility.ofFrame;
 
+import javax.annotation.Nonnull;
+
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.common.util.ForgeDirection;
 
-import com.gtnewhorizon.structurelib.alignment.constructable.ISurvivalConstructable;
+import org.jetbrains.annotations.NotNull;
+
 import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
@@ -18,7 +21,8 @@ import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.TextLocalization;
 import com.science.gtnl.Utils.TextUtils;
 import com.science.gtnl.common.block.Casings.BasicBlocks;
-import com.science.gtnl.common.machine.multiMachineClasses.MultiMachineBase;
+import com.science.gtnl.common.machine.multiMachineClasses.GTNL_ProcessingLogic;
+import com.science.gtnl.common.machine.multiMachineClasses.WirelessEnergyMultiMachineBase;
 
 import bartworks.API.BorosilicateGlass;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -28,19 +32,23 @@ import gregtech.api.enums.Textures;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
+import gregtech.api.interfaces.tileentity.IWirelessEnergyHatchInformation;
 import gregtech.api.logic.ProcessingLogic;
 import gregtech.api.metatileentity.implementations.MTEHatch;
 import gregtech.api.objects.GTRenderedTexture;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMaps;
+import gregtech.api.recipe.check.CheckRecipeResult;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
+import gregtech.api.util.OverclockCalculator;
 import gregtech.common.blocks.BlockCasings1;
 import gregtech.common.blocks.BlockCasings9;
 import tectech.thing.casing.TTCasingsContainer;
 
-public class NeutroniumWireCutting extends MultiMachineBase<NeutroniumWireCutting> implements ISurvivalConstructable {
+public class NeutroniumWireCutting extends WirelessEnergyMultiMachineBase<NeutroniumWireCutting>
+    implements IWirelessEnergyHatchInformation {
 
     protected GTRecipe lastRecipeToBuffer;
 
@@ -205,12 +213,14 @@ public class NeutroniumWireCutting extends MultiMachineBase<NeutroniumWireCuttin
     public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
         repairMachine();
         tCountCasing = 0;
+        wirelessMode = false;
         if (!checkPiece(STRUCTURE_PIECE_MAIN, HORIZONTAL_OFF_SET, VERTICAL_OFF_SET, DEPTH_OFF_SET)) return false;
-        if (tCountCasing >= 100 && checkHatches()) {
+        if (tCountCasing <= 100 && !checkHatches()) {
             updateHatchTexture();
-            return true;
+            return false;
         }
-        return false;
+        wirelessMode = mEnergyHatches.isEmpty() && mExoticEnergyHatches.isEmpty();
+        return true;
     }
 
     @Override
@@ -220,8 +230,32 @@ public class NeutroniumWireCutting extends MultiMachineBase<NeutroniumWireCuttin
 
     @Override
     protected ProcessingLogic createProcessingLogic() {
-        return new ProcessingLogic().setSpeedBonus(1F / 5F)
-            .setMaxParallelSupplier(this::getMaxParallelRecipes);
+        return new GTNL_ProcessingLogic() {
+
+            @Nonnull
+            @Override
+            protected OverclockCalculator createOverclockCalculator(@Nonnull GTRecipe recipe) {
+                if (wirelessMode) {
+                    return OverclockCalculator.ofNoOverclock(recipe);
+                } else {
+                    return super.createOverclockCalculator(recipe);
+                }
+            }
+
+            @NotNull
+            @Override
+            public CheckRecipeResult process() {
+                setEuModifier(0.6);
+                setSpeedBonus(0.4);
+                return super.process();
+            }
+
+        }.setMaxParallelSupplier(this::getLimitedMaxParallel);
+    }
+
+    @Override
+    public int getWirelessModeProcessingTime() {
+        return 128;
     }
 
     @Override

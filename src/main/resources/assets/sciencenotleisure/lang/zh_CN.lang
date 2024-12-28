@@ -1,5 +1,10 @@
 itemGroup.GTNoteLeisure=GT不再业余
 
+Waila.General.WirelessMode=无线模式
+Waila.General.CurrentEuCost=当前EU消耗
+OverclockType.Description.01=每次超频时, 耗时除以
+OverclockType.Description.02=耗电乘以
+
 MetaBlockCasing.0.name=测试机械方块
 MetaBlockCasing.1.name=蒸汽装配机械方块
 MetaBlockCasing.2.name=散热片

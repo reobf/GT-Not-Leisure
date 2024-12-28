@@ -18,6 +18,9 @@ public class TextLocalization {
             + " hologram projector to build the main structure.",
         "BLUE_PRINT_INFO");
 
+    public static final String Waila_WirelessMode = texter("Wireless Mode", "Waila.General.WirelessMode");
+    public static final String Waila_CurrentEuCost = texter("Current EU Cost", "Waila.General.CurrentEuCost");
+
     public static final String mNoMobsToolTip = GTLanguageManager
         .addStringLocalization("gt.nomobspawnsonthisblock", "Mobs cannot Spawn on this Block");
     public static final String mNoTileEntityToolTip = GTLanguageManager
