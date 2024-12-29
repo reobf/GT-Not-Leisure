@@ -1,4 +1,4 @@
-package com.science.gtnl.common.machine;
+package com.science.gtnl.common.machine.multiblock;
 
 import static bartworks.system.material.WerkstoffLoader.BWBlockCasings;
 import static bartworks.system.material.WerkstoffLoader.BWBlockCasingsAdvanced;

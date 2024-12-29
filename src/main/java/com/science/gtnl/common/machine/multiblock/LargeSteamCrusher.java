@@ -1,10 +1,12 @@
-package com.science.gtnl.common.machine;
+package com.science.gtnl.common.machine.multiblock;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
+import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaBlockColumn;
 import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.enums.HatchElement.InputBus;
 import static gregtech.api.enums.HatchElement.OutputBus;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
+import static gtPlusPlus.core.block.ModBlocks.blockCustomMachineCasings;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -57,44 +59,46 @@ import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.base.MTESteam
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
 
-public class LargeSteamAlloySmelter extends MTESteamMultiBase<LargeSteamAlloySmelter>
-    implements ISurvivalConstructable {
+public class LargeSteamCrusher extends MTESteamMultiBase<LargeSteamCrusher> implements ISurvivalConstructable {
 
     @Override
     public IMetaTileEntity newMetaEntity(IGregTechTileEntity aTileEntity) {
-        return new LargeSteamAlloySmelter(this.mName);
+        return new LargeSteamCrusher(this.mName);
     }
 
     @Override
     public String getMachineType() {
-        return TextLocalization.LargeSteamAlloySmelterRecipeType;
+        return TextLocalization.LargeSteamCrusherRecipeType;
     }
 
     public static final String STRUCTURE_PIECE_MAIN = "main";
 
-    public IStructureDefinition<LargeSteamAlloySmelter> STRUCTURE_DEFINITION = null;
+    public IStructureDefinition<LargeSteamCrusher> STRUCTURE_DEFINITION = null;
 
-    public static final String LSAS_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/large_steam_alloy_smelter"; // 文件路径
+    public static final String LSC_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/large_steam_crusher"; // 文件路径
 
     public String[][] shape;
 
-    public LargeSteamAlloySmelter(String aName) {
+    public LargeSteamCrusher(String aName) {
         super(aName);
-        this.shape = StructureUtils.readStructureFromFile(LSAS_STRUCTURE_FILE_PATH);
+        this.shape = StructureUtils.readStructureFromFile(LSC_STRUCTURE_FILE_PATH);
     }
 
-    public LargeSteamAlloySmelter(int aID, String aName, String aNameRegional) {
+    public LargeSteamCrusher(int aID, String aName, String aNameRegional) {
         super(aID, aName, aNameRegional);
-        this.shape = StructureUtils.readStructureFromFile(LSAS_STRUCTURE_FILE_PATH);
+        this.shape = StructureUtils.readStructureFromFile(LSC_STRUCTURE_FILE_PATH);
     }
 
-    public static final int HORIZONTAL_OFF_SET = 1;
-    public static final int VERTICAL_OFF_SET = 1;
+    public static final int HORIZONTAL_OFF_SET = 3;
+    public static final int VERTICAL_OFF_SET = 6;
     public static final int DEPTH_OFF_SET = 0;
 
     public boolean isBroken = true;
 
-    public int tierFireboxCasing = -1;
+    public int tierGearCasing = -1;
+    public int tierBrickCasing = -1;
+    public int tierPlatedCasing = -1;
+    public int tierFrameCasing = -1;
     public int tierMachineCasing = -1;
     public int tierMachine = 1;
 
@@ -112,9 +116,27 @@ public class LargeSteamAlloySmelter extends MTESteamMultiBase<LargeSteamAlloySme
         return 0;
     }
 
-    public static int gettierFireboxCasing(Block block, int meta) {
-        if (block == sBlockCasings3 && 13 == meta) return 1;
-        if (block == sBlockCasings3 && 14 == meta) return 2;
+    public static int getTierBrickCasing(Block block, int meta) {
+        if (block == MetaBlockColumn && 0 == meta) return 1;
+        if (block == MetaBlockColumn && 1 == meta) return 2;
+        return 0;
+    }
+
+    public static int getTierPlatedCasing(Block block, int meta) {
+        if (block == blockCustomMachineCasings && 0 == meta) return 1;
+        if (block == sBlockCasings2 && 0 == meta) return 2;
+        return 0;
+    }
+
+    public static int getTierGearCasing(Block block, int meta) {
+        if (block == sBlockCasings2 && 2 == meta) return 1;
+        if (block == sBlockCasings2 && 3 == meta) return 2;
+        return 0;
+    }
+
+    public static int getTierFrameCasing(Block block, int meta) {
+        if (block == sBlockFrames && 300 == meta) return 1;
+        if (block == sBlockFrames && 305 == meta) return 2;
         return 0;
     }
 
@@ -127,8 +149,10 @@ public class LargeSteamAlloySmelter extends MTESteamMultiBase<LargeSteamAlloySme
     }
 
     public int getCasingTextureID() {
-        if (tierMachineCasing == 2 || tierFireboxCasing == 2)
-            return ((BlockCasings2) GregTechAPI.sBlockCasings2).getTextureIndex(0);
+        if (tierGearCasing == 2 || tierMachineCasing == 2
+            || tierFrameCasing == 2
+            || tierPlatedCasing == 2
+            || tierBrickCasing == 2) return ((BlockCasings2) GregTechAPI.sBlockCasings2).getTextureIndex(0);
         return ((BlockCasings1) GregTechAPI.sBlockCasings1).getTextureIndex(10);
     }
 
@@ -144,12 +168,12 @@ public class LargeSteamAlloySmelter extends MTESteamMultiBase<LargeSteamAlloySme
 
     @Override
     protected GTRenderedTexture getFrontOverlay() {
-        return new GTRenderedTexture(Textures.BlockIcons.OVERLAY_FRONT_STEAM_ALLOY_SMELTER);
+        return new GTRenderedTexture(Textures.BlockIcons.OVERLAY_TOP_STEAM_MACERATOR);
     }
 
     @Override
     protected GTRenderedTexture getFrontOverlayActive() {
-        return new GTRenderedTexture(Textures.BlockIcons.OVERLAY_FRONT_STEAM_ALLOY_SMELTER_ACTIVE);
+        return new GTRenderedTexture(Textures.BlockIcons.OVERLAY_TOP_STEAM_MACERATOR_ACTIVE);
     }
 
     @Override
@@ -163,18 +187,18 @@ public class LargeSteamAlloySmelter extends MTESteamMultiBase<LargeSteamAlloySme
     }
 
     @Override
-    public IStructureDefinition<LargeSteamAlloySmelter> getStructureDefinition() {
+    public IStructureDefinition<LargeSteamCrusher> getStructureDefinition() {
         if (STRUCTURE_DEFINITION == null) {
-            STRUCTURE_DEFINITION = StructureDefinition.<LargeSteamAlloySmelter>builder()
+            STRUCTURE_DEFINITION = StructureDefinition.<LargeSteamCrusher>builder()
                 .addShape(STRUCTURE_PIECE_MAIN, transpose(shape))
                 .addElement(
                     'A',
                     ofChain(
-                        buildSteamInput(LargeSteamAlloySmelter.class)
+                        buildSteamInput(LargeSteamCrusher.class)
                             .casingIndex(((BlockCasings1) GregTechAPI.sBlockCasings1).getTextureIndex(10))
                             .dot(1)
                             .build(),
-                        buildHatchAdder(LargeSteamAlloySmelter.class)
+                        buildHatchAdder(LargeSteamCrusher.class)
                             .atLeast(
                                 SteamHatchElement.InputBus_Steam,
                                 SteamHatchElement.OutputBus_Steam,
@@ -192,11 +216,35 @@ public class LargeSteamAlloySmelter extends MTESteamMultiBase<LargeSteamAlloySme
                 .addElement(
                     'B',
                     ofBlocksTiered(
-                        LargeSteamAlloySmelter::gettierFireboxCasing,
-                        ImmutableList.of(Pair.of(sBlockCasings3, 13), Pair.of(sBlockCasings3, 14)),
+                        LargeSteamCrusher::getTierGearCasing,
+                        ImmutableList.of(Pair.of(sBlockCasings2, 2), Pair.of(sBlockCasings2, 3)),
                         -1,
-                        (t, m) -> t.tierFireboxCasing = m,
-                        t -> t.tierFireboxCasing))
+                        (t, m) -> t.tierGearCasing = m,
+                        t -> t.tierGearCasing))
+                .addElement(
+                    'C',
+                    ofBlocksTiered(
+                        LargeSteamCrusher::getTierFrameCasing,
+                        ImmutableList.of(Pair.of(sBlockFrames, 300), Pair.of(sBlockFrames, 305)),
+                        -1,
+                        (t, m) -> t.tierFrameCasing = m,
+                        t -> t.tierFrameCasing))
+                .addElement(
+                    'D',
+                    ofBlocksTiered(
+                        LargeSteamCrusher::getTierPlatedCasing,
+                        ImmutableList.of(Pair.of(blockCustomMachineCasings, 0), Pair.of(sBlockCasings2, 0)),
+                        -1,
+                        (t, m) -> t.tierPlatedCasing = m,
+                        t -> t.tierPlatedCasing))
+                .addElement(
+                    'E',
+                    ofBlocksTiered(
+                        LargeSteamCrusher::getTierBrickCasing,
+                        ImmutableList.of(Pair.of(MetaBlockColumn, 0), Pair.of(MetaBlockColumn, 1)),
+                        -1,
+                        (t, m) -> t.tierBrickCasing = m,
+                        t -> t.tierBrickCasing))
                 .build();
 
         }
@@ -230,17 +278,33 @@ public class LargeSteamAlloySmelter extends MTESteamMultiBase<LargeSteamAlloySme
     }
 
     public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
+        tierGearCasing = -1;
         tierMachineCasing = -1;
-        tierFireboxCasing = -1;
+        tierFrameCasing = -1;
+        tierPlatedCasing = -1;
+        tierBrickCasing = -1;
         tCountCasing = 0;
         if (!checkPiece(STRUCTURE_PIECE_MAIN, HORIZONTAL_OFF_SET, VERTICAL_OFF_SET, DEPTH_OFF_SET)) return false;
-        if (tierMachineCasing < 0 && tierFireboxCasing < 0) return false;
-        if (tierMachineCasing == 1 && tierFireboxCasing == 1 && tCountCasing >= 9 && checkHatches()) {
+        if (tierGearCasing < 0 && tierMachineCasing < 0
+            && tierFrameCasing < 0
+            && tierPlatedCasing < 0
+            && tierBrickCasing < 0) return false;
+        if (tierGearCasing == 1 && tierMachineCasing == 1
+            && tierFrameCasing == 1
+            && tierPlatedCasing == 1
+            && tierBrickCasing == 1
+            && tCountCasing >= 160
+            && checkHatches()) {
             updateHatchTexture();
             tierMachine = 1;
             return true;
         }
-        if (tierMachineCasing == 2 && tierFireboxCasing == 2 && tCountCasing >= 9 && checkHatches()) {
+        if (tierGearCasing == 2 && tierMachineCasing == 2
+            && tierFrameCasing == 2
+            && tierPlatedCasing == 2
+            && tierBrickCasing == 2
+            && tCountCasing >= 160
+            && checkHatches()) {
             updateHatchTexture();
             tierMachine = 2;
             return true;
@@ -255,22 +319,22 @@ public class LargeSteamAlloySmelter extends MTESteamMultiBase<LargeSteamAlloySme
     @Override
     public int getMaxParallelRecipes() {
         if (tierMachine == 1) {
-            return 16;
-        } else if (tierMachine == 2) {
             return 32;
+        } else if (tierMachine == 2) {
+            return 64;
         }
-        return 16;
+        return 32;
     }
 
     @Override
     public RecipeMap<?> getRecipeMap() {
-        return RecipeMaps.alloySmelterRecipes;
+        return RecipeMaps.maceratorRecipes;
     }
 
     @NotNull
     @Override
     public Collection<RecipeMap<?>> getAvailableRecipeMaps() {
-        return Arrays.asList(RecipeMaps.alloySmelterRecipes);
+        return Arrays.asList(RecipeMaps.maceratorRecipes);
     }
 
     @Override
@@ -290,8 +354,8 @@ public class LargeSteamAlloySmelter extends MTESteamMultiBase<LargeSteamAlloySme
             @Nonnull
             protected OverclockCalculator createOverclockCalculator(@NotNull GTRecipe recipe) {
                 return OverclockCalculator.ofNoOverclock(recipe)
-                    .setEUtDiscount(0.8 * tierMachine)
-                    .setSpeedBoost(0.7 / tierMachine);
+                    .setEUtDiscount(1.25 * tierMachine)
+                    .setSpeedBoost(0.5 / tierMachine);
             }
         }.setMaxParallelSupplier(this::getMaxParallelRecipes);
     }
@@ -304,17 +368,17 @@ public class LargeSteamAlloySmelter extends MTESteamMultiBase<LargeSteamAlloySme
     @Override
     protected MultiblockTooltipBuilder createTooltip() {
         final MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
-        tt.addMachineType(TextLocalization.LargeSteamAlloySmelterRecipeType)
-            .addInfo(TextLocalization.Tooltip_LargeSteamAlloySmelter_00)
-            .addInfo(TextLocalization.Tooltip_LargeSteamAlloySmelter_01)
-            .addInfo(TextLocalization.Tooltip_LargeSteamAlloySmelter_02)
+        tt.addMachineType(TextLocalization.LargeSteamCrusherRecipeType)
+            .addInfo(TextLocalization.Tooltip_LargeSteamCrusher_00)
+            .addInfo(TextLocalization.Tooltip_LargeSteamCrusher_01)
+            .addInfo(TextLocalization.Tooltip_LargeSteamCrusher_02)
             .addInfo(TextLocalization.HIGH_PRESSURE_TOOLTIP_NOTICE)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
-            .beginStructureBlock(3, 3, 3, false)
-            .addInputBus(TextLocalization.Tooltip_LargeSteamAlloySmelter_Casing, 1)
-            .addOutputBus(TextLocalization.Tooltip_LargeSteamAlloySmelter_Casing, 1)
+            .beginStructureBlock(7, 8, 11, false)
+            .addInputBus(TextLocalization.Tooltip_LargeSteamCrusher_Casing, 1)
+            .addOutputBus(TextLocalization.Tooltip_LargeSteamCrusher_Casing, 1)
             .toolTipFinisher(TextUtils.SQY);
         return tt;
     }

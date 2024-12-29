@@ -10,7 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 
-import com.science.gtnl.common.machine.EdenGarden;
+import com.science.gtnl.common.machine.multiblock.EdenGarden;
 
 import gregtech.api.util.MultiblockTooltipBuilder;
 

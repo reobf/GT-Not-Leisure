@@ -22,7 +22,7 @@ import net.minecraftforge.common.IPlantable;
 import com.science.gtnl.Utils.eig.EIGBucket;
 import com.science.gtnl.Utils.eig.EIGDropTable;
 import com.science.gtnl.Utils.eig.IEIGBucketFactory;
-import com.science.gtnl.common.machine.EdenGarden;
+import com.science.gtnl.common.machine.multiblock.EdenGarden;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.util.GTUtility;

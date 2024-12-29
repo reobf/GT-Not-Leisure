@@ -93,6 +93,7 @@ public enum GTNLItemList {
     Desulfurizer,
     LargeCircuitAssembler,
     PetrochemicalPlant,
+    SmeltingMixingFurnace,
     GenerationEarthEngine;
 
     public boolean mHasNotBeenSet;

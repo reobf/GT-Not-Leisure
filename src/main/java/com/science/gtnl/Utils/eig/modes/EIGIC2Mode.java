@@ -1,12 +1,12 @@
 package com.science.gtnl.Utils.eig.modes;
 
 import static com.science.gtnl.Utils.StringUtils.voltageTooltipFormatted;
-import static com.science.gtnl.common.machine.EdenGarden.EIG_BALANCE_IC2_ACCELERATOR_TIER;
+import static com.science.gtnl.common.machine.multiblock.EdenGarden.EIG_BALANCE_IC2_ACCELERATOR_TIER;
 
 import net.minecraft.util.EnumChatFormatting;
 
 import com.science.gtnl.Utils.eig.EIGMode;
-import com.science.gtnl.common.machine.EdenGarden;
+import com.science.gtnl.common.machine.multiblock.EdenGarden;
 
 import gregtech.api.util.MultiblockTooltipBuilder;
 

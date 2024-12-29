@@ -363,6 +363,11 @@ Tooltip_LargeCircuitAssembler_04=玻璃等级限制了能源仓等级，UV玻璃
 Tooltip_LargeCircuitAssembler_05=只能安装一个能源仓！
 Tooltip_LargeCircuitAssembler_Casing=任意多功能机械方块
 
+NameSmeltingMixingFurnace=合金搅拌炉
+SmeltingMixingFurnaceRecipeType=合金搅拌
+gtnl.recipe.SmeltingMixingFurnaceRecipes=合金搅拌
+Tooltip_SmeltingMixingFurnace_Casing=任意超能机械方块
+
 NameRealArtificialStar=真·湮灭发电机
 Tooltip_RealArtificialStar_Controller=真·湮灭发电机的控制器方块
 ArtificialStar.enableRender.0=关闭特效渲染

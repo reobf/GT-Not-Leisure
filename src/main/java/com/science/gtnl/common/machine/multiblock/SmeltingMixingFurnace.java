@@ -1,10 +1,16 @@
-package com.science.gtnl.common.machine;
+package com.science.gtnl.common.machine.multiblock;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
+import static com.gtnewhorizon.structurelib.structure.StructureUtility.ofBlock;
+import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaBlockCasing;
 import static gregtech.api.GregTechAPI.*;
+import static gregtech.api.GregTechAPI.sBlockCasings9;
 import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
 import static gregtech.api.util.GTStructureUtility.ofFrame;
+import static gtPlusPlus.core.block.ModBlocks.*;
+import static kubatech.loaders.BlockLoader.defcCasingBlock;
+import static tectech.thing.casing.TTCasingsContainer.sBlockCasingsTT;
 
 import javax.annotation.Nonnull;
 
@@ -20,13 +26,11 @@ import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.TextLocalization;
 import com.science.gtnl.Utils.TextUtils;
-import com.science.gtnl.common.block.Casings.BasicBlocks;
+import com.science.gtnl.common.RecipeRegister;
 import com.science.gtnl.common.machine.multiMachineClasses.GTNL_ProcessingLogic;
 import com.science.gtnl.common.machine.multiMachineClasses.WirelessEnergyMultiMachineBase;
 
 import bartworks.API.BorosilicateGlass;
-import cpw.mods.fml.common.registry.GameRegistry;
-import gregtech.api.GregTechAPI;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Textures;
 import gregtech.api.interfaces.ITexture;
@@ -37,47 +41,46 @@ import gregtech.api.logic.ProcessingLogic;
 import gregtech.api.metatileentity.implementations.MTEHatch;
 import gregtech.api.objects.GTRenderedTexture;
 import gregtech.api.recipe.RecipeMap;
-import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.recipe.check.CheckRecipeResult;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.OverclockCalculator;
-import gregtech.common.blocks.BlockCasings1;
-import gregtech.common.blocks.BlockCasings9;
-import tectech.thing.casing.TTCasingsContainer;
+import tectech.thing.casing.BlockGTCasingsTT;
 
-public class NeutroniumWireCutting extends WirelessEnergyMultiMachineBase<NeutroniumWireCutting>
+public class SmeltingMixingFurnace extends WirelessEnergyMultiMachineBase<SmeltingMixingFurnace>
     implements IWirelessEnergyHatchInformation {
 
     protected GTRecipe lastRecipeToBuffer;
 
     public byte mGlassTier = 0;
 
-    public static final int HORIZONTAL_OFF_SET = 3;
-    public static final int VERTICAL_OFF_SET = 10;
+    public static final int HORIZONTAL_OFF_SET = 8;
+    public static final int VERTICAL_OFF_SET = 14;
     public static final int DEPTH_OFF_SET = 0;
+
+    protected static final int CASING_INDEX = ((BlockGTCasingsTT) sBlockCasingsTT).getTextureIndex(0);
 
     public int tCountCasing = 0;
 
     public int casing;
 
-    public IStructureDefinition<NeutroniumWireCutting> STRUCTURE_DEFINITION = null;
+    public IStructureDefinition<SmeltingMixingFurnace> STRUCTURE_DEFINITION = null;
 
     public static final String STRUCTURE_PIECE_MAIN = "main";
 
-    public static final String ICF_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/neutronium_wire_cutting"; // 文件路径
+    public static final String SMF_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/smelting_mixing_furnace"; // 文件路径
 
     public String[][] shape;
 
-    public NeutroniumWireCutting(String aName) {
+    public SmeltingMixingFurnace(String aName) {
         super(aName);
-        this.shape = StructureUtils.readStructureFromFile(ICF_STRUCTURE_FILE_PATH);
+        this.shape = StructureUtils.readStructureFromFile(SMF_STRUCTURE_FILE_PATH);
     }
 
-    public NeutroniumWireCutting(int aID, String aName, String aNameRegional) {
+    public SmeltingMixingFurnace(int aID, String aName, String aNameRegional) {
         super(aID, aName, aNameRegional);
-        this.shape = StructureUtils.readStructureFromFile(ICF_STRUCTURE_FILE_PATH);
+        this.shape = StructureUtils.readStructureFromFile(SMF_STRUCTURE_FILE_PATH);
     }
 
     @Override
@@ -92,38 +95,33 @@ public class NeutroniumWireCutting extends WirelessEnergyMultiMachineBase<Neutro
 
     @Override
     public IMetaTileEntity newMetaEntity(IGregTechTileEntity aTileEntity) {
-        return new NeutroniumWireCutting(this.mName);
+        return new SmeltingMixingFurnace(this.mName);
     }
 
     @Override
     protected MultiblockTooltipBuilder createTooltip() {
         MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
-        tt.addMachineType(TextLocalization.LapotronChipRecipeType)
+        tt.addMachineType(TextLocalization.SmeltingMixingFurnaceRecipeType)
             .addInfo(TextLocalization.Tooltip_LapotronChip_00)
             .addInfo(TextLocalization.Tooltip_LapotronChip_01)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
-            .beginStructureBlock(177, 121, 177, true)
-            .addInputBus(TextLocalization.Tooltip_LapotronChip_Casing, 1)
-            .addOutputBus(TextLocalization.Tooltip_LapotronChip_Casing, 1)
-            .addInputHatch(TextLocalization.Tooltip_LapotronChip_Casing, 1)
-            .addOutputHatch(TextLocalization.Tooltip_LapotronChip_Casing, 1)
-            .addEnergyHatch(TextLocalization.Tooltip_LapotronChip_Casing, 1)
-            .addMaintenanceHatch(TextLocalization.Tooltip_LapotronChip_Casing, 1)
+            .beginStructureBlock(17, 17, 33, true)
+            .addInputBus(TextLocalization.Tooltip_SmeltingMixingFurnace_Casing, 1)
+            .addOutputBus(TextLocalization.Tooltip_SmeltingMixingFurnace_Casing, 1)
+            .addInputHatch(TextLocalization.Tooltip_SmeltingMixingFurnace_Casing, 1)
+            .addOutputHatch(TextLocalization.Tooltip_SmeltingMixingFurnace_Casing, 1)
+            .addEnergyHatch(TextLocalization.Tooltip_SmeltingMixingFurnace_Casing, 1)
+            .addMaintenanceHatch(TextLocalization.Tooltip_SmeltingMixingFurnace_Casing, 1)
             .toolTipFinisher(TextUtils.SQY);
         return tt;
     }
 
     protected void updateHatchTexture() {
-        for (MTEHatch h : mInputHatches) h.updateTexture(getCasingTextureID());
-        for (MTEHatch h : mInputBusses) h.updateTexture(getCasingTextureID());
-        for (MTEHatch h : mOutputHatches) h.updateTexture(getCasingTextureID());
-        for (MTEHatch h : mInputBusses) h.updateTexture(getCasingTextureID());
-    }
-
-    public int getCasingTextureID() {
-        return ((BlockCasings1) GregTechAPI.sBlockCasings1).getTextureIndex(13);
+        for (MTEHatch h : mInputHatches) h.updateTexture(CASING_INDEX);
+        for (MTEHatch h : mOutputHatches) h.updateTexture(CASING_INDEX);
+        for (MTEHatch h : mInputBusses) h.updateTexture(CASING_INDEX);
     }
 
     protected GTRenderedTexture LCgetFrontOverlay() {
@@ -138,41 +136,41 @@ public class NeutroniumWireCutting extends WirelessEnergyMultiMachineBase<Neutro
     public ITexture[] getTexture(final IGregTechTileEntity aBaseMetaTileEntity, final ForgeDirection side,
         final ForgeDirection facing, final int aColorIndex, final boolean aActive, final boolean aRedstone) {
         if (side == facing) {
-            return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()),
+            return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(CASING_INDEX),
                 aActive ? LCgetFrontOverlayActive() : LCgetFrontOverlay() };
         }
-        return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()) };
+        return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(CASING_INDEX) };
     }
 
     @Override
-    public IStructureDefinition<NeutroniumWireCutting> getStructureDefinition() {
+    public IStructureDefinition<SmeltingMixingFurnace> getStructureDefinition() {
         if (STRUCTURE_DEFINITION == null) {
-            STRUCTURE_DEFINITION = StructureDefinition.<NeutroniumWireCutting>builder()
+            STRUCTURE_DEFINITION = StructureDefinition.<SmeltingMixingFurnace>builder()
                 .addShape(STRUCTURE_PIECE_MAIN, transpose(shape))
                 .addElement('A', BorosilicateGlass.ofBoroGlass((byte) 0, (t, v) -> t.mGlassTier = v, t -> t.mGlassTier))
-                .addElement('B', ofBlock(BasicBlocks.MetaBlockCasing, 2))
-                .addElement('C', ofBlockAnyMeta(GameRegistry.findBlock("IC2", "blockAlloyGlass")))
-                .addElement('D', ofBlock(sBlockCasings10, 6))
-                .addElement('E', ofBlock(sBlockCasings10, 7))
-                .addElement('F', ofBlock(sBlockCasings10, 11))
-                .addElement('G', ofBlock(sBlockCasings3, 11))
-                .addElement('H', ofBlock(sBlockCasings4, 10))
-                .addElement('I', ofBlock(sBlockCasings8, 7))
-                .addElement('J', ofBlock(sBlockCasings9, 3))
-                .addElement('K', ofBlock(sBlockCasings9, 6))
+                .addElement('B', ofBlock(MetaBlockCasing, 5))
+                .addElement('C', ofBlock(MetaBlockCasing, 7))
+                .addElement('D', ofBlock(defcCasingBlock, 7))
+                .addElement('E', ofBlock(defcCasingBlock, 10))
+                .addElement('F', ofBlock(sBlockCasings1, 12))
+                .addElement('G', ofBlock(sBlockCasings1, 13))
+                .addElement('H', ofBlock(sBlockCasings10, 7))
+                .addElement('I', ofBlock(sBlockCasings10, 13))
+                .addElement('J', ofBlock(sBlockCasings8, 7))
+                .addElement('K', ofBlock(sBlockCasings9, 12))
+                .addElement('L', ofBlock(sBlockCasingsTT, 6))
+                .addElement('M', ofBlock(sBlockCasingsTT, 8))
+                .addElement('N', ofFrame(Materials.Infinity))
+                .addElement('O', ofBlock(blockCasings2Misc, 4))
+                .addElement('P', ofBlock(blockSpecialMultiCasings, 11))
+                .addElement('Q', ofBlock(blockCasingsMisc, 12))
                 .addElement(
-                    'L',
-                    buildHatchAdder(NeutroniumWireCutting.class)
+                    'R',
+                    buildHatchAdder(SmeltingMixingFurnace.class)
                         .atLeast(InputBus, OutputBus, InputHatch, Energy, Energy.or(ExoticEnergy))
-                        .casingIndex(((BlockCasings9) GregTechAPI.sBlockCasings9).getTextureIndex(12))
+                        .casingIndex(CASING_INDEX)
                         .dot(1)
                         .buildAndChain(onElementPass(x -> ++x.casing, ofBlock(sBlockCasings9, 12))))
-                .addElement('M', ofBlock(TTCasingsContainer.sBlockCasingsTT, 0))
-                .addElement('N', ofBlock(TTCasingsContainer.sBlockCasingsTT, 6))
-                .addElement('O', ofFrame(Materials.Neutronium))
-                .addElement('P', ofBlockAnyMeta(GameRegistry.findBlock("miscutils", "blockFrameGtHastelloyN")))
-                .addElement('Q', ofBlock(BasicBlocks.MetaBlockCasing, 4))
-                .addElement('R', ofBlock(BasicBlocks.MetaBlockCasing, 5))
                 .build();
         }
         return STRUCTURE_DEFINITION;
@@ -225,7 +223,7 @@ public class NeutroniumWireCutting extends WirelessEnergyMultiMachineBase<Neutro
 
     @Override
     public RecipeMap<?> getRecipeMap() {
-        return RecipeMaps.cutterRecipes;
+        return RecipeRegister.SmeltingMixingFurnaceRecipes;
     }
 
     @Override
@@ -260,7 +258,7 @@ public class NeutroniumWireCutting extends WirelessEnergyMultiMachineBase<Neutro
 
     @Override
     public int getMaxParallelRecipes() {
-        return ((mGlassTier + GTUtility.getTier(this.getMaxInputVoltage())) ^ 2);
+        return 16 * ((mGlassTier * GTUtility.getTier(this.getMaxInputVoltage())));
     }
 
     @Override

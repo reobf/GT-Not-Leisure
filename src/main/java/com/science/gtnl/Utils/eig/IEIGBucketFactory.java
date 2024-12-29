@@ -3,7 +3,7 @@ package com.science.gtnl.Utils.eig;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
-import com.science.gtnl.common.machine.EdenGarden;
+import com.science.gtnl.common.machine.multiblock.EdenGarden;
 
 public interface IEIGBucketFactory {
 

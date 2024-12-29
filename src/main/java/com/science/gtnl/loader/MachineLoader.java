@@ -5,27 +5,28 @@ import net.minecraft.item.ItemStack;
 import com.science.gtnl.Utils.TextLocalization;
 import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.common.hatch.MTEHatchCustomFluid;
-import com.science.gtnl.common.machine.BloodSoulSacrificialArray;
-import com.science.gtnl.common.machine.CheatOreProcessingFactory;
-import com.science.gtnl.common.machine.ComponentAssembler;
-import com.science.gtnl.common.machine.Desulfurizer;
-import com.science.gtnl.common.machine.EdenGarden;
-import com.science.gtnl.common.machine.GenerationEarthEngine;
-import com.science.gtnl.common.machine.LapotronChip;
-import com.science.gtnl.common.machine.LargeCircuitAssembler;
-import com.science.gtnl.common.machine.LargeSteamAlloySmelter;
-import com.science.gtnl.common.machine.LargeSteamChemicalBath;
-import com.science.gtnl.common.machine.LargeSteamCircuitAssembler;
-import com.science.gtnl.common.machine.LargeSteamCrusher;
-import com.science.gtnl.common.machine.LargeSteamFurnace;
-import com.science.gtnl.common.machine.LargeSteamThermalCentrifuge;
-import com.science.gtnl.common.machine.MeteorMiner;
-import com.science.gtnl.common.machine.NeutroniumWireCutting;
-import com.science.gtnl.common.machine.PetrochemicalPlant;
-import com.science.gtnl.common.machine.PrimitiveDistillationTower;
-import com.science.gtnl.common.machine.RealArtificialStar;
-import com.science.gtnl.common.machine.SteamCracking;
-import com.science.gtnl.common.machine.TeleportationArrayToAlfheim;
+import com.science.gtnl.common.machine.multiblock.BloodSoulSacrificialArray;
+import com.science.gtnl.common.machine.multiblock.CheatOreProcessingFactory;
+import com.science.gtnl.common.machine.multiblock.ComponentAssembler;
+import com.science.gtnl.common.machine.multiblock.Desulfurizer;
+import com.science.gtnl.common.machine.multiblock.EdenGarden;
+import com.science.gtnl.common.machine.multiblock.GenerationEarthEngine;
+import com.science.gtnl.common.machine.multiblock.LapotronChip;
+import com.science.gtnl.common.machine.multiblock.LargeCircuitAssembler;
+import com.science.gtnl.common.machine.multiblock.LargeSteamAlloySmelter;
+import com.science.gtnl.common.machine.multiblock.LargeSteamChemicalBath;
+import com.science.gtnl.common.machine.multiblock.LargeSteamCircuitAssembler;
+import com.science.gtnl.common.machine.multiblock.LargeSteamCrusher;
+import com.science.gtnl.common.machine.multiblock.LargeSteamFurnace;
+import com.science.gtnl.common.machine.multiblock.LargeSteamThermalCentrifuge;
+import com.science.gtnl.common.machine.multiblock.MeteorMiner;
+import com.science.gtnl.common.machine.multiblock.NeutroniumWireCutting;
+import com.science.gtnl.common.machine.multiblock.PetrochemicalPlant;
+import com.science.gtnl.common.machine.multiblock.PrimitiveDistillationTower;
+import com.science.gtnl.common.machine.multiblock.RealArtificialStar;
+import com.science.gtnl.common.machine.multiblock.SmeltingMixingFurnace;
+import com.science.gtnl.common.machine.multiblock.SteamCracking;
+import com.science.gtnl.common.machine.multiblock.TeleportationArrayToAlfheim;
 
 import gtPlusPlus.api.objects.Logger;
 import gtPlusPlus.core.util.minecraft.FluidUtils;
@@ -55,6 +56,7 @@ public class MachineLoader {
     public static ItemStack Desulfurizer;
     public static ItemStack LargeCircuitAssembler;
     public static ItemStack PetrochemicalPlant;
+    public static ItemStack SmeltingMixingFurnace;
 
     public static void loadMachines() {
 
@@ -177,6 +179,12 @@ public class MachineLoader {
             "NamePetrochemicalPlant",
             TextLocalization.NamePetrochemicalPlant).getStackForm(1);
         GTNLItemList.PetrochemicalPlant.set(PetrochemicalPlant);
+
+        SmeltingMixingFurnace = new SmeltingMixingFurnace(
+            21024,
+            "NameSmeltingMixingFurnace",
+            TextLocalization.NameSmeltingMixingFurnace).getStackForm(1);
+        GTNLItemList.SmeltingMixingFurnace.set(SmeltingMixingFurnace);
 
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
             21919,

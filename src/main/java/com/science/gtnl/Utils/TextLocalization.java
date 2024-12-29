@@ -254,6 +254,16 @@ public class TextLocalization {
         "Any Top Pressure Containment Casing",
         "Tooltip_PetrochemicalPlant_Muffler");
 
+    public static final String NameSmeltingMixingFurnace = texter(
+        "Smelting Mixing Furnace",
+        "NameSmeltingMixingFurnace");
+    public static final String SmeltingMixingFurnaceRecipeType = texter(
+        "Smelting Mixing Furnace",
+        "SmeltingMixingFurnaceRecipeType");
+    public static final String Tooltip_SmeltingMixingFurnace_Casing = texter(
+        "Any High Power Casing",
+        "Tooltip_SmeltingMixingFurnace_Casing");
+
     public static final String NameLargeSteamChemicalBath = texter(
         "Large Steam Thermal Centrifuge",
         "NameLargeSteamChemicalBath");

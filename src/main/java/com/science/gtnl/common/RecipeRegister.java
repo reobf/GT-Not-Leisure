@@ -126,4 +126,12 @@ public class RecipeRegister {
         .neiHandlerInfo(builder -> builder.setDisplayStack(GTNLItemList.PetrochemicalPlant.get(1)))
         .disableOptimize()
         .build();
+
+    public static final RecipeMap<RecipeMapBackend> SmeltingMixingFurnaceRecipes = RecipeMapBuilder
+        .of("gtnl.recipe.SmeltingMixingFurnaceRecipes")
+        .maxIO(3, 3, 12, 3)
+        .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
+        .neiHandlerInfo(builder -> builder.setDisplayStack(GTNLItemList.SmeltingMixingFurnace.get(1)))
+        .disableOptimize()
+        .build();
 }

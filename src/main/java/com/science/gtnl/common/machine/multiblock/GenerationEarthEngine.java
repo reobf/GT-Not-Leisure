@@ -1,4 +1,4 @@
-package com.science.gtnl.common.machine;
+package com.science.gtnl.common.machine.multiblock;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
 import static goodgenerator.loader.Loaders.compactFusionCoil;
@@ -183,17 +183,7 @@ public class GenerationEarthEngine extends GTPPMultiBlockBase<GenerationEarthEng
 
     @Override
     public int survivalConstruct(ItemStack stackSize, int elementBudget, ISurvivalBuildEnvironment env) {
-        if (this.mMachine) return -1;
-        return this.survivialBuildPiece(
-            STRUCTURE_PIECE_MAIN,
-            stackSize,
-            HORIZONTAL_OFF_SET,
-            VERTICAL_OFF_SET,
-            DEPTH_OFF_SET,
-            elementBudget,
-            env,
-            false,
-            true);
+        return -1;
     }
 
     public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {

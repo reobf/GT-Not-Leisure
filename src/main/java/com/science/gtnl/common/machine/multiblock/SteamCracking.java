@@ -1,4 +1,4 @@
-package com.science.gtnl.common.machine;
+package com.science.gtnl.common.machine.multiblock;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
 import static gregtech.api.GregTechAPI.*;
@@ -248,7 +248,7 @@ public class SteamCracking extends MTESteamMultiBase<SteamCracking> implements I
         if (tierFireboxCasing < 0 && tierMachineCasing < 0 && tierPlatedCasing < 0) return false;
         if (tierFireboxCasing == 1 && tierMachineCasing == 1
             && tierPlatedCasing == 1
-            && tCountCasing >= 65
+            && tCountCasing >= 10
             && checkHatches()) {
             updateHatchTexture();
             tierMachine = 1;
@@ -256,7 +256,7 @@ public class SteamCracking extends MTESteamMultiBase<SteamCracking> implements I
         }
         if (tierFireboxCasing == 2 && tierMachineCasing == 2
             && tierPlatedCasing == 2
-            && tCountCasing >= 65
+            && tCountCasing >= 10
             && checkHatches()) {
             updateHatchTexture();
             tierMachine = 2;

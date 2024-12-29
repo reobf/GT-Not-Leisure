@@ -10,7 +10,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import com.science.gtnl.Utils.eig.EIGBucket;
 import com.science.gtnl.Utils.eig.EIGDropTable;
 import com.science.gtnl.Utils.eig.IEIGBucketFactory;
-import com.science.gtnl.common.machine.EdenGarden;
+import com.science.gtnl.common.machine.multiblock.EdenGarden;
 
 import tb.common.block.BlockRainbowCactus;
 import tb.init.TBBlocks;

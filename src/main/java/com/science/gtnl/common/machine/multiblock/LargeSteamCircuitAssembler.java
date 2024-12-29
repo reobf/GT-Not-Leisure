@@ -1,4 +1,4 @@
-package com.science.gtnl.common.machine;
+package com.science.gtnl.common.machine.multiblock;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
 import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaBlockCasing;
