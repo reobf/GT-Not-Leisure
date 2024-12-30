@@ -74,6 +74,9 @@ public enum GTNLItemList {
     ActivatedGaiaPylon,
     PrecisionSteamMechanism,
 
+    BlackLamp,
+    BlackLampOff,
+
     MeteorMiner,
     LargeSteamCrusher,
     NeutroniumWireCutting,

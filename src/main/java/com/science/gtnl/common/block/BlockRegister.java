@@ -97,8 +97,10 @@ public class BlockRegister {
                     "350,510,684,586,298,239,947,245,938,479,716,304,835,356,329,624,224,137,216"
                         + StatCollector.translateToLocal("gt.coilunittooltip") }));
         GTNLItemList.StargateCoil.set(ItemBlockBase.initMetaBlock("StargateCoil", 2));
+        GTNLItemList.BlackLampOff.set(ItemBlockBase.initMetaBlock("StargateCoil", 3, new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow")}));
 
         GTNLItemList.FortifyGlowstone.set(ItemBlockGlow.initMetaBlockGlow("Fortify_Glowstone", 0));
+        GTNLItemList.BlackLamp.set(ItemBlockGlow.initMetaBlockGlow("Black_Lamp", 1));
 
         GTNLItemList.GaiaGlass.set(ItemBlockGlass.initMetaBlockGlass("GaiaGlass", 0));
         GTNLItemList.TerraGlass.set(ItemBlockGlass.initMetaBlockGlass("TerraGlass", 1));
