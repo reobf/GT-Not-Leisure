@@ -76,6 +76,13 @@ public enum GTNLItemList {
 
     BlackLamp,
     BlackLampOff,
+    BlackLampBorderless,
+    BlackLampOffBorderless,
+
+    PinkLamp,
+    PinkLampOff,
+    PinkLampBorderless,
+    PinkLampOffBorderless,
 
     MeteorMiner,
     LargeSteamCrusher,

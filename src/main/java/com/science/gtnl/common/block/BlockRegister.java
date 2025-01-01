@@ -23,6 +23,7 @@ import com.science.gtnl.common.block.Render.TileStar;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import gtPlusPlus.core.item.base.itemblock.ItemBlockMeta;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class BlockRegister {
 
@@ -97,10 +98,42 @@ public class BlockRegister {
                     "350,510,684,586,298,239,947,245,938,479,716,304,835,356,329,624,224,137,216"
                         + StatCollector.translateToLocal("gt.coilunittooltip") }));
         GTNLItemList.StargateCoil.set(ItemBlockBase.initMetaBlock("StargateCoil", 2));
-        GTNLItemList.BlackLampOff.set(ItemBlockBase.initMetaBlock("StargateCoil", 3, new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow")}));
+        GTNLItemList.BlackLampOff.set(
+            ItemBlockBase.initMetaBlock(
+                "Black_Lamp_Off",
+                3,
+                new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow") }));
+        GTNLItemList.BlackLampOffBorderless.set(
+            ItemBlockBase.initMetaBlock(
+                "Black_Lamp_Off_Borderless",
+                4,
+                new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow"),
+                    StatCollector.translateToLocal("tooltip.lamp.borderless") }));
+        GTNLItemList.PinkLampOff.set(
+            ItemBlockBase.initMetaBlock(
+                "Pink_Lamp_Off",
+                5,
+                new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow") }));
+        GTNLItemList.PinkLampOffBorderless.set(
+            ItemBlockBase.initMetaBlock(
+                "Pink_Lamp_Off_Borderless",
+                6,
+                new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow"),
+                    StatCollector.translateToLocal("tooltip.lamp.borderless") }));
 
         GTNLItemList.FortifyGlowstone.set(ItemBlockGlow.initMetaBlockGlow("Fortify_Glowstone", 0));
         GTNLItemList.BlackLamp.set(ItemBlockGlow.initMetaBlockGlow("Black_Lamp", 1));
+        GTNLItemList.BlackLampBorderless.set(
+            ItemBlockGlow.initMetaBlockGlow(
+                "Black_Lamp_Borderless",
+                2,
+                new String[] { StatCollector.translateToLocal("tooltip.lamp.borderless") }));
+        GTNLItemList.PinkLamp.set(ItemBlockGlow.initMetaBlockGlow("Pink_Lamp", 3));
+        GTNLItemList.PinkLampBorderless.set(
+            ItemBlockGlow.initMetaBlockGlow(
+                "Pink_Lamp_Borderless",
+                4,
+                new String[] { StatCollector.translateToLocal("tooltip.lamp.borderless") }));
 
         GTNLItemList.GaiaGlass.set(ItemBlockGlass.initMetaBlockGlass("GaiaGlass", 0));
         GTNLItemList.TerraGlass.set(ItemBlockGlass.initMetaBlockGlass("TerraGlass", 1));
@@ -134,5 +167,15 @@ public class BlockRegister {
     public static void registry() {
         registryBlocks();
         registryBlockContainers();
+    }
+
+    public static void registryOreDictionary() {
+        ItemStack GaiaGlass = new ItemStack(MetaBlockGlass, 1, 0);
+        ItemStack TerraGlass = new ItemStack(MetaBlockGlass, 1, 1);
+        ItemStack FusionGlass = new ItemStack(MetaBlockGlass, 1, 2);
+
+        OreDictionary.registerOre("blockGlassUEV", GaiaGlass);
+        OreDictionary.registerOre("blockGlassUV", TerraGlass);
+        OreDictionary.registerOre("blockGlassLuV", FusionGlass);
     }
 }

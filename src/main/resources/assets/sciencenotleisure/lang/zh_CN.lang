@@ -19,9 +19,15 @@ MetaBlock.0.name=测试方块
 MetaBlock.1.name=新视野线圈
 MetaBlock.2.name=星门线圈
 MetaBlock.3.name=黑色灯
+MetaBlock.4.name=黑色灯
+MetaBlock.5.name=粉色灯
+MetaBlock.6.name=粉色灯
 
 MetaBlockGlow.0.name=强化萤石机械方块
 MetaBlockGlow.1.name=黑色灯
+MetaBlockGlow.2.name=黑色灯
+MetaBlockGlow.3.name=粉色灯
+MetaBlockGlow.4.name=粉色灯
 
 MetaBlockGlass.0.name=盖亚玻璃
 MetaBlockGlass.1.name=泰拉玻璃
@@ -170,6 +176,7 @@ tooltips.BlazeCube=§o灵魂之火铸成，无尽炽热封存。
 tooltips.MeteorMinerSchematic1=启用坠星采矿场I所需的图纸
 tooltips.MeteorMinerSchematic2=启用坠星采矿场II所需的图纸
 tooltip.lamp.noglow=无光照
+tooltip.lamp.borderless=无边框
 
 RFRRRecipes.1=可望不可及，不是么？
 PTARRecipes.1=精灵不喜欢面包。

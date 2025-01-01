@@ -59,7 +59,7 @@ public class SmeltingMixingFurnace extends WirelessEnergyMultiMachineBase<Smelti
     public static final int VERTICAL_OFF_SET = 14;
     public static final int DEPTH_OFF_SET = 0;
 
-    protected static final int CASING_INDEX = ((BlockGTCasingsTT) sBlockCasingsTT).getTextureIndex(0);
+    protected static final int CASING_INDEX = BlockGTCasingsTT.textureOffset;
 
     public int tCountCasing = 0;
 
@@ -170,7 +170,7 @@ public class SmeltingMixingFurnace extends WirelessEnergyMultiMachineBase<Smelti
                         .atLeast(InputBus, OutputBus, InputHatch, Energy, Energy.or(ExoticEnergy))
                         .casingIndex(CASING_INDEX)
                         .dot(1)
-                        .buildAndChain(onElementPass(x -> ++x.casing, ofBlock(sBlockCasings9, 12))))
+                        .buildAndChain(onElementPass(x -> ++x.casing, ofBlock(sBlockCasingsTT, 0))))
                 .build();
         }
         return STRUCTURE_DEFINITION;

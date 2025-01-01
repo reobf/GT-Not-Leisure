@@ -138,12 +138,12 @@ public class ItemLoader {
         OreDictionary.registerOre("circuitPrimitive", VerySimpleCircuit);
         OreDictionary.registerOre("circuitBasic", SimpleCircuit);
         OreDictionary.registerOre("circuitGood", BasicCircuit);
-        OreDictionary.registerOre("circuitAdavanced", AdvancedCircuit);
+        OreDictionary.registerOre("circuitAdvanced", AdvancedCircuit);
         OreDictionary.registerOre("circuitData", EliteCircuit);
         OreDictionary.registerOre("circuitPrimitive", CircuitResonaticULV);
         OreDictionary.registerOre("circuitBasic", CircuitResonaticLV);
         OreDictionary.registerOre("circuitGood", CircuitResonaticMV);
-        OreDictionary.registerOre("circuitAdavanced", CircuitResonaticHV);
+        OreDictionary.registerOre("circuitAdvanced", CircuitResonaticHV);
         OreDictionary.registerOre("circuitData", CircuitResonaticEV);
         OreDictionary.registerOre("circuitElite", CircuitResonaticIV);
         OreDictionary.registerOre("circuitMaster", CircuitResonaticLuV);
