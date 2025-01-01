@@ -5,6 +5,7 @@ import static com.science.gtnl.common.block.Casings.BasicBlocks.*;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.StatCollector;
+import net.minecraftforge.oredict.OreDictionary;
 
 import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.common.block.Casings.Base.ItemBlockBase;
@@ -23,7 +24,6 @@ import com.science.gtnl.common.block.Render.TileStar;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import gtPlusPlus.core.item.base.itemblock.ItemBlockMeta;
-import net.minecraftforge.oredict.OreDictionary;
 
 public class BlockRegister {
 
