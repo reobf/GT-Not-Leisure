@@ -84,6 +84,76 @@ public enum GTNLItemList {
     PinkLampBorderless,
     PinkLampOffBorderless,
 
+    RedLamp,
+    RedLampOff,
+    RedLampBorderless,
+    RedLampOffBorderless,
+
+    OrangeLamp,
+    OrangeLampOff,
+    OrangeLampBorderless,
+    OrangeLampOffBorderless,
+
+    YellowLamp,
+    YellowLampOff,
+    YellowLampBorderless,
+    YellowLampOffBorderless,
+
+    GreenLamp,
+    GreenLampOff,
+    GreenLampBorderless,
+    GreenLampOffBorderless,
+
+    LimeLamp,
+    LimeLampOff,
+    LimeLampBorderless,
+    LimeLampOffBorderless,
+
+    BlueLamp,
+    BlueLampOff,
+    BlueLampBorderless,
+    BlueLampOffBorderless,
+
+    LightBlueLamp,
+    LightBlueLampOff,
+    LightBlueLampBorderless,
+    LightBlueLampOffBorderless,
+
+    CyanLamp,
+    CyanLampOff,
+    CyanLampBorderless,
+    CyanLampOffBorderless,
+
+    BrownLamp,
+    BrownLampOff,
+    BrownLampBorderless,
+    BrownLampOffBorderless,
+
+    MagentaLamp,
+    MagentaLampOff,
+    MagentaLampBorderless,
+    MagentaLampOffBorderless,
+
+    PurpleLamp,
+    PurpleLampOff,
+    PurpleLampBorderless,
+    PurpleLampOffBorderless,
+
+    GrayLamp,
+    GrayLampOff,
+    GrayLampBorderless,
+    GrayLampOffBorderless,
+
+    LightGrayLamp,
+    LightGrayLampOff,
+    LightGrayLampBorderless,
+    LightGrayLampOffBorderless,
+
+    WhiteLamp,
+    WhiteLampOff,
+    WhiteLampBorderless,
+    WhiteLampOffBorderless,
+
     MeteorMiner,
     LargeSteamCrusher,
     NeutroniumWireCutting,
