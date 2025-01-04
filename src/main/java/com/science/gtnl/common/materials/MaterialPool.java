@@ -617,20 +617,22 @@ public class MaterialPool implements Runnable {
         new short[] { 60, 74, 243 },
         "Periodicium",
         subscriptNumbers(
-            "((H10C10N210O140F80P10S140Cl80Se140Br80I80)" + "(He10Ne10Ar10Kr10Xe10Rn10)"
-                + "(B10Si10Ge10As210Sb210Te140At80)"
-                + "(Al10Ga10In10Sn10Tl10Pb10Bi10Po10)"
-                + "((Ti10V10Cr10Mn10Fe10Co10Ni10Cu10Zn10)"
-                + "(Zr10Nb10Mo10Tc10Ru10Rh10Pd10Ag10Cd10)"
-                + "(Hf10Ta10W10Re10Os10Ir10Pt10Au10Hg10))"
-                + "(Be10Mg10Ca10Sr10Ba10Ra10)"
-                + "(Sc10Y10(La10Ce10Pr10Nd10Pm10Sm10Eu10Gd10))"
-                + "(Tb10Dy10Ho10Er10Tm10Yb10Lu10)"
-                + "(Li10Na10K10Rb10Cs10Fr10)"
-                + "((Bk10Cf10Es10Fm10Md10No10Lr10)"
-                + "(Rf10Db10Sg10Bh10Hs10Mt10Ds10Rg10Cn10Nh10Fl10Mc10Lv10Ts10Og10)))"
-                + "((KeRpNqNq+Nq*SuAdSpDOhDeQtMaD*IcIf*NtHyEn)"
-                + "(TsЖTtЖ〄Fs⚶Hy⚶✢⸎✦◆✦⌘☯\uD80C\uDF70 \uD80C\uDF71 \uD80C\uDF72 \uD80C\uDF73 \uD80C\uDF74 \uD80C\uDF75 \uD80C\uDF76 \uD80C\uDF77 \uD80C\uDF78☯⌘⚷⚙⚷Ni4Ti6Fc⚙҈҉«»Rt*۞))"),
+            "((H37C67N32O35F61P52S48C64Se53Br56I52)" + "(He32Ne58Ar48Kr35Xe62Rn54)"
+                + "(B56Si38Ge30As64Sb68Te31At38)"
+                + "(Al35Ga56In66Sn42Tl43Pb46Bi64Po68)"
+                + "((Ti49V59Cr60Mn48Fe61Co50Ni66Cu32Zn31)"
+                + "(Zr65Nb46Mo36Tc60Ru57Rh50Pd38Ag30Cd47)"
+                + "(Hf45Ta37W68Re66Os58Ir43Pt33Au55Hg48))"
+                + "(Be44Mg51Ca38Sr35Ba68Ra52)"
+                + "(Sc64Y47(La30Ce42Pr63Nd68Pm52Sm56Eu38Gd64))"
+                + "(Tb62Dy46Ho35Er66Tm48Yb36Lu55)"
+                + "(Li67Na49K68Rb57Cs50Fr52)"
+                + "((Bk61Cf43Es38Fm48Md58No30Lr56)"
+                + "(Rf45Db53Sg51Bh65Hs31Mt46Ds57Rg54Cn48Nh64Fl44Mc33Lv52Ts41Og58))"
+                + "((Ke41Rp56Nq35Nq+54Nq*38Su60Ad66Sp67D55Oh50De63Qt35D*30(IcMa)65If*38Nt42Hy66En64)"
+                + "(Gs39TsЖ66TtЖ67〄62Fs⚶45Hy⚶53✢64En⦼53M⎋65⸎46✦◆✦48✧◇✧52Og*52Sh⏧68)"
+                + "(⌘☯𓍰 𓍱 𓍲 𓍳 𓍴 𓍵 𓍶 𓍷 𓍸☯⌘66(⚷⚙⚷Ni4Ti6)40Fc⚙37҈30҉33«»67Rt*51۞47Rc62Si*68)"
+                + "(Fs61Ef30Ut69Tr66Ms40If53He*43Ai32Or55Vy36⬟⯂⬢⬣⯃⯄32Tt33Cc56Vu58Ao52))???144)"),
         new Werkstoff.Stats().setToxic(true),
         Werkstoff.Types.ELEMENT,
         new Werkstoff.GenerationFeatures().addMetalItems()
