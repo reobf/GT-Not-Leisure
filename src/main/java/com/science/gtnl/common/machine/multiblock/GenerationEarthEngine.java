@@ -100,6 +100,7 @@ public class GenerationEarthEngine extends GTPPMultiBlockBase<GenerationEarthEng
             .addInputBus(TextLocalization.Tooltip_GenerationEarthEngine_Casing, 1)
             .addOutputBus(TextLocalization.Tooltip_GenerationEarthEngine_Casing, 1)
             .addInputHatch(TextLocalization.Tooltip_GenerationEarthEngine_Casing, 1)
+            .addOutputHatch(TextLocalization.Tooltip_GenerationEarthEngine_Casing, 1)
             .addEnergyHatch(TextLocalization.Tooltip_GenerationEarthEngine_Casing, 1)
             .addMaintenanceHatch(TextLocalization.Tooltip_GenerationEarthEngine_Casing, 1)
             .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE);

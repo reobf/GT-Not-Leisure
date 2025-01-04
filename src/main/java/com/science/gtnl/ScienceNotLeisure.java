@@ -71,13 +71,6 @@ public class ScienceNotLeisure {
      * the{@link PathHelper#initResourceAbsolutePath}.
      */
     public static String DevResource = "";
-    /**
-     * <p>
-     * Set false when auto generation get problems and set DevResource manually.
-     * <p>
-     * Mind to reset these changes when dev complete.
-     */
-    public static final boolean useAutoGeneratingDevResourcePath = true;
 
     @SidedProxy(clientSide = "com.science.gtnl.ClientProxy", serverSide = "com.science.gtnl.CommonProxy")
     public static CommonProxy proxy;
@@ -136,18 +129,5 @@ public class ScienceNotLeisure {
 
         proxy.preInit(event);
         MaterialLoader.load();
-    }
-
-    /*
-     * @Mod.EventHandler
-     * @SuppressWarnings("unused")
-     * public void onLoadCompleted(FMLLoadCompleteEvent event) {
-     * eyeOfHarmonyRecipe = new EyeOfHarmonyRecipes();
-     * }
-     * public static EyeOfHarmonyRecipes eyeOfHarmonyRecipe = null;
-     */
-
-    public static void error(String message) {
-        LOG.error(message);
     }
 }

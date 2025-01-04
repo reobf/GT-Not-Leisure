@@ -602,6 +602,17 @@ public class MaterialPool implements Runnable {
         offsetID_01 + 53,
         TextureSet.SET_FLUID);
 
+    public static final Werkstoff BarnardaCSappy = new Werkstoff(
+        new short[] { 49, 49, 100 },
+        "BarnardaCSappy",
+        subscriptNumbers("?"),
+        new Werkstoff.Stats(),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().disable()
+            .addCells(),
+        offsetID_01 + 54,
+        TextureSet.SET_FLUID);
+
     public static final Werkstoff Periodicium = new Werkstoff(
         new short[] { 60, 74, 243 },
         "Periodicium",

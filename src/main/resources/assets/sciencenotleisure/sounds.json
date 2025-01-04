@@ -1,0 +1,11 @@
+{
+  "protal.boom": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "protal.boom",
+        "stream": false
+      }
+    ]
+  }
+}

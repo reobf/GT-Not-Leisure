@@ -120,17 +120,18 @@ public class RecipeRegister {
 
     public static final RecipeMap<GTNL_RecipeMapBackend> PetrochemicalPlantRecipes = RecipeMapBuilder
         .of("gtnl.recipe.PetrochemicalPlantRecipes", GTNL_RecipeMapBackend::new)
-        .maxIO(0, 0, 2, 12)
+        .maxIO(4, 4, 2, 12)
         .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
         .frontend(GeneralFrontend::new)
         .neiHandlerInfo(builder -> builder.setDisplayStack(GTNLItemList.PetrochemicalPlant.get(1)))
         .disableOptimize()
         .build();
 
-    public static final RecipeMap<RecipeMapBackend> SmeltingMixingFurnaceRecipes = RecipeMapBuilder
-        .of("gtnl.recipe.SmeltingMixingFurnaceRecipes")
-        .maxIO(3, 3, 12, 3)
+    public static final RecipeMap<GTNL_RecipeMapBackend> SmeltingMixingFurnaceRecipes = RecipeMapBuilder
+        .of("gtnl.recipe.SmeltingMixingFurnaceRecipes", GTNL_RecipeMapBackend::new)
+        .maxIO(2, 3, 16, 3)
         .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
+        .frontend(GeneralFrontend::new)
         .neiHandlerInfo(builder -> builder.setDisplayStack(GTNLItemList.SmeltingMixingFurnace.get(1)))
         .disableOptimize()
         .build();

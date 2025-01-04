@@ -123,6 +123,7 @@ public class PetrochemicalPlant extends MultiMachineBase<PetrochemicalPlant> imp
             .beginStructureBlock(28, 60, 65, true)
             .addInputHatch(TextLocalization.Tooltip_PetrochemicalPlant_Casing)
             .addOutputHatch(TextLocalization.Tooltip_PetrochemicalPlant_Casing)
+            .addInputBus(TextLocalization.Tooltip_PetrochemicalPlant_Casing)
             .addOutputBus(TextLocalization.Tooltip_PetrochemicalPlant_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_PetrochemicalPlant_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_PetrochemicalPlant_Casing)
@@ -153,7 +154,7 @@ public class PetrochemicalPlant extends MultiMachineBase<PetrochemicalPlant> imp
                 .addElement(
                     'O',
                     buildHatchAdder(PetrochemicalPlant.class)
-                        .atLeast(InputHatch, OutputHatch, OutputBus, Maintenance, Energy.or(ExoticEnergy))
+                        .atLeast(InputHatch, OutputHatch, InputBus, OutputBus, Maintenance, Energy.or(ExoticEnergy))
                         .casingIndex(CASING_INDEX)
                         .dot(1)
                         .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(sBlockCasings10, 3))))
