@@ -129,7 +129,7 @@ public class RecipeRegister {
 
     public static final RecipeMap<GTNL_RecipeMapBackend> SmeltingMixingFurnaceRecipes = RecipeMapBuilder
         .of("gtnl.recipe.SmeltingMixingFurnaceRecipes", GTNL_RecipeMapBackend::new)
-        .maxIO(2, 3, 16, 3)
+        .maxIO(8, 4, 16, 4)
         .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
         .frontend(GeneralFrontend::new)
         .neiHandlerInfo(builder -> builder.setDisplayStack(GTNLItemList.SmeltingMixingFurnace.get(1)))

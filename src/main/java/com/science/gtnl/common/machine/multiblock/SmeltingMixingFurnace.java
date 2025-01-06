@@ -243,8 +243,8 @@ public class SmeltingMixingFurnace extends WirelessEnergyMultiMachineBase<Smelti
             @NotNull
             @Override
             public CheckRecipeResult process() {
-                setEuModifier(0.6);
-                setSpeedBonus(0.4);
+                setEuModifier(0.8);
+                setSpeedBonus(0.2);
                 return super.process();
             }
 

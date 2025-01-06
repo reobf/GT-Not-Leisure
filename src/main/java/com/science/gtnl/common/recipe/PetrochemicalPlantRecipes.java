@@ -184,7 +184,7 @@ public class PetrochemicalPlantRecipes implements IRecipePool {
                 FluidRegistry.getFluidStack("fermentedbiomass", 200),
                 FluidRegistry.getFluidStack("superheavyradox", 20),
                 FluidRegistry.getFluidStack("heavyradox", 30),
-                FluidRegistry.getFluidStack("dilutedxenoxene", 5),
+                FluidRegistry.getFluidStack("dilutedxenoxene", 1),
                 FluidRegistry.getFluidStack("lightradox", 60),
                 FluidRegistry.getFluidStack("superlightradox", 100))
             .specialValue(0)

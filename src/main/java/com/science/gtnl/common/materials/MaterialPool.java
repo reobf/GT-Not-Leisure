@@ -629,9 +629,9 @@ public class MaterialPool implements Runnable {
                 + "(Li67Na49K68Rb57Cs50Fr52)"
                 + "((Bk61Cf43Es38Fm48Md58No30Lr56)"
                 + "(Rf45Db53Sg51Bh65Hs31Mt46Ds57Rg54Cn48Nh64Fl44Mc33Lv52Ts41Og58))"
-                + "((Ke41Rp56Nq35Nq+54Nq*38Su60Ad66Sp67D55Oh50De63Qt35D*30(IcMa)65If*38Nt42Hy66En64)"
+                + "((Ke41Rp56Nq35Nq+54Nq*38Su60Ad66(SpPu)67(SpNt)39D55Oh50De63Qt35D*30(IcMa)65If*38Nt42Hy66En64)"
                 + "(Gs39TsЖ66TtЖ67〄62Fs⚶45Hy⚶53✢64En⦼53M⎋65⸎46✦◆✦48✧◇✧52Og*52Sh⏧68)"
-                + "(⌘☯𓍰 𓍱 𓍲 𓍳 𓍴 𓍵 𓍶 𓍷 𓍸☯⌘66(⚷⚙⚷Ni4Ti6)40Fc⚙37҈30҉33«»67Rt*51۞47Rc62Si*68)"
+                + "(⌘☯𓍰𓍱𓍲𓍳𓍴𓍵𓍶𓍷𓍸☯⌘66(⚷⚙⚷Ni4Ti6)40Fc⚙37҈30҉33«»67Rt*51۞47Rc62Si*68)"
                 + "(Fs61Ef30Ut69Tr66Ms40If53He*43Ai32Or55Vy36⬟⯂⬢⬣⯃⯄32Tt33Cc56Vu58Ao52))???144)"),
         new Werkstoff.Stats().setToxic(true),
         Werkstoff.Types.ELEMENT,
