@@ -9,7 +9,9 @@ import gregtech.api.util.GTLanguageManager;
 public class TextLocalization {
 
     public static final String AppliedEnergistics2 = texter("Applied Energistics 2", "AppliedEnergistics2");
-    public static final String StructuralReconstructionPlan = texter("Structural Reconstruction Plan", "StructuralReconstructionPlan");
+    public static final String StructuralReconstructionPlan = texter(
+        "Structural Reconstruction Plan",
+        "StructuralReconstructionPlan");
 
     public static final String StructureTooComplex = texter("The structure is too complex!", "StructureTooComplex");
     public static final String BLUE_PRINT_INFO = texter(
