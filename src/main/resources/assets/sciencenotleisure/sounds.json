@@ -7,5 +7,23 @@
         "stream": false
       }
     ]
+  },
+  "record.sus": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "record.sus",
+        "stream": "true"
+      }
+    ]
+  },
+  "record.newhorizons": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "record.newhorizons",
+        "stream": "true"
+      }
+    ]
   }
 }

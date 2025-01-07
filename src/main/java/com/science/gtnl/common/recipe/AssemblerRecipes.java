@@ -411,8 +411,8 @@ public class AssemblerRecipes implements IRecipePool {
                 GTModHandler.getModItem("gregtech", "gt.blockmachines", 1, 1177),
                 GTModHandler.getModItem("gregtech", "gt.metaitem.01", 8, 17028),
                 GTModHandler.getModItem("gregtech", "gt.laserplate", 4, 0),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 2, 17028),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 2, 17028),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 2, 32683),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 2, 32693),
                 GTModHandler.getModItem("gregtech", "gt.metaitem.02", 4, 31316),
                 GTModHandler.getModItem("gregtech", "gt.blockframes", 4, 306),
                 GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 2L))

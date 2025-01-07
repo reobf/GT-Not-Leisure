@@ -111,7 +111,7 @@ public class NeutroniumWireCutting extends WirelessEnergyMultiMachineBase<Neutro
             .addOutputHatch(TextLocalization.Tooltip_LapotronChip_Casing, 1)
             .addEnergyHatch(TextLocalization.Tooltip_LapotronChip_Casing, 1)
             .addMaintenanceHatch(TextLocalization.Tooltip_LapotronChip_Casing, 1)
-            .toolTipFinisher(TextUtils.SQY);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
         return tt;
     }
 

@@ -8,6 +8,9 @@ import gregtech.api.util.GTLanguageManager;
 
 public class TextLocalization {
 
+    public static final String AppliedEnergistics2 = texter("Applied Energistics 2", "AppliedEnergistics2");
+    public static final String StructuralReconstructionPlan = texter("Structural Reconstruction Plan", "StructuralReconstructionPlan");
+
     public static final String StructureTooComplex = texter("The structure is too complex!", "StructureTooComplex");
     public static final String BLUE_PRINT_INFO = texter(
         "Follow the" + EnumChatFormatting.BLUE
@@ -202,6 +205,40 @@ public class TextLocalization {
     public static final String Tooltip_Desulfurizer_Casing = texter(
         "Any Clean Stainless Steel Machine Casing",
         "Tooltip_Desulfurizer_Casing");
+
+    public static final String BrickBlastFurnaceRecipeType = texter(
+        "§cLeap §6Forward §eN§ao.§b1 §9Brick §dBlast §5Furnace",
+        "BrickBlastFurnaceRecipeType");
+    public static final String Tooltip_BrickBlastFurnace_00 = texter(
+        "Usable for Steel and general Pyrometallurgy",
+        "Tooltip_BrickBlastFurnace_00");
+    public static final String Tooltip_BrickBlastFurnace_01 = texter(
+        "Has a useful interface, unlike other gregtech multis",
+        "Tooltip_BrickBlastFurnace_01");
+    public static final String Tooltip_BrickBlastFurnace_02 = texter(
+        "Benefiting from the improvements in the furnace body,",
+        "Tooltip_BrickBlastFurnace_02");
+    public static final String Tooltip_BrickBlastFurnace_03 = texter(
+        "the speed has now increased to just §l§c1§r second for any recipe!",
+        "Tooltip_BrickBlastFurnace_03");
+    public static final String Tooltip_BrickBlastFurnace_04 = texter(
+        "The downside is that the cost is now §l§ceight§r times higher",
+        "Tooltip_BrickBlastFurnace_04");
+    public static final String Tooltip_BrickBlastFurnace_Casing_00 = texter(
+        "355x Firebricks",
+        "Tooltip_BrickBlastFurnace_Casing_00");
+    public static final String Tooltip_BrickBlastFurnace_Casing_01 = texter(
+        "387x Stonebrick",
+        "Tooltip_BrickBlastFurnace_Casing_01");
+    public static final String Tooltip_BrickBlastFurnace_Casing_02 = texter(
+        "70x Bronze Frame Box",
+        "Tooltip_BrickBlastFurnace_Casing_02");
+    public static final String Tooltip_BrickBlastFurnace_Casing_03 = texter(
+        "24x Bronze Firebox Casing",
+        "Tooltip_BrickBlastFurnace_Casing_03");
+    public static final String Tooltip_BrickBlastFurnace_Casing_04 = texter(
+        "16x Bronze Plated Bricks",
+        "Tooltip_BrickBlastFurnace_Casing_04");
 
     public static final String NameLargeCircuitAssembler = texter(
         "Large Circuit Assembler",

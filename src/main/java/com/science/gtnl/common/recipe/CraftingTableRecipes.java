@@ -6,6 +6,10 @@ import static gregtech.api.util.GTModHandler.getModItem;
 
 import com.science.gtnl.common.GTNLItemList;
 
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GTOreDictUnificator;
+
 public class CraftingTableRecipes implements IRecipePool {
 
     @Override
@@ -99,5 +103,14 @@ public class CraftingTableRecipes implements IRecipePool {
                 getModItem("gregtech", "gt.metaitem.02", 1, 21300, missing), 'C',
                 getModItem("gregtech", "gt.blockcasings2", 1, 12, missing), 'D',
                 getModItem("gregtech", "gt.blockcasings3", 1, 13, missing) });
+
+        addCraftingRecipe(
+            GTNLItemList.Desulfurizer.get(1),
+            new Object[] { "ABA", "CDC", "EFE", 'A', GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1L),
+                'B', getModItem("dreamcraft", "item.AdsorptionFilter", 1, 0, missing), 'C',
+                getModItem("gregtech", "gt.metaitem.01", 1, 32612, missing), 'D',
+                getModItem("gregtech", "gt.blockmachines", 1, 13, missing), 'E',
+                getModItem("gregtech", "gt.blockmachines", 1, 1443, missing), 'F',
+                getModItem("gregtech", "gt.metaitem.01", 1, 32602, missing) });
     }
 }

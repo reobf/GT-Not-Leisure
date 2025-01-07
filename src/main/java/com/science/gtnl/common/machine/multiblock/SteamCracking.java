@@ -331,7 +331,7 @@ public class SteamCracking extends MTESteamMultiBase<SteamCracking> implements I
             .beginStructureBlock(7, 4, 4, false)
             .addInputBus(TextLocalization.Tooltip_SteamCracking_Casing, 1)
             .addOutputBus(TextLocalization.Tooltip_SteamCracking_Casing, 1)
-            .toolTipFinisher(TextUtils.SQY);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
         return tt;
     }
 

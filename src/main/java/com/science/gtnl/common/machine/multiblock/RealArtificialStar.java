@@ -537,7 +537,7 @@ public class RealArtificialStar extends MultiMachineBase<RealArtificialStar>
             .addStructureInfo(TextLocalization.Tooltip_RealArtificialStarInfo_12)
             .addStructureInfo(TextLocalization.Tooltip_RealArtificialStarInfo_13)
             .addStructureInfo(TextLocalization.Tooltip_RealArtificialStarInfo_14)
-            .toolTipFinisher(TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
         return tt;
     }
 
@@ -582,7 +582,7 @@ public class RealArtificialStar extends MultiMachineBase<RealArtificialStar>
         if (side == aFacing) {
             if (aActive) {
                 return new ITexture[] { casingTexturePages[0][12], TextureFactory.builder()
-                    .addIcon(OVERLAY_DTPF_ON)
+                    .addIcon(OVERLAY_FUSION1)
                     .extFacing()
                     .build(),
                     TextureFactory.builder()

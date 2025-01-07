@@ -62,7 +62,7 @@ public class SmeltingMixingFurnaceRecipes implements IRecipePool {
             .fluidOutputs(FluidRegistry.getFluidStack("molten.potin", 720 * 2))
             .specialValue(0)
             .noOptimize()
-            .duration(200)
+            .duration(200 * 2)
             .eut(15)
             .addTo(SMFR);
 
@@ -80,7 +80,7 @@ public class SmeltingMixingFurnaceRecipes implements IRecipePool {
             .fluidOutputs(FluidRegistry.getFluidStack("molten.eglinsteel", 2304 * 3))
             .specialValue(0)
             .noOptimize()
-            .duration(900)
+            .duration(900 * 3)
             .eut(120)
             .addTo(SMFR);
 
@@ -95,7 +95,7 @@ public class SmeltingMixingFurnaceRecipes implements IRecipePool {
             .fluidOutputs(FluidRegistry.getFluidStack("molten.teflon", 2880 * 2))
             .specialValue(0)
             .noOptimize()
-            .duration(200)
+            .duration(200 * 2)
             .eut(15)
             .addTo(SMFR);
 
@@ -113,7 +113,7 @@ public class SmeltingMixingFurnaceRecipes implements IRecipePool {
             .fluidOutputs(FluidRegistry.getFluidStack("molten.ancientgranite", 4176 * 15))
             .specialValue(0)
             .noOptimize()
-            .duration(200)
+            .duration(200 * 15)
             .eut(15)
             .addTo(SMFR);
 
@@ -209,7 +209,7 @@ public class SmeltingMixingFurnaceRecipes implements IRecipePool {
             .fluidOutputs(FluidRegistry.getFluidStack("molten.inconel625", 6192 * 15))
             .specialValue(0)
             .noOptimize()
-            .duration(400)
+            .duration(400 * 15)
             .eut(120)
             .addTo(SMFR);
 
@@ -310,7 +310,7 @@ public class SmeltingMixingFurnaceRecipes implements IRecipePool {
             .fluidOutputs(FluidRegistry.getFluidStack("molten.tantalloy61", 1584 * 25))
             .specialValue(0)
             .noOptimize()
-            .duration(600)
+            .duration(600 * 25)
             .eut(480)
             .addTo(SMFR);
 
@@ -367,7 +367,7 @@ public class SmeltingMixingFurnaceRecipes implements IRecipePool {
             .fluidOutputs(FluidRegistry.getFluidStack("molten.inconel690", 1152 * 5))
             .specialValue(0)
             .noOptimize()
-            .duration(600)
+            .duration(600 * 5)
             .eut(480)
             .addTo(SMFR);
 
@@ -381,7 +381,7 @@ public class SmeltingMixingFurnaceRecipes implements IRecipePool {
             .fluidOutputs(FluidRegistry.getFluidStack("molten.inconel792", 864 * 5))
             .specialValue(0)
             .noOptimize()
-            .duration(600)
+            .duration(600 * 5)
             .eut(480)
             .addTo(SMFR);
 
@@ -452,7 +452,7 @@ public class SmeltingMixingFurnaceRecipes implements IRecipePool {
             .fluidOutputs(FluidRegistry.getFluidStack("molten.tungstentitaniumcarbide", 1440 * 2))
             .specialValue(0)
             .noOptimize()
-            .duration(800)
+            .duration(800 * 2)
             .eut(1920)
             .addTo(SMFR);
 
@@ -628,7 +628,7 @@ public class SmeltingMixingFurnaceRecipes implements IRecipePool {
             .fluidOutputs(FluidRegistry.getFluidStack("molten.hs188a", 7200 * 50))
             .specialValue(0)
             .noOptimize()
-            .duration(6000)
+            .duration(6000 * 50)
             .eut(7680)
             .addTo(SMFR);
 
@@ -657,7 +657,7 @@ public class SmeltingMixingFurnaceRecipes implements IRecipePool {
             .fluidOutputs(FluidRegistry.getFluidStack("molten.triniumnaquadahcarbonite", 1440 * 14))
             .specialValue(0)
             .noOptimize()
-            .duration(7200)
+            .duration(7200 * 14)
             .eut(30720)
             .addTo(SMFR);
 
@@ -711,7 +711,7 @@ public class SmeltingMixingFurnaceRecipes implements IRecipePool {
             .fluidOutputs(FluidRegistry.getFluidStack("molten.lafiumcompound", 2592 * 25))
             .specialValue(0)
             .noOptimize()
-            .duration(7200)
+            .duration(7200 * 25)
             .eut(30720)
             .addTo(SMFR);
 
@@ -745,7 +745,7 @@ public class SmeltingMixingFurnaceRecipes implements IRecipePool {
             .fluidOutputs(FluidRegistry.getFluidStack("molten.arceusalloy2b", 1584 * 12))
             .specialValue(0)
             .noOptimize()
-            .duration(8400)
+            .duration(8400 * 12)
             .eut(122880)
             .addTo(SMFR);
 
@@ -766,7 +766,7 @@ public class SmeltingMixingFurnaceRecipes implements IRecipePool {
             .fluidOutputs(FluidRegistry.getFluidStack("molten.laurenium", 2304 * 6))
             .specialValue(0)
             .noOptimize()
-            .duration(8400)
+            .duration(8400 * 6)
             .eut(122880)
             .addTo(SMFR);
 
@@ -791,7 +791,7 @@ public class SmeltingMixingFurnaceRecipes implements IRecipePool {
             .fluidOutputs(FluidRegistry.getFluidStack("molten.pikyonium64b", 4176 * 240))
             .specialValue(0)
             .noOptimize()
-            .duration(8400)
+            .duration(8400 * 240)
             .eut(122880)
             .addTo(SMFR);
 
@@ -816,7 +816,7 @@ public class SmeltingMixingFurnaceRecipes implements IRecipePool {
             .fluidOutputs(FluidRegistry.getFluidStack("molten.cinobitea243", 7632 * 50))
             .specialValue(0)
             .noOptimize()
-            .duration(8400)
+            .duration(8400 * 50)
             .eut(122880)
             .addTo(SMFR);
 
@@ -831,7 +831,7 @@ public class SmeltingMixingFurnaceRecipes implements IRecipePool {
             .fluidOutputs(FluidRegistry.getFluidStack("molten.botmium", 2304 * 15))
             .specialValue(0)
             .noOptimize()
-            .duration(2400)
+            .duration(2400 * 15)
             .eut(491520)
             .addTo(SMFR);
 
@@ -848,7 +848,7 @@ public class SmeltingMixingFurnaceRecipes implements IRecipePool {
             .fluidOutputs(FluidRegistry.getFluidStack("molten.titansteel", 864 * 17))
             .specialValue(0)
             .noOptimize()
-            .duration(9600)
+            .duration(9600 * 17)
             .eut(491520)
             .addTo(SMFR);
 
@@ -897,7 +897,7 @@ public class SmeltingMixingFurnaceRecipes implements IRecipePool {
             .fluidOutputs(FluidRegistry.getFluidStack("molten.octiron", 1440 * 2000))
             .specialValue(0)
             .noOptimize()
-            .duration(10800)
+            .duration(10800 * 2000)
             .eut(1966080)
             .addTo(SMFR);
 
@@ -921,7 +921,7 @@ public class SmeltingMixingFurnaceRecipes implements IRecipePool {
             .fluidOutputs(FluidRegistry.getFluidStack("molten.abyssalalloy", 4032 * 160))
             .specialValue(0)
             .noOptimize()
-            .duration(10800)
+            .duration(10800 * 160)
             .eut(1966080)
             .addTo(SMFR);
 
@@ -964,7 +964,7 @@ public class SmeltingMixingFurnaceRecipes implements IRecipePool {
             .fluidOutputs(FluidRegistry.getFluidStack("molten.quantum", 1440 * 20))
             .specialValue(0)
             .noOptimize()
-            .duration(12000)
+            .duration(12000 * 20)
             .eut(7864320)
             .addTo(SMFR);
 
@@ -1005,7 +1005,7 @@ public class SmeltingMixingFurnaceRecipes implements IRecipePool {
             .fluidOutputs(FluidRegistry.getFluidStack("protohalkonitebase", 1152 * 1080))
             .specialValue(0)
             .noOptimize()
-            .duration(1200)
+            .duration(1200 * 1080)
             .eut(7864320)
             .addTo(SMFR);
 
@@ -1029,7 +1029,7 @@ public class SmeltingMixingFurnaceRecipes implements IRecipePool {
             .fluidOutputs(FluidRegistry.getFluidStack("phononmedium", 3600000))
             .specialValue(0)
             .noOptimize()
-            .duration(2400)
+            .duration(2400 * 3600)
             .eut(31457280)
             .addTo(SMFR);
     }

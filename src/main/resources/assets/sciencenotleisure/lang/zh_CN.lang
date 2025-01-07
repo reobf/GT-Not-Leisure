@@ -1,4 +1,6 @@
 itemGroup.GTNoteLeisure=GT不再业余
+StructuralReconstructionPlan=结构代替计划
+AppliedEnergistics2=应用能源2
 
 Waila.General.WirelessMode=无线模式
 Waila.General.CurrentEuCost=当前EU消耗
@@ -128,6 +130,8 @@ MetaItem.7.name=坠星采矿场I图纸
 MetaItem.8.name=坠星采矿场II图纸
 
 item.testitem.name=测试物品
+item.record.sus.desc=Software Update Services
+item.record.newhorizons.desc=Sweet Dreams (Bonus Track)
 
 item.VerySimpleCircuit.name=极简控制电路
 item.SimpleCircuit.name=简单控制电路
@@ -241,6 +245,18 @@ HIGH_PRESSURE_TOOLTIP_NOTICE=高压模式下处理速度和蒸汽消耗翻倍
 StructureTooComplex=结构太复杂了！
 BLUE_PRINT_INFO=请参考§9Structure§1Lib§7全息投影，构建主体结构
 textUseBlueprint=用§9蓝§b图§r预览
+
+BrickBlastFurnaceRecipeType=§c跃§6进§e一§a号§b原§9始§d高§5炉
+Tooltip_BrickBlastFurnace_00=用于炼钢或一般的热冶金
+Tooltip_BrickBlastFurnace_01=不同于其他GT多方块机器，砖高炉的控制器可进行自动物品交互
+Tooltip_BrickBlastFurnace_02=获益于炉身的改进,
+Tooltip_BrickBlastFurnace_03=现在原始高炉的任意配方仅需§l§c1§r秒!
+Tooltip_BrickBlastFurnace_04=代价是造价比以前昂贵了§l§c8§r倍
+Tooltip_BrickBlastFurnace_Casing_00=355x 耐火砖
+Tooltip_BrickBlastFurnace_Casing_01=387x 石砖
+Tooltip_BrickBlastFurnace_Casing_02=70x 青铜框架
+Tooltip_BrickBlastFurnace_Casing_03=24x 青铜燃烧室
+Tooltip_BrickBlastFurnace_Casing_04=16x 镀铜砖块
 
 NameLargeSteamCircuitAssembler=大型蒸汽电路组装机
 LargeSteamCircuitAssemblerRecipeType=电路组装机

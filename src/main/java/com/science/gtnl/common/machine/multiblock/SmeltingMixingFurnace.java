@@ -33,6 +33,7 @@ import com.science.gtnl.common.machine.multiMachineClasses.WirelessEnergyMultiMa
 import bartworks.API.BorosilicateGlass;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Textures;
+import gregtech.api.enums.VoltageIndex;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
@@ -69,7 +70,7 @@ public class SmeltingMixingFurnace extends WirelessEnergyMultiMachineBase<Smelti
 
     public static final String STRUCTURE_PIECE_MAIN = "main";
 
-    public static final String SMF_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/smelting_mixing_furnace"; // 文件路径
+    public static final String SMF_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/smelting_mixing_furnace";
 
     public String[][] shape;
 
@@ -85,7 +86,7 @@ public class SmeltingMixingFurnace extends WirelessEnergyMultiMachineBase<Smelti
 
     @Override
     protected boolean isEnablePerfectOverclock() {
-        return false;
+        return true;
     }
 
     @Override
@@ -114,7 +115,7 @@ public class SmeltingMixingFurnace extends WirelessEnergyMultiMachineBase<Smelti
             .addOutputHatch(TextLocalization.Tooltip_SmeltingMixingFurnace_Casing, 1)
             .addEnergyHatch(TextLocalization.Tooltip_SmeltingMixingFurnace_Casing, 1)
             .addMaintenanceHatch(TextLocalization.Tooltip_SmeltingMixingFurnace_Casing, 1)
-            .toolTipFinisher(TextUtils.SQY);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
         return tt;
     }
 
@@ -213,7 +214,7 @@ public class SmeltingMixingFurnace extends WirelessEnergyMultiMachineBase<Smelti
         tCountCasing = 0;
         wirelessMode = false;
         if (!checkPiece(STRUCTURE_PIECE_MAIN, HORIZONTAL_OFF_SET, VERTICAL_OFF_SET, DEPTH_OFF_SET)) return false;
-        if (tCountCasing <= 100 && !checkHatches()) {
+        if (tCountCasing <= 15 && !checkHatches() && mGlassTier < VoltageIndex.UIV) {
             updateHatchTexture();
             return false;
         }
@@ -243,8 +244,8 @@ public class SmeltingMixingFurnace extends WirelessEnergyMultiMachineBase<Smelti
             @NotNull
             @Override
             public CheckRecipeResult process() {
-                setEuModifier(0.8);
-                setSpeedBonus(0.2);
+                setEuModifier(0.6);
+                setSpeedBonus(0.8);
                 return super.process();
             }
 
@@ -253,12 +254,12 @@ public class SmeltingMixingFurnace extends WirelessEnergyMultiMachineBase<Smelti
 
     @Override
     public int getWirelessModeProcessingTime() {
-        return 128;
+        return 1024;
     }
 
     @Override
     public int getMaxParallelRecipes() {
-        return 16 * ((mGlassTier * GTUtility.getTier(this.getMaxInputVoltage())));
+        return 32 * (GTUtility.getTier(this.getMaxInputVoltage()));
     }
 
     @Override

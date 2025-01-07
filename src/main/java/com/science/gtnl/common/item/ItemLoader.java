@@ -91,6 +91,8 @@ public class ItemLoader {
     public static Item CosmicSMDInductor = new CosmicSMDInductor();
     public static Item CosmicSMDResistor = new CosmicSMDResistor();
     public static Item CosmicSMDTransistor = new CosmicSMDTransistor();
+    public static Item RecordSus = new ItemRecord("sus");
+    public static Item RecordNewHorizons = new ItemRecord("newhorizons");
 
     public ItemLoader(FMLPreInitializationEvent event) {
         IRegistry(testitem, "testitem");
@@ -133,6 +135,8 @@ public class ItemLoader {
         IRegistry(CircuitResonaticUHV, "CircuitResonaticUHV");
         IRegistry(CircuitResonaticUEV, "CircuitResonaticUEV");
         IRegistry(CircuitResonaticUIV, "CircuitResonaticUIV");
+        IRegistry(RecordSus, "RecordSus");
+        IRegistry(RecordNewHorizons, "RecordNewHorizons");
 
         // 添加矿辞
         OreDictionary.registerOre("circuitPrimitive", VerySimpleCircuit);
@@ -229,7 +233,6 @@ public class ItemLoader {
     }
 
     public boolean shouldNotUnify() {
-        // 根据你的逻辑确定是否不进行统一
-        return true; // 这里简单返回true作为示例
+        return true;
     }
 }
