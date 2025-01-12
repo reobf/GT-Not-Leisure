@@ -32,8 +32,8 @@ import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.logic.ProcessingLogic;
 import gregtech.api.metatileentity.implementations.MTEHatch;
-import gregtech.api.objects.GTRenderedTexture;
 import gregtech.api.recipe.RecipeMap;
+import gregtech.api.render.TextureFactory;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.common.blocks.BlockCasings1;
@@ -104,7 +104,7 @@ public class LapotronChip extends MultiMachineBase<LapotronChip> implements ISur
             .addOutputHatch(TextLocalization.Tooltip_LapotronChip_Casing, 1)
             .addEnergyHatch(TextLocalization.Tooltip_LapotronChip_Casing, 1)
             .addMaintenanceHatch(TextLocalization.Tooltip_LapotronChip_Casing, 1)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE);
+            .toolTipFinisher(TextUtils.SNL);
         return tt;
     }
 
@@ -119,20 +119,20 @@ public class LapotronChip extends MultiMachineBase<LapotronChip> implements ISur
         return ((BlockCasings1) GregTechAPI.sBlockCasings1).getTextureIndex(11);
     }
 
-    protected GTRenderedTexture LCgetFrontOverlay() {
-        return new GTRenderedTexture(Textures.BlockIcons.OVERLAY_DTPF_OFF);
-    }
-
-    protected GTRenderedTexture LCgetFrontOverlayActive() {
-        return new GTRenderedTexture(Textures.BlockIcons.OVERLAY_DTPF_ON);
-    }
-
     @Override
-    public ITexture[] getTexture(final IGregTechTileEntity aBaseMetaTileEntity, final ForgeDirection side,
-        final ForgeDirection facing, final int aColorIndex, final boolean aActive, final boolean aRedstone) {
-        if (side == facing) {
+    public ITexture[] getTexture(IGregTechTileEntity aBaseMetaTileEntity, ForgeDirection side, ForgeDirection aFacing,
+        int colorIndex, boolean aActive, boolean redstoneLevel) {
+        if (side == aFacing) {
+            if (aActive) return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()),
+                TextureFactory.builder()
+                    .addIcon(Textures.BlockIcons.OVERLAY_DTPF_ON)
+                    .extFacing()
+                    .build() };
             return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()),
-                aActive ? LCgetFrontOverlayActive() : LCgetFrontOverlay() };
+                TextureFactory.builder()
+                    .addIcon(Textures.BlockIcons.OVERLAY_DTPF_OFF)
+                    .extFacing()
+                    .build() };
         }
         return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()) };
     }

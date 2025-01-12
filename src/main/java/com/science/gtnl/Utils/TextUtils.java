@@ -8,6 +8,7 @@ import com.mojang.realmsclient.gui.ChatFormatting;
 
 public class TextUtils {
 
+    public static final String SNL = TextUtils.full_color("Science Not Leisure");
     public static final String SCIENCE_NOT_LEISURE = TextUtils.full_color("Science Not Leisure: ");
     public static final String STERILE = EnumChatFormatting.DARK_PURPLE + "Sterile";
     public static final String AE = EnumChatFormatting.BLUE + TextLocalization.AppliedEnergistics2;

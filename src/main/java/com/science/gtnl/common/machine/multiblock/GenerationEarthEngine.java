@@ -15,7 +15,6 @@ import com.gtnewhorizon.structurelib.alignment.constructable.ISurvivalConstructa
 import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
-import com.gtnewhorizon.structurelib.structure.StructureUtility;
 import com.gtnewhorizons.gtnhintergalactic.block.IGBlocks;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.TextLocalization;
@@ -30,8 +29,8 @@ import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.logic.ProcessingLogic;
 import gregtech.api.metatileentity.implementations.MTEHatch;
-import gregtech.api.objects.GTRenderedTexture;
 import gregtech.api.recipe.RecipeMap;
+import gregtech.api.render.TextureFactory;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.common.blocks.BlockCasings1;
@@ -103,7 +102,7 @@ public class GenerationEarthEngine extends GTPPMultiBlockBase<GenerationEarthEng
             .addOutputHatch(TextLocalization.Tooltip_GenerationEarthEngine_Casing, 1)
             .addEnergyHatch(TextLocalization.Tooltip_GenerationEarthEngine_Casing, 1)
             .addMaintenanceHatch(TextLocalization.Tooltip_GenerationEarthEngine_Casing, 1)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE);
+            .toolTipFinisher(TextUtils.SNL);
         return tt;
     }
 
@@ -118,27 +117,27 @@ public class GenerationEarthEngine extends GTPPMultiBlockBase<GenerationEarthEng
         return ((BlockCasings1) GregTechAPI.sBlockCasings1).getTextureIndex(12);
     }
 
-    protected GTRenderedTexture GEEgetFrontOverlay() {
-        return new GTRenderedTexture(Textures.BlockIcons.OVERLAY_DTPF_OFF);
-    }
-
-    protected GTRenderedTexture GEEgetFrontOverlayActive() {
-        return new GTRenderedTexture(Textures.BlockIcons.OVERLAY_DTPF_ON);
+    @Override
+    public ITexture[] getTexture(IGregTechTileEntity aBaseMetaTileEntity, ForgeDirection side, ForgeDirection aFacing,
+        int colorIndex, boolean aActive, boolean redstoneLevel) {
+        if (side == aFacing) {
+            if (aActive) return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()),
+                TextureFactory.builder()
+                    .addIcon(Textures.BlockIcons.OVERLAY_DTPF_ON)
+                    .extFacing()
+                    .build() };
+            return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()),
+                TextureFactory.builder()
+                    .addIcon(Textures.BlockIcons.OVERLAY_DTPF_OFF)
+                    .extFacing()
+                    .build() };
+        }
+        return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()) };
     }
 
     @Override
     public boolean isRotationChangeAllowed() {
         return false;
-    }
-
-    @Override
-    public ITexture[] getTexture(final IGregTechTileEntity aBaseMetaTileEntity, final ForgeDirection side,
-        final ForgeDirection facing, final int aColorIndex, final boolean aActive, final boolean aRedstone) {
-        if (side == facing) {
-            return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()),
-                aActive ? GEEgetFrontOverlayActive() : GEEgetFrontOverlay() };
-        }
-        return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()) };
     }
 
     @Override
@@ -155,7 +154,7 @@ public class GenerationEarthEngine extends GTPPMultiBlockBase<GenerationEarthEng
                 .addElement('G', ofBlock(sBlockCasings8, 13))
                 .addElement('H', ofBlock(sBlockCasings1, 13))
                 .addElement('I', ofBlock(sBlockCasings8, 2))
-                .addElement('J', StructureUtility.ofBlock(IGBlocks.SpaceElevatorCasing, 1))
+                .addElement('J', ofBlock(IGBlocks.SpaceElevatorCasing, 1))
                 .addElement('K', ofBlock(BlockLoader.defcCasingBlock, 11))
                 .addElement(
                     'L',

@@ -639,7 +639,7 @@ public class SmeltingMixingFurnaceRecipes implements IRecipePool {
                 FluidRegistry.getFluidStack("molten.calcium", 144 * 2),
                 FluidRegistry.getFluidStack("molten.copper", 144 * 3),
                 FluidRegistry.getFluidStack("molten.oxygen", 8000),
-                FluidRegistry.getFluidStack("molten.mercury", 1000))
+                FluidRegistry.getFluidStack("mercury", 1000))
             .fluidOutputs(FluidRegistry.getFluidStack("molten.hg1223", 2304))
             .specialValue(0)
             .noOptimize()
@@ -1031,6 +1031,543 @@ public class SmeltingMixingFurnaceRecipes implements IRecipePool {
             .noOptimize()
             .duration(2400 * 3600)
             .eut(31457280)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(GTUtility.getIntegratedCircuit(2))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.ruthenium", 144 * 2),
+                FluidRegistry.getFluidStack("molten.iridium", 144))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.ruridit", 432))
+            .specialValue(0)
+            .noOptimize()
+            .duration(600)
+            .eut(480)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(GTUtility.getIntegratedCircuit(4))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.zirconium", 144 * 34),
+                FluidRegistry.getFluidStack("molten.zinc", 144 * 5),
+                FluidRegistry.getFluidStack("molten.iron", 144 * 2),
+                FluidRegistry.getFluidStack("molten.chrome", 144))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.zircaloy-4", 144 * 42))
+            .specialValue(0)
+            .noOptimize()
+            .duration(600)
+            .eut(480)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(GTUtility.getIntegratedCircuit(5))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.zirconium", 144 * 34),
+                FluidRegistry.getFluidStack("molten.zinc", 144 * 4),
+                FluidRegistry.getFluidStack("molten.iron", 144),
+                FluidRegistry.getFluidStack("molten.chrome", 144),
+                FluidRegistry.getFluidStack("molten.nickel", 144))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.zircaloy-2", 144 * 41))
+            .specialValue(0)
+            .noOptimize()
+            .duration(600)
+            .eut(480)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(GTUtility.getIntegratedCircuit(5))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.zirconium", 144 * 34),
+                FluidRegistry.getFluidStack("molten.zinc", 144 * 4),
+                FluidRegistry.getFluidStack("molten.iron", 144),
+                FluidRegistry.getFluidStack("molten.chrome", 144),
+                FluidRegistry.getFluidStack("molten.nickel", 144))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.zircaloy-2", 144 * 41))
+            .specialValue(0)
+            .noOptimize()
+            .duration(600)
+            .eut(480)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(GTUtility.getIntegratedCircuit(3))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.adamantium", 144 * 5),
+                FluidRegistry.getFluidStack("molten.naquadah", 144 * 2),
+                FluidRegistry.getFluidStack("molten.lanthanum", 144 * 3))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.adamantium alloy", 1440))
+            .specialValue(0)
+            .noOptimize()
+            .duration(885)
+            .eut(1920)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(GTUtility.getIntegratedCircuit(5))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.titanium", 144 * 5),
+                FluidRegistry.getFluidStack("molten.molybdenum", 144 * 2),
+                FluidRegistry.getFluidStack("molten.vanadium", 144 * 2),
+                FluidRegistry.getFluidStack("molten.chrome", 144 * 2),
+                FluidRegistry.getFluidStack("molten.aluminium", 144))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.tanmolyium beta-c", 144 * 16))
+            .specialValue(0)
+            .noOptimize()
+            .duration(145)
+            .eut(7680)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(GTUtility.getIntegratedCircuit(6))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.titanium", 144 * 71),
+                FluidRegistry.getFluidStack("molten.molybdenum", 144 * 14),
+                FluidRegistry.getFluidStack("molten.vanadium", 144 * 94),
+                FluidRegistry.getFluidStack("molten.niobium", 144 * 36),
+                FluidRegistry.getFluidStack("molten.palladium", 144 * 48),
+                FluidRegistry.getFluidStack("molten.rhodium", 144 * 16),
+                FluidRegistry.getFluidStack("molten.chrome", 144 * 14),
+                FluidRegistry.getFluidStack("molten.quantium", 144 * 56),
+                FluidRegistry.getFluidStack("molten.erbium", 144 * 24),
+                FluidRegistry.getFluidStack("molten.aluminium", 144 * 7))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.dalisenite", 144 * 16))
+            .specialValue(0)
+            .noOptimize()
+            .duration(283)
+            .eut(491520)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(GTUtility.getIntegratedCircuit(4))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.naquadahenriched", 144 * 8),
+                FluidRegistry.getFluidStack("molten.tritanium", 144 * 5),
+                FluidRegistry.getFluidStack("molten.californium", 144 * 3),
+                FluidRegistry.getFluidStack("molten.blackplutonium", 144 * 2))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.enriched naquadah alloy", 144 * 18))
+            .specialValue(0)
+            .noOptimize()
+            .duration(800)
+            .eut(7864320)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(
+                GTUtility.getIntegratedCircuit(4),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 20, 2022))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.copper", 144 * 15),
+                FluidRegistry.getFluidStack("molten.silicon", 144 * 6),
+                FluidRegistry.getFluidStack("molten.iron", 144 * 10),
+                FluidRegistry.getFluidStack("molten.chrome", 144),
+                FluidRegistry.getFluidStack("molten.aluminium", 144 * 2),
+                FluidRegistry.getFluidStack("molten.oxygen", 3000),
+                FluidRegistry.getFluidStack("mercury", 18000))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.redalloy", 144 * 15))
+            .specialValue(0)
+            .noOptimize()
+            .duration(80 * 15)
+            .eut(16)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(
+                GTUtility.getIntegratedCircuit(8),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 20, 2022))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.silver", 144 * 160),
+                FluidRegistry.getFluidStack("molten.gold", 144 * 40),
+                FluidRegistry.getFluidStack("molten.silicon", 144 * 6),
+                FluidRegistry.getFluidStack("molten.iron", 144 * 10),
+                FluidRegistry.getFluidStack("molten.chrome", 144),
+                FluidRegistry.getFluidStack("molten.aluminium", 144 * 2),
+                FluidRegistry.getFluidStack("oxygen", 3000),
+                FluidRegistry.getFluidStack("mercury", 18000))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.bluealloy", 144 * 120))
+            .specialValue(0)
+            .noOptimize()
+            .duration(80 * 120)
+            .eut(16)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(GTUtility.getIntegratedCircuit(2))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.nickel", 144 * 4),
+                FluidRegistry.getFluidStack("molten.chrome", 144))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.nichrome", 144 * 5))
+            .specialValue(0)
+            .noOptimize()
+            .duration(360)
+            .eut(1920)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(GTUtility.getIntegratedCircuit(3))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.iron", 144),
+                FluidRegistry.getFluidStack("molten.aluminium", 144),
+                FluidRegistry.getFluidStack("molten.chrome", 144))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.kanthal", 144 * 3))
+            .specialValue(0)
+            .noOptimize()
+            .duration(900)
+            .eut(480)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(GTUtility.getIntegratedCircuit(2))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.magnesium", 144),
+                FluidRegistry.getFluidStack("molten.aluminium", 144 * 2))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.magnalium", 144 * 3))
+            .specialValue(0)
+            .noOptimize()
+            .duration(200)
+            .eut(4)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(GTUtility.getIntegratedCircuit(2))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.lead", 144 * 4),
+                FluidRegistry.getFluidStack("molten.antimony", 144))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.batteryalloy", 144 * 5))
+            .specialValue(0)
+            .noOptimize()
+            .duration(200)
+            .eut(4)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(GTUtility.getIntegratedCircuit(2))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.osmium", 144),
+                FluidRegistry.getFluidStack("molten.iridium", 144 * 3))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.osmiridium", 144 * 4))
+            .specialValue(0)
+            .noOptimize()
+            .duration(500)
+            .eut(30720)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(
+                GTUtility.getIntegratedCircuit(3),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 1, 2010))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.naquadah", 144 * 2),
+                FluidRegistry.getFluidStack("molten.trinium", 144))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.naquadahalloy", 144 * 4))
+            .specialValue(0)
+            .noOptimize()
+            .duration(360)
+            .eut(61440)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(GTUtility.getIntegratedCircuit(4))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.cobalt", 144 * 5),
+                FluidRegistry.getFluidStack("molten.chrome", 144 * 2),
+                FluidRegistry.getFluidStack("molten.nickel", 144),
+                FluidRegistry.getFluidStack("molten.molybdenum", 144))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.ultimet", 144 * 9))
+            .specialValue(0)
+            .noOptimize()
+            .duration(2700)
+            .eut(120)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(GTUtility.getIntegratedCircuit(2))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.vanadium", 144 * 3),
+                FluidRegistry.getFluidStack("molten.gallium", 144))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.vanadiumgallium", 144 * 4))
+            .specialValue(0)
+            .noOptimize()
+            .duration(444)
+            .eut(1920)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(GTUtility.getIntegratedCircuit(4))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.yttrium", 144),
+                FluidRegistry.getFluidStack("molten.barium", 144 * 2),
+                FluidRegistry.getFluidStack("molten.copper", 144 * 3),
+                FluidRegistry.getFluidStack("oxygen", 7000))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.yttriumbariumcuprate", 144 * 13))
+            .specialValue(0)
+            .noOptimize()
+            .duration(280)
+            .eut(1920)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(GTUtility.getIntegratedCircuit(2))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.niobium", 144),
+                FluidRegistry.getFluidStack("molten.titanium", 144))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.niobiumtitanium", 144 * 2))
+            .specialValue(0)
+            .noOptimize()
+            .duration(444)
+            .eut(1920)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(GTUtility.getIntegratedCircuit(2))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.iron", 144),
+                FluidRegistry.getFluidStack("molten.tin", 144))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.tinalloy", 144 * 2))
+            .specialValue(0)
+            .noOptimize()
+            .duration(100)
+            .eut(16)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(
+                GTUtility.getIntegratedCircuit(4),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 3, 2500))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.magnesium", 144 * 2),
+                FluidRegistry.getFluidStack("molten.iron", 144 * 14),
+                FluidRegistry.getFluidStack("molten.silicon", 144 * 4),
+                FluidRegistry.getFluidStack("oxygen", 28000))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.reinforced", 1440))
+            .specialValue(0)
+            .noOptimize()
+            .duration(1200)
+            .eut(120)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(
+                GTUtility.getIntegratedCircuit(8),
+                GTUtility.copyAmountUnsafe(385, getModItem("gregtech", "gt.metaitem.01", 1, 2500)),
+                GTUtility.copyAmountUnsafe(80, getModItem("gregtech", "gt.metaitem.01", 1, 2022)),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 60, 2010))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.magnesium", 144 * 16),
+                FluidRegistry.getFluidStack("molten.iron", 144 * 112),
+                FluidRegistry.getFluidStack("molten.silicon", 144 * 38),
+                FluidRegistry.getFluidStack("molten.beryllium", 144 * 12),
+                FluidRegistry.getFluidStack("molten.potassium", 144 * 48),
+                FluidRegistry.getFluidStack("molten.chrome", 144),
+                FluidRegistry.getFluidStack("molten.aluminium", 144 * 2),
+                FluidRegistry.getFluidStack("molten.gold", 144 * 60),
+                FluidRegistry.getFluidStack("nitrogen", 60000),
+                FluidRegistry.getFluidStack("oxygen", 227000))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.galgadorian", 144 * 80))
+            .specialValue(0)
+            .noOptimize()
+            .duration(2000)
+            .eut(120)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(
+                GTUtility.getIntegratedCircuit(9),
+                GTUtility.copyAmountUnsafe(770, getModItem("gregtech", "gt.metaitem.01", 1, 2500)),
+                GTUtility.copyAmountUnsafe(160, getModItem("gregtech", "gt.metaitem.01", 1, 2022)),
+                GTUtility.copyAmountUnsafe(120, getModItem("gregtech", "gt.metaitem.01", 1, 2010)))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.magnesium", 144 * 32),
+                FluidRegistry.getFluidStack("molten.iron", 144 * 224),
+                FluidRegistry.getFluidStack("molten.silicon", 144 * 76),
+                FluidRegistry.getFluidStack("molten.beryllium", 144 * 24),
+                FluidRegistry.getFluidStack("molten.potassium", 144 * 96),
+                FluidRegistry.getFluidStack("molten.chrome", 144 * 2),
+                FluidRegistry.getFluidStack("molten.aluminium", 144 * 4),
+                FluidRegistry.getFluidStack("molten.gold", 144 * 120),
+                FluidRegistry.getFluidStack("nitrogen", 120000),
+                FluidRegistry.getFluidStack("oxygen", 454000))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.galgadorian", 144 * 160))
+            .specialValue(0)
+            .noOptimize()
+            .duration(3000)
+            .eut(120)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(GTUtility.getIntegratedCircuit(3))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.nickel", 144),
+                FluidRegistry.getFluidStack("molten.zinc", 144),
+                FluidRegistry.getFluidStack("molten.iron", 144 * 4))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.nickelzincferrite", 144 * 6))
+            .specialValue(0)
+            .noOptimize()
+            .duration(480)
+            .eut(120)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(GTUtility.getIntegratedCircuit(3))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.titanium", 144 * 3),
+                FluidRegistry.getFluidStack("molten.platinum", 144 * 3),
+                FluidRegistry.getFluidStack("molten.vanadium", 144))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.tpvalloy", 144 * 7))
+            .specialValue(0)
+            .noOptimize()
+            .duration(750)
+            .eut(1920)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(
+                GTUtility.getIntegratedCircuit(4),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 15, 2010),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 20, 2022))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.silicon", 144 * 21),
+                FluidRegistry.getFluidStack("molten.iron", 144 * 10),
+                FluidRegistry.getFluidStack("molten.chrome", 144),
+                FluidRegistry.getFluidStack("molten.aluminium", 144 * 2),
+                FluidRegistry.getFluidStack("molten.oxygen", 3000),
+                FluidRegistry.getFluidStack("mercury", 18000))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.redstonealloy", 144 * 45))
+            .specialValue(0)
+            .noOptimize()
+            .duration(800 * 15)
+            .eut(120)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(GTUtility.getIntegratedCircuit(5))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.copper", 144 * 3),
+                FluidRegistry.getFluidStack("molten.gold", 144),
+                FluidRegistry.getFluidStack("molten.silver", 144),
+                FluidRegistry.getFluidStack("molten.nickel", 144 * 5),
+                FluidRegistry.getFluidStack("molten.iron", 144 * 15),
+                FluidRegistry.getFluidStack("oxygen", 15000))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.blacksteel", 144 * 25))
+            .specialValue(0)
+            .noOptimize()
+            .duration(1000)
+            .eut(120)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(GTUtility.getIntegratedCircuit(3))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.copper", 144 * 3),
+                FluidRegistry.getFluidStack("molten.gold", 144),
+                FluidRegistry.getFluidStack("molten.silver", 144))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.blackbronze", 144 * 5))
+            .specialValue(0)
+            .noOptimize()
+            .duration(4000)
+            .eut(120)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(
+                GTUtility.getIntegratedCircuit(4),
+                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 16, 2010))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.iron", 144 * 5),
+                FluidRegistry.getFluidStack("molten.silicon", 144 * 6),
+                FluidRegistry.getFluidStack("molten.magnesium", 144),
+                FluidRegistry.getFluidStack("oxygen", 33000))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.darksteel", 144 * 36))
+            .specialValue(0)
+            .noOptimize()
+            .duration(1000 * 4)
+            .eut(120)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(
+                GTUtility.getIntegratedCircuit(8),
+                GTUtility.copyAmountUnsafe(300, getModItem("gregtech", "gt.metaitem.01", 1, 2010)),
+                GTUtility.copyAmountUnsafe(200, getModItem("gregtech", "gt.metaitem.01", 1, 2022)))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.silicon", 144 * 330),
+                FluidRegistry.getFluidStack("molten.iron", 144 * 1970),
+                FluidRegistry.getFluidStack("molten.sulfur", 144 * 100),
+                FluidRegistry.getFluidStack("molten.chrome", 144 * 5),
+                FluidRegistry.getFluidStack("molten.aluminium", 144 * 10),
+                FluidRegistry.getFluidStack("oxygen", 1000 * 1635),
+                FluidRegistry.getFluidStack("mercury", 1000 * 90),
+                FluidRegistry.getFluidStack("molten.carbon", 144 * 300),
+                FluidRegistry.getFluidStack("molten.silver", 144 * 408),
+                FluidRegistry.getFluidStack("molten.gold", 144 * 408),
+                FluidRegistry.getFluidStack("molten.copper", 144 * 324),
+                FluidRegistry.getFluidStack("molten.nickel", 144 * 540))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.energeticalloy", 144 * 8100))
+            .specialValue(0)
+            .noOptimize()
+            .duration(1600 * 300)
+            .eut(120)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(
+                GTUtility.getIntegratedCircuit(8),
+                GTUtility.copyAmountUnsafe(480, getModItem("gregtech", "gt.metaitem.01", 1, 2010)), // 碳
+                GTUtility.copyAmountUnsafe(440, getModItem("gregtech", "gt.metaitem.01", 1, 2022)) // 硫
+            )
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.silicon", 144 * 66),
+                FluidRegistry.getFluidStack("molten.iron", 144 * 460),
+                FluidRegistry.getFluidStack("molten.chromium", 144 * 1621),
+                FluidRegistry.getFluidStack("molten.aluminium", 144 * 2),
+                FluidRegistry.getFluidStack("oxygen", 1000 * 273),
+                FluidRegistry.getFluidStack("mercury", 1000 * 18),
+                FluidRegistry.getFluidStack("molten.silver", 144 * 198),
+                FluidRegistry.getFluidStack("molten.copper", 144 * 54),
+                FluidRegistry.getFluidStack("molten.gold", 144 * 558),
+                FluidRegistry.getFluidStack("molten.nickel", 144 * 90),
+                FluidRegistry.getFluidStack("molten.beryllium", 144 * 81),
+                FluidRegistry.getFluidStack("molten.potassium", 144 * 324),
+                FluidRegistry.getFluidStack("molten.nitrogen", 144 * 405))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.vibrantalloy", 144 * 4860))
+            .specialValue(0)
+            .noOptimize()
+            .duration(3000 * 60)
+            .eut(120)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(GTUtility.getIntegratedCircuit(6))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.copper", 144 * 143),
+                FluidRegistry.getFluidStack("molten.gold", 144 * 96),
+                FluidRegistry.getFluidStack("molten.zinc", 144 * 80),
+                FluidRegistry.getFluidStack("molten.silver", 144 * 16),
+                FluidRegistry.getFluidStack("molten.nickel", 144 * 80),
+                FluidRegistry.getFluidStack("molten.iron", 144 * 440),
+                FluidRegistry.getFluidStack("oxygen", 440000))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.bluesteel", 144 * 800))
+            .specialValue(0)
+            .noOptimize()
+            .duration(3600 * 5)
+            .eut(480)
+            .addTo(SMFR);
+
+        RecipeBuilder.builder()
+            .itemInputs(GTUtility.getIntegratedCircuit(7))
+            .fluidInputs(
+                FluidRegistry.getFluidStack("molten.copper", 144 * 32),
+                FluidRegistry.getFluidStack("molten.gold", 144 * 4),
+                FluidRegistry.getFluidStack("molten.silver", 144 * 24),
+                FluidRegistry.getFluidStack("molten.bismuth", 144 * 5),
+                FluidRegistry.getFluidStack("molten.zinc", 144 * 5),
+                FluidRegistry.getFluidStack("molten.nickel", 144 * 20),
+                FluidRegistry.getFluidStack("molten.iron", 144 * 110),
+                FluidRegistry.getFluidStack("oxygen", 110000))
+            .fluidOutputs(FluidRegistry.getFluidStack("molten.redsteel", 144 * 200))
+            .specialValue(0)
+            .noOptimize()
+            .duration(1200 * 5)
+            .eut(480)
             .addTo(SMFR);
     }
 }

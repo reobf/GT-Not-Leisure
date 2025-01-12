@@ -306,7 +306,7 @@ Tooltip_TeleportationArrayToAlfheim_00=传说这个法阵可以稳定传输大�
 Tooltip_TeleportationArrayToAlfheim_01=需要液态魔力输入仓
 Tooltip_TeleportationArrayToAlfheim_02=每秒消耗100L液态魔力进行工作
 Tooltip_TeleportationArrayToAlfheim_Casing=任意放射硅岩合金机械方块
-death.attack.damage.gtnl.PortalToAlfheimExplode=被精灵传送法阵反噬了
+death.attack.damage.gtnl.PortalToAlfheimExplode=%1$s 被精灵传送法阵反噬了
 
 NameLapotronChip=兰波顿工厂
 gtnl.recipe.LapotronChipRecipeType=兰波顿工厂
@@ -449,6 +449,16 @@ NameSmeltingMixingFurnace=合金搅拌炉
 SmeltingMixingFurnaceRecipeType=合金搅拌
 gtnl.recipe.SmeltingMixingFurnaceRecipes=合金搅拌
 Tooltip_SmeltingMixingFurnace_Casing=任意超能机械方块
+
+NameWhiteNightGenerator=白夜发电机
+Tooltip_WhiteNightGenerator_MachineType=§d§l紫罗兰的洗礼
+Tooltip_WhiteNightGenerator_00=§f§l§o起来吧，我的仆从，欢唱着迎接我的到来。
+effect.awe_effect=§r§f§l敬畏§r
+Awe_Cancel_01=§f§l不要害怕，我与你同在。除非我允许，否则你永远都不能离开。
+Awe_Cancel_02_01=§f§l不要否认我的存在，我就在你的眼前。
+Awe_Cancel_02_02=§f§l我的事迹，无人知晓，无处可寻。
+Awe_Kick=§f§l!!! 不知所措 !!!
+death.attack.damage.gtnl.AweDamage=%1$s §c§l没能完成§r§d§l紫罗兰的洗礼。
 
 NameRealArtificialStar=真·湮灭发电机
 Tooltip_RealArtificialStar_Controller=真·湮灭发电机的控制器方块

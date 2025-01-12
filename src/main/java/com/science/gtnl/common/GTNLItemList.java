@@ -174,6 +174,7 @@ public enum GTNLItemList {
     LargeCircuitAssembler,
     PetrochemicalPlant,
     SmeltingMixingFurnace,
+    WhiteNightGenerator,
     GenerationEarthEngine;
 
     public boolean mHasNotBeenSet;

@@ -467,6 +467,24 @@ public class TextLocalization {
         "Any Radiant Naquadah Alloy Casing",
         "Tooltip_TeleportationArrayToAlfheim_Casing");
 
+    public static final String NameWhiteNightGenerator = texter("White Night Generator", "NameWhiteNightGenerator");
+    public static final String Tooltip_WhiteNightGenerator_MachineType = texter(
+        "§d§lBaptism of Violet",
+        "Tooltip_WhiteNightGenerator_MachineType");
+    public static final String Tooltip_WhiteNightGenerator_00 = texter(
+        "§f§l§oRise, my servants. Rise and serve me.",
+        "Tooltip_WhiteNightGenerator_00");
+    public static final String Awe_Cancel_01 = texter(
+        "§f§lDon't be afraid, I am with you. You can never leave unless I allow it.",
+        "Awe_Cancel_01");
+    public static final String Awe_Cancel_02_01 = texter(
+        "§f§lDon't deny my existence, I am right in front of you.",
+        "Awe_Cancel_02_01");
+    public static final String Awe_Cancel_02_02 = texter(
+        "§f§lMy deeds are unknown and nowhere to be found.",
+        "Awe_Cancel_02_02");
+    public static final String Awe_Kick = texter("§f§l!!!at a loss!!!", "Awe_Kick");
+
     public static final String NameRealArtificialStar = texter("Real Artificial Star", "NameRealArtificialStar");
     public static final String Tooltip_RealArtificialStar_MachineType = texter(
         "Dyson Sphere Program: Annihilation Generator",

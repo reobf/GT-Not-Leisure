@@ -37,8 +37,8 @@ import gregtech.api.enums.Textures;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
-import gregtech.api.objects.GTRenderedTexture;
 import gregtech.api.recipe.RecipeMap;
+import gregtech.api.render.TextureFactory;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.common.blocks.BlockCasings8;
@@ -204,7 +204,7 @@ public class BloodSoulSacrificialArray extends MultiMachineBase<BloodSoulSacrifi
             .addInputHatch(TextLocalization.Tooltip_BloodSoulSacrificialArray_Casing, 1)
             .addInputBus(TextLocalization.Tooltip_BloodSoulSacrificialArray_Casing, 1)
             .addOutputBus(TextLocalization.Tooltip_BloodSoulSacrificialArray_Casing, 1)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE);
+            .toolTipFinisher(TextUtils.SNL);
         return tt;
     }
 
@@ -217,20 +217,20 @@ public class BloodSoulSacrificialArray extends MultiMachineBase<BloodSoulSacrifi
         return ((BlockCasings8) GregTechAPI.sBlockCasings8).getTextureIndex(3);
     }
 
-    protected GTRenderedTexture BSSAgetFrontOverlay() {
-        return new GTRenderedTexture(Textures.BlockIcons.OVERLAY_DTPF_OFF);
-    }
-
-    protected GTRenderedTexture BSSAgetFrontOverlayActive() {
-        return new GTRenderedTexture(Textures.BlockIcons.OVERLAY_DTPF_ON);
-    }
-
     @Override
-    public ITexture[] getTexture(final IGregTechTileEntity aBaseMetaTileEntity, final ForgeDirection side,
-        final ForgeDirection facing, final int aColorIndex, final boolean aActive, final boolean aRedstone) {
-        if (side == facing) {
+    public ITexture[] getTexture(IGregTechTileEntity aBaseMetaTileEntity, ForgeDirection side, ForgeDirection aFacing,
+        int colorIndex, boolean aActive, boolean redstoneLevel) {
+        if (side == aFacing) {
+            if (aActive) return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()),
+                TextureFactory.builder()
+                    .addIcon(Textures.BlockIcons.OVERLAY_DTPF_ON)
+                    .extFacing()
+                    .build() };
             return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()),
-                aActive ? BSSAgetFrontOverlayActive() : BSSAgetFrontOverlay() };
+                TextureFactory.builder()
+                    .addIcon(Textures.BlockIcons.OVERLAY_DTPF_OFF)
+                    .extFacing()
+                    .build() };
         }
         return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()) };
     }

@@ -2,11 +2,16 @@ package com.science.gtnl;
 
 import java.io.File;
 
+import net.minecraftforge.common.MinecraftForge;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.science.gtnl.Utils.GuiEventHandler;
 import com.science.gtnl.Utils.TextHandler;
 import com.science.gtnl.Utils.eig.EIGBucketLoader;
+import com.science.gtnl.common.AweEffect;
+import com.science.gtnl.common.ModEffects;
 import com.science.gtnl.common.machine.machineclass.IMCForNEI;
 import com.science.gtnl.config.MainConfig;
 import com.science.gtnl.devTools.PathHelper;
@@ -84,6 +89,7 @@ public class ScienceNotLeisure {
         MachineLoader.run();
         IMCForNEI.IMCSender();
 
+        MinecraftForge.EVENT_BUS.register(new AweEffect());
     }
 
     @Mod.EventHandler
@@ -123,9 +129,12 @@ public class ScienceNotLeisure {
             configDir.mkdirs();
         }
 
+        new GuiEventHandler();
         File mainConfigFile = new File(configDir, "main.cfg");
 
         MainConfig.init(mainConfigFile);
+
+        ModEffects.init();
 
         proxy.preInit(event);
         MaterialLoader.load();

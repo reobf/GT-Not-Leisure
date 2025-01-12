@@ -27,6 +27,7 @@ import com.science.gtnl.common.machine.multiblock.RealArtificialStar;
 import com.science.gtnl.common.machine.multiblock.SmeltingMixingFurnace;
 import com.science.gtnl.common.machine.multiblock.SteamCracking;
 import com.science.gtnl.common.machine.multiblock.TeleportationArrayToAlfheim;
+import com.science.gtnl.common.machine.multiblock.WhiteNightGenerator;
 
 import gtPlusPlus.api.objects.Logger;
 import gtPlusPlus.core.util.minecraft.FluidUtils;
@@ -57,6 +58,7 @@ public class MachineLoader {
     public static ItemStack LargeCircuitAssembler;
     public static ItemStack PetrochemicalPlant;
     public static ItemStack SmeltingMixingFurnace;
+    public static ItemStack WhiteNightGenerator;
 
     public static void loadMachines() {
 
@@ -185,6 +187,12 @@ public class MachineLoader {
             "NameSmeltingMixingFurnace",
             TextLocalization.NameSmeltingMixingFurnace).getStackForm(1);
         GTNLItemList.SmeltingMixingFurnace.set(SmeltingMixingFurnace);
+
+        WhiteNightGenerator = new WhiteNightGenerator(
+            21025,
+            "NameWhiteNightGenerator",
+            TextLocalization.NameWhiteNightGenerator).getStackForm(1);
+        GTNLItemList.WhiteNightGenerator.set(WhiteNightGenerator);
 
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
             21919,

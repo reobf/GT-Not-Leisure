@@ -582,22 +582,15 @@ public class RealArtificialStar extends MultiMachineBase<RealArtificialStar>
         if (side == aFacing) {
             if (aActive) {
                 return new ITexture[] { casingTexturePages[0][12], TextureFactory.builder()
-                    .addIcon(OVERLAY_FUSION1)
+                    .addIcon(OVERLAY_DTPF_ON)
                     .extFacing()
-                    .build(),
-                    TextureFactory.builder()
-                        .addIcon(OVERLAY_FUSION1_GLOW)
-                        .extFacing()
-                        .glow()
-                        .build() };
+                    .build() };
             }
-
             return new ITexture[] { casingTexturePages[0][12], TextureFactory.builder()
                 .addIcon(OVERLAY_DTPF_OFF)
                 .extFacing()
                 .build() };
         }
-
         return new ITexture[] { casingTexturePages[0][12] };
     }
 
