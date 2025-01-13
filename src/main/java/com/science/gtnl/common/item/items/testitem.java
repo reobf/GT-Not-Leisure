@@ -34,7 +34,7 @@ public class testitem extends Item {
 
     public ItemStack onItemRightClick(ItemStack stack, World worldIn, EntityPlayer playerIn) {
         if (!worldIn.isRemote) {
-            playerIn.addPotionEffect(new PotionEffect(186, 20, 1));
+            playerIn.addPotionEffect(new PotionEffect(186, 6000, 1));
         }
 
         stack.splitStack(1);

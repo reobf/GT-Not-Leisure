@@ -2,13 +2,12 @@ package com.science.gtnl.common.machine.multiblock;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
 import static com.science.gtnl.Utils.TextHandler.texter;
-import static com.science.gtnl.common.machine.DSP.DSP_Values.secondsOfArtificialStarProgressCycleTime;
 import static gregtech.api.enums.HatchElement.*;
-import static gregtech.api.enums.Textures.BlockIcons.*;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
 import static gregtech.api.util.GTStructureUtility.ofFrame;
+import static gregtech.common.misc.WirelessNetworkManager.addEUToGlobalEnergyMap;
 
-import java.text.DecimalFormat;
+import java.math.BigInteger;
 import java.util.List;
 import java.util.UUID;
 
@@ -20,6 +19,8 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
+import org.jetbrains.annotations.NotNull;
+
 import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
@@ -27,6 +28,7 @@ import com.gtnewhorizons.gtnhintergalactic.block.IGBlocks;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.TextLocalization;
 import com.science.gtnl.Utils.TextUtils;
+import com.science.gtnl.Utils.Utils;
 import com.science.gtnl.common.machine.multiMachineClasses.MultiMachineBase;
 
 import galaxyspace.core.register.GSBlocks;
@@ -39,6 +41,9 @@ import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.interfaces.tileentity.IWirelessEnergyHatchInformation;
+import gregtech.api.metatileentity.implementations.MTEHatch;
+import gregtech.api.recipe.check.CheckRecipeResult;
+import gregtech.api.recipe.check.CheckRecipeResultRegistry;
 import gregtech.api.render.TextureFactory;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.common.blocks.BlockCasings10;
@@ -53,6 +58,7 @@ import tectech.thing.casing.TTCasingsContainer;
 public class WhiteNightGenerator extends MultiMachineBase<WhiteNightGenerator>
     implements IWirelessEnergyHatchInformation {
 
+    protected boolean wirelessMode = false;
     public static final String STRUCTURE_PIECE_MAIN = "main";
     public IStructureDefinition<WhiteNightGenerator> STRUCTURE_DEFINITION = null;
     public static final String WNG_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/white_night_generator";
@@ -76,12 +82,8 @@ public class WhiteNightGenerator extends MultiMachineBase<WhiteNightGenerator>
 
     public String ownerName;
     public UUID ownerUUID;
-    public long storageEU = 0;
-    public double outputMultiplier = 1;
-    public short recoveryChance = 0;
-    public byte rewardContinuous = 0;
-    public long currentOutputEU = 0;
-    public final DecimalFormat decimalFormat = new DecimalFormat("#.0");
+    public long currentOutputEU = 300;
+    public int tCountCasing = 0;
 
     @Override
     public void getWailaBody(ItemStack itemStack, List<String> currentTip, IWailaDataAccessor accessor,
@@ -95,12 +97,12 @@ public class WhiteNightGenerator extends MultiMachineBase<WhiteNightGenerator>
                     + tag.getLong("currentOutputEU")
                     + EnumChatFormatting.RED
                     + " * "
-                    + decimalFormat.format(tag.getDouble("outputMultiplier"))
+                    + "1"
                     + EnumChatFormatting.GREEN
                     + " * 2147483647"
                     + EnumChatFormatting.RESET
                     + " EU / "
-                    + secondsOfArtificialStarProgressCycleTime
+                    + "300"
                     + " s");
         }
     }
@@ -113,40 +115,8 @@ public class WhiteNightGenerator extends MultiMachineBase<WhiteNightGenerator>
         if (tileEntity != null) {
             if (tileEntity.isActive()) {
                 tag.setLong("currentOutputEU", currentOutputEU);
-                tag.setDouble("outputMultiplier", (outputMultiplier * (rewardContinuous + 100) / 100));
             }
         }
-    }
-
-    @Override
-    public String[] getInfoData() {
-        String[] origin = super.getInfoData();
-        String[] ret = new String[origin.length + 6];
-        System.arraycopy(origin, 0, ret, 0, origin.length);
-        ret[origin.length] = EnumChatFormatting.GOLD
-            + texter("Reward for continuous operation", "RealArtificialStar.getInfoData.00")
-            + EnumChatFormatting.RESET
-            + ": "
-            + EnumChatFormatting.GREEN
-            + (rewardContinuous + 100)
-            + "%";
-        ret[origin.length + 1] = EnumChatFormatting.GOLD
-            + texter("Generating Multiplier", "RealArtificialStar.getInfoData.01")
-            + EnumChatFormatting.RESET
-            + ": "
-            + EnumChatFormatting.GREEN
-            + outputMultiplier;
-        ret[origin.length + 5] = EnumChatFormatting.GOLD
-            + texter("Recover material chance", "RealArtificialStar.getInfoData.05")
-            + EnumChatFormatting.RESET
-            + ": "
-            + EnumChatFormatting.AQUA
-            + recoveryChance
-            + EnumChatFormatting.RESET
-            + "/"
-            + EnumChatFormatting.AQUA
-            + "1000";
-        return ret;
     }
 
     @Override
@@ -161,31 +131,58 @@ public class WhiteNightGenerator extends MultiMachineBase<WhiteNightGenerator>
     @Override
     public void onPostTick(IGregTechTileEntity aBaseMetaTileEntity, long aTick) {
         super.onPostTick(aBaseMetaTileEntity, aTick);
-        if (rewardContinuous != 0 && mMaxProgresstime == 0) rewardContinuous = 0;
+    }
+
+    @NotNull
+    @Override
+    public CheckRecipeResult checkProcessing() {
+        mMaxProgresstime = 6000;
+        if (wirelessMode) {
+            BigInteger eu = BigInteger.valueOf((long) this.generateTickEU())
+                .multiply(Utils.INTEGER_MAX_VALUE);
+            if (!addEUToGlobalEnergyMap(ownerUUID, eu)) {
+                return CheckRecipeResultRegistry.INTERNAL_ERROR;
+            }
+        } else {
+            addEnergyOutput(this.generateTickEU() * Integer.MAX_VALUE);
+        }
+        return CheckRecipeResultRegistry.GENERATING;
+    }
+
+    protected long generateTickEU() {
+        return currentOutputEU;
     }
 
     @Override
     public void saveNBTData(NBTTagCompound aNBT) {
         super.saveNBTData(aNBT);
-        aNBT.setLong("storageEU", storageEU);
-        aNBT.setDouble("outputMultiplier", outputMultiplier);
-        aNBT.setByte("rewardContinuous", rewardContinuous);
         aNBT.setLong("currentOutputEU", currentOutputEU);
+        aNBT.setBoolean("wirelessMode", wirelessMode);
     }
 
     @Override
     public void loadNBTData(NBTTagCompound aNBT) {
         super.loadNBTData(aNBT);
-        storageEU = aNBT.getLong("storageEU");
-        outputMultiplier = aNBT.getDouble("outputMultiplier");
-        rewardContinuous = aNBT.getByte("rewardContinuous");
         currentOutputEU = aNBT.getLong("currentOutputEU");
+        wirelessMode = aNBT.getBoolean("wirelessMode");
     }
 
     @Override
     public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
         repairMachine();
-        return checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet);
+        wirelessMode = false;
+        tCountCasing = 0;
+        if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet)) return false;
+        if (tCountCasing <= 1) {
+            updateHatchTexture();
+            return false;
+        }
+        wirelessMode = mDynamoHatches.isEmpty();
+        return true;
+    }
+
+    protected void updateHatchTexture() {
+        for (MTEHatch h : mDynamoHatches) h.updateTexture(CASING_INDEX);
     }
 
     @Override
@@ -222,7 +219,7 @@ public class WhiteNightGenerator extends MultiMachineBase<WhiteNightGenerator>
                     buildHatchAdder(WhiteNightGenerator.class).atLeast(Dynamo)
                         .dot(1)
                         .casingIndex(CASING_INDEX)
-                        .buildAndChain(GregTechAPI.sBlockCasings10, 13))
+                        .buildAndChain(onElementPass(x -> ++x.tCountCasing, ofBlock(GregTechAPI.sBlockCasings10, 13))))
                 .addElement('B', ofBlock(GSBlocks.DysonSwarmBlocks, 1))
                 .addElement('C', ofBlock(BlockLoader.defcCasingBlock, 12))
                 .addElement('D', ofBlock(TTCasingsContainer.GodforgeCasings, 8))

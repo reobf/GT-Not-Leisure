@@ -33,11 +33,12 @@ public class GuiEventHandler {
 
             if (effect != null && event.gui instanceof GuiInventory) {
                 event.setCanceled(true);
-
-                String[] messages = { TextLocalization.Awe_Cancel_02_01, TextLocalization.Awe_Cancel_02_02 };
-                String message = messages[random.nextInt(messages.length)];
-                IChatComponent chatComponent = new ChatComponentText(message);
-                player.addChatMessage(chatComponent);
+                if (!player.capabilities.isCreativeMode) {
+                    String[] messages = { TextLocalization.Awe_Cancel_02_01, TextLocalization.Awe_Cancel_02_02 };
+                    String message = messages[random.nextInt(messages.length)];
+                    IChatComponent chatComponent = new ChatComponentText(message);
+                    player.addChatMessage(chatComponent);
+                }
             }
         }
     }

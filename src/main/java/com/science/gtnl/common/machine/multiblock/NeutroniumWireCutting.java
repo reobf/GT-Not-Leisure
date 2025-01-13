@@ -60,8 +60,6 @@ public class NeutroniumWireCutting extends WirelessEnergyMultiMachineBase<Neutro
 
     public int tCountCasing = 0;
 
-    public int casing;
-
     public IStructureDefinition<NeutroniumWireCutting> STRUCTURE_DEFINITION = null;
 
     public static final String STRUCTURE_PIECE_MAIN = "main";
@@ -165,7 +163,7 @@ public class NeutroniumWireCutting extends WirelessEnergyMultiMachineBase<Neutro
                         .atLeast(InputBus, OutputBus, InputHatch, Energy, Energy.or(ExoticEnergy))
                         .casingIndex(((BlockCasings9) GregTechAPI.sBlockCasings9).getTextureIndex(12))
                         .dot(1)
-                        .buildAndChain(onElementPass(x -> ++x.casing, ofBlock(sBlockCasings9, 12))))
+                        .buildAndChain(onElementPass(x -> ++x.tCountCasing, ofBlock(sBlockCasings9, 12))))
                 .addElement('M', ofBlock(TTCasingsContainer.sBlockCasingsTT, 0))
                 .addElement('N', ofBlock(TTCasingsContainer.sBlockCasingsTT, 6))
                 .addElement('O', ofFrame(Materials.Neutronium))

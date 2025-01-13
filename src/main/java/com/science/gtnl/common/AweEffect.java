@@ -70,16 +70,14 @@ public class AweEffect extends Potion {
 
             if (effect != null) {
                 int level = effect.getAmplifier();
-                double pullSpeed = level * 0.04;
+                double pullSpeed = level * 0.02;
 
                 if (!affectedPlayers.contains(player)) {
                     float damage = 50.0F + random.nextFloat() * 10.0F;
                     player.attackEntityFrom(awe_damage, damage);
                     affectedPlayers.add(player);
 
-                    // World world = player.worldObj;
-                    // world.playSoundAtEntity(player, "sciencenotleisure:awe.warning2", 1.0F, 1.0F);
-
+                    player.worldObj.playSoundAtEntity(player, "sciencenotleisure:awe.warning2", 1.0F, 1.0F);
                 }
 
                 player.capabilities.isFlying = false;
@@ -89,10 +87,10 @@ public class AweEffect extends Potion {
                 player.setSneaking(true);
 
                 if (player.rotationPitch < 45) {
-                    player.rotationPitch += level;
+                    player.rotationPitch += (float) (0.2 * level);
                 }
                 if (player.rotationPitch > 45) {
-                    player.rotationPitch -= level;
+                    player.rotationPitch -= (float) (0.2 * level);
                 }
 
             } else {
@@ -117,8 +115,10 @@ public class AweEffect extends Potion {
             if (effect != null && event.gui instanceof GuiIngameMenu) {
                 event.setCanceled(true);
 
-                IChatComponent chatComponent = new ChatComponentText(TextLocalization.Awe_Cancel_01);
-                player.addChatMessage(chatComponent);
+                if (!player.capabilities.isCreativeMode) {
+                    IChatComponent chatComponent = new ChatComponentText(TextLocalization.Awe_Cancel_01);
+                    player.addChatMessage(chatComponent);
+                }
             }
         }
     }
