@@ -11,6 +11,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import com.science.gtnl.common.GTNLItemList;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import gregtech.api.util.GTOreDictUnificator;
 
 public class ItemRegister {
 
@@ -228,6 +229,23 @@ public class ItemRegister {
         OreDictionary.registerOre("circuitGood", BasicCircuit);
         OreDictionary.registerOre("circuitAdvanced", AdvancedCircuit);
         OreDictionary.registerOre("circuitData", EliteCircuit);
-    }
 
+        GTOreDictUnificator.addToBlacklist(CircuitResonaticULV);
+        GTOreDictUnificator.addToBlacklist(CircuitResonaticLV);
+        GTOreDictUnificator.addToBlacklist(CircuitResonaticMV);
+        GTOreDictUnificator.addToBlacklist(CircuitResonaticHV);
+        GTOreDictUnificator.addToBlacklist(CircuitResonaticEV);
+        GTOreDictUnificator.addToBlacklist(CircuitResonaticIV);
+        GTOreDictUnificator.addToBlacklist(CircuitResonaticLuV);
+        GTOreDictUnificator.addToBlacklist(CircuitResonaticZPM);
+        GTOreDictUnificator.addToBlacklist(CircuitResonaticUV);
+        GTOreDictUnificator.addToBlacklist(CircuitResonaticUHV);
+        GTOreDictUnificator.addToBlacklist(CircuitResonaticUEV);
+        GTOreDictUnificator.addToBlacklist(CircuitResonaticUIV);
+        GTOreDictUnificator.addToBlacklist(VerySimpleCircuit);
+        GTOreDictUnificator.addToBlacklist(SimpleCircuit);
+        GTOreDictUnificator.addToBlacklist(BasicCircuit);
+        GTOreDictUnificator.addToBlacklist(AdvancedCircuit);
+        GTOreDictUnificator.addToBlacklist(EliteCircuit);
+    }
 }
