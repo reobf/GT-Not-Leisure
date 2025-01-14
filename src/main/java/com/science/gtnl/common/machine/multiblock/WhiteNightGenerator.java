@@ -187,7 +187,7 @@ public class WhiteNightGenerator extends MultiMachineBase<WhiteNightGenerator>
                 this.multiTier = getMultiTier(aStack);
         }
 
-        if (tCountCasing <= 1) {
+        if (tCountCasing <= 25) {
             updateHatchTexture();
             return false;
         }

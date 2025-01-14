@@ -239,7 +239,7 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTOreDictUnificator.get(OrePrefixes.wire, Materials.NaquadahAlloy, 8),
+                GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.NaquadahAlloy, 8),
                 GTOreDictUnificator.get(OrePrefixes.foil, Materials.Silicon, 8),
                 GTOreDictUnificator.get(OrePrefixes.foil, Materials.Naquadah, 4))
             .fluidInputs(MaterialPool.Polyimide.getFluidOrGas(288))
@@ -253,7 +253,7 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTOreDictUnificator.get(OrePrefixes.wire, Materials.NaquadahAlloy, 8),
+                GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.NaquadahAlloy, 8),
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lutetium, 1),
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tritanium, 1))
             .fluidInputs(MaterialPool.Polyimide.getFluidOrGas(288))
@@ -267,7 +267,7 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTOreDictUnificator.get(OrePrefixes.wire, Materials.NaquadahAlloy, 8),
+                GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.NaquadahAlloy, 8),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Naquadria, 1),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Tritanium, 1))
             .fluidInputs(MaterialPool.Polyimide.getFluidOrGas(288))
@@ -281,7 +281,7 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTOreDictUnificator.get(OrePrefixes.wire, Materials.NaquadahAlloy, 8),
+                GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.NaquadahAlloy, 8),
                 MaterialPool.Germaniumtungstennitride.get(OrePrefixes.plate, 2),
                 MaterialsAlloy.SILICON_CARBIDE.getPlate(2))
             .fluidInputs(MaterialPool.Polyimide.getFluidOrGas(288))
@@ -295,7 +295,7 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTOreDictUnificator.get(OrePrefixes.wire, Materials.NaquadahAlloy, 8),
+                GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.NaquadahAlloy, 8),
                 GTOreDictUnificator.get(OrePrefixes.ring, Materials.NaquadahAlloy, 1))
             .fluidInputs(MaterialPool.Polyimide.getFluidOrGas(288))
             .itemOutputs(GTNLItemList.BiowareSMDInductor.get(16))
@@ -380,7 +380,7 @@ public class AssemblerRecipes implements IRecipePool {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 GTModHandler.getModItem(GTPlusPlus.ID, "blockCompressedObsidian", 1, 6),
-                GTOreDictUnificator.get(OrePrefixes.frame, Materials.StainlessSteel, 4),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.StainlessSteel, 4),
                 GTModHandler.getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 7))
             .itemOutputs(GTNLItemList.FortifyGlowstone.get(1))
             .specialValue(0)
@@ -427,7 +427,7 @@ public class AssemblerRecipes implements IRecipePool {
                 ItemList.Emitter_EV.get(2L),
                 ItemList.Sensor_EV.get(2L),
                 GTOreDictUnificator.get(OrePrefixes.gear, Materials.TungstenSteel, 4),
-                GTOreDictUnificator.get(OrePrefixes.frame, Materials.StainlessSteel, 4),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.StainlessSteel, 4),
                 GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 2L))
             .fluidInputs(Materials.SolderingAlloy.getMolten(9216))
             .itemOutputs(GTNLItemList.MeteorMiner.get(1))
@@ -459,7 +459,7 @@ public class AssemblerRecipes implements IRecipePool {
                 ItemList.Machine_IV_Assembler.get(4L),
                 ItemRefer.Precise_Assembler.get(2),
                 ItemList.Machine_Multi_Assemblyline.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.frame, Materials.TungstenSteel, 16),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 16),
                 ItemList.Robot_Arm_IV.get(8L),
                 ItemList.Casing_Gearbox_TungstenSteel.get(8L),
                 GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 8L),

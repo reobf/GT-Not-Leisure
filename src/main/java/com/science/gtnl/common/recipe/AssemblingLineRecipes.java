@@ -71,7 +71,7 @@ public class AssemblingLineRecipes implements IRecipePool {
                 FluidRegistry.getFluidStack("molten.indalloy140", 128000),
                 FluidRegistry.getFluidStack("lubricant", 256000),
                 FluidRegistry.getFluidStack("molten.naquadria", 36864) },
-            GTModHandler.getModItem("gregtech", "gt.blockmachines", 1, 21004),
+            GTNLItemList.EdenGarden.get(1),
             30 * SECONDS,
             (int) TierEU.RECIPE_UHV);
 
