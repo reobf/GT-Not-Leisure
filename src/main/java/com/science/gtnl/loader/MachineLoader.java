@@ -23,6 +23,7 @@ import com.science.gtnl.common.machine.multiblock.MeteorMiner;
 import com.science.gtnl.common.machine.multiblock.NeutroniumWireCutting;
 import com.science.gtnl.common.machine.multiblock.PetrochemicalPlant;
 import com.science.gtnl.common.machine.multiblock.PrimitiveDistillationTower;
+import com.science.gtnl.common.machine.multiblock.ProcessingArray;
 import com.science.gtnl.common.machine.multiblock.RealArtificialStar;
 import com.science.gtnl.common.machine.multiblock.SmeltingMixingFurnace;
 import com.science.gtnl.common.machine.multiblock.SteamCracking;
@@ -59,6 +60,7 @@ public class MachineLoader {
     public static ItemStack PetrochemicalPlant;
     public static ItemStack SmeltingMixingFurnace;
     public static ItemStack WhiteNightGenerator;
+    public static ItemStack ProcessingArray;
 
     public static void loadMachines() {
 
@@ -193,6 +195,10 @@ public class MachineLoader {
             "NameWhiteNightGenerator",
             TextLocalization.NameWhiteNightGenerator).getStackForm(1);
         GTNLItemList.WhiteNightGenerator.set(WhiteNightGenerator);
+
+        ProcessingArray = new ProcessingArray(21026, "NameProcessingArray", TextLocalization.NameProcessingArray)
+            .getStackForm(1);
+        GTNLItemList.ProcessingArray.set(ProcessingArray);
 
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
             21919,

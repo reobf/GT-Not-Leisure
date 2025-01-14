@@ -467,6 +467,8 @@ public class TextLocalization {
         "Any Radiant Naquadah Alloy Casing",
         "Tooltip_TeleportationArrayToAlfheim_Casing");
 
+    public static final String NameProcessingArray = texter("Re:Processing Array", "NameProcessingArray");
+
     public static final String NameWhiteNightGenerator = texter("White Night Generator", "NameWhiteNightGenerator");
     public static final String Tooltip_WhiteNightGenerator_MachineType = texter(
         "§d§lBaptism of Violet",

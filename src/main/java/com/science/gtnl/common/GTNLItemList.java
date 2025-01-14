@@ -178,6 +178,7 @@ public enum GTNLItemList {
     WhiteLampBorderless,
     WhiteLampOffBorderless,
 
+    ProcessingArray,
     MeteorMiner,
     LargeSteamCrusher,
     NeutroniumWireCutting,

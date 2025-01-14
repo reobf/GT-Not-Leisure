@@ -61,12 +61,12 @@ public class Desulfurizer extends MultiMachineBase<Desulfurizer> implements ISur
     }
 
     @Override
-    protected boolean isEnablePerfectOverclock() {
+    public boolean isEnablePerfectOverclock() {
         return true;
     }
 
     @Override
-    protected float getSpeedBonus() {
+    public float getSpeedBonus() {
         return 1;
     }
 
@@ -113,7 +113,7 @@ public class Desulfurizer extends MultiMachineBase<Desulfurizer> implements ISur
     }
 
     @Override
-    protected MultiblockTooltipBuilder createTooltip() {
+    public MultiblockTooltipBuilder createTooltip() {
         MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
         tt.addMachineType(TextLocalization.DesulfurizerRecipeType)
             .addInfo(TextLocalization.Tooltip_Desulfurizer_00)
@@ -191,12 +191,12 @@ public class Desulfurizer extends MultiMachineBase<Desulfurizer> implements ISur
     }
 
     @Override
-    protected ProcessingLogic createProcessingLogic() {
+    public ProcessingLogic createProcessingLogic() {
         return new ProcessingLogic() {
 
             @NotNull
             @Override
-            protected OverclockCalculator createOverclockCalculator(@NotNull GTRecipe recipe) {
+            public OverclockCalculator createOverclockCalculator(@NotNull GTRecipe recipe) {
                 return super.createOverclockCalculator(recipe).setSpeedBoost(100.0 / (100 + 10 * mLevel))
                     .setHeatOC(true)
                     .setRecipeHeat(0)
@@ -246,4 +246,5 @@ public class Desulfurizer extends MultiMachineBase<Desulfurizer> implements ISur
     public boolean shouldCheckMaintenance() {
         return true;
     }
+
 }

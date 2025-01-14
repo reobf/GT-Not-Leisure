@@ -78,7 +78,7 @@ public class MeteorMiner extends MTEEnhancedMultiBlockBase<MeteorMiner> implemen
     public static final String STRUCTURE_PIECE_MAIN = "main";
     public static final String STRUCTURE_PIECE_TIER2 = "tier2";
     public static IStructureDefinition<MeteorMiner> STRUCTURE_DEFINITION = null;
-    protected TileEntityLaserBeacon renderer;
+    public TileEntityLaserBeacon renderer;
     public static final int MAX_RADIUS = 30;
     public int currentRadius = MAX_RADIUS;
     public int xDrill, yDrill, zDrill;
@@ -183,7 +183,7 @@ public class MeteorMiner extends MTEEnhancedMultiBlockBase<MeteorMiner> implemen
     }
 
     @Override
-    protected IAlignmentLimits getInitialAlignmentLimits() {
+    public IAlignmentLimits getInitialAlignmentLimits() {
         return (d, r, f) -> (d.flag & (ForgeDirection.UP.flag | ForgeDirection.DOWN.flag)) == 0 && r.isNotRotated()
             && !f.isVerticallyFliped();
     }
@@ -196,7 +196,7 @@ public class MeteorMiner extends MTEEnhancedMultiBlockBase<MeteorMiner> implemen
         super(aName);
     }
 
-    protected int aCasingAmount;
+    public int aCasingAmount;
 
     @Override
     public void clearHatches() {
@@ -299,7 +299,7 @@ public class MeteorMiner extends MTEEnhancedMultiBlockBase<MeteorMiner> implemen
     }
 
     @Override
-    protected MultiblockTooltipBuilder createTooltip() {
+    public MultiblockTooltipBuilder createTooltip() {
         MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
         tt.addMachineType(TextLocalization.MeteorMinerRecipeType)
             .addInfo(TextLocalization.Tooltip_MeteorMiner_00)
@@ -713,7 +713,7 @@ public class MeteorMiner extends MTEEnhancedMultiBlockBase<MeteorMiner> implemen
         currentRadius -= delta;
     }
 
-    protected void setElectricityStats() {
+    public void setElectricityStats() {
         this.mOutputItems = new ItemStack[0];
 
         this.mEfficiency = 10000;

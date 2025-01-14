@@ -5,6 +5,7 @@ import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.enums.Textures.BlockIcons.*;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
+import static gregtech.api.util.GTUtility.validMTEList;
 import static gtPlusPlus.core.block.ModBlocks.blockCasings3Misc;
 
 import net.minecraft.item.ItemStack;
@@ -30,6 +31,7 @@ import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.logic.ProcessingLogic;
 import gregtech.api.metatileentity.implementations.MTEHatchEnergy;
+import gregtech.api.metatileentity.implementations.MTEHatchMaintenance;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.render.TextureFactory;
@@ -61,12 +63,12 @@ public class LargeCircuitAssembler extends MultiMachineBase<LargeCircuitAssemble
     }
 
     @Override
-    protected boolean isEnablePerfectOverclock() {
+    public boolean isEnablePerfectOverclock() {
         return false;
     }
 
     @Override
-    protected float getSpeedBonus() {
+    public float getSpeedBonus() {
         return 1;
     }
 
@@ -113,7 +115,7 @@ public class LargeCircuitAssembler extends MultiMachineBase<LargeCircuitAssemble
     }
 
     @Override
-    protected MultiblockTooltipBuilder createTooltip() {
+    public MultiblockTooltipBuilder createTooltip() {
         MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
         tt.addMachineType(TextLocalization.LargeCircuitAssemblerRecipeType)
             .addInfo(TextLocalization.Tooltip_LargeCircuitAssembler_00)
@@ -203,12 +205,12 @@ public class LargeCircuitAssembler extends MultiMachineBase<LargeCircuitAssemble
     }
 
     @Override
-    protected ProcessingLogic createProcessingLogic() {
+    public ProcessingLogic createProcessingLogic() {
         return new ProcessingLogic() {
 
             @NotNull
             @Override
-            protected OverclockCalculator createOverclockCalculator(@NotNull GTRecipe recipe) {
+            public OverclockCalculator createOverclockCalculator(@NotNull GTRecipe recipe) {
                 return OverclockCalculator.ofNoOverclock(recipe)
                     .setEUtDiscount(0.8)
                     .setSpeedBoost(0.6);
@@ -224,5 +226,29 @@ public class LargeCircuitAssembler extends MultiMachineBase<LargeCircuitAssemble
     @Override
     public boolean shouldCheckMaintenance() {
         return true;
+    }
+
+    @Override
+    public void checkMaintenance() {
+        if (!shouldCheckMaintenance()) return;
+
+        if (getRepairStatus() != getIdealStatus()) {
+            for (MTEHatchMaintenance tHatch : validMTEList(mMaintenanceHatches)) {
+                if (tHatch.mAuto) tHatch.autoMaintainance();
+                if (tHatch.mWrench) mWrench = true;
+                if (tHatch.mScrewdriver) mScrewdriver = true;
+                if (tHatch.mSoftHammer) mSoftHammer = true;
+                if (tHatch.mHardHammer) mHardHammer = true;
+                if (tHatch.mSolderingTool) mSolderingTool = true;
+                if (tHatch.mCrowbar) mCrowbar = true;
+
+                tHatch.mWrench = false;
+                tHatch.mScrewdriver = false;
+                tHatch.mSoftHammer = false;
+                tHatch.mHardHammer = false;
+                tHatch.mSolderingTool = false;
+                tHatch.mCrowbar = false;
+            }
+        }
     }
 }

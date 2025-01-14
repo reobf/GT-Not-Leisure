@@ -50,7 +50,7 @@ import tectech.thing.casing.TTCasingsContainer;
 public class NeutroniumWireCutting extends WirelessEnergyMultiMachineBase<NeutroniumWireCutting>
     implements IWirelessEnergyHatchInformation {
 
-    protected GTRecipe lastRecipeToBuffer;
+    public GTRecipe lastRecipeToBuffer;
 
     public byte mGlassTier = 0;
 
@@ -79,12 +79,12 @@ public class NeutroniumWireCutting extends WirelessEnergyMultiMachineBase<Neutro
     }
 
     @Override
-    protected boolean isEnablePerfectOverclock() {
+    public boolean isEnablePerfectOverclock() {
         return false;
     }
 
     @Override
-    protected float getSpeedBonus() {
+    public float getSpeedBonus() {
         return 1;
     }
 
@@ -94,7 +94,7 @@ public class NeutroniumWireCutting extends WirelessEnergyMultiMachineBase<Neutro
     }
 
     @Override
-    protected MultiblockTooltipBuilder createTooltip() {
+    public MultiblockTooltipBuilder createTooltip() {
         MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
         tt.addMachineType(TextLocalization.LapotronChipRecipeType)
             .addInfo(TextLocalization.Tooltip_LapotronChip_00)
@@ -113,7 +113,7 @@ public class NeutroniumWireCutting extends WirelessEnergyMultiMachineBase<Neutro
         return tt;
     }
 
-    protected void updateHatchTexture() {
+    public void updateHatchTexture() {
         for (MTEHatch h : mInputHatches) h.updateTexture(getCasingTextureID());
         for (MTEHatch h : mOutputHatches) h.updateTexture(getCasingTextureID());
         for (MTEHatch h : mInputBusses) h.updateTexture(getCasingTextureID());
@@ -226,12 +226,12 @@ public class NeutroniumWireCutting extends WirelessEnergyMultiMachineBase<Neutro
     }
 
     @Override
-    protected ProcessingLogic createProcessingLogic() {
+    public ProcessingLogic createProcessingLogic() {
         return new GTNL_ProcessingLogic() {
 
             @Nonnull
             @Override
-            protected OverclockCalculator createOverclockCalculator(@Nonnull GTRecipe recipe) {
+            public OverclockCalculator createOverclockCalculator(@Nonnull GTRecipe recipe) {
                 if (wirelessMode) {
                     return OverclockCalculator.ofNoOverclock(recipe);
                 } else {

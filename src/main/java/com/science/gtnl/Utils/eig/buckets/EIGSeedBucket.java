@@ -79,7 +79,7 @@ public class EIGSeedBucket extends EIGBucket {
     }
 
     @Override
-    protected String getNBTIdentifier() {
+    public String getNBTIdentifier() {
         return NBT_IDENTIFIER;
     }
 

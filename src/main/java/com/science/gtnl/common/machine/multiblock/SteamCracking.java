@@ -124,7 +124,7 @@ public class SteamCracking extends MTESteamMultiBase<SteamCracking> implements I
         return 0;
     }
 
-    protected void updateHatchTexture() {
+    public void updateHatchTexture() {
         for (MTEHatch h : mSteamInputs) h.updateTexture(getCasingTextureID());
         for (MTEHatch h : mSteamOutputs) h.updateTexture(getCasingTextureID());
         for (MTEHatch h : mSteamInputFluids) h.updateTexture(getCasingTextureID());
@@ -150,12 +150,12 @@ public class SteamCracking extends MTESteamMultiBase<SteamCracking> implements I
     }
 
     @Override
-    protected GTRenderedTexture getFrontOverlay() {
+    public GTRenderedTexture getFrontOverlay() {
         return new GTRenderedTexture(Textures.BlockIcons.OVERLAY_FRONT_OIL_CRACKER);
     }
 
     @Override
-    protected GTRenderedTexture getFrontOverlayActive() {
+    public GTRenderedTexture getFrontOverlayActive() {
         return new GTRenderedTexture(Textures.BlockIcons.OVERLAY_FRONT_OIL_CRACKER_ACTIVE);
     }
 
@@ -291,13 +291,13 @@ public class SteamCracking extends MTESteamMultiBase<SteamCracking> implements I
     }
 
     @Override
-    protected ProcessingLogic createProcessingLogic() {
+    public ProcessingLogic createProcessingLogic() {
 
         return new ProcessingLogic() {
 
             @NotNull
             @Override
-            protected CheckRecipeResult validateRecipe(@Nonnull GTRecipe recipe) {
+            public CheckRecipeResult validateRecipe(@Nonnull GTRecipe recipe) {
                 if (availableVoltage < recipe.mEUt) {
                     return CheckRecipeResultRegistry.insufficientPower(recipe.mEUt);
                 } else return CheckRecipeResultRegistry.SUCCESSFUL;
@@ -305,7 +305,7 @@ public class SteamCracking extends MTESteamMultiBase<SteamCracking> implements I
 
             @Override
             @Nonnull
-            protected OverclockCalculator createOverclockCalculator(@NotNull GTRecipe recipe) {
+            public OverclockCalculator createOverclockCalculator(@NotNull GTRecipe recipe) {
                 return OverclockCalculator.ofNoOverclock(recipe)
                     .setEUtDiscount(tierMachine)
                     .setSpeedBoost(1 / tierMachine);
@@ -319,7 +319,7 @@ public class SteamCracking extends MTESteamMultiBase<SteamCracking> implements I
     }
 
     @Override
-    protected MultiblockTooltipBuilder createTooltip() {
+    public MultiblockTooltipBuilder createTooltip() {
         final MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
         tt.addMachineType(TextLocalization.SteamCrackingRecipeType)
             .addInfo(TextLocalization.Tooltip_SteamCracking_00)
@@ -382,7 +382,7 @@ public class SteamCracking extends MTESteamMultiBase<SteamCracking> implements I
     }
 
     @Override
-    protected IAlignmentLimits getInitialAlignmentLimits() {
+    public IAlignmentLimits getInitialAlignmentLimits() {
         return (d, r, f) -> d.offsetY == 0 && r.isNotRotated();
     }
 
