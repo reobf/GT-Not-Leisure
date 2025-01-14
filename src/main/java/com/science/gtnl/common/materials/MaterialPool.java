@@ -516,10 +516,14 @@ public class MaterialPool implements Runnable {
         subscriptNumbers("Ge3W3N10"),
         new Werkstoff.Stats().setToxic(true),
         Werkstoff.Types.ELEMENT,
-        new Werkstoff.GenerationFeatures().addMetalItems()
+        new Werkstoff.GenerationFeatures().onlyDust()
             .addMolten()
+            .addMetalItems()
             .addCraftingMetalWorkingItems()
-            .addSimpleMetalWorkingItems(),
+            .addSimpleMetalWorkingItems()
+            .addMultipleIngotMetalWorkingItems()
+            .addMetaSolidifierRecipes()
+            .addMetalCraftingSolidifierRecipes(),
         offsetID_01 + 46,
         TextureSet.SET_SHINY);
 
@@ -597,8 +601,25 @@ public class MaterialPool implements Runnable {
         subscriptNumbers("?"),
         new Werkstoff.Stats(),
         Werkstoff.Types.ELEMENT,
-        new Werkstoff.GenerationFeatures().disable()
-            .onlyDust(),
+        new Werkstoff.GenerationFeatures().addPrefix(OrePrefixes.dust)
+            .addPrefix(OrePrefixes.oreBasalt)
+            .addPrefix(OrePrefixes.oreBlackgranite)
+            .addPrefix(OrePrefixes.oreDense)
+            .addPrefix(OrePrefixes.oreEndstone)
+            .addPrefix(OrePrefixes.oreEnd)
+            .addPrefix(OrePrefixes.oreNetherrack)
+            .addPrefix(OrePrefixes.oreNormal)
+            .addPrefix(OrePrefixes.orePoor)
+            .addPrefix(OrePrefixes.oreRedgranite)
+            .addPrefix(OrePrefixes.rawOre)
+            .addPrefix(OrePrefixes.oreMarble)
+            .addPrefix(OrePrefixes.oreRich)
+            .addPrefix(OrePrefixes.oreSmall)
+            .addPrefix(OrePrefixes.dustImpure)
+            .addPrefix(OrePrefixes.dustPure)
+            .addPrefix(OrePrefixes.dustRefined)
+            .addPrefix(OrePrefixes.dustTiny)
+            .addPrefix(OrePrefixes.ore),
         offsetID_01 + 53,
         TextureSet.SET_FLUID);
 
@@ -635,10 +656,14 @@ public class MaterialPool implements Runnable {
                 + "(Fs61Ef30Ut69Tr66Ms40If53He*43Ai32Or55Vy36⬟⯂⬢⬣⯃⯄32Tt33Cc56Vu58Ao52))???144)"),
         new Werkstoff.Stats().setToxic(true),
         Werkstoff.Types.ELEMENT,
-        new Werkstoff.GenerationFeatures().addMetalItems()
+        new Werkstoff.GenerationFeatures().onlyDust()
             .addMolten()
+            .addMetalItems()
             .addCraftingMetalWorkingItems()
-            .addSimpleMetalWorkingItems(),
+            .addSimpleMetalWorkingItems()
+            .addMultipleIngotMetalWorkingItems()
+            .addMetaSolidifierRecipes()
+            .addMetalCraftingSolidifierRecipes(),
         offsetID_01 + 200,
         TextureSet.SET_SHINY);
 
@@ -648,10 +673,14 @@ public class MaterialPool implements Runnable {
         subscriptNumbers("\uD81A\uDD55"),
         new Werkstoff.Stats().setToxic(true),
         Werkstoff.Types.ELEMENT,
-        new Werkstoff.GenerationFeatures().addMetalItems()
+        new Werkstoff.GenerationFeatures().onlyDust()
             .addMolten()
+            .addMetalItems()
             .addCraftingMetalWorkingItems()
-            .addSimpleMetalWorkingItems(),
+            .addSimpleMetalWorkingItems()
+            .addMultipleIngotMetalWorkingItems()
+            .addMetaSolidifierRecipes()
+            .addMetalCraftingSolidifierRecipes(),
         offsetID_01 + 201,
         TextureSet.SET_SHINY);
     // spotless:off

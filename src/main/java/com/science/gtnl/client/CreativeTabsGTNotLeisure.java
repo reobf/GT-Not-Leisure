@@ -5,10 +5,10 @@ import net.minecraft.item.Item;
 
 import com.science.gtnl.common.item.ItemLoader;
 
-public class CreativeTabsGTNoteLeisure extends CreativeTabs {
+public class CreativeTabsGTNotLeisure extends CreativeTabs {
 
-    public CreativeTabsGTNoteLeisure() {
-        super("GTNoteLeisure");
+    public CreativeTabsGTNotLeisure() {
+        super("GTNotLeisure");
     }
 
     @Override

@@ -35,7 +35,7 @@ public abstract class MetaBlockBase extends Block implements IMetaBlock {
     public MetaBlockBase(String unlocalizedName) {
         super(Material.iron);
         this.unlocalizedName = unlocalizedName;
-        this.setCreativeTab(CreativeTabsLoader.GTNoteLeisure);
+        this.setCreativeTab(CreativeTabsLoader.GTNotLeisure);
     }
 
     // region Abstract

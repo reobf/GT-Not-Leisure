@@ -3,6 +3,8 @@ package com.science.gtnl.common.machine.multiblock;
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
 import static com.science.gtnl.Utils.TextHandler.texter;
 import static gregtech.api.enums.HatchElement.*;
+import static gregtech.api.enums.Mods.EternalSingularity;
+import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
 import static gregtech.api.util.GTStructureUtility.ofFrame;
 import static gregtech.common.misc.WirelessNetworkManager.addEUToGlobalEnergyMap;
@@ -45,6 +47,7 @@ import gregtech.api.metatileentity.implementations.MTEHatch;
 import gregtech.api.recipe.check.CheckRecipeResult;
 import gregtech.api.recipe.check.CheckRecipeResultRegistry;
 import gregtech.api.render.TextureFactory;
+import gregtech.api.util.GTModHandler;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.common.blocks.BlockCasings10;
 import gregtech.common.blocks.BlockCasings9;
@@ -64,6 +67,11 @@ public class WhiteNightGenerator extends MultiMachineBase<WhiteNightGenerator>
     public static final String WNG_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/white_night_generator";
     public String[][] shape;
     public static final int CASING_INDEX = ((BlockCasings10) GregTechAPI.sBlockCasings10).getTextureIndex(13);
+    public int multiTier = 0;
+    public String ownerName;
+    public UUID ownerUUID;
+    public long currentOutputEU = 0;
+    public int tCountCasing = 0;
 
     public WhiteNightGenerator(int aID, String aName, String aNameRegional) {
         super(aID, aName, aNameRegional);
@@ -79,11 +87,6 @@ public class WhiteNightGenerator extends MultiMachineBase<WhiteNightGenerator>
     public IMetaTileEntity newMetaEntity(IGregTechTileEntity aTileEntity) {
         return new WhiteNightGenerator(this.mName);
     }
-
-    public String ownerName;
-    public UUID ownerUUID;
-    public long currentOutputEU = 300;
-    public int tCountCasing = 0;
 
     @Override
     public void getWailaBody(ItemStack itemStack, List<String> currentTip, IWailaDataAccessor accessor,
@@ -138,19 +141,15 @@ public class WhiteNightGenerator extends MultiMachineBase<WhiteNightGenerator>
     public CheckRecipeResult checkProcessing() {
         mMaxProgresstime = 6000;
         if (wirelessMode) {
-            BigInteger eu = BigInteger.valueOf((long) this.generateTickEU())
+            BigInteger eu = BigInteger.valueOf((long) this.currentOutputEU)
                 .multiply(Utils.INTEGER_MAX_VALUE);
             if (!addEUToGlobalEnergyMap(ownerUUID, eu)) {
                 return CheckRecipeResultRegistry.INTERNAL_ERROR;
             }
         } else {
-            addEnergyOutput(this.generateTickEU() * Integer.MAX_VALUE);
+            addEnergyOutput(this.currentOutputEU * Integer.MAX_VALUE);
         }
         return CheckRecipeResultRegistry.GENERATING;
-    }
-
-    protected long generateTickEU() {
-        return currentOutputEU;
     }
 
     @Override
@@ -167,18 +166,34 @@ public class WhiteNightGenerator extends MultiMachineBase<WhiteNightGenerator>
         wirelessMode = aNBT.getBoolean("wirelessMode");
     }
 
+    public int getMultiTier(ItemStack inventory) {
+        if (inventory == null) return 0;
+        return inventory
+            .isItemEqual(GTModHandler.getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 31)) ? 2
+                : inventory.isItemEqual(GTModHandler.getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0)) ? 1
+                    : 0;
+    }
+
     @Override
     public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
         repairMachine();
         wirelessMode = false;
         tCountCasing = 0;
-        if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet)) return false;
+        multiTier = 0;
+        currentOutputEU = 0;
+
+        if (aStack != null) {
+            if (checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet))
+                this.multiTier = getMultiTier(aStack);
+        }
+
         if (tCountCasing <= 1) {
             updateHatchTexture();
             return false;
         }
         wirelessMode = mDynamoHatches.isEmpty();
-        return true;
+        currentOutputEU = 300L * multiTier;
+        return multiTier > 0;
     }
 
     protected void updateHatchTexture() {

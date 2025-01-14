@@ -1,14 +1,15 @@
 package com.science.gtnl.common.recipe;
 
-import net.minecraftforge.fluids.FluidRegistry;
-
 import com.science.gtnl.Utils.recipes.RecipeBuilder;
 import com.science.gtnl.common.materials.MaterialPool;
 
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
 import gregtech.api.recipe.RecipeMap;
-import gregtech.api.util.GTModHandler;
+import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.api.recipe.GTPPRecipeMaps;
+import gtPlusPlus.core.material.MaterialsElements;
 
 public class AlloyBlastSmelterRecipes implements IRecipePool {
 
@@ -19,9 +20,9 @@ public class AlloyBlastSmelterRecipes implements IRecipePool {
         RecipeBuilder.builder()
             .itemInputs(
                 GTUtility.getIntegratedCircuit(3),
-                GTModHandler.getModItem("miscutils", "itemDustGermanium", 3),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 3, 2081))
-            .fluidInputs(FluidRegistry.getFluidStack("nitrogen", 10000))
+                GTOreDictUnificator.get(MaterialsElements.getInstance().GERMANIUM.getDust(3)),
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tungsten, 3))
+            .fluidInputs(Materials.Nitrogen.getGas(10000))
             .fluidOutputs(MaterialPool.Germaniumtungstennitride.getMolten(2304))
             .specialValue(0)
             .noOptimize()

@@ -28,7 +28,7 @@ public class BlocksStargate extends Block {
         this.setBlockName("Stargate" + Tier);
         this.setBlockTextureName(RESOURCE_ROOT_ID + ":" + "Stargate/" + "Stargate");
         this.TextureName = new String[] { "Front", "Side", "Bottom", "Compressed_" + Tier };
-        this.setCreativeTab(CreativeTabsLoader.GTNoteLeisure);
+        this.setCreativeTab(CreativeTabsLoader.GTNotLeisure);
     }
 
     @SideOnly(Side.CLIENT)

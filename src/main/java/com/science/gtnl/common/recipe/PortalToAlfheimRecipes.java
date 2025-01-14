@@ -5,6 +5,7 @@ import static com.science.gtnl.loader.IScriptLoader.missing;
 import static gregtech.api.util.GTModHandler.getModItem;
 
 import com.science.gtnl.Utils.recipes.RecipeBuilder;
+import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.common.RecipeRegister;
 
 import gregtech.api.enums.Materials;
@@ -84,7 +85,7 @@ public class PortalToAlfheimRecipes implements IRecipePool {
             .itemInputs(
                 GTUtility.copyAmountUnsafe(256, getModItem("IC2", "blockITNT", 1)),
                 GTUtility.copyAmount(0, GTModHandler.getModItem("minecraft", "beacon", 1)),
-                GTUtility.copyAmount(0, GTModHandler.getModItem("ScienceNotLeisure", "MetaItem", 1, 5)),
+                GTUtility.copyAmount(0, GTNLItemList.ActivatedGaiaPylon.get(1)),
                 GTModHandler.getModItem("Botania", "manaResource", 1, 14, missing))
             .itemOutputs(
                 GTModHandler.getModItem("Botania", "manaResource", 16, 5, missing),

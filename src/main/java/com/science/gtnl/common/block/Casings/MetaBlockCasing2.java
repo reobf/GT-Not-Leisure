@@ -28,7 +28,7 @@ public class MetaBlockCasing2 extends Block {
         this.setBlockName(UnlocalizedName);
         this.setBlockTextureName(RESOURCE_ROOT_ID + ":" + "MetaBlockCasing2/" + TextureName);
         this.TextureName = new String[] { "Side", "Top", "Bottom" };
-        this.setCreativeTab(CreativeTabsLoader.GTNoteLeisure);
+        this.setCreativeTab(CreativeTabsLoader.GTNotLeisure);
     }
 
     @SideOnly(Side.CLIENT)

@@ -2,6 +2,7 @@ package com.science.gtnl.common.recipe;
 
 import static gregtech.api.util.GTRecipeConstants.COIL_HEAT;
 
+import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.common.materials.MaterialPool;
 
 import gregtech.api.enums.GTValues;
@@ -24,7 +25,7 @@ public class PlasmaForgeRecipes implements IRecipePool {
                 GTModHandler.getModItem("Avaritia", "Singularity", 2, 0),
                 GTModHandler.getModItem("GoodGenerator", "fluidCore", 2, 7))
             .fluidInputs(MaterialPool.DepletedExcitedNaquadah.getFluidOrGas(1000))
-            .itemOutputs(GTModHandler.getModItem("ScienceNotLeisure", "MetaItem", 1, 1))
+            .itemOutputs(GTNLItemList.DepletedExcitedNaquadahFuelRod.get(1))
             .noOptimize()
             .duration(20)
             .metadata(COIL_HEAT, 13501)

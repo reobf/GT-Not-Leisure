@@ -27,7 +27,7 @@ public class BlockLaserBeacon extends Block implements ITileEntityProvider {
     public BlockLaserBeacon() {
         super(Material.iron);
         setBlockName("LaserBeacon");
-        this.setCreativeTab(CreativeTabsLoader.GTNoteLeisure);
+        this.setCreativeTab(CreativeTabsLoader.GTNotLeisure);
         GTLanguageManager.addStringLocalization(getUnlocalizedName() + ".name", "Laser Inducing Beacon");
         GregTechAPI.registerMachineBlock(this, -1);
         GameRegistry.registerBlock(this, ItemBlockLaserBeacon.class, getUnlocalizedName());

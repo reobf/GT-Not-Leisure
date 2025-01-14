@@ -6,10 +6,10 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class CreativeTabsLoader {
 
-    public static CreativeTabs GTNoteLeisure;
+    public static CreativeTabs GTNotLeisure;
 
     public CreativeTabsLoader(FMLPreInitializationEvent event) {
-        GTNoteLeisure = new CreativeTabsGTNoteLeisure();
+        GTNotLeisure = new CreativeTabsGTNotLeisure();
     }
 
 }

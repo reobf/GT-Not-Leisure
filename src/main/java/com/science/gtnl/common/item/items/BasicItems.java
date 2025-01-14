@@ -6,6 +6,6 @@ import com.science.gtnl.client.CreativeTabsLoader;
 
 public final class BasicItems {
 
-    public static final Item MetaItem = new ItemAdder("MetaItemBase", "MetaItem", CreativeTabsLoader.GTNoteLeisure)
+    public static final Item MetaItem = new ItemAdder("MetaItemBase", "MetaItem", CreativeTabsLoader.GTNotLeisure)
         .setTextureName("sciencenotleisure:MetaItem/0");
 }

@@ -385,7 +385,7 @@ public class MeteorMiner extends MTEEnhancedMultiBlockBase<MeteorMiner> implemen
     }
 
     public int getMultiTier(ItemStack inventory) {
-        if (!(inventory != null)) return 0;
+        if (inventory == null) return 0;
         return inventory.isItemEqual(GTNLItemList.MeteorMinerSchematic2.get(1)) ? 2
             : inventory.isItemEqual(GTNLItemList.MeteorMinerSchematic1.get(1)) ? 1 : 0;
     }
@@ -403,22 +403,6 @@ public class MeteorMiner extends MTEEnhancedMultiBlockBase<MeteorMiner> implemen
     @Override
     public boolean explodesOnComponentBreak(ItemStack aStack) {
         return false;
-    }
-
-    protected int getBaseProgressTime() {
-        return 480;
-    };
-
-    protected int getXDrill() {
-        return xDrill;
-    }
-
-    protected int getYDrill() {
-        return yDrill;
-    }
-
-    protected int getZDrill() {
-        return zDrill;
     }
 
     public int getLaserToEndHeight() {
@@ -541,7 +525,7 @@ public class MeteorMiner extends MTEEnhancedMultiBlockBase<MeteorMiner> implemen
 
         if (!hasFinished) {
             renderer.setShouldRender(true);
-            renderer.setRange((double) (this.currentRadius + 32.5 + this.getLaserToEndHeight()));
+            renderer.setRange(this.currentRadius + 32.5 + this.getLaserToEndHeight());
             this.setFortuneTier();
             this.startMining(this.multiTier);
             mOutputItems = res.toArray(new ItemStack[0]);

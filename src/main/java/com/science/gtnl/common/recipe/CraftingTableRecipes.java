@@ -35,8 +35,7 @@ public class CraftingTableRecipes implements IRecipePool {
 
         addCraftingRecipe(
             GTNLItemList.CheatOreProcessingFactory.get(1),
-            new Object[] { "AAA", "ABA", "AAA", 'A',
-                getModItem("ScienceNotLeisure", "StargateSingularity", 1, 0, missing), 'B',
+            new Object[] { "AAA", "ABA", "AAA", 'A', GTNLItemList.StargateSingularity, 'B',
                 GTNLItemList.LargeSteamCrusher.get(1) });
 
         addCraftingRecipe(

@@ -397,9 +397,6 @@ public class BlockRegister {
         GTNLItemList.Antifreeze_Heatproof_Machine_Casing.set(
             MetaBlockConstructors
                 .initMetaBlockCasing("Antifreeze Heatproof Machine Casing", (byte) 7, BasicBlocks.MetaBlockCasing));
-        GTNLItemList.TungstenSteelGearbox.set(
-            MetaBlockConstructors.initMetaBlockCasing("Tungsten Steel Gearbox", (byte) 8, BasicBlocks.MetaBlockCasing));
-
     }
 
     public static void registry() {

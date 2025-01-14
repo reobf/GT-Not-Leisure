@@ -19,7 +19,7 @@ public class testitem extends Item {
         super();
 
         this.setUnlocalizedName("testitem");
-        this.setCreativeTab(CreativeTabsLoader.GTNoteLeisure);
+        this.setCreativeTab(CreativeTabsLoader.GTNotLeisure);
         this.setTextureName("sciencenotleisure:testitem");
     }
 

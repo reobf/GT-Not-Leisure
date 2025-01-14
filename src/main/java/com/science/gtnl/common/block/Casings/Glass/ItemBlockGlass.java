@@ -38,7 +38,7 @@ public class ItemBlockGlass extends ItemBlock {
         super(aBlock);
         setHasSubtypes(true);
         setMaxDamage(0);
-        this.setCreativeTab(CreativeTabsLoader.GTNoteLeisure);
+        this.setCreativeTab(CreativeTabsLoader.GTNotLeisure);
     }
 
     // endregion

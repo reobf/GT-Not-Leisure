@@ -16,6 +16,7 @@ public class MaterialLoader {
     public static void load() {
 
         ItemRegister.registry();
+        ItemRegister.registryOreDictionary();
         BlockRegister.registry();
         BlockRegister.registryOreDictionary();
 

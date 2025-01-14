@@ -1,18 +1,30 @@
 package com.science.gtnl.common.recipe;
 
+import static com.science.gtnl.Mods.ScienceNotLeisure;
+import static gregtech.api.enums.Mods.*;
+
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.common.materials.MaterialPool;
 
+import bartworks.system.material.WerkstoffLoader;
+import goodgenerator.util.ItemRefer;
+import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.MaterialsBotania;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
+import gtPlusPlus.core.item.ModItems;
+import gtPlusPlus.core.material.MaterialMisc;
+import gtPlusPlus.core.material.MaterialsAlloy;
 
 public class AssemblerRecipes implements IRecipePool {
 
@@ -20,16 +32,17 @@ public class AssemblerRecipes implements IRecipePool {
 
     @Override
     public void loadRecipes() {
+
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 4, 32499),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 4, 32716),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.03", 4, 32014),
-                GTModHandler.getModItem("bartworks", "gt.bwMetaGeneratedItem0", 1, 3),
-                GTModHandler.getModItem("bartworks", "gt.bwMetaGeneratedgem", 1, 36),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 1, 32700))
-            .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144))
-            .itemOutputs(GTModHandler.getModItem("ScienceNotLeisure", "CircuitResonaticULV", 4))
+                ItemList.Battery_RE_ULV_Tantalum.get(4L),
+                ItemList.Circuit_Parts_Wiring_Basic.get(4L),
+                ItemList.Circuit_Parts_Coil.get(4L),
+                GTModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 3),
+                WerkstoffLoader.MagnetoResonaticDust.get(OrePrefixes.gem, 1),
+                ItemList.Circuit_Primitive.get(1L))
+            .fluidInputs(Materials.Tin.getMolten(144))
+            .itemOutputs(GTModHandler.getModItem(ScienceNotLeisure.ID, "MetaItem", 4, 9))
             .specialValue(0)
             .noOptimize()
             .duration(50)
@@ -39,14 +52,14 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 4, 32715),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 4, 32718),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 4, 32717),
-                GTModHandler.getModItem("bartworks", "gt.bwMetaGeneratedItem0", 1, 3),
-                GTModHandler.getModItem("bartworks", "gt.bwMetaGeneratedgem", 1, 36),
-                GTModHandler.getModItem("ScienceNotLeisure", "CircuitResonaticULV", 1))
-            .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144))
-            .itemOutputs(GTModHandler.getModItem("ScienceNotLeisure", "CircuitResonaticLV", 4))
+                ItemList.Circuit_Parts_Advanced.get(4L),
+                ItemList.Circuit_Parts_Wiring_Elite.get(4L),
+                ItemList.Circuit_Parts_Wiring_Advanced.get(4L),
+                GTModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 3),
+                WerkstoffLoader.MagnetoResonaticDust.get(OrePrefixes.gem, 1),
+                GTModHandler.getModItem(ScienceNotLeisure.ID, "MetaItem", 1, 9))
+            .fluidInputs(Materials.Tin.getMolten(144))
+            .itemOutputs(GTModHandler.getModItem(ScienceNotLeisure.ID, "MetaItem", 4, 10))
             .specialValue(0)
             .noOptimize()
             .duration(90)
@@ -56,14 +69,14 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 8, 32715),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 8, 32718),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 8, 32717),
-                GTModHandler.getModItem("bartworks", "gt.bwMetaGeneratedItem0", 1, 3),
-                GTModHandler.getModItem("bartworks", "gt.bwMetaGeneratedgem", 1, 36),
-                GTModHandler.getModItem("ScienceNotLeisure", "CircuitResonaticLV", 1))
-            .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144))
-            .itemOutputs(GTModHandler.getModItem("ScienceNotLeisure", "CircuitResonaticMV", 4))
+                ItemList.Circuit_Parts_Advanced.get(8L),
+                ItemList.Circuit_Parts_Wiring_Elite.get(8L),
+                ItemList.Circuit_Parts_Wiring_Advanced.get(8L),
+                GTModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 3),
+                WerkstoffLoader.MagnetoResonaticDust.get(OrePrefixes.gem, 1),
+                GTModHandler.getModItem(ScienceNotLeisure.ID, "MetaItem", 1, 10))
+            .fluidInputs(Materials.Tin.getMolten(144))
+            .itemOutputs(GTModHandler.getModItem(ScienceNotLeisure.ID, "MetaItem", 4, 11))
             .specialValue(0)
             .noOptimize()
             .duration(150)
@@ -73,14 +86,14 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTModHandler.getModItem("gregtech", "gt.metaitem.03", 4, 32016),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.03", 4, 32020),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.03", 4, 32018),
-                GTModHandler.getModItem("bartworks", "gt.bwMetaGeneratedItem0", 2, 3),
-                GTModHandler.getModItem("bartworks", "gt.bwMetaGeneratedgemFlawless", 1, 36),
-                GTModHandler.getModItem("ScienceNotLeisure", "CircuitResonaticMV", 1))
-            .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 144))
-            .itemOutputs(GTModHandler.getModItem("ScienceNotLeisure", "CircuitResonaticHV", 4))
+                ItemList.Circuit_Parts_DiodeSMD.get(4L),
+                ItemList.Circuit_Parts_TransistorSMD.get(4L),
+                ItemList.Circuit_Parts_CapacitorSMD.get(4L),
+                GTModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 3),
+                WerkstoffLoader.MagnetoResonaticDust.get(OrePrefixes.gemFlawless, 1),
+                GTModHandler.getModItem(ScienceNotLeisure.ID, "MetaItem", 1, 11))
+            .fluidInputs(Materials.SolderingAlloy.getMolten(144))
+            .itemOutputs(GTModHandler.getModItem(ScienceNotLeisure.ID, "MetaItem", 4, 12))
             .specialValue(0)
             .noOptimize()
             .duration(230)
@@ -90,14 +103,14 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTModHandler.getModItem("gregtech", "gt.metaitem.03", 8, 32016),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.03", 8, 32020),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.03", 8, 32018),
-                GTModHandler.getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 3),
-                GTModHandler.getModItem("bartworks", "gt.bwMetaGeneratedgemFlawless", 1, 36),
-                GTModHandler.getModItem("ScienceNotLeisure", "CircuitResonaticHV", 1))
-            .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 144))
-            .itemOutputs(GTModHandler.getModItem("ScienceNotLeisure", "CircuitResonaticEV", 4))
+                ItemList.Circuit_Parts_DiodeSMD.get(8L),
+                ItemList.Circuit_Parts_TransistorSMD.get(8L),
+                ItemList.Circuit_Parts_CapacitorSMD.get(8L),
+                GTModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 3),
+                WerkstoffLoader.MagnetoResonaticDust.get(OrePrefixes.gemFlawless, 1),
+                GTModHandler.getModItem(ScienceNotLeisure.ID, "MetaItem", 1, 12))
+            .fluidInputs(Materials.SolderingAlloy.getMolten(144))
+            .itemOutputs(GTModHandler.getModItem(ScienceNotLeisure.ID, "MetaItem", 4, 13))
             .specialValue(0)
             .noOptimize()
             .duration(330)
@@ -107,14 +120,14 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTModHandler.getModItem("gregtech", "gt.metaitem.03", 4, 32025),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.03", 4, 32027),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.03", 4, 32026),
-                GTModHandler.getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 3),
-                GTModHandler.getModItem("bartworks", "gt.bwMetaGeneratedgemFlawless", 1, 36),
-                GTModHandler.getModItem("ScienceNotLeisure", "CircuitResonaticEV", 1))
-            .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 144))
-            .itemOutputs(GTModHandler.getModItem("ScienceNotLeisure", "CircuitResonaticIV", 4))
+                ItemList.Circuit_Parts_DiodeASMD.get(4L),
+                ItemList.Circuit_Parts_TransistorASMD.get(4L),
+                ItemList.Circuit_Parts_CapacitorASMD.get(4L),
+                GTModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 3),
+                WerkstoffLoader.MagnetoResonaticDust.get(OrePrefixes.gemFlawless, 1),
+                GTModHandler.getModItem(ScienceNotLeisure.ID, "MetaItem", 1, 13))
+            .fluidInputs(Materials.SolderingAlloy.getMolten(144))
+            .itemOutputs(GTModHandler.getModItem(ScienceNotLeisure.ID, "MetaItem", 4, 14))
             .specialValue(0)
             .noOptimize()
             .duration(450)
@@ -124,14 +137,14 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTModHandler.getModItem("gregtech", "gt.metaitem.03", 8, 32025),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.03", 8, 32027),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.03", 8, 32026),
-                GTModHandler.getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 3),
-                GTModHandler.getModItem("bartworks", "gt.bwMetaGeneratedgemFlawless", 1, 36),
-                GTModHandler.getModItem("ScienceNotLeisure", "CircuitResonaticIV", 1))
-            .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 144))
-            .itemOutputs(GTModHandler.getModItem("ScienceNotLeisure", "CircuitResonaticLuV", 4))
+                ItemList.Circuit_Parts_DiodeASMD.get(8L),
+                ItemList.Circuit_Parts_TransistorASMD.get(8L),
+                ItemList.Circuit_Parts_CapacitorASMD.get(8L),
+                GTModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 3),
+                WerkstoffLoader.MagnetoResonaticDust.get(OrePrefixes.gemFlawless, 1),
+                GTModHandler.getModItem(ScienceNotLeisure.ID, "MetaItem", 1, 14))
+            .fluidInputs(Materials.SolderingAlloy.getMolten(144))
+            .itemOutputs(GTModHandler.getModItem(ScienceNotLeisure.ID, "MetaItem", 4, 15))
             .specialValue(0)
             .noOptimize()
             .duration(570)
@@ -141,14 +154,14 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTModHandler.getModItem("ScienceNotLeisure", "BiowareSMDDiode", 16),
-                GTModHandler.getModItem("ScienceNotLeisure", "BiowareSMDCapacitor", 16),
-                GTModHandler.getModItem("ScienceNotLeisure", "BiowareSMDTransistor", 16),
-                GTModHandler.getModItem("bartworks", "gt.bwMetaGeneratedItem0", 8, 3),
-                GTModHandler.getModItem("bartworks", "gt.bwMetaGeneratedgemExquisite", 1, 36),
-                GTModHandler.getModItem("ScienceNotLeisure", "CircuitResonaticLuV", 1))
-            .fluidInputs(FluidRegistry.getFluidStack("molten.mutatedlivingsolder", 144))
-            .itemOutputs(GTModHandler.getModItem("ScienceNotLeisure", "CircuitResonaticZPM", 4))
+                GTNLItemList.BiowareSMDDiode.get(16),
+                GTNLItemList.BiowareSMDCapacitor.get(16),
+                GTNLItemList.BiowareSMDTransistor.get(16),
+                GTModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 8, 3),
+                WerkstoffLoader.MagnetoResonaticDust.get(OrePrefixes.gemExquisite, 1),
+                GTModHandler.getModItem(ScienceNotLeisure.ID, "MetaItem", 1, 15))
+            .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(144))
+            .itemOutputs(GTModHandler.getModItem(ScienceNotLeisure.ID, "MetaItem", 4, 16))
             .specialValue(0)
             .noOptimize()
             .duration(710)
@@ -158,14 +171,14 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTModHandler.getModItem("gregtech", "gt.metaitem.03", 16, 32179),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.03", 16, 32181),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.03", 16, 32180),
-                GTModHandler.getModItem("bartworks", "gt.bwMetaGeneratedItem0", 8, 3),
-                GTModHandler.getModItem("bartworks", "gt.bwMetaGeneratedgemExquisite", 1, 36),
-                GTModHandler.getModItem("ScienceNotLeisure", "CircuitResonaticZPM", 1))
-            .fluidInputs(FluidRegistry.getFluidStack("molten.mutatedlivingsolder", 288))
-            .itemOutputs(GTModHandler.getModItem("ScienceNotLeisure", "CircuitResonaticUV", 4))
+                ItemList.Circuit_Parts_DiodeXSMD.get(16L),
+                ItemList.Circuit_Parts_TransistorXSMD.get(16L),
+                ItemList.Circuit_Parts_CapacitorXSMD.get(16L),
+                GTModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 8, 3),
+                WerkstoffLoader.MagnetoResonaticDust.get(OrePrefixes.gemExquisite, 1),
+                GTModHandler.getModItem(ScienceNotLeisure.ID, "MetaItem", 1, 16))
+            .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(288))
+            .itemOutputs(GTModHandler.getModItem(ScienceNotLeisure.ID, "MetaItem", 4, 17))
             .specialValue(0)
             .noOptimize()
             .duration(730)
@@ -175,14 +188,14 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTModHandler.getModItem("ScienceNotLeisure", "ExoticSMDDiode", 16),
-                GTModHandler.getModItem("ScienceNotLeisure", "ExoticSMDCapacitor", 16),
-                GTModHandler.getModItem("ScienceNotLeisure", "ExoticSMDTransistor", 16),
-                GTModHandler.getModItem("bartworks", "gt.bwMetaGeneratedItem0", 8, 3),
-                GTModHandler.getModItem("bartworks", "gt.bwMetaGeneratedgemExquisite", 1, 36),
-                GTModHandler.getModItem("ScienceNotLeisure", "CircuitResonaticUV", 1))
-            .fluidInputs(FluidRegistry.getFluidStack("molten.mutatedlivingsolder", 432))
-            .itemOutputs(GTModHandler.getModItem("ScienceNotLeisure", "CircuitResonaticUHV", 4))
+                GTNLItemList.ExoticSMDDiode.get(16),
+                GTNLItemList.ExoticSMDCapacitor.get(16),
+                GTNLItemList.ExoticSMDTransistor.get(16),
+                GTModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 8, 3),
+                WerkstoffLoader.MagnetoResonaticDust.get(OrePrefixes.gemExquisite, 1),
+                GTModHandler.getModItem(ScienceNotLeisure.ID, "MetaItem", 1, 17))
+            .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(432))
+            .itemOutputs(GTModHandler.getModItem(ScienceNotLeisure.ID, "MetaItem", 4, 18))
             .specialValue(0)
             .noOptimize()
             .duration(750)
@@ -192,14 +205,14 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTModHandler.getModItem("ScienceNotLeisure", "CosmicSMDDiode", 16),
-                GTModHandler.getModItem("ScienceNotLeisure", "CosmicSMDCapacitor", 16),
-                GTModHandler.getModItem("ScienceNotLeisure", "CosmicSMDTransistor", 16),
-                GTModHandler.getModItem("bartworks", "gt.bwMetaGeneratedItem0", 8, 3),
-                GTModHandler.getModItem("bartworks", "gt.bwMetaGeneratedgemExquisite", 1, 36),
-                GTModHandler.getModItem("ScienceNotLeisure", "CircuitResonaticUHV", 1))
+                GTNLItemList.CosmicSMDDiode.get(16),
+                GTNLItemList.CosmicSMDCapacitor.get(16),
+                GTNLItemList.CosmicSMDTransistor.get(16),
+                GTModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 8, 3),
+                WerkstoffLoader.MagnetoResonaticDust.get(OrePrefixes.gemExquisite, 1),
+                GTModHandler.getModItem(ScienceNotLeisure.ID, "MetaItem", 1, 18))
             .fluidInputs(MaterialPool.SuperMutatedLivingSolder.getFluidOrGas(288))
-            .itemOutputs(GTModHandler.getModItem("ScienceNotLeisure", "CircuitResonaticUEV", 4))
+            .itemOutputs(GTModHandler.getModItem(ScienceNotLeisure.ID, "MetaItem", 4, 19))
             .specialValue(0)
             .noOptimize()
             .duration(770)
@@ -209,14 +222,14 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTModHandler.getModItem("ScienceNotLeisure", "TemporallySMDDiode", 16),
-                GTModHandler.getModItem("ScienceNotLeisure", "TemporallySMDCapacitor", 16),
-                GTModHandler.getModItem("ScienceNotLeisure", "TemporallySMDTransistor", 16),
-                GTModHandler.getModItem("bartworks", "gt.bwMetaGeneratedItem0", 8, 3),
-                GTModHandler.getModItem("bartworks", "gt.bwMetaGeneratedgemExquisite", 1, 36),
-                GTModHandler.getModItem("ScienceNotLeisure", "CircuitResonaticUEV", 1))
+                GTNLItemList.TemporallySMDDiode.get(16),
+                GTNLItemList.TemporallySMDCapacitor.get(16),
+                GTNLItemList.TemporallySMDTransistor.get(16),
+                GTModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 8, 3),
+                WerkstoffLoader.MagnetoResonaticDust.get(OrePrefixes.gemExquisite, 1),
+                GTModHandler.getModItem(ScienceNotLeisure.ID, "MetaItem", 1, 19))
             .fluidInputs(MaterialPool.SuperMutatedLivingSolder.getFluidOrGas(432))
-            .itemOutputs(GTModHandler.getModItem("ScienceNotLeisure", "CircuitResonaticUIV", 4))
+            .itemOutputs(GTModHandler.getModItem(ScienceNotLeisure.ID, "MetaItem", 4, 20))
             .specialValue(0)
             .noOptimize()
             .duration(790)
@@ -226,11 +239,11 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTModHandler.getModItem("gregtech", "gt.metaitem.02", 8, 19325),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 8, 29020),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 4, 29324))
+                GTOreDictUnificator.get(OrePrefixes.wire, Materials.NaquadahAlloy, 8),
+                GTOreDictUnificator.get(OrePrefixes.foil, Materials.Silicon, 8),
+                GTOreDictUnificator.get(OrePrefixes.foil, Materials.Naquadah, 4))
             .fluidInputs(MaterialPool.Polyimide.getFluidOrGas(288))
-            .itemOutputs(GTModHandler.getModItem("ScienceNotLeisure", "BiowareSMDCapacitor", 16))
+            .itemOutputs(GTNLItemList.BiowareSMDCapacitor.get(16))
             .specialValue(0)
             .noOptimize()
             .duration(100)
@@ -240,11 +253,11 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTModHandler.getModItem("gregtech", "gt.metaitem.02", 8, 19325),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 1, 2078),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 1, 2329))
+                GTOreDictUnificator.get(OrePrefixes.wire, Materials.NaquadahAlloy, 8),
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lutetium, 1),
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tritanium, 1))
             .fluidInputs(MaterialPool.Polyimide.getFluidOrGas(288))
-            .itemOutputs(GTModHandler.getModItem("ScienceNotLeisure", "BiowareSMDDiode", 16))
+            .itemOutputs(GTNLItemList.BiowareSMDDiode.get(16))
             .specialValue(0)
             .noOptimize()
             .duration(100)
@@ -254,11 +267,11 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTModHandler.getModItem("gregtech", "gt.metaitem.02", 8, 19325),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 1, 17327),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 1, 17329))
+                GTOreDictUnificator.get(OrePrefixes.wire, Materials.NaquadahAlloy, 8),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Naquadria, 1),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Tritanium, 1))
             .fluidInputs(MaterialPool.Polyimide.getFluidOrGas(288))
-            .itemOutputs(GTModHandler.getModItem("ScienceNotLeisure", "BiowareSMDResistor", 16))
+            .itemOutputs(GTNLItemList.BiowareSMDResistor.get(16))
             .specialValue(0)
             .noOptimize()
             .duration(100)
@@ -268,11 +281,11 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTModHandler.getModItem("gregtech", "gt.metaitem.02", 8, 19325),
-                GTModHandler.getModItem("bartworks", "gt.bwMetaGeneratedplate", 2, 25046),
-                GTModHandler.getModItem("miscutils", "itemPlateSiliconCarbide", 2))
+                GTOreDictUnificator.get(OrePrefixes.wire, Materials.NaquadahAlloy, 8),
+                MaterialPool.Germaniumtungstennitride.get(OrePrefixes.plate, 2),
+                MaterialsAlloy.SILICON_CARBIDE.getPlate(2))
             .fluidInputs(MaterialPool.Polyimide.getFluidOrGas(288))
-            .itemOutputs(GTModHandler.getModItem("ScienceNotLeisure", "BiowareSMDTransistor", 16))
+            .itemOutputs(GTNLItemList.BiowareSMDTransistor.get(16))
             .specialValue(0)
             .noOptimize()
             .duration(100)
@@ -282,10 +295,10 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTModHandler.getModItem("gregtech", "gt.metaitem.02", 8, 19325),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 1, 28325))
+                GTOreDictUnificator.get(OrePrefixes.wire, Materials.NaquadahAlloy, 8),
+                GTOreDictUnificator.get(OrePrefixes.ring, Materials.NaquadahAlloy, 1))
             .fluidInputs(MaterialPool.Polyimide.getFluidOrGas(288))
-            .itemOutputs(GTModHandler.getModItem("ScienceNotLeisure", "BiowareSMDInductor", 16))
+            .itemOutputs(GTNLItemList.BiowareSMDInductor.get(16))
             .specialValue(0)
             .noOptimize()
             .duration(100)
@@ -295,11 +308,11 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTUtility.copyAmount(0, GTModHandler.getModItem("gregtech", "gt.metaitem.01", 1, 32700)),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 1, 17305),
-                GTModHandler.getModItem("minecraft", "redstone", 1))
+                GTUtility.copyAmount(0, ItemList.Circuit_Primitive.get(1L)),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1),
+                GTModHandler.getModItem(Minecraft.ID, "redstone", 1, 0))
             .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 20))
-            .itemOutputs(GTModHandler.getModItem("ScienceNotLeisure", "VerySimpleCircuit", 2))
+            .itemOutputs(GTNLItemList.VerySimpleCircuit.get(2))
             .specialValue(0)
             .noOptimize()
             .duration(40)
@@ -308,12 +321,12 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTUtility.copyAmount(0, GTModHandler.getModItem("IC2", "itemPartCircuit", 1)),
-                GTModHandler.getModItem("ScienceNotLeisure", "VerySimpleCircuit", 1),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 1, 17032),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 1, 2308))
+                GTUtility.copyAmount(0, GTModHandler.getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1)),
+                GTNLItemList.VerySimpleCircuit.get(1),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1),
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.RedAlloy, 1))
             .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 20))
-            .itemOutputs(GTModHandler.getModItem("ScienceNotLeisure", "SimpleCircuit", 2))
+            .itemOutputs(GTNLItemList.SimpleCircuit.get(2))
             .specialValue(0)
             .noOptimize()
             .duration(80)
@@ -322,13 +335,13 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTUtility.copyAmount(0, GTModHandler.getModItem("gregtech", "gt.metaitem.01", 1, 32702)),
-                GTModHandler.getModItem("minecraft", "paper", 1),
-                GTModHandler.getModItem("ScienceNotLeisure", "SimpleCircuit", 2),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 1, 17304),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 1, 1500))
+                GTUtility.copyAmount(0, ItemList.Circuit_Good.get(1L)),
+                GTModHandler.getModItem(Minecraft.ID, "paper", 1, 0),
+                GTNLItemList.SimpleCircuit.get(2),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.WroughtIron, 1),
+                GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Diamond, 1))
             .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 20))
-            .itemOutputs(GTModHandler.getModItem("ScienceNotLeisure", "BasicCircuit", 2))
+            .itemOutputs(GTNLItemList.BasicCircuit.get(2))
             .specialValue(0)
             .noOptimize()
             .duration(160)
@@ -337,14 +350,14 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTUtility.copyAmount(0, GTModHandler.getModItem("IC2", "itemPartCircuitAdv", 1)),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.03", 1, 32100),
-                GTModHandler.getModItem("ScienceNotLeisure", "BasicCircuit", 1),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 1, 17305),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 1, 1804),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 1, 27308))
+                GTUtility.copyAmount(0, GTModHandler.getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1)),
+                ItemList.Circuit_Board_Coated_Basic.get(1L),
+                GTNLItemList.BasicCircuit.get(1),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1),
+                GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Obsidian, 1),
+                GTOreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 1))
             .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 20))
-            .itemOutputs(GTModHandler.getModItem("ScienceNotLeisure", "AdvancedCircuit", 1))
+            .itemOutputs(GTNLItemList.AdvancedCircuit.get(1))
             .specialValue(0)
             .noOptimize()
             .duration(80)
@@ -353,11 +366,11 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTModHandler.getModItem("gregtech", "gt.metaitem.03", 1, 32101),
-                GTModHandler.getModItem("ScienceNotLeisure", "AdvancedCircuit", 4),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 8, 29308))
-            .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 20))
-            .itemOutputs(GTModHandler.getModItem("ScienceNotLeisure", "EliteCircuit", 4))
+                ItemList.Circuit_Board_Phenolic_Good.get(1L),
+                GTNLItemList.AdvancedCircuit.get(1),
+                GTOreDictUnificator.get(OrePrefixes.foil, Materials.RedAlloy, 8))
+            .fluidInputs(Materials.SolderingAlloy.getMolten(144))
+            .itemOutputs(GTNLItemList.EliteCircuit.get(1))
             .specialValue(0)
             .noOptimize()
             .duration(200)
@@ -366,9 +379,9 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTModHandler.getModItem("miscutils", "blockCompressedObsidian", 1, 6),
-                GTModHandler.getModItem("gregtech", "gt.blockframes", 4, 306),
-                GTModHandler.getModItem("ExtraUtilities", "decorativeBlock2", 1, 7))
+                GTModHandler.getModItem(GTPlusPlus.ID, "blockCompressedObsidian", 1, 6),
+                GTOreDictUnificator.get(OrePrefixes.frame, Materials.StainlessSteel, 4),
+                GTModHandler.getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 7))
             .itemOutputs(GTNLItemList.FortifyGlowstone.get(1))
             .specialValue(0)
             .noOptimize()
@@ -378,12 +391,12 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTModHandler.getModItem("Botania", "pylon", 1, 2),
-                GTModHandler.getModItem("Botania", "pylon", 2, 1),
-                GTModHandler.getModItem("Botania", "pylon", 4, 0),
-                GTModHandler.getModItem("Botania", "manaResource", 16, 7),
-                GTModHandler.getModItem("Botania", "manaResource", 16, 8))
-            .itemOutputs(GTModHandler.getModItem("ScienceNotLeisure", "MetaItem", 1, 5))
+                GTModHandler.getModItem(Botania.ID, "pylon", 1, 2),
+                GTModHandler.getModItem(Botania.ID, "pylon", 2, 1),
+                GTModHandler.getModItem(Botania.ID, "pylon", 4, 0),
+                GTModHandler.getModItem(Botania.ID, "manaResource", 16, 7),
+                GTModHandler.getModItem(Botania.ID, "manaResource", 16, 8))
+            .itemOutputs(GTNLItemList.ActivatedGaiaPylon.get(1))
             .specialValue(0)
             .noOptimize()
             .duration(200)
@@ -393,10 +406,10 @@ public class AssemblerRecipes implements IRecipePool {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 GTUtility.getIntegratedCircuit(1),
-                GTModHandler.getModItem("gregtech", "gt.blockmachines", 1, 56),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 8, 17202),
-                GTModHandler.getModItem("Botania", "pylon", 4, 1),
-                GTModHandler.getModItem("Botania", "pool", 1, 3),
+                ItemList.Hatch_Input_LuV.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, MaterialsBotania.Terrasteel, 8),
+                GTModHandler.getModItem(Botania.ID, "pylon", 4, 1),
+                GTModHandler.getModItem(Botania.ID, "pool", 1, 3),
                 GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 2L))
             .itemOutputs(GTNLItemList.FluidManaInputHatch.get(1))
             .specialValue(0)
@@ -408,15 +421,15 @@ public class AssemblerRecipes implements IRecipePool {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 GTUtility.getIntegratedCircuit(2),
-                GTModHandler.getModItem("gregtech", "gt.blockmachines", 1, 1177),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 8, 17028),
-                GTModHandler.getModItem("gregtech", "gt.laserplate", 4, 0),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 2, 32683),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 2, 32693),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.02", 4, 31316),
-                GTModHandler.getModItem("gregtech", "gt.blockframes", 4, 306),
+                ItemList.OreDrill2.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 8),
+                new ItemStack(GregTechAPI.sLaserRender, 4, 0),
+                ItemList.Emitter_EV.get(2L),
+                ItemList.Sensor_EV.get(2L),
+                GTOreDictUnificator.get(OrePrefixes.gear, Materials.TungstenSteel, 4),
+                GTOreDictUnificator.get(OrePrefixes.frame, Materials.StainlessSteel, 4),
                 GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 2L))
-            .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 9216))
+            .fluidInputs(Materials.SolderingAlloy.getMolten(9216))
             .itemOutputs(GTNLItemList.MeteorMiner.get(1))
             .specialValue(0)
             .noOptimize()
@@ -426,14 +439,14 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTModHandler.getModItem("gregtech", "gt.blockcasings", 1, 15),
-                GTModHandler.getModItem("dreamcraft", "item.LaserEmitter", 4, 0),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 4, 24500),
-                GTModHandler.getModItem("miscutils", "itemDehydratorCoilWire", 8, 2),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.03", 4, 32146),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 2, 32684),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 16, 17316))
-            .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 9216))
+                ItemList.Casing_Coil_Superconductor.get(1L),
+                com.dreammaster.item.ItemList.LaserEmitter.getIS(4),
+                GTOreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 4),
+                new ItemStack(ModItems.itemDehydratorCoilWire, 8, 2),
+                ItemList.LuV_Coil.get(4L),
+                ItemList.Emitter_IV.get(2L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 16))
+            .fluidInputs(Materials.SolderingAlloy.getMolten(9216))
             .itemOutputs(GTNLItemList.LaserBeacon.get(1))
             .specialValue(0)
             .noOptimize()
@@ -443,16 +456,16 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTModHandler.getModItem("gregtech", "gt.blockmachines", 4, 215),
-                GTModHandler.getModItem("gregtech", "gt.blockmachines", 2, 32018),
-                GTModHandler.getModItem("gregtech", "gt.blockmachines", 1, 1170),
-                GTModHandler.getModItem("gregtech", "gt.blockframes", 16, 316),
-                GTModHandler.getModItem("gregtech", "gt.metaitem.01", 8, 32654),
-                GTModHandler.getModItem("gregtech", "gt.blockcasings2", 8, 5),
+                ItemList.Machine_IV_Assembler.get(4L),
+                ItemRefer.Precise_Assembler.get(2),
+                ItemList.Machine_Multi_Assemblyline.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.frame, Materials.TungstenSteel, 16),
+                ItemList.Robot_Arm_IV.get(8L),
+                ItemList.Casing_Gearbox_TungstenSteel.get(8L),
                 GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 8L),
                 GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 10L),
                 GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 12L))
-            .fluidInputs(FluidRegistry.getFluidStack("molten.indalloy140", 256000))
+            .fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(256000))
             .itemOutputs(GTNLItemList.ComponentAssembler.get(1))
             .specialValue(0)
             .noOptimize()

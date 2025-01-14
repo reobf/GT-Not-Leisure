@@ -10,7 +10,7 @@ public class ItemRecord extends net.minecraft.item.ItemRecord {
         super(recordName);
         setTextureName("sciencenotleisure:Record." + recordName);
         setUnlocalizedName("record");
-        setCreativeTab(CreativeTabsLoader.GTNoteLeisure);
+        setCreativeTab(CreativeTabsLoader.GTNotLeisure);
     }
 
     @Override
