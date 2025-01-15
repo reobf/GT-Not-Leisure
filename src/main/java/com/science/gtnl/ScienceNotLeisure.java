@@ -54,7 +54,7 @@ public class ScienceNotLeisure {
 
     public static final String MODNAME = "GTNotLeisure";
 
-    public static final String VERSION = "v0.1.5";
+    public static final String VERSION = "v0.1.6";
 
     public static final String Arthor = "HFstudio";
 
