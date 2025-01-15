@@ -117,5 +117,8 @@ public class CraftingTableRecipes implements IRecipePool {
             new Object[] { "ABA", "CDC", "EBE", 'A', ItemList.Robot_Arm_EV.get(1), 'B',
                 GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, 1L), 'C', "circuitData", 'D',
                 ItemList.Machine_EV_CircuitAssembler.get(1), 'E', ItemList.Conveyor_Module_EV.get(1) });
+        addCraftingRecipe(
+            GTNLItemList.BrickedBlastFurnace.get(1),
+            new Object[] { "A  ", "   ", "   ", 'A', ItemList.Machine_Bricked_BlastFurnace.get(1) });
     }
 }

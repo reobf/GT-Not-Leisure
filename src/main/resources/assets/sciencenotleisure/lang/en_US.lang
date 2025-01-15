@@ -280,6 +280,7 @@ StructureTooComplex=结构太复杂了！
 BLUE_PRINT_INFO=请参考§9Structure§1Lib§7全息投影，构建主体结构
 textUseBlueprint=用§9蓝§b图§r预览
 
+NameBrickedBlastFurnace=砖高炉
 BrickBlastFurnaceRecipeType=§c跃§6进§e一§a号§b原§9始§d高§5炉
 Tooltip_BrickBlastFurnace_00=用于炼钢或一般的热冶金
 Tooltip_BrickBlastFurnace_01=不同于其他GT多方块机器，砖高炉的控制器可进行自动物品交互
@@ -483,6 +484,20 @@ NameSmeltingMixingFurnace=合金搅拌炉
 SmeltingMixingFurnaceRecipeType=合金搅拌
 gtnl.recipe.SmeltingMixingFurnaceRecipes=合金搅拌
 Tooltip_SmeltingMixingFurnace_Casing=任意超能机械方块
+
+NameProcessingArray=处理阵列：重生
+
+NameMegaBlastFurnace=巨型工业高炉
+Tooltip_MegaBlastFurnaceRecipeType=工业高炉
+Tooltip_MegaBlastFurnace_00=每超过配方温度900K，耗能均将乘以95%%（不计超频）
+Tooltip_MegaBlastFurnace_01=每超过配方温度1800K，将进行一次无损超频
+Tooltip_MegaBlastFurnace_02=超过MV后的每一级电压，都会将温度提高100K
+Tooltip_MegaBlastFurnace_03=支持§9Tec§1Tech§r能源仓！
+Tooltip_MegaBlastFurnace_04=并行数 = 256 + 8 * 电压等级 + 16 * 线圈等级
+Tooltip_MegaBlastFurnace_05=比相同电压的单方块机器快400%%
+Tooltip_MegaBlastFurnace_Casing_00=任意冶炼炉机械方块
+Tooltip_MegaBlastFurnace_Casing_01=回收气体，任意脱氧钢机械方块
+Tooltip_MegaBlastFurnace_Casing_02=顶部中心放射硅岩合金机械方块
 
 NameWhiteNightGenerator=白夜发电机
 Tooltip_WhiteNightGenerator_MachineType=§d§l紫罗兰的洗礼

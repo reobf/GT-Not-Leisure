@@ -6,6 +6,7 @@ import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.common.hatch.MTEHatchCustomFluid;
 import com.science.gtnl.common.machine.multiblock.BloodSoulSacrificialArray;
+import com.science.gtnl.common.machine.multiblock.BrickedBlastFurnace;
 import com.science.gtnl.common.machine.multiblock.CheatOreProcessingFactory;
 import com.science.gtnl.common.machine.multiblock.ComponentAssembler;
 import com.science.gtnl.common.machine.multiblock.Desulfurizer;
@@ -27,6 +28,7 @@ import com.science.gtnl.common.machine.multiblock.ProcessingArray;
 import com.science.gtnl.common.machine.multiblock.RealArtificialStar;
 import com.science.gtnl.common.machine.multiblock.SmeltingMixingFurnace;
 import com.science.gtnl.common.machine.multiblock.SteamCracking;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.MegaBlastFurnace;
 import com.science.gtnl.common.machine.multiblock.TeleportationArrayToAlfheim;
 import com.science.gtnl.common.machine.multiblock.WhiteNightGenerator;
 
@@ -61,6 +63,8 @@ public class MachineLoader {
     public static ItemStack SmeltingMixingFurnace;
     public static ItemStack WhiteNightGenerator;
     public static ItemStack ProcessingArray;
+    public static ItemStack MegaBlastFurnace;
+    public static ItemStack BrickedBlastFurnace;
 
     public static void loadMachines() {
 
@@ -199,6 +203,16 @@ public class MachineLoader {
         ProcessingArray = new ProcessingArray(21026, "NameProcessingArray", TextLocalization.NameProcessingArray)
             .getStackForm(1);
         GTNLItemList.ProcessingArray.set(ProcessingArray);
+
+        MegaBlastFurnace = new MegaBlastFurnace(21027, "NameMegaBlastFurnace", TextLocalization.NameMegaBlastFurnace)
+            .getStackForm(1);
+        GTNLItemList.MegaBlastFurnace.set(MegaBlastFurnace);
+
+        BrickedBlastFurnace = new BrickedBlastFurnace(
+            21028,
+            "NameBrickedBlastFurnace",
+            TextLocalization.NameBrickedBlastFurnace).getStackForm(1);
+        GTNLItemList.BrickedBlastFurnace.set(BrickedBlastFurnace);
 
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
             21919,

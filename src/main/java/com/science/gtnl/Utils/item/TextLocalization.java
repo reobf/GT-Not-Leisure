@@ -208,6 +208,7 @@ public class TextLocalization {
         "Any Clean Stainless Steel Machine Casing",
         "Tooltip_Desulfurizer_Casing");
 
+    public static final String NameBrickedBlastFurnace = texter("Bricked Blast Furnace", "NameBrickedBlastFurnace");
     public static final String BrickBlastFurnaceRecipeType = texter(
         "§cLeap §6Forward §eN§ao.§b1 §9Brick §dBlast §5Furnace",
         "BrickBlastFurnaceRecipeType");
@@ -468,6 +469,38 @@ public class TextLocalization {
         "Tooltip_TeleportationArrayToAlfheim_Casing");
 
     public static final String NameProcessingArray = texter("Re:Processing Array", "NameProcessingArray");
+
+    public static final String NameMegaBlastFurnace = texter("Mega Blast Furnace", "NameMegaBlastFurnace");
+    public static final String Tooltip_MegaBlastFurnaceRecipeType = texter(
+        "Blast Furnace",
+        "Tooltip_MegaBlastFurnaceRecipeType");
+    public static final String Tooltip_MegaBlastFurnace_00 = texter(
+        "Every time the formula temperature exceeds 900K, the energy consumption will be multiplied by 95%% (excluding overclocking)",
+        "Tooltip_MegaBlastFurnace_00");
+    public static final String Tooltip_MegaBlastFurnace_01 = texter(
+        "Every time the formula temperature exceeds 1800K, a non-destructive overclocking will be performed",
+        "Tooltip_MegaBlastFurnace_01");
+    public static final String Tooltip_MegaBlastFurnace_02 = texter(
+        "After each voltage level exceeds MV, the temperature will increase by 100K",
+        "Tooltip_MegaBlastFurnace_02");
+    public static final String Tooltip_MegaBlastFurnace_03 = texter(
+        "Support §9Tec§1Tech §rLaser Hatch!",
+        "Tooltip_MegaBlastFurnace_03");
+    public static final String Tooltip_MegaBlastFurnace_04 = texter(
+        "Parallel = 256 + 8 * voltage level + 16 * coil level",
+        "Tooltip_MegaBlastFurnace_04");
+    public static final String Tooltip_MegaBlastFurnace_05 = texter(
+        "400%% faster than single-block machines of the same voltage",
+        "Tooltip_MegaBlastFurnace_05");
+    public static final String Tooltip_MegaBlastFurnace_Casing_00 = texter(
+        "Any Blast Smelter Casing Block",
+        "Tooltip_MegaBlastFurnace_Casing_00");
+    public static final String Tooltip_MegaBlastFurnace_Casing_01 = texter(
+        "Gasses, Any Solid Steel Machine Casing",
+        "Tooltip_MegaBlastFurnace_Casing_01");
+    public static final String Tooltip_MegaBlastFurnace_Casing_02 = texter(
+        "Top center Radiant Naquadah Alloy Casing",
+        "Tooltip_MegaBlastFurnace_Casing_02");
 
     public static final String NameWhiteNightGenerator = texter("White Night Generator", "NameWhiteNightGenerator");
     public static final String Tooltip_WhiteNightGenerator_MachineType = texter(

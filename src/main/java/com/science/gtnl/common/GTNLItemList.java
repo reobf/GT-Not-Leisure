@@ -23,7 +23,6 @@ public enum GTNLItemList {
     SlicingBlades,
     NeutroniumPipeCasing,
     NeutroniumGearbox,
-    Dream_Coil,
 
     TrollFace,
     DepletedExcitedNaquadahFuelRod,
@@ -178,6 +177,9 @@ public enum GTNLItemList {
     WhiteLampOff,
     WhiteLampBorderless,
     WhiteLampOffBorderless,
+
+    MegaBlastFurnace,
+    BrickedBlastFurnace,
 
     ProcessingArray,
     MeteorMiner,

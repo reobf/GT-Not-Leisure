@@ -512,5 +512,14 @@ public class AssemblerRecipes implements IRecipePool {
             .duration(600)
             .eut(1920)
             .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(GTUtility.getIntegratedCircuit(16), ItemList.Machine_Multi_BlastFurnace.get(1L))
+            .itemOutputs(GTNLItemList.MegaBlastFurnace.get(1))
+            .specialValue(0)
+            .noOptimize()
+            .duration(50)
+            .eut(16)
+            .addTo(As);
     }
 }
