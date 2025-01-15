@@ -149,7 +149,7 @@ public class ScriptAvaritia implements IScriptLoader {
                     "{FluidStack:{FluidName:molten.magnetohydrodynamicallyconstrainedstarmatter,Amount:114514}}",
                     missing),
                 '7',
-                GTNLItemList.CircuitResonaticULV.get(1),
+                GTNLItemList.CircuitResonaticUIV.get(1),
                 '8',
                 getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Universe", 1, 0, missing),
                 '9',

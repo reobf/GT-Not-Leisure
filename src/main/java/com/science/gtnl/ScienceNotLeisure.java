@@ -11,7 +11,7 @@ import com.science.gtnl.Utils.GuiEventHandler;
 import com.science.gtnl.Utils.TextHandler;
 import com.science.gtnl.Utils.eig.EIGBucketLoader;
 import com.science.gtnl.common.AweEffect;
-import com.science.gtnl.common.ModEffects;
+import com.science.gtnl.common.GTNLEffect;
 import com.science.gtnl.common.machine.machineclass.IMCForNEI;
 import com.science.gtnl.config.MainConfig;
 import com.science.gtnl.devTools.PathHelper;
@@ -134,7 +134,7 @@ public class ScienceNotLeisure {
 
         MainConfig.init(mainConfigFile);
 
-        ModEffects.init();
+        GTNLEffect.init();
 
         proxy.preInit(event);
         MaterialLoader.load();

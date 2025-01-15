@@ -10,23 +10,20 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.attributes.BaseAttributeMap;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.IChatComponent;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.GuiOpenEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingEvent;
 
+import com.science.gtnl.Utils.GTNLEffectUtil;
 import com.science.gtnl.Utils.TextLocalization;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
-public class AweEffect extends Potion {
+public class AweEffect extends GTNLEffectUtil {
 
     public static final AweEffect instance = new AweEffect();
 
@@ -36,31 +33,12 @@ public class AweEffect extends Potion {
         .setDamageAllowedInCreativeMode()
         .setMagicDamage();
 
-    private static final ResourceLocation potionIcons = new ResourceLocation(
-        "sciencenotleisure",
-        "textures/gui/potions.png");
     private static final Set<EntityPlayer> affectedPlayers = new HashSet<>();
     private static final Random random = new Random();
 
     public AweEffect() {
-        super(186, true, 0xFF00FF);
-        setPotionName("effect.awe_effect");
-        setIconIndex(0, 0);
-        MinecraftForge.EVENT_BUS.register(this); // 注册事件处理程序
-    }
-
-    @SideOnly(Side.CLIENT)
-    @Override
-    public void renderInventoryEffect(int x, int y, PotionEffect effect, Minecraft mc) {
-        mc.getTextureManager()
-            .bindTexture(potionIcons);
-        mc.currentScreen.drawTexturedModalRect(
-            x + 6,
-            y + 7,
-            getStatusIconIndex() % 8 * 144,
-            198 + getStatusIconIndex() / 8 * 144,
-            18,
-            18);
+        super(186, "awe", false, 0xFF00FF, 1);
+        MinecraftForge.EVENT_BUS.register(this);
     }
 
     @SubscribeEvent
@@ -68,7 +46,7 @@ public class AweEffect extends Potion {
         if (event.entity instanceof EntityPlayer player) {
             PotionEffect effect = player.getActivePotionEffect(this);
 
-            if (effect != null) {
+            if (effect != null && !player.capabilities.isCreativeMode) {
                 int level = effect.getAmplifier();
                 double pullSpeed = level * 0.02;
 
@@ -109,16 +87,15 @@ public class AweEffect extends Potion {
         Minecraft mc = Minecraft.getMinecraft();
         EntityPlayer player = mc.thePlayer;
 
-        if (player != null) {
+        if (player != null && !player.capabilities.isCreativeMode) {
             PotionEffect effect = player.getActivePotionEffect(this);
 
             if (effect != null && event.gui instanceof GuiIngameMenu) {
                 event.setCanceled(true);
 
-                if (!player.capabilities.isCreativeMode) {
-                    IChatComponent chatComponent = new ChatComponentText(TextLocalization.Awe_Cancel_01);
-                    player.addChatMessage(chatComponent);
-                }
+                IChatComponent chatComponent = new ChatComponentText(TextLocalization.Awe_Cancel_01);
+                player.addChatMessage(chatComponent);
+
             }
         }
     }

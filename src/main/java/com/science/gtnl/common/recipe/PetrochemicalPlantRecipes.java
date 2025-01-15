@@ -192,5 +192,20 @@ public class PetrochemicalPlantRecipes implements IRecipePool {
             .duration(2000)
             .eut(1966080)
             .addTo(PPR);
+
+        RecipeBuilder.builder()
+            .fluidInputs(FluidRegistry.getFluidStack("fluid.coaltar", 1000), FluidRegistry.getFluidStack("steam", 1000))
+            .fluidOutputs(
+                FluidRegistry.getFluidStack("fluid.coaltaroil", 300),
+                FluidRegistry.getFluidStack("liquid_naphtha", 150),
+                FluidRegistry.getFluidStack("fluid.ethylbenzene", 200),
+                FluidRegistry.getFluidStack("fluid.anthracene", 50),
+                FluidRegistry.getFluidStack("fluid.kerosene", 600),
+                FluidRegistry.getFluidStack("fluid.naphthalene", 300))
+            .specialValue(0)
+            .noOptimize()
+            .duration(200)
+            .eut(1920)
+            .addTo(PPR);
     }
 }

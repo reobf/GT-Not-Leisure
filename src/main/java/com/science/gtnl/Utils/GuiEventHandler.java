@@ -28,17 +28,16 @@ public class GuiEventHandler {
         Minecraft mc = Minecraft.getMinecraft();
         EntityPlayer player = mc.thePlayer;
 
-        if (player != null) {
+        if (player != null && !player.capabilities.isCreativeMode) {
             PotionEffect effect = player.getActivePotionEffect(AweEffect.instance);
 
             if (effect != null && event.gui instanceof GuiInventory) {
                 event.setCanceled(true);
-                if (!player.capabilities.isCreativeMode) {
-                    String[] messages = { TextLocalization.Awe_Cancel_02_01, TextLocalization.Awe_Cancel_02_02 };
-                    String message = messages[random.nextInt(messages.length)];
-                    IChatComponent chatComponent = new ChatComponentText(message);
-                    player.addChatMessage(chatComponent);
-                }
+                String[] messages = { TextLocalization.Awe_Cancel_02_01, TextLocalization.Awe_Cancel_02_02 };
+                String message = messages[random.nextInt(messages.length)];
+                IChatComponent chatComponent = new ChatComponentText(message);
+                player.addChatMessage(chatComponent);
+
             }
         }
     }
