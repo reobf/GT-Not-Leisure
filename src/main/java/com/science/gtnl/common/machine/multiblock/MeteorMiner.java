@@ -38,8 +38,8 @@ import com.gtnewhorizons.modularui.api.math.Pos2d;
 import com.gtnewhorizons.modularui.api.screen.ModularWindow;
 import com.gtnewhorizons.modularui.api.screen.UIBuildContext;
 import com.gtnewhorizons.modularui.common.widget.ButtonWidget;
-import com.science.gtnl.Utils.TextLocalization;
-import com.science.gtnl.Utils.TextUtils;
+import com.science.gtnl.Utils.item.TextLocalization;
+import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.common.block.Render.TileEntityLaserBeacon;
 

@@ -1,6 +1,6 @@
 package com.science.gtnl.Utils.eig.modes;
 
-import static com.science.gtnl.Utils.StringUtils.voltageTooltipFormatted;
+import static com.science.gtnl.Utils.eig.StringUtils.voltageTooltipFormatted;
 
 import net.minecraft.util.EnumChatFormatting;
 

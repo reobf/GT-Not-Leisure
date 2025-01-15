@@ -1,7 +1,7 @@
 package com.science.gtnl.Utils.eig;
 
-import static com.science.gtnl.Utils.ItemUtils.readItemStackFromNBT;
-import static com.science.gtnl.Utils.ItemUtils.writeItemStackToNBT;
+import static com.science.gtnl.Utils.item.ItemUtils.readItemStackFromNBT;
+import static com.science.gtnl.Utils.item.ItemUtils.writeItemStackToNBT;
 
 import java.util.LinkedList;
 

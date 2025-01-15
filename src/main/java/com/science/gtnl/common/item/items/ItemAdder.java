@@ -14,7 +14,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 
-import com.science.gtnl.Utils.MetaItemStackUtils;
+import com.science.gtnl.Utils.item.MetaItemStackUtils;
 import com.science.gtnl.common.item.ItemStaticDataClientOnly;
 
 import cpw.mods.fml.relauncher.Side;

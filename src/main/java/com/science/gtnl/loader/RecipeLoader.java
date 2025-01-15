@@ -1,31 +1,31 @@
 package com.science.gtnl.loader;
 
-import com.science.gtnl.Utils.GTNLProcessingArrayRecipeLoader;
 import com.science.gtnl.common.machine.OreProcessing.OP_NormalProcessing;
-import com.science.gtnl.common.recipe.AlloyBlastSmelterRecipes;
-import com.science.gtnl.common.recipe.AssemblerRecipes;
-import com.science.gtnl.common.recipe.AssemblingLineRecipes;
-import com.science.gtnl.common.recipe.ChemicalBathRecipes;
-import com.science.gtnl.common.recipe.ChemicalRecipes;
-import com.science.gtnl.common.recipe.CompressorRecipes;
-import com.science.gtnl.common.recipe.CraftingTableRecipes;
-import com.science.gtnl.common.recipe.DesulfurizerRecipes;
-import com.science.gtnl.common.recipe.ElectrolyzerRecipes;
-import com.science.gtnl.common.recipe.FluidExtraction;
-import com.science.gtnl.common.recipe.FusionReactorRecipes;
+import com.science.gtnl.common.machine.multiMachineClasses.GTNLProcessingArrayRecipeLoader;
+import com.science.gtnl.common.recipe.GTNL.DesulfurizerRecipes;
+import com.science.gtnl.common.recipe.GTNL.ManaInfusionRecipes;
+import com.science.gtnl.common.recipe.GTNL.NatureSpiritArrayRecipes;
+import com.science.gtnl.common.recipe.GTNL.PetrochemicalPlantRecipes;
+import com.science.gtnl.common.recipe.GTNL.PortalToAlfheimRecipes;
+import com.science.gtnl.common.recipe.GTNL.ReFusionReactorRecipes;
+import com.science.gtnl.common.recipe.GTNL.RealArtificialStarRecipes;
+import com.science.gtnl.common.recipe.GTNL.SmeltingMixingFurnaceRecipes;
+import com.science.gtnl.common.recipe.GTNL.SteamCrackerRecipes;
+import com.science.gtnl.common.recipe.GregTech.AlloyBlastSmelterRecipes;
+import com.science.gtnl.common.recipe.GregTech.AssemblerRecipes;
+import com.science.gtnl.common.recipe.GregTech.AssemblingLineRecipes;
+import com.science.gtnl.common.recipe.GregTech.ChemicalBathRecipes;
+import com.science.gtnl.common.recipe.GregTech.ChemicalRecipes;
+import com.science.gtnl.common.recipe.GregTech.CompressorRecipes;
+import com.science.gtnl.common.recipe.GregTech.CraftingTableRecipes;
+import com.science.gtnl.common.recipe.GregTech.ElectrolyzerRecipes;
+import com.science.gtnl.common.recipe.GregTech.FluidExtraction;
+import com.science.gtnl.common.recipe.GregTech.FusionReactorRecipes;
+import com.science.gtnl.common.recipe.GregTech.MixerRecipes;
+import com.science.gtnl.common.recipe.GregTech.PlasmaForgeRecipes;
+import com.science.gtnl.common.recipe.GregTech.TranscendentPlasmaMixerRecipes;
+import com.science.gtnl.common.recipe.GregTech.multiDehydratorRecipes;
 import com.science.gtnl.common.recipe.IRecipePool;
-import com.science.gtnl.common.recipe.ManaInfusionRecipes;
-import com.science.gtnl.common.recipe.MixerRecipes;
-import com.science.gtnl.common.recipe.NatureSpiritArrayRecipes;
-import com.science.gtnl.common.recipe.PetrochemicalPlantRecipes;
-import com.science.gtnl.common.recipe.PlasmaForgeRecipes;
-import com.science.gtnl.common.recipe.PortalToAlfheimRecipes;
-import com.science.gtnl.common.recipe.ReFusionReactorRecipes;
-import com.science.gtnl.common.recipe.RealArtificialStarRecipes;
-import com.science.gtnl.common.recipe.SmeltingMixingFurnaceRecipes;
-import com.science.gtnl.common.recipe.SteamCrackerRecipes;
-import com.science.gtnl.common.recipe.TranscendentPlasmaMixerRecipes;
-import com.science.gtnl.common.recipe.multiDehydratorRecipes;
 
 public class RecipeLoader {
 

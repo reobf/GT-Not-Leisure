@@ -19,7 +19,7 @@ import net.minecraft.world.World;
 
 import org.jetbrains.annotations.NotNull;
 
-import com.science.gtnl.Utils.TextLocalization;
+import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.misc.OverclockType;
 
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;

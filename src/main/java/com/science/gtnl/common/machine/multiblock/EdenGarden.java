@@ -1,7 +1,7 @@
 package com.science.gtnl.common.machine.multiblock;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
-import static com.science.gtnl.Utils.ItemUtils.readItemStackFromNBT;
+import static com.science.gtnl.Utils.item.ItemUtils.readItemStackFromNBT;
 import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaBlockGlow;
 import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.enums.HatchElement.Energy;
@@ -65,14 +65,14 @@ import com.gtnewhorizons.modularui.common.widget.Scrollable;
 import com.gtnewhorizons.modularui.common.widget.SlotWidget;
 import com.gtnewhorizons.modularui.common.widget.TextWidget;
 import com.science.gtnl.Utils.StructureUtils;
-import com.science.gtnl.Utils.TextLocalization;
-import com.science.gtnl.Utils.TextUtils;
 import com.science.gtnl.Utils.eig.EIGBucket;
 import com.science.gtnl.Utils.eig.EIGDropTable;
 import com.science.gtnl.Utils.eig.EIGDynamicInventory;
 import com.science.gtnl.Utils.eig.EIGMode;
 import com.science.gtnl.Utils.eig.EIGModes;
 import com.science.gtnl.Utils.eig.buckets.EIGIC2Bucket;
+import com.science.gtnl.Utils.item.TextLocalization;
+import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.MultiMachineBase;
 
 import gregtech.api.enums.GTValues;

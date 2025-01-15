@@ -4,8 +4,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 
-import com.science.gtnl.Utils.TextLocalization;
-import com.science.gtnl.Utils.TextUtils;
+import com.science.gtnl.Utils.item.TextLocalization;
+import com.science.gtnl.Utils.item.TextUtils;
 
 import gregtech.GTMod;
 import gregtech.api.interfaces.ISecondaryDescribable;

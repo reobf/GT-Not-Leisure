@@ -32,9 +32,8 @@ import com.gtnewhorizons.modularui.common.widget.ChangeableWidget;
 import com.gtnewhorizons.modularui.common.widget.DynamicPositionedRow;
 import com.gtnewhorizons.modularui.common.widget.FakeSyncWidget;
 import com.gtnewhorizons.modularui.common.widget.Scrollable;
-import com.science.gtnl.Utils.GTHelper;
-import com.science.gtnl.Utils.ModUtils;
 import com.science.gtnl.Utils.gui.AutoScalingStackSizeText;
+import com.science.gtnl.common.machine.multiMachineClasses.GTHelper;
 
 public class EIGDynamicInventory<T> {
 

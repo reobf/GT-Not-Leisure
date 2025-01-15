@@ -1,7 +1,7 @@
 package com.science.gtnl.common.machine.multiMachineClasses;
 
-import static com.science.gtnl.Utils.TextHandler.texter;
 import static com.science.gtnl.Utils.Utils.filterValidMTEs;
+import static com.science.gtnl.Utils.item.TextHandler.texter;
 import static gregtech.api.util.GTUtility.validMTEList;
 import static kubatech.api.Variables.ln4;
 import static org.lwjgl.LWJGLUtil.log;

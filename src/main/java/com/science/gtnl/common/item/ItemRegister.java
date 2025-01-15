@@ -1,6 +1,6 @@
 package com.science.gtnl.common.item;
 
-import static com.science.gtnl.Utils.TextHandler.texter;
+import static com.science.gtnl.Utils.item.TextHandler.texter;
 import static com.science.gtnl.common.item.items.BasicItems.MetaItem;
 import static com.science.gtnl.common.item.items.ItemAdder.initItem;
 

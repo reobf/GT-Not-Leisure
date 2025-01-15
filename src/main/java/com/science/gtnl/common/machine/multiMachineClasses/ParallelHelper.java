@@ -16,8 +16,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
 
-import com.science.gtnl.Utils.ItemID;
 import com.science.gtnl.Utils.Utils;
+import com.science.gtnl.Utils.item.ItemID;
 
 import gregtech.api.enums.ItemList;
 import gregtech.api.interfaces.tileentity.IRecipeLockable;

@@ -1,7 +1,7 @@
 package com.science.gtnl.common.block.Casings.Glass;
 
-import static com.science.gtnl.Utils.MetaItemStackUtils.initMetaItemStack;
-import static com.science.gtnl.Utils.MetaItemStackUtils.metaItemStackTooltipsAdd;
+import static com.science.gtnl.Utils.item.MetaItemStackUtils.initMetaItemStack;
+import static com.science.gtnl.Utils.item.MetaItemStackUtils.metaItemStackTooltipsAdd;
 import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaBlockGlass;
 
 import java.util.Arrays;

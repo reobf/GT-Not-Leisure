@@ -2,7 +2,7 @@ package com.science.gtnl.misc;
 
 import net.minecraft.util.EnumChatFormatting;
 
-import com.science.gtnl.Utils.TextEnums;
+import com.science.gtnl.Utils.item.TextEnums;
 
 public enum OverclockType {
 

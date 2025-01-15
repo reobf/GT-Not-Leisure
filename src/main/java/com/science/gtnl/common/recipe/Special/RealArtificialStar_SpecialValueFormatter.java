@@ -1,6 +1,6 @@
 package com.science.gtnl.common.recipe.Special;
 
-import static com.science.gtnl.Utils.TextHandler.texter;
+import static com.science.gtnl.Utils.item.TextHandler.texter;
 
 import java.util.ArrayList;
 import java.util.List;

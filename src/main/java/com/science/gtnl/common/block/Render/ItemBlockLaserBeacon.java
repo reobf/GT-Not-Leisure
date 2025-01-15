@@ -7,7 +7,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
-import com.science.gtnl.Utils.TextLocalization;
+import com.science.gtnl.Utils.item.TextLocalization;
 
 public class ItemBlockLaserBeacon extends ItemBlock {
 

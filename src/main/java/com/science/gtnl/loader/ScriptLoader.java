@@ -7,7 +7,7 @@ import java.util.List;
 import net.minecraft.util.EnumChatFormatting;
 
 import com.dreammaster.main.MainRegistry;
-import com.science.gtnl.common.recipe.ScriptAvaritia;
+import com.science.gtnl.common.recipe.GregTech.ScriptAvaritia;
 
 public class ScriptLoader {
 

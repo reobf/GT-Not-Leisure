@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 
 import com.glodblock.github.common.item.FCBaseItemCell;
 import com.glodblock.github.common.storage.IStorageFluidCell;
-import com.science.gtnl.Utils.TextUtils;
+import com.science.gtnl.Utils.item.TextUtils;
 
 import appeng.api.AEApi;
 import appeng.api.storage.data.IAEFluidStack;

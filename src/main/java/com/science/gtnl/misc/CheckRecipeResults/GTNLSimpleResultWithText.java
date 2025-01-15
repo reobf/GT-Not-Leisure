@@ -10,7 +10,7 @@ import net.minecraft.network.PacketBuffer;
 import org.jetbrains.annotations.NotNull;
 
 import com.gtnewhorizons.modularui.common.internal.network.NetworkUtils;
-import com.science.gtnl.Utils.TextEnums;
+import com.science.gtnl.Utils.item.TextEnums;
 
 import gregtech.api.recipe.check.CheckRecipeResult;
 

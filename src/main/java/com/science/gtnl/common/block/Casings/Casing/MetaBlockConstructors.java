@@ -2,7 +2,7 @@ package com.science.gtnl.common.block.Casings.Casing;
 
 import net.minecraft.item.ItemStack;
 
-import com.science.gtnl.Utils.MetaItemStackUtils;
+import com.science.gtnl.Utils.item.MetaItemStackUtils;
 
 import gregtech.api.enums.Textures;
 import gregtech.api.render.TextureFactory;

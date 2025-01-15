@@ -11,7 +11,8 @@ import net.minecraft.util.IChatComponent;
 import net.minecraftforge.client.event.GuiOpenEvent;
 import net.minecraftforge.common.MinecraftForge;
 
-import com.science.gtnl.common.AweEffect;
+import com.science.gtnl.Utils.item.TextLocalization;
+import com.science.gtnl.common.effect.effects.AweEffect;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 

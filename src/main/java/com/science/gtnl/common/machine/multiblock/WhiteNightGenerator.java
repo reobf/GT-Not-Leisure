@@ -1,7 +1,7 @@
 package com.science.gtnl.common.machine.multiblock;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
-import static com.science.gtnl.Utils.TextHandler.texter;
+import static com.science.gtnl.Utils.item.TextHandler.texter;
 import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.UniversalSingularities;
@@ -28,9 +28,9 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.gtnewhorizons.gtnhintergalactic.block.IGBlocks;
 import com.science.gtnl.Utils.StructureUtils;
-import com.science.gtnl.Utils.TextLocalization;
-import com.science.gtnl.Utils.TextUtils;
 import com.science.gtnl.Utils.Utils;
+import com.science.gtnl.Utils.item.TextLocalization;
+import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.MultiMachineBase;
 
 import galaxyspace.core.register.GSBlocks;

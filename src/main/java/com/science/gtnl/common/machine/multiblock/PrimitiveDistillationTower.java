@@ -21,8 +21,8 @@ import com.gtnewhorizon.structurelib.alignment.constructable.ISurvivalConstructa
 import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
-import com.science.gtnl.Utils.TextLocalization;
-import com.science.gtnl.Utils.TextUtils;
+import com.science.gtnl.Utils.item.TextLocalization;
+import com.science.gtnl.Utils.item.TextUtils;
 
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.SoundResource;

@@ -1,6 +1,6 @@
 package com.science.gtnl.common.block.Casings.Column;
 
-import static com.science.gtnl.Utils.TextHandler.texter;
+import static com.science.gtnl.Utils.item.TextHandler.texter;
 import static com.science.gtnl.common.block.Casings.Column.ItemBlockColumn.MetaBlockSet;
 
 import java.util.HashMap;

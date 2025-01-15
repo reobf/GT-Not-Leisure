@@ -30,8 +30,8 @@ import com.gtnewhorizon.structurelib.alignment.constructable.ISurvivalConstructa
 import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
-import com.science.gtnl.Utils.GTNLProcessingArrayManager;
 import com.science.gtnl.Utils.StructureUtils;
+import com.science.gtnl.common.machine.multiMachineClasses.GTNLProcessingArrayManager;
 import com.science.gtnl.common.machine.multiMachineClasses.MultiMachineBase;
 
 import gregtech.GTMod;

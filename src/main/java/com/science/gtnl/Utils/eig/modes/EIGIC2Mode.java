@@ -1,6 +1,6 @@
 package com.science.gtnl.Utils.eig.modes;
 
-import static com.science.gtnl.Utils.StringUtils.voltageTooltipFormatted;
+import static com.science.gtnl.Utils.eig.StringUtils.voltageTooltipFormatted;
 import static com.science.gtnl.common.machine.multiblock.EdenGarden.EIG_BALANCE_IC2_ACCELERATOR_TIER;
 
 import net.minecraft.util.EnumChatFormatting;

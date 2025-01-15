@@ -23,6 +23,7 @@ public enum GTNLItemList {
     SlicingBlades,
     NeutroniumPipeCasing,
     NeutroniumGearbox,
+    Dream_Coil,
 
     TrollFace,
     DepletedExcitedNaquadahFuelRod,

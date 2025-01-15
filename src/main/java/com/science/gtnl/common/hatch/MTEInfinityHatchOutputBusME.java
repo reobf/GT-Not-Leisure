@@ -22,7 +22,7 @@ import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.common.util.ForgeDirection;
 
-import com.science.gtnl.Utils.TextUtils;
+import com.science.gtnl.Utils.item.TextUtils;
 
 import appeng.api.AEApi;
 import appeng.api.implementations.IPowerChannelState;

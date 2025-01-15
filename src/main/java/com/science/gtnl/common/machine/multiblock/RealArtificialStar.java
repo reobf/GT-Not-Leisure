@@ -1,8 +1,8 @@
 package com.science.gtnl.common.machine.multiblock;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
-import static com.science.gtnl.Utils.TextHandler.texter;
 import static com.science.gtnl.Utils.Utils.copyAmount;
+import static com.science.gtnl.Utils.item.TextHandler.texter;
 import static com.science.gtnl.common.GTNLItemList.StellarConstructionFrameMaterial;
 import static com.science.gtnl.common.machine.DSP.DSP_Values.EnableRenderDefaultArtificialStar;
 import static com.science.gtnl.common.machine.DSP.DSP_Values.secondsOfArtificialStarProgressCycleTime;
@@ -40,9 +40,9 @@ import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
-import com.science.gtnl.Utils.TextLocalization;
-import com.science.gtnl.Utils.TextUtils;
 import com.science.gtnl.Utils.Utils;
+import com.science.gtnl.Utils.item.TextLocalization;
+import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.Utils.rewrites.GTNL_ItemID;
 import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.common.block.Casings.BasicBlocks;

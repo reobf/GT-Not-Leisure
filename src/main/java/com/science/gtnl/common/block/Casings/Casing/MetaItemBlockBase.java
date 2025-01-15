@@ -1,7 +1,7 @@
 package com.science.gtnl.common.block.Casings.Casing;
 
-import static com.science.gtnl.Utils.TextLocalization.mNoMobsToolTip;
-import static com.science.gtnl.Utils.TextLocalization.mNoTileEntityToolTip;
+import static com.science.gtnl.Utils.item.TextLocalization.mNoMobsToolTip;
+import static com.science.gtnl.Utils.item.TextLocalization.mNoTileEntityToolTip;
 
 import java.util.Arrays;
 import java.util.List;

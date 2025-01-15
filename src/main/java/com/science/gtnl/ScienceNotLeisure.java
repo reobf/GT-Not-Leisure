@@ -8,13 +8,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.science.gtnl.Utils.GuiEventHandler;
-import com.science.gtnl.Utils.TextHandler;
 import com.science.gtnl.Utils.eig.EIGBucketLoader;
-import com.science.gtnl.common.AweEffect;
-import com.science.gtnl.common.GTNLEffect;
+import com.science.gtnl.Utils.item.TextHandler;
+import com.science.gtnl.common.effect.GTNLEffect;
+import com.science.gtnl.common.effect.effects.AweEffect;
 import com.science.gtnl.common.machine.machineclass.IMCForNEI;
 import com.science.gtnl.config.MainConfig;
-import com.science.gtnl.devTools.PathHelper;
 import com.science.gtnl.loader.LazyStaticsInitLoader;
 import com.science.gtnl.loader.MachineLoader;
 import com.science.gtnl.loader.MaterialLoader;
@@ -69,12 +68,6 @@ public class ScienceNotLeisure {
      */
     public static final boolean isInDevMode = false;
 
-    /**
-     * The absolute Path of your workspace/resources folder.
-     * It will be replaced by {@link PathHelper#initResourceAbsolutePath}.
-     * If it not work correctly, please operate it manually and disable
-     * the{@link PathHelper#initResourceAbsolutePath}.
-     */
     public static String DevResource = "";
 
     @SidedProxy(clientSide = "com.science.gtnl.ClientProxy", serverSide = "com.science.gtnl.CommonProxy")

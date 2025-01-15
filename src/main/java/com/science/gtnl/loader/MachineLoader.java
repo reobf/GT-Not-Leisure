@@ -2,7 +2,7 @@ package com.science.gtnl.loader;
 
 import net.minecraft.item.ItemStack;
 
-import com.science.gtnl.Utils.TextLocalization;
+import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.common.hatch.MTEHatchCustomFluid;
 import com.science.gtnl.common.machine.multiblock.BloodSoulSacrificialArray;
