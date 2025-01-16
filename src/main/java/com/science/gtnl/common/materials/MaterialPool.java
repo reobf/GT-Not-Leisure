@@ -6,13 +6,8 @@ import bartworks.system.material.Werkstoff;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TextureSet;
 
-/**
- * Register new material here by Bartworks Material System
- */
-
 public class MaterialPool implements Runnable {
 
-    // ID manager
     public static final int offsetID_01 = 25_000;
 
     public static final Werkstoff Hexanitrohexaazaisowurtzitane = new Werkstoff(
@@ -634,6 +629,182 @@ public class MaterialPool implements Runnable {
         offsetID_01 + 54,
         TextureSet.SET_FLUID);
 
+    public static final Werkstoff NeutralisedRedMud = new Werkstoff(
+        new short[] { 147, 40, 3 },
+        "NeutralisedRedMud",
+        subscriptNumbers("Fe??"),
+        new Werkstoff.Stats(),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().disable()
+            .addCells(),
+        offsetID_01 + 55,
+        TextureSet.SET_FLUID);
+
+    public static final Werkstoff FerricReeChloride = new Werkstoff(
+        new short[] { 101, 101, 13 },
+        "FerricReeChloride",
+        subscriptNumbers("Fe?"),
+        new Werkstoff.Stats(),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().disable()
+            .addCells(),
+        offsetID_01 + 56,
+        TextureSet.SET_FLUID);
+
+    public static final Werkstoff LaNdOxidesSolution = new Werkstoff(
+        new short[] { 152, 221, 213 },
+        "LaNdOxidesSolution",
+        subscriptNumbers("(La2O3)(Pr2O3)(Nd2O3)(Ce2O3)"),
+        new Werkstoff.Stats(),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().disable()
+            .addCells(),
+        offsetID_01 + 57,
+        TextureSet.SET_FLUID);
+
+    public static final Werkstoff SmGdOxidesSolution = new Werkstoff(
+        new short[] { 248, 248, 149 },
+        "SmGdOxidesSolution",
+        subscriptNumbers("(Sc2O3)(Eu2O3)(Gd2O3)(Sm2O3)"),
+        new Werkstoff.Stats(),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().disable()
+            .addCells(),
+        offsetID_01 + 58,
+        TextureSet.SET_FLUID);
+
+    public static final Werkstoff TbHoOxidesSolution = new Werkstoff(
+        new short[] { 149, 248, 149 },
+        "TbHoOxidesSolution",
+        subscriptNumbers("(Y2O3)(Tb2O3)(Dy2O3)(Ho2O3)"),
+        new Werkstoff.Stats(),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().disable()
+            .addCells(),
+        offsetID_01 + 59,
+        TextureSet.SET_FLUID);
+
+    public static final Werkstoff ErLuOxidesSolution = new Werkstoff(
+        new short[] { 248, 174, 248 },
+        "ErLuOxidesSolution",
+        subscriptNumbers("(Er2O3)(Tm2O3)(Yb2O3)(Lu2O3)"),
+        new Werkstoff.Stats(),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().disable()
+            .addCells(),
+        offsetID_01 + 60,
+        TextureSet.SET_FLUID);
+
+    public static final Werkstoff PraseodymiumOxide = new Werkstoff(
+        new short[] { 144, 221, 154 },
+        "PraseodymiumOxide",
+        subscriptNumbers("Pr2O3"),
+        new Werkstoff.Stats(),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().disable()
+            .onlyDust(),
+        offsetID_01 + 61,
+        TextureSet.SET_FLUID);
+
+    public static final Werkstoff ScandiumOxide = new Werkstoff(
+        new short[] { 223, 223, 223 },
+        "ScandiumOxide",
+        subscriptNumbers("Sc2O3"),
+        new Werkstoff.Stats(),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().disable()
+            .onlyDust(),
+        offsetID_01 + 62,
+        TextureSet.SET_FLUID);
+
+    public static final Werkstoff GadoliniumOxide = new Werkstoff(
+        new short[] { 126, 234, 100 },
+        "GadoliniumOxide",
+        subscriptNumbers("Gd2O3"),
+        new Werkstoff.Stats(),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().disable()
+            .onlyDust(),
+        offsetID_01 + 63,
+        TextureSet.SET_FLUID);
+
+    public static final Werkstoff TerbiumOxide = new Werkstoff(
+        new short[] { 233, 233, 233 },
+        "TerbiumOxide",
+        subscriptNumbers("Tb2O3"),
+        new Werkstoff.Stats(),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().disable()
+            .onlyDust(),
+        offsetID_01 + 64,
+        TextureSet.SET_FLUID);
+
+    public static final Werkstoff DysprosiumOxide = new Werkstoff(
+        new short[] { 155, 243, 134 },
+        "DysprosiumOxide",
+        subscriptNumbers("Dy2O3"),
+        new Werkstoff.Stats(),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().disable()
+            .onlyDust(),
+        offsetID_01 + 65,
+        TextureSet.SET_FLUID);
+
+    public static final Werkstoff HolmiumOxide = new Werkstoff(
+        new short[] { 168, 163, 222 },
+        "HolmiumOxide",
+        subscriptNumbers("Ho2O3"),
+        new Werkstoff.Stats(),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().disable()
+            .onlyDust(),
+        offsetID_01 + 66,
+        TextureSet.SET_FLUID);
+
+    public static final Werkstoff ErbiumOxide = new Werkstoff(
+        new short[] { 201, 184, 136 },
+        "ErbiumOxide",
+        subscriptNumbers("Er2O3"),
+        new Werkstoff.Stats(),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().disable()
+            .onlyDust(),
+        offsetID_01 + 67,
+        TextureSet.SET_FLUID);
+
+    public static final Werkstoff ThuliumOxide = new Werkstoff(
+        new short[] { 141, 153, 213 },
+        "ThuliumOxide",
+        subscriptNumbers("Tm2O3"),
+        new Werkstoff.Stats(),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().disable()
+            .onlyDust(),
+        offsetID_01 + 68,
+        TextureSet.SET_FLUID);
+
+    public static final Werkstoff YtterbiumOxide = new Werkstoff(
+        new short[] { 110, 217, 135 },
+        "YtterbiumOxide",
+        subscriptNumbers("Yb2O3"),
+        new Werkstoff.Stats(),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().disable()
+            .onlyDust(),
+        offsetID_01 + 69,
+        TextureSet.SET_FLUID);
+
+    public static final Werkstoff LutetiumOxide = new Werkstoff(
+        new short[] { 209, 123, 217 },
+        "LutetiumOxide",
+        subscriptNumbers("Lu2O3"),
+        new Werkstoff.Stats(),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().disable()
+            .onlyDust(),
+        offsetID_01 + 70,
+        TextureSet.SET_FLUID);
+
     public static final Werkstoff Periodicium = new Werkstoff(
         new short[] { 60, 74, 243 },
         "Periodicium",
@@ -683,11 +854,9 @@ public class MaterialPool implements Runnable {
             .addMetalCraftingSolidifierRecipes(),
         offsetID_01 + 201,
         TextureSet.SET_SHINY);
-    // spotless:off
 
     public static final Werkstoff.GenerationFeatures gf = new Werkstoff.GenerationFeatures();
 
-    // Bartworks' Material System run on Runnable.class
     @Override
     public void run() {
         for (var prefix : OrePrefixes.values()) {

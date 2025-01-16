@@ -6,10 +6,14 @@ import com.science.gtnl.Utils.recipes.RecipeBuilder;
 import com.science.gtnl.common.materials.MaterialPool;
 import com.science.gtnl.common.recipe.IRecipePool;
 
+import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.util.GTModHandler;
+import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.api.recipe.GTPPRecipeMaps;
+import gtPlusPlus.core.material.MaterialsElements;
+import gtnhlanth.common.register.WerkstoffMaterialPool;
 
 public class ElectrolyzerRecipes implements IRecipePool {
 
@@ -68,8 +72,9 @@ public class ElectrolyzerRecipes implements IRecipePool {
             .fluidInputs(MaterialPool.HydroboromicAcid.getFluidOrGas(1000))
             .itemOutputs()
             .fluidOutputs(
+                MaterialsElements.getInstance().BROMINE.getFluidStack(1000),
                 FluidRegistry.getFluidStack("molten.bromine", 1000),
-                FluidRegistry.getFluidStack("hydrogen", 1000))
+                Materials.Hydrogen.getGas(1000))
             .specialValue(0)
             .noOptimize()
             .duration(72)
@@ -82,10 +87,143 @@ public class ElectrolyzerRecipes implements IRecipePool {
             .itemOutputs(
                 GTModHandler.getModItem("gregtech", "gt.metaitem.01", 2, 2025),
                 GTModHandler.getModItem("gregtech", "gt.metaitem.01", 1, 2022))
-            .fluidOutputs(FluidRegistry.getFluidStack("oxygen", 4000))
+            .fluidOutputs(Materials.Oxygen.getGas(4000))
             .specialValue(0)
             .noOptimize()
             .duration(168)
+            .eut(60)
+            .addTo(electrolyzer);
+
+        RecipeBuilder.builder()
+            .itemInputs(MaterialPool.AmmoniumChloride.get(OrePrefixes.dust, 6))
+            .itemOutputs()
+            .fluidOutputs(
+                Materials.Nitrogen.getGas(1000),
+                Materials.Hydrogen.getGas(4000),
+                Materials.Chlorine.getGas(1000))
+            .specialValue(0)
+            .noOptimize()
+            .duration(48)
+            .eut(60)
+            .addTo(electrolyzer);
+
+        RecipeBuilder.builder()
+            .itemInputs(MaterialPool.PraseodymiumOxide.get(OrePrefixes.dust, 5))
+            .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Praseodymium, 2))
+            .fluidOutputs(Materials.Oxygen.getGas(3000))
+            .specialValue(0)
+            .noOptimize()
+            .duration(70)
+            .eut(60)
+            .addTo(electrolyzer);
+
+        RecipeBuilder.builder()
+            .itemInputs(WerkstoffMaterialPool.LanthanumOxide.get(OrePrefixes.dust, 5))
+            .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lanthanum, 2))
+            .fluidOutputs(Materials.Oxygen.getGas(3000))
+            .specialValue(0)
+            .noOptimize()
+            .duration(70)
+            .eut(60)
+            .addTo(electrolyzer);
+
+        RecipeBuilder.builder()
+            .itemInputs(MaterialPool.ScandiumOxide.get(OrePrefixes.dust, 5))
+            .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Scandium, 2))
+            .fluidOutputs(Materials.Oxygen.getGas(3000))
+            .specialValue(0)
+            .noOptimize()
+            .duration(70)
+            .eut(60)
+            .addTo(electrolyzer);
+
+        RecipeBuilder.builder()
+            .itemInputs(WerkstoffMaterialPool.EuropiumIIIOxide.get(OrePrefixes.dust, 5))
+            .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Europium, 2))
+            .fluidOutputs(Materials.Oxygen.getGas(3000))
+            .specialValue(0)
+            .noOptimize()
+            .duration(70)
+            .eut(60)
+            .addTo(electrolyzer);
+
+        RecipeBuilder.builder()
+            .itemInputs(MaterialPool.GadoliniumOxide.get(OrePrefixes.dust, 5))
+            .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gadolinium, 2))
+            .fluidOutputs(Materials.Oxygen.getGas(3000))
+            .specialValue(0)
+            .noOptimize()
+            .duration(70)
+            .eut(60)
+            .addTo(electrolyzer);
+
+        RecipeBuilder.builder()
+            .itemInputs(MaterialPool.TerbiumOxide.get(OrePrefixes.dust, 5))
+            .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Terbium, 2))
+            .fluidOutputs(Materials.Oxygen.getGas(3000))
+            .specialValue(0)
+            .noOptimize()
+            .duration(70)
+            .eut(60)
+            .addTo(electrolyzer);
+
+        RecipeBuilder.builder()
+            .itemInputs(MaterialPool.DysprosiumOxide.get(OrePrefixes.dust, 5))
+            .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Dysprosium, 2))
+            .fluidOutputs(Materials.Oxygen.getGas(3000))
+            .specialValue(0)
+            .noOptimize()
+            .duration(70)
+            .eut(60)
+            .addTo(electrolyzer);
+
+        RecipeBuilder.builder()
+            .itemInputs(MaterialPool.HolmiumOxide.get(OrePrefixes.dust, 5))
+            .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Holmium, 2))
+            .fluidOutputs(Materials.Oxygen.getGas(3000))
+            .specialValue(0)
+            .noOptimize()
+            .duration(70)
+            .eut(60)
+            .addTo(electrolyzer);
+
+        RecipeBuilder.builder()
+            .itemInputs(MaterialPool.ErbiumOxide.get(OrePrefixes.dust, 5))
+            .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Erbium, 2))
+            .fluidOutputs(Materials.Oxygen.getGas(3000))
+            .specialValue(0)
+            .noOptimize()
+            .duration(70)
+            .eut(60)
+            .addTo(electrolyzer);
+
+        RecipeBuilder.builder()
+            .itemInputs(MaterialPool.ThuliumOxide.get(OrePrefixes.dust, 5))
+            .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thulium, 2))
+            .fluidOutputs(Materials.Oxygen.getGas(3000))
+            .specialValue(0)
+            .noOptimize()
+            .duration(70)
+            .eut(60)
+            .addTo(electrolyzer);
+
+        RecipeBuilder.builder()
+            .itemInputs(MaterialPool.YtterbiumOxide.get(OrePrefixes.dust, 5))
+            .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ytterbium, 2))
+            .fluidOutputs(Materials.Oxygen.getGas(3000))
+            .specialValue(0)
+            .noOptimize()
+            .duration(70)
+            .eut(60)
+            .addTo(electrolyzer);
+
+        RecipeBuilder.builder()
+            .itemInputs(MaterialPool.LutetiumOxide.get(OrePrefixes.dust, 5))
+            .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lutetium, 2))
+            .fluidOutputs(Materials.Oxygen.getGas(3000))
+            .specialValue(0)
+            .noOptimize()
+            .duration(70)
             .eut(60)
             .addTo(electrolyzer);
     }

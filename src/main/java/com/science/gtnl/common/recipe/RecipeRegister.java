@@ -136,4 +136,13 @@ public class RecipeRegister {
         .neiHandlerInfo(builder -> builder.setDisplayStack(GTNLItemList.SmeltingMixingFurnace.get(1)))
         .disableOptimize()
         .build();
+
+    public static final RecipeMap<GTNL_RecipeMapBackend> RareEarthCentrifugalRecipes = RecipeMapBuilder
+        .of("gtnl.recipe.RareEarthCentrifugalRecipes", GTNL_RecipeMapBackend::new)
+        .maxIO(1, 18, 1, 1)
+        .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
+        .frontend(GeneralFrontend::new)
+        .neiHandlerInfo(builder -> builder.setDisplayStack(GTNLItemList.RareEarthCentrifugal.get(1)))
+        .disableOptimize()
+        .build();
 }

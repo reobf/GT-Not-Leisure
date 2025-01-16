@@ -521,5 +521,49 @@ public class AssemblerRecipes implements IRecipePool {
             .duration(50)
             .eut(16)
             .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Neutronium, 4L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 4L),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Neutronium, 1L),
+                GTUtility.getIntegratedCircuit(12))
+            .itemOutputs(GTNLItemList.NeutroniumPipeCasing.get(1))
+            .specialValue(0)
+            .noOptimize()
+            .duration(100)
+            .eut(30)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Neutronium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Neutronium, 2L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 4L),
+                GTUtility.getIntegratedCircuit(3))
+            .itemOutputs(GTNLItemList.NeutroniumGearbox.get(1))
+            .specialValue(0)
+            .noOptimize()
+            .duration(100)
+            .eut(122880)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Europium, 8L),
+                ItemList.Electric_Motor_UHV.get(16L),
+                GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.HSSS, 16L),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Infinity, 8L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.HSSE, 16L),
+                GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Naquadria, 64L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 4L),
+                MaterialsAlloy.STELLITE.getPlate(32))
+            .fluidInputs(Materials.SolderingAlloy.getMolten(1296))
+            .itemOutputs(GTNLItemList.RareEarthCentrifugal.get(1))
+            .specialValue(0)
+            .noOptimize()
+            .duration(1000)
+            .eut(7864320)
+            .addTo(As);
     }
 }

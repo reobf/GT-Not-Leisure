@@ -6,7 +6,7 @@ import com.science.gtnl.Utils.recipes.RecipeBuilder;
 import com.science.gtnl.common.materials.MaterialPool;
 import com.science.gtnl.common.recipe.IRecipePool;
 
-import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.Materials;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.util.GTModHandler;
 import gtPlusPlus.api.recipe.GTPPRecipeMaps;
@@ -42,16 +42,12 @@ public class MixerRecipes implements IRecipePool {
             .addTo(mixer);
 
         RecipeBuilder.builder()
-            .itemInputs(MaterialPool.AmmoniumChloride.get(OrePrefixes.dust, 6))
-            .itemOutputs()
-            .fluidOutputs(
-                FluidRegistry.getFluidStack("nitrogen", 1000),
-                FluidRegistry.getFluidStack("hydrogen", 4000),
-                FluidRegistry.getFluidStack("chlorine", 1000))
+            .fluidInputs(Materials.RedMud.getFluid(1000L), Materials.HydrochloricAcid.getFluid(4000))
+            .fluidOutputs(MaterialPool.NeutralisedRedMud.getFluidOrGas(2000))
             .specialValue(0)
             .noOptimize()
-            .duration(48)
-            .eut(60)
+            .duration(100)
+            .eut(120)
             .addTo(mixer);
 
     }

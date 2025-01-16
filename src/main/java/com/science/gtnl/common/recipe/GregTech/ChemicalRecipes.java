@@ -8,10 +8,12 @@ import com.science.gtnl.Utils.recipes.RecipeBuilder;
 import com.science.gtnl.common.materials.MaterialPool;
 import com.science.gtnl.common.recipe.IRecipePool;
 
+import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.util.GTModHandler;
+import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 
 public class ChemicalRecipes implements IRecipePool {
@@ -463,6 +465,18 @@ public class ChemicalRecipes implements IRecipePool {
             .noOptimize()
             .duration(150)
             .eut(120)
+            .addTo(mCR);
+
+        RecipeBuilder.builder()
+            .fluidInputs(
+                MaterialPool.RareEarthHydroxides.getFluidOrGas(1000),
+                Materials.HydrochloricAcid.getFluid(1000))
+            .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3))
+            .fluidOutputs(MaterialPool.RareEarthChlorides.getFluidOrGas(1000))
+            .specialValue(0)
+            .noOptimize()
+            .duration(120)
+            .eut(30)
             .addTo(mCR);
     }
 }

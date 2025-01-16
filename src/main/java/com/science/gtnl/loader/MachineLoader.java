@@ -25,6 +25,7 @@ import com.science.gtnl.common.machine.multiblock.NeutroniumWireCutting;
 import com.science.gtnl.common.machine.multiblock.PetrochemicalPlant;
 import com.science.gtnl.common.machine.multiblock.PrimitiveDistillationTower;
 import com.science.gtnl.common.machine.multiblock.ProcessingArray;
+import com.science.gtnl.common.machine.multiblock.RareEarthCentrifugal;
 import com.science.gtnl.common.machine.multiblock.RealArtificialStar;
 import com.science.gtnl.common.machine.multiblock.SmeltingMixingFurnace;
 import com.science.gtnl.common.machine.multiblock.SteamCracking;
@@ -65,6 +66,7 @@ public class MachineLoader {
     public static ItemStack ProcessingArray;
     public static ItemStack MegaBlastFurnace;
     public static ItemStack BrickedBlastFurnace;
+    public static ItemStack RareEarthCentrifugal;
 
     public static void loadMachines() {
 
@@ -213,6 +215,12 @@ public class MachineLoader {
             "NameBrickedBlastFurnace",
             TextLocalization.NameBrickedBlastFurnace).getStackForm(1);
         GTNLItemList.BrickedBlastFurnace.set(BrickedBlastFurnace);
+
+        RareEarthCentrifugal = new RareEarthCentrifugal(
+            21029,
+            "NameRareEarthCentrifugal",
+            TextLocalization.NameRareEarthCentrifugal).getStackForm(1);
+        GTNLItemList.RareEarthCentrifugal.set(RareEarthCentrifugal);
 
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
             21919,

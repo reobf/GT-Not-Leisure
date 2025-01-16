@@ -64,7 +64,7 @@ public class TextLocalization {
         "Tooltip_LargeSteamCircuitAssembler_Casing");
 
     public static final String NameEdenGarden = texter("Ecological Singularity \"Edenscape\"", "NameEdenGarden");
-    public static final String EdenGardenRecipeType = texter("Crop Farm", "gtnl.recipe.EdenGardenRecipeType");
+    public static final String EdenGardenRecipeType = texter("Crop Farm", "EdenGardenRecipeType");
     public static final String Tooltip_EdenGarden_00 = texter(
         "§e§oGod said, \"Let the land produce vegetation: seed-bearing plants and trees on the land that bear fruit with seed in it.\"",
         "Tooltip_EdenGarden_00");
@@ -216,7 +216,7 @@ public class TextLocalization {
         "Usable for Steel and general Pyrometallurgy",
         "Tooltip_BrickBlastFurnace_00");
     public static final String Tooltip_BrickBlastFurnace_01 = texter(
-        "Has a useful interface, unlike other gregtech multis",
+        "Unlike the previous brick blast furnace, now a storage hatch is used for item interaction",
         "Tooltip_BrickBlastFurnace_01");
     public static final String Tooltip_BrickBlastFurnace_02 = texter(
         "Benefiting from the improvements in the furnace body,",
@@ -469,6 +469,14 @@ public class TextLocalization {
         "Tooltip_TeleportationArrayToAlfheim_Casing");
 
     public static final String NameProcessingArray = texter("Re:Processing Array", "NameProcessingArray");
+
+    public static final String NameRareEarthCentrifugal = texter("Rare Earth Centrifugal", "NameRareEarthCentrifugal");
+    public static final String RareEarthCentrifugalRecipeType = texter(
+        "Rare Earth Centrifugal",
+        "RareEarthCentrifugalRecipeType");
+    public static final String Tooltip_RareEarthCentrifugal_Casing = texter(
+        "Any Molecular Containment Casing",
+        "Tooltip_RareEarthCentrifugal_Casing");
 
     public static final String NameMegaBlastFurnace = texter("Mega Blast Furnace", "NameMegaBlastFurnace");
     public static final String Tooltip_MegaBlastFurnaceRecipeType = texter(

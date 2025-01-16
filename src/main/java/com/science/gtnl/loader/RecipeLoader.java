@@ -7,6 +7,7 @@ import com.science.gtnl.common.recipe.GTNL.ManaInfusionRecipes;
 import com.science.gtnl.common.recipe.GTNL.NatureSpiritArrayRecipes;
 import com.science.gtnl.common.recipe.GTNL.PetrochemicalPlantRecipes;
 import com.science.gtnl.common.recipe.GTNL.PortalToAlfheimRecipes;
+import com.science.gtnl.common.recipe.GTNL.RareEarthCentrifugalRecipes;
 import com.science.gtnl.common.recipe.GTNL.ReFusionReactorRecipes;
 import com.science.gtnl.common.recipe.GTNL.RealArtificialStarRecipes;
 import com.science.gtnl.common.recipe.GTNL.SmeltingMixingFurnaceRecipes;
@@ -14,10 +15,14 @@ import com.science.gtnl.common.recipe.GTNL.SteamCrackerRecipes;
 import com.science.gtnl.common.recipe.GregTech.AlloyBlastSmelterRecipes;
 import com.science.gtnl.common.recipe.GregTech.AssemblerRecipes;
 import com.science.gtnl.common.recipe.GregTech.AssemblingLineRecipes;
+import com.science.gtnl.common.recipe.GregTech.CentrifugeRecipes;
 import com.science.gtnl.common.recipe.GregTech.ChemicalBathRecipes;
+import com.science.gtnl.common.recipe.GregTech.ChemicalDehydratorRecipes;
 import com.science.gtnl.common.recipe.GregTech.ChemicalRecipes;
 import com.science.gtnl.common.recipe.GregTech.CompressorRecipes;
 import com.science.gtnl.common.recipe.GregTech.CraftingTableRecipes;
+import com.science.gtnl.common.recipe.GregTech.DigesterRecipes;
+import com.science.gtnl.common.recipe.GregTech.DissolutionTankRecipes;
 import com.science.gtnl.common.recipe.GregTech.ElectrolyzerRecipes;
 import com.science.gtnl.common.recipe.GregTech.FluidExtraction;
 import com.science.gtnl.common.recipe.GregTech.FusionReactorRecipes;
@@ -37,7 +42,8 @@ public class RecipeLoader {
             new ManaInfusionRecipes(), new TranscendentPlasmaMixerRecipes(), new PlasmaForgeRecipes(),
             new CraftingTableRecipes(), new ChemicalBathRecipes(), new SteamCrackerRecipes(), new DesulfurizerRecipes(),
             new PetrochemicalPlantRecipes(), new FusionReactorRecipes(), new SmeltingMixingFurnaceRecipes(),
-            new FluidExtraction() };
+            new FluidExtraction(), new DigesterRecipes(), new DissolutionTankRecipes(), new CentrifugeRecipes(),
+            new ChemicalDehydratorRecipes(), new RareEarthCentrifugalRecipes() };
         for (IRecipePool recipePool : recipePools) {
             recipePool.loadRecipes();
         }
