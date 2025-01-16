@@ -28,6 +28,8 @@ import cpw.mods.fml.common.event.FMLLoadCompleteEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 // after
 @Mod(
@@ -122,7 +124,7 @@ public class ScienceNotLeisure {
             configDir.mkdirs();
         }
 
-        new GuiEventHandler();
+        clientSetup();
         File mainConfigFile = new File(configDir, "main.cfg");
 
         MainConfig.init(mainConfigFile);
@@ -131,5 +133,10 @@ public class ScienceNotLeisure {
 
         proxy.preInit(event);
         MaterialLoader.load();
+    }
+
+    @SideOnly(Side.CLIENT)
+    public void clientSetup() {
+        new GuiEventHandler();
     }
 }
