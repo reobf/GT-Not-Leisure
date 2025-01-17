@@ -1,6 +1,7 @@
 package com.science.gtnl;
 
 import com.science.gtnl.client.CreativeTabsLoader;
+import com.science.gtnl.common.effect.GTNLEffect;
 import com.science.gtnl.common.item.ItemLoader;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -15,6 +16,7 @@ public class CommonProxy {
     public void preInit(FMLPreInitializationEvent event) {
         new CreativeTabsLoader(event);
         new ItemLoader(event);
+        GTNLEffect.init();
     }
 
     // load "Do your mod setup. Build whatever data structures you care about. Register recipes." (Remove if not needed)

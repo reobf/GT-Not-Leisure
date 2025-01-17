@@ -22,6 +22,8 @@ import com.science.gtnl.Utils.GTNLEffectUtil;
 import com.science.gtnl.Utils.item.TextLocalization;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class AweEffect extends GTNLEffectUtil {
 
@@ -42,6 +44,7 @@ public class AweEffect extends GTNLEffectUtil {
     }
 
     @SubscribeEvent
+    @SideOnly(Side.CLIENT)
     public void onPlayerUpdate(LivingEvent.LivingUpdateEvent event) {
         if (event.entity instanceof EntityPlayer player) {
             PotionEffect effect = player.getActivePotionEffect(this);
@@ -83,6 +86,7 @@ public class AweEffect extends GTNLEffectUtil {
     }
 
     @SubscribeEvent
+    @SideOnly(Side.CLIENT)
     public void onGuiOpen(GuiOpenEvent event) {
         Minecraft mc = Minecraft.getMinecraft();
         EntityPlayer player = mc.thePlayer;

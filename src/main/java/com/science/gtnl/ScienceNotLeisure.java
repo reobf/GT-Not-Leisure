@@ -7,10 +7,8 @@ import net.minecraftforge.common.MinecraftForge;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.science.gtnl.Utils.GuiEventHandler;
 import com.science.gtnl.Utils.eig.EIGBucketLoader;
 import com.science.gtnl.Utils.item.TextHandler;
-import com.science.gtnl.common.effect.GTNLEffect;
 import com.science.gtnl.common.effect.effects.AweEffect;
 import com.science.gtnl.common.machine.machineclass.IMCForNEI;
 import com.science.gtnl.config.MainConfig;
@@ -28,8 +26,6 @@ import cpw.mods.fml.common.event.FMLLoadCompleteEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 // after
 @Mod(
@@ -124,19 +120,11 @@ public class ScienceNotLeisure {
             configDir.mkdirs();
         }
 
-        clientSetup();
         File mainConfigFile = new File(configDir, "main.cfg");
 
         MainConfig.init(mainConfigFile);
 
-        GTNLEffect.init();
-
         proxy.preInit(event);
         MaterialLoader.load();
-    }
-
-    @SideOnly(Side.CLIENT)
-    public void clientSetup() {
-        new GuiEventHandler();
     }
 }
