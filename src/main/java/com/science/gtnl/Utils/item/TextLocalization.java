@@ -342,6 +342,10 @@ public class TextLocalization {
         "Ang Solid Steel Machine Casing",
         "Tooltip_PrimitiveDistillationTower_Casing_02");
 
+    public static final String NameNineIndustrialMultiMachine = texter(
+        "Nine Industrial Multi Machine",
+        "NameNineIndustrialMultiMachine");
+
     public static final String NameCheatOreProcessingFactory = texter(
         "Cheat Ore Processing Factory",
         "NameCheatOreProcessingFactory");

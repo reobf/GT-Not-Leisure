@@ -22,6 +22,7 @@ import com.science.gtnl.common.machine.multiblock.LargeSteamFurnace;
 import com.science.gtnl.common.machine.multiblock.LargeSteamThermalCentrifuge;
 import com.science.gtnl.common.machine.multiblock.MeteorMiner;
 import com.science.gtnl.common.machine.multiblock.NeutroniumWireCutting;
+import com.science.gtnl.common.machine.multiblock.NineIndustrialMultiMachine;
 import com.science.gtnl.common.machine.multiblock.PetrochemicalPlant;
 import com.science.gtnl.common.machine.multiblock.PrimitiveDistillationTower;
 import com.science.gtnl.common.machine.multiblock.ProcessingArray;
@@ -67,6 +68,7 @@ public class MachineLoader {
     public static ItemStack MegaBlastFurnace;
     public static ItemStack BrickedBlastFurnace;
     public static ItemStack RareEarthCentrifugal;
+    public static ItemStack NineIndustrialMultiMachine;
 
     public static void loadMachines() {
 
@@ -227,6 +229,12 @@ public class MachineLoader {
             "NameCheatOreProcessingFactory",
             TextLocalization.NameCheatOreProcessingFactory).getStackForm(1);
         GTNLItemList.CheatOreProcessingFactory.set(CheatOreProcessingFactory);
+
+        NineIndustrialMultiMachine = new NineIndustrialMultiMachine(
+            21920,
+            "NameNineIndustrialMultiMachine",
+            TextLocalization.NameNineIndustrialMultiMachine).getStackForm(1);
+        GTNLItemList.NineIndustrialMultiMachine.set(NineIndustrialMultiMachine);
 
         MTEHatchRack.run();
         MTEHatchCapacitor.run();

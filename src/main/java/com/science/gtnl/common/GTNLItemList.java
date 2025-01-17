@@ -181,6 +181,7 @@ public enum GTNLItemList {
     MegaBlastFurnace,
     BrickedBlastFurnace,
 
+    NineIndustrialMultiMachine,
     RareEarthCentrifugal,
     ProcessingArray,
     MeteorMiner,
