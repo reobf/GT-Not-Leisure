@@ -60,12 +60,12 @@ public class NineIndustrialMultiMachine extends GTPPMultiBlockBase<NineIndustria
     private int machineMode;
     private NineIndustrialMultiMachineManager modeManager = new NineIndustrialMultiMachineManager();
     private final int mHeatingCapacity = Integer.MAX_VALUE;
-    public static final String[] aToolTipNames = new String[107];
+    public static final String[] aToolTipNames = new String[108];
     private int mCasing;
     private static IStructureDefinition<NineIndustrialMultiMachine> STRUCTURE_DEFINITION = null;
 
     static {
-        for (int id = 0; id <= 107; id++) {
+        for (int id = 0; id < 108; id++) {
             RecipeMap<?> recipeMap = getRecipeMap(id);
             if (recipeMap != null) {
                 String aNEI = GTLanguageManager.getTranslation(getRecipeMap(id).unlocalizedName);
@@ -94,8 +94,8 @@ public class NineIndustrialMultiMachine extends GTPPMultiBlockBase<NineIndustria
 
     @Override
     public MultiblockTooltipBuilder createTooltip() {
-        String[] aBuiltStrings = new String[35];
-        for (int i = 0; i <= 35; i++) {
+        String[] aBuiltStrings = new String[36];
+        for (int i = 0; i < 36; i++) {
             int baseIndex = i * 3;
             if (baseIndex + 2 < aToolTipNames.length) {
                 aBuiltStrings[i] = String
@@ -111,11 +111,10 @@ public class NineIndustrialMultiMachine extends GTPPMultiBlockBase<NineIndustria
 
         MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
         tt.addMachineType(TextLocalization.NineIndustrialMultiMachineRecipeType)
-            .addInfo(
-                "2147483464700000000000000000000000000000000% faster than using single block machines of the same voltage")
-            .addInfo("Only uses 0% of the EU/t normally required")
-            .addInfo("Only Have 2147483647 Parallel");
-        for (int i = 0; i <= 35; i++) {
+            .addInfo(TextLocalization.Tooltip_NineIndustrialMultiMachine_00)
+            .addInfo(TextLocalization.Tooltip_NineIndustrialMultiMachine_01)
+            .addInfo(TextLocalization.Tooltip_NineIndustrialMultiMachine_02);
+        for (int i = 0; i < 36; i++) {
             tt.addInfo(
                 "Machine Type: Misc" + i
                     + " - "
@@ -124,15 +123,11 @@ public class NineIndustrialMultiMachine extends GTPPMultiBlockBase<NineIndustria
                     + EnumChatFormatting.RESET);
         }
         tt.beginStructureBlock(3, 3, 3, true)
-            .addController("Front Center")
-            .addCasingInfoMin("Multi-Use Casings", 6, false)
-            .addInputBus("Any Casing", 1)
-            .addOutputBus("Any Casing", 1)
-            .addInputHatch("Any Casing", 1)
-            .addOutputHatch("Any Casing", 1)
-            .addEnergyHatch("Any Casing", 1)
-            .addMaintenanceHatch("Any Casing", 1)
-            .addMufflerHatch("Any Casing", 1)
+            .addInputBus(TextLocalization.Tooltip_NineIndustrialMultiMachine_Casing)
+            .addOutputBus(TextLocalization.Tooltip_NineIndustrialMultiMachine_Casing)
+            .addInputHatch(TextLocalization.Tooltip_NineIndustrialMultiMachine_Casing)
+            .addOutputHatch(TextLocalization.Tooltip_NineIndustrialMultiMachine_Casing)
+            .addEnergyHatch(TextLocalization.Tooltip_NineIndustrialMultiMachine_Casing)
             .toolTipFinisher();
         return tt;
     }
@@ -148,7 +143,7 @@ public class NineIndustrialMultiMachine extends GTPPMultiBlockBase<NineIndustria
                 .addElement(
                     'C',
                     buildHatchAdder(NineIndustrialMultiMachine.class)
-                        .atLeast(InputBus, OutputBus, Maintenance, Energy, Muffler, InputHatch, OutputHatch)
+                        .atLeast(InputBus, OutputBus, Energy, InputHatch, OutputHatch)
                         .casingIndex(getTextureIndex())
                         .dot(1)
                         .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(ModBlocks.blockCasings3Misc, 2))))

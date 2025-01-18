@@ -343,11 +343,23 @@ public class TextLocalization {
         "Tooltip_PrimitiveDistillationTower_Casing_02");
 
     public static final String NameNineIndustrialMultiMachine = texter(
-        "Nine Industrial Multi Machine",
+        "Ming Dynasty Technology",
         "NameNineIndustrialMultiMachine");
     public static final String NineIndustrialMultiMachineRecipeType = texter(
         "Water Margin",
         "NineIndustrialMultiMachineRecipeType");
+    public static final String Tooltip_NineIndustrialMultiMachine_00 = texter(
+        "Infinity%% faster than using single block machines of the same voltage",
+        "Tooltip_NineIndustrialMultiMachine_00");
+    public static final String Tooltip_NineIndustrialMultiMachine_01 = texter(
+        "Only uses 0%% of the EU/t normally required",
+        "Tooltip_NineIndustrialMultiMachine_01");
+    public static final String Tooltip_NineIndustrialMultiMachine_02 = texter(
+        "Only Have 2147483647 Parallel",
+        "Tooltip_NineIndustrialMultiMachine_02");
+    public static final String Tooltip_NineIndustrialMultiMachine_Casing = texter(
+        "Ang Multi-Use Casing",
+        "Tooltip_NineIndustrialMultiMachine_Casing");
 
     public static final String NameCheatOreProcessingFactory = texter(
         "Cheat Ore Processing Factory",

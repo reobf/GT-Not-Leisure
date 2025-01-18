@@ -508,8 +508,11 @@ Tooltip_SmeltingMixingFurnace_Casing=任意超能机械方块
 
 NameProcessingArray=处理阵列：重生
 
-NameNineIndustrialMultiMachine=超迷你加工厂
+NameNineIndustrialMultiMachine=大明科技
 NineIndustrialMultiMachineRecipeType=水浒传
+Tooltip_NineIndustrialMultiMachine_00=只比正常的机器速度快∞%%
+Tooltip_NineIndustrialMultiMachine_01=仅能使用配方要求功率的0%%
+Tooltip_NineIndustrialMultiMachine_02=只有2147483647并行
 NineIndustrialMultiMachine_Mode_1=Misc1
 NineIndustrialMultiMachine_Mode_2=Misc2
 NineIndustrialMultiMachine_Mode_3=Misc3
@@ -546,6 +549,7 @@ NineIndustrialMultiMachine_Mode_33=Misc33
 NineIndustrialMultiMachine_Mode_34=Misc34
 NineIndustrialMultiMachine_Mode_35=Misc35
 NineIndustrialMultiMachine_Mode_36=Misc36
+Tooltip_NineIndustrialMultiMachine_Casing=任意多功能机械方块
 
 NameMegaBlastFurnace=巨型工业高炉
 Tooltip_MegaBlastFurnaceRecipeType=工业高炉
