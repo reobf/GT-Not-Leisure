@@ -11,6 +11,8 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.gtnewhorizons.modularui.common.widget.FluidSlotWidget;
+import com.science.gtnl.Utils.item.TextLocalization;
+import com.science.gtnl.Utils.item.TextUtils;
 
 import gregtech.GTMod;
 import gregtech.api.gui.modularui.GTUIInfos;
@@ -20,7 +22,6 @@ import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.implementations.MTEHatch;
 import gregtech.api.render.TextureFactory;
 import gregtech.api.util.GTUtility;
-import gtPlusPlus.core.lib.GTPPCore;
 import gtPlusPlus.core.util.minecraft.FluidUtils;
 
 public class MTEHatchCustomFluid extends MTEHatch {
@@ -38,7 +39,8 @@ public class MTEHatchCustomFluid extends MTEHatch {
             aNameRegional,
             aTier,
             3,
-            new String[] { "Fluid Input for Multiblocks", "Capacity: " + GTUtility.formatNumbers(aAmount) + "L" });
+            new String[] { TextLocalization.HatchCustomFluid_00,
+                TextLocalization.HatchCustomFluid_01 + GTUtility.formatNumbers(aAmount) + "L" });
         this.mLockedFluid = aFluid;
         this.mFluidCapacity = aAmount;
     }
@@ -128,11 +130,6 @@ public class MTEHatchCustomFluid extends MTEHatch {
         return true;
     }
 
-    @Override
-    public boolean displaysStackSize() {
-        return false;
-    }
-
     public void updateSlots() {
         if (mInventory[getInputSlot()] != null && mInventory[getInputSlot()].stackSize <= 0)
             mInventory[getInputSlot()] = null;
@@ -154,13 +151,9 @@ public class MTEHatchCustomFluid extends MTEHatch {
             mLockedStack = FluidUtils.getFluidStack(mLockedFluid, 1);
         }
         int aFluidTemp = 0;
-        boolean isSteam = false;
         if (mLockedFluid != null) {
             aFluidTemp = mLockedFluid.getTemperature();
             mTempMod = mLockedFluid.getName();
-        }
-        if (mTempMod.equalsIgnoreCase("steam")) {
-            isSteam = true;
         }
 
         EnumChatFormatting aColour = EnumChatFormatting.BLUE;
@@ -179,11 +172,12 @@ public class MTEHatchCustomFluid extends MTEHatch {
         } else if (aFluidTemp >= 1501) {
             aColour = EnumChatFormatting.RED;
         }
-        String aFluidName = "Accepted Fluid: " + aColour
-            + (mLockedStack != null ? mLockedStack.getLocalizedName() : "Empty")
+        String aFluidName = TextLocalization.HatchCustomFluid_02 + aColour
+            + (mLockedStack != null ? mLockedStack.getLocalizedName() : TextLocalization.HatchCustomFluid_03)
             + EnumChatFormatting.RESET;
-        return new String[] { "Fluid Input for " + (isSteam ? "Steam " : "") + "Multiblocks",
-            "Capacity: " + getCapacity() + "L", aFluidName, GTPPCore.GT_Tooltip.get() };
+        return new String[] { TextLocalization.HatchCustomFluid_00,
+            TextLocalization.HatchCustomFluid_01 + getCapacity() + "L", aFluidName,
+            TextLocalization.Adder + TextUtils.SNL };
     }
 
     @Override

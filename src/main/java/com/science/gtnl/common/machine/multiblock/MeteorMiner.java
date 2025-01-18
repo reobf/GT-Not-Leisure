@@ -334,10 +334,7 @@ public class MeteorMiner extends MTEEnhancedMultiBlockBase<MeteorMiner> implemen
             .addEnergyHatch(TextLocalization.Tooltip_MeteorMiner_Casing_02_02, 3)
             .addMaintenanceHatch(TextLocalization.Tooltip_MeteorMiner_Casing_02_02, 3)
             .toolTipFinisher(
-                TextUtils.SCIENCE_NOT_LEISURE + " X Author: "
-                    + EnumChatFormatting.AQUA
-                    + EnumChatFormatting.BOLD
-                    + "Totto");
+                TextUtils.SNL + " X Author: " + EnumChatFormatting.AQUA + EnumChatFormatting.BOLD + "Totto");
         return tt;
     }
 

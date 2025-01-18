@@ -2,10 +2,17 @@ itemGroup.GTNotLeisure=GT不再业余
 StructuralReconstructionPlan=结构代替计划
 AppliedEnergistics2=应用能源2
 
+Adder=添加者: 
+
 Waila.General.WirelessMode=无线模式
 Waila.General.CurrentEuCost=当前EU消耗
 OverclockType.Description.01=每次超频时, 耗时除以
 OverclockType.Description.02=耗电乘以
+
+HatchCustomFluid_00=多方块的流体输入
+HatchCustomFluid_01=容量: 
+HatchCustomFluid_02=允许的流体: 
+HatchCustomFluid_03=空
 
 MetaBlockCasing.0.name=测试机械方块
 MetaBlockCasing.1.name=蒸汽装配机械方块
@@ -118,8 +125,6 @@ tile.Stargate_Coil_Compressed.9.name=压缩星门线圈-九重
 
 tile.LaserBeacon.name=激光诱导信标
 tile.RealArtificialStarRender.name=真·湮灭发电机渲染器
-
-FluidManaInputHatch=魔力输入仓
 
 MetaItem.0.name=愚人脸
 MetaItem.1.name=§b激发的混合硅岩燃料棒
@@ -351,6 +356,7 @@ Tooltip_BloodSoulSacrificialArray_00=献祭你的灵魂...
 Tooltip_BloodSoulSacrificialArray_Casing=任意黑钚采矿机械方块
 
 NameTeleportationArrayToAlfheim=精灵传送法阵
+FluidManaInputHatch=魔力输入仓
 gtnl.recipe.PortalToAlfheimRecipes=精灵传送门
 gtnl.recipe.NatureSpiritArrayRecipes=自然灵阵
 gtnl.recipe.ManaInfusionRecipes=魔力灌注
@@ -508,12 +514,56 @@ Tooltip_SmeltingMixingFurnace_Casing=任意超能机械方块
 
 NameProcessingArray=处理阵列：重生
 
+NameColdIceFreezer=寒冰冷冻机
+FluidIceInputHatch=碎冰输入仓
+ColdIceFreezerRecipeType=凛冰冷冻机
+Tooltip_ColdIceFreezer_00=比真空冷冻机快100%%！
+Tooltip_ColdIceFreezer_01=最大并行数固定为64
+Tooltip_ColdIceFreezer_02=需每秒提供10x配方电压等级^2的碎冰
+Tooltip_ColdIceFreezer_Casing_00=任意防冻机械方块
+Tooltip_ColdIceFreezer_Casing_01=顶部中心防冻机械方块
+
 NameNineIndustrialMultiMachine=大明科技
 NineIndustrialMultiMachineRecipeType=水浒传
 Tooltip_NineIndustrialMultiMachine_00=只比正常的机器速度快∞%%
 Tooltip_NineIndustrialMultiMachine_01=仅能使用配方要求功率的0%%
 Tooltip_NineIndustrialMultiMachine_02=只有2147483647并行
+Tooltip_NineIndustrialMultiMachine_Mode_0=
 Tooltip_NineIndustrialMultiMachine_Mode_1=
+Tooltip_NineIndustrialMultiMachine_Mode_2=
+Tooltip_NineIndustrialMultiMachine_Mode_3=
+Tooltip_NineIndustrialMultiMachine_Mode_4=
+Tooltip_NineIndustrialMultiMachine_Mode_5=
+Tooltip_NineIndustrialMultiMachine_Mode_6=
+Tooltip_NineIndustrialMultiMachine_Mode_7=
+Tooltip_NineIndustrialMultiMachine_Mode_8=
+Tooltip_NineIndustrialMultiMachine_Mode_9=
+Tooltip_NineIndustrialMultiMachine_Mode_10=
+Tooltip_NineIndustrialMultiMachine_Mode_11=
+Tooltip_NineIndustrialMultiMachine_Mode_12=
+Tooltip_NineIndustrialMultiMachine_Mode_13=
+Tooltip_NineIndustrialMultiMachine_Mode_14=
+Tooltip_NineIndustrialMultiMachine_Mode_15=
+Tooltip_NineIndustrialMultiMachine_Mode_16=
+Tooltip_NineIndustrialMultiMachine_Mode_17=
+Tooltip_NineIndustrialMultiMachine_Mode_18=
+Tooltip_NineIndustrialMultiMachine_Mode_19=
+Tooltip_NineIndustrialMultiMachine_Mode_20=
+Tooltip_NineIndustrialMultiMachine_Mode_21=
+Tooltip_NineIndustrialMultiMachine_Mode_22=
+Tooltip_NineIndustrialMultiMachine_Mode_23=
+Tooltip_NineIndustrialMultiMachine_Mode_24=
+Tooltip_NineIndustrialMultiMachine_Mode_25=
+Tooltip_NineIndustrialMultiMachine_Mode_26=
+Tooltip_NineIndustrialMultiMachine_Mode_27=
+Tooltip_NineIndustrialMultiMachine_Mode_28=
+Tooltip_NineIndustrialMultiMachine_Mode_29=
+Tooltip_NineIndustrialMultiMachine_Mode_30=
+Tooltip_NineIndustrialMultiMachine_Mode_31=
+Tooltip_NineIndustrialMultiMachine_Mode_32=
+Tooltip_NineIndustrialMultiMachine_Mode_33=
+Tooltip_NineIndustrialMultiMachine_Mode_34=
+Tooltip_NineIndustrialMultiMachine_Mode_35=
 NineIndustrialMultiMachine_Mode_0=Misc1
 NineIndustrialMultiMachine_Mode_1=Misc2
 NineIndustrialMultiMachine_Mode_2=Misc3

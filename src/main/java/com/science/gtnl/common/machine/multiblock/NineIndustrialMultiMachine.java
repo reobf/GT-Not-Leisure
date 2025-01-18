@@ -63,7 +63,6 @@ public class NineIndustrialMultiMachine extends WirelessEnergyMultiMachineBase<N
 
     private int machineMode;
     private NineIndustrialMultiMachineManager modeManager = new NineIndustrialMultiMachineManager();
-    private final int mHeatingCapacity = Integer.MAX_VALUE;
     public static final String[] aToolTipNames = new String[108];
     private int mCasing;
     private static IStructureDefinition<NineIndustrialMultiMachine> STRUCTURE_DEFINITION = null;
@@ -207,7 +206,7 @@ public class NineIndustrialMultiMachine extends WirelessEnergyMultiMachineBase<N
 
     @Override
     public int getMaxParallelRecipes() {
-        return Integer.MAX_VALUE;
+        return 10000;
     }
 
     public int getTextureIndex() {
@@ -303,25 +302,16 @@ public class NineIndustrialMultiMachine extends WirelessEnergyMultiMachineBase<N
                     .setAvailableEUt(Integer.MAX_VALUE)
                     .setMachine(machine, protectItems, protectFluids)
                     .setRecipeLocked(recipeLockableMachine, isRecipeLocked)
-                    .setMaxParallel(Integer.MAX_VALUE)
-                    .setEUtModifier(1)
-                    .enableBatchMode(batchSize)
+                    .setEUtModifier(0)
+                    .setMaxParallel(10000)
                     .setConsumption(true)
                     .setOutputCalculation(true);
-            }
-
-            @Nonnull
-            @Override
-            protected OverclockCalculator createOverclockCalculator(@Nonnull GTRecipe recipe) {
-                return super.createOverclockCalculator(recipe).setRecipeHeat(recipe.mSpecialValue)
-                    .setMachineHeat(mHeatingCapacity)
-                    .setHeatDiscount(true);
             }
 
             @Override
             protected double calculateDuration(@Nonnull GTRecipe recipe, @Nonnull ParallelHelper helper,
                 @Nonnull OverclockCalculator calculator) {
-                return 1;
+                return 1000;
             }
 
             @NotNull
@@ -329,7 +319,6 @@ public class NineIndustrialMultiMachine extends WirelessEnergyMultiMachineBase<N
             protected CheckRecipeResult validateRecipe(@NotNull GTRecipe recipe) {
                 return CheckRecipeResultRegistry.SUCCESSFUL;
             }
-
         };
     }
 
@@ -356,6 +345,12 @@ public class NineIndustrialMultiMachine extends WirelessEnergyMultiMachineBase<N
             .translateToLocal(NineIndustrialMultiMachineManager.getModeLocalization(machineMode));
         mInfo.add(mode);
         return mInfo.toArray(new String[0]);
+    }
+
+    @Override
+    public void saveNBTData(NBTTagCompound aNBT) {
+        aNBT.setInteger("mInternalMode", machineMode);
+        super.saveNBTData(aNBT);
     }
 
     @Override

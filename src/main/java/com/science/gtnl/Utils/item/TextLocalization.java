@@ -31,11 +31,16 @@ public class TextLocalization {
     public static final String mNoTileEntityToolTip = GTLanguageManager
         .addStringLocalization("gt.notileentityinthisblock", "This is NOT a TileEntity!");
 
+    public static final String Adder = texter("Add by: ", "Adder");
+
+    public static final String HatchCustomFluid_00 = texter("Fluid Input for Multiblocks", "HatchCustomFluid_00");
+    public static final String HatchCustomFluid_01 = texter("Capacity: ", "HatchCustomFluid_01");
+    public static final String HatchCustomFluid_02 = texter("Accepted Fluid: ", "HatchCustomFluid_02");
+    public static final String HatchCustomFluid_03 = texter("Empty", "HatchCustomFluid_03");
+
     public static final String Tooltip_LaserBeacon = texter(
         "Produces a high precision laser from a powerful current.",
         "Tooltip_LaserBeacon");
-
-    public static final String FluidManaInputHatch = texter("Fluid Mana Input Hatch", "FluidManaInputHatch");
 
     public static final String HIGH_PRESSURE_TOOLTIP_NOTICE = texter(
         "Processing Speed & Steam Consumption is doubled under High Pressure",
@@ -468,9 +473,29 @@ public class TextLocalization {
         "Ang Bronze Plated Bricks or Solid Steel Machine Casing",
         "Tooltip_LargeSteamFurnace_Casing");
 
+    public static final String NameColdIceFreezer = texter("Cold Ice Freezer", "NameColdIceFreezer");
+    public static final String FluidIceInputHatch = texter("Fluid Ice Input Hatch", "FluidIceInputHatch");
+    public static final String ColdIceFreezerRecipeType = texter("Cryogenic Freezer", "ColdIceFreezerRecipeType");
+    public static final String Tooltip_ColdIceFreezer_00 = texter(
+        "Fast than Vacuum Freezer 100%%!",
+        "Tooltip_ColdIceFreezer_00");
+    public static final String Tooltip_ColdIceFreezer_01 = texter(
+        "The maximum parallel fixed is 64",
+        "Tooltip_ColdIceFreezer_01");
+    public static final String Tooltip_ColdIceFreezer_02 = texter(
+        "Need to provide 10x formula voltage level ^ 2 of crushed ice per second",
+        "Tooltip_ColdIceFreezer_02");
+    public static final String Tooltip_ColdIceFreezer_Casing_00 = texter(
+        "Any Frost Proof Machine Casing",
+        "Tooltip_ColdIceFreezer_Casing");
+    public static final String Tooltip_ColdIceFreezer_Casing_01 = texter(
+        "Top center Frost Proof Machine Casing",
+        "Tooltip_ColdIceFreezer_Casing");
+
     public static final String NameTeleportationArrayToAlfheim = texter(
         "Teleportation Array To Alfheim",
         "NameTeleportationArrayToAlfheim");
+    public static final String FluidManaInputHatch = texter("Fluid Mana Input Hatch", "FluidManaInputHatch");
     public static final String TeleportationArrayToAlfheimRecipeType = texter(
         "Portal To Alfheim / Nature Spirit Array",
         "TeleportationArrayToAlfheimRecipeType");

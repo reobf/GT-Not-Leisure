@@ -30,6 +30,7 @@ import com.science.gtnl.common.machine.multiblock.RareEarthCentrifugal;
 import com.science.gtnl.common.machine.multiblock.RealArtificialStar;
 import com.science.gtnl.common.machine.multiblock.SmeltingMixingFurnace;
 import com.science.gtnl.common.machine.multiblock.SteamCracking;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.ColdIceFreezer;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.MegaBlastFurnace;
 import com.science.gtnl.common.machine.multiblock.TeleportationArrayToAlfheim;
 import com.science.gtnl.common.machine.multiblock.WhiteNightGenerator;
@@ -69,6 +70,7 @@ public class MachineLoader {
     public static ItemStack BrickedBlastFurnace;
     public static ItemStack RareEarthCentrifugal;
     public static ItemStack NineIndustrialMultiMachine;
+    public static ItemStack ColdIceFreezer;
 
     public static void loadMachines() {
 
@@ -224,6 +226,10 @@ public class MachineLoader {
             TextLocalization.NameRareEarthCentrifugal).getStackForm(1);
         GTNLItemList.RareEarthCentrifugal.set(RareEarthCentrifugal);
 
+        ColdIceFreezer = new ColdIceFreezer(21030, "NameColdIceFreezer", TextLocalization.NameColdIceFreezer)
+            .getStackForm(1);
+        GTNLItemList.ColdIceFreezer.set(ColdIceFreezer);
+
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
             21919,
             "NameCheatOreProcessingFactory",
@@ -248,8 +254,18 @@ public class MachineLoader {
                     .getFluid(),
                 512000,
                 21501,
-                TextLocalization.FluidManaInputHatch,
                 "Fluid Mana Input Hatch",
+                TextLocalization.FluidManaInputHatch,
+                6).getStackForm(1L));
+
+        GTNLItemList.FluidIceInputHatch.set(
+            new MTEHatchCustomFluid(
+                FluidUtils.getFluidStack("ice", 1)
+                    .getFluid(),
+                256000,
+                21502,
+                "Fluid Ice Input Hatch",
+                TextLocalization.FluidIceInputHatch,
                 5).getStackForm(1L));
     }
 

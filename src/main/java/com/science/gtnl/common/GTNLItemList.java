@@ -87,6 +87,7 @@ public enum GTNLItemList {
     Stargate_Coil_Compressed,
 
     FluidManaInputHatch,
+    FluidIceInputHatch,
 
     LaserBeacon,
     BronzeBrickCasing,
@@ -180,6 +181,7 @@ public enum GTNLItemList {
 
     MegaBlastFurnace,
     BrickedBlastFurnace,
+    ColdIceFreezer,
 
     NineIndustrialMultiMachine,
     RareEarthCentrifugal,
