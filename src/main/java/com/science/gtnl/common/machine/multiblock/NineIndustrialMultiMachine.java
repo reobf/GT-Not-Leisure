@@ -13,6 +13,7 @@ import java.util.stream.Stream;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
@@ -116,8 +117,7 @@ public class NineIndustrialMultiMachine extends GTPPMultiBlockBase<NineIndustria
             .addInfo(TextLocalization.Tooltip_NineIndustrialMultiMachine_02);
         for (int i = 0; i < 36; i++) {
             tt.addInfo(
-                "Machine Type: Misc" + i
-                    + " - "
+                I18n.format("Tooltip_NineIndustrialMultiMachine_Mode_" + i) + " - "
                     + EnumChatFormatting.YELLOW
                     + aBuiltStrings[i]
                     + EnumChatFormatting.RESET);
@@ -291,7 +291,7 @@ public class NineIndustrialMultiMachine extends GTPPMultiBlockBase<NineIndustria
             @Override
             protected double calculateDuration(@Nonnull GTRecipe recipe, @Nonnull ParallelHelper helper,
                 @Nonnull OverclockCalculator calculator) {
-                return 10;
+                return 1;
             }
 
             @NotNull
@@ -315,7 +315,7 @@ public class NineIndustrialMultiMachine extends GTPPMultiBlockBase<NineIndustria
 
     @Override
     public String getMachineModeName() {
-        return StatCollector.translateToLocal("GT5U.GTPP_MULTI_INDUSTRIAL_MULTI_MACHINE.mode." + machineMode);
+        return StatCollector.translateToLocal("NineIndustrialMultiMachine_Mode_" + machineMode);
     }
 
     @Override
@@ -352,8 +352,7 @@ public class NineIndustrialMultiMachine extends GTPPMultiBlockBase<NineIndustria
             currentTip.add(
                 StatCollector.translateToLocal("GT5U.machines.oreprocessor1") + " "
                     + EnumChatFormatting.WHITE
-                    + StatCollector
-                        .translateToLocal("GT5U.GTPP_MULTI_INDUSTRIAL_MULTI_MACHINE.mode." + tag.getInteger("mode"))
+                    + StatCollector.translateToLocal("NineIndustrialMultiMachine_Mode_" + tag.getInteger("mode"))
                     + EnumChatFormatting.RESET);
         }
     }
@@ -380,10 +379,8 @@ public class NineIndustrialMultiMachine extends GTPPMultiBlockBase<NineIndustria
     @Override
     public void setMachineModeIcons() {
         machineModeIcons.clear();
-        machineModeIcons.add(GTUITextures.OVERLAY_BUTTON_MACHINEMODE_LPF_METAL);
-        machineModeIcons.add(GTUITextures.OVERLAY_BUTTON_MACHINEMODE_LPF_FLUID);
         machineModeIcons.add(GTUITextures.OVERLAY_BUTTON_MACHINEMODE_DEFAULT);
-        for (int i = 0; i <= 31; i++) {
+        for (int i = 0; i <= 35; i++) {
             machineModeIcons.add(GTUITextures.OVERLAY_BUTTON_MACHINEMODE_DEFAULT);
         }
     }
