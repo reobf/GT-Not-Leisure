@@ -1,4 +1,4 @@
-package com.science.gtnl.Utils.eig;
+package com.science.gtnl.common.machine.multiMachineClasses.EdenGardenManager;
 
 import static com.science.gtnl.Utils.item.ItemUtils.readItemStackFromNBT;
 import static com.science.gtnl.Utils.item.ItemUtils.writeItemStackToNBT;

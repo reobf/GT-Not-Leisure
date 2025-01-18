@@ -18,7 +18,7 @@
  * spotless:on
  */
 
-package com.science.gtnl.Utils.eig;
+package com.science.gtnl.common.machine.multiMachineClasses.EdenGardenManager;
 
 import net.minecraft.launchwrapper.Launch;
 

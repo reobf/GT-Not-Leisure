@@ -1,4 +1,4 @@
-package com.science.gtnl.Utils.eig;
+package com.science.gtnl.common.machine.multiMachineClasses.EdenGardenManager;
 
 import java.io.IOException;
 import java.util.ArrayList;

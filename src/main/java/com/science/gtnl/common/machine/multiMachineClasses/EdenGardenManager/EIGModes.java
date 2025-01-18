@@ -1,9 +1,9 @@
-package com.science.gtnl.Utils.eig;
+package com.science.gtnl.common.machine.multiMachineClasses.EdenGardenManager;
 
 import java.util.HashMap;
 
-import com.science.gtnl.Utils.eig.modes.EIGIC2Mode;
-import com.science.gtnl.Utils.eig.modes.EIGNormalMode;
+import com.science.gtnl.common.machine.multiMachineClasses.EdenGardenManager.modes.EIGIC2Mode;
+import com.science.gtnl.common.machine.multiMachineClasses.EdenGardenManager.modes.EIGNormalMode;
 
 import gregtech.api.util.MultiblockTooltipBuilder;
 

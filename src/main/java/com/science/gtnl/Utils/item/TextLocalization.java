@@ -345,6 +345,9 @@ public class TextLocalization {
     public static final String NameNineIndustrialMultiMachine = texter(
         "Nine Industrial Multi Machine",
         "NameNineIndustrialMultiMachine");
+    public static final String NineIndustrialMultiMachineRecipeType = texter(
+        "Water Margin",
+        "NineIndustrialMultiMachineRecipeType");
 
     public static final String NameCheatOreProcessingFactory = texter(
         "Cheat Ore Processing Factory",

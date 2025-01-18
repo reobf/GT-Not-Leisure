@@ -1,4 +1,4 @@
-package com.science.gtnl.Utils.eig;
+package com.science.gtnl.common.machine.multiMachineClasses.EdenGardenManager;
 
 import static kubatech.kubatech.error;
 

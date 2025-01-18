@@ -1,12 +1,12 @@
-package com.science.gtnl.Utils.eig;
+package com.science.gtnl.common.machine.multiMachineClasses.EdenGardenManager;
 
 import static gregtech.api.enums.Mods.ThaumicBases;
 
-import com.science.gtnl.Utils.eig.buckets.EIGFlowerBucket;
-import com.science.gtnl.Utils.eig.buckets.EIGIC2Bucket;
-import com.science.gtnl.Utils.eig.buckets.EIGRainbowCactusBucket;
-import com.science.gtnl.Utils.eig.buckets.EIGSeedBucket;
-import com.science.gtnl.Utils.eig.buckets.EIGStemBucket;
+import com.science.gtnl.common.machine.multiMachineClasses.EdenGardenManager.buckets.EIGFlowerBucket;
+import com.science.gtnl.common.machine.multiMachineClasses.EdenGardenManager.buckets.EIGIC2Bucket;
+import com.science.gtnl.common.machine.multiMachineClasses.EdenGardenManager.buckets.EIGRainbowCactusBucket;
+import com.science.gtnl.common.machine.multiMachineClasses.EdenGardenManager.buckets.EIGSeedBucket;
+import com.science.gtnl.common.machine.multiMachineClasses.EdenGardenManager.buckets.EIGStemBucket;
 
 public class EIGBucketLoader {
 

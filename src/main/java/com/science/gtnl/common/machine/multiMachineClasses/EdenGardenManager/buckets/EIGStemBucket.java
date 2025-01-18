@@ -1,4 +1,4 @@
-package com.science.gtnl.Utils.eig.buckets;
+package com.science.gtnl.common.machine.multiMachineClasses.EdenGardenManager.buckets;
 
 import java.util.ArrayList;
 
@@ -10,9 +10,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.common.IPlantable;
 
-import com.science.gtnl.Utils.eig.EIGBucket;
-import com.science.gtnl.Utils.eig.EIGDropTable;
-import com.science.gtnl.Utils.eig.IEIGBucketFactory;
+import com.science.gtnl.common.machine.multiMachineClasses.EdenGardenManager.EIGBucket;
+import com.science.gtnl.common.machine.multiMachineClasses.EdenGardenManager.EIGDropTable;
+import com.science.gtnl.common.machine.multiMachineClasses.EdenGardenManager.IEIGBucketFactory;
 import com.science.gtnl.common.machine.multiblock.EdenGarden;
 
 import gregtech.mixin.interfaces.accessors.IBlockStemAccessor;

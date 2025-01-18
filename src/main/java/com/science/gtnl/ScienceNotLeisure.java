@@ -7,10 +7,9 @@ import net.minecraftforge.common.MinecraftForge;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.science.gtnl.Utils.eig.EIGBucketLoader;
 import com.science.gtnl.Utils.item.TextHandler;
 import com.science.gtnl.common.effect.effects.AweEffect;
-import com.science.gtnl.common.machine.machineclass.IMCForNEI;
+import com.science.gtnl.common.machine.multiMachineClasses.EdenGardenManager.EIGBucketLoader;
 import com.science.gtnl.config.MainConfig;
 import com.science.gtnl.loader.LazyStaticsInitLoader;
 import com.science.gtnl.loader.MachineLoader;
@@ -78,7 +77,6 @@ public class ScienceNotLeisure {
         new LazyStaticsInitLoader().initStaticsOnInit();
         MachineLoader.loadMachines();
         MachineLoader.run();
-        IMCForNEI.IMCSender();
 
         MinecraftForge.EVENT_BUS.register(new AweEffect());
     }
