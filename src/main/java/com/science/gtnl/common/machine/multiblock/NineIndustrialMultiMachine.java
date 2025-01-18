@@ -14,7 +14,6 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import net.minecraft.client.resources.I18n;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -30,18 +29,24 @@ import com.gtnewhorizon.structurelib.alignment.constructable.ISurvivalConstructa
 import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
+import com.gtnewhorizons.modularui.api.screen.ModularWindow;
+import com.gtnewhorizons.modularui.api.screen.UIBuildContext;
 import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.common.machine.multiMachineClasses.NineIndustrialMultiMachineManager;
+import com.science.gtnl.common.machine.multiMachineClasses.WirelessEnergyMultiMachineBase;
 
 import gregtech.api.enums.TAE;
+import gregtech.api.enums.Textures;
 import gregtech.api.gui.modularui.GTUITextures;
-import gregtech.api.interfaces.IIconContainer;
+import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.logic.ProcessingLogic;
+import gregtech.api.metatileentity.implementations.MTEHatch;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.check.CheckRecipeResult;
 import gregtech.api.recipe.check.CheckRecipeResultRegistry;
+import gregtech.api.render.TextureFactory;
 import gregtech.api.util.GTLanguageManager;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.GTUtility;
@@ -49,13 +54,11 @@ import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.OverclockCalculator;
 import gregtech.api.util.ParallelHelper;
 import gtPlusPlus.core.block.ModBlocks;
-import gtPlusPlus.core.util.minecraft.PlayerUtils;
-import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.base.GTPPMultiBlockBase;
 import gtPlusPlus.xmod.gregtech.common.blocks.textures.TexturesGtBlock;
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
 
-public class NineIndustrialMultiMachine extends GTPPMultiBlockBase<NineIndustrialMultiMachine>
+public class NineIndustrialMultiMachine extends WirelessEnergyMultiMachineBase<NineIndustrialMultiMachine>
     implements ISurvivalConstructable {
 
     private int machineMode;
@@ -86,11 +89,6 @@ public class NineIndustrialMultiMachine extends GTPPMultiBlockBase<NineIndustria
     @Override
     public IMetaTileEntity newMetaEntity(final IGregTechTileEntity aTileEntity) {
         return new NineIndustrialMultiMachine(this.mName);
-    }
-
-    @Override
-    public String getMachineType() {
-        return null;
     }
 
     @Override
@@ -163,36 +161,53 @@ public class NineIndustrialMultiMachine extends GTPPMultiBlockBase<NineIndustria
         return survivialBuildPiece(mName, stackSize, 1, 1, 0, elementBudget, env, false, true);
     }
 
+    public void updateHatchTexture() {
+        for (MTEHatch h : mInputHatches) h.updateTexture(getCasingTextureID());
+        for (MTEHatch h : mOutputHatches) h.updateTexture(getCasingTextureID());
+        for (MTEHatch h : mInputBusses) h.updateTexture(getCasingTextureID());
+    }
+
     @Override
     public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
         mCasing = 0;
+        wirelessMode = false;
 
-        return checkPiece(mName, 1, 1, 0) && mCasing >= 6 && checkHatch();
+        if (!checkPiece(mName, 1, 1, 0)) return false;
+
+        if (mCasing <= 6 && !checkHatch()) {
+            updateHatchTexture();
+            return false;
+        }
+
+        wirelessMode = mEnergyHatches.isEmpty() && mExoticEnergyHatches.isEmpty();
+        return true;
     }
 
-    @Override
-    protected IIconContainer getActiveOverlay() {
-        return TexturesGtBlock.oMCAIndustrialMultiMachineActive;
-    }
-
-    @Override
-    protected IIconContainer getInactiveOverlay() {
-        return TexturesGtBlock.oMCAIndustrialMultiMachine;
-    }
-
-    @Override
-    protected int getCasingTextureId() {
+    protected int getCasingTextureID() {
         return getTextureIndex();
+    }
+
+    @Override
+    public ITexture[] getTexture(IGregTechTileEntity aBaseMetaTileEntity, ForgeDirection side, ForgeDirection aFacing,
+        int colorIndex, boolean aActive, boolean redstoneLevel) {
+        if (side == aFacing) {
+            if (aActive) return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()),
+                TextureFactory.builder()
+                    .addIcon(TexturesGtBlock.oMCAIndustrialMultiMachineActive)
+                    .extFacing()
+                    .build() };
+            return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()),
+                TextureFactory.builder()
+                    .addIcon(TexturesGtBlock.oMCAIndustrialMultiMachine)
+                    .extFacing()
+                    .build() };
+        }
+        return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()) };
     }
 
     @Override
     public int getMaxParallelRecipes() {
         return Integer.MAX_VALUE;
-    }
-
-    @Override
-    public int getMaxEfficiency(final ItemStack aStack) {
-        return 10000;
     }
 
     public int getTextureIndex() {
@@ -223,6 +238,21 @@ public class NineIndustrialMultiMachine extends GTPPMultiBlockBase<NineIndustria
     @Override
     public RecipeMap<?> getRecipeMap() {
         return null;
+    }
+
+    @Override
+    public int getWirelessModeProcessingTime() {
+        return 1;
+    }
+
+    @Override
+    public boolean isEnablePerfectOverclock() {
+        return true;
+    }
+
+    @Override
+    public float getSpeedBonus() {
+        return 1;
     }
 
     @Nonnull
@@ -274,7 +304,7 @@ public class NineIndustrialMultiMachine extends GTPPMultiBlockBase<NineIndustria
                     .setMachine(machine, protectItems, protectFluids)
                     .setRecipeLocked(recipeLockableMachine, isRecipeLocked)
                     .setMaxParallel(Integer.MAX_VALUE)
-                    .setEUtModifier(0)
+                    .setEUtModifier(1)
                     .enableBatchMode(batchSize)
                     .setConsumption(true)
                     .setOutputCalculation(true);
@@ -363,36 +393,24 @@ public class NineIndustrialMultiMachine extends GTPPMultiBlockBase<NineIndustria
     }
 
     @Override
-    public void onModeChangeByScrewdriver(ForgeDirection side, EntityPlayer aPlayer, float aX, float aY, float aZ) {
-        setMachineMode(nextMachineMode());
-        PlayerUtils.messagePlayer(
-            aPlayer,
-            String.format(StatCollector.translateToLocal("GT5U.MULTI_MACHINE_CHANGE"), getMachineModeName()));
-    }
-
-    @Override
     public int nextMachineMode() {
         machineMode = modeManager.getNextMachineMode(machineMode);
         return machineMode;
     }
 
     @Override
+    public void addUIWidgets(ModularWindow.Builder builder, UIBuildContext buildContext) {
+        super.addUIWidgets(builder, buildContext);
+        setMachineModeIcons();
+        builder.widget(createModeSwitchButton(builder));
+    }
+
     public void setMachineModeIcons() {
         machineModeIcons.clear();
         machineModeIcons.add(GTUITextures.OVERLAY_BUTTON_MACHINEMODE_DEFAULT);
         for (int i = 0; i <= 35; i++) {
             machineModeIcons.add(GTUITextures.OVERLAY_BUTTON_MACHINEMODE_DEFAULT);
         }
-    }
-
-    @Override
-    public boolean getDefaultHasMaintenanceChecks() {
-        return false;
-    }
-
-    @Override
-    public boolean shouldCheckMaintenance() {
-        return false;
     }
 
     @Override

@@ -8,13 +8,11 @@ import cpw.mods.fml.common.Loader;
 
 public enum Mods {
 
-    ScienceNotLeisure(Names.SCIENCENOTLEISURE),
-    OTHTechnology(Names.OTHTECHNOLOGY);
+    ScienceNotLeisure(Names.SCIENCENOTLEISURE);
 
     public static class Names {
 
         public static final String SCIENCENOTLEISURE = "ScienceNotLeisure";
-        public static final String OTHTECHNOLOGY = "123Technology";
     }
 
     public final String ID;
