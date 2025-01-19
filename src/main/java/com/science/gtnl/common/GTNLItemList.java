@@ -88,6 +88,7 @@ public enum GTNLItemList {
 
     FluidManaInputHatch,
     FluidIceInputHatch,
+    FluidBlazeInputHatch,
 
     LaserBeacon,
     BronzeBrickCasing,
@@ -182,6 +183,7 @@ public enum GTNLItemList {
     MegaBlastFurnace,
     BrickedBlastFurnace,
     ColdIceFreezer,
+    BlazeBlastFurnace,
 
     NineIndustrialMultiMachine,
     RareEarthCentrifugal,

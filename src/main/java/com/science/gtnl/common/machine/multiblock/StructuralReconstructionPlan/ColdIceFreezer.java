@@ -122,7 +122,7 @@ public class ColdIceFreezer extends MultiMachineBase<ColdIceFreezer> implements 
                 .addElement('C', ofBlock(GregTechAPI.sBlockCasings2, 15))
                 .addElement('D', ofFrame(Materials.Aluminium))
                 .addElement('E', ofBlock(ModBlocks.blockCasings3Misc, 10))
-                .addElement('F', Muffler.newAny(CASING_INDEX, 1))
+                .addElement('F', Muffler.newAny(TAE.getIndexFromPage(2, 10), 1))
                 .build();
         }
         return STRUCTURE_DEFINITION;

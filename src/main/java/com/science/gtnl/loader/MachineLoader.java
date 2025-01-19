@@ -30,6 +30,7 @@ import com.science.gtnl.common.machine.multiblock.RareEarthCentrifugal;
 import com.science.gtnl.common.machine.multiblock.RealArtificialStar;
 import com.science.gtnl.common.machine.multiblock.SmeltingMixingFurnace;
 import com.science.gtnl.common.machine.multiblock.SteamCracking;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.BlazeBlastFurnace;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.ColdIceFreezer;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.MegaBlastFurnace;
 import com.science.gtnl.common.machine.multiblock.TeleportationArrayToAlfheim;
@@ -71,6 +72,7 @@ public class MachineLoader {
     public static ItemStack RareEarthCentrifugal;
     public static ItemStack NineIndustrialMultiMachine;
     public static ItemStack ColdIceFreezer;
+    public static ItemStack BlazeBlastFurnace;
 
     public static void loadMachines() {
 
@@ -230,6 +232,12 @@ public class MachineLoader {
             .getStackForm(1);
         GTNLItemList.ColdIceFreezer.set(ColdIceFreezer);
 
+        BlazeBlastFurnace = new BlazeBlastFurnace(
+            21031,
+            "NameBlazeBlastFurnace",
+            TextLocalization.NameBlazeBlastFurnace).getStackForm(1);
+        GTNLItemList.BlazeBlastFurnace.set(BlazeBlastFurnace);
+
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
             21919,
             "NameCheatOreProcessingFactory",
@@ -266,6 +274,16 @@ public class MachineLoader {
                 21502,
                 "Fluid Ice Input Hatch",
                 TextLocalization.FluidIceInputHatch,
+                5).getStackForm(1L));
+
+        GTNLItemList.FluidBlazeInputHatch.set(
+            new MTEHatchCustomFluid(
+                FluidUtils.getFluidStack("molten.blaze", 1)
+                    .getFluid(),
+                256000,
+                21503,
+                "Fluid Blaze Input Hatch",
+                TextLocalization.FluidBlazeInputHatch,
                 5).getStackForm(1L));
     }
 

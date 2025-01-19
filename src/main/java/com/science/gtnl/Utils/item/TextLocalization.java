@@ -473,6 +473,31 @@ public class TextLocalization {
         "Ang Bronze Plated Bricks or Solid Steel Machine Casing",
         "Tooltip_LargeSteamFurnace_Casing");
 
+    public static final String NameBlazeBlastFurnace = texter("Blaze Blast Furnace", "NameBlazeBlastFurnace");
+    public static final String FluidBlazeInputHatch = texter("Fluid Blaze Input Hatch", "FluidBlazeInputHatch");
+    public static final String BlazeBlastFurnaceRecipeType = texter("Blast Furnace", "BlazeBlastFurnaceRecipeType");
+    public static final String Tooltip_BlazeBlastFurnace_00 = texter(
+        "Fast than EBF 100%%!",
+        "Tooltip_BlazeBlastFurnace_00");
+    public static final String Tooltip_BlazeBlastFurnace_01 = texter(
+        "The maximum parallel fixed is 64",
+        "Tooltip_BlazeBlastFurnace_01");
+    public static final String Tooltip_BlazeBlastFurnace_02 = texter(
+        "Need to provide 10x formula voltage level ^ 2 of Pyrotheum per second",
+        "Tooltip_BlazeBlastFurnace_02");
+    public static final String Tooltip_BlazeBlastFurnace_03 = texter(
+        "After each voltage level exceeds MV, the temperature will increase by 100K",
+        "Tooltip_BlazeBlastFurnace_03");
+    public static final String Tooltip_BlazeBlastFurnace_Casing_00 = texter(
+        "Any Blast Smelter Casing Block",
+        "Tooltip_BlazeBlastFurnace_Casing_00");
+    public static final String Tooltip_BlazeBlastFurnace_Casing_01 = texter(
+        "Gasses, Any Volcanus Casing",
+        "Tooltip_BlazeBlastFurnace_Casing_01");
+    public static final String Tooltip_BlazeBlastFurnace_Casing_02 = texter(
+        "Top center Volcanus Casing",
+        "Tooltip_BlazeBlastFurnace_Casing_02");
+
     public static final String NameColdIceFreezer = texter("Cold Ice Freezer", "NameColdIceFreezer");
     public static final String FluidIceInputHatch = texter("Fluid Ice Input Hatch", "FluidIceInputHatch");
     public static final String ColdIceFreezerRecipeType = texter("Cryogenic Freezer", "ColdIceFreezerRecipeType");
@@ -487,10 +512,10 @@ public class TextLocalization {
         "Tooltip_ColdIceFreezer_02");
     public static final String Tooltip_ColdIceFreezer_Casing_00 = texter(
         "Any Frost Proof Machine Casing",
-        "Tooltip_ColdIceFreezer_Casing");
+        "Tooltip_ColdIceFreezer_Casing_00");
     public static final String Tooltip_ColdIceFreezer_Casing_01 = texter(
         "Top center Frost Proof Machine Casing",
-        "Tooltip_ColdIceFreezer_Casing");
+        "Tooltip_ColdIceFreezer_Casing_01");
 
     public static final String NameTeleportationArrayToAlfheim = texter(
         "Teleportation Array To Alfheim",

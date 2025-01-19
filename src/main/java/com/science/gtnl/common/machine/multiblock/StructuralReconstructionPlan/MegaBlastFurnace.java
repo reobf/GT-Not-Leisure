@@ -66,7 +66,7 @@ public class MegaBlastFurnace extends MultiMachineBase<MegaBlastFurnace> impleme
     protected final ArrayList<MTEHatchOutput> mPollutionOutputHatches = new ArrayList<>();
     protected final FluidStack[] pollutionFluidStacks = { Materials.CarbonDioxide.getGas(1000),
         Materials.CarbonMonoxide.getGas(1000), Materials.SulfurDioxide.getGas(1000) };
-    private int mHeatingCapacity;
+    private int mHeatingCapacity = 0;
     private static IStructureDefinition<MegaBlastFurnace> STRUCTURE_DEFINITION = null;
     public static final String STRUCTURE_PIECE_MAIN = "main";
     public static String[][] shape;
@@ -159,6 +159,14 @@ public class MegaBlastFurnace extends MultiMachineBase<MegaBlastFurnace> impleme
             .addMufflerHatch(TextLocalization.Tooltip_MegaBlastFurnace_Casing_02)
             .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY + " §rX " + TextUtils.SRP);
         return tt;
+    }
+
+    public void setCoilLevel(HeatingCoilLevel aCoilLevel) {
+        this.mCoilLevel = aCoilLevel;
+    }
+
+    public HeatingCoilLevel getCoilLevel() {
+        return this.mCoilLevel;
     }
 
     @Override
@@ -293,14 +301,6 @@ public class MegaBlastFurnace extends MultiMachineBase<MegaBlastFurnace> impleme
             true);
     }
 
-    public void setCoilLevel(HeatingCoilLevel aCoilLevel) {
-        this.mCoilLevel = aCoilLevel;
-    }
-
-    public HeatingCoilLevel getCoilLevel() {
-        return this.mCoilLevel;
-    }
-
     @Override
     public boolean addOutput(FluidStack aLiquid) {
         if (aLiquid == null) return false;
@@ -326,19 +326,19 @@ public class MegaBlastFurnace extends MultiMachineBase<MegaBlastFurnace> impleme
     public boolean checkMachine(IGregTechTileEntity iGregTechTileEntity, ItemStack itemStack) {
         this.mHeatingCapacity = 0;
         mCasing = 0;
-
         this.setCoilLevel(HeatingCoilLevel.None);
-
         this.mPollutionOutputHatches.clear();
+
+        if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet)) return false;
+
+        if (getCoilLevel() == HeatingCoilLevel.None) return false;
+
+        if (mMaintenanceHatches.size() != 1 && mMufflerHatches.size() != 1) return false;
 
         this.mHeatingCapacity = (int) this.getCoilLevel()
             .getHeat() + 100 * (BWUtil.getTier(this.getMaxInputEu()) - 2);
 
-        return this.checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet)
-            && this.getCoilLevel() != HeatingCoilLevel.None
-            && this.mMaintenanceHatches.size() == 1
-            && mCasing <= 3500
-            && this.mMufflerHatches.size() == 1;
+        return mCasing <= 3500 && checkHatch();
     }
 
     @Override

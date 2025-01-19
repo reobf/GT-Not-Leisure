@@ -514,6 +514,17 @@ Tooltip_SmeltingMixingFurnace_Casing=任意超能机械方块
 
 NameProcessingArray=处理阵列：重生
 
+NameBlazeBlastFurnace=烈焰高炉
+FluidBlazeInputHatch=烈焰输入仓
+BlazeBlastFurnaceRecipeType=工业高炉
+Tooltip_BlazeBlastFurnace_00=比工业高炉快100%%！
+Tooltip_BlazeBlastFurnace_01=最大并行数固定为64
+Tooltip_BlazeBlastFurnace_02=需每秒提供10x配方电压等级^2的熔融烈焰
+Tooltip_BlazeBlastFurnace_03=超过MV后的每一级电压，都会将温度提高100K
+Tooltip_BlazeBlastFurnace_Casing_00=任意冶炼炉机械方块
+Tooltip_BlazeBlastFurnace_Casing_01=回收气体，任意炽焱高炉机械方块
+Tooltip_BlazeBlastFurnace_Casing_02=顶部中心炽焱高炉机械方块
+
 NameColdIceFreezer=寒冰冷冻机
 FluidIceInputHatch=碎冰输入仓
 ColdIceFreezerRecipeType=凛冰冷冻机
