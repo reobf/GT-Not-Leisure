@@ -565,5 +565,23 @@ public class AssemblerRecipes implements IRecipePool {
             .duration(1000)
             .eut(7864320)
             .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(GTUtility.getIntegratedCircuit(16), GregtechItemList.Machine_Adv_BlastFurnace.get(1L))
+            .itemOutputs(GTNLItemList.BlazeBlastFurnace.get(1))
+            .specialValue(0)
+            .noOptimize()
+            .duration(50)
+            .eut(16)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(GTUtility.getIntegratedCircuit(16), GregtechItemList.Industrial_Cryogenic_Freezer.get(1L))
+            .itemOutputs(GTNLItemList.ColdIceFreezer.get(1))
+            .specialValue(0)
+            .noOptimize()
+            .duration(50)
+            .eut(16)
+            .addTo(As);
     }
 }
