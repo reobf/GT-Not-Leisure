@@ -49,7 +49,6 @@ import gtPlusPlus.xmod.gregtech.common.blocks.textures.TexturesGtBlock;
 public class ColdIceFreezer extends MultiMachineBase<ColdIceFreezer> implements ISurvivalConstructable {
 
     public static final int CASING_INDEX = ((BlockCasings2) sBlockCasings2).getTextureIndex(1);
-    public int RECIPE_VOLTAGE_SQUARE = (int) (10 * getAverageInputVoltage() * getAverageInputVoltage());
     private int mCasing;
     public String[][] shape;
     public static final String STRUCTURE_PIECE_MAIN = "main";
@@ -237,11 +236,16 @@ public class ColdIceFreezer extends MultiMachineBase<ColdIceFreezer> implements 
                 .hasWorkJustBeenEnabled()) {
                 if (aTick % 20 == 0 || this.getBaseMetaTileEntity()
                     .hasWorkJustBeenEnabled()) {
-                    if (!this.depleteInputFromRestrictedHatches(this.FluidIceInputHatch, RECIPE_VOLTAGE_SQUARE)) {
+                    if (!this.depleteInputFromRestrictedHatches(
+                        this.FluidIceInputHatch,
+                        (int) (10 * getInputVoltageTier() * getInputVoltageTier()))) {
                         this.causeMaintenanceIssue();
                         this.stopMachine(
                             ShutDownReasonRegistry.outOfFluid(
-                                Objects.requireNonNull(FluidUtils.getFluidStack("ice", RECIPE_VOLTAGE_SQUARE))));
+                                Objects.requireNonNull(
+                                    FluidUtils.getFluidStack(
+                                        "ice",
+                                        (int) (10 * getInputVoltageTier() * getInputVoltageTier())))));
                     }
                 }
             }
