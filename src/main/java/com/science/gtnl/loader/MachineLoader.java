@@ -12,6 +12,7 @@ import com.science.gtnl.common.machine.multiblock.ComponentAssembler;
 import com.science.gtnl.common.machine.multiblock.Desulfurizer;
 import com.science.gtnl.common.machine.multiblock.EdenGarden;
 import com.science.gtnl.common.machine.multiblock.GenerationEarthEngine;
+import com.science.gtnl.common.machine.multiblock.IndustrialArcaneAssembler;
 import com.science.gtnl.common.machine.multiblock.LapotronChip;
 import com.science.gtnl.common.machine.multiblock.LargeCircuitAssembler;
 import com.science.gtnl.common.machine.multiblock.LargeSteamAlloySmelter;
@@ -77,6 +78,7 @@ public class MachineLoader {
     public static ItemStack BlazeBlastFurnace;
     public static ItemStack ChemicalPlant;
     public static ItemStack VacuumFreezer;
+    public static ItemStack IndustrialArcaneAssembler;
 
     public static void loadMachines() {
 
@@ -249,6 +251,12 @@ public class MachineLoader {
         VacuumFreezer = new VacuumFreezer(21033, "NameVacuumFreezer", TextLocalization.NameVacuumFreezer)
             .getStackForm(1);
         GTNLItemList.VacuumFreezer.set(VacuumFreezer);
+
+        IndustrialArcaneAssembler = new IndustrialArcaneAssembler(
+            21034,
+            "NameIndustrialArcaneAssembler",
+            TextLocalization.NameIndustrialArcaneAssembler).getStackForm(1);
+        GTNLItemList.IndustrialArcaneAssembler.set(IndustrialArcaneAssembler);
 
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
             21919,

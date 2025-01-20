@@ -95,6 +95,8 @@ public class ScienceNotLeisure {
         OreDictLoader.loadOreDictionary();
         RecipeLoader.loadRecipes();
 
+        RecipeLoader.loadRecipesPostInit();
+
         new LazyStaticsInitLoader().initStaticsOnCompleteInit();
 
         TextHandler.serializeLangMap(isInDevMode);

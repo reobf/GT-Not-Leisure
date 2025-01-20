@@ -145,4 +145,14 @@ public class RecipeRegister {
         .neiHandlerInfo(builder -> builder.setDisplayStack(GTNLItemList.RareEarthCentrifugal.get(1)))
         .disableOptimize()
         .build();
+
+    public static RecipeMap<RecipeMapBackend> IndustrialArcaneAssemblerRecipes = RecipeMapBuilder
+        .of("gtnl.recipe.IndustrialArcaneAssemblerRecipes")
+        .maxIO(9, 1, 0, 0)
+        .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
+        .neiHandlerInfo(
+            builder -> builder.setDisplayStack(GTNLItemList.IndustrialArcaneAssembler.get(1))
+                .setMaxRecipesPerPage(1))
+        .disableOptimize()
+        .build();
 }

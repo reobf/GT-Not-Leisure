@@ -187,6 +187,7 @@ public enum GTNLItemList {
     ChemicalPlant,
     VacuumFreezer,
 
+    IndustrialArcaneAssembler,
     NineIndustrialMultiMachine,
     RareEarthCentrifugal,
     ProcessingArray,

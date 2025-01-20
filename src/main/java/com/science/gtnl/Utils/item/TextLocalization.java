@@ -278,6 +278,13 @@ public class TextLocalization {
         "Any Frost Proof Machine Casing",
         "Tooltip_VacuumFreezer_Casing");
 
+    public static final String NameIndustrialArcaneAssembler = texter(
+        "Industrial Arcane Assembler",
+        "NameIndustrialArcaneAssembler");
+    public static final String IndustrialArcaneAssemblerRecipeType = texter(
+        "Industrial Arcane Assembler",
+        "IndustrialArcaneAssemblerRecipeType");
+
     public static final String NameLargeCircuitAssembler = texter(
         "Large Circuit Assembler",
         "NameLargeCircuitAssembler");

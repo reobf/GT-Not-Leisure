@@ -548,6 +548,10 @@ Tooltip_ColdIceFreezer_02=需每秒提供10x配方电压等级^2的碎冰
 Tooltip_ColdIceFreezer_Casing_00=任意防冻机械方块
 Tooltip_ColdIceFreezer_Casing_01=顶部中心防冻机械方块
 
+NameIndustrialArcaneAssembler=工业奥术装配室
+gtnl.recipe.IndustrialArcaneAssemblerRecipes=工业奥术装配室
+IndustrialArcaneAssemblerRecipeType=工业奥术装配室
+
 NameNineIndustrialMultiMachine=大明科技
 NineIndustrialMultiMachineRecipeType=水浒传
 Tooltip_NineIndustrialMultiMachine_00=只比正常的机器速度快∞%%

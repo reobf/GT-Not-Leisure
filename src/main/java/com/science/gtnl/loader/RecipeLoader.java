@@ -31,6 +31,7 @@ import com.science.gtnl.common.recipe.GregTech.PlasmaForgeRecipes;
 import com.science.gtnl.common.recipe.GregTech.TranscendentPlasmaMixerRecipes;
 import com.science.gtnl.common.recipe.GregTech.multiDehydratorRecipes;
 import com.science.gtnl.common.recipe.IRecipePool;
+import com.science.gtnl.common.recipe.Thaumcraft.IndustrialArcaneAssemblerRecipesPool;
 
 public class RecipeLoader {
 
@@ -49,5 +50,9 @@ public class RecipeLoader {
         }
         new OP_NormalProcessing().enumOreProcessingRecipes();
         GTNLProcessingArrayRecipeLoader.registerDefaultGregtechMaps();
+    }
+
+    public static void loadRecipesPostInit() {
+        new IndustrialArcaneAssemblerRecipesPool().loadRecipes();
     }
 }
