@@ -7,6 +7,6 @@ def remove_first_5_chars(input_file, output_file):
             file.write(line[5:])
 
 input_file = 'input.txt'  # 输入文件路径
-output_file = 'output.txt'  # 输出文件路径
+output_file = 'output1.txt'  # 输出文件路径
 
 remove_first_5_chars(input_file, output_file)

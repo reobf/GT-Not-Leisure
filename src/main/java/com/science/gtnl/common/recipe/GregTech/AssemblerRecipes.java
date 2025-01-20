@@ -583,5 +583,38 @@ public class AssemblerRecipes implements IRecipePool {
             .duration(50)
             .eut(16)
             .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(GTUtility.getIntegratedCircuit(16), ItemList.Machine_Multi_LargeChemicalReactor.get(1L))
+            .itemOutputs(GTNLItemList.ChemicalPlant.get(1))
+            .specialValue(0)
+            .noOptimize()
+            .duration(50)
+            .eut(16)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTUtility.getIntegratedCircuit(6),
+                GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.StainlessSteel, 2L),
+                ItemList.Casing_SolidSteel.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.rotor, Materials.StainlessSteel, 1L),
+                ItemList.Electric_Motor_HV.get(2L))
+            .fluidInputs(Materials.Polytetrafluoroethylene.getMolten(576))
+            .itemOutputs(GTNLItemList.HeatVent.get(1))
+            .specialValue(0)
+            .noOptimize()
+            .duration(200)
+            .eut(480)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(GTUtility.getIntegratedCircuit(16), ItemList.Machine_Multi_VacuumFreezer.get(1L))
+            .itemOutputs(GTNLItemList.VacuumFreezer.get(1))
+            .specialValue(0)
+            .noOptimize()
+            .duration(50)
+            .eut(16)
+            .addTo(As);
     }
 }

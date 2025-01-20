@@ -31,8 +31,10 @@ import com.science.gtnl.common.machine.multiblock.RealArtificialStar;
 import com.science.gtnl.common.machine.multiblock.SmeltingMixingFurnace;
 import com.science.gtnl.common.machine.multiblock.SteamCracking;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.BlazeBlastFurnace;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.ChemicalPlant;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.ColdIceFreezer;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.MegaBlastFurnace;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.VacuumFreezer;
 import com.science.gtnl.common.machine.multiblock.TeleportationArrayToAlfheim;
 import com.science.gtnl.common.machine.multiblock.WhiteNightGenerator;
 
@@ -73,6 +75,8 @@ public class MachineLoader {
     public static ItemStack NineIndustrialMultiMachine;
     public static ItemStack ColdIceFreezer;
     public static ItemStack BlazeBlastFurnace;
+    public static ItemStack ChemicalPlant;
+    public static ItemStack VacuumFreezer;
 
     public static void loadMachines() {
 
@@ -237,6 +241,14 @@ public class MachineLoader {
             "NameBlazeBlastFurnace",
             TextLocalization.NameBlazeBlastFurnace).getStackForm(1);
         GTNLItemList.BlazeBlastFurnace.set(BlazeBlastFurnace);
+
+        ChemicalPlant = new ChemicalPlant(21032, "NameChemicalPlant", TextLocalization.NameChemicalPlant)
+            .getStackForm(1);
+        GTNLItemList.ChemicalPlant.set(ChemicalPlant);
+
+        VacuumFreezer = new VacuumFreezer(21033, "NameVacuumFreezer", TextLocalization.NameVacuumFreezer)
+            .getStackForm(1);
+        GTNLItemList.VacuumFreezer.set(VacuumFreezer);
 
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
             21919,

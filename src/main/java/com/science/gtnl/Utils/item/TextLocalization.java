@@ -248,6 +248,36 @@ public class TextLocalization {
         "16x Bronze Plated Bricks",
         "Tooltip_BrickBlastFurnace_Casing_04");
 
+    public static final String NameChemicalPlant = texter("Chemical Plant", "NameChemicalPlant");
+    public static final String ChemicalPlantRecipeType = texter("Chemical Reactor", "ChemicalPlantRecipeType");
+    public static final String Tooltip_ChemicalPlant_00 = texter(
+        "For each coil grade higher than white copper, energy consumption and speed increase by 5%%",
+        "Tooltip_ChemicalPlant_00");
+    public static final String Tooltip_ChemicalPlant_01 = texter(
+        "Parallel number = 2 ^ Voltage level, not exceeding 256",
+        "Tooltip_ChemicalPlant_01");
+    public static final String Tooltip_ChemicalPlant_02 = texter(
+        "It gains §cperfect overclock§7",
+        "Tooltip_ChemicalPlant_02");
+    public static final String Tooltip_ChemicalPlant_Casing = texter(
+        "Any Chemically Inert Machine Casing",
+        "Tooltip_ChemicalPlant_Casing");
+
+    public static final String NameVacuumFreezer = texter("Vacuum Freezer", "NameVacuumFreezer");
+    public static final String VacuumFreezerRecipeType = texter("Vacuum Freezer", "VacuumFreezerRecipeType");
+    public static final String Tooltip_VacuumFreezer_00 = texter(
+        "125%% faster than vanilla Vacuum Freezer",
+        "Tooltip_VacuumFreezer_00");
+    public static final String Tooltip_VacuumFreezer_01 = texter(
+        "Parallel number = 8 + 2 * Voltage level",
+        "Tooltip_VacuumFreezer_01");
+    public static final String Tooltip_VacuumFreezer_02 = texter(
+        "You can perform one free §cperfect overclock§7!",
+        "Tooltip_VacuumFreezer_02");
+    public static final String Tooltip_VacuumFreezer_Casing = texter(
+        "Any Frost Proof Machine Casing",
+        "Tooltip_VacuumFreezer_Casing");
+
     public static final String NameLargeCircuitAssembler = texter(
         "Large Circuit Assembler",
         "NameLargeCircuitAssembler");
@@ -477,7 +507,7 @@ public class TextLocalization {
     public static final String FluidBlazeInputHatch = texter("Fluid Blaze Input Hatch", "FluidBlazeInputHatch");
     public static final String BlazeBlastFurnaceRecipeType = texter("Blast Furnace", "BlazeBlastFurnaceRecipeType");
     public static final String Tooltip_BlazeBlastFurnace_00 = texter(
-        "Fast than EBF 100%%!",
+        "Fast than EBF 200%%!",
         "Tooltip_BlazeBlastFurnace_00");
     public static final String Tooltip_BlazeBlastFurnace_01 = texter(
         "The maximum parallel fixed is 64",
@@ -502,7 +532,7 @@ public class TextLocalization {
     public static final String FluidIceInputHatch = texter("Fluid Ice Input Hatch", "FluidIceInputHatch");
     public static final String ColdIceFreezerRecipeType = texter("Cryogenic Freezer", "ColdIceFreezerRecipeType");
     public static final String Tooltip_ColdIceFreezer_00 = texter(
-        "Fast than Vacuum Freezer 100%%!",
+        "Fast than Vacuum Freezer 200%%!",
         "Tooltip_ColdIceFreezer_00");
     public static final String Tooltip_ColdIceFreezer_01 = texter(
         "The maximum parallel fixed is 64",

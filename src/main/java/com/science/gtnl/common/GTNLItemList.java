@@ -184,6 +184,8 @@ public enum GTNLItemList {
     BrickedBlastFurnace,
     ColdIceFreezer,
     BlazeBlastFurnace,
+    ChemicalPlant,
+    VacuumFreezer,
 
     NineIndustrialMultiMachine,
     RareEarthCentrifugal,
