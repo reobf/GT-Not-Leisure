@@ -1,15 +1,13 @@
 package com.science.gtnl.common.machine.multiblock;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
-import static com.science.gtnl.Utils.Utils.filterValidMTEs;
 import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.util.GTStructureUtility.*;
 import static gregtech.api.util.GTUtility.validMTEList;
 import static gtPlusPlus.core.block.ModBlocks.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.annotation.Nonnull;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.ForgeDirection;
@@ -30,12 +28,12 @@ import gregtech.api.enums.HeatingCoilLevel;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Textures;
 import gregtech.api.interfaces.ITexture;
-import gregtech.api.interfaces.fluid.IFluidStore;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.metatileentity.implementations.MTEHatchMaintenance;
-import gregtech.api.metatileentity.implementations.MTEHatchOutput;
 import gregtech.api.recipe.RecipeMap;
+import gregtech.api.recipe.check.CheckRecipeResult;
+import gregtech.api.recipe.check.CheckRecipeResultRegistry;
 import gregtech.api.render.TextureFactory;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
@@ -266,21 +264,48 @@ public class PetrochemicalPlant extends MultiMachineBase<PetrochemicalPlant> imp
         return true;
     }
 
+    @Nonnull
     @Override
-    public List<? extends IFluidStore> getFluidOutputSlots(FluidStack[] toOutput) {
-        return filterValidMTEs(mOutputHatches);
-    }
+    public CheckRecipeResult checkProcessing() {
+        if (processingLogic == null) {
+            return checkRecipe(mInventory[1]) ? CheckRecipeResultRegistry.SUCCESSFUL
+                : CheckRecipeResultRegistry.NO_RECIPE;
+        }
 
-    @Override
-    protected void addFluidOutputs(FluidStack[] outputFluids) {
-        List<MTEHatchOutput> singleHatchList = new ArrayList<>(mOutputHatches);
-        for (FluidStack fluidStack : outputFluids) {
-            if (fluidStack == null) continue;
-            fluidStack.amount *= this.mLevel * GTUtility.getTier(this.getMaxInputVoltage()) * 10;
-            FluidStack tStack = fluidStack.copy();
-            if (!dumpFluid(singleHatchList, tStack, true)) {
-                dumpFluid(singleHatchList, tStack, false);
+        setupProcessingLogic(processingLogic);
+
+        CheckRecipeResult result = doCheckRecipe();
+        result = postCheckRecipe(result, processingLogic);
+        updateSlots();
+        if (!result.wasSuccessful()) return result;
+
+        mEfficiency = 10000;
+        mEfficiencyIncrease = 10000;
+        mMaxProgresstime = processingLogic.getDuration();
+        setEnergyUsage(processingLogic);
+
+        // 获取输出物品并进行 null 检查
+        ItemStack[] outputItems = processingLogic.getOutputItems();
+        if (outputItems != null) {
+            for (ItemStack itemStack : outputItems) {
+                if (itemStack != null) {
+                    itemStack.stackSize *= this.mLevel * GTUtility.getTier(this.getMaxInputVoltage()) * 10;
+                }
             }
         }
+        mOutputItems = outputItems;
+
+        // 获取输出流体并进行 null 检查
+        FluidStack[] outputFluids = processingLogic.getOutputFluids();
+        if (outputFluids != null) {
+            for (FluidStack fluidStack : outputFluids) {
+                if (fluidStack != null) {
+                    fluidStack.amount *= this.mLevel * GTUtility.getTier(this.getMaxInputVoltage()) * 10;
+                }
+            }
+        }
+        mOutputFluids = outputFluids;
+
+        return result;
     }
 }

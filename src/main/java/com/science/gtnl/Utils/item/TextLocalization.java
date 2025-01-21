@@ -399,6 +399,21 @@ public class TextLocalization {
     public static final String Tooltip_NineIndustrialMultiMachine_02 = texter(
         "Only Have 2147483647 Parallel",
         "Tooltip_NineIndustrialMultiMachine_02");
+    public static final String Tooltip_NineIndustrialMultiMachine_03 = texter(
+        "The default runtime is locked to 6.4 seconds",
+        "Tooltip_NineIndustrialMultiMachine_03");
+    public static final String Tooltip_NineIndustrialMultiMachine_04 = texter(
+        "After enabling batch mode, the runtime is locked to 1 tick, and the output quantity for recipes is set to 2,147,483,647",
+        "Tooltip_NineIndustrialMultiMachine_04");
+    public static final String Tooltip_NineIndustrialMultiMachine_05 = texter(
+        "If the energy storage unit is not installed, it will automatically enter wireless mode",
+        "Tooltip_NineIndustrialMultiMachine_05");
+    public static final String Tooltip_NineIndustrialMultiMachine_06 = texter(
+        "Supports parallel processing of different recipes and recipe types in wireless mode",
+        "Tooltip_NineIndustrialMultiMachine_06");
+    public static final String Tooltip_NineIndustrialMultiMachine_07 = texter(
+        "Disclaimer: Not all recipes are guaranteed to function properly",
+        "Tooltip_NineIndustrialMultiMachine_07");
     public static final String Tooltip_NineIndustrialMultiMachine_Casing = texter(
         "Ang Multi-Use Casing",
         "Tooltip_NineIndustrialMultiMachine_Casing");

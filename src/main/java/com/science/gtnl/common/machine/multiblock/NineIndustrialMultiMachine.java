@@ -1,9 +1,13 @@
 package com.science.gtnl.common.machine.multiblock;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
+import static com.science.gtnl.Utils.Utils.NEGATIVE_ONE;
+import static com.science.gtnl.Utils.Utils.mergeArray;
 import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
+import static gregtech.common.misc.WirelessNetworkManager.addEUToGlobalEnergyMap;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -22,16 +26,17 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
+import net.minecraftforge.fluids.FluidStack;
 
 import org.jetbrains.annotations.NotNull;
 
-import com.gtnewhorizon.structurelib.alignment.constructable.ISurvivalConstructable;
 import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.gtnewhorizons.modularui.api.screen.ModularWindow;
 import com.gtnewhorizons.modularui.api.screen.UIBuildContext;
 import com.science.gtnl.Utils.item.TextLocalization;
+import com.science.gtnl.common.machine.multiMachineClasses.GTNL_ProcessingLogic;
 import com.science.gtnl.common.machine.multiMachineClasses.NineIndustrialMultiMachineManager;
 import com.science.gtnl.common.machine.multiMachineClasses.WirelessEnergyMultiMachineBase;
 
@@ -41,6 +46,7 @@ import gregtech.api.gui.modularui.GTUITextures;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
+import gregtech.api.interfaces.tileentity.IWirelessEnergyHatchInformation;
 import gregtech.api.logic.ProcessingLogic;
 import gregtech.api.metatileentity.implementations.MTEHatch;
 import gregtech.api.recipe.RecipeMap;
@@ -59,10 +65,10 @@ import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
 
 public class NineIndustrialMultiMachine extends WirelessEnergyMultiMachineBase<NineIndustrialMultiMachine>
-    implements ISurvivalConstructable {
+    implements IWirelessEnergyHatchInformation {
 
     private int machineMode;
-    private NineIndustrialMultiMachineManager modeManager = new NineIndustrialMultiMachineManager();
+    private final NineIndustrialMultiMachineManager modeManager = new NineIndustrialMultiMachineManager();
     public static final String[] aToolTipNames = new String[108];
     private int mCasing;
     private static IStructureDefinition<NineIndustrialMultiMachine> STRUCTURE_DEFINITION = null;
@@ -72,7 +78,7 @@ public class NineIndustrialMultiMachine extends WirelessEnergyMultiMachineBase<N
             RecipeMap<?> recipeMap = getRecipeMap(id);
             if (recipeMap != null) {
                 String aNEI = GTLanguageManager.getTranslation(getRecipeMap(id).unlocalizedName);
-                aToolTipNames[id] = aNEI != null ? aNEI : "BAD NEI NAME (Report to Github)";
+                aToolTipNames[id] = aNEI != null ? aNEI : "BAD NEI NAME";
             }
         }
     }
@@ -111,7 +117,12 @@ public class NineIndustrialMultiMachine extends WirelessEnergyMultiMachineBase<N
         tt.addMachineType(TextLocalization.NineIndustrialMultiMachineRecipeType)
             .addInfo(TextLocalization.Tooltip_NineIndustrialMultiMachine_00)
             .addInfo(TextLocalization.Tooltip_NineIndustrialMultiMachine_01)
-            .addInfo(TextLocalization.Tooltip_NineIndustrialMultiMachine_02);
+            .addInfo(TextLocalization.Tooltip_NineIndustrialMultiMachine_02)
+            .addInfo(TextLocalization.Tooltip_NineIndustrialMultiMachine_03)
+            .addInfo(TextLocalization.Tooltip_NineIndustrialMultiMachine_04)
+            .addInfo(TextLocalization.Tooltip_NineIndustrialMultiMachine_05)
+            .addInfo(TextLocalization.Tooltip_NineIndustrialMultiMachine_06)
+            .addInfo(TextLocalization.Tooltip_NineIndustrialMultiMachine_07);
         for (int i = 0; i < 36; i++) {
             tt.addInfo(
                 I18n.format("Tooltip_NineIndustrialMultiMachine_Mode_" + i) + " - "
@@ -206,7 +217,7 @@ public class NineIndustrialMultiMachine extends WirelessEnergyMultiMachineBase<N
 
     @Override
     public int getMaxParallelRecipes() {
-        return 10000;
+        return Integer.MAX_VALUE;
     }
 
     public int getTextureIndex() {
@@ -241,7 +252,11 @@ public class NineIndustrialMultiMachine extends WirelessEnergyMultiMachineBase<N
 
     @Override
     public int getWirelessModeProcessingTime() {
-        return 1;
+        if (batchMode) {
+            return 1;
+        } else {
+            return 128;
+        }
     }
 
     @Override
@@ -266,10 +281,17 @@ public class NineIndustrialMultiMachine extends WirelessEnergyMultiMachineBase<N
 
     @Override
     protected ProcessingLogic createProcessingLogic() {
-        return new ProcessingLogic() {
+        return new GTNL_ProcessingLogic() {
 
             private ItemStack lastCircuit = null;
             private int lastMode = -1;
+
+            @NotNull
+            @Override
+            public CheckRecipeResult process() {
+                setEuModifier(0);
+                return super.process();
+            }
 
             @Nonnull
             @Override
@@ -303,7 +325,7 @@ public class NineIndustrialMultiMachine extends WirelessEnergyMultiMachineBase<N
                     .setMachine(machine, protectItems, protectFluids)
                     .setRecipeLocked(recipeLockableMachine, isRecipeLocked)
                     .setEUtModifier(0)
-                    .setMaxParallel(10000)
+                    .setMaxParallel(Integer.MAX_VALUE)
                     .setConsumption(true)
                     .setOutputCalculation(true);
             }
@@ -311,7 +333,11 @@ public class NineIndustrialMultiMachine extends WirelessEnergyMultiMachineBase<N
             @Override
             protected double calculateDuration(@Nonnull GTRecipe recipe, @Nonnull ParallelHelper helper,
                 @Nonnull OverclockCalculator calculator) {
-                return 1000;
+                if (batchMode) {
+                    return 1;
+                } else {
+                    return 128;
+                }
             }
 
             @NotNull
@@ -320,16 +346,6 @@ public class NineIndustrialMultiMachine extends WirelessEnergyMultiMachineBase<N
                 return CheckRecipeResultRegistry.SUCCESSFUL;
             }
         };
-    }
-
-    @Override
-    public boolean drainEnergyInput(long aEUt) {
-        return true;
-    }
-
-    @Override
-    public long maxEUStore() {
-        return Integer.MAX_VALUE;
     }
 
     @Override
@@ -408,38 +424,136 @@ public class NineIndustrialMultiMachine extends WirelessEnergyMultiMachineBase<N
         }
     }
 
+    @Nonnull
     @Override
-    public boolean doRandomMaintenanceDamage() {
-        return false;
+    public CheckRecipeResult checkProcessing() {
+        costingEU = BigInteger.ZERO;
+        costingEUText = ZERO_STRING;
+        prepareProcessing();
+
+        if (!wirelessMode) return handleNonWirelessModeProcessing();
+
+        boolean succeeded = false;
+        CheckRecipeResult finalResult = CheckRecipeResultRegistry.SUCCESSFUL;
+        for (int i = 0; i < cycleNum; i++) {
+            CheckRecipeResult r = wirelessModeProcessOnce();
+            if (!r.wasSuccessful()) {
+                finalResult = r;
+                break;
+            }
+            succeeded = true;
+        }
+
+        updateSlots();
+        if (!succeeded) return finalResult;
+        costingEUText = GTUtility.formatNumbers(costingEU);
+
+        mEfficiency = 10000;
+        mEfficiencyIncrease = 10000;
+        mMaxProgresstime = getWirelessModeProcessingTime();
+
+        return CheckRecipeResultRegistry.SUCCESSFUL;
     }
-    /*
-     * @Override
-     * protected void addFluidOutputs(FluidStack[] outputFluids) {
-     * List<MTEHatchOutput> singleHatchList = new ArrayList<>(mOutputHatches);
-     * for (FluidStack fluidStack : outputFluids) {
-     * if (fluidStack == null) continue;
-     * fluidStack.amount *= Integer.MAX_VALUE;
-     * FluidStack tStack = fluidStack.copy();
-     * if (!dumpFluid(singleHatchList, tStack, true)) {
-     * dumpFluid(singleHatchList, tStack, false);
-     * }
-     * }
-     * }
-     * @Override
-     * public void addItemOutputs(ItemStack[] outputItems) {
-     * List<MTEHatchOutputBus> singleHatchList = new ArrayList<>(mOutputBusses);
-     * for (ItemStack outputItemStack : outputItems) {
-     * if (outputItemStack == null) continue;
-     * outputItemStack.stackSize *= Integer.MAX_VALUE;
-     * dumpItem(singleHatchList, outputItemStack);
-     * }
-     * }
-     * private void dumpItem(List<MTEHatchOutputBus> outputBuses, ItemStack itemStack) {
-     * for (MTEHatchOutputBus outputBus : outputBuses) {
-     * if (outputBus.storeAll(itemStack)) {
-     * break; // Stop once the item stack has been stored
-     * }
-     * }
-     * }
-     */
+
+    @Override
+    public CheckRecipeResult wirelessModeProcessOnce() {
+        if (!isRecipeProcessing) startRecipeProcessing();
+        setupProcessingLogic(processingLogic);
+        setupWirelessProcessingPowerLogic(processingLogic);
+
+        CheckRecipeResult result = doCheckRecipe();
+        if (!result.wasSuccessful()) {
+            return result;
+        }
+
+        BigInteger costEU = BigInteger.valueOf(processingLogic.getCalculatedEut())
+            .multiply(BigInteger.valueOf(processingLogic.getDuration()));
+
+        int m = getExtraEUCostMultiplier();
+        if (m > 1) {
+            costEU = costEU.multiply(BigInteger.valueOf(m));
+        }
+
+        if (!addEUToGlobalEnergyMap(ownerUUID, costEU.multiply(NEGATIVE_ONE))) {
+            return CheckRecipeResultRegistry.insufficientPower(costEU.longValue());
+        }
+
+        costingEU = costingEU.add(costEU);
+
+        ItemStack[] outputItems = processingLogic.getOutputItems();
+        if (outputItems != null) {
+            for (ItemStack itemStack : outputItems) {
+                if (itemStack != null) {
+                    if (batchMode) {
+                        itemStack.stackSize = Integer.MAX_VALUE;
+                    }
+                }
+            }
+        }
+        mOutputItems = mergeArray(mOutputItems, outputItems);
+
+        FluidStack[] outputFluids = processingLogic.getOutputFluids();
+        if (outputFluids != null) {
+            for (FluidStack fluidStack : outputFluids) {
+                if (fluidStack != null) {
+                    if (batchMode) {
+                        fluidStack.amount = Integer.MAX_VALUE;
+                    }
+                }
+            }
+        }
+        mOutputFluids = mergeArray(mOutputFluids, outputFluids);
+
+        endRecipeProcessing();
+        return result;
+    }
+
+    @Nonnull
+    private CheckRecipeResult handleNonWirelessModeProcessing() {
+        if (processingLogic == null) {
+            return checkRecipe(mInventory[1]) ? CheckRecipeResultRegistry.SUCCESSFUL
+                : CheckRecipeResultRegistry.NO_RECIPE;
+        }
+
+        setupProcessingLogic(processingLogic);
+
+        CheckRecipeResult result = doCheckRecipe();
+        result = postCheckRecipe(result, processingLogic);
+        updateSlots();
+        if (!result.wasSuccessful()) return result;
+
+        mEfficiency = 10000;
+        mEfficiencyIncrease = 10000;
+        if (batchMode) {
+            mMaxProgresstime = 1;
+        } else {
+            mMaxProgresstime = 128;
+        }
+        setEnergyUsage(processingLogic);
+
+        ItemStack[] outputItems = processingLogic.getOutputItems();
+        if (outputItems != null) {
+            for (ItemStack itemStack : outputItems) {
+                if (itemStack != null) {
+                    if (batchMode) {
+                        itemStack.stackSize = Integer.MAX_VALUE;
+                    }
+                }
+            }
+        }
+        mOutputItems = outputItems;
+
+        FluidStack[] outputFluids = processingLogic.getOutputFluids();
+        if (outputFluids != null) {
+            for (FluidStack fluidStack : outputFluids) {
+                if (fluidStack != null) {
+                    if (batchMode) {
+                        fluidStack.amount = Integer.MAX_VALUE;
+                    }
+                }
+            }
+        }
+        mOutputFluids = outputFluids;
+        return result;
+    }
 }

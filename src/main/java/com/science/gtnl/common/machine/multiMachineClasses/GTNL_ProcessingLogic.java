@@ -4,10 +4,11 @@ import javax.annotation.Nonnull;
 
 import com.science.gtnl.misc.OverclockType;
 
+import gregtech.api.logic.ProcessingLogic;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.ParallelHelper;
 
-public class GTNL_ProcessingLogic extends gregtech.api.logic.ProcessingLogic {
+public class GTNL_ProcessingLogic extends ProcessingLogic {
 
     /**
      * Override to tweak parallel logic if needed.
