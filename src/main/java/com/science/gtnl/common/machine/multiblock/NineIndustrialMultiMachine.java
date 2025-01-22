@@ -1,11 +1,19 @@
 package com.science.gtnl.common.machine.multiblock;
 
+import static bartworks.common.loaders.ItemRegistry.bw_realglas2;
+import static com.dreammaster.gthandler.casings.GT_Container_CasingsNH.sBlockCasingsNH;
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
 import static com.science.gtnl.Utils.Utils.NEGATIVE_ONE;
 import static com.science.gtnl.Utils.Utils.mergeArray;
+import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaBlockCasing;
+import static goodgenerator.loader.Loaders.FRF_Coil_4;
+import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
+import static gregtech.api.util.GTStructureUtility.ofFrame;
 import static gregtech.common.misc.WirelessNetworkManager.addEUToGlobalEnergyMap;
+import static kubatech.loaders.BlockLoader.defcCasingBlock;
+import static tectech.thing.casing.TTCasingsContainer.*;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -35,12 +43,13 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.gtnewhorizons.modularui.api.screen.ModularWindow;
 import com.gtnewhorizons.modularui.api.screen.UIBuildContext;
+import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.common.machine.multiMachineClasses.GTNL_ProcessingLogic;
 import com.science.gtnl.common.machine.multiMachineClasses.NineIndustrialMultiMachineManager;
 import com.science.gtnl.common.machine.multiMachineClasses.WirelessEnergyMultiMachineBase;
 
-import gregtech.api.enums.TAE;
+import gregtech.api.enums.Materials;
 import gregtech.api.enums.Textures;
 import gregtech.api.gui.modularui.GTUITextures;
 import gregtech.api.interfaces.ITexture;
@@ -59,7 +68,7 @@ import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.OverclockCalculator;
 import gregtech.api.util.ParallelHelper;
-import gtPlusPlus.core.block.ModBlocks;
+import gregtech.common.blocks.BlockCasings1;
 import gtPlusPlus.xmod.gregtech.common.blocks.textures.TexturesGtBlock;
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
@@ -71,7 +80,14 @@ public class NineIndustrialMultiMachine extends WirelessEnergyMultiMachineBase<N
     private final NineIndustrialMultiMachineManager modeManager = new NineIndustrialMultiMachineManager();
     public static final String[] aToolTipNames = new String[108];
     private int mCasing;
+    protected static final int CASING_INDEX = ((BlockCasings1) sBlockCasings1).getTextureIndex(12);
     private static IStructureDefinition<NineIndustrialMultiMachine> STRUCTURE_DEFINITION = null;
+    public static final String STRUCTURE_PIECE_MAIN = "main";
+    public static String[][] shape;
+    public static final String NIMM_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/nine_industrial_multi_machine";
+    public final int horizontalOffSet = 14;
+    public final int verticalOffSet = 27;
+    public final int depthOffSet = 0;
 
     static {
         for (int id = 0; id < 108; id++) {
@@ -85,10 +101,12 @@ public class NineIndustrialMultiMachine extends WirelessEnergyMultiMachineBase<N
 
     public NineIndustrialMultiMachine(final int aID, final String aName, final String aNameRegional) {
         super(aID, aName, aNameRegional);
+        shape = StructureUtils.readStructureFromFile(NIMM_STRUCTURE_FILE_PATH);
     }
 
     public NineIndustrialMultiMachine(final String aName) {
         super(aName);
+        shape = StructureUtils.readStructureFromFile(NIMM_STRUCTURE_FILE_PATH);
     }
 
     @Override
@@ -130,7 +148,7 @@ public class NineIndustrialMultiMachine extends WirelessEnergyMultiMachineBase<N
                     + aBuiltStrings[i]
                     + EnumChatFormatting.RESET);
         }
-        tt.beginStructureBlock(3, 3, 3, true)
+        tt.beginStructureBlock(29, 29, 29, true)
             .addInputBus(TextLocalization.Tooltip_NineIndustrialMultiMachine_Casing)
             .addOutputBus(TextLocalization.Tooltip_NineIndustrialMultiMachine_Casing)
             .addInputHatch(TextLocalization.Tooltip_NineIndustrialMultiMachine_Casing)
@@ -144,17 +162,28 @@ public class NineIndustrialMultiMachine extends WirelessEnergyMultiMachineBase<N
     public IStructureDefinition<NineIndustrialMultiMachine> getStructureDefinition() {
         if (STRUCTURE_DEFINITION == null) {
             STRUCTURE_DEFINITION = StructureDefinition.<NineIndustrialMultiMachine>builder()
-                .addShape(
-                    mName,
-                    transpose(
-                        new String[][] { { "CCC", "CCC", "CCC" }, { "C~C", "C-C", "CCC" }, { "CCC", "CCC", "CCC" }, }))
+                .addShape(STRUCTURE_PIECE_MAIN, transpose(shape))
+                .addElement('A', ofBlock(bw_realglas2, 0))
+                .addElement('B', ofBlock(FRF_Coil_4, 0))
+                .addElement('C', ofBlock(MetaBlockCasing, 5))
+                .addElement('D', ofBlock(defcCasingBlock, 12))
                 .addElement(
-                    'C',
-                    buildHatchAdder(NineIndustrialMultiMachine.class)
-                        .atLeast(InputBus, OutputBus, Energy, InputHatch, OutputHatch)
-                        .casingIndex(getTextureIndex())
+                    'E',
+                    buildHatchAdder(NineIndustrialMultiMachine.class).casingIndex(CASING_INDEX)
                         .dot(1)
-                        .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(ModBlocks.blockCasings3Misc, 2))))
+                        .atLeast(InputHatch, OutputHatch, InputBus, OutputBus, Maintenance, Energy.or(ExoticEnergy))
+                        .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(sBlockCasings1, 12))))
+                .addElement('F', ofBlock(sBlockCasings1, 13))
+                .addElement('G', ofBlock(sBlockCasings1, 14))
+                .addElement('H', ofBlock(sBlockCasings10, 6))
+                .addElement('I', ofBlock(sBlockCasings10, 7))
+                .addElement('J', ofBlock(sBlockCasings10, 11))
+                .addElement('K', ofBlock(sBlockCasings5, 13))
+                .addElement('L', ofBlock(sBlockCasingsNH, 12))
+                .addElement('M', ofBlock(sBlockCasingsTT, 4))
+                .addElement('N', ofFrame(Materials.Neutronium))
+                .addElement('O', ofBlock(StabilisationFieldGenerators, 2))
+                .addElement('P', ofBlock(TimeAccelerationFieldGenerator, 8))
                 .build();
         }
         return STRUCTURE_DEFINITION;
@@ -162,13 +191,22 @@ public class NineIndustrialMultiMachine extends WirelessEnergyMultiMachineBase<N
 
     @Override
     public void construct(ItemStack stackSize, boolean hintsOnly) {
-        buildPiece(mName, stackSize, hintsOnly, 1, 1, 0);
+        buildPiece(STRUCTURE_PIECE_MAIN, stackSize, hintsOnly, horizontalOffSet, verticalOffSet, depthOffSet);
     }
 
     @Override
     public int survivalConstruct(ItemStack stackSize, int elementBudget, ISurvivalBuildEnvironment env) {
         if (mMachine) return -1;
-        return survivialBuildPiece(mName, stackSize, 1, 1, 0, elementBudget, env, false, true);
+        return survivialBuildPiece(
+            STRUCTURE_PIECE_MAIN,
+            stackSize,
+            horizontalOffSet,
+            verticalOffSet,
+            depthOffSet,
+            elementBudget,
+            env,
+            false,
+            true);
     }
 
     public void updateHatchTexture() {
@@ -182,9 +220,9 @@ public class NineIndustrialMultiMachine extends WirelessEnergyMultiMachineBase<N
         mCasing = 0;
         wirelessMode = false;
 
-        if (!checkPiece(mName, 1, 1, 0)) return false;
+        if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet)) return false;
 
-        if (mCasing <= 6 && !checkHatch()) {
+        if (mCasing <= 256 && !checkHatch()) {
             updateHatchTexture();
             return false;
         }
@@ -194,7 +232,7 @@ public class NineIndustrialMultiMachine extends WirelessEnergyMultiMachineBase<N
     }
 
     protected int getCasingTextureID() {
-        return getTextureIndex();
+        return CASING_INDEX;
     }
 
     @Override
@@ -218,10 +256,6 @@ public class NineIndustrialMultiMachine extends WirelessEnergyMultiMachineBase<N
     @Override
     public int getMaxParallelRecipes() {
         return Integer.MAX_VALUE;
-    }
-
-    public int getTextureIndex() {
-        return TAE.getIndexFromPage(2, 2);
     }
 
     private ItemStack getCircuit(ItemStack[] t) {
