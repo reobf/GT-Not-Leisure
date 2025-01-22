@@ -5,7 +5,9 @@ import static gregtech.api.enums.Mods.*;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
 
+import com.dreammaster.gthandler.CustomItemList;
 import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.common.materials.MaterialPool;
 import com.science.gtnl.common.recipe.IRecipePool;
@@ -26,6 +28,7 @@ import gregtech.api.util.GTUtility;
 import gtPlusPlus.core.item.ModItems;
 import gtPlusPlus.core.material.MaterialMisc;
 import gtPlusPlus.core.material.MaterialsAlloy;
+import gtPlusPlus.core.material.MaterialsElements;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class AssemblerRecipes implements IRecipePool {
@@ -615,6 +618,35 @@ public class AssemblerRecipes implements IRecipePool {
             .noOptimize()
             .duration(50)
             .eut(16)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                ItemList.Casing_ZPM.get(1L),
+                MaterialsAlloy.ABYSSAL.getPlateDouble(16),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Neutronium, 4),
+                ItemList.Field_Generator_UV.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.screw, Materials.NaquadahAlloy, 64),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.BlackPlutonium, 32),
+                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Infinity, 2))
+            .fluidInputs(new FluidStack(MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getPlasma(), 16000))
+            .itemOutputs(GTNLItemList.Antifreeze_Heatproof_Machine_Casing.get(1))
+            .specialValue(0)
+            .noOptimize()
+            .duration(200)
+            .eut(1966080)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                MaterialPool.MolybdenumDisilicide.get(OrePrefixes.ring, 32),
+                CustomItemList.MicaInsulatorFoil.get(16L))
+            .fluidInputs(MaterialPool.HSLASteel.getMolten(144))
+            .itemOutputs(GTNLItemList.MolybdenumDisilicideCoil.get(1))
+            .specialValue(0)
+            .noOptimize()
+            .duration(500)
+            .eut(1920)
             .addTo(As);
     }
 }

@@ -45,6 +45,7 @@ import com.gtnewhorizons.modularui.api.screen.ModularWindow;
 import com.gtnewhorizons.modularui.api.screen.UIBuildContext;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
+import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTNL_ProcessingLogic;
 import com.science.gtnl.common.machine.multiMachineClasses.NineIndustrialMultiMachineManager;
 import com.science.gtnl.common.machine.multiMachineClasses.WirelessEnergyMultiMachineBase;
@@ -154,7 +155,7 @@ public class NineIndustrialMultiMachine extends WirelessEnergyMultiMachineBase<N
             .addInputHatch(TextLocalization.Tooltip_NineIndustrialMultiMachine_Casing)
             .addOutputHatch(TextLocalization.Tooltip_NineIndustrialMultiMachine_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_NineIndustrialMultiMachine_Casing)
-            .toolTipFinisher();
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
         return tt;
     }
 

@@ -3,6 +3,8 @@ package com.science.gtnl.common.materials;
 import static bartworks.util.BWUtil.subscriptNumbers;
 
 import bartworks.system.material.Werkstoff;
+import bartworks.util.Pair;
+import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TextureSet;
 
@@ -509,8 +511,11 @@ public class MaterialPool implements Runnable {
         new short[] { 111, 11, 160 },
         "Germaniumtungstennitride",
         subscriptNumbers("Ge3W3N10"),
-        new Werkstoff.Stats().setToxic(true),
-        Werkstoff.Types.ELEMENT,
+        new Werkstoff.Stats().setCentrifuge(true)
+            .setBlastFurnace(true)
+            .setMeltingPoint(8200)
+            .setMeltingVoltage(30720),
+        Werkstoff.Types.MIXTURE,
         new Werkstoff.GenerationFeatures().onlyDust()
             .addMolten()
             .addMetalItems()
@@ -805,6 +810,55 @@ public class MaterialPool implements Runnable {
         offsetID_01 + 70,
         TextureSet.SET_FLUID);
 
+    public static final Werkstoff MolybdenumDisilicide = new Werkstoff(
+        new short[] { 82, 74, 125 },
+        "MolybdenumDisilicide",
+        subscriptNumbers("MoSi2"),
+        new Werkstoff.Stats().setCentrifuge(true)
+            .setBlastFurnace(true)
+            .setMeltingPoint(2301)
+            .setMeltingVoltage(1920),
+        Werkstoff.Types.MIXTURE,
+        new Werkstoff.GenerationFeatures().onlyDust()
+            .addMolten()
+            .addMetalItems()
+            .addCraftingMetalWorkingItems()
+            .addSimpleMetalWorkingItems()
+            .addMultipleIngotMetalWorkingItems()
+            .addMetaSolidifierRecipes()
+            .addMetalCraftingSolidifierRecipes()
+            .addMixerRecipes((short) 2),
+        offsetID_01 + 71,
+        TextureSet.SET_SHINY,
+        new Pair<>(Materials.Molybdenum, 1),
+        new Pair<>(Materials.Silicon, 2));
+
+    public static final Werkstoff HSLASteel = new Werkstoff(
+        new short[] { 96, 98, 101 },
+        "HSLASteel",
+        subscriptNumbers("(Fe2Ni)2VTiMo"),
+        new Werkstoff.Stats().setCentrifuge(true)
+            .setBlastFurnace(true)
+            .setMeltingPoint(1711)
+            .setMeltingVoltage(480)
+            .setToxic(true),
+        Werkstoff.Types.MIXTURE,
+        new Werkstoff.GenerationFeatures().onlyDust()
+            .addMolten()
+            .addMetalItems()
+            .addCraftingMetalWorkingItems()
+            .addSimpleMetalWorkingItems()
+            .addMultipleIngotMetalWorkingItems()
+            .addMetaSolidifierRecipes()
+            .addMetalCraftingSolidifierRecipes()
+            .addMixerRecipes((short) 4),
+        offsetID_01 + 72,
+        TextureSet.SET_SHINY,
+        new Pair<>(Materials.Invar, 2),
+        new Pair<>(Materials.Vanadium, 1),
+        new Pair<>(Materials.Titanium, 1),
+        new Pair<>(Materials.Molybdenum, 1));
+
     public static final Werkstoff Periodicium = new Werkstoff(
         new short[] { 60, 74, 243 },
         "Periodicium",
@@ -843,8 +897,9 @@ public class MaterialPool implements Runnable {
         "Stargate",
         subscriptNumbers("\uD81A\uDD55"),
         new Werkstoff.Stats().setToxic(true),
-        Werkstoff.Types.ELEMENT,
+        Werkstoff.Types.MIXTURE,
         new Werkstoff.GenerationFeatures().onlyDust()
+            .addPrefix(OrePrefixes.ore)
             .addMolten()
             .addMetalItems()
             .addCraftingMetalWorkingItems()

@@ -2,6 +2,7 @@ package com.science.gtnl.loader;
 
 import com.science.gtnl.common.machine.OreProcessing.OP_NormalProcessing;
 import com.science.gtnl.common.machine.multiMachineClasses.GTNLProcessingArrayRecipeLoader;
+import com.science.gtnl.common.materials.MaterialPool;
 import com.science.gtnl.common.recipe.GTNL.DesulfurizerRecipes;
 import com.science.gtnl.common.recipe.GTNL.ManaInfusionRecipes;
 import com.science.gtnl.common.recipe.GTNL.NatureSpiritArrayRecipes;
@@ -33,6 +34,8 @@ import com.science.gtnl.common.recipe.GregTech.multiDehydratorRecipes;
 import com.science.gtnl.common.recipe.IRecipePool;
 import com.science.gtnl.common.recipe.Thaumcraft.IndustrialArcaneAssemblerRecipesPool;
 
+import goodgenerator.util.CrackRecipeAdder;
+
 public class RecipeLoader {
 
     public static void loadRecipes() {
@@ -54,5 +57,11 @@ public class RecipeLoader {
 
     public static void loadRecipesPostInit() {
         new IndustrialArcaneAssemblerRecipesPool().loadRecipes();
+    }
+
+    public static void RecipeLoad() {
+        CrackRecipeAdder.reAddBlastRecipe(MaterialPool.MolybdenumDisilicide, 800, 1920, 2300, true);
+        CrackRecipeAdder.reAddBlastRecipe(MaterialPool.HSLASteel, 1000, 480, 1711, true);
+        CrackRecipeAdder.reAddBlastRecipe(MaterialPool.Germaniumtungstennitride, 800, 30720, 8200, true);
     }
 }

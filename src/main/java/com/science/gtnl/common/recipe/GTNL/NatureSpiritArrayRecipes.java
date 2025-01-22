@@ -4,9 +4,9 @@ import static gregtech.api.enums.Mods.Botania;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraftforge.fluids.FluidRegistry;
 
 import com.science.gtnl.Utils.recipes.RecipeBuilder;
+import com.science.gtnl.common.materials.MaterialPool;
 import com.science.gtnl.common.recipe.IRecipePool;
 import com.science.gtnl.common.recipe.RecipeRegister;
 
@@ -33,7 +33,7 @@ public class NatureSpiritArrayRecipes implements IRecipePool {
 
         RecipeBuilder.builder()
             .itemInputs(GTUtility.copyAmount(0, asgardandelion))
-            .fluidOutputs(FluidRegistry.getFluidStack("fluidmana", 2000000))
+            .fluidOutputs(MaterialPool.FluidMana.getFluidOrGas(2000000))
             .noOptimize()
             .duration(20)
             .eut(491520)
@@ -41,7 +41,7 @@ public class NatureSpiritArrayRecipes implements IRecipePool {
 
         RecipeBuilder.builder()
             .itemInputs(GTModHandler.getModItem("Botania", "manaResource", 1, 0))
-            .fluidOutputs(FluidRegistry.getFluidStack("fluidmana", 3300))
+            .fluidOutputs(MaterialPool.FluidMana.getFluidOrGas(3300))
             .noOptimize()
             .duration(20)
             .eut(2048)
@@ -49,7 +49,7 @@ public class NatureSpiritArrayRecipes implements IRecipePool {
 
         RecipeBuilder.builder()
             .itemInputs(GTModHandler.getModItem("Botania", "manaResource", 1, 1))
-            .fluidOutputs(FluidRegistry.getFluidStack("fluidmana", 6500))
+            .fluidOutputs(MaterialPool.FluidMana.getFluidOrGas(6500))
             .noOptimize()
             .duration(20)
             .eut(2048)
@@ -57,7 +57,7 @@ public class NatureSpiritArrayRecipes implements IRecipePool {
 
         RecipeBuilder.builder()
             .itemInputs(GTModHandler.getModItem("Botania", "manaResource", 1, 2))
-            .fluidOutputs(FluidRegistry.getFluidStack("fluidmana", 44000))
+            .fluidOutputs(MaterialPool.FluidMana.getFluidOrGas(44000))
             .noOptimize()
             .duration(20)
             .eut(2048)
@@ -65,7 +65,7 @@ public class NatureSpiritArrayRecipes implements IRecipePool {
 
         RecipeBuilder.builder()
             .itemInputs(GTUtility.copyAmount(0, GTModHandler.getModItem(Botania.ID, "pool", 1, 1)))
-            .fluidOutputs(FluidRegistry.getFluidStack("fluidmana", 2147483647))
+            .fluidOutputs(MaterialPool.FluidMana.getFluidOrGas(2147483647))
             .noOptimize()
             .duration(20)
             .eut(7864320)
