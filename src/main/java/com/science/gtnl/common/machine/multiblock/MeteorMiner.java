@@ -5,6 +5,7 @@ import static com.gtnewhorizon.structurelib.structure.StructureUtility.onElement
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.transpose;
 import static com.science.gtnl.common.block.Casings.BasicBlocks.BlockLaserBeacon;
 import static gregtech.api.enums.HatchElement.*;
+import static gregtech.api.enums.Mods.*;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
 import static gregtech.api.util.GTStructureUtility.ofFrame;
@@ -80,7 +81,7 @@ public class MeteorMiner extends MTEEnhancedMultiBlockBase<MeteorMiner> implemen
     public static IStructureDefinition<MeteorMiner> STRUCTURE_DEFINITION = null;
     public TileEntityLaserBeacon renderer;
     public static final int MAX_RADIUS = 34;
-    public int currentRadius = MAX_RADIUS;
+    public int currentRadius = MAX_RADIUS - 2;
     public int xDrill, yDrill, zDrill;
     public int xStart, yStart, zStart;
     public int fortuneTier = 0;
@@ -427,11 +428,11 @@ public class MeteorMiner extends MTEEnhancedMultiBlockBase<MeteorMiner> implemen
     }
 
     private int getFortuneTierForItem(ItemStack stack) {
-        if (isSpecificItem(stack, "Botania", "terraPick")) {
+        if (isSpecificItem(stack, Botania.ID, "terraPick")) {
             return 3;
-        } else if (isSpecificItem(stack, "AWWayofTime", "boundPickaxe")) {
+        } else if (isSpecificItem(stack, BloodMagic.ID, "boundPickaxe")) {
             return 2;
-        } else if (isSpecificItem(stack, "Thaumcraft", "ItemPickaxeElemental")) {
+        } else if (isSpecificItem(stack, Thaumcraft.ID, "ItemPickaxeElemental")) {
             return 1;
         } else {
             return 0;

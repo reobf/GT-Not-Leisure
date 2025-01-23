@@ -10,6 +10,7 @@ import org.apache.logging.log4j.Logger;
 import com.science.gtnl.Utils.item.TextHandler;
 import com.science.gtnl.common.effect.effects.AweEffect;
 import com.science.gtnl.common.machine.multiMachineClasses.EdenGardenManager.EIGBucketLoader;
+import com.science.gtnl.common.recipe.GTNLRecipeRemover;
 import com.science.gtnl.config.MainConfig;
 import com.science.gtnl.loader.LazyStaticsInitLoader;
 import com.science.gtnl.loader.MachineLoader;
@@ -95,8 +96,9 @@ public class ScienceNotLeisure {
         ScriptLoader.run();
         OreDictLoader.loadOreDictionary();
         RecipeLoader.loadRecipes();
-
         RecipeLoader.loadRecipesPostInit();
+
+        GTNLRecipeRemover.run();
 
         new LazyStaticsInitLoader().initStaticsOnCompleteInit();
 
