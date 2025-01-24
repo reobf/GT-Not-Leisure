@@ -552,6 +552,8 @@ NameIndustrialArcaneAssembler=工业奥术装配室
 gtnl.recipe.IndustrialArcaneAssemblerRecipes=工业奥术装配室
 IndustrialArcaneAssemblerRecipeType=工业奥术装配室
 
+NameEnergeticPhotovoltaicPowerStation=充能光伏电站
+
 NameNineIndustrialMultiMachine=大明科技
 NineIndustrialMultiMachineRecipeType=水浒传
 Tooltip_NineIndustrialMultiMachine_00=只比正常的机器速度快∞%%

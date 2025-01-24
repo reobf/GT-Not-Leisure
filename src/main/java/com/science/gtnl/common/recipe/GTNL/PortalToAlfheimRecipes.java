@@ -2,6 +2,7 @@ package com.science.gtnl.common.recipe.GTNL;
 
 import static com.science.gtnl.Utils.item.TextHandler.texter;
 import static com.science.gtnl.loader.IScriptLoader.missing;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.util.GTModHandler.getModItem;
 
 import com.science.gtnl.Utils.recipes.RecipeBuilder;
@@ -27,7 +28,7 @@ public class PortalToAlfheimRecipes implements IRecipePool {
             .itemOutputs(
                 GTUtility.copyAmountUnsafe(
                     2147483647,
-                    getModItem("IC2", "blockNuke", 1)
+                    getModItem(IndustrialCraft2.ID, "blockNuke", 1)
                         .setStackDisplayName(texter("Elves don't like bread.", "PTARRecipes.1"))))
             .noOptimize()
             .duration(1200)
@@ -51,7 +52,7 @@ public class PortalToAlfheimRecipes implements IRecipePool {
             .addTo(PTAR);
 
         RecipeBuilder.builder()
-            .itemInputs(GTModHandler.getModItem("IC2", "blockAlloyGlass", 1, 0, missing))
+            .itemInputs(GTModHandler.getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 1, 0, missing))
             .itemOutputs(GTModHandler.getModItem("Botania", "elfGlass", 1, 0, missing))
             .noOptimize()
             .duration(20)
@@ -84,7 +85,7 @@ public class PortalToAlfheimRecipes implements IRecipePool {
 
         RecipeBuilder.builder()
             .itemInputs(
-                GTUtility.copyAmountUnsafe(256, getModItem("IC2", "blockITNT", 1)),
+                GTUtility.copyAmountUnsafe(256, getModItem(IndustrialCraft2.ID, "blockITNT", 1)),
                 GTUtility.copyAmount(0, GTModHandler.getModItem("minecraft", "beacon", 1)),
                 GTUtility.copyAmount(0, GTNLItemList.ActivatedGaiaPylon.get(1)),
                 GTModHandler.getModItem("Botania", "manaResource", 1, 14, missing))

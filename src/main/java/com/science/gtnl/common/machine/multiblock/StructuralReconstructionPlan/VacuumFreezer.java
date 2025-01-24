@@ -4,6 +4,7 @@ import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
 import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaBlockCasing;
 import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.enums.HatchElement.*;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Textures.BlockIcons.*;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
 import static gregtech.api.util.GTUtility.validMTEList;
@@ -139,7 +140,7 @@ public class VacuumFreezer extends MultiMachineBase<VacuumFreezer> implements IS
             STRUCTURE_DEFINITION = StructureDefinition.<VacuumFreezer>builder()
                 .addShape(STRUCTURE_PIECE_MAIN, transpose(shape))
                 .addElement('A', ofBlock(MetaBlockCasing, 2))
-                .addElement('B', ofBlockAnyMeta(GameRegistry.findBlock("IC2", "blockAlloyGlass")))
+                .addElement('B', ofBlockAnyMeta(GameRegistry.findBlock(IndustrialCraft2.ID, "blockAlloyGlass")))
                 .addElement(
                     'C',
                     buildHatchAdder(VacuumFreezer.class).casingIndex(CASING_INDEX)

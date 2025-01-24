@@ -1,0 +1,42 @@
+    "BBBBBBBBB"
+    "         "
+    "         "
+    "         "
+    "         "
+},{
+    "BDDDDDDDB"
+    "    B    "
+    "         "
+    "         "
+    "         "
+},{
+    "BDDDDDDDB"
+    "    B    "
+    "         "
+    "         "
+    "    C    "
+},{
+    "BAAAAAAAB"
+    "    A    "
+    "    A    "
+    "    A    "
+    "  AAAAA  "
+},{
+    "BDDDDDDDB"
+    "    B    "
+    "         "
+    "         "
+    "    A    "
+},{
+    "BDDDDDDDB"
+    "    B    "
+    "         "
+    "         "
+    "         "
+},{
+    "BBBBBBBBB"
+    "         "
+    "         "
+    "         "
+    "         "
+}}

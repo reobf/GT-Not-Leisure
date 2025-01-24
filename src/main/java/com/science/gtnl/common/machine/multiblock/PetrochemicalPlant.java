@@ -3,6 +3,7 @@ package com.science.gtnl.common.machine.multiblock;
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
 import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.enums.HatchElement.*;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.util.GTStructureUtility.*;
 import static gregtech.api.util.GTUtility.validMTEList;
 import static gtPlusPlus.core.block.ModBlocks.*;
@@ -177,7 +178,7 @@ public class PetrochemicalPlant extends MultiMachineBase<PetrochemicalPlant> imp
                 .addElement('X', ofBlock(blockCasings2Misc, 4))
                 .addElement('Y', ofBlock(blockCasingsMisc, 11))
                 .addElement('Z', ofBlock(blockCustomMachineCasings, 1))
-                .addElement('0', ofBlockAnyMeta(GameRegistry.findBlock("IC2", "blockAlloyGlass")))
+                .addElement('0', ofBlockAnyMeta(GameRegistry.findBlock(IndustrialCraft2.ID, "blockAlloyGlass")))
                 .build();
         }
         return STRUCTURE_DEFINITION;

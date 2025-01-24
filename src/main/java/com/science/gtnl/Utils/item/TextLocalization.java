@@ -285,6 +285,10 @@ public class TextLocalization {
         "Industrial Arcane Assembler",
         "IndustrialArcaneAssemblerRecipeType");
 
+    public static final String NameEnergeticPhotovoltaicPowerStation = texter(
+        "Energetic Photovoltaic Power Station",
+        "NameEnergeticPhotovoltaicPowerStation");
+
     public static final String NameLargeCircuitAssembler = texter(
         "Large Circuit Assembler",
         "NameLargeCircuitAssembler");

@@ -3,6 +3,7 @@ package com.science.gtnl.common.machine.multiblock;
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
 import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.enums.HatchElement.*;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
 import static gregtech.api.util.GTStructureUtility.ofFrame;
 
@@ -148,7 +149,7 @@ public class NeutroniumWireCutting extends WirelessEnergyMultiMachineBase<Neutro
                 .addShape(STRUCTURE_PIECE_MAIN, transpose(shape))
                 .addElement('A', BorosilicateGlass.ofBoroGlass((byte) 0, (t, v) -> t.mGlassTier = v, t -> t.mGlassTier))
                 .addElement('B', ofBlock(BasicBlocks.MetaBlockCasing, 2))
-                .addElement('C', ofBlockAnyMeta(GameRegistry.findBlock("IC2", "blockAlloyGlass")))
+                .addElement('C', ofBlockAnyMeta(GameRegistry.findBlock(IndustrialCraft2.ID, "blockAlloyGlass")))
                 .addElement('D', ofBlock(sBlockCasings10, 6))
                 .addElement('E', ofBlock(sBlockCasings10, 7))
                 .addElement('F', ofBlock(sBlockCasings10, 11))
