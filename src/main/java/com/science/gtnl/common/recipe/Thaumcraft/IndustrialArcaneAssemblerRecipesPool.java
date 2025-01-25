@@ -77,7 +77,6 @@ public class IndustrialArcaneAssemblerRecipesPool implements IRecipePool {
                 } else if (input instanceof List) {
                     List<ItemStack> oreDictItems = (List<ItemStack>) input;
                     if (!oreDictItems.isEmpty() && !isOreDictBlacklisted(oreDictItems.get(0))) {
-                        // Only add the first item from the ore dictionary list if it's not blacklisted
                         inputItems.add(oreDictItems.get(0));
                     }
                 }

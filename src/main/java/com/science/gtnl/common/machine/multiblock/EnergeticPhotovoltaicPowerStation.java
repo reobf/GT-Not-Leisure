@@ -38,6 +38,7 @@ import gregtech.api.recipe.check.CheckRecipeResultRegistry;
 import gregtech.api.render.TextureFactory;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
+import gregtech.api.util.shutdown.ShutDownReasonRegistry;
 import gregtech.common.blocks.BlockCasings2;
 
 public class EnergeticPhotovoltaicPowerStation extends MTEEnhancedMultiBlockBase<EnergeticPhotovoltaicPowerStation>
@@ -135,13 +136,22 @@ public class EnergeticPhotovoltaicPowerStation extends MTEEnhancedMultiBlockBase
     }
 
     @Override
+    public int getMaxEfficiency(ItemStack aStack) {
+        return 10000;
+    }
+
+    @Override
+    public boolean explodesOnComponentBreak(ItemStack aStack) {
+        return false;
+    }
+
+    @Override
     @NotNull
     public CheckRecipeResult checkProcessing() {
         ArrayList<FluidStack> tFluids = getStoredFluids();
 
         if (!tFluids.isEmpty()) {
             for (FluidStack tFluid : tFluids) {
-
                 if (tFluid.getFluid()
                     .getName()
                     .equals("ic2distilledwater")) {
@@ -180,31 +190,18 @@ public class EnergeticPhotovoltaicPowerStation extends MTEEnhancedMultiBlockBase
                         .getWorld()
                         .isRaining();
 
-                    int output = 896;
+                    int output = 112;
                     if (notAirBlocks) {
-                        output = 498;
+                        output /= 2;
                     }
                     if (isRaining) {
-                        output = 0;
+                        output /= 2;
                     }
-
-                    int waterConsumption = output / 4;
-                    fuelConsumption = waterConsumption;
-
-                    FluidStack consumedWater = tFluid.copy();
-                    consumedWater.amount = waterConsumption;
-
-                    if (!depleteInput(consumedWater)) {
-                        return CheckRecipeResultRegistry.NO_FUEL_FOUND;
-                    }
-
-                    tFluid.amount -= waterConsumption;
-                    if (tFluid.amount < 0) tFluid.amount = 0;
 
                     this.mEUt = output;
                     this.mEfficiency = 10000;
                     this.mProgresstime = 0;
-                    this.mMaxProgresstime = 128;
+                    this.mMaxProgresstime = 1024;
                     return CheckRecipeResultRegistry.GENERATING;
                 }
             }
@@ -212,6 +209,39 @@ public class EnergeticPhotovoltaicPowerStation extends MTEEnhancedMultiBlockBase
         this.mEUt = 0;
         this.mEfficiency = 0;
         return CheckRecipeResultRegistry.NO_FUEL_FOUND;
+    }
+
+    @Override
+    public void onPostTick(IGregTechTileEntity aBaseMetaTileEntity, long aTick) {
+        super.onPostTick(aBaseMetaTileEntity, aTick);
+
+        if (this.mProgresstime % 20 == 0 && mProgresstime != 0) {
+            ArrayList<FluidStack> tFluids = getStoredFluids();
+
+            if (!tFluids.isEmpty()) {
+                for (FluidStack tFluid : tFluids) {
+                    if (tFluid.getFluid()
+                        .getName()
+                        .equals("ic2distilledwater")) {
+                        int waterPerSecond = this.mEUt / 4;
+
+                        if (tFluid.amount < waterPerSecond) {
+                            this.stopMachine(ShutDownReasonRegistry.NO_REPAIR);
+                            return;
+                        }
+
+                        FluidStack consumedWater = tFluid.copy();
+                        consumedWater.amount = waterPerSecond;
+
+                        tFluid.amount -= waterPerSecond;
+                        return;
+                    }
+                }
+            }
+            if (tFluids.isEmpty()) {
+                this.stopMachine(ShutDownReasonRegistry.NO_REPAIR);
+            }
+        }
     }
 
     @Override
@@ -239,16 +269,6 @@ public class EnergeticPhotovoltaicPowerStation extends MTEEnhancedMultiBlockBase
     @Override
     public int getDamageToComponent(ItemStack aStack) {
         return 1;
-    }
-
-    @Override
-    public int getMaxEfficiency(ItemStack aStack) {
-        return 10000;
-    }
-
-    @Override
-    public boolean explodesOnComponentBreak(ItemStack aStack) {
-        return false;
     }
 
     @Override

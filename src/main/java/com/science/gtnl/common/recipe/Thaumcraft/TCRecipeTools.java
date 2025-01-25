@@ -24,8 +24,8 @@ public class TCRecipeTools {
             if (recipe.getRecipeOutput() instanceof ItemStack && recipe.getRecipeOutput()
                 .getItem() != null) {
                 ShapedArcaneCraftingRecipe y = new ShapedArcaneCraftingRecipe(
-                    recipe.getInput(), // getInputItems
-                    recipe.getRecipeOutput()); // getOutputItem
+                    recipe.getInput(),
+                    recipe.getRecipeOutput());
                 SAR.add(y);
             }
         }

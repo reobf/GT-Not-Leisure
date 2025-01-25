@@ -49,7 +49,6 @@ public class BloodSoulSacrificialArray extends MultiMachineBase<BloodSoulSacrifi
     public byte mode = 1;
     public String[][] shape;
 
-    // region Class Constructor
     public BloodSoulSacrificialArray(int aID, String aName, String aNameRegional) {
         super(aID, aName, aNameRegional);
         this.shape = StructureUtils.readStructureFromFile(BSSA_STRUCTURE_FILE_PATH);
@@ -233,10 +232,5 @@ public class BloodSoulSacrificialArray extends MultiMachineBase<BloodSoulSacrifi
                     .build() };
         }
         return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()) };
-    }
-
-    @Override
-    public boolean supportsBatchMode() {
-        return true;
     }
 }
