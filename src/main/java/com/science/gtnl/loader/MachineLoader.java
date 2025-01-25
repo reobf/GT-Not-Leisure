@@ -5,6 +5,7 @@ import net.minecraft.item.ItemStack;
 import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.common.hatch.MTEHatchCustomFluid;
+import com.science.gtnl.common.machine.multiblock.AdvancedPhotovoltaicPowerStation;
 import com.science.gtnl.common.machine.multiblock.BloodSoulSacrificialArray;
 import com.science.gtnl.common.machine.multiblock.BrickedBlastFurnace;
 import com.science.gtnl.common.machine.multiblock.CheatOreProcessingFactory;
@@ -38,6 +39,7 @@ import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.C
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.MegaBlastFurnace;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.VacuumFreezer;
 import com.science.gtnl.common.machine.multiblock.TeleportationArrayToAlfheim;
+import com.science.gtnl.common.machine.multiblock.VibrantPhotovoltaicPowerStation;
 import com.science.gtnl.common.machine.multiblock.WhiteNightGenerator;
 
 import gtPlusPlus.api.objects.Logger;
@@ -81,6 +83,8 @@ public class MachineLoader {
     public static ItemStack VacuumFreezer;
     public static ItemStack IndustrialArcaneAssembler;
     public static ItemStack EnergeticPhotovoltaicPowerStation;
+    public static ItemStack AdvancedPhotovoltaicPowerStation;
+    public static ItemStack VibrantPhotovoltaicPowerStation;
 
     public static void loadMachines() {
 
@@ -265,6 +269,18 @@ public class MachineLoader {
             "NameEnergeticPhotovoltaicPowerStation",
             TextLocalization.NameEnergeticPhotovoltaicPowerStation).getStackForm(1);
         GTNLItemList.EnergeticPhotovoltaicPowerStation.set(EnergeticPhotovoltaicPowerStation);
+
+        AdvancedPhotovoltaicPowerStation = new AdvancedPhotovoltaicPowerStation(
+            21036,
+            "NameAdvancedPhotovoltaicPowerStation",
+            TextLocalization.NameAdvancedPhotovoltaicPowerStation).getStackForm(1);
+        GTNLItemList.AdvancedPhotovoltaicPowerStation.set(AdvancedPhotovoltaicPowerStation);
+
+        VibrantPhotovoltaicPowerStation = new VibrantPhotovoltaicPowerStation(
+            21037,
+            "NameVibrantPhotovoltaicPowerStation",
+            TextLocalization.NameVibrantPhotovoltaicPowerStation).getStackForm(1);
+        GTNLItemList.VibrantPhotovoltaicPowerStation.set(VibrantPhotovoltaicPowerStation);
 
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
             21919,

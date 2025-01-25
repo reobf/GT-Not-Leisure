@@ -400,6 +400,15 @@ public class BlockRegister {
         GTNLItemList.MolybdenumDisilicideCoil.set(
             MetaBlockConstructors
                 .initMetaBlockCasing("Molybdenum Disilicide Coil", (byte) 8, BasicBlocks.MetaBlockCasing));
+        GTNLItemList.EnergeticPhotovoltaicBlock.set(
+            MetaBlockConstructors
+                .initMetaBlockCasing("Energetic Photovoltaic Block", (byte) 9, BasicBlocks.MetaBlockCasing));
+        GTNLItemList.AdvancedPhotovoltaicBlock.set(
+            MetaBlockConstructors
+                .initMetaBlockCasing("Advanced Photovoltaic Block", (byte) 10, BasicBlocks.MetaBlockCasing));
+        GTNLItemList.VibrantPhotovoltaicBlock.set(
+            MetaBlockConstructors
+                .initMetaBlockCasing("Vibrant Photovoltaic Block", (byte) 11, BasicBlocks.MetaBlockCasing));
     }
 
     public static void registry() {

@@ -1,9 +1,8 @@
 package com.science.gtnl.common.machine.multiblock;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
-import static com.gtnewhorizon.structurelib.structure.StructureUtility.ofBlock;
 import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaBlockCasing;
-import static gregtech.api.GregTechAPI.*;
+import static gregtech.api.GregTechAPI.sBlockCasings4;
 import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
 import static gregtech.api.util.GTStructureUtility.ofFrame;
@@ -39,30 +38,30 @@ import gregtech.api.render.TextureFactory;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.shutdown.ShutDownReasonRegistry;
-import gregtech.common.blocks.BlockCasings2;
+import gregtech.common.blocks.BlockCasings4;
 import gtPlusPlus.xmod.gregtech.common.blocks.textures.TexturesGtBlock;
 
-public class EnergeticPhotovoltaicPowerStation extends MTEEnhancedMultiBlockBase<EnergeticPhotovoltaicPowerStation>
+public class AdvancedPhotovoltaicPowerStation extends MTEEnhancedMultiBlockBase<AdvancedPhotovoltaicPowerStation>
     implements ISurvivalConstructable {
 
     private int mCasing;
     protected int fuelConsumption;
 
-    private static IStructureDefinition<EnergeticPhotovoltaicPowerStation> STRUCTURE_DEFINITION = null;
+    private static IStructureDefinition<AdvancedPhotovoltaicPowerStation> STRUCTURE_DEFINITION = null;
     public static final String STRUCTURE_PIECE_MAIN = "main";
     public static String[][] shape;
     public static final String PPS_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/photovoltaic_power_station";
     public final int horizontalOffSet = 4;
     public final int verticalOffSet = 4;
     public final int depthOffSet = 2;
-    protected static final int CASING_INDEX = ((BlockCasings2) sBlockCasings2).getTextureIndex(0);
+    protected static final int CASING_INDEX = ((BlockCasings4) sBlockCasings4).getTextureIndex(2);
 
-    public EnergeticPhotovoltaicPowerStation(int aID, String aName, String aNameRegional) {
+    public AdvancedPhotovoltaicPowerStation(int aID, String aName, String aNameRegional) {
         super(aID, aName, aNameRegional);
         shape = StructureUtils.readStructureFromFile(PPS_STRUCTURE_FILE_PATH);
     }
 
-    public EnergeticPhotovoltaicPowerStation(String aName) {
+    public AdvancedPhotovoltaicPowerStation(String aName) {
         super(aName);
         shape = StructureUtils.readStructureFromFile(PPS_STRUCTURE_FILE_PATH);
     }
@@ -77,26 +76,26 @@ public class EnergeticPhotovoltaicPowerStation extends MTEEnhancedMultiBlockBase
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
             .beginStructureBlock(9, 5, 7, true)
-            .addInputHatch(TextLocalization.Tooltip_EnergeticPhotovoltaicPowerStation_Casing)
-            .addDynamoHatch(TextLocalization.Tooltip_EnergeticPhotovoltaicPowerStation_Casing)
-            .addMaintenanceHatch(TextLocalization.Tooltip_EnergeticPhotovoltaicPowerStation_Casing)
+            .addInputHatch(TextLocalization.Tooltip_AdvancedPhotovoltaicPowerStation_Casing)
+            .addDynamoHatch(TextLocalization.Tooltip_AdvancedPhotovoltaicPowerStation_Casing)
+            .addMaintenanceHatch(TextLocalization.Tooltip_AdvancedPhotovoltaicPowerStation_Casing)
             .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
         return tt;
     }
 
     @Override
-    public IStructureDefinition<EnergeticPhotovoltaicPowerStation> getStructureDefinition() {
+    public IStructureDefinition<AdvancedPhotovoltaicPowerStation> getStructureDefinition() {
         if (STRUCTURE_DEFINITION == null) {
-            STRUCTURE_DEFINITION = StructureDefinition.<EnergeticPhotovoltaicPowerStation>builder()
+            STRUCTURE_DEFINITION = StructureDefinition.<AdvancedPhotovoltaicPowerStation>builder()
                 .addShape(STRUCTURE_PIECE_MAIN, transpose(shape))
                 .addElement(
                     'A',
-                    buildHatchAdder(EnergeticPhotovoltaicPowerStation.class).casingIndex(CASING_INDEX)
+                    buildHatchAdder(AdvancedPhotovoltaicPowerStation.class).casingIndex(CASING_INDEX)
                         .dot(1)
                         .atLeast(InputHatch, Dynamo, Maintenance)
-                        .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(sBlockCasings2, 0))))
+                        .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(sBlockCasings4, 2))))
                 .addElement('B', ofFrame(Materials.StainlessSteel))
-                .addElement('D', ofBlock(MetaBlockCasing, 9))
+                .addElement('D', ofBlock(MetaBlockCasing, 10))
                 .build();
         }
         return STRUCTURE_DEFINITION;
@@ -184,7 +183,7 @@ public class EnergeticPhotovoltaicPowerStation extends MTEEnhancedMultiBlockBase
                         .getWorld()
                         .isRaining();
 
-                    int output = 112;
+                    int output = 448;
                     if (notAirBlocks) {
                         output /= 2;
                     }
@@ -247,7 +246,7 @@ public class EnergeticPhotovoltaicPowerStation extends MTEEnhancedMultiBlockBase
 
     @Override
     public IMetaTileEntity newMetaEntity(IGregTechTileEntity aTileEntity) {
-        return new EnergeticPhotovoltaicPowerStation(this.mName);
+        return new AdvancedPhotovoltaicPowerStation(this.mName);
     }
 
     @Override

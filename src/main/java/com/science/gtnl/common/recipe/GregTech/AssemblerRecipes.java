@@ -648,5 +648,47 @@ public class AssemblerRecipes implements IRecipePool {
             .duration(500)
             .eut(1920)
             .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTModHandler.getModItem(EnderIO.ID, "blockSolarPanel", 1, 0),
+                GTModHandler.getModItem(EnderIO.ID, "itemPowerConduit", 4, 0),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 4L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt02, Materials.RedAlloy, 4L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2L))
+            .itemOutputs(GTNLItemList.EnergeticPhotovoltaicBlock.get(2))
+            .specialValue(0)
+            .noOptimize()
+            .duration(200)
+            .eut(30)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTModHandler.getModItem(EnderIO.ID, "blockSolarPanel", 1, 1),
+                GTModHandler.getModItem(EnderIO.ID, "itemPowerConduit", 8, 0),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 8L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.ElectricalSteel, 4L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 2L))
+            .itemOutputs(GTNLItemList.AdvancedPhotovoltaicBlock.get(2))
+            .specialValue(0)
+            .noOptimize()
+            .duration(200)
+            .eut(120)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTModHandler.getModItem(EnderIO.ID, "blockSolarPanel", 1, 2),
+                GTModHandler.getModItem(EnderIO.ID, "itemPowerConduit", 16, 0),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.VibrantAlloy, 4L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 2L))
+            .itemOutputs(GTNLItemList.VibrantPhotovoltaicBlock.get(2))
+            .specialValue(0)
+            .noOptimize()
+            .duration(200)
+            .eut(480)
+            .addTo(As);
     }
 }

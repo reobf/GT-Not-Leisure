@@ -23,6 +23,9 @@ MetaBlockCasing.5.name=中子齿轮箱机械方块
 MetaBlockCasing.6.name=激光冷却机械方块
 MetaBlockCasing.7.name=防冻隔热机械方块
 MetaBlockCasing.8.name=二硅化钼线圈
+MetaBlockCasing.9.name=充能光伏方块
+MetaBlockCasing.10.name=高级光伏方块
+MetaBlockCasing.11.name=脉冲光伏方块
 
 MetaBlock.0.name=测试方块
 MetaBlock.1.name=新视野线圈
@@ -460,7 +463,7 @@ Tooltip_MeteorMiner_12=时运III: 泰拉粉碎者
 Tooltip_MeteorMiner_13=§c§l等级II
 Tooltip_MeteorMiner_14=始终为时运III
 Tooltip_MeteorMiner_15=每个周期开采一排方块
-Tooltip_MeteorMiner_16=§9§l终于有一些好的坠星了！
+Tooltip_MeteorMiner_16=§9§l终于有一些好的坠星自动化了！
 Tooltip_MeteorMiner_Casing_01_01=坠星仪式上方第二层的中心
 Tooltip_MeteorMiner_Casing_01_02=任意围绕控制器的太阳能塔机械方块
 Tooltip_MeteorMiner_Casing_01_03=控制器下方
@@ -553,6 +556,14 @@ gtnl.recipe.IndustrialArcaneAssemblerRecipes=工业奥术装配室
 IndustrialArcaneAssemblerRecipeType=工业奥术装配室
 
 NameEnergeticPhotovoltaicPowerStation=充能光伏电站
+NameAdvancedPhotovoltaicPowerStation=高级光伏电站
+NameVibrantPhotovoltaicPowerStation=脉冲光伏电站
+PhotovoltaicPowerStationRecipeType=光伏电站
+Tooltip_PhotovoltaicPowerStation_00=根据头顶是否遮挡和天气输出EU
+Tooltip_PhotovoltaicPowerStation_01=需提供每秒功率/4L的蒸馏水保持运行
+Tooltip_EnergeticPhotovoltaicPowerStation_Casing=任意脱氧钢机械方块
+Tooltip_AdvancedPhotovoltaicPowerStation_Casing=任意加强钛机械方块
+Tooltip_VibrantPhotovoltaicPowerStation_Casing=任意强化钨钢机械方块
 
 NameNineIndustrialMultiMachine=大明科技
 NineIndustrialMultiMachineRecipeType=水浒传

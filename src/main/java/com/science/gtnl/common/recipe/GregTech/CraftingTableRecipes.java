@@ -1,6 +1,7 @@
 package com.science.gtnl.common.recipe.GregTech;
 
 import static com.science.gtnl.loader.IScriptLoader.missing;
+import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.util.GTModHandler.addCraftingRecipe;
 import static gregtech.api.util.GTModHandler.getModItem;
@@ -12,7 +13,9 @@ import com.science.gtnl.common.recipe.IRecipePool;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
+import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class CraftingTableRecipes implements IRecipePool {
@@ -107,10 +110,10 @@ public class CraftingTableRecipes implements IRecipePool {
 
         addCraftingRecipe(
             GTNLItemList.Desulfurizer.get(1),
-            new Object[] { "ABA", "CDC", "EFE", 'A', GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1L),
-                'B', CustomItemList.AdsorptionFilter.get(1), 'C', ItemList.Electric_Pump_HV.get(1), 'D',
-                ItemList.Hull_HV.get(1), 'E', GTOreDictUnificator.get(OrePrefixes.wireGt08, Materials.Electrum, 1L),
-                'F', ItemList.Electric_Motor_HV.get(1) });
+            new Object[] { "ABA", "CDC", "EFE", 'A', "circuitAdvanced", 'B', CustomItemList.AdsorptionFilter.get(1),
+                'C', ItemList.Electric_Pump_HV.get(1), 'D', ItemList.Hull_HV.get(1), 'E',
+                GTOreDictUnificator.get(OrePrefixes.wireGt08, Materials.Electrum, 1L), 'F',
+                ItemList.Electric_Motor_HV.get(1) });
 
         addCraftingRecipe(
             GTNLItemList.LargeCircuitAssembler.get(1),
@@ -135,5 +138,24 @@ public class CraftingTableRecipes implements IRecipePool {
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 1L), 'B', "craftingToolHardHammer",
                 'C', GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Neutronium, 1L), 'D',
                 GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Neutronium, 1L), 'E', "craftingToolWrench" });
+
+        addCraftingRecipe(
+            GTNLItemList.EnergeticPhotovoltaicPowerStation.get(1),
+            new Object[] { "ABA", "BCB", "ADA", 'A', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
+                'B', MaterialsAlloy.TUMBAGA.getBlock(1), 'C', GTNLItemList.EnergeticPhotovoltaicBlock.get(1), 'D',
+                "circuitGood" });
+
+        addCraftingRecipe(
+            GTNLItemList.AdvancedPhotovoltaicPowerStation.get(1),
+            new Object[] { "ABA", "BCB", "ADA", 'A', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 1L),
+                'B', GTModHandler.getModItem(EnderIO.ID, "blockIngotStorage", 1, 3), 'C',
+                GTNLItemList.AdvancedPhotovoltaicBlock.get(1), 'D', "circuitAdvanced" });
+
+        addCraftingRecipe(
+            GTNLItemList.VibrantPhotovoltaicPowerStation.get(1),
+            new Object[] { "ABA", "BCB", "ADA", 'A',
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 1L), 'B',
+                GTModHandler.getModItem(EnderIO.ID, "blockIngotStorage", 1, 6), 'C',
+                GTNLItemList.VibrantPhotovoltaicBlock.get(1), 'D', "circuitData" });
     }
 }

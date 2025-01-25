@@ -24,6 +24,9 @@ public enum GTNLItemList {
     NeutroniumPipeCasing,
     NeutroniumGearbox,
     MolybdenumDisilicideCoil,
+    EnergeticPhotovoltaicBlock,
+    AdvancedPhotovoltaicBlock,
+    VibrantPhotovoltaicBlock,
 
     TrollFace,
     DepletedExcitedNaquadahFuelRod,
@@ -189,6 +192,8 @@ public enum GTNLItemList {
     VacuumFreezer,
 
     EnergeticPhotovoltaicPowerStation,
+    AdvancedPhotovoltaicPowerStation,
+    VibrantPhotovoltaicPowerStation,
     IndustrialArcaneAssembler,
     NineIndustrialMultiMachine,
     RareEarthCentrifugal,

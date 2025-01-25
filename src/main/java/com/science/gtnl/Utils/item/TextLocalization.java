@@ -288,6 +288,30 @@ public class TextLocalization {
     public static final String NameEnergeticPhotovoltaicPowerStation = texter(
         "Energetic Photovoltaic Power Station",
         "NameEnergeticPhotovoltaicPowerStation");
+    public static final String NameAdvancedPhotovoltaicPowerStation = texter(
+        "Advanced Photovoltaic Power Station",
+        "NameAdvancedPhotovoltaicPowerStation");
+    public static final String NameVibrantPhotovoltaicPowerStation = texter(
+        "Vibrant Photovoltaic Power Station",
+        "NameAdvancedPhotovoltaicPowerStation");
+    public static final String PhotovoltaicPowerStationRecipeType = texter(
+        "Photovoltaic Power Station",
+        "PhotovoltaicPowerStationRecipeType");
+    public static final String Tooltip_PhotovoltaicPowerStation_00 = texter(
+        "Output EU depending on overhead obstructions and weather conditions",
+        "Tooltip_PhotovoltaicPowerStation_00");
+    public static final String Tooltip_PhotovoltaicPowerStation_01 = texter(
+        "Requires 4L of distilled water per second per power unit to maintain operation",
+        "Tooltip_PhotovoltaicPowerStation_01");
+    public static final String Tooltip_EnergeticPhotovoltaicPowerStation_Casing = texter(
+        "Any Solid Steel Machine Casing",
+        "Tooltip_EnergeticPhotovoltaicPowerStation_Casing");
+    public static final String Tooltip_AdvancedPhotovoltaicPowerStation_Casing = texter(
+        "Any Stable Titanium Machine Casing",
+        "Tooltip_EnergeticPhotovoltaicPowerStation_Casing");
+    public static final String Tooltip_VibrantPhotovoltaicPowerStation_Casing = texter(
+        "Any Robust Tungstensteel Machine Casing",
+        "Tooltip_VibrantPhotovoltaicPowerStation_Casing");
 
     public static final String NameLargeCircuitAssembler = texter(
         "Large Circuit Assembler",
