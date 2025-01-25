@@ -6,7 +6,12 @@ import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.util.GTModHandler.*;
 
 import java.lang.reflect.Field;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
 import java.util.function.Function;
 
 import net.minecraft.init.Items;
