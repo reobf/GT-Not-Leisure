@@ -177,6 +177,19 @@ MetaItem.46.name=超时空贴片电阻
 MetaItem.47.name=超时空贴片二极管
 
 item.testitem.name=测试物品
+Tooltip_Testitem_00=如果你看到了这个Tooltip
+Tooltip_Testitem_01=欢迎来到§o§dGT不再业余!
+Tooltip_Testitem_02=这是一个基于§o§b GT:Leisure (格雷科技: 休闲版)
+Tooltip_Testitem_03=以及§o§e GT:Odyssey (格雷科技: 奥德赛)(尚未推出!) §r§7两个整合包
+Tooltip_Testitem_04=为GTNH添加§o§d额外游戏内容§r§7的模组
+Tooltip_Testitem_05=包含的许多不同阶段的机器和内容
+Tooltip_Testitem_06=部分配方也会得到修改
+Tooltip_Testitem_07=§r这是一个专注于添加游戏内容的模组
+Tooltip_Testitem_08=§r请不要把此模组任何数值相较于别的模组进行比较
+Tooltip_Testitem_09=§r包含任何重复性质的机器等
+Tooltip_Testitem_10=这是§d更加侧重于为原版GTNH添加内容的模组!
+Tooltip_Testitem_11=§f§l如果你遇到了什么问题或者想提出意见，请在Github提交issue
+Tooltip_Testitem_12=§c§l另外提醒: 不要拿着这个物品右键!
 item.record.sus.desc=Software Update Services
 item.record.newhorizons.desc=Sweet Dreams (Bonus Track)
 

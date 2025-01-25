@@ -1,8 +1,8 @@
 package com.science.gtnl.common.recipe.GregTech;
 
+import static com.science.gtnl.Mods.ScienceNotLeisure;
 import static com.science.gtnl.loader.IScriptLoader.missing;
-import static gregtech.api.enums.Mods.EnderIO;
-import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.*;
 import static gregtech.api.util.GTModHandler.addCraftingRecipe;
 import static gregtech.api.util.GTModHandler.getModItem;
 
@@ -157,5 +157,11 @@ public class CraftingTableRecipes implements IRecipePool {
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 1L), 'B',
                 GTModHandler.getModItem(EnderIO.ID, "blockIngotStorage", 1, 6), 'C',
                 GTNLItemList.VibrantPhotovoltaicBlock.get(1), 'D', "circuitData" });
+
+        addCraftingRecipe(
+            GTModHandler.getModItem(ScienceNotLeisure.ID, "testitem", 1, 0),
+            new Object[] { "ABA", "BCB", "ABA", 'A', GTModHandler.getModItem(Minecraft.ID, "golden_apple", 1, 1), 'B',
+                GTModHandler.getModItem(Botania.ID, "manaResource", 1, 9), 'C',
+                GTModHandler.getModItem(Minecraft.ID, "dragon_egg", 1) });
     }
 }

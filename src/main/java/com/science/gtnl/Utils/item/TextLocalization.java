@@ -8,6 +8,42 @@ import gregtech.api.util.GTLanguageManager;
 
 public class TextLocalization {
 
+    public static final String Tooltip_Testitem_00 = texter("If you see this tooltip", "Tooltip_Testitem_00");
+    public static final String Tooltip_Testitem_01 = texter("Welcome to GT Not Leisure!", "Tooltip_Testitem_01");
+    public static final String Tooltip_Testitem_02 = texter(
+        "This is a mod based on GT:Leisure (GregTech: Leisure)",
+        "Tooltip_Testitem_02");
+    public static final String Tooltip_Testitem_03 = texter(
+        "and GT:Odyssey (GregTech: Odyssey)",
+        "Tooltip_Testitem_03");
+    public static final String Tooltip_Testitem_04 = texter(
+        "blended together to add extra content to GTNH",
+        "Tooltip_Testitem_04");
+    public static final String Tooltip_Testitem_05 = texter(
+        "including many different stages of machines and content",
+        "Tooltip_Testitem_05");
+    public static final String Tooltip_Testitem_06 = texter(
+        "some recipes will also be modified",
+        "Tooltip_Testitem_06");
+    public static final String Tooltip_Testitem_07 = texter(
+        "as a mod focused on adding game content",
+        "Tooltip_Testitem_07");
+    public static final String Tooltip_Testitem_08 = texter(
+        "please do not compare any values of this mod with others",
+        "Tooltip_Testitem_08");
+    public static final String Tooltip_Testitem_09 = texter(
+        "that include similar machines, etc.",
+        "Tooltip_Testitem_09");
+    public static final String Tooltip_Testitem_10 = texter(
+        "This is a mod more focused on adding content to the original GTNH!",
+        "Tooltip_Testitem_10");
+    public static final String Tooltip_Testitem_11 = texter(
+        "If you encounter any issues or have suggestions, please submit an issue on Github",
+        "Tooltip_Testitem_11");
+    public static final String Tooltip_Testitem_12 = texter(
+        "Also, a reminder: do not right-click with this item!",
+        "Tooltip_Testitem_12");
+
     public static final String AppliedEnergistics2 = texter("Applied Energistics 2", "AppliedEnergistics2");
     public static final String StructuralReconstructionPlan = texter(
         "Structural Reconstruction Plan",
