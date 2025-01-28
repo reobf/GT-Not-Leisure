@@ -80,6 +80,16 @@ public class TextLocalization {
         "Tooltip_CrystalSword_Aura_00");
     public static final String Tooltip_CrystalSword_Aura_01 = texter(" Second", "Tooltip_CrystalSword_Aura_01");
 
+    public static final String Tooltip_BlazePickaxe_00 = texter(
+        "§oMolten mountain hot smelted.",
+        "Tooltip_BlazePickaxe_00");
+    public static final String Tooltip_BlazePickaxe_Smelt_On = texter(
+        "Enabled Smelt Mode",
+        "Tooltip_BlazePickaxe_Smelt_On");
+    public static final String Tooltip_BlazePickaxe_Smelt_Off = texter(
+        "Disabled Smelt Mode",
+        "Tooltip_BlazePickaxe_Smelt_Off");
+
     public static final String Tooltip_InfinityTotem_00 = texter("§oEternal Guardian...", "Tooltip_InfinityTotem_00");
     public static final String Tooltip_InfinityTotem_Enable = texter(
         "Infinity Totem has resisted death for you once...",

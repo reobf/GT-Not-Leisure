@@ -9,6 +9,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -135,6 +136,63 @@ public class InfinityTotem extends Item {
                 .getItem() instanceof InfinityTotem);
     }
 
+    @SubscribeEvent
+    public void onEntityItemUpdate(LivingUpdateEvent event) {
+        if (event.entity instanceof EntityItem) {
+            EntityItem entityItem = (EntityItem) event.entity;
+            ItemStack stack = entityItem.getEntityItem();
+            if (stack.getItem() instanceof InfinityTotem) {
+                World world = entityItem.worldObj;
+                int x = (int) Math.floor(entityItem.posX);
+                int y = (int) Math.floor(entityItem.posY);
+                int z = (int) Math.floor(entityItem.posZ);
+
+                if (world.getBlock(x, y, z) == Blocks.cactus) {
+                    returnItemToPlayerInventory(entityItem);
+                }
+
+                if (world.getBlock(x, y, z) == Blocks.lava) {
+                    returnItemToPlayerInventory(entityItem);
+                }
+
+                if (entityItem.posY < 0D) {
+                    returnItemToPlayerInventory(entityItem);
+                }
+            }
+        }
+    }
+
+    private void returnItemToPlayerInventory(EntityItem entityItem) {
+        if (entityItem.isDead) return;
+
+        ItemStack stack = entityItem.getEntityItem()
+            .copy();
+        if (stack == null) return;
+
+        NBTTagCompound nbt = stack.getTagCompound();
+        if (nbt != null && nbt.hasKey("ownerUUID")) {
+            UUID ownerUUID = UUID.fromString(nbt.getString("ownerUUID"));
+            EntityPlayer player = entityItem.worldObj.func_152378_a(ownerUUID);
+
+            if (player != null && !player.worldObj.isRemote) {
+                boolean added = player.inventory.addItemStackToInventory(stack);
+                if (added) {
+                    entityItem.setDead();
+                } else {
+                    EntityItem newEntity = new EntityItem(
+                        player.worldObj,
+                        player.posX,
+                        player.posY + 0.5,
+                        player.posZ,
+                        stack);
+                    newEntity.delayBeforeCanPickup = 40;
+                    player.worldObj.spawnEntityInWorld(newEntity);
+                    entityItem.setDead();
+                }
+            }
+        }
+    }
+
     private ItemStack getTotemFromPlayer(EntityPlayer player) {
         ItemStack heldItem = player.getHeldItem();
         if (heldItem != null && heldItem.getItem() instanceof InfinityTotem) {
@@ -195,25 +253,15 @@ public class InfinityTotem extends Item {
 
     @Override
     public boolean onEntityItemUpdate(EntityItem entityItem) {
-        if (entityItem.getEntityItem()
-            .getItemDamage()
-            >= entityItem.getEntityItem()
-                .getMaxDamage()) {
+        ItemStack stack = entityItem.getEntityItem();
+        if (stack.getItemDamage() >= stack.getMaxDamage()) {
             entityItem.setDead();
+            return true;
         }
-        if (entityItem.posY < -64.0D) {
-            NBTTagCompound nbt = entityItem.getEntityItem()
-                .getTagCompound();
-            if (nbt != null && nbt.hasKey("ownerUUID")) {
-                UUID ownerUUID = UUID.fromString(nbt.getString("ownerUUID"));
-                EntityPlayer player = entityItem.worldObj.func_152378_a(ownerUUID);
-                if (player != null) {
-                    if (!addStackToPlayerInventory(player, entityItem.getEntityItem())) {
-                        dropItemToPlayer(entityItem.worldObj, player, entityItem.getEntityItem());
-                    }
-                }
-            }
+        if (entityItem.posY < 0D) {
+            returnItemToPlayerInventory(entityItem);
+            return true;
         }
-        return false;
+        return super.onEntityItemUpdate(entityItem);
     }
 }

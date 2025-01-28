@@ -261,6 +261,11 @@ Tooltip_CrystalPickaxe_00=§o时运所至，宝物尽现；精准所及，原石
 Tooltip_CrystalPickaxe_Enchant_1=切换到 时运 III
 Tooltip_CrystalPickaxe_Enchant_2=切换到 精准采集
 
+item.BlazePickaxe.name=§d炽岩之熔山镐
+Tooltip_BlazePickaxe_00=§o熔山，炽热，熔炼已成。
+Tooltip_BlazePickaxe_Smelt_On=熔炼模式已激活！
+Tooltip_BlazePickaxe_Smelt_Off=熔炼模式已取消！
+
 item.CrystalHoe.name=§d亘古不毁之锄
 Tooltip_CrystalHoe_00=§o一锄落，万物兴；再锄起，岁月生。
 

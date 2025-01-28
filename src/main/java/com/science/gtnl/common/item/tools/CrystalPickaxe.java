@@ -37,6 +37,11 @@ public class CrystalPickaxe extends ItemPickaxe {
     }
 
     @Override
+    public boolean hasEffect(ItemStack stack, int pass) {
+        return true;
+    }
+
+    @Override
     @SideOnly(Side.CLIENT)
     public void addInformation(final ItemStack itemStack, final EntityPlayer player, final List toolTip,
         final boolean advancedToolTips) {

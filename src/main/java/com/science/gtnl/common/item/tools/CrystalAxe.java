@@ -39,6 +39,11 @@ public class CrystalAxe extends ItemAxe {
     }
 
     @Override
+    public boolean hasEffect(ItemStack stack, int pass) {
+        return true;
+    }
+
+    @Override
     public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker) {
         target.addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 100, 2));
 

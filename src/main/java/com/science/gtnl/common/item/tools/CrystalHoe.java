@@ -36,6 +36,11 @@ public class CrystalHoe extends ItemHoe {
     }
 
     @Override
+    public boolean hasEffect(ItemStack stack, int pass) {
+        return true;
+    }
+
+    @Override
     @SideOnly(Side.CLIENT)
     public void addInformation(final ItemStack itemStack, final EntityPlayer player, final List toolTip,
         final boolean advancedToolTips) {
@@ -102,7 +107,6 @@ public class CrystalHoe extends ItemHoe {
 
             if (hasEffect) {
                 world.playAuxSFX(2005, (int) player.posX, baseY, (int) player.posZ, 0);
-                stack.damageItem(1, player); // 添加耐久消耗
             }
         }
     }

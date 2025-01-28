@@ -9,6 +9,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.science.gtnl.Utils.item.TextHandler;
 import com.science.gtnl.common.effect.effects.AweEffect;
+import com.science.gtnl.common.item.tools.BlazePickaxe;
 import com.science.gtnl.common.item.tools.CrystalShovel;
 import com.science.gtnl.common.item.tools.InfinityTotem;
 import com.science.gtnl.common.machine.multiMachineClasses.EdenGardenManager.EIGBucketLoader;
@@ -84,6 +85,7 @@ public class ScienceNotLeisure {
         MinecraftForge.EVENT_BUS.register(new AweEffect());
         MinecraftForge.EVENT_BUS.register(new CrystalShovel());
         MinecraftForge.EVENT_BUS.register(new InfinityTotem());
+        MinecraftForge.EVENT_BUS.register(new BlazePickaxe());
     }
 
     @Mod.EventHandler
