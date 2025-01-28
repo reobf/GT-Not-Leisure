@@ -94,6 +94,8 @@ public class TeleportationArrayToAlfheim extends MultiMachineBase<TeleportationA
                 return RecipeRegister.NatureSpiritArrayRecipes;
             case 2:
                 return RecipeRegister.ManaInfusionRecipes;
+            case 3:
+                return RecipeRegister.RuneAltarRecipes;
             default:
                 return RecipeRegister.PortalToAlfheimRecipes;
         }
@@ -105,12 +107,13 @@ public class TeleportationArrayToAlfheim extends MultiMachineBase<TeleportationA
         return Arrays.asList(
             RecipeRegister.NatureSpiritArrayRecipes,
             RecipeRegister.ManaInfusionRecipes,
+            RecipeRegister.RuneAltarRecipes,
             RecipeRegister.PortalToAlfheimRecipes);
     }
 
     @Override
     public final void onScrewdriverRightClick(ForgeDirection side, EntityPlayer aPlayer, float aX, float aY, float aZ) {
-        this.mode = (byte) ((this.mode + 1) % 4);
+        this.mode = (byte) ((this.mode + 1) % 5);
         GTUtility.sendChatToPlayer(
             aPlayer,
             StatCollector.translateToLocal("TeleportationArrayToAlfheim.modeMsg." + this.mode));

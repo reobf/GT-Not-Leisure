@@ -44,6 +44,29 @@ public class TextLocalization {
         "Also, a reminder: do not right-click with this item!",
         "Tooltip_Testitem_12");
 
+    public static final String Tooltip_CrystalPickaxe_00 = texter(
+        "§oLuck brings treasures; precision finds gems.",
+        "Tooltip_CrystalPickaxe_00");
+    public static final String Tooltip_CrystalPickaxe_Enchant_1 = texter(
+        "Set to Fortune III",
+        "Tooltip_CrystalPickaxe_Enchant_1");
+    public static final String Tooltip_CrystalPickaxe_Enchant_2 = texter(
+        "Set to Silk Touch",
+        "Tooltip_CrystalPickaxe_Enchant_2");
+
+    public static final String Tooltip_CrystalHoe_00 = texter(
+        "§oOne swing, life blooms; another, time flows.",
+        "Tooltip_CrystalHoe_00");
+
+    public static final String Tooltip_CrystalShovel_00 = texter(
+        "§oRises like wind, falls to slow.",
+        "Tooltip_CrystalShovel_00");
+
+    public static final String Tooltip_InfinityTotem_00 = texter("§oEternal Guardian...", "Tooltip_InfinityTotem_00");
+    public static final String Tooltip_InfinityTotem_Enable = texter(
+        "Infinity Totem has resisted death for you once...",
+        "Tooltip_InfinityTotem_Enable");
+
     public static final String AppliedEnergistics2 = texter("Applied Energistics 2", "AppliedEnergistics2");
     public static final String StructuralReconstructionPlan = texter(
         "Structural Reconstruction Plan",

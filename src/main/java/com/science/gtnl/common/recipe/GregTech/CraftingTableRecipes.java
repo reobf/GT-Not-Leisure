@@ -159,7 +159,7 @@ public class CraftingTableRecipes implements IRecipePool {
                 GTNLItemList.VibrantPhotovoltaicBlock.get(1), 'D', "circuitData" });
 
         addCraftingRecipe(
-            GTModHandler.getModItem(ScienceNotLeisure.ID, "testitem", 1, 0),
+            GTModHandler.getModItem(ScienceNotLeisure.ID, "TestItem", 1, 0),
             new Object[] { "ABA", "BCB", "ABA", 'A', GTModHandler.getModItem(Minecraft.ID, "golden_apple", 1, 1), 'B',
                 GTModHandler.getModItem(Botania.ID, "manaResource", 1, 9), 'C',
                 GTModHandler.getModItem(Minecraft.ID, "dragon_egg", 1) });

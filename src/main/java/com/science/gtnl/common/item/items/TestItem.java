@@ -14,14 +14,14 @@ import com.science.gtnl.client.CreativeTabsLoader;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class testitem extends Item {
+public class TestItem extends Item {
 
-    public testitem() {
+    public TestItem() {
         super();
 
-        this.setUnlocalizedName("testitem");
+        this.setUnlocalizedName("TestItem");
         this.setCreativeTab(CreativeTabsLoader.GTNotLeisure);
-        this.setTextureName("sciencenotleisure:testitem");
+        this.setTextureName("sciencenotleisure:TestItem");
     }
 
     @Override

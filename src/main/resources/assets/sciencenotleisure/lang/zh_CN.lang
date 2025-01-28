@@ -176,7 +176,7 @@ MetaItem.45.name=超时空贴片电感
 MetaItem.46.name=超时空贴片电阻
 MetaItem.47.name=超时空贴片二极管
 
-item.testitem.name=测试物品
+item.TestItem.name=测试物品
 Tooltip_Testitem_00=如果你看到了这个Tooltip
 Tooltip_Testitem_01=欢迎来到§o§dGT不再业余!
 Tooltip_Testitem_02=这是一个基于§o§b GT:Leisure (格雷科技: 休闲版)
@@ -190,6 +190,22 @@ Tooltip_Testitem_09=§r包含任何重复性质的机器等
 Tooltip_Testitem_10=这是§d更加侧重于为原版GTNH添加内容的模组!
 Tooltip_Testitem_11=§f§l如果你遇到了什么问题或者想提出意见，请在Github提交issue
 Tooltip_Testitem_12=§c§l另外提醒: 不要拿着这个物品右键!
+
+item.CrystalPickaxe.name=§d魔能双生之镐
+Tooltip_CrystalPickaxe_00=§o时运所至，宝物尽现；精准所及，原石无缺。
+Tooltip_CrystalPickaxe_Enchant_1=切换到 时运 III
+Tooltip_CrystalPickaxe_Enchant_2=切换到 精准采集
+
+item.CrystalHoe.name=§d亘古不毁之锄
+Tooltip_CrystalHoe_00=§o一锄落，万物兴；再锄起，岁月生。
+
+item.CrystalShovel.name=§d晶域疾驰之铲
+Tooltip_CrystalShovel_00=§o铲起，疾驰如风；铲落，缓慢无踪。
+
+item.InfinityTotem.name=§d无尽图腾
+Tooltip_InfinityTotem_00=§o永恒守护…
+Tooltip_InfinityTotem_Enable=无尽图腾抵挡了一次死亡…
+
 item.record.sus.desc=Software Update Services
 item.record.newhorizons.desc=Sweet Dreams (Bonus Track)
 
@@ -376,10 +392,12 @@ FluidManaInputHatch=魔力输入仓
 gtnl.recipe.PortalToAlfheimRecipes=精灵传送门
 gtnl.recipe.NatureSpiritArrayRecipes=自然灵阵
 gtnl.recipe.ManaInfusionRecipes=魔力灌注
+gtnl.recipe.RuneAltarRecipes=符文祭坛
 TeleportationArrayToAlfheim.modeMsg.0=精灵传送门
 TeleportationArrayToAlfheim.modeMsg.1=自然灵阵
 TeleportationArrayToAlfheim.modeMsg.2=魔力灌注
-TeleportationArrayToAlfheimRecipeType=自然灵阵 / 魔力灌注 / 精灵传送门
+TeleportationArrayToAlfheim.modeMsg.3=符文祭坛
+TeleportationArrayToAlfheimRecipeType= 精灵传送门 / 自然灵阵 / 魔力灌注 / 符文祭坛
 Tooltip_TeleportationArrayToAlfheim_00=传说这个法阵可以稳定传输大量的物资
 Tooltip_TeleportationArrayToAlfheim_01=需要液态魔力输入仓
 Tooltip_TeleportationArrayToAlfheim_02=每秒消耗100L液态魔力进行工作

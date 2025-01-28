@@ -13,6 +13,6 @@ public class CreativeTabsGTNotLeisure extends CreativeTabs {
 
     @Override
     public Item getTabIconItem() {
-        return ItemLoader.testitem;
+        return ItemLoader.TestItem;
     }
 }

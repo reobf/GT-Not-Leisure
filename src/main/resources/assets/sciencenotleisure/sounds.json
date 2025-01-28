@@ -1,4 +1,13 @@
 {
+  "totem.enable": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "totem.enable",
+        "stream": false
+      }
+    ]
+  },
   "protal.boom": {
     "category": "player",
     "sounds": [

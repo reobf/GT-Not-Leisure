@@ -10,8 +10,8 @@ import gregtech.api.recipe.RecipeMapBuilder;
 
 public class RecipeRegister {
 
-    public static final RecipeMap<GTNL_RecipeMapBackend> RecombinationFusionReactorRecipes = RecipeMapBuilder
-        .of("gtnl.recipe.RecombinationFusionReactorRecipes", GTNL_RecipeMapBackend::new)
+    public static final RecipeMap<GTNLRecipeMapBackend> RecombinationFusionReactorRecipes = RecipeMapBuilder
+        .of("gtnl.recipe.RecombinationFusionReactorRecipes", GTNLRecipeMapBackend::new)
         .maxIO(16, 16, 16, 16)
         .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
         .frontend(GeneralFrontend::new)
@@ -60,9 +60,20 @@ public class RecipeRegister {
         .disableOptimize()
         .build();
 
-    public static final RecipeMap<GTNL_RecipeMapBackend> PortalToAlfheimRecipes = RecipeMapBuilder
-        .of("gtnl.recipe.PortalToAlfheimRecipes", GTNL_RecipeMapBackend::new)
+    public static final RecipeMap<GTNLRecipeMapBackend> PortalToAlfheimRecipes = RecipeMapBuilder
+        .of("gtnl.recipe.PortalToAlfheimRecipes", GTNLRecipeMapBackend::new)
         .maxIO(4, 36, 1, 0)
+        .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
+        .frontend(GeneralFrontend::new)
+        .neiHandlerInfo(
+            builder -> builder.setDisplayStack(GTNLItemList.TeleportationArrayToAlfheim.get(1))
+                .setMaxRecipesPerPage(1))
+        .disableOptimize()
+        .build();
+
+    public static final RecipeMap<GTNLRecipeMapBackend> RuneAltarRecipes = RecipeMapBuilder
+        .of("gtnl.recipe.RuneAltarRecipes", GTNLRecipeMapBackend::new)
+        .maxIO(8, 1, 1, 0)
         .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
         .frontend(GeneralFrontend::new)
         .neiHandlerInfo(
@@ -119,8 +130,8 @@ public class RecipeRegister {
         .disableOptimize()
         .build();
 
-    public static final RecipeMap<GTNL_RecipeMapBackend> PetrochemicalPlantRecipes = RecipeMapBuilder
-        .of("gtnl.recipe.PetrochemicalPlantRecipes", GTNL_RecipeMapBackend::new)
+    public static final RecipeMap<GTNLRecipeMapBackend> PetrochemicalPlantRecipes = RecipeMapBuilder
+        .of("gtnl.recipe.PetrochemicalPlantRecipes", GTNLRecipeMapBackend::new)
         .maxIO(4, 4, 2, 12)
         .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
         .frontend(GeneralFrontend::new)
@@ -128,8 +139,8 @@ public class RecipeRegister {
         .disableOptimize()
         .build();
 
-    public static final RecipeMap<GTNL_RecipeMapBackend> SmeltingMixingFurnaceRecipes = RecipeMapBuilder
-        .of("gtnl.recipe.SmeltingMixingFurnaceRecipes", GTNL_RecipeMapBackend::new)
+    public static final RecipeMap<GTNLRecipeMapBackend> SmeltingMixingFurnaceRecipes = RecipeMapBuilder
+        .of("gtnl.recipe.SmeltingMixingFurnaceRecipes", GTNLRecipeMapBackend::new)
         .maxIO(8, 4, 16, 4)
         .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
         .frontend(GeneralFrontend::new)
@@ -137,8 +148,8 @@ public class RecipeRegister {
         .disableOptimize()
         .build();
 
-    public static final RecipeMap<GTNL_RecipeMapBackend> RareEarthCentrifugalRecipes = RecipeMapBuilder
-        .of("gtnl.recipe.RareEarthCentrifugalRecipes", GTNL_RecipeMapBackend::new)
+    public static final RecipeMap<GTNLRecipeMapBackend> RareEarthCentrifugalRecipes = RecipeMapBuilder
+        .of("gtnl.recipe.RareEarthCentrifugalRecipes", GTNLRecipeMapBackend::new)
         .maxIO(1, 18, 1, 1)
         .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
         .frontend(GeneralFrontend::new)
