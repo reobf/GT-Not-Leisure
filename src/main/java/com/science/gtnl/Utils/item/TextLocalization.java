@@ -83,12 +83,11 @@ public class TextLocalization {
     public static final String Tooltip_BlazePickaxe_00 = texter(
         "§oMolten mountain hot smelted.",
         "Tooltip_BlazePickaxe_00");
-    public static final String Tooltip_BlazePickaxe_Smelt_On = texter(
-        "Enabled Smelt Mode",
-        "Tooltip_BlazePickaxe_Smelt_On");
-    public static final String Tooltip_BlazePickaxe_Smelt_Off = texter(
-        "Disabled Smelt Mode",
-        "Tooltip_BlazePickaxe_Smelt_Off");
+    public static final String Tooltip_BlazeAxe_00 = texter(
+        "§oBurn the forest, and the wood turns into charcoal.",
+        "Tooltip_BlazeAxe_00");
+    public static final String Tooltip_Blaze_Smelt_On = texter("Enabled Smelt Mode", "Tooltip_Blaze_Smelt_On");
+    public static final String Tooltip_Blaze_Smelt_Off = texter("Disabled Smelt Mode", "Tooltip_Blaze_Smelt_Off");
 
     public static final String Tooltip_InfinityTotem_00 = texter("§oEternal Guardian...", "Tooltip_InfinityTotem_00");
     public static final String Tooltip_InfinityTotem_Enable = texter(

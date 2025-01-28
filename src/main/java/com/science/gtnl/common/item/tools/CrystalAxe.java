@@ -1,7 +1,6 @@
 package com.science.gtnl.common.item.tools;
 
 import java.util.List;
-import java.util.Random;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
@@ -24,9 +23,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class CrystalAxe extends ItemAxe {
 
-    public static final ToolMaterial CRYSTAL = EnumHelper.addToolMaterial("CRYSTAL", 32, 8888, 100F, 7.0F, 22);
-
-    private static final Random random = new Random();
+    public static final ToolMaterial CRYSTAL = EnumHelper.addToolMaterial("CRYSTAL", 32, 8888, 9999F, 7.0F, 22);
 
     public CrystalAxe() {
         super(CRYSTAL);
@@ -47,9 +44,7 @@ public class CrystalAxe extends ItemAxe {
     public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker) {
         target.addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 100, 2));
 
-        if (random.nextInt(100) < 50) {
-            performAreaAttack(attacker, target, 10);
-        }
+        performAreaAttack(attacker, target, 10);
 
         stack.damageItem(1, attacker);
         return true;

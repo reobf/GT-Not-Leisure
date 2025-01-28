@@ -3,6 +3,7 @@ package com.science.gtnl.common.item;
 import net.minecraft.item.Item;
 
 import com.science.gtnl.common.item.items.TestItem;
+import com.science.gtnl.common.item.tools.BlazeAxe;
 import com.science.gtnl.common.item.tools.BlazePickaxe;
 import com.science.gtnl.common.item.tools.CrystalAxe;
 import com.science.gtnl.common.item.tools.CrystalHoe;
@@ -24,6 +25,7 @@ public class ItemLoader {
     public static Item CrystalAxe = new CrystalAxe();
     public static Item CrystalSword = new CrystalSword();
     public static Item BlazePickaxe = new BlazePickaxe();
+    public static Item BlazeAxe = new BlazeAxe();
     public static Item InfinityTotem = new InfinityTotem();
     public static Item RecordSus = new ItemRecord("sus");
     public static Item RecordNewHorizons = new ItemRecord("newhorizons");
@@ -36,6 +38,7 @@ public class ItemLoader {
         IRegistry(CrystalAxe, "CrystalAxe");
         IRegistry(CrystalSword, "CrystalSword");
         IRegistry(BlazePickaxe, "BlazePickaxe");
+        IRegistry(BlazeAxe, "BlazeAxe");
         IRegistry(InfinityTotem, "InfinityTotem");
         IRegistry(RecordSus, "RecordSus");
         IRegistry(RecordNewHorizons, "RecordNewHorizons");

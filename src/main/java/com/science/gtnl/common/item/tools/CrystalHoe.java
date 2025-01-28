@@ -23,7 +23,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class CrystalHoe extends ItemHoe {
 
-    public static final ToolMaterial CRYSTAL = EnumHelper.addToolMaterial("CRYSTAL", 3, 8888, 10F, 8.0F, 22);
+    public static final ToolMaterial CRYSTAL = EnumHelper.addToolMaterial("CRYSTAL", 3, 8888, 9999F, 8.0F, 22);
     private static final int RANGE = 8;
 
     public CrystalHoe() {

@@ -256,31 +256,29 @@ Tooltip_Testitem_10=这是§d更加侧重于为原版GTNH添加内容的模组!
 Tooltip_Testitem_11=§f§l如果你遇到了什么问题或者想提出意见，请在Github提交issue
 Tooltip_Testitem_12=§c§l另外提醒: 不要拿着这个物品右键!
 
-item.CrystalPickaxe.name=§d魔能双生之镐
-Tooltip_CrystalPickaxe_00=§o时运所至，宝物尽现；精准所及，原石无缺。
-Tooltip_CrystalPickaxe_Enchant_1=切换到 时运 III
-Tooltip_CrystalPickaxe_Enchant_2=切换到 精准采集
-
-item.BlazePickaxe.name=§d炽岩之熔山镐
-Tooltip_BlazePickaxe_00=§o熔山，炽热，熔炼已成。
-Tooltip_BlazePickaxe_Smelt_On=熔炼模式已激活！
-Tooltip_BlazePickaxe_Smelt_Off=熔炼模式已取消！
-
-item.CrystalHoe.name=§d亘古不毁之锄
-Tooltip_CrystalHoe_00=§o一锄落，万物兴；再锄起，岁月生。
-
-item.CrystalShovel.name=§d晶域疾驰之铲
-Tooltip_CrystalShovel_00=§o铲起，疾驰如风；铲落，缓慢无踪。
-
-item.CrystalAxe.name=§d晶能裂岩之斧
-Tooltip_CrystalAxe_00=§o裂岩破盾，坚盾成空。
-
 item.CrystalSword.name=§d双锋裂界之剑
 Tooltip_CrystalSword_00=§o锋刃所向，裂界无阻；剑影所至，敌影无存。
 Tooltip_CrystalSword_Aura_On=切换到 剑气模式
 Tooltip_CrystalSword_Aura_Off=切换到 普通模式
 Tooltip_CrystalSword_Aura_00=技能冷却中！剩余时间： 
 Tooltip_CrystalSword_Aura_01= 秒
+item.CrystalPickaxe.name=§d魔能双生之镐
+Tooltip_CrystalPickaxe_00=§o时运所至，宝物尽现；精准所及，原石无缺。
+Tooltip_CrystalPickaxe_Enchant_1=切换到 时运 III
+Tooltip_CrystalPickaxe_Enchant_2=切换到 精准采集
+item.CrystalAxe.name=§d晶能裂岩之斧
+Tooltip_CrystalAxe_00=§o裂岩破盾，坚盾成空。
+item.CrystalShovel.name=§d晶域疾驰之铲
+Tooltip_CrystalShovel_00=§o铲起，疾驰如风；铲落，缓慢无踪。
+item.CrystalHoe.name=§d亘古不毁之锄
+Tooltip_CrystalHoe_00=§o一锄落，万物兴；再锄起，岁月生。
+
+item.BlazePickaxe.name=§d炽岩之熔山镐
+Tooltip_BlazePickaxe_00=§o熔山，炽热，熔炼已成。
+item.BlazeAxe.name=§d炽灭之焚林斧
+Tooltip_BlazeAxe_00=§o炽灭焚林，木成炭。
+Tooltip_Blaze_Smelt_On=熔炼模式已激活！
+Tooltip_Blaze_Smelt_Off=熔炼模式已取消！
 
 item.InfinityTotem.name=§d无尽图腾
 Tooltip_InfinityTotem_00=§o永恒守护…

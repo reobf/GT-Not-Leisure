@@ -2,16 +2,10 @@ package com.science.gtnl;
 
 import java.io.File;
 
-import net.minecraftforge.common.MinecraftForge;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.science.gtnl.Utils.item.TextHandler;
-import com.science.gtnl.common.effect.effects.AweEffect;
-import com.science.gtnl.common.item.tools.BlazePickaxe;
-import com.science.gtnl.common.item.tools.CrystalShovel;
-import com.science.gtnl.common.item.tools.InfinityTotem;
 import com.science.gtnl.common.machine.multiMachineClasses.EdenGardenManager.EIGBucketLoader;
 import com.science.gtnl.common.recipe.GTNLRecipeRemover;
 import com.science.gtnl.config.MainConfig;
@@ -81,11 +75,6 @@ public class ScienceNotLeisure {
         new LazyStaticsInitLoader().initStaticsOnInit();
         MachineLoader.loadMachines();
         MachineLoader.run();
-
-        MinecraftForge.EVENT_BUS.register(new AweEffect());
-        MinecraftForge.EVENT_BUS.register(new CrystalShovel());
-        MinecraftForge.EVENT_BUS.register(new InfinityTotem());
-        MinecraftForge.EVENT_BUS.register(new BlazePickaxe());
     }
 
     @Mod.EventHandler

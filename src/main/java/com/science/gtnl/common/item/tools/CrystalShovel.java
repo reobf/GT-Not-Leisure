@@ -23,7 +23,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class CrystalShovel extends ItemSpade {
 
-    public static final ToolMaterial CRYSTAL = EnumHelper.addToolMaterial("CRYSTAL", 3, 8888, 100.0F, 9.0F, 22);
+    public static final ToolMaterial CRYSTAL = EnumHelper.addToolMaterial("CRYSTAL", 3, 8888, 9999F, 9.0F, 22);
 
     public CrystalShovel() {
         super(CRYSTAL);
