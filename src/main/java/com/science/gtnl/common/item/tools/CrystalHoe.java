@@ -29,7 +29,7 @@ public class CrystalHoe extends ItemHoe {
     public CrystalHoe() {
         super(CRYSTAL);
         this.setUnlocalizedName("CrystalHoe");
-        setCreativeTab(CreativeTabs.tabTools);
+        this.setCreativeTab(CreativeTabs.tabTools);
         this.setCreativeTab(CreativeTabsLoader.GTNotLeisure);
         this.setTextureName("sciencenotleisure:CrystalHoe");
         this.setMaxDamage(8888);

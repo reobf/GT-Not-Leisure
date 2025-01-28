@@ -7,11 +7,10 @@ import net.minecraftforge.common.config.Configuration;
 // spotless:off
 public class MainConfig {
 
-    public static long EUEveryBlazeCube = 1L * Integer.MAX_VALUE;// default 1024L * Integer.MAX_VALUE;
+    public static long EUEveryEnhancementCore = 1L * Integer.MAX_VALUE;// default 1024L * Integer.MAX_VALUE;
     public static long EUEveryDepletedExcitedNaquadahFuelRod = 2750000L * Integer.MAX_VALUE;
     public static double secondsOfArtificialStarProgressCycleTime = 6.4;
     public static boolean EnableRenderDefaultArtificialStar = true;
-    public static long EUEveryStrangeAnnihilationFuelRod = 32768L * Integer.MAX_VALUE;
     public static boolean MultiBlockStructureEnable = true;
     public static boolean enablePortalToAlfheimBigBoom = true;
     public static boolean DEFAULT_BATCH_MODE = false;

@@ -38,11 +38,11 @@ public class ItemRegister {
                 "§eBlaze Cube",
                 2,
                 new String[] { texter("§oForged from the soul fire, storing endless heat.", "tooltips.BlazeCube") }));
-        GTNLItemList.StrangeAnnihilationFuelRod.set(
+        GTNLItemList.EnhancementCore.set(
             initItem(
-                "Strange Annihilation Fuel Rod",
+                "Enhancement Core",
                 3,
-                new String[] { texter("A test item, no use.", "tooltips.TestItem0.line1") }));
+                new String[] { texter("§oThe road to completion!", "tooltips.EnhancementCore") }));
         GTNLItemList.StellarConstructionFrameMaterial.set(
             initItem(
                 "Stellar Construction Frame Material",

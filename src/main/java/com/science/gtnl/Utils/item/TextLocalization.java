@@ -62,6 +62,24 @@ public class TextLocalization {
         "§oRises like wind, falls to slow.",
         "Tooltip_CrystalShovel_00");
 
+    public static final String Tooltip_CrystalAxe_00 = texter(
+        "§oBreaks rocks, shatters shields.",
+        "Tooltip_CrystalAxe_00");
+
+    public static final String Tooltip_CrystalSword_00 = texter(
+        "§oBlades cut through, shadows vanquish foes.",
+        "Tooltip_CrystalSword_00");
+    public static final String Tooltip_CrystalSword_Aura_On = texter(
+        "Set to Energy Mode",
+        "Tooltip_CrystalSword_Aura_On");
+    public static final String Tooltip_CrystalSword_Aura_Off = texter(
+        "Set to Base Mode",
+        "Tooltip_CrystalSword_Aura_Off");
+    public static final String Tooltip_CrystalSword_Aura_00 = texter(
+        "Skill is on cooldown! Remaining time: ",
+        "Tooltip_CrystalSword_Aura_00");
+    public static final String Tooltip_CrystalSword_Aura_01 = texter(" Second", "Tooltip_CrystalSword_Aura_01");
+
     public static final String Tooltip_InfinityTotem_00 = texter("§oEternal Guardian...", "Tooltip_InfinityTotem_00");
     public static final String Tooltip_InfinityTotem_Enable = texter(
         "Infinity Totem has resisted death for you once...",

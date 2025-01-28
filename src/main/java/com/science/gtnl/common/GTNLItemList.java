@@ -31,7 +31,7 @@ public enum GTNLItemList {
     TrollFace,
     DepletedExcitedNaquadahFuelRod,
     BlazeCube,
-    StrangeAnnihilationFuelRod,
+    EnhancementCore,
     StellarConstructionFrameMaterial,
     ActivatedGaiaPylon,
     PrecisionSteamMechanism,

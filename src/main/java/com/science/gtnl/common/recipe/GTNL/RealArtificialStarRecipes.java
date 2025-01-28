@@ -1,6 +1,5 @@
 package com.science.gtnl.common.recipe.GTNL;
 
-import static com.science.gtnl.Utils.item.TextHandler.texter;
 import static com.science.gtnl.common.GTNLItemList.*;
 import static com.science.gtnl.config.MainConfig.*;
 
@@ -17,24 +16,25 @@ public class RealArtificialStarRecipes implements IRecipePool {
     @Override
     public void loadRecipes() {
         GTValues.RA.stdBuilder()
-            .itemInputs(BlazeCube.get(1))
-            .specialValue((int) (EUEveryBlazeCube / Integer.MAX_VALUE))
+            .itemInputs(EnhancementCore.get(1))
+            .specialValue((int) (EUEveryEnhancementCore / Integer.MAX_VALUE))
             .eut(0)
             .duration(0)
             .addTo(RAS);
-
-        GTValues.RA.stdBuilder()
-            .itemInputs(StrangeAnnihilationFuelRod.get(1))
-            .itemOutputs(
-                StellarConstructionFrameMaterial.get(1)
-                    .setStackDisplayName(
-                        texter(
-                            "Chance to recover some raw materials. Probability is affected by module tier.",
-                            "NEI.RealAntimatterFuelRodGeneratingRecipe.01")))
-            .specialValue((int) (EUEveryStrangeAnnihilationFuelRod / Integer.MAX_VALUE))
-            .eut(0)
-            .duration(0)
-            .addTo(RAS);
+        /*
+         * GTValues.RA.stdBuilder()
+         * .itemInputs(EnhancementCore.get(1))
+         * .itemOutputs(
+         * StellarConstructionFrameMaterial.get(1)
+         * .setStackDisplayName(
+         * texter(
+         * "Chance to recover some raw materials. Probability is affected by module tier.",
+         * "NEI.RealAntimatterFuelRodGeneratingRecipe.01")))
+         * .specialValue((int) (EUEveryEnhancementCore / Integer.MAX_VALUE))
+         * .eut(0)
+         * .duration(0)
+         * .addTo(RAS);
+         */
 
         GTValues.RA.stdBuilder()
             .itemInputs(DepletedExcitedNaquadahFuelRod.get(1))

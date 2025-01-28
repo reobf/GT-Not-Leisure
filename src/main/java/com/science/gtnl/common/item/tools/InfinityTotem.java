@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.UUID;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
@@ -35,6 +36,8 @@ public class InfinityTotem extends Item {
 
     public InfinityTotem() {
         this.setUnlocalizedName("InfinityTotem");
+        this.setCreativeTab(CreativeTabs.tabCombat);
+        this.setCreativeTab(CreativeTabs.tabTools);
         this.setCreativeTab(CreativeTabsLoader.GTNotLeisure);
         this.setTextureName("sciencenotleisure:InfinityTotem");
         this.setMaxDamage(99);

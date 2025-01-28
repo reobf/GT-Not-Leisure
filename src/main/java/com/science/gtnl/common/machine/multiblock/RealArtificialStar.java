@@ -95,19 +95,15 @@ public class RealArtificialStar extends MultiMachineBase<RealArtificialStar>
 
     // region Statics
     protected static GTNL_ItemID DepletedExcitedNaquadahFuelRod;
-    protected static GTNL_ItemID BlazeCube;
-    protected static GTNL_ItemID StrangeAnnihilationFuelRod;
+    protected static GTNL_ItemID EnhancementCore;
     protected static long MaxOfDepletedExcitedNaquadahFuelRod;
-    protected static long MaxOfBlazeCube;
-    protected static long MaxOfStrangeAnnihilationFuelRod;
+    protected static long MaxOfEnhancementCore;
 
     public static void initStatics() {
         DepletedExcitedNaquadahFuelRod = GTNL_ItemID.createNoNBT(GTNLItemList.DepletedExcitedNaquadahFuelRod.get(1));
-        BlazeCube = GTNL_ItemID.createNoNBT(GTNLItemList.BlazeCube.get(1));
-        StrangeAnnihilationFuelRod = GTNL_ItemID.createNoNBT(GTNLItemList.StrangeAnnihilationFuelRod.get(1));
+        EnhancementCore = GTNL_ItemID.createNoNBT(GTNLItemList.EnhancementCore.get(1));
         MaxOfDepletedExcitedNaquadahFuelRod = MainConfig.EUEveryDepletedExcitedNaquadahFuelRod / Integer.MAX_VALUE;
-        MaxOfBlazeCube = MainConfig.EUEveryBlazeCube / Integer.MAX_VALUE;
-        MaxOfStrangeAnnihilationFuelRod = MainConfig.EUEveryStrangeAnnihilationFuelRod / Integer.MAX_VALUE;
+        MaxOfEnhancementCore = MainConfig.EUEveryEnhancementCore / Integer.MAX_VALUE;
     }
 
     // endregion
@@ -205,16 +201,11 @@ public class RealArtificialStar extends MultiMachineBase<RealArtificialStar>
             if (DepletedExcitedNaquadahFuelRod.equalItemStack(items)) {
                 currentOutputEU += MaxOfDepletedExcitedNaquadahFuelRod * items.stackSize;
                 flag = true;
-            } else if (BlazeCube.equalItemStack(items)) {
-                currentOutputEU += MaxOfBlazeCube * items.stackSize;
-                flag = true;
-            } else if (StrangeAnnihilationFuelRod.equalItemStack(items)) {
-                currentOutputEU += MaxOfStrangeAnnihilationFuelRod * items.stackSize;
-                recoveryAmount += items.stackSize;
+            } else if (EnhancementCore.equalItemStack(items)) {
+                currentOutputEU += MaxOfEnhancementCore * items.stackSize;
+                // recoveryAmount += items.stackSize;
                 flag = true;
             }
-            // whether the item is fuel
-            // void it
             items.stackSize = 0;
         }
 
