@@ -21,6 +21,7 @@ import com.science.gtnl.common.block.Render.BlockLaserBeacon;
 import com.science.gtnl.common.block.Render.BlockStar;
 import com.science.gtnl.common.block.Render.TileEntityLaserBeacon;
 import com.science.gtnl.common.block.Render.TileStar;
+import com.science.gtnl.common.block.blocks.BlockSoulFarmland;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import gtPlusPlus.core.item.base.itemblock.ItemBlockMeta;

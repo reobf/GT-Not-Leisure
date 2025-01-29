@@ -1,4 +1,4 @@
-package com.science.gtnl.common.block;
+package com.science.gtnl.common.block.blocks;
 
 import java.util.Random;
 

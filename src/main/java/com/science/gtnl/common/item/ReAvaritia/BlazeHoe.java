@@ -1,15 +1,18 @@
-package com.science.gtnl.common.item.tools;
+package com.science.gtnl.common.item.ReAvaritia;
+
+import static com.science.gtnl.common.block.Casings.BasicBlocks.BlockSoulFarmland;
 
 import java.util.List;
 import java.util.Map;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockSoulSand;
 import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemPickaxe;
+import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.nbt.NBTTagCompound;
@@ -28,16 +31,16 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlazePickaxe extends ItemPickaxe {
+public class BlazeHoe extends ItemHoe {
 
-    public static final ToolMaterial BLAZE = EnumHelper.addToolMaterial("BLAZE", 32, 7777, 9999F, 9.0F, 22);
+    public static final ToolMaterial BLAZE = EnumHelper.addToolMaterial("BLAZE", 3, 7777, 9999F, 11.0F, 10);
 
-    public BlazePickaxe() {
+    public BlazeHoe() {
         super(BLAZE);
-        this.setUnlocalizedName("BlazePickaxe");
+        this.setUnlocalizedName("BlazeHoe");
         setCreativeTab(CreativeTabs.tabTools);
         this.setCreativeTab(CreativeTabsLoader.ReAvaritia);
-        this.setTextureName("sciencenotleisure:BlazePickaxe");
+        this.setTextureName("sciencenotleisure:BlazeHoe");
         this.setMaxDamage(7777);
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -51,7 +54,7 @@ public class BlazePickaxe extends ItemPickaxe {
     @SideOnly(Side.CLIENT)
     public void addInformation(final ItemStack itemStack, final EntityPlayer player, final List toolTip,
         final boolean advancedToolTips) {
-        toolTip.add(TextLocalization.Tooltip_BlazePickaxe_00);
+        toolTip.add(TextLocalization.Tooltip_BlazeHoe_00);
     }
 
     @Override
@@ -137,17 +140,26 @@ public class BlazePickaxe extends ItemPickaxe {
     }
 
     @Override
-    public float getDigSpeed(ItemStack stack, Block block, int meta) {
-        return Float.MAX_VALUE;
-    }
+    public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side,
+        float hitX, float hitY, float hitZ) {
+        Block block = world.getBlock(x, y, z);
 
-    @Override
-    public boolean canHarvestBlock(Block block, ItemStack stack) {
-        return true;
-    }
+        if (block instanceof BlockSoulSand) {
+            world.setBlock(x, y, z, BlockSoulFarmland);
 
-    @Override
-    public int getItemEnchantability() {
-        return 1;
+            stack.damageItem(1, player);
+
+            world.playSoundEffect(
+                x + 0.5D,
+                y + 0.5D,
+                z + 0.5D,
+                BlockSoulFarmland.stepSound.getStepResourcePath(),
+                (BlockSoulFarmland.stepSound.getVolume() + 1.0F) / 2.0F,
+                BlockSoulFarmland.stepSound.getPitch() * 0.8F);
+
+            return true;
+        }
+
+        return false;
     }
 }

@@ -2,17 +2,17 @@ package com.science.gtnl.common.item;
 
 import net.minecraft.item.Item;
 
+import com.science.gtnl.common.item.ReAvaritia.BlazeAxe;
+import com.science.gtnl.common.item.ReAvaritia.BlazeHoe;
+import com.science.gtnl.common.item.ReAvaritia.BlazePickaxe;
+import com.science.gtnl.common.item.ReAvaritia.BlazeShovel;
+import com.science.gtnl.common.item.ReAvaritia.CrystalAxe;
+import com.science.gtnl.common.item.ReAvaritia.CrystalHoe;
+import com.science.gtnl.common.item.ReAvaritia.CrystalPickaxe;
+import com.science.gtnl.common.item.ReAvaritia.CrystalShovel;
+import com.science.gtnl.common.item.ReAvaritia.CrystalSword;
+import com.science.gtnl.common.item.ReAvaritia.InfinityTotem;
 import com.science.gtnl.common.item.items.TestItem;
-import com.science.gtnl.common.item.tools.BlazeAxe;
-import com.science.gtnl.common.item.tools.BlazeHoe;
-import com.science.gtnl.common.item.tools.BlazePickaxe;
-import com.science.gtnl.common.item.tools.BlazeShovel;
-import com.science.gtnl.common.item.tools.CrystalAxe;
-import com.science.gtnl.common.item.tools.CrystalHoe;
-import com.science.gtnl.common.item.tools.CrystalPickaxe;
-import com.science.gtnl.common.item.tools.CrystalShovel;
-import com.science.gtnl.common.item.tools.CrystalSword;
-import com.science.gtnl.common.item.tools.InfinityTotem;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 

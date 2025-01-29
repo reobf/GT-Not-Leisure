@@ -1,18 +1,17 @@
-package com.science.gtnl.common.item.tools;
-
-import static com.science.gtnl.common.block.Casings.BasicBlocks.BlockSoulFarmland;
+package com.science.gtnl.common.item.ReAvaritia;
 
 import java.util.List;
 import java.util.Map;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockSoulSand;
 import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemHoe;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.nbt.NBTTagCompound;
@@ -31,16 +30,16 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlazeHoe extends ItemHoe {
+public class BlazeShovel extends ItemSpade {
 
-    public static final ToolMaterial BLAZE = EnumHelper.addToolMaterial("BLAZE", 3, 7777, 9999F, 11.0F, 10);
+    public static final ToolMaterial BLAZE = EnumHelper.addToolMaterial("BLAZE", 3, 7777, 9999F, 10F, 10);
 
-    public BlazeHoe() {
+    public BlazeShovel() {
         super(BLAZE);
-        this.setUnlocalizedName("BlazeHoe");
+        this.setUnlocalizedName("BlazeShovel");
         setCreativeTab(CreativeTabs.tabTools);
         this.setCreativeTab(CreativeTabsLoader.ReAvaritia);
-        this.setTextureName("sciencenotleisure:BlazeHoe");
+        this.setTextureName("sciencenotleisure:BlazeShovel");
         this.setMaxDamage(7777);
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -54,7 +53,7 @@ public class BlazeHoe extends ItemHoe {
     @SideOnly(Side.CLIENT)
     public void addInformation(final ItemStack itemStack, final EntityPlayer player, final List toolTip,
         final boolean advancedToolTips) {
-        toolTip.add(TextLocalization.Tooltip_BlazeHoe_00);
+        toolTip.add(TextLocalization.Tooltip_BlazeShovel_00);
     }
 
     @Override
@@ -109,27 +108,48 @@ public class BlazeHoe extends ItemHoe {
         if (event.harvester == null || event.harvester.getCurrentEquippedItem() == null) return;
 
         ItemStack heldItem = event.harvester.getCurrentEquippedItem();
-        if (!(heldItem.getItem() instanceof BlazePickaxe)) return;
-
-        boolean smeltingActive = isSmeltingModeActive(heldItem);
-        if (!smeltingActive) return;
+        if (!(heldItem.getItem() instanceof BlazeShovel)) return;
 
         Block block = event.block;
-        int meta = event.blockMetadata;
-        ItemStack blockStack = new ItemStack(block, 1, meta);
-        ItemStack smeltResult = FurnaceRecipes.smelting()
-            .getSmeltingResult(blockStack);
-        if (smeltResult == null) return;
+        List<ItemStack> drops = event.drops;
 
-        int totalCount = 0;
-        for (ItemStack drop : event.drops) {
-            totalCount += drop.stackSize;
+        boolean transformed = false;
+        for (int i = 0; i < drops.size(); i++) {
+            ItemStack drop = drops.get(i);
+            if (drop.getItem() == Item.getItemFromBlock(Blocks.dirt)) {
+                drops.set(i, new ItemStack(Blocks.netherrack, drop.stackSize));
+                transformed = true;
+            } else if (drop.getItem() == Item.getItemFromBlock(Blocks.sand)) {
+                drops.set(i, new ItemStack(Blocks.soul_sand, drop.stackSize));
+                transformed = true;
+            } else if (drop.getItem() == Item.getItemFromBlock(Blocks.gravel)) {
+                drops.set(i, new ItemStack(Blocks.netherrack, drop.stackSize));
+                transformed = true;
+            }
         }
 
-        event.drops.clear();
-        ItemStack result = smeltResult.copy();
-        result.stackSize = totalCount;
-        event.drops.add(result);
+        if (!transformed) {
+            boolean smeltingActive = isSmeltingModeActive(heldItem);
+            if (smeltingActive) {
+                int meta = event.blockMetadata;
+                ItemStack blockStack = new ItemStack(block, 1, meta);
+                ItemStack smeltResult = FurnaceRecipes.smelting()
+                    .getSmeltingResult(blockStack);
+                if (smeltResult != null) {
+                    int totalCount = 0;
+                    for (ItemStack drop : drops) {
+                        totalCount += drop.stackSize;
+                    }
+
+                    event.drops.clear();
+                    ItemStack result = smeltResult.copy();
+                    result.stackSize = totalCount;
+                    event.drops.add(result);
+                }
+            }
+        }
+
+        heldItem.damageItem(1, event.harvester);
     }
 
     @SideOnly(Side.CLIENT)
@@ -137,29 +157,5 @@ public class BlazeHoe extends ItemHoe {
         String localized = StatCollector.translateToLocal(messageKey);
         ChatComponentText text = new ChatComponentText(EnumChatFormatting.WHITE + localized);
         Minecraft.getMinecraft().ingameGUI.func_110326_a(text.getFormattedText(), true);
-    }
-
-    @Override
-    public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side,
-        float hitX, float hitY, float hitZ) {
-        Block block = world.getBlock(x, y, z);
-
-        if (block instanceof BlockSoulSand) {
-            world.setBlock(x, y, z, BlockSoulFarmland);
-
-            stack.damageItem(1, player);
-
-            world.playSoundEffect(
-                x + 0.5D,
-                y + 0.5D,
-                z + 0.5D,
-                BlockSoulFarmland.stepSound.getStepResourcePath(),
-                (BlockSoulFarmland.stepSound.getVolume() + 1.0F) / 2.0F,
-                BlockSoulFarmland.stepSound.getPitch() * 0.8F);
-
-            return true;
-        }
-
-        return false;
     }
 }

@@ -1,4 +1,4 @@
-package com.science.gtnl.common.item.tools;
+package com.science.gtnl.common.item.ReAvaritia;
 
 import java.util.List;
 

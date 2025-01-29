@@ -1,26 +1,19 @@
-package com.science.gtnl.common.item.tools;
+package com.science.gtnl.common.item.ReAvaritia;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.EnumAction;
-import net.minecraft.item.ItemAxe;
+import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.ChatComponentText;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
@@ -35,17 +28,16 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlazeAxe extends ItemAxe {
+public class BlazePickaxe extends ItemPickaxe {
 
-    private static final Random random = new Random();
-    public static final ToolMaterial BLAZE = EnumHelper.addToolMaterial("BLAZE", 32, 7777, 9999F, 33.0F, 22);
+    public static final ToolMaterial BLAZE = EnumHelper.addToolMaterial("BLAZE", 32, 7777, 9999F, 9.0F, 22);
 
-    public BlazeAxe() {
+    public BlazePickaxe() {
         super(BLAZE);
-        this.setUnlocalizedName("BlazeAxe");
+        this.setUnlocalizedName("BlazePickaxe");
         setCreativeTab(CreativeTabs.tabTools);
         this.setCreativeTab(CreativeTabsLoader.ReAvaritia);
-        this.setTextureName("sciencenotleisure:BlazeAxe");
+        this.setTextureName("sciencenotleisure:BlazePickaxe");
         this.setMaxDamage(7777);
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -59,7 +51,7 @@ public class BlazeAxe extends ItemAxe {
     @SideOnly(Side.CLIENT)
     public void addInformation(final ItemStack itemStack, final EntityPlayer player, final List toolTip,
         final boolean advancedToolTips) {
-        toolTip.add(TextLocalization.Tooltip_BlazeAxe_00);
+        toolTip.add(TextLocalization.Tooltip_BlazePickaxe_00);
     }
 
     @Override
@@ -76,7 +68,6 @@ public class BlazeAxe extends ItemAxe {
 
     @Override
     public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
-        player.setItemInUse(stack, this.getMaxItemUseDuration(stack));
         if (player.isSneaking()) {
             toggleSmeltingMode(stack);
             String messageKey = isSmeltingModeActive(stack) ? TextLocalization.Tooltip_Blaze_Smelt_On
@@ -115,7 +106,7 @@ public class BlazeAxe extends ItemAxe {
         if (event.harvester == null || event.harvester.getCurrentEquippedItem() == null) return;
 
         ItemStack heldItem = event.harvester.getCurrentEquippedItem();
-        if (!(heldItem.getItem() instanceof BlazeAxe)) return;
+        if (!(heldItem.getItem() instanceof BlazePickaxe)) return;
 
         boolean smeltingActive = isSmeltingModeActive(heldItem);
         if (!smeltingActive) return;
@@ -146,51 +137,17 @@ public class BlazeAxe extends ItemAxe {
     }
 
     @Override
-    public int getMaxItemUseDuration(ItemStack stack) {
-        return 72000;
+    public float getDigSpeed(ItemStack stack, Block block, int meta) {
+        return Float.MAX_VALUE;
     }
 
     @Override
-    public EnumAction getItemUseAction(ItemStack stack) {
-        return EnumAction.block;
-    }
-
-    @Override
-    public void onPlayerStoppedUsing(ItemStack stack, World worldIn, EntityPlayer playerIn, int timeLeft) {
-        int duration = this.getMaxItemUseDuration(stack) - timeLeft;
-
-        if (duration > 20) {
-            playerIn.addPotionEffect(new PotionEffect(Potion.resistance.id, 40, 1));
-        }
-    }
-
-    @Override
-    public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker) {
-        target.addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 100, 2));
-
-        if (random.nextInt(100) < 30) {
-            performAreaAttack(attacker, target, 10);
-        }
-
-        stack.damageItem(1, attacker);
+    public boolean canHarvestBlock(Block block, ItemStack stack) {
         return true;
     }
 
-    private void performAreaAttack(EntityLivingBase attacker, EntityLivingBase target, double radius) {
-        World world = attacker.worldObj;
-        AxisAlignedBB area = AxisAlignedBB.getBoundingBox(
-            target.posX - radius,
-            target.posY - radius,
-            target.posZ - radius,
-            target.posX + radius,
-            target.posY + radius,
-            target.posZ + radius);
-
-        List<EntityLivingBase> entities = world.getEntitiesWithinAABB(EntityLivingBase.class, area);
-        for (EntityLivingBase entity : entities) {
-            if (entity != attacker && entity != target) {
-                entity.attackEntityFrom(DamageSource.causePlayerDamage((EntityPlayer) attacker), 25.0F);
-            }
-        }
+    @Override
+    public int getItemEnchantability() {
+        return 1;
     }
 }
