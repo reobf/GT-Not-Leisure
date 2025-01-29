@@ -104,7 +104,7 @@ public class LapotronChip extends MultiMachineBase<LapotronChip> implements ISur
             .addOutputHatch(TextLocalization.Tooltip_LapotronChip_Casing, 1)
             .addEnergyHatch(TextLocalization.Tooltip_LapotronChip_Casing, 1)
             .addMaintenanceHatch(TextLocalization.Tooltip_LapotronChip_Casing, 1)
-            .toolTipFinisher(TextUtils.SNL);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE);
         return tt;
     }
 

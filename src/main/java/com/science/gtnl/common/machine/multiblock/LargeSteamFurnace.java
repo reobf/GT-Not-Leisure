@@ -256,7 +256,7 @@ public class LargeSteamFurnace extends MTESteamMultiBase<LargeSteamFurnace> impl
             .beginStructureBlock(9, 8, 10, false)
             .addInputBus(TextLocalization.Tooltip_LargeSteamFurnace_Casing, 1)
             .addOutputBus(TextLocalization.Tooltip_LargeSteamFurnace_Casing, 1)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
+            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY);
         return tt;
     }
 

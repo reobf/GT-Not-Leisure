@@ -315,7 +315,7 @@ public class LargeSteamAlloySmelter extends MTESteamMultiBase<LargeSteamAlloySme
             .beginStructureBlock(3, 3, 3, false)
             .addInputBus(TextLocalization.Tooltip_LargeSteamAlloySmelter_Casing, 1)
             .addOutputBus(TextLocalization.Tooltip_LargeSteamAlloySmelter_Casing, 1)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
+            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY);
         return tt;
     }
 

@@ -34,12 +34,12 @@ public class ItemRegister {
                 new String[] {
                     texter("§oUltimate Form of Naquadah Fuel.", "tooltips.DepletedExcitedNaquadahFuelRod") }));
         GTNLItemList.BlazeCube
-            .set(initItem("§eBlaze Cube", 2, new String[] { texter("§oBlaze Storm.", "tooltips.BlazeCube") }));
+            .set(initItem("§eBlaze Cube", 2, new String[] { texter("§8§oBlaze Storm.", "tooltips.BlazeCube") }));
         GTNLItemList.EnhancementCore.set(
             initItem(
                 "Enhancement Core",
                 3,
-                new String[] { texter("§oThe road to completion!", "tooltips.EnhancementCore") }));
+                new String[] { texter("§8§oThe road to completion!", "tooltips.EnhancementCore") }));
         GTNLItemList.StellarConstructionFrameMaterial.set(
             initItem(
                 "Stellar Construction Frame Material",

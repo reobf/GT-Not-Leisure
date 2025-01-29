@@ -355,7 +355,7 @@ public class LargeSteamThermalCentrifuge extends MTESteamMultiBase<LargeSteamThe
             .beginStructureBlock(7, 5, 7, false)
             .addInputBus(TextLocalization.Tooltip_LargeSteamThermalCentrifuge_Casing, 1)
             .addOutputBus(TextLocalization.Tooltip_LargeSteamThermalCentrifuge_Casing, 1)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
+            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY);
         return tt;
     }
 

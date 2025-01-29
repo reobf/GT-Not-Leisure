@@ -35,7 +35,7 @@ public class MTEHatchSterileMaintenance extends MTEHatchMaintenance {
 
     @Override
     public String[] getDescription() {
-        return new String[] { TextUtils.SCIENCE_NOT_LEISURE + TextUtils.STERILE,
+        return new String[] { TextUtils.SNL + TextUtils.STERILE,
             translateToLocal("gt.blockmachines.gtnl.sterilemaintenance.desc.0"), // 自动维护多方块的无菌环境
             translateToLocal("gt.blockmachines.gtnl.sterilemaintenance.desc.1"), // 修复其他组件但不修复自身。
             EnumChatFormatting.AQUA + translateToLocal("gt.blockmachines.gtnl.sterilemaintenance.desc.2") // 修复仅适用于平民！

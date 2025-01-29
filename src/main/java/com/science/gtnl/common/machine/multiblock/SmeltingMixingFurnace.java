@@ -115,7 +115,7 @@ public class SmeltingMixingFurnace extends WirelessEnergyMultiMachineBase<Smelti
             .addOutputHatch(TextLocalization.Tooltip_SmeltingMixingFurnace_Casing, 1)
             .addEnergyHatch(TextLocalization.Tooltip_SmeltingMixingFurnace_Casing, 1)
             .addMaintenanceHatch(TextLocalization.Tooltip_SmeltingMixingFurnace_Casing, 1)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
+            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY);
         return tt;
     }
 

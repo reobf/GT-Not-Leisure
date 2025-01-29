@@ -528,7 +528,7 @@ public class RealArtificialStar extends MultiMachineBase<RealArtificialStar>
             .addStructureInfo(TextLocalization.Tooltip_RealArtificialStarInfo_12)
             .addStructureInfo(TextLocalization.Tooltip_RealArtificialStarInfo_13)
             .addStructureInfo(TextLocalization.Tooltip_RealArtificialStarInfo_14)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
         return tt;
     }
 

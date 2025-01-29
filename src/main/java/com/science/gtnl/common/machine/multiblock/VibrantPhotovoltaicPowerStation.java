@@ -79,7 +79,7 @@ public class VibrantPhotovoltaicPowerStation extends MTEEnhancedMultiBlockBase<V
             .addInputHatch(TextLocalization.Tooltip_VibrantPhotovoltaicPowerStation_Casing)
             .addDynamoHatch(TextLocalization.Tooltip_VibrantPhotovoltaicPowerStation_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_VibrantPhotovoltaicPowerStation_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
+            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY);
         return tt;
     }
 

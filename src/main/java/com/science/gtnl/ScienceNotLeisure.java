@@ -2,10 +2,14 @@ package com.science.gtnl;
 
 import java.io.File;
 
+import net.minecraftforge.common.MinecraftForge;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.science.gtnl.Utils.item.TextHandler;
+import com.science.gtnl.common.item.ReAvaritia.BlazeSword;
+import com.science.gtnl.common.item.ReAvaritia.ToolEvents;
 import com.science.gtnl.common.machine.multiMachineClasses.EdenGardenManager.EIGBucketLoader;
 import com.science.gtnl.common.recipe.GTNLRecipeRemover;
 import com.science.gtnl.config.MainConfig;
@@ -30,7 +34,7 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
     version = ScienceNotLeisure.VERSION,
     name = ScienceNotLeisure.MODNAME,
     dependencies = "required-after:IC2;" + "required-after:structurelib;"
-        + "required-after:avaritia;"
+        + "required-before:Avaritia;"
         + "required-after:AWWayofTime;"
         + "required-after:BloodArsenal;"
         + "required-after:modularui;"
@@ -123,7 +127,15 @@ public class ScienceNotLeisure {
 
         MainConfig.init(mainConfigFile);
 
+        BlazeSword.registerEntity();
+
         proxy.preInit(event);
         MaterialLoader.load();
+    }
+
+    @Mod.EventHandler
+    public void midGame(FMLInitializationEvent event) {
+        proxy.makeThingsPretty();
+        MinecraftForge.EVENT_BUS.register(new ToolEvents());
     }
 }

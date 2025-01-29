@@ -102,7 +102,7 @@ public class GenerationEarthEngine extends GTPPMultiBlockBase<GenerationEarthEng
             .addOutputHatch(TextLocalization.Tooltip_GenerationEarthEngine_Casing, 1)
             .addEnergyHatch(TextLocalization.Tooltip_GenerationEarthEngine_Casing, 1)
             .addMaintenanceHatch(TextLocalization.Tooltip_GenerationEarthEngine_Casing, 1)
-            .toolTipFinisher(TextUtils.SNL);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE);
         return tt;
     }
 

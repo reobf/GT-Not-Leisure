@@ -1,14 +1,18 @@
 package com.science.gtnl;
 
+import net.minecraftforge.client.MinecraftForgeClient;
+
 import com.science.gtnl.Utils.GuiEventHandler;
 import com.science.gtnl.common.block.Render.MeteorMinerRenderer;
 import com.science.gtnl.common.block.Render.RealArtificialStarRender;
 import com.science.gtnl.common.block.Render.StarRender;
+import com.science.gtnl.common.item.ItemLoader;
 
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import fox.spiteful.avaritia.render.CosmicItemRenderer;
 
 public class ClientProxy extends CommonProxy {
 
@@ -31,6 +35,12 @@ public class ClientProxy extends CommonProxy {
         super.preInit(event);
     }
 
+    @Override
+    public void makeThingsPretty() {
+        CosmicItemRenderer sparkly = new CosmicItemRenderer();
+        MinecraftForgeClient.registerItemRenderer(ItemLoader.InfinitySword, sparkly);
+        MinecraftForgeClient.registerItemRenderer(ItemLoader.MatterCluster, sparkly);
+    }
     // Override CommonProxy methods here, if you want a different behaviour on the client (e.g. registering renders).
     // Don't forget to call the super methods as well.
 

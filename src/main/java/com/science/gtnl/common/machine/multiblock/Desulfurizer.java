@@ -128,7 +128,7 @@ public class Desulfurizer extends MultiMachineBase<Desulfurizer> implements ISur
             .addOutputBus(TextLocalization.Tooltip_Desulfurizer_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_Desulfurizer_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_Desulfurizer_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
+            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY);
         return tt;
     }
 

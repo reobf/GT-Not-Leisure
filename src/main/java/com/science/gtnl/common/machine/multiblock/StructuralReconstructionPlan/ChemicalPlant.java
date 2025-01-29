@@ -130,7 +130,7 @@ public class ChemicalPlant extends MultiMachineBase<ChemicalPlant> implements IS
             .addOutputBus(TextLocalization.Tooltip_ChemicalPlant_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_ChemicalPlant_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_ChemicalPlant_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
         return tt;
     }
 

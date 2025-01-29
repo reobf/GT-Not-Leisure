@@ -134,7 +134,7 @@ public class IndustrialArcaneAssembler extends MultiMachineBase<IndustrialArcane
             .addOutputBus(TextLocalization.Tooltip_LargeCircuitAssembler_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeCircuitAssembler_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeCircuitAssembler_Casing)
-            .toolTipFinisher(TextUtils.SNL);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE);
         return tt;
     }
 

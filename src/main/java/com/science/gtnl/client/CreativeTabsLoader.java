@@ -25,7 +25,7 @@ public class CreativeTabsLoader {
 
             @Override
             public Item getTabIconItem() {
-                return ItemLoader.CrystalSword;
+                return ItemLoader.InfinityPickaxe;
             }
         };
     }

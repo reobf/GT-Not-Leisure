@@ -319,7 +319,7 @@ public class LargeSteamCircuitAssembler extends MTESteamMultiBase<LargeSteamCirc
             .addInputBus(TextLocalization.Tooltip_LargeSteamCircuitAssembler_Casing, 1)
             .addInputHatch(TextLocalization.Tooltip_LargeSteamCircuitAssembler_Casing, 1)
             .addOutputBus(TextLocalization.Tooltip_LargeSteamCircuitAssembler_Casing, 1)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE);
+            .toolTipFinisher(TextUtils.SNL);
         return tt;
     }
 

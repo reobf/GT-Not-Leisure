@@ -231,7 +231,7 @@ public class EdenGarden extends MultiMachineBase<EdenGarden> {
             .addInputHatch(TextLocalization.Tooltip_EdenGarden_Casing, 1)
             .addEnergyHatch(TextLocalization.Tooltip_EdenGarden_Casing, 1)
             .addMaintenanceHatch(TextLocalization.Tooltip_EdenGarden_Casing, 1)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + "§r X §l§o§e伊甸生态园§f by 茯角");
+            .toolTipFinisher(TextUtils.SNL + "§r X §l§o§e伊甸生态园§f by 茯角");
         return tt;
     }
 

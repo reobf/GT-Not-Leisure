@@ -323,7 +323,7 @@ public class LargeSteamChemicalBath extends MTESteamMultiBase<LargeSteamChemical
             .addOutputBus(TextLocalization.Tooltip_LargeSteamChemicalBath_Casing, 1)
             .addInputHatch(TextLocalization.Tooltip_LargeSteamChemicalBath_Casing, 1)
             .addOutputHatch(TextLocalization.Tooltip_LargeSteamChemicalBath_Casing, 1)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
+            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY);
         return tt;
     }
 

@@ -79,7 +79,7 @@ public class AdvancedPhotovoltaicPowerStation extends MTEEnhancedMultiBlockBase<
             .addInputHatch(TextLocalization.Tooltip_AdvancedPhotovoltaicPowerStation_Casing)
             .addDynamoHatch(TextLocalization.Tooltip_AdvancedPhotovoltaicPowerStation_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_AdvancedPhotovoltaicPowerStation_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
+            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY);
         return tt;
     }
 

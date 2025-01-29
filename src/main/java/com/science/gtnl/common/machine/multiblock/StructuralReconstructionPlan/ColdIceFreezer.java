@@ -95,7 +95,7 @@ public class ColdIceFreezer extends MultiMachineBase<ColdIceFreezer> implements 
                 TextLocalization.FluidIceInputHatch,
                 TextLocalization.Tooltip_ColdIceFreezer_Casing_00,
                 1)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY + " §rX " + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY + " §rX " + TextUtils.SRP);
         return tt;
     }
 

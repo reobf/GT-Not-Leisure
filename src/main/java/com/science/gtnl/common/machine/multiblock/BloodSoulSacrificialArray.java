@@ -203,7 +203,7 @@ public class BloodSoulSacrificialArray extends MultiMachineBase<BloodSoulSacrifi
             .addInputHatch(TextLocalization.Tooltip_BloodSoulSacrificialArray_Casing, 1)
             .addInputBus(TextLocalization.Tooltip_BloodSoulSacrificialArray_Casing, 1)
             .addOutputBus(TextLocalization.Tooltip_BloodSoulSacrificialArray_Casing, 1)
-            .toolTipFinisher(TextUtils.SNL);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE);
         return tt;
     }
 

@@ -80,7 +80,7 @@ public class EnergeticPhotovoltaicPowerStation extends MTEEnhancedMultiBlockBase
             .addInputHatch(TextLocalization.Tooltip_EnergeticPhotovoltaicPowerStation_Casing)
             .addDynamoHatch(TextLocalization.Tooltip_EnergeticPhotovoltaicPowerStation_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_EnergeticPhotovoltaicPowerStation_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
+            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY);
         return tt;
     }
 

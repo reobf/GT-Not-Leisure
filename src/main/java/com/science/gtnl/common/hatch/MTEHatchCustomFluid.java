@@ -177,7 +177,7 @@ public class MTEHatchCustomFluid extends MTEHatch {
             + EnumChatFormatting.RESET;
         return new String[] { TextLocalization.HatchCustomFluid_00,
             TextLocalization.HatchCustomFluid_01 + getCapacity() + "L", aFluidName,
-            TextLocalization.Adder + TextUtils.SNL };
+            TextLocalization.Adder + TextUtils.SCIENCE_NOT_LEISURE };
     }
 
     @Override

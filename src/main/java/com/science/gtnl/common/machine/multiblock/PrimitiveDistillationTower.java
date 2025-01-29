@@ -179,7 +179,7 @@ public class PrimitiveDistillationTower extends MTESteamMultiBase<PrimitiveDisti
             .addOutputBus(TextLocalization.Tooltip_PrimitiveDistillationTower_Casing_01, 1)
             .addInputHatch(TextLocalization.Tooltip_PrimitiveDistillationTower_Casing_01, 1)
             .addOutputHatch(TextLocalization.Tooltip_PrimitiveDistillationTower_Casing_02, 1)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
+            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY);
         return tt;
     }
 

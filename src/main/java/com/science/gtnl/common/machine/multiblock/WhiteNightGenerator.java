@@ -266,7 +266,7 @@ public class WhiteNightGenerator extends MultiMachineBase<WhiteNightGenerator>
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
             .beginStructureBlock(99, 84, 48, false)
             .addStructureInfo(TextLocalization.Tooltip_RealArtificialStar_02_01)
-            .toolTipFinisher(TextUtils.SNL);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE);
         return tt;
     }
 
