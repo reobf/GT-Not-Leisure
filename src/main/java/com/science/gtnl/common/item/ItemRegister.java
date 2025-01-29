@@ -33,11 +33,8 @@ public class ItemRegister {
                 1,
                 new String[] {
                     texter("§oUltimate Form of Naquadah Fuel.", "tooltips.DepletedExcitedNaquadahFuelRod") }));
-        GTNLItemList.BlazeCube.set(
-            initItem(
-                "§eBlaze Cube",
-                2,
-                new String[] { texter("§oForged from the soul fire, storing endless heat.", "tooltips.BlazeCube") }));
+        GTNLItemList.BlazeCube
+            .set(initItem("§eBlaze Cube", 2, new String[] { texter("§oBlaze Storm.", "tooltips.BlazeCube") }));
         GTNLItemList.EnhancementCore.set(
             initItem(
                 "Enhancement Core",

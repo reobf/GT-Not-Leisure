@@ -39,7 +39,7 @@ public class InfinityTotem extends Item {
         this.setUnlocalizedName("InfinityTotem");
         this.setCreativeTab(CreativeTabs.tabCombat);
         this.setCreativeTab(CreativeTabs.tabTools);
-        this.setCreativeTab(CreativeTabsLoader.GTNotLeisure);
+        this.setCreativeTab(CreativeTabsLoader.ReAvaritia);
         this.setTextureName("sciencenotleisure:InfinityTotem");
         this.setMaxDamage(99);
         this.setMaxStackSize(1);

@@ -29,7 +29,7 @@ public class CrystalShovel extends ItemSpade {
         super(CRYSTAL);
         this.setUnlocalizedName("CrystalShovel");
         this.setCreativeTab(CreativeTabs.tabTools);
-        this.setCreativeTab(CreativeTabsLoader.GTNotLeisure);
+        this.setCreativeTab(CreativeTabsLoader.ReAvaritia);
         this.setTextureName("sciencenotleisure:CrystalShovel");
         this.setMaxDamage(8888);
         MinecraftForge.EVENT_BUS.register(this);

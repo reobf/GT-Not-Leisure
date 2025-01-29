@@ -86,6 +86,8 @@ public class TextLocalization {
     public static final String Tooltip_BlazeAxe_00 = texter(
         "§oBurn the forest, and the wood turns into charcoal.",
         "Tooltip_BlazeAxe_00");
+    public static final String Tooltip_BlazeShovel_00 = texter("§oSpell born from Nether.", "Tooltip_BlazeShovel_00");
+    public static final String Tooltip_BlazeHoe_00 = texter("§oSpell born from Nether.", "Tooltip_BlazeHoe_00");
     public static final String Tooltip_Blaze_Smelt_On = texter("Enabled Smelt Mode", "Tooltip_Blaze_Smelt_On");
     public static final String Tooltip_Blaze_Smelt_Off = texter("Disabled Smelt Mode", "Tooltip_Blaze_Smelt_Off");
 

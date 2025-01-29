@@ -12,6 +12,7 @@ public class BasicBlocks {
 
     public static Block BlockStar;
     public static Block BlockLaserBeacon;
+    public static Block BlockSoulFarmland;
     public static final Block MetaBlock = new MetaBlockBase("MetaBlock", "MetaBlock");
     public static final Block MetaBlockGlow = new MetaBlockGlow("MetaBlockGlow", "MetaBlockGlow");
     public static final Block MetaBlockGlass = new MetaBlockGlass("MetaBlockGlass", "MetaBlockGlass");

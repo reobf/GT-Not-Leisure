@@ -30,7 +30,7 @@ public class CrystalSword extends ItemSword {
         super(EnumHelper.addToolMaterial("CRYSTAL", 3, 8888, 8.0F, 48.0F, 10));
         this.setUnlocalizedName("CrystalSword");
         this.setCreativeTab(CreativeTabs.tabCombat);
-        this.setCreativeTab(CreativeTabsLoader.GTNotLeisure);
+        this.setCreativeTab(CreativeTabsLoader.ReAvaritia);
         this.setTextureName("sciencenotleisure:CrystalSword");
         this.setMaxDamage(8888);
     }

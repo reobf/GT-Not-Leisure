@@ -1,4 +1,5 @@
 itemGroup.GTNotLeisure=GT不再业余
+itemGroup.ReAvaritia=无尽：重生
 StructuralReconstructionPlan=结构代替计划
 AppliedEnergistics2=应用能源2
 
@@ -128,6 +129,7 @@ tile.Stargate_Coil_Compressed.9.name=压缩星门线圈-九重
 
 tile.LaserBeacon.name=激光诱导信标
 tile.RealArtificialStarRender.name=真·湮灭发电机渲染器
+tile.BlockSoulFarmland.name=灵魂耕地
 
 MetaItem.0.name=愚人脸
 tooltips.TrollFace=Never Gonna Give You Up~
@@ -136,7 +138,7 @@ MetaItem.1.name=§b激发的混合硅岩燃料棒
 tooltips.DepletedExcitedNaquadahFuelRod=§o硅岩基燃料的最终形态。
 
 MetaItem.2.name=§e炽骨立方块
-tooltips.BlazeCube=§o灵魂之火铸成，无尽炽热封存。
+tooltips.BlazeCube=§o火焰风暴。
 
 MetaItem.3.name=§d无瑕核心
 tooltips.EnhancementCore=§o补全之路！
@@ -277,6 +279,10 @@ item.BlazePickaxe.name=§d炽岩之熔山镐
 Tooltip_BlazePickaxe_00=§o熔山，炽热，熔炼已成。
 item.BlazeAxe.name=§d炽灭之焚林斧
 Tooltip_BlazeAxe_00=§o炽灭焚林，木成炭。
+item.BlazeShovel.name=§d炽咒之狱火锹
+Tooltip_BlazeShovel_00=§o自下界而生的咒语。
+item.BlazeHoe.name=§d炽魂之耘灵锄
+Tooltip_BlazeHoe_00=§o以灵魂之力，助万物生长。
 Tooltip_Blaze_Smelt_On=熔炼模式已激活！
 Tooltip_Blaze_Smelt_Off=熔炼模式已取消！
 

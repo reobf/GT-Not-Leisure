@@ -43,6 +43,9 @@ public class BlockRegister {
 
     public static void registryBlocks() {
 
+        BlockSoulFarmland = new BlockSoulFarmland();
+        GameRegistry.registerBlock(BlockSoulFarmland, "BlockSoulFarmland");
+
         BlockStar = new BlockStar();
         GameRegistry.registerTileEntity(TileStar.class, "RealArtificialStarRender");
 

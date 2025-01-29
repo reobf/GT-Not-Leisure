@@ -30,7 +30,7 @@ public class CrystalAxe extends ItemAxe {
         this.setUnlocalizedName("CrystalAxe");
         this.setCreativeTab(CreativeTabs.tabCombat);
         this.setCreativeTab(CreativeTabs.tabTools);
-        this.setCreativeTab(CreativeTabsLoader.GTNotLeisure);
+        this.setCreativeTab(CreativeTabsLoader.ReAvaritia);
         this.setTextureName("sciencenotleisure:CrystalAxe");
         this.setMaxDamage(8888);
     }
