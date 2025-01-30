@@ -21,7 +21,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Mods;
 import gregtech.api.interfaces.IRecipeMap;
 
-public class IndustrialArcaneAssemblerRecipesPool implements IRecipePool {
+public class ShapedArcaneCraftingRecipesPool implements IRecipePool {
 
     protected Set<Item> skips;
 
@@ -61,7 +61,7 @@ public class IndustrialArcaneAssemblerRecipesPool implements IRecipePool {
     public void loadRecipes() {
         TCRecipeTools.getShapedArcaneCraftingRecipe();
 
-        final IRecipeMap IAA = RecipeRegister.IndustrialArcaneAssemblerRecipes;
+        final IRecipeMap IAA = RecipeRegister.IndustrialShapedArcaneCraftingRecipes;
 
         for (TCRecipeTools.ShapedArcaneCraftingRecipe recipe : TCRecipeTools.SAR) {
             if (shouldSkip(

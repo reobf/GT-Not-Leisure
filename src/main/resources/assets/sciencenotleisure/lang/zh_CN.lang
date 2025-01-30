@@ -245,10 +245,10 @@ MetaItem.47.name=超时空贴片二极管
 
 item.TestItem.name=测试物品
 Tooltip_Testitem_00=如果你看到了这个Tooltip
-Tooltip_Testitem_01=欢迎来到§o§dGT不再业余!
-Tooltip_Testitem_02=这是一个基于§o§b GT:Leisure (格雷科技: 休闲版)
-Tooltip_Testitem_03=以及§o§e GT:Odyssey (格雷科技: 奥德赛)(尚未推出!) §r§7两个整合包
-Tooltip_Testitem_04=为GTNH添加§o§d额外游戏内容§r§7的模组
+Tooltip_Testitem_01=欢迎来到§o§d§oGT不再业余!
+Tooltip_Testitem_02=这是一个基于§b§o GT:Leisure (格雷科技: 休闲版)
+Tooltip_Testitem_03=以及§e§o GT:Odyssey (格雷科技: 奥德赛)(尚未推出!) §r§7两个整合包
+Tooltip_Testitem_04=为GTNH添加§d§o额外游戏内容§r§7的模组
 Tooltip_Testitem_05=包含的许多不同阶段的机器和内容
 Tooltip_Testitem_06=部分配方也会得到修改
 Tooltip_Testitem_07=§r这是一个专注于添加游戏内容的模组
@@ -299,10 +299,14 @@ item.InfinityShovel.name=星球吞噬之铲
 Tooltip_Infinity_Mode_1=切换到 普通模式
 Tooltip_Infinity_Mode_2=切换到 范围模式
 
+item.InfinityBucket.name=§6远海鲸吞之桶
+Tooltip_InfinityBucket_00=§8§o吞噬一切…
+Tooltip_InfinityBucket_01=当前流体：%s | 剩余量：%s
+Tooltip_InfinityBucket_02=已清空所有流体！
+
 item.InfinityTotem.name=§d无尽图腾
 Tooltip_InfinityTotem_00=§8§o永恒守护…
 Tooltip_InfinityTotem_Enable=无尽图腾抵挡了一次死亡…
-
 
 item.MatterCluster.name=§b物质团
 Tooltip_MatterCluster_Counter=物品
@@ -456,10 +460,10 @@ gtnl.recipe.PortalToAlfheimRecipes=精灵传送门
 gtnl.recipe.NatureSpiritArrayRecipes=自然灵阵
 gtnl.recipe.ManaInfusionRecipes=魔力灌注
 gtnl.recipe.RuneAltarRecipes=符文祭坛
-TeleportationArrayToAlfheim.modeMsg.0=精灵传送门
-TeleportationArrayToAlfheim.modeMsg.1=自然灵阵
-TeleportationArrayToAlfheim.modeMsg.2=魔力灌注
-TeleportationArrayToAlfheim.modeMsg.3=符文祭坛
+TeleportationArrayToAlfheim_Mode_0=精灵传送门
+TeleportationArrayToAlfheim_Mode_1=自然灵阵
+TeleportationArrayToAlfheim_Mode_2=魔力灌注
+TeleportationArrayToAlfheim_Mode_3=符文祭坛
 TeleportationArrayToAlfheimRecipeType= 精灵传送门 / 自然灵阵 / 魔力灌注 / 符文祭坛
 Tooltip_TeleportationArrayToAlfheim_00=传说这个法阵可以稳定传输大量的物资
 Tooltip_TeleportationArrayToAlfheim_01=需要液态魔力输入仓
@@ -646,8 +650,15 @@ Tooltip_ColdIceFreezer_Casing_00=任意防冻机械方块
 Tooltip_ColdIceFreezer_Casing_01=顶部中心防冻机械方块
 
 NameIndustrialArcaneAssembler=工业奥术装配室
-gtnl.recipe.IndustrialArcaneAssemblerRecipes=工业奥术装配室
-IndustrialArcaneAssemblerRecipeType=工业奥术装配室
+gtnl.recipe.IndustrialShapedArcaneCraftingRecipes=工业奥术装配室
+gtnl.recipe.IndustrialInfusionCraftingRecipes=工业注魔矩阵
+IndustrialArcaneAssemblerRecipeType=工业奥术装配室 / 工业注魔矩阵
+IndustrialArcaneAssembler_Mode_0=工业奥术装配室
+IndustrialArcaneAssembler_Mode_1=工业注魔矩阵
+Tooltip_IndustrialArcaneAssembler_00=§d§o通过强大的科技手段，我们终于掌握了那无比神秘的魔法
+Tooltip_IndustrialArcaneAssembler_01=固定并行为2147483647
+Tooltip_IndustrialArcaneAssembler_02=需要在控制器放入魔导源质存储元件来成型！
+Tooltip_EnergeticIndustrialArcaneAssembler_Casing=任意超维度机械方块
 
 NameEnergeticPhotovoltaicPowerStation=充能光伏电站
 NameAdvancedPhotovoltaicPowerStation=高级光伏电站

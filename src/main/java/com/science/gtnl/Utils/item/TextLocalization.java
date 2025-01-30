@@ -53,19 +53,15 @@ public class TextLocalization {
     public static final String Tooltip_CrystalPickaxe_Enchant_2 = texter(
         "Set to Silk Touch",
         "Tooltip_CrystalPickaxe_Enchant_2");
-
     public static final String Tooltip_CrystalHoe_00 = texter(
         "§8§oOne swing, life blooms; another, time flows.",
         "Tooltip_CrystalHoe_00");
-
     public static final String Tooltip_CrystalShovel_00 = texter(
         "§8§oRises like wind, falls to slow.",
         "Tooltip_CrystalShovel_00");
-
     public static final String Tooltip_CrystalAxe_00 = texter(
         "§8§oBreaks rocks, shatters shields.",
         "Tooltip_CrystalAxe_00");
-
     public static final String Tooltip_CrystalSword_00 = texter(
         "§8§oBlades cut through, shadows vanquish foes.",
         "Tooltip_CrystalSword_00");
@@ -109,6 +105,16 @@ public class TextLocalization {
     public static final String Tooltip_MatterCluster_01 = texter(
         "§8§oHold SHIFT for contents.",
         "Tooltip_MatterCluster_01");
+
+    public static final String Tooltip_InfinityBucket_00 = texter(
+        "§8§oDevour everything...",
+        "Tooltip_InfinityBucket_00");
+    public static final String Tooltip_InfinityBucket_01 = texter(
+        "Current Fluid: %s | Amount: %s",
+        "Tooltip_InfinityBucket_01");
+    public static final String Tooltip_InfinityBucket_02 = texter(
+        "All fluids have been cleared!",
+        "Tooltip_InfinityBucket_02");
 
     public static final String Tooltip_InfinityTotem_00 = texter("§8§oEternal Guardian...", "Tooltip_InfinityTotem_00");
     public static final String Tooltip_InfinityTotem_Enable = texter(
@@ -391,6 +397,18 @@ public class TextLocalization {
     public static final String IndustrialArcaneAssemblerRecipeType = texter(
         "Industrial Arcane Assembler",
         "IndustrialArcaneAssemblerRecipeType");
+    public static final String Tooltip_IndustrialArcaneAssembler_00 = texter(
+        "§d§oThrough the power of advanced technology, we have finally mastered that incredibly mysterious magic.",
+        "Tooltip_IndustrialArcaneAssembler_00");
+    public static final String Tooltip_IndustrialArcaneAssembler_01 = texter(
+        "Fixed and Behavioral 2147483647",
+        "Tooltip_IndustrialArcaneAssembler_01");
+    public static final String Tooltip_IndustrialArcaneAssembler_02 = texter(
+        "Need to put Thaumometric Essentia Cell in the controller to framing!",
+        "Tooltip_IndustrialArcaneAssembler_02");
+    public static final String Tooltip_EnergeticIndustrialArcaneAssembler_Casing = texter(
+        "Any Dimensionally Transcendent Casing",
+        "Tooltip_EnergeticIndustrialArcaneAssembler_Casing");
 
     public static final String NameEnergeticPhotovoltaicPowerStation = texter(
         "Energetic Photovoltaic Power Station",

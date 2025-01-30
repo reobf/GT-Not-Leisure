@@ -32,7 +32,8 @@ import com.science.gtnl.common.recipe.GregTech.PlasmaForgeRecipes;
 import com.science.gtnl.common.recipe.GregTech.TranscendentPlasmaMixerRecipes;
 import com.science.gtnl.common.recipe.GregTech.multiDehydratorRecipes;
 import com.science.gtnl.common.recipe.IRecipePool;
-import com.science.gtnl.common.recipe.Thaumcraft.IndustrialArcaneAssemblerRecipesPool;
+import com.science.gtnl.common.recipe.Thaumcraft.InfusionCraftingRecipesPool;
+import com.science.gtnl.common.recipe.Thaumcraft.ShapedArcaneCraftingRecipesPool;
 
 import goodgenerator.util.CrackRecipeAdder;
 
@@ -56,7 +57,8 @@ public class RecipeLoader {
     }
 
     public static void loadRecipesPostInit() {
-        new IndustrialArcaneAssemblerRecipesPool().loadRecipes();
+        new ShapedArcaneCraftingRecipesPool().loadRecipes();
+        new InfusionCraftingRecipesPool().loadRecipes();
     }
 
     public static void RecipeLoad() {

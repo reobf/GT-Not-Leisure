@@ -40,7 +40,6 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import fox.spiteful.avaritia.DamageSourceInfinitySword;
 import fox.spiteful.avaritia.achievements.Achievements;
-import fox.spiteful.avaritia.compat.Belmont;
 import fox.spiteful.avaritia.entity.EntityImmortalItem;
 import fox.spiteful.avaritia.items.LudicrousItems;
 import fox.spiteful.avaritia.render.ICosmicRenderItem;
@@ -97,16 +96,6 @@ public class InfinitySword extends ItemSword implements ICosmicRenderItem {
     private void showSubtitle(String message) {
         IChatComponent text = new ChatComponentText(EnumChatFormatting.WHITE + message);
         Minecraft.getMinecraft().ingameGUI.func_110326_a(text.getFormattedText(), true);
-    }
-
-    private void handleArmoredPlayer(EntityPlayer target, EntityLivingBase attacker) {
-        DamageSource dmgSrc = new DamageSourceInfinitySword(attacker);
-        if (Belmont.isVampire(target)) dmgSrc.setFireDamage();
-
-        target.attackEntityFrom(dmgSrc.setDamageBypassesArmor(), 4.0F);
-        if (!attacker.worldObj.isRemote) {
-            attacker.worldObj.createExplosion(null, target.posX, target.posY, target.posZ, 25.0F, true);
-        }
     }
 
     @SubscribeEvent

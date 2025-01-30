@@ -13,9 +13,11 @@ import java.util.Collection;
 import java.util.Objects;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
@@ -26,6 +28,8 @@ import com.brandon3055.brandonscore.common.handlers.ProcessHandler;
 import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
+import com.gtnewhorizons.modularui.api.screen.ModularWindow;
+import com.gtnewhorizons.modularui.api.screen.UIBuildContext;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.Utils.item.TextUtils;
@@ -38,6 +42,7 @@ import com.science.gtnl.config.MainConfig;
 
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.Textures;
+import gregtech.api.gui.modularui.GTUITextures;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
@@ -55,11 +60,14 @@ import tectech.thing.casing.TTCasingsContainer;
 
 public class TeleportationArrayToAlfheim extends MultiMachineBase<TeleportationArrayToAlfheim> {
 
-    public byte mode = 1;
     public String[][] shape;
     protected static GTNL_ItemID Bread;
     public final ArrayList<MTEHatchCustomFluid> FluidManaInputHatch = new ArrayList<>();
     private int mCasing;
+    private static final int PORTAL_MODE = 0;
+    private static final int NATURE_MODE = 1;
+    private static final int MANA_MODE = 2;
+    private static final int RUNE_MODE = 3;
 
     public static void initStatics() {
         Bread = GTNL_ItemID.createNoNBT(new ItemStack(Items.bread));
@@ -89,12 +97,12 @@ public class TeleportationArrayToAlfheim extends MultiMachineBase<TeleportationA
 
     @Override
     public RecipeMap<?> getRecipeMap() {
-        switch (mode) {
-            case 1:
+        switch (machineMode) {
+            case NATURE_MODE:
                 return RecipeRegister.NatureSpiritArrayRecipes;
-            case 2:
+            case MANA_MODE:
                 return RecipeRegister.ManaInfusionRecipes;
-            case 3:
+            case RUNE_MODE:
                 return RecipeRegister.RuneAltarRecipes;
             default:
                 return RecipeRegister.PortalToAlfheimRecipes;
@@ -112,11 +120,50 @@ public class TeleportationArrayToAlfheim extends MultiMachineBase<TeleportationA
     }
 
     @Override
+    public void getWailaNBTData(EntityPlayerMP player, TileEntity tile, NBTTagCompound tag, World world, int x, int y,
+        int z) {
+        super.getWailaNBTData(player, tile, tag, world, x, y, z);
+        tag.setInteger("mode", machineMode);
+    }
+
+    // 启用机器模式切换
+    @Override
+    public boolean supportsMachineModeSwitch() {
+        return true;
+    }
+
+    // 设置模式图标
+    @Override
+    public void setMachineModeIcons() {
+        machineModeIcons.clear();
+        machineModeIcons.add(GTUITextures.OVERLAY_BUTTON_MACHINEMODE_DEFAULT);
+        machineModeIcons.add(GTUITextures.OVERLAY_BUTTON_MACHINEMODE_LPF_FLUID);
+        machineModeIcons.add(GTUITextures.OVERLAY_BUTTON_MACHINEMODE_LPF_METAL);
+        machineModeIcons.add(GTUITextures.OVERLAY_BUTTON_MACHINEMODE_BENDING);
+    }
+
+    // 添加UI部件
+    @Override
+    public void addUIWidgets(ModularWindow.Builder builder, UIBuildContext buildContext) {
+        super.addUIWidgets(builder, buildContext);
+        setMachineModeIcons();
+        builder.widget(createModeSwitchButton(builder));
+    }
+
+    @Override
+    public int nextMachineMode() {
+        if (machineMode == PORTAL_MODE) return NATURE_MODE;
+        else if (machineMode == NATURE_MODE) return MANA_MODE;
+        else if (machineMode == MANA_MODE) return RUNE_MODE;
+        else return PORTAL_MODE;
+    }
+
+    @Override
     public final void onScrewdriverRightClick(ForgeDirection side, EntityPlayer aPlayer, float aX, float aY, float aZ) {
-        this.mode = (byte) ((this.mode + 1) % 5);
+        this.machineMode = (byte) ((this.machineMode + 1) % 5);
         GTUtility.sendChatToPlayer(
             aPlayer,
-            StatCollector.translateToLocal("TeleportationArrayToAlfheim.modeMsg." + this.mode));
+            StatCollector.translateToLocal("TeleportationArrayToAlfheim_Mode_" + this.machineMode));
     }
 
     @NotNull
@@ -341,17 +388,17 @@ public class TeleportationArrayToAlfheim extends MultiMachineBase<TeleportationA
     @Override
     public void saveNBTData(NBTTagCompound aNBT) {
         super.saveNBTData(aNBT);
-        aNBT.setByte("mode", mode);
+        aNBT.setInteger("mode", machineMode);
     }
 
     @Override
     public void loadNBTData(final NBTTagCompound aNBT) {
         super.loadNBTData(aNBT);
-        mode = aNBT.getByte("mode");
+        machineMode = aNBT.getInteger("mode");
     }
 
     @Override
-    public boolean supportsBatchMode() {
-        return true;
+    public String getMachineModeName() {
+        return StatCollector.translateToLocal("TeleportationArrayToAlfheim_Mode_" + machineMode);
     }
 }

@@ -13,6 +13,7 @@ import com.science.gtnl.common.item.ReAvaritia.CrystalPickaxe;
 import com.science.gtnl.common.item.ReAvaritia.CrystalShovel;
 import com.science.gtnl.common.item.ReAvaritia.CrystalSword;
 import com.science.gtnl.common.item.ReAvaritia.InfinityAxe;
+import com.science.gtnl.common.item.ReAvaritia.InfinityBucket;
 import com.science.gtnl.common.item.ReAvaritia.InfinityHoe;
 import com.science.gtnl.common.item.ReAvaritia.InfinityPickaxe;
 import com.science.gtnl.common.item.ReAvaritia.InfinityShovel;
@@ -44,6 +45,7 @@ public class ItemLoader {
     public static Item InfinityShovel = new InfinityShovel();
     public static Item InfinityHoe = new InfinityHoe();
     public static Item InfinityTotem = new InfinityTotem();
+    public static Item InfinityBucket = new InfinityBucket();
     public static Item MatterCluster = new MatterCluster();
     public static Item RecordSus = new ItemRecord("sus");
     public static Item RecordNewHorizons = new ItemRecord("newhorizons");
@@ -67,6 +69,7 @@ public class ItemLoader {
         IRegistry(InfinityShovel, "InfinityShovel");
         IRegistry(InfinityHoe, "InfinityHoe");
         IRegistry(InfinityTotem, "InfinityTotem");
+        IRegistry(InfinityBucket, "InfinityBucket");
         IRegistry(MatterCluster, "MatterCluster");
         IRegistry(RecordSus, "RecordSus");
         IRegistry(RecordNewHorizons, "RecordNewHorizons");

@@ -1,57 +1,65 @@
 package com.science.gtnl.common.machine.multiblock;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
-import static gregtech.api.GregTechAPI.sBlockCasings2;
-import static gregtech.api.GregTechAPI.sBlockCasings3;
+import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.enums.HatchElement.*;
+import static gregtech.api.enums.Mods.ThaumicEnergistics;
 import static gregtech.api.enums.Textures.BlockIcons.*;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
-import static gregtech.api.util.GTUtility.validMTEList;
-import static gtPlusPlus.core.block.ModBlocks.blockCasings3Misc;
 
+import java.util.Arrays;
+import java.util.Collection;
+
+import javax.annotation.Nonnull;
+
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.StatCollector;
+import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
-
-import org.jetbrains.annotations.NotNull;
 
 import com.gtnewhorizon.structurelib.alignment.constructable.ISurvivalConstructable;
 import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
+import com.gtnewhorizons.modularui.api.screen.ModularWindow;
+import com.gtnewhorizons.modularui.api.screen.UIBuildContext;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.MultiMachineBase;
 import com.science.gtnl.common.recipe.RecipeRegister;
 
-import bartworks.API.BorosilicateGlass;
-import gregtech.api.enums.TAE;
 import gregtech.api.enums.Textures;
-import gregtech.api.enums.VoltageIndex;
+import gregtech.api.gui.modularui.GTUITextures;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
-import gregtech.api.logic.ProcessingLogic;
-import gregtech.api.metatileentity.implementations.MTEHatchEnergy;
-import gregtech.api.metatileentity.implementations.MTEHatchMaintenance;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.render.TextureFactory;
-import gregtech.api.util.GTRecipe;
+import gregtech.api.util.GTModHandler;
 import gregtech.api.util.MultiblockTooltipBuilder;
-import gregtech.api.util.OverclockCalculator;
+import gregtech.common.blocks.BlockCasings1;
+import tectech.thing.block.BlockQuantumGlass;
 
 public class IndustrialArcaneAssembler extends MultiMachineBase<IndustrialArcaneAssembler>
     implements ISurvivalConstructable {
 
+    public int multiTier = 0;
+    protected static final int CASING_INDEX = ((BlockCasings1) sBlockCasings1).getTextureIndex(12);
+    private static final int ShapedArcaneCrafting = 0;
+    private static final int InfusionCrafting = 1;
     private int mCasing;
-    private byte glassTier = 0;
     private static IStructureDefinition<IndustrialArcaneAssembler> STRUCTURE_DEFINITION = null;
     public static final String STRUCTURE_PIECE_MAIN = "main";
     public static String[][] shape;
-    public static final String LCA_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/large_circuit_assembler";
-    public final int horizontalOffSet = 5;
-    public final int verticalOffSet = 1;
-    public final int depthOffSet = 0;
+    public static final String LCA_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/industrial_arcane_assembler";
+    public final int horizontalOffSet = 45;
+    public final int verticalOffSet = 84;
+    public final int depthOffSet = 45;
 
     public IndustrialArcaneAssembler(int aID, String aName, String aNameRegional) {
         super(aID, aName, aNameRegional);
@@ -65,7 +73,7 @@ public class IndustrialArcaneAssembler extends MultiMachineBase<IndustrialArcane
 
     @Override
     public boolean isEnablePerfectOverclock() {
-        return false;
+        return true;
     }
 
     @Override
@@ -107,33 +115,39 @@ public class IndustrialArcaneAssembler extends MultiMachineBase<IndustrialArcane
     }
 
     public int getCasingTextureID() {
-        return TAE.getIndexFromPage(2, 2);
+        return CASING_INDEX;
     }
 
     @Override
     public RecipeMap<?> getRecipeMap() {
-        return RecipeRegister.IndustrialArcaneAssemblerRecipes;
+        return (machineMode == ShapedArcaneCrafting) ? RecipeRegister.IndustrialShapedArcaneCraftingRecipes
+            : RecipeRegister.IndustrialInfusionCraftingRecipes;
+    }
+
+    @Nonnull
+    @Override
+    public Collection<RecipeMap<?>> getAvailableRecipeMaps() {
+        return Arrays.asList(
+            RecipeRegister.IndustrialShapedArcaneCraftingRecipes,
+            RecipeRegister.IndustrialInfusionCraftingRecipes);
     }
 
     @Override
     public MultiblockTooltipBuilder createTooltip() {
         MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
         tt.addMachineType(TextLocalization.IndustrialArcaneAssemblerRecipeType)
-            .addInfo(TextLocalization.Tooltip_LargeCircuitAssembler_00)
-            .addInfo(TextLocalization.Tooltip_LargeCircuitAssembler_01)
-            .addInfo(TextLocalization.Tooltip_LargeCircuitAssembler_02)
-            .addInfo(TextLocalization.Tooltip_LargeCircuitAssembler_03)
-            .addInfo(TextLocalization.Tooltip_LargeCircuitAssembler_04)
-            .addInfo(TextLocalization.Tooltip_LargeCircuitAssembler_05)
+            .addInfo(TextLocalization.Tooltip_IndustrialArcaneAssembler_00)
+            .addInfo(TextLocalization.Tooltip_IndustrialArcaneAssembler_01)
+            .addInfo(TextLocalization.Tooltip_IndustrialArcaneAssembler_02)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
-            .beginStructureBlock(7, 3, 5, true)
-            .addInputHatch(TextLocalization.Tooltip_LargeCircuitAssembler_Casing)
-            .addInputBus(TextLocalization.Tooltip_LargeCircuitAssembler_Casing)
-            .addOutputBus(TextLocalization.Tooltip_LargeCircuitAssembler_Casing)
-            .addEnergyHatch(TextLocalization.Tooltip_LargeCircuitAssembler_Casing)
-            .addMaintenanceHatch(TextLocalization.Tooltip_LargeCircuitAssembler_Casing)
+            .beginStructureBlock(91, 150, 91, true)
+            .addInputHatch(TextLocalization.Tooltip_EnergeticIndustrialArcaneAssembler_Casing)
+            .addInputBus(TextLocalization.Tooltip_EnergeticIndustrialArcaneAssembler_Casing)
+            .addOutputBus(TextLocalization.Tooltip_EnergeticIndustrialArcaneAssembler_Casing)
+            .addEnergyHatch(TextLocalization.Tooltip_EnergeticIndustrialArcaneAssembler_Casing)
+            .addMaintenanceHatch(TextLocalization.Tooltip_EnergeticIndustrialArcaneAssembler_Casing)
             .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE);
         return tt;
     }
@@ -145,22 +159,17 @@ public class IndustrialArcaneAssembler extends MultiMachineBase<IndustrialArcane
                 .addShape(STRUCTURE_PIECE_MAIN, transpose(shape))
                 .addElement(
                     'A',
-                    withChannel(
-                        "glass",
-                        BorosilicateGlass.ofBoroGlass(
-                            (byte) 0,
-                            (byte) 1,
-                            Byte.MAX_VALUE,
-                            (te, t) -> te.glassTier = t,
-                            te -> te.glassTier)))
-                .addElement('B', ofBlock(sBlockCasings2, 14))
-                .addElement('C', ofBlock(sBlockCasings3, 10))
-                .addElement(
-                    'D',
-                    buildHatchAdder(IndustrialArcaneAssembler.class).casingIndex(TAE.getIndexFromPage(2, 2))
+                    buildHatchAdder(IndustrialArcaneAssembler.class).casingIndex(CASING_INDEX)
                         .dot(1)
-                        .atLeast(InputHatch, InputBus, OutputBus, Maintenance, Energy.or(ExoticEnergy))
-                        .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(blockCasings3Misc, 2))))
+                        .atLeast(InputBus, OutputBus, Energy.or(ExoticEnergy))
+                        .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(sBlockCasings1, 12))))
+                .addElement('B', ofBlock(sBlockCasings1, 13))
+                .addElement('C', ofBlock(sBlockCasings10, 11))
+                .addElement('D', ofBlock(sBlockCasings9, 11))
+                .addElement('E', ofBlockUnlocalizedName("bartworks", "BW_GlasBlocks", 15))
+                .addElement('F', ofBlock(sBlockGlass1, 2))
+                .addElement('G', ofBlock(BlockQuantumGlass.INSTANCE, 0))
+                .addElement('I', ofBlockAnyMeta(Blocks.beacon))
                 .build();
         }
         return STRUCTURE_DEFINITION;
@@ -189,15 +198,19 @@ public class IndustrialArcaneAssembler extends MultiMachineBase<IndustrialArcane
     @Override
     public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
         mCasing = 0;
+        this.multiTier = getMultiTier(aStack);
 
-        for (MTEHatchEnergy mEnergyHatch : this.mEnergyHatches) {
-            if (glassTier < VoltageIndex.UV & mEnergyHatch.mTier > glassTier) {
-                return false;
-            }
+        if (multiTier != 1) {
+            return false;
         }
-        if (this.mEnergyHatches.size() >= 2) return false;
-        return checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && mCasing >= 30
+
+        return checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && mCasing >= 3
             && checkHatch();
+    }
+
+    public int getMultiTier(ItemStack inventory) {
+        if (inventory == null) return 0;
+        return inventory.isItemEqual(GTModHandler.getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 4)) ? 1 : 0;
     }
 
     @Override
@@ -206,50 +219,41 @@ public class IndustrialArcaneAssembler extends MultiMachineBase<IndustrialArcane
     }
 
     @Override
-    public ProcessingLogic createProcessingLogic() {
-        return new ProcessingLogic() {
-
-            @NotNull
-            @Override
-            public OverclockCalculator createOverclockCalculator(@NotNull GTRecipe recipe) {
-                return OverclockCalculator.ofNoOverclock(recipe)
-                    .setEUtDiscount(0.8)
-                    .setSpeedBoost(0.6);
-            }
-        }.setMaxParallelSupplier(this::getMaxParallelRecipes);
-    }
-
-    @Override
-    public boolean getDefaultHasMaintenanceChecks() {
-        return true;
-    }
-
-    @Override
-    public boolean shouldCheckMaintenance() {
-        return true;
-    }
-
-    @Override
-    public void checkMaintenance() {
-        if (!shouldCheckMaintenance()) return;
-
-        if (getRepairStatus() != getIdealStatus()) {
-            for (MTEHatchMaintenance tHatch : validMTEList(mMaintenanceHatches)) {
-                if (tHatch.mAuto) tHatch.autoMaintainance();
-                if (tHatch.mWrench) mWrench = true;
-                if (tHatch.mScrewdriver) mScrewdriver = true;
-                if (tHatch.mSoftHammer) mSoftHammer = true;
-                if (tHatch.mHardHammer) mHardHammer = true;
-                if (tHatch.mSolderingTool) mSolderingTool = true;
-                if (tHatch.mCrowbar) mCrowbar = true;
-
-                tHatch.mWrench = false;
-                tHatch.mScrewdriver = false;
-                tHatch.mSoftHammer = false;
-                tHatch.mHardHammer = false;
-                tHatch.mSolderingTool = false;
-                tHatch.mCrowbar = false;
-            }
+    public void loadNBTData(NBTTagCompound aNBT) {
+        // Migrates old NBT tag to the new one
+        if (aNBT.hasKey("Mode")) {
+            machineMode = aNBT.getBoolean("Mode") ? ShapedArcaneCrafting : InfusionCrafting;
         }
+        super.loadNBTData(aNBT);
+    }
+
+    @Override
+    public void getWailaNBTData(EntityPlayerMP player, TileEntity tile, NBTTagCompound tag, World world, int x, int y,
+        int z) {
+        super.getWailaNBTData(player, tile, tag, world, x, y, z);
+        tag.setInteger("mode", machineMode);
+    }
+
+    @Override
+    public boolean supportsMachineModeSwitch() {
+        return true;
+    }
+
+    @Override
+    public void addUIWidgets(ModularWindow.Builder builder, UIBuildContext buildContext) {
+        super.addUIWidgets(builder, buildContext);
+        setMachineModeIcons();
+        builder.widget(createModeSwitchButton(builder));
+    }
+
+    public void setMachineModeIcons() {
+        machineModeIcons.clear();
+        machineModeIcons.add(GTUITextures.OVERLAY_BUTTON_MACHINEMODE_LPF_FLUID);
+        machineModeIcons.add(GTUITextures.OVERLAY_BUTTON_MACHINEMODE_LPF_METAL);
+    }
+
+    @Override
+    public String getMachineModeName() {
+        return StatCollector.translateToLocal("IndustrialArcaneAssembler_Mode_" + machineMode);
     }
 }
