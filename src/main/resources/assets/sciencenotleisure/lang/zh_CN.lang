@@ -105,6 +105,7 @@ MetaBlockGlass.2.name=聚变玻璃
 
 tile.MetaBlockColumn.0.name=砖砌青铜外壳
 tile.MetaBlockColumn.1.name=砖砌钢外壳
+tile.MetaBlockColumn.2.name=粉碎轮
 
 tile.Stargate0.name=压缩星门
 tile.Stargate1.name=压缩星门-一重
