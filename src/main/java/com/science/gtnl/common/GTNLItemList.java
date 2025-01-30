@@ -27,6 +27,7 @@ public enum GTNLItemList {
     EnergeticPhotovoltaicBlock,
     AdvancedPhotovoltaicBlock,
     VibrantPhotovoltaicBlock,
+    TungstensteelGearbox,
 
     TrollFace,
     DepletedExcitedNaquadahFuelRod,

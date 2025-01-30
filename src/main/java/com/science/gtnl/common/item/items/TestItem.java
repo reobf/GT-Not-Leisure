@@ -42,6 +42,7 @@ public class TestItem extends Item {
         toolTip.add(TextLocalization.Tooltip_Testitem_10);
         toolTip.add(TextLocalization.Tooltip_Testitem_11);
         toolTip.add(TextLocalization.Tooltip_Testitem_12);
+        toolTip.add(TextLocalization.Tooltip_Testitem_13);
 
     }
 

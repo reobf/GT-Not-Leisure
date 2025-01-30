@@ -27,6 +27,7 @@ MetaBlockCasing.8.name=二硅化钼线圈
 MetaBlockCasing.9.name=充能光伏方块
 MetaBlockCasing.10.name=高级光伏方块
 MetaBlockCasing.11.name=脉冲光伏方块
+MetaBlockCasing.12.name=钨钢齿轮箱机械方块
 
 MetaBlock.0.name=测试方块
 MetaBlock.1.name=新视野线圈
@@ -256,7 +257,8 @@ Tooltip_Testitem_08=§r请不要把此模组任何数值相较于别的模组进
 Tooltip_Testitem_09=§r包含任何重复性质的机器等
 Tooltip_Testitem_10=这是§d更加侧重于为原版GTNH添加内容的模组!
 Tooltip_Testitem_11=§f§l如果你遇到了什么问题或者想提出意见，请在Github提交issue
-Tooltip_Testitem_12=§c§l另外提醒: 不要拿着这个物品右键!
+Tooltip_Testitem_12=本模组添加的机器meta值从21000开始
+Tooltip_Testitem_13=§c§l另外提醒: 不要拿着这个物品右键!
 
 item.CrystalSword.name=§d双锋裂界之剑
 Tooltip_CrystalSword_00=§8§o锋刃所向，裂界无阻；剑影所至，敌影无存。

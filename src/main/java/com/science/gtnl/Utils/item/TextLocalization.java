@@ -41,8 +41,11 @@ public class TextLocalization {
         "If you encounter any issues or have suggestions, please submit an issue on Github",
         "Tooltip_Testitem_11");
     public static final String Tooltip_Testitem_12 = texter(
-        "Also, a reminder: do not right-click with this item!",
+        "The machines added by this mod have meta values starting from 21000.",
         "Tooltip_Testitem_12");
+    public static final String Tooltip_Testitem_13 = texter(
+        "Also, a reminder: do not right-click with this item!",
+        "Tooltip_Testitem_13");
 
     public static final String Tooltip_CrystalPickaxe_00 = texter(
         "§8§oLuck brings treasures; precision finds gems.",

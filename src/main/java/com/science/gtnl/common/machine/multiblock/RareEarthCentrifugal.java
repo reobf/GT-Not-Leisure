@@ -128,7 +128,7 @@ public class RareEarthCentrifugal extends MultiMachineBase<RareEarthCentrifugal>
             STRUCTURE_DEFINITION = StructureDefinition.<RareEarthCentrifugal>builder()
                 .addShape(STRUCTURE_PIECE_MAIN, transpose(shape))
                 .addElement('A', ofBlock(MetaBlockCasing, 4))
-                .addElement('B', ofBlock(sBlockCasings2, 5))
+                .addElement('B', ofBlock(MetaBlockCasing, 12))
                 .addElement(
                     'C',
                     buildHatchAdder(RareEarthCentrifugal.class).casingIndex(CASING_INDEX)

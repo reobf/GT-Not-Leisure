@@ -220,7 +220,6 @@ public class IndustrialArcaneAssembler extends MultiMachineBase<IndustrialArcane
 
     @Override
     public void loadNBTData(NBTTagCompound aNBT) {
-        // Migrates old NBT tag to the new one
         if (aNBT.hasKey("Mode")) {
             machineMode = aNBT.getBoolean("Mode") ? ShapedArcaneCrafting : InfusionCrafting;
         }
