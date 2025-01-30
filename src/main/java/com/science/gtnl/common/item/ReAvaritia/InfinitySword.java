@@ -274,8 +274,8 @@ public class InfinitySword extends ItemSword implements ICosmicRenderItem {
     public void registerIcons(IIconRegister ir) {
         super.registerIcons(ir);
 
-        this.cosmicMask = ir.registerIcon("sciencenotleisure:InfinitySword_Mask");
-        this.pommel = ir.registerIcon("sciencenotleisure:InfinitySword_Pommel");
+        this.cosmicMask = ir.registerIcon("reavaritia:InfinitySword_Mask");
+        this.pommel = ir.registerIcon("reavaritia:InfinitySword_Pommel");
     }
 
     @Override
