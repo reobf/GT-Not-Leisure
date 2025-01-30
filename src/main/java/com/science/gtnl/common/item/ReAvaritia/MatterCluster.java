@@ -62,6 +62,7 @@ public class MatterCluster extends Item implements ICosmicRenderItem {
 
     @Override
     public void addInformation(ItemStack stack, EntityPlayer player, List<String> tooltip, boolean debug) {
+        tooltip.add(TextLocalization.Tooltip_MatterCluster_00);
         if (!stack.hasTagCompound() || !stack.getTagCompound()
             .hasKey(MAINTAG)) {
             return;
@@ -94,7 +95,6 @@ public class MatterCluster extends Item implements ICosmicRenderItem {
                 }
             }
         } else {
-            tooltip.add(TextLocalization.Tooltip_MatterCluster_00);
             tooltip.add(TextLocalization.Tooltip_MatterCluster_01);
         }
     }
