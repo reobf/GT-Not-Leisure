@@ -8,6 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.science.gtnl.Utils.item.TextHandler;
+import com.science.gtnl.common.block.Casings.Special.CrushingWheelsEventHandler;
 import com.science.gtnl.common.item.ReAvaritia.BlazeSword;
 import com.science.gtnl.common.item.ReAvaritia.ToolEvents;
 import com.science.gtnl.common.machine.multiMachineClasses.EdenGardenManager.EIGBucketLoader;
@@ -137,5 +138,6 @@ public class ScienceNotLeisure {
     public void midGame(FMLInitializationEvent event) {
         proxy.makeThingsPretty();
         MinecraftForge.EVENT_BUS.register(new ToolEvents());
+        MinecraftForge.EVENT_BUS.register(new CrushingWheelsEventHandler());
     }
 }
