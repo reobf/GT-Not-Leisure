@@ -54,7 +54,7 @@ public class InfinitySword extends ItemSword implements ICosmicRenderItem {
     public InfinitySword() {
         super(INFINITY);
         setUnlocalizedName("InfinitySword");
-        setTextureName("sciencenotleisure:InfinitySword");
+        setTextureName("reavaritia:InfinitySword");
         setCreativeTab(CreativeTabs.tabCombat);
         setCreativeTab(CreativeTabsLoader.ReAvaritia);
         this.setMaxDamage(9999);

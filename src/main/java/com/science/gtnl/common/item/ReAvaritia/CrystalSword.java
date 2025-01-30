@@ -32,7 +32,7 @@ public class CrystalSword extends ItemSword {
         this.setUnlocalizedName("CrystalSword");
         this.setCreativeTab(CreativeTabs.tabCombat);
         this.setCreativeTab(CreativeTabsLoader.ReAvaritia);
-        this.setTextureName("sciencenotleisure:CrystalSword");
+        this.setTextureName("reavaritia:CrystalSword");
         this.setMaxDamage(8888);
     }
 

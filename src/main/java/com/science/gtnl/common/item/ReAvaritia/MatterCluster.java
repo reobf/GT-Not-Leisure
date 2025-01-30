@@ -44,7 +44,7 @@ public class MatterCluster extends Item implements ICosmicRenderItem {
     public MatterCluster() {
         this.setMaxStackSize(1);
         this.setUnlocalizedName("MatterCluster");
-        this.setTextureName("sciencenotleisure:MatterCluster");
+        this.setTextureName("reavaritia:MatterCluster");
         setCreativeTab(CreativeTabs.tabTools);
         setCreativeTab(CreativeTabsLoader.ReAvaritia);
     }
@@ -54,10 +54,10 @@ public class MatterCluster extends Item implements ICosmicRenderItem {
     public void registerIcons(IIconRegister ir) {
         super.registerIcons(ir);
 
-        this.cosmicIcon = ir.registerIcon("sciencenotleisure:MatterCluster_Mask");
+        this.cosmicIcon = ir.registerIcon("reavaritia:MatterCluster_Mask");
 
-        this.iconFull = ir.registerIcon("sciencenotleisure:MatterCluster_Full");
-        this.cosmicIconFull = ir.registerIcon("sciencenotleisure:MatterCluster_Full_Mask");
+        this.iconFull = ir.registerIcon("reavaritia:MatterCluster_Full");
+        this.cosmicIconFull = ir.registerIcon("reavaritia:MatterCluster_Full_Mask");
     }
 
     @Override

@@ -46,7 +46,7 @@ public class InfinityShovel extends ItemSpade {
         super(INFINITY);
         this.setUnlocalizedName("InfinityShovel");
         this.setCreativeTab(CreativeTabsLoader.ReAvaritia);
-        this.setTextureName("sciencenotleisure:InfinityShovel");
+        this.setTextureName("reavaritia:InfinityShovel");
     }
 
     @Override
@@ -68,8 +68,8 @@ public class InfinityShovel extends ItemSpade {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister ir) {
-        this.itemIcon = ir.registerIcon("sciencenotleisure:InfinityShovel");
-        this.Destroyer = ir.registerIcon("sciencenotleisure:InfinityDestroyer");
+        this.itemIcon = ir.registerIcon("reavaritia:InfinityShovel");
+        this.Destroyer = ir.registerIcon("reavaritia:InfinityDestroyer");
     }
 
     @Override

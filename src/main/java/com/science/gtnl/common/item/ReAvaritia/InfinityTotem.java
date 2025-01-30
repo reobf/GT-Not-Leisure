@@ -40,7 +40,7 @@ public class InfinityTotem extends Item {
         this.setCreativeTab(CreativeTabs.tabCombat);
         this.setCreativeTab(CreativeTabs.tabTools);
         this.setCreativeTab(CreativeTabsLoader.ReAvaritia);
-        this.setTextureName("sciencenotleisure:InfinityTotem");
+        this.setTextureName("reavaritia:InfinityTotem");
         this.setMaxDamage(99);
         this.setMaxStackSize(1);
         MinecraftForge.EVENT_BUS.register(this);

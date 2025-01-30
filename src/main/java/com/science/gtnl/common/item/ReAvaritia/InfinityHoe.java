@@ -34,7 +34,7 @@ public class InfinityHoe extends ItemHoe {
     public InfinityHoe() {
         super(INFINITY);
         setUnlocalizedName("InfinityHoe");
-        setTextureName("sciencenotleisure:InfinityHoe");
+        setTextureName("reavaritia:InfinityHoe");
         this.setCreativeTab(CreativeTabs.tabTools);
         setCreativeTab(CreativeTabsLoader.ReAvaritia);
         this.setMaxDamage(9999);

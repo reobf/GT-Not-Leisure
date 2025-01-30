@@ -44,7 +44,7 @@ public class InfinityBucket extends Item {
     public InfinityBucket() {
         setMaxStackSize(1);
         setUnlocalizedName("InfinityBucket");
-        setTextureName("sciencenotleisure:InfinityBucket");
+        setTextureName("reavaritia:InfinityBucket");
         setCreativeTab(CreativeTabs.tabTools);
         setCreativeTab(CreativeTabsLoader.ReAvaritia);
         MinecraftForge.EVENT_BUS.register(this);

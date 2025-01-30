@@ -40,7 +40,7 @@ public class BlazeHoe extends ItemHoe {
         this.setUnlocalizedName("BlazeHoe");
         setCreativeTab(CreativeTabs.tabTools);
         this.setCreativeTab(CreativeTabsLoader.ReAvaritia);
-        this.setTextureName("sciencenotleisure:BlazeHoe");
+        this.setTextureName("reavaritia:BlazeHoe");
         this.setMaxDamage(7777);
         MinecraftForge.EVENT_BUS.register(this);
     }

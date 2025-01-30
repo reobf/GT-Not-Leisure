@@ -32,7 +32,7 @@ public class CrystalPickaxe extends ItemPickaxe {
         this.setUnlocalizedName("CrystalPickaxe");
         setCreativeTab(CreativeTabs.tabTools);
         this.setCreativeTab(CreativeTabsLoader.ReAvaritia);
-        this.setTextureName("sciencenotleisure:CrystalPickaxe");
+        this.setTextureName("reavaritia:CrystalPickaxe");
         this.setMaxDamage(8888);
     }
 

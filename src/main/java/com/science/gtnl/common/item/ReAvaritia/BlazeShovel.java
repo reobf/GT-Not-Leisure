@@ -39,7 +39,7 @@ public class BlazeShovel extends ItemSpade {
         this.setUnlocalizedName("BlazeShovel");
         setCreativeTab(CreativeTabs.tabTools);
         this.setCreativeTab(CreativeTabsLoader.ReAvaritia);
-        this.setTextureName("sciencenotleisure:BlazeShovel");
+        this.setTextureName("reavaritia:BlazeShovel");
         this.setMaxDamage(7777);
         MinecraftForge.EVENT_BUS.register(this);
     }

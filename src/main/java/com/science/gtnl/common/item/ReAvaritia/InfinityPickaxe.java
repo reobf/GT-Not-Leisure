@@ -47,7 +47,7 @@ public class InfinityPickaxe extends ItemPickaxe {
         super(INFINITY);
         this.setUnlocalizedName("InfinityPickaxe");
         this.setCreativeTab(CreativeTabsLoader.ReAvaritia);
-        this.setTextureName("sciencenotleisure:InfinityPickaxe");
+        this.setTextureName("reavaritia:InfinityPickaxe");
     }
 
     @Override
@@ -70,8 +70,8 @@ public class InfinityPickaxe extends ItemPickaxe {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister ir) {
-        this.itemIcon = ir.registerIcon("sciencenotleisure:InfinityPickaxe");
-        this.hammer = ir.registerIcon("sciencenotleisure:InfinityHammer");
+        this.itemIcon = ir.registerIcon("reavaritia:InfinityPickaxe");
+        this.hammer = ir.registerIcon("reavaritia:InfinityHammer");
     }
 
     @Override

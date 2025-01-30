@@ -37,7 +37,7 @@ public class BlazePickaxe extends ItemPickaxe {
         this.setUnlocalizedName("BlazePickaxe");
         setCreativeTab(CreativeTabs.tabTools);
         this.setCreativeTab(CreativeTabsLoader.ReAvaritia);
-        this.setTextureName("sciencenotleisure:BlazePickaxe");
+        this.setTextureName("reavaritia:BlazePickaxe");
         this.setMaxDamage(7777);
         MinecraftForge.EVENT_BUS.register(this);
     }

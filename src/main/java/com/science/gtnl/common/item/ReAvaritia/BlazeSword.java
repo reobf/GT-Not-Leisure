@@ -46,7 +46,7 @@ public class BlazeSword extends ItemSword {
     public BlazeSword() {
         super(BLAZE);
         this.setUnlocalizedName("BlazeSword");
-        this.setTextureName("sciencenotleisure:BlazeSword");
+        this.setTextureName("reavaritia:BlazeSword");
         this.setCreativeTab(CreativeTabs.tabCombat);
         this.setCreativeTab(CreativeTabsLoader.ReAvaritia);
         this.setMaxDamage(7777);

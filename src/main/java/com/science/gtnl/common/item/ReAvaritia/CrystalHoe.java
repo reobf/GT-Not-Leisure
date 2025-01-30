@@ -31,7 +31,7 @@ public class CrystalHoe extends ItemHoe {
         this.setUnlocalizedName("CrystalHoe");
         this.setCreativeTab(CreativeTabs.tabTools);
         this.setCreativeTab(CreativeTabsLoader.ReAvaritia);
-        this.setTextureName("sciencenotleisure:CrystalHoe");
+        this.setTextureName("reavaritia:CrystalHoe");
         this.setMaxDamage(8888);
     }
 

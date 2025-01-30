@@ -45,7 +45,7 @@ public class BlazeAxe extends ItemAxe {
         this.setUnlocalizedName("BlazeAxe");
         setCreativeTab(CreativeTabs.tabTools);
         this.setCreativeTab(CreativeTabsLoader.ReAvaritia);
-        this.setTextureName("sciencenotleisure:BlazeAxe");
+        this.setTextureName("reavaritia:BlazeAxe");
         this.setMaxDamage(7777);
         MinecraftForge.EVENT_BUS.register(this);
     }

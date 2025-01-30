@@ -37,7 +37,7 @@ public class InfinityAxe extends ItemAxe {
     public InfinityAxe() {
         super(INFINITY);
         setUnlocalizedName("InfinityAxe");
-        setTextureName("sciencenotleisure:InfinityAxe");
+        setTextureName("reavaritia:InfinityAxe");
         setCreativeTab(CreativeTabsLoader.ReAvaritia);
         setMaxDamage(9999);
     }
