@@ -73,12 +73,12 @@ public class ProcessingArray extends MultiMachineBase<ProcessingArray> implement
     public int horizontalOffset = 6;
     public int verticalOffset = 4;
     public int depthOffset = 0;
-    private static IStructureDefinition<ProcessingArray> STRUCTURE_DEFINITION = null;
+    public static IStructureDefinition<ProcessingArray> STRUCTURE_DEFINITION = null;
     public static final String STRUCTURE_PIECE_MAIN = "main";
     public static String[][] shape;
     public static final String PA_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/processing_array";
-    private HeatingCoilLevel mHeatingCapacity;
-    protected static final int CASING_INDEX = ((BlockCasings4) sBlockCasings4).getTextureIndex(1);
+    public HeatingCoilLevel mHeatingCapacity;
+    public static final int CASING_INDEX = ((BlockCasings4) sBlockCasings4).getTextureIndex(1);
 
     public ProcessingArray(int aID, String aName, String aNameRegional) {
         super(aID, aName, aNameRegional);
@@ -396,12 +396,16 @@ public class ProcessingArray extends MultiMachineBase<ProcessingArray> implement
     @Override
     public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
         mCasing = 0;
+
+        if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffset, verticalOffset, depthOffset) && checkHatch()) {
+            return false;
+        }
+
         if (GTUtility.getTier(this.getMaxInputVoltage()) > tTier + 4) {
             return false;
         }
         setCoilLevel(HeatingCoilLevel.None);
-        return checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffset, verticalOffset, depthOffset) && mCasing >= 120
-            && mMaintenanceHatches.size() == 1
+        return mCasing >= 120 && mMaintenanceHatches.size() == 1
             && getCoilLevel() != HeatingCoilLevel.None
             && this.mMufflerHatches.size() == 2;
     }

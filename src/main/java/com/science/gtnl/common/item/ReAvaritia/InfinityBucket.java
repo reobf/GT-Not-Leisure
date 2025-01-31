@@ -1,7 +1,10 @@
 package com.science.gtnl.common.item.ReAvaritia;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
@@ -21,9 +24,11 @@ import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.IFluidBlock;
+import net.minecraftforge.fluids.IFluidContainerItem;
 import net.minecraftforge.fluids.IFluidHandler;
 
 import com.science.gtnl.Utils.item.TextLocalization;
@@ -32,14 +37,16 @@ import com.science.gtnl.client.CreativeTabsLoader;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import gregtech.api.objects.GTItemStack;
+import gregtech.api.util.GTUtility;
 
-public class InfinityBucket extends Item {
+public class InfinityBucket extends Item implements IFluidContainerItem {
 
     protected boolean Stop = false;
     private static final int BASE_MAX_TYPES = 128;
     private static final int MAX_FLUID_AMOUNT = Integer.MAX_VALUE;
     private static final int INFINITE_FLUID_AMOUNT = -1;
-    private long lastUpdateTime = 0; // 用于记录上次更新的时间
+    private long lastUpdateTime = 0;
 
     public InfinityBucket() {
         setMaxStackSize(1);
@@ -48,6 +55,185 @@ public class InfinityBucket extends Item {
         setCreativeTab(CreativeTabs.tabTools);
         setCreativeTab(CreativeTabsLoader.ReAvaritia);
         MinecraftForge.EVENT_BUS.register(this);
+
+        registerFluidContainerData();
+    }
+
+    private void registerFluidContainerData() {
+        try {
+            // 反射获取 GregTech 的容器映射
+            Field sEmptyContainerToFluidToDataField = GTUtility.class.getDeclaredField("sEmptyContainerToFluidToData");
+            sEmptyContainerToFluidToDataField.setAccessible(true);
+            Map<GTItemStack, Map<String, FluidContainerRegistry.FluidContainerData>> sEmptyContainerToFluidToData = (Map<GTItemStack, Map<String, FluidContainerRegistry.FluidContainerData>>) sEmptyContainerToFluidToDataField
+                .get(null);
+
+            // 注册空桶（无 NBT）
+            ItemStack emptyBucket = new ItemStack(this);
+            GTItemStack emptyGTStack = new GTItemStack(emptyBucket);
+
+            // 为所有流体注册填充数据
+            for (Fluid fluid : FluidRegistry.getRegisteredFluids()
+                .values()) {
+                ItemStack filledBucket = createFilledBucket(fluid);
+                FluidContainerRegistry.FluidContainerData data = new FluidContainerRegistry.FluidContainerData(
+                    new FluidStack(fluid, 1000),
+                    filledBucket,
+                    emptyBucket,
+                    false);
+                Map<String, FluidContainerRegistry.FluidContainerData> fluidMap = sEmptyContainerToFluidToData
+                    .computeIfAbsent(emptyGTStack, k -> new HashMap<>());
+                fluidMap.put(fluid.getName(), data);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private ItemStack createFilledBucket(Fluid fluid) {
+        ItemStack stack = new ItemStack(this);
+        NBTTagCompound nbt = new NBTTagCompound();
+        NBTTagList fluids = new NBTTagList();
+        NBTTagCompound fluidTag = new NBTTagCompound();
+        fluidTag.setString("FluidName", fluid.getName());
+        fluidTag.setInteger("Amount", 1000); // 初始填充量
+        fluids.appendTag(fluidTag);
+        nbt.setTag("Fluids", fluids);
+        stack.setTagCompound(nbt);
+        return stack;
+    }
+
+    @Override
+    public FluidStack getFluid(ItemStack container) {
+        return getFirstFluid(container);
+    }
+
+    @Override
+    public int getCapacity(ItemStack container) {
+        return Integer.MAX_VALUE;
+    }
+
+    @Override
+    public int fill(ItemStack container, FluidStack resource, boolean doFill) {
+        if (resource == null || resource.amount <= 0) return 0;
+
+        // 确保容器有有效的 NBT 数据
+        NBTTagCompound nbt = container.getTagCompound();
+        if (nbt == null) {
+            nbt = new NBTTagCompound();
+            container.setTagCompound(nbt);
+        }
+
+        // 获取或创建流体列表
+        NBTTagList fluids = nbt.getTagList("Fluids", 10);
+        String targetFluidName = resource.getFluid()
+            .getName();
+        int filledAmount = 0;
+
+        // 1. 检查是否已有相同类型的流体，尝试合并
+        for (int i = 0; i < fluids.tagCount(); i++) {
+            NBTTagCompound fluidTag = fluids.getCompoundTagAt(i); // 使用 getCompoundTagAt
+            String existingFluidName = fluidTag.getString("FluidName");
+            if (existingFluidName.equals(targetFluidName)) {
+                int currentAmount = fluidTag.getInteger("Amount");
+                long total = (long) currentAmount + resource.amount;
+
+                // 处理整数溢出
+                if (total > Integer.MAX_VALUE) {
+                    filledAmount = Integer.MAX_VALUE - currentAmount;
+                    if (doFill) {
+                        fluidTag.setInteger("Amount", Integer.MAX_VALUE);
+                    }
+                } else {
+                    filledAmount = resource.amount;
+                    if (doFill) {
+                        fluidTag.setInteger("Amount", (int) total);
+                    }
+                }
+
+                // 更新 NBT 数据（替换旧条目）
+                if (doFill) {
+                    NBTTagList newFluids = new NBTTagList();
+                    for (int j = 0; j < fluids.tagCount(); j++) {
+                        if (j == i) {
+                            newFluids.appendTag(fluidTag); // 替换更新后的条目
+                        } else {
+                            // 关键修复：使用 getCompoundTagAt 替代 get
+                            newFluids.appendTag(fluids.getCompoundTagAt(j));
+                        }
+                    }
+                    nbt.setTag("Fluids", newFluids);
+                }
+                return filledAmount;
+            }
+        }
+
+        // 2. 添加新类型流体（动态扩展最大类型数）
+        int currentTypes = fluids.tagCount();
+        int maxTypes = BASE_MAX_TYPES + currentTypes;
+
+        if (currentTypes >= maxTypes) {
+            return 0; // 已达最大类型限制
+        }
+
+        // 计算实际可填充量（不超过 Integer.MAX_VALUE）
+        int fillable = Math.min(resource.amount, Integer.MAX_VALUE);
+
+        if (doFill) {
+            // 创建新流体条目
+            NBTTagCompound newFluidTag = new NBTTagCompound();
+            newFluidTag.setString("FluidName", targetFluidName);
+            newFluidTag.setInteger("Amount", fillable);
+            fluids.appendTag(newFluidTag);
+            nbt.setTag("Fluids", fluids); // 更新 NBT
+        }
+
+        return fillable;
+    }
+
+    @Override
+    public FluidStack drain(ItemStack container, int maxDrain, boolean doDrain) {
+        NBTTagCompound nbt = container.getTagCompound();
+        if (nbt == null) return null;
+
+        NBTTagList fluids = nbt.getTagList("Fluids", 10);
+        if (fluids.tagCount() == 0) return null;
+
+        NBTTagCompound fluidTag = fluids.getCompoundTagAt(0);
+        String fluidName = fluidTag.getString("FluidName");
+        int currentAmount = fluidTag.getInteger("Amount");
+
+        Fluid fluid = FluidRegistry.getFluid(fluidName);
+        if (fluid == null) return null;
+
+        int drainAmount = Math.min(currentAmount, maxDrain);
+        FluidStack drained = new FluidStack(fluid, drainAmount);
+
+        if (doDrain) {
+            fluidTag.setInteger("Amount", currentAmount - drainAmount);
+            if (fluidTag.getInteger("Amount") <= 0) {
+                fluids.removeTag(0);
+            }
+            nbt.setTag("Fluids", fluids);
+        }
+
+        return drained;
+    }
+
+    public FluidStack getFirstFluid(ItemStack stack) {
+        NBTTagCompound nbt = stack.getTagCompound();
+        if (nbt != null) {
+            NBTTagList fluids = nbt.getTagList("Fluids", 10);
+            if (fluids.tagCount() > 0) {
+                NBTTagCompound firstFluidTag = fluids.getCompoundTagAt(0);
+                String fluidName = firstFluidTag.getString("FluidName");
+                int amount = firstFluidTag.getInteger("Amount");
+                Fluid fluid = FluidRegistry.getFluid(fluidName);
+                if (fluid != null) {
+                    return new FluidStack(fluid, amount);
+                }
+            }
+        }
+        return null;
     }
 
     @Override
@@ -81,73 +267,58 @@ public class InfinityBucket extends Item {
         NBTTagCompound nbt = stack.getTagCompound();
 
         if (fluid != null && nbt != null) {
+            // 1. 检查是否为流体源块（仅允许收集源块）
+            if (!isSourceBlock(world, x, y, z)) {
+                return false; // 不是源块，无法收集
+            }
+
             NBTTagList fluids = nbt.getTagList("Fluids", 10);
             int maxTypes = BASE_MAX_TYPES + fluids.tagCount();
 
             int existingIndex = -1;
             for (int i = 0; i < fluids.tagCount(); i++) {
-                if (fluids.getCompoundTagAt(i)
-                    .getString("FluidName")
+                NBTTagCompound fluidTag = fluids.getCompoundTagAt(i);
+                if (fluidTag.getString("FluidName")
                     .equals(fluid.getName())) {
                     existingIndex = i;
                     break;
                 }
             }
 
-            if (existingIndex == -1 && fluids.tagCount() >= maxTypes) {
-                player.addChatMessage(new ChatComponentText("已达到最大流体类型限制!"));
-                return false;
-            }
-
-            NBTTagList newFluids = new NBTTagList();
-            boolean isNewFluid = existingIndex == -1;
-
-            if (isNewFluid) {
-                NBTTagCompound newTag = new NBTTagCompound();
-                newTag.setString("FluidName", fluid.getName());
-                newTag.setInteger("Amount", 1000);
-                newFluids.appendTag(newTag);
-            } else {
-                NBTTagCompound existingTag = (NBTTagCompound) fluids.getCompoundTagAt(existingIndex)
-                    .copy();
+            // 2. 处理流体合并或新增
+            if (existingIndex != -1) {
+                // 合并现有流体
+                NBTTagCompound existingTag = fluids.getCompoundTagAt(existingIndex);
                 int currentAmount = existingTag.getInteger("Amount");
+                long total = (long) currentAmount + 1000;
 
-                if ((long) currentAmount + 1000 > MAX_FLUID_AMOUNT) {
-                    Stop = true;
-                    return false;
-                }
-
-                int addAmountMax = MAX_FLUID_AMOUNT - currentAmount;
-                int addAmount = Math.min(1000, addAmountMax);
-                existingTag.setInteger("Amount", currentAmount + addAmount);
-                newFluids.appendTag(existingTag);
-
-                if (addAmount < 1000) {
-                    FluidStack remaining = new FluidStack(fluid, 1000 - addAmount);
-                    Block fluidBlock = fluid.getBlock();
-                    if (fluidBlock != null) {
-                        world.setBlock(x, y, z, fluidBlock);
-                        TileEntity tileEntity = world.getTileEntity(x, y, z);
-                        if (tileEntity instanceof IFluidHandler) {
-                            IFluidHandler handler = (IFluidHandler) tileEntity;
-                            handler.fill(ForgeDirection.UNKNOWN, remaining, true);
-                        }
+                if (total > Integer.MAX_VALUE) {
+                    int added = Integer.MAX_VALUE - currentAmount;
+                    existingTag.setInteger("Amount", Integer.MAX_VALUE);
+                    // 将剩余流体回填到世界（转换为流动方块）
+                    if (added < 1000) {
+                        FluidStack remaining = new FluidStack(fluid, 1000 - added);
+                        Block fluidBlock = fluid.getBlock();
+                        world.setBlock(x, y, z, fluidBlock, 7, 3); // 7 表示流动方块
+                    } else {
+                        world.setBlockToAir(x, y, z); // 完全收集，移除源块
                     }
+                } else {
+                    existingTag.setInteger("Amount", (int) total);
+                    world.setBlockToAir(x, y, z); // 完全收集，移除源块
                 }
+            } else {
+                // 新增流体类型
+                if (fluids.tagCount() >= maxTypes) return false;
+                NBTTagCompound newFluidTag = new NBTTagCompound();
+                newFluidTag.setString("FluidName", fluid.getName());
+                newFluidTag.setInteger("Amount", 1000);
+                fluids.appendTag(newFluidTag);
+                world.setBlockToAir(x, y, z); // 移除源块
             }
 
-            for (int i = 0; i < fluids.tagCount(); i++) {
-                if (i != existingIndex) {
-                    newFluids.appendTag(
-                        fluids.getCompoundTagAt(i)
-                            .copy());
-                }
-            }
-
-            if (isNewFluid) {
-                world.setBlockToAir(x, y, z);
-            }
-            nbt.setTag("Fluids", newFluids);
+            // 3. 更新桶的NBT数据
+            nbt.setTag("Fluids", fluids);
             nbt.setInteger("Selected", 0);
             return true;
         }
@@ -315,7 +486,9 @@ public class InfinityBucket extends Item {
         }
 
         boolean canReplace = targetBlock.isAir(world, placeX, placeY, placeZ)
-            || (targetFluid != null && !isSourceBlock(targetBlock, world, placeX, placeY, placeZ) && isFlowing);
+            || (targetFluid != null && !targetFluid.getName()
+                .equals(fluid.getName()) && !isSourceBlock(world, placeX, placeY, placeZ) && isFlowing);
+
         if (canReplace) {
             Block fluidBlock = fluid.getBlock();
             if (fluidBlock != null && fluidBlock.canPlaceBlockAt(world, placeX, placeY, placeZ)) {
@@ -323,39 +496,30 @@ public class InfinityBucket extends Item {
 
                 if (amount != INFINITE_FLUID_AMOUNT) {
                     int newAmount = amount - 1000;
-                    if (newAmount < 0) {
-                        newAmount = 0;
-                    }
+                    if (newAmount < 0) newAmount = 0;
                     fluidTag.setInteger("Amount", newAmount);
+
                     if (newAmount == 0) {
                         fluids.removeTag(selected);
                         if (fluids.tagCount() == 0) {
-                            nbt.setTag("Fluids", new NBTTagList());
-                            nbt.setInteger("Selected", 0);
-                            stack.setTagCompound(nbt);
                             clearFluids(stack);
                         } else {
-                            int newSelected = Math.max(0, selected - 1);
-                            nbt.setInteger("Selected", newSelected);
+                            nbt.setInteger("Selected", Math.max(0, selected - 1));
                         }
                     }
                     stack.setTagCompound(nbt);
                 }
-                ensureNonEmptyFluids(fluids);
                 showFluidInfo(fluidName, amount - 1000);
             }
         }
     }
 
-    private boolean isSourceBlock(Block block, World world, int x, int y, int z) {
-        try {
-            if (block instanceof IFluidBlock) {
-                return ((IFluidBlock) block).canDrain(world, x, y, z);
-            }
-            return world.getBlockMetadata(x, y, z) == 0;
-        } catch (Exception e) {
-            return false;
+    private boolean isSourceBlock(World world, int x, int y, int z) {
+        Block block = world.getBlock(x, y, z);
+        if (block instanceof IFluidBlock) {
+            return ((IFluidBlock) block).canDrain(world, x, y, z);
         }
+        return world.getBlockMetadata(x, y, z) == 0;
     }
 
     private void clearFluids(ItemStack stack) {

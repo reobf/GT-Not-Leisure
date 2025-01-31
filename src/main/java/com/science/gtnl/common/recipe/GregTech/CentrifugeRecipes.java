@@ -1,6 +1,5 @@
 package com.science.gtnl.common.recipe.GregTech;
 
-import static com.science.gtnl.loader.IScriptLoader.missing;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 
 import com.science.gtnl.Utils.recipes.RecipeBuilder;
@@ -46,7 +45,7 @@ public class CentrifugeRecipes implements IRecipePool {
             .addTo(CNCR);
 
         RecipeBuilder.builder()
-            .itemInputs(GTUtility.copyAmount(0, GTModHandler.getModItem(DraconicEvolution.ID, "magnet", 1, 1)), missing)
+            .itemInputs(GTUtility.copyAmount(0, GTModHandler.getModItem(DraconicEvolution.ID, "magnet", 1, 1)))
             .fluidInputs(MaterialPool.RareEarthChlorides.getFluidOrGas(2000))
             .fluidOutputs(
                 MaterialPool.LaNdOxidesSolution.getFluidOrGas(250),

@@ -8,7 +8,7 @@ import gregtech.api.logic.ProcessingLogic;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.ParallelHelper;
 
-public class GTNL_ProcessingLogic extends ProcessingLogic {
+public class GTNLProcessingLogic extends ProcessingLogic {
 
     /**
      * Override to tweak parallel logic if needed.
@@ -29,7 +29,7 @@ public class GTNL_ProcessingLogic extends ProcessingLogic {
             .setOutputCalculation(true);
     }
 
-    public GTNL_ProcessingLogic setOverclockType(OverclockType t) {
+    public GTNLProcessingLogic setOverclockType(OverclockType t) {
         setOverclock(t.timeReduction, t.powerIncrease);
         return this;
     }

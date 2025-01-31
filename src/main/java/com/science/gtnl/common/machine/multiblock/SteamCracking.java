@@ -308,7 +308,7 @@ public class SteamCracking extends MTESteamMultiBase<SteamCracking> implements I
             public OverclockCalculator createOverclockCalculator(@NotNull GTRecipe recipe) {
                 return OverclockCalculator.ofNoOverclock(recipe)
                     .setEUtDiscount(tierMachine)
-                    .setSpeedBoost(1 / tierMachine);
+                    .setSpeedBoost(1.0 / tierMachine);
             }
         }.setMaxParallelSupplier(this::getMaxParallelRecipes);
     }

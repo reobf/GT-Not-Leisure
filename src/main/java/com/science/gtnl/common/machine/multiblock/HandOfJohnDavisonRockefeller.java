@@ -1,12 +1,13 @@
 package com.science.gtnl.common.machine.multiblock;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
+import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaBlockCasing;
 import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.enums.HatchElement.*;
-import static gregtech.api.enums.Textures.BlockIcons.*;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
-import static gregtech.api.util.GTUtility.validMTEList;
-import static gtPlusPlus.core.block.ModBlocks.blockCasings3Misc;
+import static gregtech.api.util.GTStructureUtility.ofFrame;
+import static gtPlusPlus.core.block.ModBlocks.blockCustomMachineCasings;
+import static gtnhlanth.common.register.LanthItemList.FOCUS_MANIPULATION_CASING;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.ForgeDirection;
@@ -23,7 +24,7 @@ import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.MultiMachineBase;
 
 import bartworks.API.BorosilicateGlass;
-import gregtech.api.enums.TAE;
+import gregtech.api.enums.Materials;
 import gregtech.api.enums.Textures;
 import gregtech.api.enums.VoltageIndex;
 import gregtech.api.interfaces.ITexture;
@@ -31,40 +32,47 @@ import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.logic.ProcessingLogic;
 import gregtech.api.metatileentity.implementations.MTEHatchEnergy;
-import gregtech.api.metatileentity.implementations.MTEHatchMaintenance;
 import gregtech.api.recipe.RecipeMap;
-import gregtech.api.recipe.RecipeMaps;
+import gregtech.api.recipe.check.CheckRecipeResult;
+import gregtech.api.recipe.check.CheckRecipeResultRegistry;
 import gregtech.api.render.TextureFactory;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.OverclockCalculator;
+import gregtech.common.blocks.BlockCasings10;
+import gtPlusPlus.api.recipe.GTPPRecipeMaps;
+import gtPlusPlus.xmod.gregtech.common.blocks.textures.TexturesGtBlock;
 
-public class LargeCircuitAssembler extends MultiMachineBase<LargeCircuitAssembler> implements ISurvivalConstructable {
+public class HandOfJohnDavisonRockefeller extends MultiMachineBase<HandOfJohnDavisonRockefeller>
+    implements ISurvivalConstructable {
 
     public int mCasing;
     public byte glassTier = 0;
-    public static IStructureDefinition<LargeCircuitAssembler> STRUCTURE_DEFINITION = null;
+    public int EUtDiscount = 0;
+    public int SpeedBoost = 0;
+    public static IStructureDefinition<HandOfJohnDavisonRockefeller> STRUCTURE_DEFINITION = null;
     public static final String STRUCTURE_PIECE_MAIN = "main";
     public static String[][] shape;
-    public static final String LCA_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/large_circuit_assembler";
-    public final int horizontalOffSet = 5;
-    public final int verticalOffSet = 1;
+    public static final String HODR_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/hand_of_john_davison_rockefeller";
+    public final int horizontalOffSet = 20;
+    public final int verticalOffSet = 4;
     public final int depthOffSet = 0;
+    public static final int CASING_INDEX = ((BlockCasings10) sBlockCasings10).getTextureIndex(3);
 
-    public LargeCircuitAssembler(int aID, String aName, String aNameRegional) {
+    public HandOfJohnDavisonRockefeller(int aID, String aName, String aNameRegional) {
         super(aID, aName, aNameRegional);
-        shape = StructureUtils.readStructureFromFile(LCA_STRUCTURE_FILE_PATH);
+        shape = StructureUtils.readStructureFromFile(HODR_STRUCTURE_FILE_PATH);
     }
 
-    public LargeCircuitAssembler(String aName) {
+    public HandOfJohnDavisonRockefeller(String aName) {
         super(aName);
-        shape = StructureUtils.readStructureFromFile(LCA_STRUCTURE_FILE_PATH);
+        shape = StructureUtils.readStructureFromFile(HODR_STRUCTURE_FILE_PATH);
     }
 
     @Override
     public boolean isEnablePerfectOverclock() {
-        return false;
+        return GTUtility.getTier(this.getMaxInputVoltage()) > 11;
     }
 
     @Override
@@ -74,7 +82,7 @@ public class LargeCircuitAssembler extends MultiMachineBase<LargeCircuitAssemble
 
     @Override
     public IMetaTileEntity newMetaEntity(IGregTechTileEntity aTileEntity) {
-        return new LargeCircuitAssembler(this.mName);
+        return new HandOfJohnDavisonRockefeller(this.mName);
     }
 
     @Override
@@ -83,64 +91,57 @@ public class LargeCircuitAssembler extends MultiMachineBase<LargeCircuitAssemble
         if (side == aFacing) {
             if (aActive) return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()),
                 TextureFactory.builder()
-                    .addIcon(OVERLAY_FRONT_ASSEMBLY_LINE_ACTIVE)
+                    .addIcon(TexturesGtBlock.oMCAChemicalPlantActive)
                     .extFacing()
-                    .build(),
-                TextureFactory.builder()
-                    .addIcon(OVERLAY_FRONT_ASSEMBLY_LINE_ACTIVE_GLOW)
-                    .extFacing()
-                    .glow()
                     .build() };
             return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()),
                 TextureFactory.builder()
-                    .addIcon(OVERLAY_FRONT_ASSEMBLY_LINE)
+                    .addIcon(TexturesGtBlock.oMCAChemicalPlant)
                     .extFacing()
-                    .build(),
-                TextureFactory.builder()
-                    .addIcon(OVERLAY_FRONT_ASSEMBLY_LINE_GLOW)
-                    .extFacing()
-                    .glow()
                     .build() };
         }
         return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()) };
     }
 
     public int getCasingTextureID() {
-        return TAE.getIndexFromPage(2, 2);
+        return CASING_INDEX;
     }
 
     @Override
     public RecipeMap<?> getRecipeMap() {
-        return RecipeMaps.circuitAssemblerRecipes;
+        return GTPPRecipeMaps.chemicalPlantRecipes;
     }
 
     @Override
     public MultiblockTooltipBuilder createTooltip() {
         MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
-        tt.addMachineType(TextLocalization.LargeCircuitAssemblerRecipeType)
-            .addInfo(TextLocalization.Tooltip_LargeCircuitAssembler_00)
-            .addInfo(TextLocalization.Tooltip_LargeCircuitAssembler_01)
-            .addInfo(TextLocalization.Tooltip_LargeCircuitAssembler_02)
-            .addInfo(TextLocalization.Tooltip_LargeCircuitAssembler_03)
-            .addInfo(TextLocalization.Tooltip_LargeCircuitAssembler_04)
-            .addInfo(TextLocalization.Tooltip_LargeCircuitAssembler_05)
+        tt.addMachineType(TextLocalization.HandOfJohnDavisonRockefellerRecipeType)
+            .addInfo(TextLocalization.Tooltip_HandOfJohnDavisonRockefeller_00)
+            .addInfo(TextLocalization.Tooltip_HandOfJohnDavisonRockefeller_01)
+            .addInfo(TextLocalization.Tooltip_HandOfJohnDavisonRockefeller_02)
+            .addInfo(TextLocalization.Tooltip_HandOfJohnDavisonRockefeller_03)
+            .addInfo(TextLocalization.Tooltip_HandOfJohnDavisonRockefeller_04)
+            .addInfo(TextLocalization.Tooltip_HandOfJohnDavisonRockefeller_05)
+            .addInfo(TextLocalization.Tooltip_HandOfJohnDavisonRockefeller_06)
+            .addInfo(TextLocalization.Tooltip_HandOfJohnDavisonRockefeller_07)
+            .addInfo(TextLocalization.Tooltip_HandOfJohnDavisonRockefeller_08)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
-            .beginStructureBlock(7, 3, 5, true)
-            .addInputHatch(TextLocalization.Tooltip_LargeCircuitAssembler_Casing)
-            .addInputBus(TextLocalization.Tooltip_LargeCircuitAssembler_Casing)
-            .addOutputBus(TextLocalization.Tooltip_LargeCircuitAssembler_Casing)
-            .addEnergyHatch(TextLocalization.Tooltip_LargeCircuitAssembler_Casing)
-            .addMaintenanceHatch(TextLocalization.Tooltip_LargeCircuitAssembler_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE);
+            .beginStructureBlock(41, 9, 9, true)
+            .addInputHatch(TextLocalization.Tooltip_HandOfJohnDavisonRockefeller_Casing)
+            .addOutputHatch(TextLocalization.Tooltip_HandOfJohnDavisonRockefeller_Casing)
+            .addInputBus(TextLocalization.Tooltip_HandOfJohnDavisonRockefeller_Casing)
+            .addOutputBus(TextLocalization.Tooltip_HandOfJohnDavisonRockefeller_Casing)
+            .addEnergyHatch(TextLocalization.Tooltip_HandOfJohnDavisonRockefeller_Casing)
+            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY);
         return tt;
     }
 
     @Override
-    public IStructureDefinition<LargeCircuitAssembler> getStructureDefinition() {
+    public IStructureDefinition<HandOfJohnDavisonRockefeller> getStructureDefinition() {
         if (STRUCTURE_DEFINITION == null) {
-            STRUCTURE_DEFINITION = StructureDefinition.<LargeCircuitAssembler>builder()
+            STRUCTURE_DEFINITION = StructureDefinition.<HandOfJohnDavisonRockefeller>builder()
                 .addShape(STRUCTURE_PIECE_MAIN, transpose(shape))
                 .addElement(
                     'A',
@@ -152,14 +153,19 @@ public class LargeCircuitAssembler extends MultiMachineBase<LargeCircuitAssemble
                             Byte.MAX_VALUE,
                             (te, t) -> te.glassTier = t,
                             te -> te.glassTier)))
-                .addElement('B', ofBlock(sBlockCasings2, 14))
-                .addElement('C', ofBlock(sBlockCasings3, 10))
+                .addElement('B', ofBlock(MetaBlockCasing, 4))
+                .addElement('C', ofBlockAnyMeta(FOCUS_MANIPULATION_CASING))
                 .addElement(
                     'D',
-                    buildHatchAdder(LargeCircuitAssembler.class).casingIndex(TAE.getIndexFromPage(2, 2))
+                    buildHatchAdder(HandOfJohnDavisonRockefeller.class).casingIndex(CASING_INDEX)
                         .dot(1)
-                        .atLeast(InputHatch, InputBus, OutputBus, Maintenance, Energy.or(ExoticEnergy))
-                        .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(blockCasings3Misc, 2))))
+                        .atLeast(InputHatch, OutputHatch, InputBus, OutputBus, Energy.or(ExoticEnergy))
+                        .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(sBlockCasings10, 3))))
+                .addElement('E', ofBlock(sBlockCasings10, 8))
+                .addElement('F', ofBlock(sBlockCasings3, 10))
+                .addElement('G', ofBlock(sBlockCasings8, 2))
+                .addElement('H', ofFrame(Materials.Tungsten))
+                .addElement('I', ofBlock(blockCustomMachineCasings, 3))
                 .build();
         }
         return STRUCTURE_DEFINITION;
@@ -189,23 +195,27 @@ public class LargeCircuitAssembler extends MultiMachineBase<LargeCircuitAssemble
     public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
         mCasing = 0;
         glassTier = 0;
+        EUtDiscount = 0;
+        SpeedBoost = 0;
 
         if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && checkHatch()) {
             return false;
         }
 
         for (MTEHatchEnergy mEnergyHatch : this.mEnergyHatches) {
-            if (glassTier < VoltageIndex.UV & mEnergyHatch.mTier > glassTier) {
+            EUtDiscount = glassTier + GTUtility.getTier(this.getMaxInputVoltage());
+            SpeedBoost = glassTier + GTUtility.getTier(this.getMaxInputVoltage());
+
+            if (glassTier < VoltageIndex.UEV & mEnergyHatch.mTier > glassTier - 1) {
                 return false;
             }
         }
-        if (this.mEnergyHatches.size() >= 2) return false;
-        return mCasing >= 30;
+        return mCasing >= 80;
     }
 
     @Override
     public int getMaxParallelRecipes() {
-        return 32 + 4 * GTUtility.getTier(this.getMaxInputVoltage());
+        return 16 + 4 * GTUtility.getTier(this.getMaxInputVoltage()) + 2 * glassTier;
     }
 
     @Override
@@ -216,43 +226,16 @@ public class LargeCircuitAssembler extends MultiMachineBase<LargeCircuitAssemble
             @Override
             public OverclockCalculator createOverclockCalculator(@NotNull GTRecipe recipe) {
                 return OverclockCalculator.ofNoOverclock(recipe)
-                    .setEUtDiscount(0.8)
-                    .setSpeedBoost(0.6);
+                    .setEUtDiscount(1 - EUtDiscount / 100.0)
+                    .setSpeedBoost(1 - SpeedBoost / 50.0);
             }
+
+            @NotNull
+            @Override
+            protected CheckRecipeResult validateRecipe(@NotNull GTRecipe recipe) {
+                return CheckRecipeResultRegistry.SUCCESSFUL;
+            }
+
         }.setMaxParallelSupplier(this::getMaxParallelRecipes);
-    }
-
-    @Override
-    public boolean getDefaultHasMaintenanceChecks() {
-        return true;
-    }
-
-    @Override
-    public boolean shouldCheckMaintenance() {
-        return true;
-    }
-
-    @Override
-    public void checkMaintenance() {
-        if (!shouldCheckMaintenance()) return;
-
-        if (getRepairStatus() != getIdealStatus()) {
-            for (MTEHatchMaintenance tHatch : validMTEList(mMaintenanceHatches)) {
-                if (tHatch.mAuto) tHatch.autoMaintainance();
-                if (tHatch.mWrench) mWrench = true;
-                if (tHatch.mScrewdriver) mScrewdriver = true;
-                if (tHatch.mSoftHammer) mSoftHammer = true;
-                if (tHatch.mHardHammer) mHardHammer = true;
-                if (tHatch.mSolderingTool) mSolderingTool = true;
-                if (tHatch.mCrowbar) mCrowbar = true;
-
-                tHatch.mWrench = false;
-                tHatch.mScrewdriver = false;
-                tHatch.mSoftHammer = false;
-                tHatch.mHardHammer = false;
-                tHatch.mSolderingTool = false;
-                tHatch.mCrowbar = false;
-            }
-        }
     }
 }

@@ -6,6 +6,7 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeConstants.*;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.science.gtnl.Utils.enums.TierEU;
@@ -33,6 +34,31 @@ public class AssemblingLineRecipes implements IRecipePool {
 
     @Override
     public void loadRecipes() {
+
+        ItemStack CrystalStuddedCosmicNeutroniumWand = GTModHandler.getModItem(Thaumcraft.ID, "WandCasting", 1, 9000);
+        NBTTagCompound CrystalStuddedCosmicNeutroniumWandType = CrystalStuddedCosmicNeutroniumWand.getTagCompound();
+        if (CrystalStuddedCosmicNeutroniumWandType != null) {
+            CrystalStuddedCosmicNeutroniumWandType.setString("cap", "matrix");
+            CrystalStuddedCosmicNeutroniumWandType.setString("rod", "infinity");
+            CrystalStuddedCosmicNeutroniumWandType.setInteger("aer", 999999900);
+            CrystalStuddedCosmicNeutroniumWandType.setInteger("aqua", 999999900);
+            CrystalStuddedCosmicNeutroniumWandType.setInteger("ignis", 999999900);
+            CrystalStuddedCosmicNeutroniumWandType.setInteger("ordo", 999999900);
+            CrystalStuddedCosmicNeutroniumWandType.setInteger("perditio", 999999900);
+            CrystalStuddedCosmicNeutroniumWandType.setInteger("terra", 999999900);
+        } else {
+            CrystalStuddedCosmicNeutroniumWandType = new NBTTagCompound();
+            CrystalStuddedCosmicNeutroniumWandType.setString("cap", "matrix");
+            CrystalStuddedCosmicNeutroniumWandType.setString("rod", "infinity");
+            CrystalStuddedCosmicNeutroniumWandType.setInteger("aer", 999999900);
+            CrystalStuddedCosmicNeutroniumWandType.setInteger("aqua", 999999900);
+            CrystalStuddedCosmicNeutroniumWandType.setInteger("ignis", 999999900);
+            CrystalStuddedCosmicNeutroniumWandType.setInteger("ordo", 999999900);
+            CrystalStuddedCosmicNeutroniumWandType.setInteger("perditio", 999999900);
+            CrystalStuddedCosmicNeutroniumWandType.setInteger("terra", 999999900);
+            CrystalStuddedCosmicNeutroniumWand.setTagCompound(CrystalStuddedCosmicNeutroniumWandType);
+        }
+
         TTRecipeAdder.addResearchableAssemblylineRecipe(
             ItemList.Circuit_Parts_Chip_Bioware.get(1),
             10000000,
@@ -181,5 +207,34 @@ public class AssemblingLineRecipes implements IRecipePool {
             GTNLItemList.SmeltingMixingFurnace.get(1),
             120 * SECONDS,
             (int) TierEU.RECIPE_UMV);
+
+        GTValues.RA.stdBuilder()
+            .metadata(
+                RESEARCH_ITEM,
+                GTModHandler.getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.arcane.assembler", 1))
+            .metadata(RESEARCH_TIME, 114514 * SECONDS)
+            .itemInputs(
+                GTModHandler.getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.arcane.assembler", 64),
+                GTModHandler.getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.arcane.assembler", 64),
+                GTModHandler.getModItem(Thaumcraft.ID, "blockStoneDevice", 64, 2),
+                GTModHandler.getModItem(Thaumcraft.ID, "blockStoneDevice", 64, 2),
+                CrystalStuddedCosmicNeutroniumWand,
+                GTModHandler.getModItem(Avaritia.ID, "Akashic_Record", 1),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 16L),
+                ItemList.Robot_Arm_UEV.get(32),
+                ItemList.Field_Generator_UEV.get(16),
+                MaterialsElements.STANDALONE.HYPOGEN.getPlateDense(32),
+                GTModHandler.getModItem(EternalSingularity.ID, "eternal_singularity", 8),
+                ItemList.EnergisedTesseract.get(8),
+                GTModHandler.getModItem(WitchingGadgets.ID, "item.WG_Material", 1, 7),
+                GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 64, 56))
+            .fluidInputs(
+                MaterialsUEVplus.ExcitedDTEC.getFluid(64000),
+                Materials.StableBaryonicMatter.getFluid(64000),
+                MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(64000))
+            .itemOutputs(GTNLItemList.IndustrialArcaneAssembler.get(1))
+            .eut(TierEU.RECIPE_UIV)
+            .duration(300 * SECONDS)
+            .addTo(AssemblyLine);
     }
 }

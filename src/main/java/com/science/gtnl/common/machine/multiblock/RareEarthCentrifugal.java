@@ -36,15 +36,15 @@ import gtPlusPlus.xmod.gregtech.common.blocks.textures.TexturesGtBlock;
 
 public class RareEarthCentrifugal extends MultiMachineBase<RareEarthCentrifugal> implements ISurvivalConstructable {
 
-    private int mCasing;
-    private static IStructureDefinition<RareEarthCentrifugal> STRUCTURE_DEFINITION = null;
+    public int mCasing;
+    public static IStructureDefinition<RareEarthCentrifugal> STRUCTURE_DEFINITION = null;
     public static final String STRUCTURE_PIECE_MAIN = "main";
     public static String[][] shape;
     public static final String REC_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/rare_earth_centrifugal";
     public final int horizontalOffSet = 2;
     public final int verticalOffSet = 2;
     public final int depthOffSet = 0;
-    protected static final int CASING_INDEX = ((BlockCasings3) GregTechAPI.sBlockCasings3).getTextureIndex(12);
+    public static final int CASING_INDEX = ((BlockCasings3) GregTechAPI.sBlockCasings3).getTextureIndex(12);
 
     public RareEarthCentrifugal(int aID, String aName, String aNameRegional) {
         super(aID, aName, aNameRegional);
@@ -165,9 +165,12 @@ public class RareEarthCentrifugal extends MultiMachineBase<RareEarthCentrifugal>
     public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
         mCasing = 0;
 
+        if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && checkHatch()) {
+            return false;
+        }
+
         if (this.mEnergyHatches.size() > 2) return false;
-        return checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && mCasing >= 75
-            && checkHatch();
+        return mCasing >= 75;
     }
 
     @Override

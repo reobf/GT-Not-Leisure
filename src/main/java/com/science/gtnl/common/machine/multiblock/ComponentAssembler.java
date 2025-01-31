@@ -299,15 +299,17 @@ public class ComponentAssembler extends MultiMachineBase<ComponentAssembler> imp
     public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
         casingTier = -2;
         casingAmount = 0;
-        if (checkHatches()) return true;
+
+        if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && checkHatch()) {
+            return false;
+        }
+
         for (MTEHatchEnergy mEnergyHatch : this.mEnergyHatches) {
             if (glassTier < VoltageIndex.UMV & mEnergyHatch.mTier > glassTier) {
                 return false;
             }
         }
-        return checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && casingAmount >= 50
-            && mEnergyHatches.size() <= 2
-            && mMaintenanceHatches.size() == 1;
+        return casingAmount >= 50 && mEnergyHatches.size() <= 2 && mMaintenanceHatches.size() == 1;
     }
 
     @Override

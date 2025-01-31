@@ -150,7 +150,7 @@ public class RecipeRegister {
 
     public static final RecipeMap<GTNLRecipeMapBackend> RareEarthCentrifugalRecipes = RecipeMapBuilder
         .of("gtnl.recipe.RareEarthCentrifugalRecipes", GTNLRecipeMapBackend::new)
-        .maxIO(1, 18, 1, 1)
+        .maxIO(1, 17, 1, 1)
         .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
         .frontend(GeneralFrontend::new)
         .neiHandlerInfo(builder -> builder.setDisplayStack(GTNLItemList.RareEarthCentrifugal.get(1)))

@@ -113,7 +113,7 @@ public class TextLocalization {
         "§8§oDevour everything...",
         "Tooltip_InfinityBucket_00");
     public static final String Tooltip_InfinityBucket_01 = texter(
-        "Current Fluid: %s | Amount: %s",
+        "Current Fluid: %%s | Amount: %%s",
         "Tooltip_InfinityBucket_01");
     public static final String Tooltip_InfinityBucket_02 = texter(
         "All fluids have been cleared!",
@@ -468,6 +468,62 @@ public class TextLocalization {
     public static final String Tooltip_LargeCircuitAssembler_Casing = texter(
         "Any Multi-Use Casing",
         "Tooltip_LargeCircuitAssembler_Casing");
+
+    public static final String NameHandOfJohnDavisonRockefeller = texter(
+        "Hand Of John Davison Rockefeller",
+        "NameHandOfJohnDavisonRockefeller");
+    public static final String HandOfJohnDavisonRockefellerRecipeType = texter(
+        "Chemical Plant",
+        "HandOfJohnDavisonRockefellerRecipeType");
+    public static final String Tooltip_HandOfJohnDavisonRockefeller_00 = texter(
+        "The mysterious machine from ExxonMobil Central Curve",
+        "Tooltip_HandOfJohnDavisonRockefeller_00");
+    public static final String Tooltip_HandOfJohnDavisonRockefeller_01 = texter(
+        "Unfortunately, it is fracturing the central finite curve.",
+        "Tooltip_HandOfJohnDavisonRockefeller_01");
+    public static final String Tooltip_HandOfJohnDavisonRockefeller_02 = texter(
+        "Each level of voltage parallelism +4, each level of glass parallelism +2.",
+        "Tooltip_HandOfJohnDavisonRockefeller_02");
+    public static final String Tooltip_HandOfJohnDavisonRockefeller_03 = texter(
+        "Initial Parallel Behavior 16",
+        "Tooltip_HandOfJohnDavisonRockefeller_03");
+    public static final String Tooltip_HandOfJohnDavisonRockefeller_04 = texter(
+        "Energy hatch limited by glass tier - 1, UIV Glass unlocks all",
+        "Tooltip_HandOfJohnDavisonRockefeller_04");
+    public static final String Tooltip_HandOfJohnDavisonRockefeller_05 = texter(
+        "For every increase of one level in glass or voltage, EU consumption is reduced by 1%%",
+        "Tooltip_HandOfJohnDavisonRockefeller_05");
+    public static final String Tooltip_HandOfJohnDavisonRockefeller_06 = texter(
+        "For every increase of one level in glass or voltage, speed increases by approximately 2%%",
+        "Tooltip_HandOfJohnDavisonRockefeller_06");
+    public static final String Tooltip_HandOfJohnDavisonRockefeller_07 = texter(
+        "Ignore the required tier of the recipe!",
+        "Tooltip_HandOfJohnDavisonRockefeller_07");
+    public static final String Tooltip_HandOfJohnDavisonRockefeller_08 = texter(
+        "Enable §cperfect overclock§7 when the energy tier is greater than UIV.",
+        "Tooltip_HandOfJohnDavisonRockefeller_08");
+    public static final String Tooltip_HandOfJohnDavisonRockefeller_Casing = texter(
+        "Any Pressure Containment Casing",
+        "Tooltip_HandOfJohnDavisonRockefeller_Casing");
+
+    public static final String NameLargeMacerationTower = texter("Large Maceration Tower", "NameLargeMacerationTower");
+    public static final String LargeMacerationTowerRecipeType = texter("Pulverizer", "LargeMacerationTowerRecipeType");
+    public static final String Tooltip_LargeMacerationTower_Casing = texter(
+        "Any Mining Osmiridium Casing",
+        "Tooltip_LargeMacerationTower_Casing");
+
+    public static final String Tooltip_GTMMultiMachine_00 = texter(
+        "167%% faster than using single block machines of the same voltage",
+        "Tooltip_GTMMultiMachine_00");
+    public static final String Tooltip_GTMMultiMachine_01 = texter(
+        "Only uses 80%% of the EU/t normally required",
+        "Tooltip_GTMMultiMachine_01");
+    public static final String Tooltip_GTMMultiMachine_02 = texter(
+        "It can run 16x recipes at most",
+        "Tooltip_GTMMultiMachine_02");
+    public static final String Tooltip_GTMMultiMachine_03 = texter(
+        "Insert the parallel control core into the controller to increase the maximum parallelism and reduce power consumption!",
+        "Tooltip_GTMMultiMachine_03");
 
     public static final String NamePetrochemicalPlant = texter("Petrochemical Plant", "NamePetrochemicalPlant");
     public static final String PetrochemicalPlantRecipeType = texter(

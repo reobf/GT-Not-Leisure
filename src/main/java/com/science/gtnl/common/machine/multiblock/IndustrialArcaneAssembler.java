@@ -182,17 +182,7 @@ public class IndustrialArcaneAssembler extends MultiMachineBase<IndustrialArcane
 
     @Override
     public int survivalConstruct(ItemStack stackSize, int elementBudget, ISurvivalBuildEnvironment env) {
-        if (mMachine) return -1;
-        return survivialBuildPiece(
-            STRUCTURE_PIECE_MAIN,
-            stackSize,
-            horizontalOffSet,
-            verticalOffSet,
-            depthOffSet,
-            elementBudget,
-            env,
-            false,
-            true);
+        return -1;
     }
 
     @Override
@@ -200,12 +190,15 @@ public class IndustrialArcaneAssembler extends MultiMachineBase<IndustrialArcane
         mCasing = 0;
         this.multiTier = getMultiTier(aStack);
 
+        if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && checkHatch()) {
+            return false;
+        }
+
         if (multiTier != 1) {
             return false;
         }
 
-        return checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && mCasing >= 3
-            && checkHatch();
+        return mCasing >= 3;
     }
 
     public int getMultiTier(ItemStack inventory) {

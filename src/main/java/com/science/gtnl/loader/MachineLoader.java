@@ -14,6 +14,7 @@ import com.science.gtnl.common.machine.multiblock.Desulfurizer;
 import com.science.gtnl.common.machine.multiblock.EdenGarden;
 import com.science.gtnl.common.machine.multiblock.EnergeticPhotovoltaicPowerStation;
 import com.science.gtnl.common.machine.multiblock.GenerationEarthEngine;
+import com.science.gtnl.common.machine.multiblock.HandOfJohnDavisonRockefeller;
 import com.science.gtnl.common.machine.multiblock.IndustrialArcaneAssembler;
 import com.science.gtnl.common.machine.multiblock.LapotronChip;
 import com.science.gtnl.common.machine.multiblock.LargeCircuitAssembler;
@@ -36,6 +37,7 @@ import com.science.gtnl.common.machine.multiblock.SteamCracking;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.BlazeBlastFurnace;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.ChemicalPlant;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.ColdIceFreezer;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeMacerationTower;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.MegaBlastFurnace;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.VacuumFreezer;
 import com.science.gtnl.common.machine.multiblock.TeleportationArrayToAlfheim;
@@ -85,6 +87,8 @@ public class MachineLoader {
     public static ItemStack EnergeticPhotovoltaicPowerStation;
     public static ItemStack AdvancedPhotovoltaicPowerStation;
     public static ItemStack VibrantPhotovoltaicPowerStation;
+    public static ItemStack LargeMacerationTower;
+    public static ItemStack HandOfJohnDavisonRockefeller;
 
     public static void loadMachines() {
 
@@ -281,6 +285,18 @@ public class MachineLoader {
             "NameVibrantPhotovoltaicPowerStation",
             TextLocalization.NameVibrantPhotovoltaicPowerStation).getStackForm(1);
         GTNLItemList.VibrantPhotovoltaicPowerStation.set(VibrantPhotovoltaicPowerStation);
+
+        LargeMacerationTower = new LargeMacerationTower(
+            21038,
+            "NameLargeMacerationTower",
+            TextLocalization.NameLargeMacerationTower).getStackForm(1);
+        GTNLItemList.LargeMacerationTower.set(LargeMacerationTower);
+
+        HandOfJohnDavisonRockefeller = new HandOfJohnDavisonRockefeller(
+            21039,
+            "NameHandOfJohnDavisonRockefeller",
+            TextLocalization.NameHandOfJohnDavisonRockefeller).getStackForm(1);
+        GTNLItemList.HandOfJohnDavisonRockefeller.set(HandOfJohnDavisonRockefeller);
 
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
             21919,

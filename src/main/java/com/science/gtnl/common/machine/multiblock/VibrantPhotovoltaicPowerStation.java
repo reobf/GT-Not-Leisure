@@ -45,7 +45,7 @@ public class VibrantPhotovoltaicPowerStation extends MTEEnhancedMultiBlockBase<V
     implements ISurvivalConstructable {
 
     private int mCasing;
-    protected int fuelConsumption;
+    public int fuelConsumption;
 
     private static IStructureDefinition<VibrantPhotovoltaicPowerStation> STRUCTURE_DEFINITION = null;
     public static final String STRUCTURE_PIECE_MAIN = "main";

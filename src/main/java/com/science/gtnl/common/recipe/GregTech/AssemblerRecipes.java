@@ -690,5 +690,27 @@ public class AssemblerRecipes implements IRecipePool {
             .duration(200)
             .eut(480)
             .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.TungstenCarbide, 1L),
+                GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Ultimet, 1L),
+                ItemList.Casing_MiningOsmiridium.get(1L),
+                ItemList.Electric_Motor_IV.get(1L))
+            .itemOutputs(GTNLItemList.CrushingWheels.get(2))
+            .specialValue(0)
+            .noOptimize()
+            .duration(50)
+            .eut(16)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(GTUtility.getIntegratedCircuit(16), GregtechItemList.Industrial_MacerationStack.get(1L))
+            .itemOutputs(GTNLItemList.LargeMacerationTower.get(1))
+            .specialValue(0)
+            .noOptimize()
+            .duration(50)
+            .eut(16)
+            .addTo(As);
     }
 }

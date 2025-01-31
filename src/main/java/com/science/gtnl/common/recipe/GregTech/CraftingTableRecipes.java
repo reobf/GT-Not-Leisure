@@ -163,5 +163,12 @@ public class CraftingTableRecipes implements IRecipePool {
             new Object[] { "ABA", "BCB", "ABA", 'A', GTModHandler.getModItem(Minecraft.ID, "golden_apple", 1, 1), 'B',
                 GTModHandler.getModItem(Botania.ID, "manaResource", 1, 9), 'C',
                 GTModHandler.getModItem(Minecraft.ID, "dragon_egg", 1) });
+
+        addCraftingRecipe(
+            GTNLItemList.CrushingWheels.get(2),
+            new Object[] { "AAA", "BCB", "BDB", 'A',
+                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.TungstenCarbide, 1L), 'B',
+                GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Ultimet, 1L), 'C',
+                ItemList.Casing_MiningOsmiridium.get(1L), 'D', ItemList.Electric_Motor_IV.get(1L) });
     }
 }
