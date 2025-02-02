@@ -1,4 +1,4 @@
-package com.science.gtnl.common.block.blocks;
+package com.science.gtnl.common.block.ReAvaritia;
 
 import java.util.Random;
 
@@ -25,16 +25,16 @@ public class BlockSoulFarmland extends BlockFarmland {
     public BlockSoulFarmland() {
         super();
         this.setBlockName("BlockSoulFarmland");
-        this.setCreativeTab(CreativeTabsLoader.GTNotLeisure);
+        this.setCreativeTab(CreativeTabsLoader.ReAvaritia);
         this.setHardness(0.6F);
         this.setStepSound(soundTypeSand);
-        this.setBlockTextureName("sciencenotleisure:BlockSoulFarmland");
+        this.setBlockTextureName("reavaritia:BlockSoulFarmland");
     }
 
     @Override
     public void registerBlockIcons(IIconRegister reg) {
-        this.topIcon = reg.registerIcon("sciencenotleisure:BlockSoulFarmland_Top");
-        this.sideIcon = reg.registerIcon("sciencenotleisure:BlockSoulFarmland_Side");
+        this.topIcon = reg.registerIcon("reavaritia:BlockSoulFarmland_Top");
+        this.sideIcon = reg.registerIcon("reavaritia:BlockSoulFarmland_Side");
     }
 
     @Override

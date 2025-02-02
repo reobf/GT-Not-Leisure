@@ -47,6 +47,8 @@ public class TextLocalization {
         "Also, a reminder: do not right-click with this item!",
         "Tooltip_Testitem_13");
 
+    public static final String GUI_NeutronCollector_Progress = texter("Progress: ", "GUI_NeutronCollector_Progress");
+
     public static final String Tooltip_CrystalPickaxe_00 = texter(
         "§8§oLuck brings treasures; precision finds gems.",
         "Tooltip_CrystalPickaxe_00");

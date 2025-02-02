@@ -3,6 +3,7 @@ package com.science.gtnl.common.block;
 import static com.science.gtnl.common.block.Casings.BasicBlocks.*;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.StatCollector;
 import net.minecraftforge.oredict.OreDictionary;
@@ -17,11 +18,14 @@ import com.science.gtnl.common.block.Casings.Glass.ItemBlockGlass;
 import com.science.gtnl.common.block.Casings.Glow.ItemBlockGlow;
 import com.science.gtnl.common.block.Casings.Special.BlocksStargate;
 import com.science.gtnl.common.block.Casings.Special.StargateMetaBlockBase;
+import com.science.gtnl.common.block.ReAvaritia.*;
+import com.science.gtnl.common.block.ReAvaritia.BlockSoulFarmland;
+import com.science.gtnl.common.block.ReAvaritia.ExtremeAnvil.BlockExtremeAnvil;
+import com.science.gtnl.common.block.ReAvaritia.ExtremeAnvil.TileEntityExtremeAnvil;
 import com.science.gtnl.common.block.Render.BlockLaserBeacon;
 import com.science.gtnl.common.block.Render.BlockStar;
 import com.science.gtnl.common.block.Render.TileEntityLaserBeacon;
 import com.science.gtnl.common.block.Render.TileStar;
-import com.science.gtnl.common.block.blocks.BlockSoulFarmland;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import gtPlusPlus.core.item.base.itemblock.ItemBlockMeta;
@@ -43,6 +47,16 @@ public class BlockRegister {
         new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" });
 
     public static void registryBlocks() {
+
+        ExtremeAnvil = new BlockExtremeAnvil().setBlockName("ExtremeAnvil");
+        GameRegistry.registerBlock(ExtremeAnvil, "ExtremeAnvil");
+        GameRegistry.registerTileEntity(TileEntityExtremeAnvil.class, "ExtremeAnvil_TE");
+
+        NeutronCollector = GameRegistry.registerBlock(new NeutronCollector(), "NeutronCollector");
+        DenseNeutronCollector = GameRegistry.registerBlock(new DenseNeutronCollector(), "DenseNeutronCollector");
+        DenserNeutronCollector = GameRegistry.registerBlock(new DenserNeutronCollector(), "DenserNeutronCollector");
+        DensestNeutronCollector = GameRegistry.registerBlock(new DensestNeutronCollector(), "DensestNeutronCollector");
+        GameRegistry.registerTileEntity(TileEntityNeutronCollector.class, "NeutronCollector_TE");
 
         BlockSoulFarmland = new BlockSoulFarmland();
         GameRegistry.registerBlock(BlockSoulFarmland, "BlockSoulFarmland");
@@ -109,7 +123,7 @@ public class BlockRegister {
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow") }));
         GTNLItemList.BlackLampOffBorderless.set(
             ItemBlockBase.initMetaBlock(
-                "Black Lamp Off_Borderless",
+                "Black Lamp Off Borderless",
                 4,
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow"),
                     StatCollector.translateToLocal("tooltip.lamp.borderless") }));
@@ -120,7 +134,7 @@ public class BlockRegister {
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow") }));
         GTNLItemList.PinkLampOffBorderless.set(
             ItemBlockBase.initMetaBlock(
-                "Pink Lamp Off_Borderless",
+                "Pink Lamp Off Borderless",
                 6,
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow"),
                     StatCollector.translateToLocal("tooltip.lamp.borderless") }));
@@ -131,7 +145,7 @@ public class BlockRegister {
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow") }));
         GTNLItemList.RedLampOffBorderless.set(
             ItemBlockBase.initMetaBlock(
-                "Red Lamp Off_Borderless",
+                "Red Lamp Off Borderless",
                 8,
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow"),
                     StatCollector.translateToLocal("tooltip.lamp.borderless") }));
@@ -142,7 +156,7 @@ public class BlockRegister {
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow") }));
         GTNLItemList.OrangeLampOffBorderless.set(
             ItemBlockBase.initMetaBlock(
-                "Orange Lamp Off_Borderless",
+                "Orange Lamp Off Borderless",
                 10,
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow"),
                     StatCollector.translateToLocal("tooltip.lamp.borderless") }));
@@ -153,7 +167,7 @@ public class BlockRegister {
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow") }));
         GTNLItemList.YellowLampOffBorderless.set(
             ItemBlockBase.initMetaBlock(
-                "Yellow Lamp Off_Borderless",
+                "Yellow Lamp Off Borderless",
                 12,
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow"),
                     StatCollector.translateToLocal("tooltip.lamp.borderless") }));
@@ -164,7 +178,7 @@ public class BlockRegister {
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow") }));
         GTNLItemList.GreenLampOffBorderless.set(
             ItemBlockBase.initMetaBlock(
-                "Green Lamp Off_Borderless",
+                "Green Lamp Off Borderless",
                 14,
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow"),
                     StatCollector.translateToLocal("tooltip.lamp.borderless") }));
@@ -175,7 +189,7 @@ public class BlockRegister {
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow") }));
         GTNLItemList.LimeLampOffBorderless.set(
             ItemBlockBase.initMetaBlock(
-                "Lime Lamp Off_Borderless",
+                "Lime Lamp Off Borderless",
                 16,
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow"),
                     StatCollector.translateToLocal("tooltip.lamp.borderless") }));
@@ -186,7 +200,7 @@ public class BlockRegister {
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow") }));
         GTNLItemList.BlueLampOffBorderless.set(
             ItemBlockBase.initMetaBlock(
-                "Blue Lamp Off_Borderless",
+                "Blue Lamp Off Borderless",
                 18,
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow"),
                     StatCollector.translateToLocal("tooltip.lamp.borderless") }));
@@ -197,7 +211,7 @@ public class BlockRegister {
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow") }));
         GTNLItemList.LightBlueLampOffBorderless.set(
             ItemBlockBase.initMetaBlock(
-                "LightBlue Lamp Off_Borderless",
+                "LightBlue Lamp Off Borderless",
                 20,
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow"),
                     StatCollector.translateToLocal("tooltip.lamp.borderless") }));
@@ -208,7 +222,7 @@ public class BlockRegister {
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow") }));
         GTNLItemList.CyanLampOffBorderless.set(
             ItemBlockBase.initMetaBlock(
-                "Cyan Lamp Off_Borderless",
+                "Cyan Lamp Off Borderless",
                 22,
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow"),
                     StatCollector.translateToLocal("tooltip.lamp.borderless") }));
@@ -219,7 +233,7 @@ public class BlockRegister {
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow") }));
         GTNLItemList.BrownLampOffBorderless.set(
             ItemBlockBase.initMetaBlock(
-                "Brown Lamp Off_Borderless",
+                "Brown Lamp Off Borderless",
                 24,
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow"),
                     StatCollector.translateToLocal("tooltip.lamp.borderless") }));
@@ -230,7 +244,7 @@ public class BlockRegister {
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow") }));
         GTNLItemList.MagentaLampOffBorderless.set(
             ItemBlockBase.initMetaBlock(
-                "Magenta Lamp Off_Borderless",
+                "Magenta Lamp Off Borderless",
                 26,
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow"),
                     StatCollector.translateToLocal("tooltip.lamp.borderless") }));
@@ -241,7 +255,7 @@ public class BlockRegister {
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow") }));
         GTNLItemList.PurpleLampOffBorderless.set(
             ItemBlockBase.initMetaBlock(
-                "Purple Lamp Off_Borderless",
+                "Purple Lamp Off Borderless",
                 28,
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow"),
                     StatCollector.translateToLocal("tooltip.lamp.borderless") }));
@@ -252,7 +266,7 @@ public class BlockRegister {
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow") }));
         GTNLItemList.GrayLampOffBorderless.set(
             ItemBlockBase.initMetaBlock(
-                "Gray Lamp Off_Borderless",
+                "Gray Lamp Off Borderless",
                 30,
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow"),
                     StatCollector.translateToLocal("tooltip.lamp.borderless") }));
@@ -263,7 +277,7 @@ public class BlockRegister {
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow") }));
         GTNLItemList.LightGrayLampOffBorderless.set(
             ItemBlockBase.initMetaBlock(
-                "LightGray Lamp Off_Borderless",
+                "LightGray Lamp Off Borderless",
                 32,
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow"),
                     StatCollector.translateToLocal("tooltip.lamp.borderless") }));
@@ -274,10 +288,11 @@ public class BlockRegister {
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow") }));
         GTNLItemList.WhiteLampOffBorderless.set(
             ItemBlockBase.initMetaBlock(
-                "White Lamp Off_Borderless",
+                "White Lamp Off Borderless",
                 34,
                 new String[] { StatCollector.translateToLocal("tooltip.lamp.noglow"),
                     StatCollector.translateToLocal("tooltip.lamp.borderless") }));
+        GTNLItemList.BlazeCubeBlock.set(ItemBlockBase.initMetaBlock("BlazeCubeBlock", 35));
 
         GTNLItemList.FortifyGlowstone.set(ItemBlockGlow.initMetaBlockGlow("Fortify_Glowstone", 0));
         GTNLItemList.BlackLamp.set(ItemBlockGlow.initMetaBlockGlow("Black Lamp", 1));
@@ -429,6 +444,14 @@ public class BlockRegister {
         ItemStack GaiaGlass = new ItemStack(MetaBlockGlass, 1, 0);
         ItemStack TerraGlass = new ItemStack(MetaBlockGlass, 1, 1);
         ItemStack FusionGlass = new ItemStack(MetaBlockGlass, 1, 2);
+        ItemStack ExtremeAnvilBlock = new ItemStack(ExtremeAnvil, 1, 0);
+        ItemStack Bedrock = new ItemStack(Blocks.bedrock, 1, 0);
+        ItemStack EndPortal = new ItemStack(Blocks.end_portal, 1, 0);
+        ItemStack EndPortalFrame = new ItemStack(Blocks.end_portal_frame, 1, 0);
+        ItemStack CommandBlock = new ItemStack(Blocks.command_block, 1, 0);
+
+        Block cosmicNeutroniumBlock = GameRegistry.findBlock("Avaritia", "Resource_Block");
+        ItemStack CosmicNeutroniumBlock = new ItemStack(cosmicNeutroniumBlock, 1, 0);
 
         for (int LampMeta = 1; LampMeta <= 32; LampMeta++) {
             ItemStack LampTier = new ItemStack(MetaBlockGlow, 1, LampMeta);
@@ -442,6 +465,12 @@ public class BlockRegister {
             OreDictionary.registerOre("blockGlass", LampOffTier);
         }
 
+        OreDictionary.registerOre("neutronUnbreak", CommandBlock);
+        OreDictionary.registerOre("neutronUnbreak", EndPortal);
+        OreDictionary.registerOre("neutronUnbreak", EndPortalFrame);
+        OreDictionary.registerOre("neutronUnbreak", Bedrock);
+        OreDictionary.registerOre("neutronUnbreak", ExtremeAnvilBlock);
+        OreDictionary.registerOre("neutronUnbreak", CosmicNeutroniumBlock);
         OreDictionary.registerOre("blockGlassUEV", GaiaGlass);
         OreDictionary.registerOre("blockGlassUV", TerraGlass);
         OreDictionary.registerOre("blockGlassLuV", FusionGlass);

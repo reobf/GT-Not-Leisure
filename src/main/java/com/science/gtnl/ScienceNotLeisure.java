@@ -9,6 +9,8 @@ import org.apache.logging.log4j.Logger;
 
 import com.science.gtnl.Utils.item.TextHandler;
 import com.science.gtnl.common.block.Casings.Special.CrushingWheelsEventHandler;
+import com.science.gtnl.common.block.ReAvaritia.ExtremeAnvil.AnvilEventHandler;
+import com.science.gtnl.common.block.ReAvaritia.GooeyHandler;
 import com.science.gtnl.common.item.ReAvaritia.BlazeSword;
 import com.science.gtnl.common.item.ReAvaritia.ToolEvents;
 import com.science.gtnl.common.machine.multiMachineClasses.EdenGardenManager.EIGBucketLoader;
@@ -28,6 +30,7 @@ import cpw.mods.fml.common.event.FMLLoadCompleteEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
 
 // after
 @Mod(
@@ -50,6 +53,9 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
     acceptedMinecraftVersions = "1.7.10")
 
 public class ScienceNotLeisure {
+
+    @Mod.Instance
+    public static ScienceNotLeisure instance;
 
     public static final String MODID = "ScienceNotLeisure";
 
@@ -137,7 +143,9 @@ public class ScienceNotLeisure {
     @Mod.EventHandler
     public void midGame(FMLInitializationEvent event) {
         proxy.makeThingsPretty();
+        NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GooeyHandler());
         MinecraftForge.EVENT_BUS.register(new ToolEvents());
         MinecraftForge.EVENT_BUS.register(new CrushingWheelsEventHandler());
+        MinecraftForge.EVENT_BUS.register(new AnvilEventHandler());
     }
 }

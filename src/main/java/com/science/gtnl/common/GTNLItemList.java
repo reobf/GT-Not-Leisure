@@ -18,6 +18,7 @@ public enum GTNLItemList {
 
     TestCasing,
     TestMetaBlock01_0,
+    BlazeCubeBlock,
     NewHorizonsCoil,
     HeatVent,
     SlicingBlades,

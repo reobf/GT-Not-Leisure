@@ -20,7 +20,6 @@ import com.science.gtnl.client.CreativeTabsLoader;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import gregtech.api.util.GTLanguageManager;
 
 public class ItemBlockBase extends ItemBlock {
 
@@ -60,11 +59,6 @@ public class ItemBlockBase extends ItemBlock {
     // -----------------------
     // region Member Variables
 
-    public final String mNoMobsToolTip = GTLanguageManager
-        .addStringLocalization("gt.nomobspawnsonthisblock", "Mobs cannot Spawn on this Block");
-    public final String mNoTileEntityToolTip = GTLanguageManager
-        .addStringLocalization("gt.notileentityinthisblock", "This is NOT a TileEntity!");
-
     // endregion
     // -----------------------
     // region Overrides
@@ -85,8 +79,6 @@ public class ItemBlockBase extends ItemBlock {
             String[] tooltips = MetaBlockTooltipsMap.get(meta);
             theTooltipsList.addAll(Arrays.asList(tooltips));
         }
-        theTooltipsList.add(mNoMobsToolTip);
-        theTooltipsList.add(mNoTileEntityToolTip);
     }
 
     @Override
