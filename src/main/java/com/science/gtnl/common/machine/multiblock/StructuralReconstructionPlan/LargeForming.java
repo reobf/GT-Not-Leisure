@@ -1,10 +1,15 @@
 package com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
-import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaBlockColumn;
-import static gregtech.api.GregTechAPI.*;
+import static gregtech.api.GregTechAPI.sBlockCasings2;
+import static gregtech.api.GregTechAPI.sBlockCasings3;
 import static gregtech.api.enums.HatchElement.*;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
+import static gregtech.api.util.GTStructureUtility.ofFrame;
+import static gtPlusPlus.core.block.ModBlocks.blockCasings3Misc;
+import static gtPlusPlus.xmod.gregtech.common.blocks.textures.TexturesGtBlock.oMCDIndustrialPlatePress;
+import static gtPlusPlus.xmod.gregtech.common.blocks.textures.TexturesGtBlock.oMCDIndustrialPlatePressActive;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.ForgeDirection;
@@ -18,6 +23,9 @@ import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
 
+import cpw.mods.fml.common.registry.GameRegistry;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.TAE;
 import gregtech.api.enums.Textures;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
@@ -26,33 +34,31 @@ import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.render.TextureFactory;
 import gregtech.api.util.MultiblockTooltipBuilder;
-import gregtech.common.blocks.BlockCasings4;
-import gtPlusPlus.xmod.gregtech.common.blocks.textures.TexturesGtBlock;
 
-public class LargeMacerationTower extends GTMMultiMachineBase<LargeMacerationTower> implements ISurvivalConstructable {
+public class LargeForming extends GTMMultiMachineBase<LargeForming> implements ISurvivalConstructable {
 
     public static final String STRUCTURE_PIECE_MAIN = "main";
-    private static IStructureDefinition<LargeMacerationTower> STRUCTURE_DEFINITION = null;
-    public static final String LMT_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/large_maceration_tower";
-    public static final int CASING_INDEX = ((BlockCasings4) sBlockCasings4).getTextureIndex(14);
-    public final int horizontalOffSet = 2;
-    public final int verticalOffSet = 1;
+    private static IStructureDefinition<LargeForming> STRUCTURE_DEFINITION = null;
+    public static final String LF_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/large_forming";
+    public static final int CASING_INDEX = TAE.GTPP_INDEX(33);
+    public final int horizontalOffSet = 3;
+    public final int verticalOffSet = 2;
     public final int depthOffSet = 0;
     public static String[][] shape;
 
-    public LargeMacerationTower(int aID, String aName, String aNameRegional) {
+    public LargeForming(int aID, String aName, String aNameRegional) {
         super(aID, aName, aNameRegional);
-        shape = StructureUtils.readStructureFromFile(LMT_STRUCTURE_FILE_PATH);
+        shape = StructureUtils.readStructureFromFile(LF_STRUCTURE_FILE_PATH);
     }
 
-    public LargeMacerationTower(String aName) {
+    public LargeForming(String aName) {
         super(aName);
-        shape = StructureUtils.readStructureFromFile(LMT_STRUCTURE_FILE_PATH);
+        shape = StructureUtils.readStructureFromFile(LF_STRUCTURE_FILE_PATH);
     }
 
     @Override
     public IMetaTileEntity newMetaEntity(IGregTechTileEntity aTileEntity) {
-        return new LargeMacerationTower(this.mName);
+        return new LargeForming(this.mName);
     }
 
     @Override
@@ -61,12 +67,12 @@ public class LargeMacerationTower extends GTMMultiMachineBase<LargeMacerationTow
         if (side == aFacing) {
             if (aActive) return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()),
                 TextureFactory.builder()
-                    .addIcon(TexturesGtBlock.oMCAIndustrialMultiMachineActive)
+                    .addIcon(oMCDIndustrialPlatePressActive)
                     .extFacing()
                     .build() };
             return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()),
                 TextureFactory.builder()
-                    .addIcon(TexturesGtBlock.oMCAIndustrialMultiMachine)
+                    .addIcon(oMCDIndustrialPlatePress)
                     .extFacing()
                     .build() };
         }
@@ -79,13 +85,13 @@ public class LargeMacerationTower extends GTMMultiMachineBase<LargeMacerationTow
 
     @Override
     public RecipeMap<?> getRecipeMap() {
-        return RecipeMaps.maceratorRecipes;
+        return RecipeMaps.formingPressRecipes;
     }
 
     @Override
     public MultiblockTooltipBuilder createTooltip() {
         MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
-        tt.addMachineType(TextLocalization.LargeMacerationTowerRecipeType)
+        tt.addMachineType(TextLocalization.LargeFormingRecipeType)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_00)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_01)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_02)
@@ -93,27 +99,30 @@ public class LargeMacerationTower extends GTMMultiMachineBase<LargeMacerationTow
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
-            .beginStructureBlock(5, 4, 5, true)
-            .addInputBus(TextLocalization.Tooltip_LargeMacerationTower_Casing)
-            .addOutputBus(TextLocalization.Tooltip_LargeMacerationTower_Casing)
-            .addEnergyHatch(TextLocalization.Tooltip_LargeMacerationTower_Casing)
-            .addMaintenanceHatch(TextLocalization.Tooltip_LargeMacerationTower_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
+            .beginStructureBlock(7, 3, 3, true)
+            .addInputBus(TextLocalization.Tooltip_LargeForming_Casing)
+            .addOutputBus(TextLocalization.Tooltip_LargeForming_Casing)
+            .addEnergyHatch(TextLocalization.Tooltip_LargeForming_Casing)
+            .addMaintenanceHatch(TextLocalization.Tooltip_LargeForming_Casing)
+            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY + " §rX " + TextUtils.SRP);
         return tt;
     }
 
     @Override
-    public IStructureDefinition<LargeMacerationTower> getStructureDefinition() {
+    public IStructureDefinition<LargeForming> getStructureDefinition() {
         if (STRUCTURE_DEFINITION == null) {
-            STRUCTURE_DEFINITION = StructureDefinition.<LargeMacerationTower>builder()
+            STRUCTURE_DEFINITION = StructureDefinition.<LargeForming>builder()
                 .addShape(STRUCTURE_PIECE_MAIN, transpose(shape))
+                .addElement('A', ofBlockAnyMeta(GameRegistry.findBlock(IndustrialCraft2.ID, "blockAlloyGlass")))
+                .addElement('B', ofBlock(sBlockCasings2, 5))
                 .addElement(
-                    'A',
-                    buildHatchAdder(LargeMacerationTower.class).casingIndex(CASING_INDEX)
+                    'C',
+                    buildHatchAdder(LargeForming.class).casingIndex(CASING_INDEX)
                         .dot(1)
                         .atLeast(InputBus, OutputBus, Maintenance, Energy)
-                        .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(sBlockCasings4, 14))))
-                .addElement('B', ofBlock(MetaBlockColumn, 2))
+                        .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(blockCasings3Misc, 1))))
+                .addElement('D', ofBlock(sBlockCasings3, 10))
+                .addElement('E', ofFrame(Materials.StainlessSteel))
                 .build();
         }
         return STRUCTURE_DEFINITION;
@@ -129,7 +138,7 @@ public class LargeMacerationTower extends GTMMultiMachineBase<LargeMacerationTow
         }
 
         ParallelTier = getParallelTier(aStack);
-        return mCasing >= 65;
+        return mCasing >= 10;
     }
 
     @Override

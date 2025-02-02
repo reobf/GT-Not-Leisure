@@ -6,7 +6,6 @@ import net.minecraft.item.ItemStack;
 
 import org.jetbrains.annotations.NotNull;
 
-import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.science.gtnl.common.GTNLItemList;
 
 import gregtech.api.logic.ProcessingLogic;
@@ -18,11 +17,6 @@ public abstract class GTMMultiMachineBase<T extends GTMMultiMachineBase<T>> exte
 
     protected int mCasing;
     protected int ParallelTier;
-    protected static final String STRUCTURE_PIECE_MAIN = "main";
-    protected static String[][] shape;
-    protected int horizontalOffSet;
-    protected int verticalOffSet;
-    protected int depthOffSet;
 
     public GTMMultiMachineBase(int aID, String aName, String aNameRegional) {
         super(aID, aName, aNameRegional);
@@ -58,10 +52,10 @@ public abstract class GTMMultiMachineBase<T extends GTMMultiMachineBase<T>> exte
 
     @Override
     public int getMaxParallelRecipes() {
-        if (ParallelTier <= 1) {
+        if (ParallelTier <= 2) {
             return 16;
         } else {
-            return (int) Math.pow(4, ParallelTier - 2);
+            return (int) Math.pow(4, ParallelTier - 3);
         }
     }
 
@@ -93,28 +87,10 @@ public abstract class GTMMultiMachineBase<T extends GTMMultiMachineBase<T>> exte
             return 12;
         } else if (inventory.isItemEqual(GTNLItemList.UXVParallelControllerCore.getInternalStack_unsafe())) {
             return 13;
+        } else if (inventory.isItemEqual(GTNLItemList.MAXParallelControllerCore.getInternalStack_unsafe())) {
+            return 14;
         }
         return 0;
-    }
-
-    @Override
-    public void construct(ItemStack stackSize, boolean hintsOnly) {
-        buildPiece(STRUCTURE_PIECE_MAIN, stackSize, hintsOnly, horizontalOffSet, verticalOffSet, depthOffSet);
-    }
-
-    @Override
-    public int survivalConstruct(ItemStack stackSize, int elementBudget, ISurvivalBuildEnvironment env) {
-        if (mMachine) return -1;
-        return survivialBuildPiece(
-            STRUCTURE_PIECE_MAIN,
-            stackSize,
-            horizontalOffSet,
-            verticalOffSet,
-            depthOffSet,
-            elementBudget,
-            env,
-            false,
-            true);
     }
 
     @Override

@@ -126,13 +126,11 @@ public class TeleportationArrayToAlfheim extends MultiMachineBase<TeleportationA
         tag.setInteger("mode", machineMode);
     }
 
-    // 启用机器模式切换
     @Override
     public boolean supportsMachineModeSwitch() {
         return true;
     }
 
-    // 设置模式图标
     @Override
     public void setMachineModeIcons() {
         machineModeIcons.clear();
@@ -142,7 +140,6 @@ public class TeleportationArrayToAlfheim extends MultiMachineBase<TeleportationA
         machineModeIcons.add(GTUITextures.OVERLAY_BUTTON_MACHINEMODE_BENDING);
     }
 
-    // 添加UI部件
     @Override
     public void addUIWidgets(ModularWindow.Builder builder, UIBuildContext buildContext) {
         super.addUIWidgets(builder, buildContext);
@@ -160,7 +157,7 @@ public class TeleportationArrayToAlfheim extends MultiMachineBase<TeleportationA
 
     @Override
     public final void onScrewdriverRightClick(ForgeDirection side, EntityPlayer aPlayer, float aX, float aY, float aZ) {
-        this.machineMode = (byte) ((this.machineMode + 1) % 5);
+        this.machineMode = (byte) ((this.machineMode + 1) % 4);
         GTUtility.sendChatToPlayer(
             aPlayer,
             StatCollector.translateToLocal("TeleportationArrayToAlfheim_Mode_" + this.machineMode));

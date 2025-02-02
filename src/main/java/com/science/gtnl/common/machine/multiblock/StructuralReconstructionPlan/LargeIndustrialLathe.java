@@ -5,12 +5,11 @@ import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.enums.Textures.BlockIcons.*;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
-import static gregtech.api.util.GTStructureUtility.ofCoil;
+import static gregtech.api.util.GTStructureUtility.ofFrame;
+import static gtPlusPlus.core.block.ModBlocks.blockCasings3Misc;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.ForgeDirection;
-
-import org.jetbrains.annotations.NotNull;
 
 import com.gtnewhorizon.structurelib.alignment.constructable.ISurvivalConstructable;
 import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
@@ -21,51 +20,41 @@ import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
 
-import gregtech.api.enums.HeatingCoilLevel;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.TAE;
 import gregtech.api.enums.Textures;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
-import gregtech.api.logic.ProcessingLogic;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.render.TextureFactory;
-import gregtech.api.util.GTRecipe;
 import gregtech.api.util.MultiblockTooltipBuilder;
-import gregtech.api.util.OverclockCalculator;
-import gregtech.common.blocks.BlockCasings8;
 
-public class ChemicalPlant extends GTMMultiMachineBase<ChemicalPlant> implements ISurvivalConstructable {
+public class LargeIndustrialLathe extends GTMMultiMachineBase<LargeIndustrialLathe> implements ISurvivalConstructable {
 
-    public static final int CASING_INDEX = ((BlockCasings8) sBlockCasings8).getTextureIndex(0);
-    private HeatingCoilLevel mCoilLevel;
-    private int mCasing;
-    private static IStructureDefinition<ChemicalPlant> STRUCTURE_DEFINITION = null;
     public static final String STRUCTURE_PIECE_MAIN = "main";
-    public static String[][] shape;
-    public static final String CP_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/chemical_plant";
-    public final int horizontalOffSet = 0;
+    private static IStructureDefinition<LargeIndustrialLathe> STRUCTURE_DEFINITION = null;
+    public static final String LIL_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/large_industrial_lathe";
+    public static final int CASING_INDEX = TAE.GTPP_INDEX(33);
+    public final int horizontalOffSet = 3;
     public final int verticalOffSet = 3;
     public final int depthOffSet = 0;
+    public static String[][] shape;
 
-    public ChemicalPlant(int aID, String aName, String aNameRegional) {
+    public LargeIndustrialLathe(int aID, String aName, String aNameRegional) {
         super(aID, aName, aNameRegional);
-        shape = StructureUtils.readStructureFromFile(CP_STRUCTURE_FILE_PATH);
+        shape = StructureUtils.readStructureFromFile(LIL_STRUCTURE_FILE_PATH);
     }
 
-    public ChemicalPlant(String aName) {
+    public LargeIndustrialLathe(String aName) {
         super(aName);
-        shape = StructureUtils.readStructureFromFile(CP_STRUCTURE_FILE_PATH);
-    }
-
-    @Override
-    public boolean isEnablePerfectOverclock() {
-        return true;
+        shape = StructureUtils.readStructureFromFile(LIL_STRUCTURE_FILE_PATH);
     }
 
     @Override
     public IMetaTileEntity newMetaEntity(IGregTechTileEntity aTileEntity) {
-        return new ChemicalPlant(this.mName);
+        return new LargeIndustrialLathe(this.mName);
     }
 
     @Override
@@ -74,21 +63,21 @@ public class ChemicalPlant extends GTMMultiMachineBase<ChemicalPlant> implements
         if (side == aFacing) {
             if (aActive) return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()),
                 TextureFactory.builder()
-                    .addIcon(OVERLAY_FRONT_LARGE_CHEMICAL_REACTOR_ACTIVE)
+                    .addIcon(OVERLAY_FRONT_MULTI_LATHE_ACTIVE)
                     .extFacing()
                     .build(),
                 TextureFactory.builder()
-                    .addIcon(OVERLAY_FRONT_LARGE_CHEMICAL_REACTOR_ACTIVE_GLOW)
+                    .addIcon(OVERLAY_FRONT_MULTI_LATHE_ACTIVE_GLOW)
                     .extFacing()
                     .glow()
                     .build() };
             return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()),
                 TextureFactory.builder()
-                    .addIcon(OVERLAY_FRONT_LARGE_CHEMICAL_REACTOR)
+                    .addIcon(OVERLAY_FRONT_MULTI_LATHE)
                     .extFacing()
                     .build(),
                 TextureFactory.builder()
-                    .addIcon(OVERLAY_FRONT_LARGE_CHEMICAL_REACTOR_GLOW)
+                    .addIcon(OVERLAY_FRONT_MULTI_LATHE_GLOW)
                     .extFacing()
                     .glow()
                     .build() };
@@ -102,47 +91,60 @@ public class ChemicalPlant extends GTMMultiMachineBase<ChemicalPlant> implements
 
     @Override
     public RecipeMap<?> getRecipeMap() {
-        return RecipeMaps.multiblockChemicalReactorRecipes;
+        return RecipeMaps.latheRecipes;
     }
 
     @Override
     public MultiblockTooltipBuilder createTooltip() {
         MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
-        tt.addMachineType(TextLocalization.ChemicalPlantRecipeType)
-            .addInfo(TextLocalization.Tooltip_ChemicalPlant_00)
-            .addInfo(TextLocalization.Tooltip_ChemicalPlant_01)
+        tt.addMachineType(TextLocalization.LargeIndustrialLatheRecipeType)
+            .addInfo(TextLocalization.Tooltip_GTMMultiMachine_00)
+            .addInfo(TextLocalization.Tooltip_GTMMultiMachine_01)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_02)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_03)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
-            .beginStructureBlock(5, 5, 5, true)
-            .addInputHatch(TextLocalization.Tooltip_ChemicalPlant_Casing)
-            .addOutputHatch(TextLocalization.Tooltip_ChemicalPlant_Casing)
-            .addInputBus(TextLocalization.Tooltip_ChemicalPlant_Casing)
-            .addOutputBus(TextLocalization.Tooltip_ChemicalPlant_Casing)
-            .addEnergyHatch(TextLocalization.Tooltip_ChemicalPlant_Casing)
-            .addMaintenanceHatch(TextLocalization.Tooltip_ChemicalPlant_Casing)
+            .beginStructureBlock(7, 4, 5, true)
+            .addInputBus(TextLocalization.Tooltip_LargeIndustrialLathe_Casing)
+            .addOutputBus(TextLocalization.Tooltip_LargeIndustrialLathe_Casing)
+            .addEnergyHatch(TextLocalization.Tooltip_LargeIndustrialLathe_Casing)
+            .addMaintenanceHatch(TextLocalization.Tooltip_LargeIndustrialLathe_Casing)
             .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
         return tt;
     }
 
     @Override
-    public IStructureDefinition<ChemicalPlant> getStructureDefinition() {
+    public IStructureDefinition<LargeIndustrialLathe> getStructureDefinition() {
         if (STRUCTURE_DEFINITION == null) {
-            STRUCTURE_DEFINITION = StructureDefinition.<ChemicalPlant>builder()
+            STRUCTURE_DEFINITION = StructureDefinition.<LargeIndustrialLathe>builder()
                 .addShape(STRUCTURE_PIECE_MAIN, transpose(shape))
-                .addElement('A', ofCoil(ChemicalPlant::setCoilLevel, ChemicalPlant::getCoilLevel))
+                .addElement('A', ofBlock(sBlockCasings2, 0))
+                .addElement('B', ofBlock(sBlockCasings2, 5))
+                .addElement('C', ofBlock(sBlockCasings3, 10))
+                .addElement('D', ofFrame(Materials.Tungsten))
                 .addElement(
-                    'B',
-                    buildHatchAdder(ChemicalPlant.class).casingIndex(CASING_INDEX)
+                    'E',
+                    buildHatchAdder(LargeIndustrialLathe.class).casingIndex(CASING_INDEX)
                         .dot(1)
-                        .atLeast(InputHatch, OutputHatch, InputBus, OutputBus, Maintenance, Energy)
-                        .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(sBlockCasings8, 0))))
-                .addElement('C', ofBlock(sBlockCasings8, 1))
+                        .atLeast(InputBus, OutputBus, Maintenance, Energy)
+                        .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(blockCasings3Misc, 1))))
                 .build();
         }
         return STRUCTURE_DEFINITION;
+    }
+
+    @Override
+    public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
+        mCasing = 0;
+        ParallelTier = 0;
+
+        if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && checkHatch()) {
+            return false;
+        }
+
+        ParallelTier = getParallelTier(aStack);
+        return mCasing >= 50;
     }
 
     @Override
@@ -163,35 +165,5 @@ public class ChemicalPlant extends GTMMultiMachineBase<ChemicalPlant> implements
             env,
             false,
             true);
-    }
-
-    @Override
-    public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
-        mCasing = 0;
-
-        return checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && mCasing >= 50
-            && checkHatch();
-    }
-
-    @Override
-    public ProcessingLogic createProcessingLogic() {
-        return new ProcessingLogic() {
-
-            @NotNull
-            @Override
-            public OverclockCalculator createOverclockCalculator(@NotNull GTRecipe recipe) {
-                return OverclockCalculator.ofNoOverclock(recipe)
-                    .setEUtDiscount(1 + (getCoilLevel().getTier() - 1) * 0.05)
-                    .setSpeedBoost(1 - (getCoilLevel().getTier() - 1) * 0.05);
-            }
-        }.setMaxParallelSupplier(this::getMaxParallelRecipes);
-    }
-
-    public void setCoilLevel(HeatingCoilLevel aCoilLevel) {
-        this.mCoilLevel = aCoilLevel;
-    }
-
-    public HeatingCoilLevel getCoilLevel() {
-        return this.mCoilLevel;
     }
 }

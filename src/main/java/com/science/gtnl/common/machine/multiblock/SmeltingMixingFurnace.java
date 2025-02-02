@@ -259,7 +259,7 @@ public class SmeltingMixingFurnace extends WirelessEnergyMultiMachineBase<Smelti
 
     @Override
     public int getMaxParallelRecipes() {
-        return 32 * (GTUtility.getTier(this.getMaxInputVoltage()));
+        return 256 * (GTUtility.getTier(this.getMaxInputVoltage()));
     }
 
     @Override

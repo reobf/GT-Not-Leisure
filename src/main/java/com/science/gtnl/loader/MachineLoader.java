@@ -17,6 +17,7 @@ import com.science.gtnl.common.machine.multiblock.GenerationEarthEngine;
 import com.science.gtnl.common.machine.multiblock.HandOfJohnDavisonRockefeller;
 import com.science.gtnl.common.machine.multiblock.IndustrialArcaneAssembler;
 import com.science.gtnl.common.machine.multiblock.LapotronChip;
+import com.science.gtnl.common.machine.multiblock.LargeBrewer;
 import com.science.gtnl.common.machine.multiblock.LargeCircuitAssembler;
 import com.science.gtnl.common.machine.multiblock.LargeSteamAlloySmelter;
 import com.science.gtnl.common.machine.multiblock.LargeSteamChemicalBath;
@@ -37,7 +38,17 @@ import com.science.gtnl.common.machine.multiblock.SteamCracking;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.BlazeBlastFurnace;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.ChemicalPlant;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.ColdIceFreezer;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.ElectricImplosionCompressor;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeArcSmelter;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeBender;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeCutter;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeExtruder;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeForming;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeIndustrialLathe;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeMacerationTower;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeMaterialPress;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeSiftingFunnel;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeWiremill;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.MegaBlastFurnace;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.VacuumFreezer;
 import com.science.gtnl.common.machine.multiblock.TeleportationArrayToAlfheim;
@@ -89,6 +100,17 @@ public class MachineLoader {
     public static ItemStack VibrantPhotovoltaicPowerStation;
     public static ItemStack LargeMacerationTower;
     public static ItemStack HandOfJohnDavisonRockefeller;
+    public static ItemStack LargeSiftingFunnel;
+    public static ItemStack LargeCutter;
+    public static ItemStack LargeBrewer;
+    public static ItemStack LargeIndustrialLathe;
+    public static ItemStack LargeMaterialPress;
+    public static ItemStack LargeWiremill;
+    public static ItemStack LargeBender;
+    public static ItemStack ElectricImplosionCompressor;
+    public static ItemStack LargeExtruder;
+    public static ItemStack LargeArcSmelter;
+    public static ItemStack LargeForming;
 
     public static void loadMachines() {
 
@@ -297,6 +319,54 @@ public class MachineLoader {
             "NameHandOfJohnDavisonRockefeller",
             TextLocalization.NameHandOfJohnDavisonRockefeller).getStackForm(1);
         GTNLItemList.HandOfJohnDavisonRockefeller.set(HandOfJohnDavisonRockefeller);
+
+        LargeSiftingFunnel = new LargeSiftingFunnel(
+            21040,
+            "NameLargeSiftingFunnel",
+            TextLocalization.NameLargeSiftingFunnel).getStackForm(1);
+        GTNLItemList.LargeSiftingFunnel.set(LargeSiftingFunnel);
+
+        LargeCutter = new LargeCutter(21041, "NameLargeCutter", TextLocalization.NameLargeCutter).getStackForm(1);
+        GTNLItemList.LargeCutter.set(LargeCutter);
+
+        LargeBrewer = new LargeBrewer(21042, "NameLargeBrewer", TextLocalization.NameLargeBrewer).getStackForm(1);
+        GTNLItemList.LargeBrewer.set(LargeBrewer);
+
+        LargeIndustrialLathe = new LargeIndustrialLathe(
+            21043,
+            "NameLargeIndustrialLathe",
+            TextLocalization.NameLargeIndustrialLathe).getStackForm(1);
+        GTNLItemList.LargeIndustrialLathe.set(LargeIndustrialLathe);
+
+        LargeMaterialPress = new LargeMaterialPress(
+            21044,
+            "NameLargeMaterialPress",
+            TextLocalization.NameLargeMaterialPress).getStackForm(1);
+        GTNLItemList.LargeMaterialPress.set(LargeMaterialPress);
+
+        LargeWiremill = new LargeWiremill(21045, "NameLargeWiremill", TextLocalization.NameLargeWiremill)
+            .getStackForm(1);
+        GTNLItemList.LargeWiremill.set(LargeWiremill);
+
+        LargeBender = new LargeBender(21046, "NameLargeBender", TextLocalization.NameLargeBender).getStackForm(1);
+        GTNLItemList.LargeBender.set(LargeBender);
+
+        ElectricImplosionCompressor = new ElectricImplosionCompressor(
+            21047,
+            "NameElectricImplosionCompressor",
+            TextLocalization.NameElectricImplosionCompressor).getStackForm(1);
+        GTNLItemList.ElectricImplosionCompressor.set(ElectricImplosionCompressor);
+
+        LargeExtruder = new LargeExtruder(21048, "NameLargeExtruder", TextLocalization.NameLargeExtruder)
+            .getStackForm(1);
+        GTNLItemList.LargeExtruder.set(LargeExtruder);
+
+        LargeArcSmelter = new LargeArcSmelter(21049, "NameLargeArcSmelter", TextLocalization.NameLargeArcSmelter)
+            .getStackForm(1);
+        GTNLItemList.LargeArcSmelter.set(LargeArcSmelter);
+
+        LargeForming = new LargeForming(21050, "NameLargeForming", TextLocalization.NameLargeForming).getStackForm(1);
+        GTNLItemList.LargeForming.set(LargeForming);
 
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
             21919,

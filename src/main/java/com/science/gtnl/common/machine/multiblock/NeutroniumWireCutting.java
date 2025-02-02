@@ -258,7 +258,7 @@ public class NeutroniumWireCutting extends WirelessEnergyMultiMachineBase<Neutro
 
     @Override
     public int getMaxParallelRecipes() {
-        return ((mGlassTier + GTUtility.getTier(this.getMaxInputVoltage())) ^ 2);
+        return ((mGlassTier * 64 + GTUtility.getTier(this.getMaxInputVoltage())) ^ 4);
     }
 
     @Override

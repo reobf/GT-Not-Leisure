@@ -197,7 +197,7 @@ public class ItemRegister {
                 49,
                 new String[] { texter("§dSpeed: +2%%", "tooltips.MVParallelControllerCore_00"),
                     texter("§5EU Usage: 76%%", "tooltips.MVParallelControllerCore_01"),
-                    texter("§bParallel: 1", "tooltips.MVParallelControllerCore_02") }));
+                    texter("§bParallel: 0", "tooltips.MVParallelControllerCore_02") }));
 
         GTNLItemList.HVParallelControllerCore.set(
             initItem(
@@ -205,7 +205,7 @@ public class ItemRegister {
                 50,
                 new String[] { texter("§dSpeed: +4%%", "tooltips.HVParallelControllerCore_00"),
                     texter("§5EU Usage: 74%%", "tooltips.HVParallelControllerCore_01"),
-                    texter("§bParallel: 4", "tooltips.HVParallelControllerCore_02") }));
+                    texter("§bParallel: 1", "tooltips.HVParallelControllerCore_02") }));
 
         GTNLItemList.EVParallelControllerCore.set(
             initItem(
@@ -213,7 +213,7 @@ public class ItemRegister {
                 51,
                 new String[] { texter("§dSpeed: +6%%", "tooltips.EVParallelControllerCore_00"),
                     texter("§5EU Usage: 72%%", "tooltips.EVParallelControllerCore_01"),
-                    texter("§bParallel: 16", "tooltips.EVParallelControllerCore_02") }));
+                    texter("§bParallel: 4", "tooltips.EVParallelControllerCore_02") }));
 
         GTNLItemList.IVParallelControllerCore.set(
             initItem(
@@ -221,7 +221,7 @@ public class ItemRegister {
                 52,
                 new String[] { texter("§dSpeed: +8%%", "tooltips.IVParallelControllerCore_00"),
                     texter("§5EU Usage: 70%%", "tooltips.IVParallelControllerCore_01"),
-                    texter("§bParallel: 64", "tooltips.IVParallelControllerCore_02") }));
+                    texter("§bParallel: 16", "tooltips.IVParallelControllerCore_02") }));
 
         GTNLItemList.LuVParallelControllerCore.set(
             initItem(
@@ -229,7 +229,7 @@ public class ItemRegister {
                 53,
                 new String[] { texter("§dSpeed: +10%%", "tooltips.LuVParallelControllerCore_00"),
                     texter("§5EU Usage: 68%%", "tooltips.LuVParallelControllerCore_01"),
-                    texter("§bParallel: 256", "tooltips.LuVParallelControllerCore_02") }));
+                    texter("§bParallel: 64", "tooltips.LuVParallelControllerCore_02") }));
 
         GTNLItemList.ZPMParallelControllerCore.set(
             initItem(
@@ -237,7 +237,7 @@ public class ItemRegister {
                 54,
                 new String[] { texter("§dSpeed: +12%%", "tooltips.ZPMParallelControllerCore_00"),
                     texter("§5EU Usage: 66%%", "tooltips.ZPMParallelControllerCore_01"),
-                    texter("§bParallel: 1024", "tooltips.ZPMParallelControllerCore_02") }));
+                    texter("§bParallel: 256", "tooltips.ZPMParallelControllerCore_02") }));
 
         GTNLItemList.UVParallelControllerCore.set(
             initItem(
@@ -245,7 +245,7 @@ public class ItemRegister {
                 55,
                 new String[] { texter("§dSpeed: +14%%", "tooltips.UVParallelControllerCore_00"),
                     texter("§5EU Usage: 64%%", "tooltips.UVParallelControllerCore_01"),
-                    texter("§bParallel: 4096", "tooltips.UVParallelControllerCore_02") }));
+                    texter("§bParallel: 1024", "tooltips.UVParallelControllerCore_02") }));
 
         GTNLItemList.UHVParallelControllerCore.set(
             initItem(
@@ -253,7 +253,7 @@ public class ItemRegister {
                 56,
                 new String[] { texter("§dSpeed: +16%%", "tooltips.UHVParallelControllerCore_00"),
                     texter("§5EU Usage: 62%%", "tooltips.UHVParallelControllerCore_01"),
-                    texter("§bParallel: 16384", "tooltips.UHVParallelControllerCore_02") }));
+                    texter("§bParallel: 4096", "tooltips.UHVParallelControllerCore_02") }));
 
         GTNLItemList.UEVParallelControllerCore.set(
             initItem(
@@ -261,7 +261,7 @@ public class ItemRegister {
                 57,
                 new String[] { texter("§dSpeed: +18%%", "tooltips.UEVParallelControllerCore_00"),
                     texter("§5EU Usage: 60%%", "tooltips.UEVParallelControllerCore_01"),
-                    texter("§bParallel: 65536", "tooltips.UEVParallelControllerCore_02") }));
+                    texter("§bParallel: 16384", "tooltips.UEVParallelControllerCore_02") }));
 
         GTNLItemList.UIVParallelControllerCore.set(
             initItem(
@@ -269,7 +269,7 @@ public class ItemRegister {
                 58,
                 new String[] { texter("§dSpeed: +20%%", "tooltips.UIVParallelControllerCore_00"),
                     texter("§5EU Usage: 58%%", "tooltips.UIVParallelControllerCore_01"),
-                    texter("§bParallel: 262144", "tooltips.UIVParallelControllerCore_02") }));
+                    texter("§bParallel: 65536", "tooltips.UIVParallelControllerCore_02") }));
 
         GTNLItemList.UMVParallelControllerCore.set(
             initItem(
@@ -277,7 +277,7 @@ public class ItemRegister {
                 59,
                 new String[] { texter("§dSpeed: +22%%", "tooltips.UMVParallelControllerCore_00"),
                     texter("§5EU Usage: 56%%", "tooltips.UMVParallelControllerCore_01"),
-                    texter("§bParallel: 1048576", "tooltips.UMVParallelControllerCore_02") }));
+                    texter("§bParallel: 262144", "tooltips.UMVParallelControllerCore_02") }));
 
         GTNLItemList.UXVParallelControllerCore.set(
             initItem(
@@ -285,7 +285,15 @@ public class ItemRegister {
                 60,
                 new String[] { texter("§dSpeed: +24%%", "tooltips.UXVParallelControllerCore_00"),
                     texter("§5EU Usage: 54%%", "tooltips.UXVParallelControllerCore_01"),
-                    texter("§bParallel: 4194304", "tooltips.UXVParallelControllerCore_02") }));
+                    texter("§bParallel: 1048576", "tooltips.UXVParallelControllerCore_02") }));
+
+        GTNLItemList.MAXParallelControllerCore.set(
+            initItem(
+                "MAX Parallel Controller Core",
+                61,
+                new String[] { texter("§dSpeed: +26%%", "tooltips.MAXParallelControllerCore_00"),
+                    texter("§5EU Usage: 52%%", "tooltips.MAXParallelControllerCore_01"),
+                    texter("§bParallel: 4194304", "tooltips.MAXParallelControllerCore_02") }));
     }
 
     public static void registry() {

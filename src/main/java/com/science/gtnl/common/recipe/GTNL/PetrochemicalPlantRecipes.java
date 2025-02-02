@@ -9,6 +9,7 @@ import com.science.gtnl.common.materials.MaterialPool;
 import com.science.gtnl.common.recipe.IRecipePool;
 import com.science.gtnl.common.recipe.RecipeRegister;
 
+import gregtech.api.enums.Materials;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTUtility;
@@ -175,7 +176,10 @@ public class PetrochemicalPlantRecipes implements IRecipePool {
                 GTUtility.copyAmount(0, BioVatXenoxene),
                 GTModHandler.getModItem("gregtech", "gt.metaitem.01", 16, 2618),
                 GTModHandler.getModItem("gregtech", "gt.metaitem.01", 16, 2083))
-            .fluidInputs(MaterialPool.BarnardaCSappy.getFluidOrGas(1000), FluidRegistry.getFluidStack("oil", 2000))
+            .fluidInputs(
+                MaterialPool.BarnardaCSappy.getFluidOrGas(1000),
+                FluidRegistry.getFluidStack("oil", 2000),
+                Materials.Silver.getPlasma(10))
             .fluidOutputs(
                 FluidRegistry.getFluidStack("liquid_heavy_oil", 100),
                 FluidRegistry.getFluidStack("oil", 5),
@@ -186,8 +190,8 @@ public class PetrochemicalPlantRecipes implements IRecipePool {
                 FluidRegistry.getFluidStack("superheavyradox", 20),
                 FluidRegistry.getFluidStack("heavyradox", 30),
                 FluidRegistry.getFluidStack("dilutedxenoxene", 1),
-                FluidRegistry.getFluidStack("lightradox", 60),
-                FluidRegistry.getFluidStack("superlightradox", 100))
+                FluidRegistry.getFluidStack("lightradox", 80),
+                Materials.RadoxGas.getGas(20))
             .specialValue(0)
             .noOptimize()
             .duration(2000)

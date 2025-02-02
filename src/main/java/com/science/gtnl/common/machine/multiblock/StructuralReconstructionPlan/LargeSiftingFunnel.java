@@ -1,10 +1,10 @@
 package com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
-import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaBlockColumn;
-import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
+import static gtPlusPlus.core.block.ModBlocks.blockCasings2Misc;
+import static gtPlusPlus.core.block.ModBlocks.blockCasingsMisc;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.ForgeDirection;
@@ -18,6 +18,7 @@ import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
 
+import gregtech.api.enums.TAE;
 import gregtech.api.enums.Textures;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
@@ -26,33 +27,32 @@ import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.render.TextureFactory;
 import gregtech.api.util.MultiblockTooltipBuilder;
-import gregtech.common.blocks.BlockCasings4;
 import gtPlusPlus.xmod.gregtech.common.blocks.textures.TexturesGtBlock;
 
-public class LargeMacerationTower extends GTMMultiMachineBase<LargeMacerationTower> implements ISurvivalConstructable {
+public class LargeSiftingFunnel extends GTMMultiMachineBase<LargeSiftingFunnel> implements ISurvivalConstructable {
 
     public static final String STRUCTURE_PIECE_MAIN = "main";
-    private static IStructureDefinition<LargeMacerationTower> STRUCTURE_DEFINITION = null;
-    public static final String LMT_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/large_maceration_tower";
-    public static final int CASING_INDEX = ((BlockCasings4) sBlockCasings4).getTextureIndex(14);
+    private static IStructureDefinition<LargeSiftingFunnel> STRUCTURE_DEFINITION = null;
+    public static final String LSF_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/large_sifting_funnel";
+    public static final int CASING_INDEX = TAE.GTPP_INDEX(0);
     public final int horizontalOffSet = 2;
-    public final int verticalOffSet = 1;
+    public final int verticalOffSet = 2;
     public final int depthOffSet = 0;
     public static String[][] shape;
 
-    public LargeMacerationTower(int aID, String aName, String aNameRegional) {
+    public LargeSiftingFunnel(int aID, String aName, String aNameRegional) {
         super(aID, aName, aNameRegional);
-        shape = StructureUtils.readStructureFromFile(LMT_STRUCTURE_FILE_PATH);
+        shape = StructureUtils.readStructureFromFile(LSF_STRUCTURE_FILE_PATH);
     }
 
-    public LargeMacerationTower(String aName) {
+    public LargeSiftingFunnel(String aName) {
         super(aName);
-        shape = StructureUtils.readStructureFromFile(LMT_STRUCTURE_FILE_PATH);
+        shape = StructureUtils.readStructureFromFile(LSF_STRUCTURE_FILE_PATH);
     }
 
     @Override
     public IMetaTileEntity newMetaEntity(IGregTechTileEntity aTileEntity) {
-        return new LargeMacerationTower(this.mName);
+        return new LargeSiftingFunnel(this.mName);
     }
 
     @Override
@@ -79,13 +79,13 @@ public class LargeMacerationTower extends GTMMultiMachineBase<LargeMacerationTow
 
     @Override
     public RecipeMap<?> getRecipeMap() {
-        return RecipeMaps.maceratorRecipes;
+        return RecipeMaps.sifterRecipes;
     }
 
     @Override
     public MultiblockTooltipBuilder createTooltip() {
         MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
-        tt.addMachineType(TextLocalization.LargeMacerationTowerRecipeType)
+        tt.addMachineType(TextLocalization.LargeSiftingFunnelRecipeType)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_00)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_01)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_02)
@@ -93,27 +93,29 @@ public class LargeMacerationTower extends GTMMultiMachineBase<LargeMacerationTow
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
-            .beginStructureBlock(5, 4, 5, true)
-            .addInputBus(TextLocalization.Tooltip_LargeMacerationTower_Casing)
-            .addOutputBus(TextLocalization.Tooltip_LargeMacerationTower_Casing)
-            .addEnergyHatch(TextLocalization.Tooltip_LargeMacerationTower_Casing)
-            .addMaintenanceHatch(TextLocalization.Tooltip_LargeMacerationTower_Casing)
+            .beginStructureBlock(5, 5, 5, true)
+            .addInputHatch(TextLocalization.Tooltip_LargeSiftingFunnel_Casing)
+            .addOutputHatch(TextLocalization.Tooltip_LargeSiftingFunnel_Casing)
+            .addInputBus(TextLocalization.Tooltip_LargeSiftingFunnel_Casing)
+            .addOutputBus(TextLocalization.Tooltip_LargeSiftingFunnel_Casing)
+            .addEnergyHatch(TextLocalization.Tooltip_LargeSiftingFunnel_Casing)
+            .addMaintenanceHatch(TextLocalization.Tooltip_LargeSiftingFunnel_Casing)
             .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
         return tt;
     }
 
     @Override
-    public IStructureDefinition<LargeMacerationTower> getStructureDefinition() {
+    public IStructureDefinition<LargeSiftingFunnel> getStructureDefinition() {
         if (STRUCTURE_DEFINITION == null) {
-            STRUCTURE_DEFINITION = StructureDefinition.<LargeMacerationTower>builder()
+            STRUCTURE_DEFINITION = StructureDefinition.<LargeSiftingFunnel>builder()
                 .addShape(STRUCTURE_PIECE_MAIN, transpose(shape))
+                .addElement('A', ofBlock(blockCasings2Misc, 6))
                 .addElement(
-                    'A',
-                    buildHatchAdder(LargeMacerationTower.class).casingIndex(CASING_INDEX)
+                    'B',
+                    buildHatchAdder(LargeSiftingFunnel.class).casingIndex(CASING_INDEX)
                         .dot(1)
-                        .atLeast(InputBus, OutputBus, Maintenance, Energy)
-                        .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(sBlockCasings4, 14))))
-                .addElement('B', ofBlock(MetaBlockColumn, 2))
+                        .atLeast(InputHatch, OutputHatch, InputBus, OutputBus, Maintenance, Energy)
+                        .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(blockCasingsMisc, 0))))
                 .build();
         }
         return STRUCTURE_DEFINITION;
@@ -129,7 +131,7 @@ public class LargeMacerationTower extends GTMMultiMachineBase<LargeMacerationTow
         }
 
         ParallelTier = getParallelTier(aStack);
-        return mCasing >= 65;
+        return mCasing >= 40;
     }
 
     @Override

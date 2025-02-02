@@ -9,7 +9,6 @@ import static gregtech.api.enums.Textures.BlockIcons.OVERLAY_FRONT_ELECTRIC_BLAS
 import static gregtech.api.enums.Textures.BlockIcons.OVERLAY_FRONT_ELECTRIC_BLAST_FURNACE_ACTIVE_GLOW;
 import static gregtech.api.enums.Textures.BlockIcons.OVERLAY_FRONT_ELECTRIC_BLAST_FURNACE_GLOW;
 import static gregtech.api.util.GTStructureUtility.*;
-import static gregtech.api.util.GTUtility.validMTEList;
 
 import java.util.ArrayList;
 
@@ -29,7 +28,7 @@ import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.Utils.item.TextUtils;
-import com.science.gtnl.common.machine.multiMachineClasses.MultiMachineBase;
+import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
 
 import bartworks.util.BWUtil;
 import cpw.mods.fml.relauncher.Side;
@@ -45,7 +44,6 @@ import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.logic.ProcessingLogic;
 import gregtech.api.metatileentity.implementations.MTEHatch;
-import gregtech.api.metatileentity.implementations.MTEHatchMaintenance;
 import gregtech.api.metatileentity.implementations.MTEHatchOutput;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMaps;
@@ -60,7 +58,7 @@ import gregtech.common.blocks.BlockCasings2;
 import gregtech.common.blocks.BlockCasings8;
 import gtPlusPlus.core.block.ModBlocks;
 
-public class MegaBlastFurnace extends MultiMachineBase<MegaBlastFurnace> implements ISurvivalConstructable {
+public class MegaBlastFurnace extends GTMMultiMachineBase<MegaBlastFurnace> implements ISurvivalConstructable {
 
     private HeatingCoilLevel mCoilLevel;
     protected final ArrayList<MTEHatchOutput> mPollutionOutputHatches = new ArrayList<>();
@@ -144,7 +142,7 @@ public class MegaBlastFurnace extends MultiMachineBase<MegaBlastFurnace> impleme
             .addInfo(TextLocalization.Tooltip_MegaBlastFurnace_03)
             .addInfo(TextLocalization.Tooltip_MegaBlastFurnace_04)
             .addInfo(TextLocalization.Tooltip_MegaBlastFurnace_05)
-            .addPollutionAmount(10240)
+            .addInfo(TextLocalization.Tooltip_GTMMultiMachine_03)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
@@ -253,7 +251,7 @@ public class MegaBlastFurnace extends MultiMachineBase<MegaBlastFurnace> impleme
     }
 
     @Override
-    protected ProcessingLogic createProcessingLogic() {
+    public ProcessingLogic createProcessingLogic() {
         return new ProcessingLogic() {
 
             @Nonnull
@@ -277,7 +275,11 @@ public class MegaBlastFurnace extends MultiMachineBase<MegaBlastFurnace> impleme
 
     @Override
     public int getMaxParallelRecipes() {
-        return 256 + 8 * GTUtility.getTier(this.getMaxInputVoltage()) + 16 * getCoilLevel().getTier();
+        if (ParallelTier <= 2) {
+            return 256;
+        } else {
+            return (int) (256 + Math.pow(4, ParallelTier - 3));
+        }
     }
 
     @Override
@@ -347,16 +349,6 @@ public class MegaBlastFurnace extends MultiMachineBase<MegaBlastFurnace> impleme
     }
 
     @Override
-    public boolean isEnablePerfectOverclock() {
-        return false;
-    }
-
-    @Override
-    public float getSpeedBonus() {
-        return 1;
-    }
-
-    @Override
     public int getRecipeCatalystPriority() {
         return -2;
     }
@@ -367,37 +359,4 @@ public class MegaBlastFurnace extends MultiMachineBase<MegaBlastFurnace> impleme
         return SoundResource.GT_MACHINES_MEGA_BLAST_FURNACE_LOOP;
     }
 
-    @Override
-    public boolean getDefaultHasMaintenanceChecks() {
-        return true;
-    }
-
-    @Override
-    public void checkMaintenance() {
-        if (!shouldCheckMaintenance()) return;
-
-        if (getRepairStatus() != getIdealStatus()) {
-            for (MTEHatchMaintenance tHatch : validMTEList(mMaintenanceHatches)) {
-                if (tHatch.mAuto) tHatch.autoMaintainance();
-                if (tHatch.mWrench) mWrench = true;
-                if (tHatch.mScrewdriver) mScrewdriver = true;
-                if (tHatch.mSoftHammer) mSoftHammer = true;
-                if (tHatch.mHardHammer) mHardHammer = true;
-                if (tHatch.mSolderingTool) mSolderingTool = true;
-                if (tHatch.mCrowbar) mCrowbar = true;
-
-                tHatch.mWrench = false;
-                tHatch.mScrewdriver = false;
-                tHatch.mSoftHammer = false;
-                tHatch.mHardHammer = false;
-                tHatch.mSolderingTool = false;
-                tHatch.mCrowbar = false;
-            }
-        }
-    }
-
-    @Override
-    public boolean shouldCheckMaintenance() {
-        return true;
-    }
 }

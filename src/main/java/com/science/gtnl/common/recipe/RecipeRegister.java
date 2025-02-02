@@ -132,7 +132,7 @@ public class RecipeRegister {
 
     public static final RecipeMap<GTNLRecipeMapBackend> PetrochemicalPlantRecipes = RecipeMapBuilder
         .of("gtnl.recipe.PetrochemicalPlantRecipes", GTNLRecipeMapBackend::new)
-        .maxIO(4, 4, 2, 12)
+        .maxIO(4, 4, 4, 12)
         .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
         .frontend(GeneralFrontend::new)
         .neiHandlerInfo(builder -> builder.setDisplayStack(GTNLItemList.PetrochemicalPlant.get(1)))

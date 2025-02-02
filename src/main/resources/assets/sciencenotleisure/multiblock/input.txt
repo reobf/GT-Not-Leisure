@@ -1,0 +1,12 @@
+    "DCAAACD"
+    "DCEEECD"
+    "DCC~CCD"
+},{
+    "DCAAACD"
+    "DB   BD"
+    "DCCCCCD"
+},{
+    "DCAAACD"
+    "DCEEECD"
+    "DCCCCCD"
+}}

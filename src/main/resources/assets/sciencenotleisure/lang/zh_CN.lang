@@ -265,51 +265,55 @@ tooltips.LVParallelControllerCore_02=§b并行: 0
 MetaItem.49.name=MV并行控制核心
 tooltips.MVParallelControllerCore_00=§d速度: +2%%
 tooltips.MVParallelControllerCore_01=§5EU消耗: 76%%
-tooltips.MVParallelControllerCore_02=§b并行: 1
+tooltips.MVParallelControllerCore_02=§b并行: 0
 MetaItem.50.name=HV并行控制核心
 tooltips.HVParallelControllerCore_00=§d速度: +4%%
 tooltips.HVParallelControllerCore_01=§5EU消耗: 74%%
-tooltips.HVParallelControllerCore_02=§b并行: 4
+tooltips.HVParallelControllerCore_02=§b并行: 1
 MetaItem.51.name=EV并行控制核心
 tooltips.EVParallelControllerCore_00=§d速度: +6%%
 tooltips.EVParallelControllerCore_01=§5EU消耗: 72%%
-tooltips.EVParallelControllerCore_02=§b并行: 16
+tooltips.EVParallelControllerCore_02=§b并行: 4
 MetaItem.52.name=IV并行控制核心
 tooltips.IVParallelControllerCore_00=§d速度: +8%%
 tooltips.IVParallelControllerCore_01=§5EU消耗: 70%%
-tooltips.IVParallelControllerCore_02=§b并行: 64
+tooltips.IVParallelControllerCore_02=§b并行: 16
 MetaItem.53.name=LuV并行控制核心
 tooltips.LuVParallelControllerCore_00=§d速度: +10%%
 tooltips.LuVParallelControllerCore_01=§5EU消耗: 68%%
-tooltips.LuVParallelControllerCore_02=§b并行: 256
+tooltips.LuVParallelControllerCore_02=§b并行: 64
 MetaItem.54.name=ZPM并行控制核心
 tooltips.ZPMParallelControllerCore_00=§d速度: +12%%
 tooltips.ZPMParallelControllerCore_01=§5EU消耗: 66%%
-tooltips.ZPMParallelControllerCore_02=§b并行: 1024
+tooltips.ZPMParallelControllerCore_02=§b并行: 256
 MetaItem.55.name=UV并行控制核心
 tooltips.UVParallelControllerCore_00=§d速度: +14%%
 tooltips.UVParallelControllerCore_01=§5EU消耗: 64%%
-tooltips.UVParallelControllerCore_02=§b并行: 4096
+tooltips.UVParallelControllerCore_02=§b并行: 1024
 MetaItem.56.name=UHV并行控制核心
 tooltips.UHVParallelControllerCore_00=§d速度: +16%%
 tooltips.UHVParallelControllerCore_01=§5EU消耗: 62%%
-tooltips.UHVParallelControllerCore_02=§b并行: 16384
+tooltips.UHVParallelControllerCore_02=§b并行: 4096
 MetaItem.57.name=UEV并行控制核心
 tooltips.UEVParallelControllerCore_00=§d速度: +18%%
 tooltips.UEVParallelControllerCore_01=§5EU消耗: 60%%
-tooltips.UEVParallelControllerCore_02=§b并行: 65536
+tooltips.UEVParallelControllerCore_02=§b并行: 16384
 MetaItem.58.name=UIV并行控制核心
 tooltips.UIVParallelControllerCore_00=§d速度: +20%%
 tooltips.UIVParallelControllerCore_01=§5EU消耗: 58%%
-tooltips.UIVParallelControllerCore_02=§b并行: 262144
+tooltips.UIVParallelControllerCore_02=§b并行: 65536
 MetaItem.59.name=UMV并行控制核心
 tooltips.UMVParallelControllerCore_00=§d速度: +22%%
 tooltips.UMVParallelControllerCore_01=§5EU消耗: 56%%
-tooltips.UMVParallelControllerCore_02=§b并行: 1048576
+tooltips.UMVParallelControllerCore_02=§b并行: 262144
 MetaItem.60.name=UXV并行控制核心
 tooltips.UXVParallelControllerCore_00=§d速度: +24%%
 tooltips.UXVParallelControllerCore_01=§5EU消耗: 54%%
-tooltips.UXVParallelControllerCore_02=§b并行: 4194304
+tooltips.UXVParallelControllerCore_02=§b并行: 1048576
+MetaItem.61.name=MAX并行控制核心
+tooltips.MAXParallelControllerCore_00=§d速度: +26%%
+tooltips.MAXParallelControllerCore_01=§5EU消耗: 52%%
+tooltips.MAXParallelControllerCore_02=§b并行: 4194304
 
 item.TestItem.name=测试物品
 Tooltip_Testitem_00=如果你看到了这个Tooltip
@@ -477,6 +481,57 @@ Tooltip_GTMMultiMachine_03=在控制器内放入并行控制核心来提升最�
 NameLargeMacerationTower=大型研磨塔
 LargeMacerationTowerRecipeType=粉碎机
 Tooltip_LargeMacerationTower_Casing=任意坚实铱锇机械方块
+
+NameLargeSiftingFunnel=大型筛选漏斗
+LargeSiftingFunnelRecipeType=筛选机
+Tooltip_LargeSiftingFunnel_Casing=任意离心机机械方块
+
+NameLargeCutter=大型切割机
+LargeCutterRecipeType=切割机 / 切片机
+Tooltip_LargeCutter_Casing=任意切割机框架
+LargeCutter_Mode_0=切割机
+LargeCutter_Mode_1=切片机
+
+NameLargeBrewer=大型酿造厂
+LargeBrewerRecipeType=酿造室 / 发酵槽 / 流体加热器
+LargeBrewer_Mode_0=酿造室
+LargeBrewer_Mode_1=发酵槽
+LargeBrewer_Mode_2=流体加热器
+Tooltip_LargeBrewer_Casing=任意焦炉机械方块
+
+NameLargeIndustrialLathe=大型工业车床
+LargeIndustrialLatheRecipeType=车床
+Tooltip_LargeIndustrialLathe_Casing=任意强化镍铬机械方块
+
+NameLargeMaterialPress=大型挤压机
+LargeMaterialPressRecipeType=压缩机
+Tooltip_LargeMaterialPress_Casing=任意强化镍铬机械方块
+
+NameLargeWiremill=大型线材工厂
+LargeWiremillRecipeType=线缆轧机
+Tooltip_LargeWiremill_Casing=任意强化镍铬机械方块
+
+NameLargeBender=大型卷板机
+LargeBenderRecipeType=卷板机
+Tooltip_LargeBender_Casing=任意强化镍铬机械方块
+
+NameLargeExtruder=大型压模机
+LargeExtruderRecipeType=压模机
+Tooltip_LargeExtruder_Casing=任意强化镍铬机械方块
+
+NameLargeArcSmelter=大型电弧炉
+LargeArcSmelterRecipeType=电弧炉 / 等离子电弧炉
+LargeArcSmelter_Mode_0=电弧炉
+LargeArcSmelter_Mode_1=等离子电弧炉
+Tooltip_LargeArcSmelter_Casing=任意冶炼炉机械方块
+
+NameLargeForming=大型冲压机
+LargeFormingRecipeType=冲压机床
+Tooltip_LargeForming_Casing=任意强化镍铬机械方块
+
+NameElectricImplosionCompressor=电力聚爆压缩机
+ElectricImplosionCompressorRecipeType=电动聚爆压缩机
+Tooltip_ElectricImplosionCompressor_Casing=任意强化钨钢机械方块
 
 NameHandOfJohnDavisonRockefeller=洛克菲勒之手
 HandOfJohnDavisonRockefellerRecipeType=化工厂
