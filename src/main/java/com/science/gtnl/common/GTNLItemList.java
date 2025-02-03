@@ -219,6 +219,7 @@ public enum GTNLItemList {
     LargeArcSmelter,
     LargeForming,
 
+    MatterFabricator,
     LargeBrewer,
     HandOfJohnDavisonRockefeller,
     EnergeticPhotovoltaicPowerStation,

@@ -5,6 +5,7 @@ import com.science.gtnl.common.machine.multiMachineClasses.GTNLProcessingArrayRe
 import com.science.gtnl.common.materials.MaterialPool;
 import com.science.gtnl.common.recipe.GTNL.DesulfurizerRecipes;
 import com.science.gtnl.common.recipe.GTNL.ManaInfusionRecipes;
+import com.science.gtnl.common.recipe.GTNL.MatterFabricatorRecipes;
 import com.science.gtnl.common.recipe.GTNL.NatureSpiritArrayRecipes;
 import com.science.gtnl.common.recipe.GTNL.PetrochemicalPlantRecipes;
 import com.science.gtnl.common.recipe.GTNL.PortalToAlfheimRecipes;
@@ -48,7 +49,7 @@ public class RecipeLoader {
             new CraftingTableRecipes(), new ChemicalBathRecipes(), new SteamCrackerRecipes(), new DesulfurizerRecipes(),
             new PetrochemicalPlantRecipes(), new FusionReactorRecipes(), new SmeltingMixingFurnaceRecipes(),
             new FluidExtraction(), new DigesterRecipes(), new DissolutionTankRecipes(), new CentrifugeRecipes(),
-            new ChemicalDehydratorRecipes(), new RareEarthCentrifugalRecipes() };
+            new ChemicalDehydratorRecipes(), new RareEarthCentrifugalRecipes(), new MatterFabricatorRecipes() };
         for (IRecipePool recipePool : recipePools) {
             recipePool.loadRecipes();
         }

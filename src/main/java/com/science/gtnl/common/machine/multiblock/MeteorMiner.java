@@ -10,10 +10,7 @@ import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
 import static gregtech.api.util.GTStructureUtility.ofFrame;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
@@ -44,7 +41,9 @@ import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.common.block.Render.TileEntityLaserBeacon;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.GregTechAPI;
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TAE;
@@ -71,6 +70,7 @@ import gregtech.api.util.shutdown.ShutDownReasonRegistry;
 import gregtech.common.blocks.BlockCasings8;
 import gtPlusPlus.core.block.ModBlocks;
 import gtPlusPlus.core.util.minecraft.PlayerUtils;
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
 
@@ -555,13 +555,62 @@ public class MeteorMiner extends MTEEnhancedMultiBlockBase<MeteorMiner> implemen
         }
     }
 
+    private static final Set<ItemStack> blacklist = new HashSet<>();
+
+    public static void addToBlacklist(ItemStack item) {
+        blacklist.add(item);
+    }
+
+    public static void initializeBlacklist() {
+        ItemStack CasingCoilNaquadah = ItemList.Casing_Coil_Naquadah.get(1);
+        addToBlacklist(CasingCoilNaquadah);
+        ItemStack CasingSolarTower = GregtechItemList.Casing_SolarTower_Structural.get(1);
+        addToBlacklist(CasingSolarTower);
+        ItemStack CasingCoilSuperconductor = ItemList.Casing_Coil_Superconductor.get(1);
+        addToBlacklist(CasingCoilSuperconductor);
+        ItemStack CasingSolarTowerHeatContainment = GregtechItemList.Casing_SolarTower_HeatContainment.get(1);
+        addToBlacklist(CasingSolarTowerHeatContainment);
+        ItemStack HatchInputBusULV = ItemList.Hatch_Input_Bus_ULV.get(1);
+        addToBlacklist(HatchInputBusULV);
+        ItemStack LaserBeacon = GTNLItemList.LaserBeacon.get(1);
+        addToBlacklist(LaserBeacon);
+        ItemStack MeteorMiner = GTNLItemList.MeteorMiner.get(1);
+        addToBlacklist(MeteorMiner);
+        ItemStack CasingMiningNeutronium = ItemList.Casing_MiningNeutronium.get(1);
+        addToBlacklist(CasingMiningNeutronium);
+        ItemStack CasingFusionCoil = ItemList.Casing_Fusion_Coil.get(1);
+        addToBlacklist(CasingFusionCoil);
+        ItemStack CasingMiningBlackPlutonium = ItemList.Casing_MiningBlackPlutonium.get(1);
+        addToBlacklist(CasingMiningBlackPlutonium);
+        ItemStack BlockPlasmaHeatingCasing = ItemList.BlockPlasmaHeatingCasing.get(1);
+        addToBlacklist(BlockPlasmaHeatingCasing);
+        ItemStack BlackPlutoniumFrame = GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.BlackPlutonium, 1);
+        addToBlacklist(BlackPlutoniumFrame);
+        ItemStack StainlessSteelFrame = GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.StainlessSteel, 1);
+        addToBlacklist(StainlessSteelFrame);
+        ItemStack NeutroniumFrame = GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Neutronium, 1);
+        addToBlacklist(NeutroniumFrame);
+        Block AlloyGlass = GameRegistry.findBlock(IndustrialCraft2.ID, "blockAlloyGlass");
+        ItemStack AlloyGlassBlock = new ItemStack(AlloyGlass, 1, 0);
+        addToBlacklist(AlloyGlassBlock);
+    }
+
+    private boolean isInBlacklist(int x, int y, int z) {
+        Block target = getBaseMetaTileEntity().getBlock(x, y, z);
+        int meta = getBaseMetaTileEntity().getMetaID(x, y, z);
+        ItemStack itemStack = new ItemStack(target, 1, meta);
+        return blacklist.contains(itemStack);
+    }
+
     public void mineSingleBlock() {
         while (getBaseMetaTileEntity().getWorld()
             .isAirBlock(this.xDrill, this.yDrill, this.zDrill)) {
             this.moveToNextBlock();
             if (this.hasFinished) return;
         }
-        this.mineBlock(this.xDrill, this.yDrill, this.zDrill);
+        if (!isInBlacklist(this.xDrill, this.yDrill, this.zDrill)) {
+            this.mineBlock(this.xDrill, this.yDrill, this.zDrill);
+        }
         this.moveToNextBlock();
     }
 
@@ -580,7 +629,7 @@ public class MeteorMiner extends MTEEnhancedMultiBlockBase<MeteorMiner> implemen
         for (int z = -currentRadius; z <= (currentRadius - opposite); z++) {
             int currentZ = this.zStart + z;
             if (!getBaseMetaTileEntity().getWorld()
-                .isAirBlock(this.xDrill, this.yDrill, currentZ)) {
+                .isAirBlock(this.xDrill, this.yDrill, currentZ) && !isInBlacklist(this.xDrill, this.yDrill, currentZ)) {
                 this.mineBlock(this.xDrill, this.yDrill, currentZ);
             } else opposite++;
         }

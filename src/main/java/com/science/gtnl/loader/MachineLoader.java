@@ -25,6 +25,7 @@ import com.science.gtnl.common.machine.multiblock.LargeSteamCircuitAssembler;
 import com.science.gtnl.common.machine.multiblock.LargeSteamCrusher;
 import com.science.gtnl.common.machine.multiblock.LargeSteamFurnace;
 import com.science.gtnl.common.machine.multiblock.LargeSteamThermalCentrifuge;
+import com.science.gtnl.common.machine.multiblock.MatterFabricator;
 import com.science.gtnl.common.machine.multiblock.MeteorMiner;
 import com.science.gtnl.common.machine.multiblock.NeutroniumWireCutting;
 import com.science.gtnl.common.machine.multiblock.NineIndustrialMultiMachine;
@@ -111,6 +112,7 @@ public class MachineLoader {
     public static ItemStack LargeExtruder;
     public static ItemStack LargeArcSmelter;
     public static ItemStack LargeForming;
+    public static ItemStack MatterFabricator;
 
     public static void loadMachines() {
 
@@ -367,6 +369,10 @@ public class MachineLoader {
 
         LargeForming = new LargeForming(21050, "NameLargeForming", TextLocalization.NameLargeForming).getStackForm(1);
         GTNLItemList.LargeForming.set(LargeForming);
+
+        MatterFabricator = new MatterFabricator(21051, "NameMatterFabricator", TextLocalization.NameMatterFabricator)
+            .getStackForm(1);
+        GTNLItemList.MatterFabricator.set(MatterFabricator);
 
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
             21919,

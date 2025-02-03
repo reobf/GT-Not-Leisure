@@ -20,6 +20,7 @@ public class RealArtificialStarRecipes implements IRecipePool {
             .specialValue((int) (EUEveryEnhancementCore / Integer.MAX_VALUE))
             .eut(0)
             .duration(0)
+            .fake()
             .addTo(RAS);
         /*
          * GTValues.RA.stdBuilder()
@@ -41,6 +42,7 @@ public class RealArtificialStarRecipes implements IRecipePool {
             .specialValue((int) (EUEveryDepletedExcitedNaquadahFuelRod / Integer.MAX_VALUE))
             .eut(0)
             .duration(0)
+            .fake()
             .addTo(RAS);
     }
 }

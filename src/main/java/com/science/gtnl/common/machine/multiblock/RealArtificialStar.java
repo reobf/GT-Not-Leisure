@@ -47,6 +47,7 @@ import com.science.gtnl.Utils.rewrites.GTNL_ItemID;
 import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.common.block.Casings.BasicBlocks;
 import com.science.gtnl.common.machine.multiMachineClasses.MultiMachineBase;
+import com.science.gtnl.common.recipe.RecipeRegister;
 import com.science.gtnl.config.MainConfig;
 
 import galaxyspace.core.register.GSBlocks;
@@ -56,6 +57,7 @@ import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.interfaces.tileentity.IWirelessEnergyHatchInformation;
 import gregtech.api.objects.XSTR;
+import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.check.CheckRecipeResult;
 import gregtech.api.recipe.check.CheckRecipeResultRegistry;
 import gregtech.api.render.TextureFactory;
@@ -186,6 +188,11 @@ public class RealArtificialStar extends MultiMachineBase<RealArtificialStar>
                 isRendering = false;
             }
         }
+    }
+
+    @Override
+    public RecipeMap<?> getRecipeMap() {
+        return RecipeRegister.RealArtificialStarRecipes;
     }
 
     @NotNull

@@ -69,12 +69,9 @@ public class ElectrolyzerRecipes implements IRecipePool {
 
         RecipeBuilder.builder()
             .itemInputs()
-            .fluidInputs(MaterialPool.HydroboromicAcid.getFluidOrGas(1000))
+            .fluidInputs(MaterialPool.HydrobromicAcid.getFluidOrGas(1000))
             .itemOutputs()
-            .fluidOutputs(
-                MaterialsElements.getInstance().BROMINE.getFluidStack(1000),
-                FluidRegistry.getFluidStack("molten.bromine", 1000),
-                Materials.Hydrogen.getGas(1000))
+            .fluidOutputs(MaterialsElements.getInstance().BROMINE.getFluidStack(1000), Materials.Hydrogen.getGas(1000))
             .specialValue(0)
             .noOptimize()
             .duration(72)

@@ -34,14 +34,11 @@ import gregtech.api.logic.ProcessingLogic;
 import gregtech.api.metatileentity.implementations.MTEHatch;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.render.TextureFactory;
-import gregtech.api.util.GTRecipe;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.common.blocks.BlockCasings1;
 import gregtech.common.blocks.BlockCasings8;
 
 public class LapotronChip extends MultiMachineBase<LapotronChip> implements ISurvivalConstructable {
-
-    protected GTRecipe lastRecipeToBuffer;
 
     public int tierLapisCaelestis = -1;
     public int tierGlass1 = -1;
@@ -301,22 +298,6 @@ public class LapotronChip extends MultiMachineBase<LapotronChip> implements ISur
     @Override
     public int getMaxParallelRecipes() {
         return Integer.MAX_VALUE;
-    }
-
-    @Override
-    public String[] getInfoData() {
-        final String running = (this.mMaxProgresstime > 0 ? "Machine running" : "Machine stopped");
-        final String maintenance = (this.getIdealStatus() == this.getRepairStatus() ? "No Maintenance issues"
-            : "Needs Maintenance");
-        String tSpecialText;
-
-        if (lastRecipeToBuffer != null && lastRecipeToBuffer.mOutputs[0].getDisplayName() != null) {
-            tSpecialText = "Currently processing: " + lastRecipeToBuffer.mOutputs[0].getDisplayName();
-        } else {
-            tSpecialText = "Currently processing: Nothing";
-        }
-
-        return new String[] { "Lapotron Chip", running, maintenance, tSpecialText };
     }
 
 }

@@ -167,6 +167,16 @@ public class RecipeRegister {
         .disableOptimize()
         .build();
 
+    public static RecipeMap<RecipeMapBackend> MatterFabricatorRecipes = RecipeMapBuilder
+        .of("gtnl.recipe.MatterFabricatorRecipes")
+        .maxIO(2, 1, 0, 1)
+        .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
+        .neiHandlerInfo(
+            builder -> builder.setDisplayStack(GTNLItemList.MatterFabricator.get(1))
+                .setMaxRecipesPerPage(1))
+        .disableOptimize()
+        .build();
+
     public static RecipeMap<RecipeMapBackend> IndustrialInfusionCraftingRecipes = RecipeMapBuilder
         .of("gtnl.recipe.IndustrialInfusionCraftingRecipes")
         .maxIO(25, 1, 0, 0)

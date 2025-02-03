@@ -164,9 +164,7 @@ public class ChemicalRecipes implements IRecipePool {
             .itemInputs(
                 setStackSize(MaterialPool.SuccinimidylAcetate.get(OrePrefixes.dust, 1), 64 + 8),
                 setStackSize(MaterialPool.Hexabenzylhexaazaisowurtzitane.get(OrePrefixes.dust, 1), 64 + 38))
-            .fluidInputs(
-                MaterialPool.HydrobromicAcid.getFluidOrGas(10000),
-                FluidRegistry.getFluidStack("hydrogen", 8000))
+            .fluidInputs(MaterialPool.HydrobromicAcid.getFluidOrGas(100), FluidRegistry.getFluidStack("hydrogen", 8000))
             .itemOutputs(
                 setStackSize(MaterialPool.Dibenzyltetraacetylhexaazaisowurtzitane.get(OrePrefixes.dust, 1), 64 + 6))
             .fluidOutputs(FluidRegistry.getFluidStack("liquid_toluene", 6000))
@@ -237,7 +235,7 @@ public class ChemicalRecipes implements IRecipePool {
                 FluidRegistry.getFluidStack("molten.bromine", 1000),
                 FluidRegistry.getFluidStack("hydrogen", 1000))
             .itemOutputs()
-            .fluidOutputs(MaterialPool.HydroboromicAcid.getFluidOrGas(1000))
+            .fluidOutputs(MaterialPool.HydrobromicAcid.getFluidOrGas(1000))
             .specialValue(0)
             .noOptimize()
             .duration(300)
@@ -248,7 +246,7 @@ public class ChemicalRecipes implements IRecipePool {
             .itemInputs(MaterialPool.PotassiumHydroxylaminedisulfonate.get(OrePrefixes.dust, 26))
             .fluidInputs(FluidRegistry.getFluidStack("water", 4000))
             .itemOutputs(
-                MaterialPool.HydroxylammoniumSulfate.get(OrePrefixes.dust, 17),
+                MaterialPool.HydrobromicAcid.get(OrePrefixes.dust, 17),
                 MaterialPool.PotassiumSulfate.get(OrePrefixes.dust, 14))
             .fluidOutputs(FluidRegistry.getFluidStack("sulfuricacid", 1000))
             .specialValue(0)

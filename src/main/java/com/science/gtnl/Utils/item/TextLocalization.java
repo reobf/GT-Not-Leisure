@@ -600,6 +600,12 @@ public class TextLocalization {
         "Insert the parallel control core into the controller to increase the maximum parallelism and reduce power consumption!",
         "Tooltip_GTMMultiMachine_03");
 
+    public static final String NameMatterFabricator = texter("Matter Fabricator", "NameMatterFabricator");
+    public static final String MatterFabricatorRecipeType = texter("Matter Fabricator", "MatterFabricatorRecipeType");
+    public static final String Tooltip_MatterFabricator_Casing = texter(
+        "Any Inconel Reinforced Casing",
+        "Tooltip_MatterFabricator_Casing");
+
     public static final String NamePetrochemicalPlant = texter("Petrochemical Plant", "NamePetrochemicalPlant");
     public static final String PetrochemicalPlantRecipeType = texter(
         "Petrochemical Plant",
