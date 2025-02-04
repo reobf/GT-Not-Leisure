@@ -77,9 +77,9 @@ public class BlockRegister {
         GameRegistry.registerBlock(MetaBlockColumn, ItemBlockColumn.class, MetaBlockColumn.getUnlocalizedName());
 
         GameRegistry.registerBlock(
-            BasicBlocks.MetaBlockCasing,
+            BasicBlocks.MetaCasing,
             MetaItemBlockCasing.class,
-            BasicBlocks.MetaBlockCasing.getUnlocalizedName());
+            BasicBlocks.MetaCasing.getUnlocalizedName());
 
         GameRegistry.registerBlock(StargateTier0, "StargateTier0");
         GTNLItemList.StargateTier0.set(new ItemStack(StargateTier0));
@@ -405,38 +405,48 @@ public class BlockRegister {
         GTNLItemList.CrushingWheels.set(ItemBlockColumn.initMetaBlock("Crushing Wheels", 2));
 
         GTNLItemList.TestCasing
-            .set(MetaBlockConstructors.initMetaBlockCasing("Test Casing", (byte) 0, BasicBlocks.MetaBlockCasing));
-        GTNLItemList.SteamAssemblyCasing.set(
-            MetaBlockConstructors.initMetaBlockCasing("Steam Assembly Casing", (byte) 1, BasicBlocks.MetaBlockCasing));
+            .set(MetaBlockConstructors.initMetaBlockCasing("Test Casing", (byte) 0, BasicBlocks.MetaCasing));
+        GTNLItemList.SteamAssemblyCasing
+            .set(MetaBlockConstructors.initMetaBlockCasing("Steam Assembly Casing", (byte) 1, BasicBlocks.MetaCasing));
         GTNLItemList.HeatVent
-            .set(MetaBlockConstructors.initMetaBlockCasing("Heat Vent", (byte) 2, BasicBlocks.MetaBlockCasing));
+            .set(MetaBlockConstructors.initMetaBlockCasing("Heat Vent", (byte) 2, BasicBlocks.MetaCasing));
         GTNLItemList.SlicingBlades
-            .set(MetaBlockConstructors.initMetaBlockCasing("Slicing Blades", (byte) 3, BasicBlocks.MetaBlockCasing));
-        GTNLItemList.NeutroniumPipeCasing.set(
-            MetaBlockConstructors.initMetaBlockCasing("Neutronium Pipe Casing", (byte) 4, BasicBlocks.MetaBlockCasing));
+            .set(MetaBlockConstructors.initMetaBlockCasing("Slicing Blades", (byte) 3, BasicBlocks.MetaCasing));
+        GTNLItemList.NeutroniumPipeCasing
+            .set(MetaBlockConstructors.initMetaBlockCasing("Neutronium Pipe Casing", (byte) 4, BasicBlocks.MetaCasing));
         GTNLItemList.NeutroniumGearbox.set(
-            MetaBlockConstructors
-                .initMetaBlockCasing("Neutronium Gear Box Casing", (byte) 5, BasicBlocks.MetaBlockCasing));
-        GTNLItemList.Laser_Cooling_Casing.set(
-            MetaBlockConstructors.initMetaBlockCasing("Laser Cooling Casing", (byte) 6, BasicBlocks.MetaBlockCasing));
+            MetaBlockConstructors.initMetaBlockCasing("Neutronium Gear Box Casing", (byte) 5, BasicBlocks.MetaCasing));
+        GTNLItemList.Laser_Cooling_Casing
+            .set(MetaBlockConstructors.initMetaBlockCasing("Laser Cooling Casing", (byte) 6, BasicBlocks.MetaCasing));
         GTNLItemList.Antifreeze_Heatproof_Machine_Casing.set(
             MetaBlockConstructors
-                .initMetaBlockCasing("Antifreeze Heatproof Machine Casing", (byte) 7, BasicBlocks.MetaBlockCasing));
+                .initMetaBlockCasing("Antifreeze Heatproof Machine Casing", (byte) 7, BasicBlocks.MetaCasing));
         GTNLItemList.MolybdenumDisilicideCoil.set(
-            MetaBlockConstructors
-                .initMetaBlockCasing("Molybdenum Disilicide Coil", (byte) 8, BasicBlocks.MetaBlockCasing));
+            MetaBlockConstructors.initMetaBlockCasing("Molybdenum Disilicide Coil", (byte) 8, BasicBlocks.MetaCasing));
         GTNLItemList.EnergeticPhotovoltaicBlock.set(
             MetaBlockConstructors
-                .initMetaBlockCasing("Energetic Photovoltaic Block", (byte) 9, BasicBlocks.MetaBlockCasing));
+                .initMetaBlockCasing("Energetic Photovoltaic Block", (byte) 9, BasicBlocks.MetaCasing));
         GTNLItemList.AdvancedPhotovoltaicBlock.set(
             MetaBlockConstructors
-                .initMetaBlockCasing("Advanced Photovoltaic Block", (byte) 10, BasicBlocks.MetaBlockCasing));
+                .initMetaBlockCasing("Advanced Photovoltaic Block", (byte) 10, BasicBlocks.MetaCasing));
         GTNLItemList.VibrantPhotovoltaicBlock.set(
-            MetaBlockConstructors
-                .initMetaBlockCasing("Vibrant Photovoltaic Block", (byte) 11, BasicBlocks.MetaBlockCasing));
+            MetaBlockConstructors.initMetaBlockCasing("Vibrant Photovoltaic Block", (byte) 11, BasicBlocks.MetaCasing));
         GTNLItemList.TungstensteelGearbox.set(
             MetaBlockConstructors
-                .initMetaBlockCasing("Tungstensteel Gear Box Casing", (byte) 12, BasicBlocks.MetaBlockCasing));
+                .initMetaBlockCasing("Tungstensteel Gear Box Casing", (byte) 12, BasicBlocks.MetaCasing));
+        GTNLItemList.DimensionallyStableCasing.set(
+            MetaBlockConstructors
+                .initMetaBlockCasing("Dimensionally Stable Casing", (byte) 13, BasicBlocks.MetaCasing));
+        GTNLItemList.PressureBalancedCasing.set(
+            MetaBlockConstructors.initMetaBlockCasing("Pressure Balanced Casing", (byte) 14, BasicBlocks.MetaCasing));
+        GTNLItemList.ABSUltraSolidCasing.set(
+            MetaBlockConstructors.initMetaBlockCasing("ABS Ultra-Solid Casing", (byte) 15, BasicBlocks.MetaCasing));
+        GTNLItemList.GravitationalFocusingLensBlock.set(
+            MetaBlockConstructors
+                .initMetaBlockCasing("Gravitational Focusing Lens Block", (byte) 16, BasicBlocks.MetaCasing));
+        GTNLItemList.GaiaStabilizedForceFieldCasing.set(
+            MetaBlockConstructors
+                .initMetaBlockCasing("Gaia Stabilized Force Field Casing", (byte) 17, BasicBlocks.MetaCasing));
     }
 
     public static void registry() {

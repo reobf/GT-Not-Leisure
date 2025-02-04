@@ -296,7 +296,8 @@ public class ProcessingArray extends MultiMachineBase<ProcessingArray> implement
         if (getControllerSlot() == null) {
             return 0;
         }
-        return getControllerSlot().stackSize + GTUtility.getTier(this.getMaxInputVoltage()) * 4;
+        return getControllerSlot().stackSize + GTUtility.getTier(this.getMaxInputVoltage()) * 4
+            + getCoilLevel().getTier() * 4;
     }
 
     @Override

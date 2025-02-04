@@ -5,7 +5,7 @@ import static com.dreammaster.gthandler.casings.GT_Container_CasingsNH.sBlockCas
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
 import static com.science.gtnl.Utils.Utils.NEGATIVE_ONE;
 import static com.science.gtnl.Utils.Utils.mergeArray;
-import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaBlockCasing;
+import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaCasing;
 import static goodgenerator.loader.Loaders.FRF_Coil_4;
 import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.enums.HatchElement.*;
@@ -166,7 +166,7 @@ public class NineIndustrialMultiMachine extends WirelessEnergyMultiMachineBase<N
                 .addShape(STRUCTURE_PIECE_MAIN, transpose(shape))
                 .addElement('A', ofBlock(bw_realglas2, 0))
                 .addElement('B', ofBlock(FRF_Coil_4, 0))
-                .addElement('C', ofBlock(MetaBlockCasing, 5))
+                .addElement('C', ofBlock(MetaCasing, 5))
                 .addElement('D', ofBlock(defcCasingBlock, 12))
                 .addElement(
                     'E',

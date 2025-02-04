@@ -1,7 +1,7 @@
 package com.science.gtnl.common.machine.multiblock;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
-import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaBlockCasing;
+import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaCasing;
 import static gregtech.api.GregTechAPI.sBlockCasings1;
 import static gregtech.api.GregTechAPI.sBlockCasings3;
 import static gregtech.api.GregTechAPI.sBlockCasings8;
@@ -131,7 +131,7 @@ public class MatterFabricator extends GTMMultiMachineBase<MatterFabricator> impl
         if (STRUCTURE_DEFINITION == null) {
             STRUCTURE_DEFINITION = StructureDefinition.<MatterFabricator>builder()
                 .addShape(STRUCTURE_PIECE_MAIN, transpose(shape))
-                .addElement('A', ofBlock(MetaBlockCasing, 4))
+                .addElement('A', ofBlock(MetaCasing, 4))
                 .addElement('B', ofBlockAnyMeta(ELECTRODE_CASING))
                 .addElement('C', ofBlock(sBlockCasings1, 7))
                 .addElement('D', ofBlock(sBlockCasings1, 15))

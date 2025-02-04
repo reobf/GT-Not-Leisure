@@ -693,8 +693,8 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.TungstenCarbide, 1L),
-                GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Ultimet, 1L),
+                GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.TungstenCarbide, 3L),
+                GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Ultimet, 4L),
                 ItemList.Casing_MiningOsmiridium.get(1L),
                 ItemList.Electric_Motor_IV.get(1L))
             .itemOutputs(GTNLItemList.CrushingWheels.get(2))

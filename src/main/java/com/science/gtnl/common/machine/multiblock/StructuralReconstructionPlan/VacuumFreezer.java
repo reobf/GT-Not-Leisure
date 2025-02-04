@@ -1,7 +1,7 @@
 package com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
-import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaBlockCasing;
+import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaCasing;
 import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
@@ -139,7 +139,7 @@ public class VacuumFreezer extends MultiMachineBase<VacuumFreezer> implements IS
         if (STRUCTURE_DEFINITION == null) {
             STRUCTURE_DEFINITION = StructureDefinition.<VacuumFreezer>builder()
                 .addShape(STRUCTURE_PIECE_MAIN, transpose(shape))
-                .addElement('A', ofBlock(MetaBlockCasing, 2))
+                .addElement('A', ofBlock(MetaCasing, 2))
                 .addElement('B', ofBlockAnyMeta(GameRegistry.findBlock(IndustrialCraft2.ID, "blockAlloyGlass")))
                 .addElement(
                     'C',

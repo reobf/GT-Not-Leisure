@@ -2,7 +2,7 @@ package com.science.gtnl.common.machine.multiblock;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.ofBlock;
-import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaBlockCasing;
+import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaCasing;
 import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
@@ -96,7 +96,7 @@ public class EnergeticPhotovoltaicPowerStation extends MTEEnhancedMultiBlockBase
                         .atLeast(InputHatch, Dynamo, Maintenance)
                         .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(sBlockCasings2, 0))))
                 .addElement('B', ofFrame(Materials.StainlessSteel))
-                .addElement('D', ofBlock(MetaBlockCasing, 9))
+                .addElement('D', ofBlock(MetaCasing, 9))
                 .build();
         }
         return STRUCTURE_DEFINITION;

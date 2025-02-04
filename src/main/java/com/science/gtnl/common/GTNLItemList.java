@@ -29,7 +29,11 @@ public enum GTNLItemList {
     AdvancedPhotovoltaicBlock,
     VibrantPhotovoltaicBlock,
     TungstensteelGearbox,
-    CrushingWheels,
+    DimensionallyStableCasing,
+    PressureBalancedCasing,
+    ABSUltraSolidCasing,
+    GravitationalFocusingLensBlock,
+    GaiaStabilizedForceFieldCasing,
 
     TrollFace,
     DepletedExcitedNaquadahFuelRod,
@@ -114,7 +118,10 @@ public enum GTNLItemList {
     LaserBeacon,
     BronzeBrickCasing,
     SteelBrickCasing,
+    CrushingWheels,
+
     FortifyGlowstone,
+
     GaiaGlass,
     TerraGlass,
     FusionGlass,
@@ -218,6 +225,11 @@ public enum GTNLItemList {
     LargeExtruder,
     LargeArcSmelter,
     LargeForming,
+    LargeElectrolyzer,
+    LargeElectromagnet,
+    LargeAssembler,
+    LargeMixer,
+    LargeCentrifuge,
 
     MatterFabricator,
     LargeBrewer,

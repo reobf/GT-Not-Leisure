@@ -41,13 +41,18 @@ import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.C
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.ColdIceFreezer;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.ElectricImplosionCompressor;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeArcSmelter;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeAssembler;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeBender;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeCentrifuge;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeCutter;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeElectrolyzer;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeElectromagnet;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeExtruder;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeForming;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeIndustrialLathe;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeMacerationTower;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeMaterialPress;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeMixer;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeSiftingFunnel;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeWiremill;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.MegaBlastFurnace;
@@ -113,6 +118,11 @@ public class MachineLoader {
     public static ItemStack LargeArcSmelter;
     public static ItemStack LargeForming;
     public static ItemStack MatterFabricator;
+    public static ItemStack LargeElectrolyzer;
+    public static ItemStack LargeElectromagnet;
+    public static ItemStack LargeAssembler;
+    public static ItemStack LargeMixer;
+    public static ItemStack LargeCentrifuge;
 
     public static void loadMachines() {
 
@@ -373,6 +383,29 @@ public class MachineLoader {
         MatterFabricator = new MatterFabricator(21051, "NameMatterFabricator", TextLocalization.NameMatterFabricator)
             .getStackForm(1);
         GTNLItemList.MatterFabricator.set(MatterFabricator);
+
+        LargeElectrolyzer = new LargeElectrolyzer(
+            21052,
+            "NameLargeElectrolyzer",
+            TextLocalization.NameLargeElectrolyzer).getStackForm(1);
+        GTNLItemList.LargeElectrolyzer.set(LargeElectrolyzer);
+
+        LargeElectromagnet = new LargeElectromagnet(
+            21053,
+            "NameLargeElectromagnet",
+            TextLocalization.NameLargeElectromagnet).getStackForm(1);
+        GTNLItemList.LargeElectromagnet.set(LargeElectromagnet);
+
+        LargeAssembler = new LargeAssembler(21054, "NameLargeAssembler", TextLocalization.NameLargeAssembler)
+            .getStackForm(1);
+        GTNLItemList.LargeAssembler.set(LargeAssembler);
+
+        LargeMixer = new LargeMixer(21055, "NameLargeMixer", TextLocalization.NameLargeMixer).getStackForm(1);
+        GTNLItemList.LargeMixer.set(LargeMixer);
+
+        LargeCentrifuge = new LargeCentrifuge(21056, "NameLargeCentrifuge", TextLocalization.NameLargeCentrifuge)
+            .getStackForm(1);
+        GTNLItemList.LargeCentrifuge.set(LargeCentrifuge);
 
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
             21919,

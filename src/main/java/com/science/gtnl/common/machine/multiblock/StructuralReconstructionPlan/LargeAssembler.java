@@ -1,73 +1,66 @@
 package com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
-import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaCasing;
 import static gregtech.api.enums.HatchElement.*;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Textures.BlockIcons.*;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
+import static gregtech.api.util.GTUtility.validMTEList;
 import static gtPlusPlus.core.block.ModBlocks.blockCasings2Misc;
 
-import java.util.Arrays;
-import java.util.Collection;
-
-import javax.annotation.Nonnull;
-
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.StatCollector;
 import net.minecraftforge.common.util.ForgeDirection;
 
 import com.gtnewhorizon.structurelib.alignment.constructable.ISurvivalConstructable;
 import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
-import com.gtnewhorizons.modularui.api.screen.ModularWindow;
-import com.gtnewhorizons.modularui.api.screen.UIBuildContext;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
 
-import cpw.mods.fml.common.registry.GameRegistry;
+import bartworks.API.BorosilicateGlass;
+import gregtech.api.enums.GTValues;
 import gregtech.api.enums.TAE;
 import gregtech.api.enums.Textures;
-import gregtech.api.gui.modularui.GTUITextures;
+import gregtech.api.enums.VoltageIndex;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
+import gregtech.api.logic.ProcessingLogic;
+import gregtech.api.metatileentity.implementations.MTEHatch;
+import gregtech.api.metatileentity.implementations.MTEHatchEnergy;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.render.TextureFactory;
-import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
-import gtPlusPlus.xmod.gregtech.common.blocks.textures.TexturesGtBlock;
 
-public class LargeCutter extends GTMMultiMachineBase<LargeCutter> implements ISurvivalConstructable {
+public class LargeAssembler extends GTMMultiMachineBase<LargeAssembler> implements ISurvivalConstructable {
 
     public static final String STRUCTURE_PIECE_MAIN = "main";
-    private static IStructureDefinition<LargeCutter> STRUCTURE_DEFINITION = null;
-    public static final String LC_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/large_cutter";
-    private static final int MACHINEMODE_CUTTER = 0;
-    private static final int MACHINEMODE_SLICER = 1;
-    public final int horizontalOffSet = 1;
-    public final int verticalOffSet = 2;
+    private static IStructureDefinition<LargeAssembler> STRUCTURE_DEFINITION = null;
+    public static final String LA_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/large_assembler";
+    public static final int CASING_INDEX = TAE.getIndexFromPage(0, 10);
+    public byte glassTier = 0;
+    protected int energyHatchTier;
+    public final int horizontalOffSet = 6;
+    public final int verticalOffSet = 1;
     public final int depthOffSet = 0;
     public static String[][] shape;
 
-    public LargeCutter(int aID, String aName, String aNameRegional) {
+    public LargeAssembler(int aID, String aName, String aNameRegional) {
         super(aID, aName, aNameRegional);
-        shape = StructureUtils.readStructureFromFile(LC_STRUCTURE_FILE_PATH);
+        shape = StructureUtils.readStructureFromFile(LA_STRUCTURE_FILE_PATH);
     }
 
-    public LargeCutter(String aName) {
+    public LargeAssembler(String aName) {
         super(aName);
-        shape = StructureUtils.readStructureFromFile(LC_STRUCTURE_FILE_PATH);
+        shape = StructureUtils.readStructureFromFile(LA_STRUCTURE_FILE_PATH);
     }
 
     @Override
     public IMetaTileEntity newMetaEntity(IGregTechTileEntity aTileEntity) {
-        return new LargeCutter(this.mName);
+        return new LargeAssembler(this.mName);
     }
 
     @Override
@@ -76,37 +69,43 @@ public class LargeCutter extends GTMMultiMachineBase<LargeCutter> implements ISu
         if (side == aFacing) {
             if (aActive) return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()),
                 TextureFactory.builder()
-                    .addIcon(TexturesGtBlock.oMCDIndustrialCuttingMachineActive)
+                    .addIcon(OVERLAY_FRONT_DISASSEMBLER_ACTIVE)
                     .extFacing()
+                    .build(),
+                TextureFactory.builder()
+                    .addIcon(OVERLAY_FRONT_DISASSEMBLER_ACTIVE_GLOW)
+                    .extFacing()
+                    .glow()
                     .build() };
             return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()),
                 TextureFactory.builder()
-                    .addIcon(TexturesGtBlock.oMCDIndustrialCuttingMachine)
+                    .addIcon(OVERLAY_FRONT_DISASSEMBLER)
                     .extFacing()
+                    .build(),
+                TextureFactory.builder()
+                    .addIcon(OVERLAY_FRONT_DISASSEMBLER_GLOW)
+                    .extFacing()
+                    .glow()
                     .build() };
         }
         return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()) };
     }
 
     public int getCasingTextureID() {
-        return (byte) TAE.GTPP_INDEX(29);
+        return CASING_INDEX;
     }
 
     @Override
     public RecipeMap<?> getRecipeMap() {
-        return (machineMode == MACHINEMODE_CUTTER) ? RecipeMaps.cutterRecipes : RecipeMaps.slicerRecipes;
-    }
-
-    @Nonnull
-    @Override
-    public Collection<RecipeMap<?>> getAvailableRecipeMaps() {
-        return Arrays.asList(RecipeMaps.cutterRecipes, RecipeMaps.slicerRecipes);
+        return RecipeMaps.assemblerRecipes;
     }
 
     @Override
     public MultiblockTooltipBuilder createTooltip() {
         MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
-        tt.addMachineType(TextLocalization.LargeCutterRecipeType)
+        tt.addMachineType(TextLocalization.LargeAssemblerRecipeType)
+            .addInfo(TextLocalization.Tooltip_LargeAssembler_00)
+            .addInfo(TextLocalization.Tooltip_LargeAssembler_01)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_00)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_01)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_02)
@@ -114,88 +113,84 @@ public class LargeCutter extends GTMMultiMachineBase<LargeCutter> implements ISu
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
-            .beginStructureBlock(7, 4, 4, true)
-            .addInputHatch(TextLocalization.Tooltip_LargeCutter_Casing)
-            .addInputBus(TextLocalization.Tooltip_LargeCutter_Casing)
-            .addOutputBus(TextLocalization.Tooltip_LargeCutter_Casing)
-            .addEnergyHatch(TextLocalization.Tooltip_LargeCutter_Casing)
-            .addMaintenanceHatch(TextLocalization.Tooltip_LargeCutter_Casing)
+            .beginStructureBlock(9, 3, 3, true)
+            .addInputHatch(TextLocalization.Tooltip_LargeAssembler_Casing)
+            .addInputBus(TextLocalization.Tooltip_LargeAssembler_Casing)
+            .addOutputBus(TextLocalization.Tooltip_LargeAssembler_Casing)
+            .addEnergyHatch(TextLocalization.Tooltip_LargeAssembler_Casing)
+            .addMaintenanceHatch(TextLocalization.Tooltip_LargeAssembler_Casing)
             .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
         return tt;
     }
 
     @Override
-    public IStructureDefinition<LargeCutter> getStructureDefinition() {
+    public IStructureDefinition<LargeAssembler> getStructureDefinition() {
         if (STRUCTURE_DEFINITION == null) {
-            STRUCTURE_DEFINITION = StructureDefinition.<LargeCutter>builder()
+            STRUCTURE_DEFINITION = StructureDefinition.<LargeAssembler>builder()
                 .addShape(STRUCTURE_PIECE_MAIN, transpose(shape))
-                .addElement('A', ofBlockAnyMeta(GameRegistry.findBlock(IndustrialCraft2.ID, "blockAlloyGlass")))
-                .addElement('B', ofBlock(MetaCasing, 3))
                 .addElement(
-                    'C',
-                    buildHatchAdder(LargeCutter.class).casingIndex(getCasingTextureID())
+                    'A',
+                    withChannel(
+                        "glass",
+                        BorosilicateGlass.ofBoroGlass(
+                            (byte) 0,
+                            (byte) 1,
+                            Byte.MAX_VALUE,
+                            (te, t) -> te.glassTier = t,
+                            te -> te.glassTier)))
+                .addElement(
+                    'B',
+                    buildHatchAdder(LargeAssembler.class).casingIndex(CASING_INDEX)
                         .dot(1)
                         .atLeast(InputHatch, InputBus, OutputBus, Maintenance, Energy)
-                        .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(blockCasings2Misc, 13))))
+                        .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(blockCasings2Misc, 12))))
                 .build();
         }
         return STRUCTURE_DEFINITION;
     }
 
     @Override
-    public void setMachineModeIcons() {
-        machineModeIcons.clear();
-        machineModeIcons.add(GTUITextures.OVERLAY_BUTTON_MACHINEMODE_CUTTING);
-        machineModeIcons.add(GTUITextures.OVERLAY_BUTTON_MACHINEMODE_SLICING);
-    }
-
-    @Override
-    public void saveNBTData(NBTTagCompound aNBT) {
-        super.saveNBTData(aNBT);
-        aNBT.setInteger("mode", machineMode);
-    }
-
-    @Override
-    public void loadNBTData(final NBTTagCompound aNBT) {
-        super.loadNBTData(aNBT);
-        machineMode = aNBT.getInteger("mode");
-    }
-
-    @Override
-    public void addUIWidgets(ModularWindow.Builder builder, UIBuildContext buildContext) {
-        super.addUIWidgets(builder, buildContext);
-        setMachineModeIcons();
-        builder.widget(createModeSwitchButton(builder));
-    }
-
-    @Override
-    public final void onScrewdriverRightClick(ForgeDirection side, EntityPlayer aPlayer, float aX, float aY, float aZ) {
-        this.machineMode = (byte) ((this.machineMode + 1) % 2);
-        GTUtility.sendChatToPlayer(aPlayer, StatCollector.translateToLocal("LargeCutter_Mode_" + this.machineMode));
-    }
-
-    @Override
-    public String getMachineModeName() {
-        return StatCollector.translateToLocal("LargeCutter_Mode_" + machineMode);
-    }
-
-    @Override
     public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
         mCasing = 0;
         ParallelTier = 0;
+        this.energyHatchTier = 0;
 
         if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && checkHatch()) {
             return false;
         }
 
+        energyHatchTier = checkEnergyHatchTier();
+        for (MTEHatchEnergy mEnergyHatch : this.mEnergyHatches) {
+            if (glassTier < VoltageIndex.UEV & mEnergyHatch.mTier > glassTier) {
+                return false;
+            }
+        }
+
         ParallelTier = getParallelTier(aStack);
-        return mCasing >= 60;
+        return mCasing >= 30;
     }
 
-    // 启用机器模式切换
     @Override
-    public boolean supportsMachineModeSwitch() {
-        return true;
+    protected void setProcessingLogicPower(ProcessingLogic logic) {
+        boolean useSingleAmp = mEnergyHatches.size() == 1 && mExoticEnergyHatches.isEmpty();
+        logic.setAvailableVoltage(getMachineVoltageLimit());
+        logic.setAvailableAmperage(useSingleAmp ? 1 : getMaxInputAmps());
+        logic.setAmperageOC(true);
+    }
+
+    public long getMachineVoltageLimit() {
+        return GTValues.V[energyHatchTier + 1];
+    }
+
+    private int checkEnergyHatchTier() {
+        int tier = 0;
+        for (MTEHatchEnergy tHatch : validMTEList(mEnergyHatches)) {
+            tier = Math.max(tHatch.mTier, tier);
+        }
+        for (MTEHatch tHatch : validMTEList(mExoticEnergyHatches)) {
+            tier = Math.max(tHatch.mTier, tier);
+        }
+        return tier;
     }
 
     @Override

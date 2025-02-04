@@ -265,16 +265,22 @@ public class MaterialPool implements Runnable {
         offsetID_01 + 23,
         TextureSet.SET_SHINY);
 
-    public static final Werkstoff HydroboromicAcid = new Werkstoff(
-        new short[] { 66, 49, 23 },
-        "HydroboromicAcid",
-        subscriptNumbers("HBr"),
+    public static final Werkstoff AcrylonitrileButadieneStyrene = new Werkstoff(
+        new short[] { 100, 100, 100 },
+        "AcrylonitrileButadieneStyrene",
+        subscriptNumbers("C8H8·C4H6·C3H3N"),
         new Werkstoff.Stats(),
         Werkstoff.Types.ELEMENT,
-        new Werkstoff.GenerationFeatures().disable()
-            .addCells(),
+        new Werkstoff.GenerationFeatures().onlyDust()
+            .addMolten()
+            .addMetalItems()
+            .addCraftingMetalWorkingItems()
+            .addSimpleMetalWorkingItems()
+            .addMultipleIngotMetalWorkingItems()
+            .addMetaSolidifierRecipes()
+            .addMetalCraftingSolidifierRecipes(),
         offsetID_01 + 24,
-        TextureSet.SET_FLUID);
+        TextureSet.SET_DULL);
 
     public static final Werkstoff PotassiumHydroxylaminedisulfonate = new Werkstoff(
         new short[] { 117, 114, 104 },
@@ -533,11 +539,14 @@ public class MaterialPool implements Runnable {
         subscriptNumbers("C20H12O3"),
         new Werkstoff.Stats(),
         Werkstoff.Types.MATERIAL,
-        new Werkstoff.GenerationFeatures().addMetalItems()
+        new Werkstoff.GenerationFeatures().onlyDust()
+            .addMolten()
+            .addMetalItems()
+            .addCraftingMetalWorkingItems()
+            .addSimpleMetalWorkingItems()
+            .addMultipleIngotMetalWorkingItems()
             .addMetaSolidifierRecipes()
-            .removePrefix(OrePrefixes.ingotHot)
-            .removeOres()
-            .addMolten(),
+            .addMetalCraftingSolidifierRecipes(),
         offsetID_01 + 47,
         TextureSet.SET_DULL);
 

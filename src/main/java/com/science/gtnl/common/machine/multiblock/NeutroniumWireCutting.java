@@ -148,7 +148,7 @@ public class NeutroniumWireCutting extends WirelessEnergyMultiMachineBase<Neutro
             STRUCTURE_DEFINITION = StructureDefinition.<NeutroniumWireCutting>builder()
                 .addShape(STRUCTURE_PIECE_MAIN, transpose(shape))
                 .addElement('A', BorosilicateGlass.ofBoroGlass((byte) 0, (t, v) -> t.mGlassTier = v, t -> t.mGlassTier))
-                .addElement('B', ofBlock(BasicBlocks.MetaBlockCasing, 2))
+                .addElement('B', ofBlock(BasicBlocks.MetaCasing, 2))
                 .addElement('C', ofBlockAnyMeta(GameRegistry.findBlock(IndustrialCraft2.ID, "blockAlloyGlass")))
                 .addElement('D', ofBlock(sBlockCasings10, 6))
                 .addElement('E', ofBlock(sBlockCasings10, 7))
@@ -169,8 +169,8 @@ public class NeutroniumWireCutting extends WirelessEnergyMultiMachineBase<Neutro
                 .addElement('N', ofBlock(TTCasingsContainer.sBlockCasingsTT, 6))
                 .addElement('O', ofFrame(Materials.Neutronium))
                 .addElement('P', ofBlockAnyMeta(GameRegistry.findBlock("miscutils", "blockFrameGtHastelloyN")))
-                .addElement('Q', ofBlock(BasicBlocks.MetaBlockCasing, 4))
-                .addElement('R', ofBlock(BasicBlocks.MetaBlockCasing, 5))
+                .addElement('Q', ofBlock(BasicBlocks.MetaCasing, 4))
+                .addElement('R', ofBlock(BasicBlocks.MetaCasing, 5))
                 .build();
         }
         return STRUCTURE_DEFINITION;

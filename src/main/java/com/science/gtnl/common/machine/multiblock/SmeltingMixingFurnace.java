@@ -2,7 +2,7 @@ package com.science.gtnl.common.machine.multiblock;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.ofBlock;
-import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaBlockCasing;
+import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaCasing;
 import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.GregTechAPI.sBlockCasings9;
 import static gregtech.api.enums.HatchElement.*;
@@ -149,8 +149,8 @@ public class SmeltingMixingFurnace extends WirelessEnergyMultiMachineBase<Smelti
             STRUCTURE_DEFINITION = StructureDefinition.<SmeltingMixingFurnace>builder()
                 .addShape(STRUCTURE_PIECE_MAIN, transpose(shape))
                 .addElement('A', BorosilicateGlass.ofBoroGlass((byte) 0, (t, v) -> t.mGlassTier = v, t -> t.mGlassTier))
-                .addElement('B', ofBlock(MetaBlockCasing, 5))
-                .addElement('C', ofBlock(MetaBlockCasing, 7))
+                .addElement('B', ofBlock(MetaCasing, 5))
+                .addElement('C', ofBlock(MetaCasing, 7))
                 .addElement('D', ofBlock(defcCasingBlock, 7))
                 .addElement('E', ofBlock(defcCasingBlock, 10))
                 .addElement('F', ofBlock(sBlockCasings1, 12))

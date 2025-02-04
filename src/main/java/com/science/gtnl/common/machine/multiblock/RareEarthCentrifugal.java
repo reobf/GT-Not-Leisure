@@ -1,8 +1,7 @@
 package com.science.gtnl.common.machine.multiblock;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
-import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaBlockCasing;
-import static gregtech.api.GregTechAPI.*;
+import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaCasing;
 import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
 import static gregtech.api.util.GTUtility.validMTEList;
@@ -127,8 +126,8 @@ public class RareEarthCentrifugal extends MultiMachineBase<RareEarthCentrifugal>
         if (STRUCTURE_DEFINITION == null) {
             STRUCTURE_DEFINITION = StructureDefinition.<RareEarthCentrifugal>builder()
                 .addShape(STRUCTURE_PIECE_MAIN, transpose(shape))
-                .addElement('A', ofBlock(MetaBlockCasing, 4))
-                .addElement('B', ofBlock(MetaBlockCasing, 12))
+                .addElement('A', ofBlock(MetaCasing, 4))
+                .addElement('B', ofBlock(MetaCasing, 12))
                 .addElement(
                     'C',
                     buildHatchAdder(RareEarthCentrifugal.class).casingIndex(CASING_INDEX)

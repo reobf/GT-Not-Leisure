@@ -9,11 +9,11 @@ import gregtech.api.render.TextureFactory;
 
 public final class MetaBlockConstructors {
 
-    public static ItemStack initMetaBlock(String originEnglishName, byte meta, MetaBlockBase basicBlock) {
+    public static ItemStack initMetaBlock(String originEnglishName, byte meta, MetaCasingBase basicBlock) {
         return MetaItemStackUtils.initMetaItemStack(originEnglishName, meta, basicBlock, basicBlock.getUsedMetaSet());
     }
 
-    public static ItemStack initMetaBlock(String originEnglishName, byte meta, MetaBlockBase basicBlock,
+    public static ItemStack initMetaBlock(String originEnglishName, byte meta, MetaCasingBase basicBlock,
         String[] tooltips) {
         basicBlock.getTooltipsMap()
             .put((int) meta, tooltips);

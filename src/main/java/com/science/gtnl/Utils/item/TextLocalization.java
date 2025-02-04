@@ -420,7 +420,7 @@ public class TextLocalization {
         "NameAdvancedPhotovoltaicPowerStation");
     public static final String NameVibrantPhotovoltaicPowerStation = texter(
         "Vibrant Photovoltaic Power Station",
-        "NameAdvancedPhotovoltaicPowerStation");
+        "NameVibrantPhotovoltaicPowerStation");
     public static final String PhotovoltaicPowerStationRecipeType = texter(
         "Photovoltaic Power Station",
         "PhotovoltaicPowerStationRecipeType");
@@ -525,6 +525,14 @@ public class TextLocalization {
         "Any Cutting Factory Frame",
         "Tooltip_LargeCutter_Casing");
 
+    public static final String NameLargeCentrifuge = texter("Large Centrifuge", "NameLargeCentrifuge");
+    public static final String LargeCentrifugeRecipeType = texter(
+        "Cutting Machine / Slicing Machine",
+        "LargeCentrifugeRecipeType");
+    public static final String Tooltip_LargeCentrifuge_Casing = texter(
+        "Any Cutting Factory Frame",
+        "Tooltip_LargeCentrifuge_Casing");
+
     public static final String NameLargeBrewer = texter("Large Brewer", "NameLargeBrewer");
     public static final String LargeBrewerRecipeType = texter(
         "Brewery / Fermenter / Fluid Heater",
@@ -550,6 +558,38 @@ public class TextLocalization {
     public static final String Tooltip_LargeWiremill_Casing = texter(
         "Any Inconel Reinforced Casing",
         "Tooltip_LargeWiremill_Casing");
+
+    public static final String NameLargeMixer = texter("Large Mixer", "NameLargeMixer");
+    public static final String LargeMixerRecipeType = texter("Mixer", "LargeMixerRecipeType");
+    public static final String Tooltip_LargeMixer_Casing = texter(
+        "Any Multitank Exterior Casing",
+        "Tooltip_LargeMixer_Casing");
+
+    public static final String NameLargeElectromagnet = texter("Large Electromagnet", "NameLargeElectromagnet");
+    public static final String LargeElectromagnetRecipeType = texter(
+        "Electromagnetic Separator",
+        "LargeElectromagnetRecipeType");
+    public static final String Tooltip_LargeElectromagnet_Casing = texter(
+        "Any Electrolyzer Casing",
+        "Tooltip_LargeElectromagnet_Casing");
+
+    public static final String NameLargeAssembler = texter("Large Assembler", "NameLargeAssembler");
+    public static final String LargeAssemblerRecipeType = texter("Assembler", "LargeAssemblerRecipeType");
+    public static final String Tooltip_LargeAssembler_00 = texter(
+        "Energy Hatch limits the voltage tier +1 the machine can work on.",
+        "Tooltip_LargeAssembler_00");
+    public static final String Tooltip_LargeAssembler_01 = texter(
+        "Energy hatch limited by glass tier, UHV Glass unlocks all",
+        "Tooltip_LargeAssembler_01");
+    public static final String Tooltip_LargeAssembler_Casing = texter(
+        "Any Bulk Production Frame",
+        "Tooltip_LargeAssembler_Casing");
+
+    public static final String NameLargeElectrolyzer = texter("Large Electrolyzer", "NameLargeElectrolyzer");
+    public static final String LargeElectrolyzerRecipeType = texter("Electrolyzer", "LargeElectrolyzerRecipeType");
+    public static final String Tooltip_LargeElectrolyzer_Casing = texter(
+        "Any Electrolyzer Casing",
+        "Tooltip_LargeElectrolyzer_Casing");
 
     public static final String NameLargeExtruder = texter("Large Wiremill", "NameLargeExtruder");
     public static final String LargeExtruderRecipeType = texter("Wiremill", "LargeExtruderRecipeType");

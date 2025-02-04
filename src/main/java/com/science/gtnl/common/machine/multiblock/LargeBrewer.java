@@ -1,7 +1,7 @@
 package com.science.gtnl.common.machine.multiblock;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
-import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaBlockCasing;
+import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaCasing;
 import static gregtech.api.GregTechAPI.sBlockCasings2;
 import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
@@ -137,7 +137,7 @@ public class LargeBrewer extends GTMMultiMachineBase<LargeBrewer> implements ISu
         if (STRUCTURE_DEFINITION == null) {
             STRUCTURE_DEFINITION = StructureDefinition.<LargeBrewer>builder()
                 .addShape(STRUCTURE_PIECE_MAIN, transpose(shape))
-                .addElement('A', ofBlock(MetaBlockCasing, 8))
+                .addElement('A', ofBlock(MetaCasing, 8))
                 .addElement('B', ofBlock(sBlockCasings2, 13))
                 .addElement(
                     'C',

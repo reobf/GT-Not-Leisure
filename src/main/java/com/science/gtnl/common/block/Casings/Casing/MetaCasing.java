@@ -1,15 +1,15 @@
 package com.science.gtnl.common.block.Casings.Casing;
 
-public class MetaBlockCasing extends MetaBlockCasingBase {
+public class MetaCasing extends MetaBlockCasingBase {
 
     public final byte texturePageIndex;
     public final byte textureIdOffsite;
 
-    public MetaBlockCasing(String unlocalizedName, byte textureIdOffsite) {
+    public MetaCasing(String unlocalizedName, byte textureIdOffsite) {
         this(unlocalizedName, textureIdOffsite, TEXTURE_PAGE_INDEX);
     }
 
-    public MetaBlockCasing(String unlocalizedName, byte textureIdOffsite, byte texturePageIndex) {
+    public MetaCasing(String unlocalizedName, byte textureIdOffsite, byte texturePageIndex) {
         super(unlocalizedName);
         if (textureIdOffsite > 112) throw new IllegalArgumentException(
             "Texture ID will overflow. Create a new GT Texture Page and manually solve this problem.");

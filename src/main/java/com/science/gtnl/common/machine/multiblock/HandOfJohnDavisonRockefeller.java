@@ -1,7 +1,7 @@
 package com.science.gtnl.common.machine.multiblock;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
-import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaBlockCasing;
+import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaCasing;
 import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
@@ -153,7 +153,7 @@ public class HandOfJohnDavisonRockefeller extends MultiMachineBase<HandOfJohnDav
                             Byte.MAX_VALUE,
                             (te, t) -> te.glassTier = t,
                             te -> te.glassTier)))
-                .addElement('B', ofBlock(MetaBlockCasing, 4))
+                .addElement('B', ofBlock(MetaCasing, 4))
                 .addElement('C', ofBlockAnyMeta(FOCUS_MANIPULATION_CASING))
                 .addElement(
                     'D',

@@ -1,12 +1,10 @@
 package com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
-import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaCasing;
+import static gregtech.api.GregTechAPI.sBlockCasings2;
 import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
 import static gtPlusPlus.core.block.ModBlocks.blockCasingsMisc;
-import static gtPlusPlus.xmod.gregtech.common.blocks.textures.TexturesGtBlock.oMCDIndustrialExtruder;
-import static gtPlusPlus.xmod.gregtech.common.blocks.textures.TexturesGtBlock.oMCDIndustrialExtruderActive;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -41,34 +39,34 @@ import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.render.TextureFactory;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
+import gtPlusPlus.api.recipe.GTPPRecipeMaps;
+import gtPlusPlus.xmod.gregtech.common.blocks.textures.TexturesGtBlock;
 
-public class LargeArcSmelter extends GTMMultiMachineBase<LargeArcSmelter> implements ISurvivalConstructable {
+public class LargeCentrifuge extends GTMMultiMachineBase<LargeCentrifuge> implements ISurvivalConstructable {
 
     public static final String STRUCTURE_PIECE_MAIN = "main";
-    private static IStructureDefinition<LargeArcSmelter> STRUCTURE_DEFINITION = null;
-    public static final String LAS_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/large_arc_smelter";
-    private static final int MACHINEMODE_ARC = 0;
-    private static final int MACHINEMODE_PLSAMA = 1;
-    public static final int CASING_INDEX = TAE.GTPP_INDEX(15);
-
+    private static IStructureDefinition<LargeCentrifuge> STRUCTURE_DEFINITION = null;
+    public static final String LC_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/large_centrifuge";
+    private static final int MACHINEMODE_CENTRIFUGE = 0;
+    private static final int MACHINEMODE_THERMALCENTRIFUGE = 1;
     public final int horizontalOffSet = 2;
-    public final int verticalOffSet = 2;
+    public final int verticalOffSet = 1;
     public final int depthOffSet = 0;
     public static String[][] shape;
 
-    public LargeArcSmelter(int aID, String aName, String aNameRegional) {
+    public LargeCentrifuge(int aID, String aName, String aNameRegional) {
         super(aID, aName, aNameRegional);
-        shape = StructureUtils.readStructureFromFile(LAS_STRUCTURE_FILE_PATH);
+        shape = StructureUtils.readStructureFromFile(LC_STRUCTURE_FILE_PATH);
     }
 
-    public LargeArcSmelter(String aName) {
+    public LargeCentrifuge(String aName) {
         super(aName);
-        shape = StructureUtils.readStructureFromFile(LAS_STRUCTURE_FILE_PATH);
+        shape = StructureUtils.readStructureFromFile(LC_STRUCTURE_FILE_PATH);
     }
 
     @Override
     public IMetaTileEntity newMetaEntity(IGregTechTileEntity aTileEntity) {
-        return new LargeArcSmelter(this.mName);
+        return new LargeCentrifuge(this.mName);
     }
 
     @Override
@@ -77,12 +75,12 @@ public class LargeArcSmelter extends GTMMultiMachineBase<LargeArcSmelter> implem
         if (side == aFacing) {
             if (aActive) return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()),
                 TextureFactory.builder()
-                    .addIcon(oMCDIndustrialExtruderActive)
+                    .addIcon(TexturesGtBlock.oMCDIndustrialThermalCentrifugeActive)
                     .extFacing()
                     .build() };
             return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()),
                 TextureFactory.builder()
-                    .addIcon(oMCDIndustrialExtruder)
+                    .addIcon(TexturesGtBlock.oMCDIndustrialThermalCentrifuge)
                     .extFacing()
                     .build() };
         }
@@ -90,24 +88,25 @@ public class LargeArcSmelter extends GTMMultiMachineBase<LargeArcSmelter> implem
     }
 
     public int getCasingTextureID() {
-        return CASING_INDEX;
+        return (byte) TAE.GTPP_INDEX(0);
     }
 
     @Override
     public RecipeMap<?> getRecipeMap() {
-        return (machineMode == MACHINEMODE_ARC) ? RecipeMaps.arcFurnaceRecipes : RecipeMaps.plasmaArcFurnaceRecipes;
+        return (machineMode == MACHINEMODE_CENTRIFUGE) ? GTPPRecipeMaps.centrifugeNonCellRecipes
+            : RecipeMaps.thermalCentrifugeRecipes;
     }
 
     @Nonnull
     @Override
     public Collection<RecipeMap<?>> getAvailableRecipeMaps() {
-        return Arrays.asList(RecipeMaps.arcFurnaceRecipes, RecipeMaps.plasmaArcFurnaceRecipes);
+        return Arrays.asList(GTPPRecipeMaps.centrifugeNonCellRecipes, RecipeMaps.thermalCentrifugeRecipes);
     }
 
     @Override
     public MultiblockTooltipBuilder createTooltip() {
         MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
-        tt.addMachineType(TextLocalization.LargeArcSmelterRecipeType)
+        tt.addMachineType(TextLocalization.LargeCentrifugeRecipeType)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_00)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_01)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_02)
@@ -115,45 +114,32 @@ public class LargeArcSmelter extends GTMMultiMachineBase<LargeArcSmelter> implem
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
-            .beginStructureBlock(5, 4, 5, true)
-            .addInputHatch(TextLocalization.Tooltip_LargeArcSmelter_Casing)
-            .addInputBus(TextLocalization.Tooltip_LargeArcSmelter_Casing)
-            .addOutputBus(TextLocalization.Tooltip_LargeArcSmelter_Casing)
-            .addEnergyHatch(TextLocalization.Tooltip_LargeArcSmelter_Casing)
-            .addMaintenanceHatch(TextLocalization.Tooltip_LargeArcSmelter_Casing)
+            .beginStructureBlock(5, 3, 5, true)
+            .addInputHatch(TextLocalization.Tooltip_LargeCentrifuge_Casing)
+            .addOutputHatch(TextLocalization.Tooltip_LargeCentrifuge_Casing)
+            .addInputBus(TextLocalization.Tooltip_LargeCentrifuge_Casing)
+            .addOutputBus(TextLocalization.Tooltip_LargeCentrifuge_Casing)
+            .addEnergyHatch(TextLocalization.Tooltip_LargeCentrifuge_Casing)
+            .addMaintenanceHatch(TextLocalization.Tooltip_LargeCentrifuge_Casing)
             .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
         return tt;
     }
 
     @Override
-    public IStructureDefinition<LargeArcSmelter> getStructureDefinition() {
+    public IStructureDefinition<LargeCentrifuge> getStructureDefinition() {
         if (STRUCTURE_DEFINITION == null) {
-            STRUCTURE_DEFINITION = StructureDefinition.<LargeArcSmelter>builder()
+            STRUCTURE_DEFINITION = StructureDefinition.<LargeCentrifuge>builder()
                 .addShape(STRUCTURE_PIECE_MAIN, transpose(shape))
-                .addElement('A', ofBlock(MetaCasing, 8))
+                .addElement('A', ofBlock(sBlockCasings2, 13))
                 .addElement(
                     'B',
-                    buildHatchAdder(LargeArcSmelter.class).casingIndex(CASING_INDEX)
+                    buildHatchAdder(LargeCentrifuge.class).casingIndex(getCasingTextureID())
                         .dot(1)
-                        .atLeast(InputHatch, InputBus, OutputBus, Maintenance, Energy)
-                        .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(blockCasingsMisc, 15))))
-                .addElement('C', Muffler.newAny(CASING_INDEX, 1))
+                        .atLeast(InputHatch, OutputHatch, InputBus, OutputBus, Maintenance, Energy)
+                        .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(blockCasingsMisc, 0))))
                 .build();
         }
         return STRUCTURE_DEFINITION;
-    }
-
-    @Override
-    public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
-        mCasing = 0;
-        ParallelTier = 0;
-
-        if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && checkHatch()) {
-            return false;
-        }
-
-        ParallelTier = getParallelTier(aStack);
-        return mCasing >= 45 && this.mMufflerHatches.size() == 1;
     }
 
     @Override
@@ -185,15 +171,27 @@ public class LargeArcSmelter extends GTMMultiMachineBase<LargeArcSmelter> implem
     @Override
     public final void onScrewdriverRightClick(ForgeDirection side, EntityPlayer aPlayer, float aX, float aY, float aZ) {
         this.machineMode = (byte) ((this.machineMode + 1) % 2);
-        GTUtility.sendChatToPlayer(aPlayer, StatCollector.translateToLocal("LargeArcSmelter_Mode_" + this.machineMode));
+        GTUtility.sendChatToPlayer(aPlayer, StatCollector.translateToLocal("LargeCentrifuge_Mode_" + this.machineMode));
     }
 
     @Override
     public String getMachineModeName() {
-        return StatCollector.translateToLocal("LargeArcSmelter_Mode_" + machineMode);
+        return StatCollector.translateToLocal("LargeCentrifuge_Mode_" + machineMode);
     }
 
-    // 启用机器模式切换
+    @Override
+    public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
+        mCasing = 0;
+        ParallelTier = 0;
+
+        if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && checkHatch()) {
+            return false;
+        }
+
+        ParallelTier = getParallelTier(aStack);
+        return mCasing >= 40;
+    }
+
     @Override
     public boolean supportsMachineModeSwitch() {
         return true;

@@ -15,7 +15,7 @@ import gregtech.api.util.GTUtility;
 /**
  * A base block class of GregTech casings that textures will be called for update hatches' textures.
  */
-public abstract class MetaBlockCasingBase extends MetaBlockBase implements ICasing {
+public abstract class MetaBlockCasingBase extends MetaCasingBase implements ICasing {
 
     public static final byte TEXTURE_PAGE_INDEX = 115;
 

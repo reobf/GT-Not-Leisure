@@ -25,14 +25,14 @@ import com.science.gtnl.common.block.IMetaBlock;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public abstract class MetaBlockBase extends Block implements IMetaBlock {
+public abstract class MetaCasingBase extends Block implements IMetaBlock {
 
     public final Set<Integer> usedMetaSet = new HashSet<>(16);
     public final Map<Integer, String[]> tooltipsMap = new HashMap<>(16);
     public final Map<Integer, IIcon> iconMap = new HashMap<>(16);
     public final String unlocalizedName;
 
-    public MetaBlockBase(String unlocalizedName) {
+    public MetaCasingBase(String unlocalizedName) {
         super(Material.iron);
         this.unlocalizedName = unlocalizedName;
         this.setCreativeTab(CreativeTabsLoader.GTNotLeisure);
