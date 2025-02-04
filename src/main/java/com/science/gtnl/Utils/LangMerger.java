@@ -34,13 +34,10 @@ public class LangMerger {
     @SideOnly(Side.CLIENT)
     public void processLanguageFiles() {
         try {
-            // 获取 options.txt 中的语言代码
             String currentLangCode = getLanguageFromOptions();
 
-            // 处理 GregTech.lang 文件
             processLanguageFile("GregTech.lang", currentLangCode);
 
-            // 处理所有支持的语言文件
             String[] langCodes = getSupportedLanguages();
             for (String langCode : langCodes) {
                 processLanguageFile(GT_PREFIX + langCode + ".lang", langCode);
@@ -98,16 +95,11 @@ public class LangMerger {
             e.printStackTrace();
         }
 
-        // 打印抓取到的语言文件内容
-        System.out.println("Loaded entries from " + resourcePath + ":");
-        entries.forEach((key, value) -> System.out.println(key + " = " + value));
-
         return entries;
     }
 
     private void mergeIntoTarget(File targetFile, Map<String, String> newEntries, boolean isLocalized)
         throws IOException {
-        // 创建目录结构
         if (!targetFile.getParentFile()
             .exists()
             && !targetFile.getParentFile()
@@ -115,7 +107,6 @@ public class LangMerger {
             throw new IOException("无法创建目录: " + targetFile.getParent());
         }
 
-        // 读取现有内容
         StringBuilder header = new StringBuilder();
         Map<String, String> existingEntries = new LinkedHashMap<>();
         boolean hasConflictMarker = false;
@@ -129,7 +120,6 @@ public class LangMerger {
                 String line;
                 boolean inLanguageBlock = false;
                 while ((line = reader.readLine()) != null) {
-                    // 检测冲突检查标记
                     if (line.trim()
                         .equals(CONFLICT_MARKER)) {
                         hasConflictMarker = true;
@@ -178,13 +168,11 @@ public class LangMerger {
             }
         }
 
-        // 构建新内容
         StringBuilder content = new StringBuilder();
         if (!hasConfigFileHeader) {
             content.append("# Configuration file\n");
         }
 
-        // 添加或保留冲突检查标记
         if (!header.toString()
             .contains(CONFLICT_MARKER)) {
             content.append(CONFLICT_MARKER)
@@ -198,19 +186,15 @@ public class LangMerger {
             content.append("languagefile {\n");
         }
 
-        // 合并策略：根据标记决定是否检查冲突
         LinkedHashMap<String, String> mergedEntries = new LinkedHashMap<>();
         if (hasConflictMarker) {
-            // 冲突检查模式：只添加不存在的条目
             newEntries.forEach((k, v) -> mergedEntries.putIfAbsent(k, v));
             existingEntries.forEach(mergedEntries::putIfAbsent);
         } else {
-            // 直接插入模式：新条目在前
             newEntries.forEach((k, v) -> mergedEntries.put(k, v));
             existingEntries.forEach((k, v) -> mergedEntries.putIfAbsent(k, v));
         }
 
-        // 写入条目，添加 " S:" 前缀
         mergedEntries.forEach(
             (key, value) -> {
                 content.append("    S:")
@@ -226,7 +210,6 @@ public class LangMerger {
             content.append("}\n");
         }
 
-        // 写入文件
         try (BufferedWriter writer = new BufferedWriter(
             new OutputStreamWriter(new FileOutputStream(targetFile), StandardCharsets.UTF_8))) {
             writer.write(content.toString());
@@ -237,7 +220,7 @@ public class LangMerger {
     private String getLanguageFromOptions() {
         File optionsFile = new File(getGameDir(), "options.txt");
         if (!optionsFile.exists()) {
-            return "zh_CN"; // 默认语言
+            return "zh_CN";
         }
 
         try (BufferedReader reader = new BufferedReader(new FileReader(optionsFile))) {
@@ -251,7 +234,7 @@ public class LangMerger {
             e.printStackTrace();
         }
 
-        return "zh_CN"; // 默认语言
+        return "zh_CN";
     }
 
     private File getGameDir() {
