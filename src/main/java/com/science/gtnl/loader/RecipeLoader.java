@@ -14,6 +14,7 @@ import com.science.gtnl.common.recipe.GTNL.ReFusionReactorRecipes;
 import com.science.gtnl.common.recipe.GTNL.RealArtificialStarRecipes;
 import com.science.gtnl.common.recipe.GTNL.SmeltingMixingFurnaceRecipes;
 import com.science.gtnl.common.recipe.GTNL.SteamCrackerRecipes;
+import com.science.gtnl.common.recipe.GTNL.TheTwilightForestRecipes;
 import com.science.gtnl.common.recipe.GregTech.AlloyBlastSmelterRecipes;
 import com.science.gtnl.common.recipe.GregTech.AssemblerRecipes;
 import com.science.gtnl.common.recipe.GregTech.AssemblingLineRecipes;
@@ -49,7 +50,8 @@ public class RecipeLoader {
             new CraftingTableRecipes(), new ChemicalBathRecipes(), new SteamCrackerRecipes(), new DesulfurizerRecipes(),
             new PetrochemicalPlantRecipes(), new FusionReactorRecipes(), new SmeltingMixingFurnaceRecipes(),
             new FluidExtraction(), new DigesterRecipes(), new DissolutionTankRecipes(), new CentrifugeRecipes(),
-            new ChemicalDehydratorRecipes(), new RareEarthCentrifugalRecipes(), new MatterFabricatorRecipes() };
+            new ChemicalDehydratorRecipes(), new RareEarthCentrifugalRecipes(), new MatterFabricatorRecipes(),
+            new TheTwilightForestRecipes() };
         for (IRecipePool recipePool : recipePools) {
             recipePool.loadRecipes();
         }

@@ -34,6 +34,7 @@ import com.science.gtnl.common.machine.multiblock.PetrochemicalPlant;
 import com.science.gtnl.common.machine.multiblock.PrimitiveDistillationTower;
 import com.science.gtnl.common.machine.multiblock.ProcessingArray;
 import com.science.gtnl.common.machine.multiblock.RareEarthCentrifugal;
+import com.science.gtnl.common.machine.multiblock.ReactionFurnace;
 import com.science.gtnl.common.machine.multiblock.RealArtificialStar;
 import com.science.gtnl.common.machine.multiblock.SmeltingMixingFurnace;
 import com.science.gtnl.common.machine.multiblock.SteamCracking;
@@ -133,6 +134,7 @@ public class MachineLoader {
     public static ItemStack LargeAutoclave;
     public static ItemStack LargeSolidifier;
     public static ItemStack LargeExtractor;
+    public static ItemStack ReactionFurnace;
 
     public static void loadMachines() {
 
@@ -150,304 +152,293 @@ public class MachineLoader {
          * new MTEInfinityHatchOutputME(21003, "gtnl.ae2.InfinityOutputME", "Infinity Output Hatch (ME)", 3)
          * .getStackForm(1L));
          */
-        EdenGarden = new EdenGarden(21004, "NameEdenGarden", TextLocalization.NameEdenGarden).getStackForm(1);
+        EdenGarden = new EdenGarden(21004, "EdenGarden", TextLocalization.NameEdenGarden).getStackForm(1);
         GTNLItemList.EdenGarden.set(EdenGarden);
 
         LargeSteamCircuitAssembler = new LargeSteamCircuitAssembler(
             21005,
-            "NameLargeSteamCircuitAssembler",
+            "LargeSteamCircuitAssembler",
             TextLocalization.NameLargeSteamCircuitAssembler).getStackForm(1);
         GTNLItemList.LargeSteamCircuitAssembler.set(LargeSteamCircuitAssembler);
 
         GenerationEarthEngine = new GenerationEarthEngine(
             21006,
-            "NameGenerationEarthEngine",
+            "GenerationEarthEngine",
             TextLocalization.NameGenerationEarthEngine).getStackForm(1);
         GTNLItemList.GenerationEarthEngine.set(GenerationEarthEngine);
 
         BloodSoulSacrificialArray = new BloodSoulSacrificialArray(
             21007,
-            "NameBloodSoulSacrificialArray",
+            "BloodSoulSacrificialArray",
             TextLocalization.NameBloodSoulSacrificialArray).getStackForm(1);
         GTNLItemList.BloodSoulSacrificialArray.set(BloodSoulSacrificialArray);
 
         RealArtificialStar = new RealArtificialStar(
             21008,
-            "NameRealArtificialStar",
+            "RealArtificialStar",
             TextLocalization.NameRealArtificialStar).getStackForm(1);
         GTNLItemList.RealArtificialStar.set(RealArtificialStar);
 
         TeleportationArrayToAlfheim = new TeleportationArrayToAlfheim(
             21009,
-            "NameTeleportationArrayToAlfheim",
+            "TeleportationArrayToAlfheim",
             TextLocalization.NameTeleportationArrayToAlfheim).getStackForm(1);
         GTNLItemList.TeleportationArrayToAlfheim.set(TeleportationArrayToAlfheim);
 
-        LapotronChip = new LapotronChip(21010, "NameLapotronChip", TextLocalization.NameLapotronChip).getStackForm(1);
+        LapotronChip = new LapotronChip(21010, "LapotronChip", TextLocalization.NameLapotronChip).getStackForm(1);
         GTNLItemList.LapotronChip.set(LapotronChip);
 
         NeutroniumWireCutting = new NeutroniumWireCutting(
             21011,
-            "NameNeutroniumWireCutting",
+            "NeutroniumWireCutting",
             TextLocalization.NameNeutroniumWireCutting).getStackForm(1);
         GTNLItemList.NeutroniumWireCutting.set(NeutroniumWireCutting);
 
-        LargeSteamCrusher = new LargeSteamCrusher(
-            21012,
-            "NameLargeSteamCrusher",
-            TextLocalization.NameLargeSteamCrusher).getStackForm(1);
+        LargeSteamCrusher = new LargeSteamCrusher(21012, "LargeSteamCrusher", TextLocalization.NameLargeSteamCrusher)
+            .getStackForm(1);
         GTNLItemList.LargeSteamCrusher.set(LargeSteamCrusher);
 
         ComponentAssembler = new ComponentAssembler(
             21013,
-            "NameComponentAssembler",
+            "ComponentAssembler",
             TextLocalization.NameComponentAssembler).getStackForm(1);
         GTNLItemList.ComponentAssembler.set(ComponentAssembler);
 
-        LargeSteamFurnace = new LargeSteamFurnace(
-            21014,
-            "NameLargeSteamFurnace",
-            TextLocalization.NameLargeSteamFurnace).getStackForm(1);
+        LargeSteamFurnace = new LargeSteamFurnace(21014, "LargeSteamFurnace", TextLocalization.NameLargeSteamFurnace)
+            .getStackForm(1);
         GTNLItemList.LargeSteamFurnace.set(LargeSteamFurnace);
 
         LargeSteamAlloySmelter = new LargeSteamAlloySmelter(
             21015,
-            "NameLargeSteamAlloySmelter",
+            "LargeSteamAlloySmelter",
             TextLocalization.NameLargeSteamAlloySmelter).getStackForm(1);
         GTNLItemList.LargeSteamAlloySmelter.set(LargeSteamAlloySmelter);
 
         LargeSteamThermalCentrifuge = new LargeSteamThermalCentrifuge(
             21016,
-            "NameLargeSteamThermalCentrifuge",
+            "LargeSteamThermalCentrifuge",
             TextLocalization.NameLargeSteamThermalCentrifuge).getStackForm(1);
         GTNLItemList.LargeSteamThermalCentrifuge.set(LargeSteamThermalCentrifuge);
 
-        SteamCracking = new SteamCracking(21017, "NameSteamCracking", TextLocalization.NameSteamCracking)
-            .getStackForm(1);
+        SteamCracking = new SteamCracking(21017, "SteamCracking", TextLocalization.NameSteamCracking).getStackForm(1);
         GTNLItemList.SteamCracking.set(SteamCracking);
 
         LargeSteamChemicalBath = new LargeSteamChemicalBath(
             21018,
-            "NameLargeSteamChemicalBath",
+            "LargeSteamChemicalBath",
             TextLocalization.NameLargeSteamChemicalBath).getStackForm(1);
         GTNLItemList.LargeSteamChemicalBath.set(LargeSteamChemicalBath);
 
         PrimitiveDistillationTower = new PrimitiveDistillationTower(
             21019,
-            "NamePrimitiveDistillationTower",
+            "PrimitiveDistillationTower",
             TextLocalization.NamePrimitiveDistillationTower).getStackForm(1);
         GTNLItemList.PrimitiveDistillationTower.set(PrimitiveDistillationTower);
 
-        MeteorMiner = new MeteorMiner(21020, "NameMeteorMiner", TextLocalization.NameMeteorMiner).getStackForm(1);
+        MeteorMiner = new MeteorMiner(21020, "MeteorMiner", TextLocalization.NameMeteorMiner).getStackForm(1);
         GTNLItemList.MeteorMiner.set(MeteorMiner);
 
-        Desulfurizer = new Desulfurizer(21021, "NameDesulfurizer", TextLocalization.NameDesulfurizer).getStackForm(1);
+        Desulfurizer = new Desulfurizer(21021, "Desulfurizer", TextLocalization.NameDesulfurizer).getStackForm(1);
         GTNLItemList.Desulfurizer.set(Desulfurizer);
 
         LargeCircuitAssembler = new LargeCircuitAssembler(
             21022,
-            "NameLargeCircuitAssembler",
+            "LargeCircuitAssembler",
             TextLocalization.NameLargeCircuitAssembler).getStackForm(1);
         GTNLItemList.LargeCircuitAssembler.set(LargeCircuitAssembler);
 
         PetrochemicalPlant = new PetrochemicalPlant(
             21023,
-            "NamePetrochemicalPlant",
+            "PetrochemicalPlant",
             TextLocalization.NamePetrochemicalPlant).getStackForm(1);
         GTNLItemList.PetrochemicalPlant.set(PetrochemicalPlant);
 
         SmeltingMixingFurnace = new SmeltingMixingFurnace(
             21024,
-            "NameSmeltingMixingFurnace",
+            "SmeltingMixingFurnace",
             TextLocalization.NameSmeltingMixingFurnace).getStackForm(1);
         GTNLItemList.SmeltingMixingFurnace.set(SmeltingMixingFurnace);
 
         WhiteNightGenerator = new WhiteNightGenerator(
             21025,
-            "NameWhiteNightGenerator",
+            "WhiteNightGenerator",
             TextLocalization.NameWhiteNightGenerator).getStackForm(1);
         GTNLItemList.WhiteNightGenerator.set(WhiteNightGenerator);
 
-        ProcessingArray = new ProcessingArray(21026, "NameProcessingArray", TextLocalization.NameProcessingArray)
+        ProcessingArray = new ProcessingArray(21026, "ProcessingArray", TextLocalization.NameProcessingArray)
             .getStackForm(1);
         GTNLItemList.ProcessingArray.set(ProcessingArray);
 
-        MegaBlastFurnace = new MegaBlastFurnace(21027, "NameMegaBlastFurnace", TextLocalization.NameMegaBlastFurnace)
+        MegaBlastFurnace = new MegaBlastFurnace(21027, "MegaBlastFurnace", TextLocalization.NameMegaBlastFurnace)
             .getStackForm(1);
         GTNLItemList.MegaBlastFurnace.set(MegaBlastFurnace);
 
         BrickedBlastFurnace = new BrickedBlastFurnace(
             21028,
-            "NameBrickedBlastFurnace",
+            "BrickedBlastFurnace",
             TextLocalization.NameBrickedBlastFurnace).getStackForm(1);
         GTNLItemList.BrickedBlastFurnace.set(BrickedBlastFurnace);
 
         RareEarthCentrifugal = new RareEarthCentrifugal(
             21029,
-            "NameRareEarthCentrifugal",
+            "RareEarthCentrifugal",
             TextLocalization.NameRareEarthCentrifugal).getStackForm(1);
         GTNLItemList.RareEarthCentrifugal.set(RareEarthCentrifugal);
 
-        ColdIceFreezer = new ColdIceFreezer(21030, "NameColdIceFreezer", TextLocalization.NameColdIceFreezer)
+        ColdIceFreezer = new ColdIceFreezer(21030, "ColdIceFreezer", TextLocalization.NameColdIceFreezer)
             .getStackForm(1);
         GTNLItemList.ColdIceFreezer.set(ColdIceFreezer);
 
-        BlazeBlastFurnace = new BlazeBlastFurnace(
-            21031,
-            "NameBlazeBlastFurnace",
-            TextLocalization.NameBlazeBlastFurnace).getStackForm(1);
+        BlazeBlastFurnace = new BlazeBlastFurnace(21031, "BlazeBlastFurnace", TextLocalization.NameBlazeBlastFurnace)
+            .getStackForm(1);
         GTNLItemList.BlazeBlastFurnace.set(BlazeBlastFurnace);
 
-        ChemicalPlant = new ChemicalPlant(21032, "NameChemicalPlant", TextLocalization.NameChemicalPlant)
-            .getStackForm(1);
+        ChemicalPlant = new ChemicalPlant(21032, "ChemicalPlant", TextLocalization.NameChemicalPlant).getStackForm(1);
         GTNLItemList.ChemicalPlant.set(ChemicalPlant);
 
-        VacuumFreezer = new VacuumFreezer(21033, "NameVacuumFreezer", TextLocalization.NameVacuumFreezer)
-            .getStackForm(1);
+        VacuumFreezer = new VacuumFreezer(21033, "VacuumFreezer", TextLocalization.NameVacuumFreezer).getStackForm(1);
         GTNLItemList.VacuumFreezer.set(VacuumFreezer);
 
         IndustrialArcaneAssembler = new IndustrialArcaneAssembler(
             21034,
-            "NameIndustrialArcaneAssembler",
+            "IndustrialArcaneAssembler",
             TextLocalization.NameIndustrialArcaneAssembler).getStackForm(1);
         GTNLItemList.IndustrialArcaneAssembler.set(IndustrialArcaneAssembler);
 
         EnergeticPhotovoltaicPowerStation = new EnergeticPhotovoltaicPowerStation(
             21035,
-            "NameEnergeticPhotovoltaicPowerStation",
+            "EnergeticPhotovoltaicPowerStation",
             TextLocalization.NameEnergeticPhotovoltaicPowerStation).getStackForm(1);
         GTNLItemList.EnergeticPhotovoltaicPowerStation.set(EnergeticPhotovoltaicPowerStation);
 
         AdvancedPhotovoltaicPowerStation = new AdvancedPhotovoltaicPowerStation(
             21036,
-            "NameAdvancedPhotovoltaicPowerStation",
+            "AdvancedPhotovoltaicPowerStation",
             TextLocalization.NameAdvancedPhotovoltaicPowerStation).getStackForm(1);
         GTNLItemList.AdvancedPhotovoltaicPowerStation.set(AdvancedPhotovoltaicPowerStation);
 
         VibrantPhotovoltaicPowerStation = new VibrantPhotovoltaicPowerStation(
             21037,
-            "NameVibrantPhotovoltaicPowerStation",
+            "VibrantPhotovoltaicPowerStation",
             TextLocalization.NameVibrantPhotovoltaicPowerStation).getStackForm(1);
         GTNLItemList.VibrantPhotovoltaicPowerStation.set(VibrantPhotovoltaicPowerStation);
 
         LargeMacerationTower = new LargeMacerationTower(
             21038,
-            "NameLargeMacerationTower",
+            "LargeMacerationTower",
             TextLocalization.NameLargeMacerationTower).getStackForm(1);
         GTNLItemList.LargeMacerationTower.set(LargeMacerationTower);
 
         HandOfJohnDavisonRockefeller = new HandOfJohnDavisonRockefeller(
             21039,
-            "NameHandOfJohnDavisonRockefeller",
+            "HandOfJohnDavisonRockefeller",
             TextLocalization.NameHandOfJohnDavisonRockefeller).getStackForm(1);
         GTNLItemList.HandOfJohnDavisonRockefeller.set(HandOfJohnDavisonRockefeller);
 
         LargeSiftingFunnel = new LargeSiftingFunnel(
             21040,
-            "NameLargeSiftingFunnel",
+            "LargeSiftingFunnel",
             TextLocalization.NameLargeSiftingFunnel).getStackForm(1);
         GTNLItemList.LargeSiftingFunnel.set(LargeSiftingFunnel);
 
-        LargeCutter = new LargeCutter(21041, "NameLargeCutter", TextLocalization.NameLargeCutter).getStackForm(1);
+        LargeCutter = new LargeCutter(21041, "LargeCutter", TextLocalization.NameLargeCutter).getStackForm(1);
         GTNLItemList.LargeCutter.set(LargeCutter);
 
-        LargeBrewer = new LargeBrewer(21042, "NameLargeBrewer", TextLocalization.NameLargeBrewer).getStackForm(1);
+        LargeBrewer = new LargeBrewer(21042, "LargeBrewer", TextLocalization.NameLargeBrewer).getStackForm(1);
         GTNLItemList.LargeBrewer.set(LargeBrewer);
 
         LargeIndustrialLathe = new LargeIndustrialLathe(
             21043,
-            "NameLargeIndustrialLathe",
+            "LargeIndustrialLathe",
             TextLocalization.NameLargeIndustrialLathe).getStackForm(1);
         GTNLItemList.LargeIndustrialLathe.set(LargeIndustrialLathe);
 
         LargeMaterialPress = new LargeMaterialPress(
             21044,
-            "NameLargeMaterialPress",
+            "LargeMaterialPress",
             TextLocalization.NameLargeMaterialPress).getStackForm(1);
         GTNLItemList.LargeMaterialPress.set(LargeMaterialPress);
 
-        LargeWiremill = new LargeWiremill(21045, "NameLargeWiremill", TextLocalization.NameLargeWiremill)
-            .getStackForm(1);
+        LargeWiremill = new LargeWiremill(21045, "LargeWiremill", TextLocalization.NameLargeWiremill).getStackForm(1);
         GTNLItemList.LargeWiremill.set(LargeWiremill);
 
-        LargeBender = new LargeBender(21046, "NameLargeBender", TextLocalization.NameLargeBender).getStackForm(1);
+        LargeBender = new LargeBender(21046, "LargeBender", TextLocalization.NameLargeBender).getStackForm(1);
         GTNLItemList.LargeBender.set(LargeBender);
 
         ElectricImplosionCompressor = new ElectricImplosionCompressor(
             21047,
-            "NameElectricImplosionCompressor",
+            "ElectricImplosionCompressor",
             TextLocalization.NameElectricImplosionCompressor).getStackForm(1);
         GTNLItemList.ElectricImplosionCompressor.set(ElectricImplosionCompressor);
 
-        LargeExtruder = new LargeExtruder(21048, "NameLargeExtruder", TextLocalization.NameLargeExtruder)
-            .getStackForm(1);
+        LargeExtruder = new LargeExtruder(21048, "LargeExtruder", TextLocalization.NameLargeExtruder).getStackForm(1);
         GTNLItemList.LargeExtruder.set(LargeExtruder);
 
-        LargeArcSmelter = new LargeArcSmelter(21049, "NameLargeArcSmelter", TextLocalization.NameLargeArcSmelter)
+        LargeArcSmelter = new LargeArcSmelter(21049, "LargeArcSmelter", TextLocalization.NameLargeArcSmelter)
             .getStackForm(1);
         GTNLItemList.LargeArcSmelter.set(LargeArcSmelter);
 
-        LargeForming = new LargeForming(21050, "NameLargeForming", TextLocalization.NameLargeForming).getStackForm(1);
+        LargeForming = new LargeForming(21050, "LargeForming", TextLocalization.NameLargeForming).getStackForm(1);
         GTNLItemList.LargeForming.set(LargeForming);
 
-        MatterFabricator = new MatterFabricator(21051, "NameMatterFabricator", TextLocalization.NameMatterFabricator)
+        MatterFabricator = new MatterFabricator(21051, "MatterFabricator", TextLocalization.NameMatterFabricator)
             .getStackForm(1);
         GTNLItemList.MatterFabricator.set(MatterFabricator);
 
-        LargeElectrolyzer = new LargeElectrolyzer(
-            21052,
-            "NameLargeElectrolyzer",
-            TextLocalization.NameLargeElectrolyzer).getStackForm(1);
+        LargeElectrolyzer = new LargeElectrolyzer(21052, "LargeElectrolyzer", TextLocalization.NameLargeElectrolyzer)
+            .getStackForm(1);
         GTNLItemList.LargeElectrolyzer.set(LargeElectrolyzer);
 
         LargeElectromagnet = new LargeElectromagnet(
             21053,
-            "NameLargeElectromagnet",
+            "LargeElectromagnet",
             TextLocalization.NameLargeElectromagnet).getStackForm(1);
         GTNLItemList.LargeElectromagnet.set(LargeElectromagnet);
 
-        LargeAssembler = new LargeAssembler(21054, "NameLargeAssembler", TextLocalization.NameLargeAssembler)
+        LargeAssembler = new LargeAssembler(21054, "LargeAssembler", TextLocalization.NameLargeAssembler)
             .getStackForm(1);
         GTNLItemList.LargeAssembler.set(LargeAssembler);
 
-        LargeMixer = new LargeMixer(21055, "NameLargeMixer", TextLocalization.NameLargeMixer).getStackForm(1);
+        LargeMixer = new LargeMixer(21055, "LargeMixer", TextLocalization.NameLargeMixer).getStackForm(1);
         GTNLItemList.LargeMixer.set(LargeMixer);
 
-        LargeCentrifuge = new LargeCentrifuge(21056, "NameLargeCentrifuge", TextLocalization.NameLargeCentrifuge)
+        LargeCentrifuge = new LargeCentrifuge(21056, "LargeCentrifuge", TextLocalization.NameLargeCentrifuge)
             .getStackForm(1);
         GTNLItemList.LargeCentrifuge.set(LargeCentrifuge);
 
-        LibraryOfRuina = new LibraryOfRuina(21057, "NameLibraryOfRuina", TextLocalization.NameLibraryOfRuina)
+        LibraryOfRuina = new LibraryOfRuina(21057, "LibraryOfRuina", TextLocalization.NameLibraryOfRuina)
             .getStackForm(1);
         GTNLItemList.LibraryOfRuina.set(LibraryOfRuina);
 
-        LargeChemicalBath = new LargeChemicalBath(
-            21058,
-            "NameLargeChemicalBath",
-            TextLocalization.NameLargeChemicalBath).getStackForm(1);
+        LargeChemicalBath = new LargeChemicalBath(21058, "LargeChemicalBath", TextLocalization.NameLargeChemicalBath)
+            .getStackForm(1);
         GTNLItemList.LargeChemicalBath.set(LargeChemicalBath);
 
-        LargeAutoclave = new LargeAutoclave(21059, "NameLargeAutoclave", TextLocalization.NameLargeAutoclave)
+        LargeAutoclave = new LargeAutoclave(21059, "LargeAutoclave", TextLocalization.NameLargeAutoclave)
             .getStackForm(1);
         GTNLItemList.LargeAutoclave.set(LargeAutoclave);
 
-        LargeSolidifier = new LargeSolidifier(21060, "NameLargeSolidifier", TextLocalization.NameLargeSolidifier)
+        LargeSolidifier = new LargeSolidifier(21060, "LargeSolidifier", TextLocalization.NameLargeSolidifier)
             .getStackForm(1);
         GTNLItemList.LargeSolidifier.set(LargeSolidifier);
 
-        LargeExtractor = new LargeExtractor(21061, "NameLargeExtractor", TextLocalization.NameLargeExtractor)
+        LargeExtractor = new LargeExtractor(21061, "LargeExtractor", TextLocalization.NameLargeExtractor)
             .getStackForm(1);
         GTNLItemList.LargeExtractor.set(LargeExtractor);
 
+        ReactionFurnace = new ReactionFurnace(21062, "ReactionFurnace", TextLocalization.NameReactionFurnace)
+            .getStackForm(1);
+        GTNLItemList.ReactionFurnace.set(ReactionFurnace);
+
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
             21919,
-            "NameCheatOreProcessingFactory",
+            "CheatOreProcessingFactory",
             TextLocalization.NameCheatOreProcessingFactory).getStackForm(1);
         GTNLItemList.CheatOreProcessingFactory.set(CheatOreProcessingFactory);
 
         NineIndustrialMultiMachine = new NineIndustrialMultiMachine(
             21920,
-            "NameNineIndustrialMultiMachine",
+            "NineIndustrialMultiMachine",
             TextLocalization.NameNineIndustrialMultiMachine).getStackForm(1);
         GTNLItemList.NineIndustrialMultiMachine.set(NineIndustrialMultiMachine);
 

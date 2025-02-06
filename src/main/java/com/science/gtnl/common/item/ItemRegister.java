@@ -294,6 +294,9 @@ public class ItemRegister {
                 new String[] { texter("§dSpeed: +26%%", "tooltips.MAXParallelControllerCore_00"),
                     texter("§5EU Usage: 52%%", "tooltips.MAXParallelControllerCore_01"),
                     texter("§bParallel: 4194304", "tooltips.MAXParallelControllerCore_02") }));
+
+        GTNLItemList.NagaBook.set(initItem("§dRumor - Naga Book", 62));
+        GTNLItemList.TwilightForestBook.set(initItem("§6Urban legends - Twilight Forest Book", 63));
     }
 
     public static void registry() {

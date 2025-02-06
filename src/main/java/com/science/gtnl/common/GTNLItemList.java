@@ -97,6 +97,8 @@ public enum GTNLItemList {
     UMVParallelControllerCore,
     UXVParallelControllerCore,
     MAXParallelControllerCore,
+    NagaBook,
+    TwilightForestBook,
 
     StargateCoil,
     StargateTier0,
@@ -235,6 +237,7 @@ public enum GTNLItemList {
     LargeSolidifier,
     LargeExtractor,
 
+    ReactionFurnace,
     LibraryOfRuina,
     MatterFabricator,
     LargeBrewer,

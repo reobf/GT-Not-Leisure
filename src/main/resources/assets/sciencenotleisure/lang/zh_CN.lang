@@ -319,10 +319,12 @@ MetaItem.61.name=MAX并行控制核心
 tooltips.MAXParallelControllerCore_00=§d速度: +26%%
 tooltips.MAXParallelControllerCore_01=§5EU消耗: 52%%
 tooltips.MAXParallelControllerCore_02=§b并行: 4194304
+MetaItem.62.name=§d传闻 - 娜迦之书
+MetaItem.63.name=§6都市传说 - 暮色之书
 
 item.TestItem.name=测试物品
 Tooltip_Testitem_00=如果你看到了这个Tooltip
-Tooltip_Testitem_01=欢迎来到§o§d§oGT不再业余!
+Tooltip_Testitem_01=欢迎来到§d§oGT不再业余!
 Tooltip_Testitem_02=这是一个基于§b§o GT:Leisure (格雷科技: 休闲版)
 Tooltip_Testitem_03=以及§e§o GT:Odyssey (格雷科技: 奥德赛)(尚未推出!) §r§7两个整合包
 Tooltip_Testitem_04=为GTNH添加§d§o额外游戏内容§r§7的模组
@@ -744,6 +746,11 @@ gtnl.recipe.MatterFabricatorRecipes=物质生成机
 NEI.MatterFabricatorRecipes.01=任意材料锭
 NEI.MatterFabricatorRecipes.02=任意材料宝石
 NEI.MatterFabricatorRecipes.03=任意材料方块
+
+NameReactionFurnace=反应炉
+ReactionFurnaceRecipeType=熔炉
+Tooltip_ReactionFurnace_00=总并行数: 并行控制核心提供的并行 * 512 -1
+Tooltip_ReactionFurnace_Casing=任意强化镀铱机械方块
 
 NameHandOfJohnDavisonRockefeller=洛克菲勒之手
 HandOfJohnDavisonRockefellerRecipeType=化工厂

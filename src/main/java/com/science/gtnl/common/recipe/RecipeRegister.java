@@ -177,10 +177,11 @@ public class RecipeRegister {
         .disableOptimize()
         .build();
 
-    public static RecipeMap<RecipeMapBackend> TheTwilightForestRecipes = RecipeMapBuilder
-        .of("gtnl.recipe.TheTwilightForestRecipes")
-        .maxIO(3, 9, 3, 3)
+    public static RecipeMap<GTNLRecipeMapBackend> TheTwilightForestRecipes = RecipeMapBuilder
+        .of("gtnl.recipe.TheTwilightForestRecipes", GTNLRecipeMapBackend::new)
+        .maxIO(4, 16, 0, 0)
         .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
+        .frontend(GeneralFrontend::new)
         .neiHandlerInfo(
             builder -> builder.setDisplayStack(GTNLItemList.LibraryOfRuina.get(1))
                 .setMaxRecipesPerPage(1))

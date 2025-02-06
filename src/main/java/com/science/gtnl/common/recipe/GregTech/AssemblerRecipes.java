@@ -4,6 +4,7 @@ import static com.science.gtnl.Mods.ScienceNotLeisure;
 import static gregtech.api.enums.Mods.*;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
@@ -37,6 +38,26 @@ public class AssemblerRecipes implements IRecipePool {
 
     @Override
     public void loadRecipes() {
+
+        ItemStack MEoutputBus = ItemList.Hatch_Output_Bus_ME.get(1L);
+        NBTTagCompound MEoutputBusType = MEoutputBus.getTagCompound();
+        if (MEoutputBusType != null) {
+            MEoutputBusType.setLong("baseCapacity", 9223372036854775807L);
+        } else {
+            MEoutputBusType = new NBTTagCompound();
+            MEoutputBusType.setLong("baseCapacity", 9223372036854775807L);
+            MEoutputBus.setTagCompound(MEoutputBusType);
+        }
+
+        ItemStack MEoutputHatch = ItemList.Hatch_Output_ME.get(1L);
+        NBTTagCompound MEoutputHatchType = MEoutputHatch.getTagCompound();
+        if (MEoutputHatchType != null) {
+            MEoutputHatchType.setLong("baseCapacity", 9223372036854775807L);
+        } else {
+            MEoutputHatchType = new NBTTagCompound();
+            MEoutputHatchType.setLong("baseCapacity", 9223372036854775807L);
+            MEoutputHatch.setTagCompound(MEoutputHatchType);
+        }
 
         GTValues.RA.stdBuilder()
             .itemInputs(
@@ -711,6 +732,30 @@ public class AssemblerRecipes implements IRecipePool {
             .noOptimize()
             .duration(50)
             .eut(16)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                ItemList.Hatch_Output_Bus_EV.get(1L),
+                GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 440),
+                GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 30))
+            .itemOutputs(MEoutputBus)
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(480)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                ItemList.Hatch_Output_EV.get(1L),
+                GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 440),
+                GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 30))
+            .itemOutputs(MEoutputHatch)
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(480)
             .addTo(As);
     }
 }

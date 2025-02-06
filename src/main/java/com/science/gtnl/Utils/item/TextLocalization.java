@@ -676,6 +676,15 @@ public class TextLocalization {
         "Any Inconel Reinforced Casing",
         "Tooltip_MatterFabricator_Casing");
 
+    public static final String NameReactionFurnace = texter("Reaction Furnace", "NameReactionFurnace");
+    public static final String ReactionFurnaceRecipeType = texter("Furnace", "ReactionFurnaceRecipeType");
+    public static final String Tooltip_ReactionFurnace_00 = texter(
+        "Total parallelism: parallelism provided by the parallel control core * 512 - 1",
+        "Tooltip_ReactionFurnace_00");
+    public static final String Tooltip_ReactionFurnace_Casing = texter(
+        "Any Advanced Iridium Plated Machine Casing",
+        "Tooltip_ReactionFurnace_Casing");
+
     public static final String NamePetrochemicalPlant = texter("Petrochemical Plant", "NamePetrochemicalPlant");
     public static final String PetrochemicalPlantRecipeType = texter(
         "Petrochemical Plant",
