@@ -1,5 +1,6 @@
 package com.science.gtnl;
 
+import com.science.gtnl.Utils.LangMerger;
 import net.minecraftforge.client.MinecraftForgeClient;
 
 import com.science.gtnl.Utils.GuiEventHandler;
@@ -41,6 +42,7 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void preInit(FMLPreInitializationEvent event) {
         super.preInit(event);
+        new LangMerger().processLanguageFiles();
     }
 
     @Override

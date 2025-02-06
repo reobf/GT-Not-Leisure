@@ -140,8 +140,6 @@ public class ScienceNotLeisure {
 
         proxy.preInit(event);
         MaterialLoader.load();
-
-        new LangMerger().processLanguageFiles();
     }
 
     @Mod.EventHandler
