@@ -321,6 +321,7 @@ tooltips.MAXParallelControllerCore_01=§5EU消耗: 52%%
 tooltips.MAXParallelControllerCore_02=§b并行: 4194304
 MetaItem.62.name=§d传闻 - 娜迦之书
 MetaItem.63.name=§6都市传说 - 暮色之书
+MetaItem.64.name=杂质 - 巫妖之书
 
 item.TestItem.name=测试物品
 Tooltip_Testitem_00=如果你看到了这个Tooltip

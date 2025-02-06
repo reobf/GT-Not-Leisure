@@ -297,6 +297,7 @@ public class ItemRegister {
 
         GTNLItemList.NagaBook.set(initItem("§dRumor - Naga Book", 62));
         GTNLItemList.TwilightForestBook.set(initItem("§6Urban legends - Twilight Forest Book", 63));
+        GTNLItemList.LichBook.set(initItem("Impurity - Lich Book", 64));
     }
 
     public static void registry() {

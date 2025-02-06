@@ -99,6 +99,7 @@ public enum GTNLItemList {
     MAXParallelControllerCore,
     NagaBook,
     TwilightForestBook,
+    LichBook,
 
     StargateCoil,
     StargateTier0,
