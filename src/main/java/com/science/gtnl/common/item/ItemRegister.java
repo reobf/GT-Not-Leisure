@@ -298,6 +298,14 @@ public class ItemRegister {
         GTNLItemList.NagaBook.set(initItem("§dRumor - Naga Book", 62));
         GTNLItemList.TwilightForestBook.set(initItem("§6Urban legends - Twilight Forest Book", 63));
         GTNLItemList.LichBook.set(initItem("Impurity - Lich Book", 64));
+        GTNLItemList.MinotaurBook.set(initItem("§cUrban Strange Tales - Minotaur Book", 65));
+        GTNLItemList.HydraBook.set(initItem("§dRumor - Hydra Book", 66));
+        GTNLItemList.KnightPhantomBook.set(initItem("§9Urban Diseases - Knight Phantom Book", 67));
+        GTNLItemList.UrGhastBook.set(initItem("§9Urban Diseases - Ur-Ghast Book", 68));
+        GTNLItemList.AlphaYetiBook.set(initItem("Impurity - Alpha Yeti Book", 69));
+        GTNLItemList.SnowQueenBook.set(initItem("§bCity Star - Snow Queen Book", 70));
+        GTNLItemList.FinalBook.set(initItem("§bCity Star - Final Book", 71));
+        GTNLItemList.GiantBook.set(initItem("§dRumor - Giant Book", 72));
     }
 
     public static void registry() {

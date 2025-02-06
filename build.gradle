@@ -3,8 +3,8 @@ plugins {
 }
 
 minecraft {
-    extraRunJvmArguments.add("-Xmx12G")
-    extraRunJvmArguments.add("-Xms12G")
+    extraRunJvmArguments.add("-Xmx8G")
+    extraRunJvmArguments.add("-Xms8G")
 }
 
 dependencies {
