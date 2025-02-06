@@ -7,7 +7,6 @@ import net.minecraftforge.common.MinecraftForge;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.science.gtnl.Utils.LangMerger;
 import com.science.gtnl.Utils.item.TextHandler;
 import com.science.gtnl.common.block.Casings.Special.CrushingWheelsEventHandler;
 import com.science.gtnl.common.block.ReAvaritia.ExtremeAnvil.AnvilEventHandler;

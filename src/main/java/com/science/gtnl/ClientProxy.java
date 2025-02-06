@@ -1,9 +1,9 @@
 package com.science.gtnl;
 
-import com.science.gtnl.Utils.LangMerger;
 import net.minecraftforge.client.MinecraftForgeClient;
 
 import com.science.gtnl.Utils.GuiEventHandler;
+import com.science.gtnl.Utils.LangMerger;
 import com.science.gtnl.common.block.ReAvaritia.ExtremeAnvil.RenderExtremeAnvil;
 import com.science.gtnl.common.block.ReAvaritia.ExtremeAnvil.TileEntityExtremeAnvil;
 import com.science.gtnl.common.block.Render.MeteorMinerRenderer;
