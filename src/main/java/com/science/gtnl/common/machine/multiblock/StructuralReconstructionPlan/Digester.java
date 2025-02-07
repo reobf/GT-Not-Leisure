@@ -59,8 +59,8 @@ public class Digester extends GTMMultiMachineBase<Digester> implements ISurvival
     public static final String STRUCTURE_PIECE_MAIN = "main";
     private static IStructureDefinition<Digester> STRUCTURE_DEFINITION = null;
     public static final String D_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/digester";
-    public final int horizontalOffSet = 3;
-    public final int verticalOffSet = 3;
+    public final int horizontalOffSet = 2;
+    public final int verticalOffSet = 4;
     public final int depthOffSet = 0;
     public static String[][] shape;
 
@@ -124,7 +124,7 @@ public class Digester extends GTMMultiMachineBase<Digester> implements ISurvival
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
-            .beginStructureBlock(7, 4, 7, true)
+            .beginStructureBlock(5, 5, 5, true)
             .addInputHatch(TextLocalization.Tooltip_Digester_Casing)
             .addOutputHatch(TextLocalization.Tooltip_Digester_Casing)
             .addInputBus(TextLocalization.Tooltip_Digester_Casing)
@@ -160,7 +160,7 @@ public class Digester extends GTMMultiMachineBase<Digester> implements ISurvival
         ParallelTier = 0;
 
         if (checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && checkHatch()
-            && mCasing >= 55) {
+            && mCasing >= 45) {
             this.mHeatingCapacity = (int) this.getCoilLevel()
                 .getHeat() + 100 * (BWUtil.getTier(this.getMaxInputEu()) - 2);
             return true;

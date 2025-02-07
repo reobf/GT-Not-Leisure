@@ -192,7 +192,6 @@ public class LargeCutter extends GTMMultiMachineBase<LargeCutter> implements ISu
         return mCasing >= 60;
     }
 
-    // 启用机器模式切换
     @Override
     public boolean supportsMachineModeSwitch() {
         return true;

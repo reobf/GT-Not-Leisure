@@ -250,7 +250,10 @@ public enum GTNLItemList {
     EnergyInfuser,
     LargeCanning,
     Digester,
+    AlloyBlastSmelter,
+    LargeSteamOreWasher,
 
+    LargeSteamExtractor,
     ReactionFurnace,
     LibraryOfRuina,
     MatterFabricator,

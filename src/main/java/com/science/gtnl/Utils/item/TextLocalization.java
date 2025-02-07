@@ -291,6 +291,38 @@ public class TextLocalization {
         "Neutronium Wire Cutting",
         "NameNeutroniumWireCutting");
 
+    public static final String NameLargeSteamOreWasher = texter("Large Steam Ore Washer", "NameLargeSteamOreWasher");
+    public static final String LargeSteamOreWasherRecipeType = texter(
+        "Simple Washer / Washer",
+        "LargeSteamOreWasherRecipeType");
+    public static final String Tooltip_LargeSteamOreWasher_00 = texter(
+        "167%% faster than using single block steam machines of the same extractor",
+        "Tooltip_LargeSteamOreWasher_00");
+    public static final String Tooltip_LargeSteamOreWasher_01 = texter(
+        "Only consumes steam at 60%% of the L/s normally required",
+        "Tooltip_LargeSteamOreWasher_01");
+    public static final String Tooltip_LargeSteamOreWasher_02 = texter(
+        "Processes up to 32 items at once",
+        "Tooltip_LargeSteamOreWasher_02");
+    public static final String Tooltip_LargeSteamOreWasher_Casing = texter(
+        "Ang Bronze Plated Bricks or Solid Steel Machine Casing",
+        "Tooltip_LargeSteamOreWasher_Casing");
+
+    public static final String NameLargeSteamExtractor = texter("Large Steam Extractor", "NameLargeSteamExtractor");
+    public static final String LargeSteamExtractorRecipeType = texter("Extractor", "LargeSteamExtractorRecipeType");
+    public static final String Tooltip_LargeSteamExtractor_00 = texter(
+        "133%% faster than using single block steam machines of the same extractor",
+        "Tooltip_LargeSteamExtractor_00");
+    public static final String Tooltip_LargeSteamExtractor_01 = texter(
+        "Only consumes steam at 90%% of the L/s normally required",
+        "Tooltip_LargeSteamExtractor_01");
+    public static final String Tooltip_LargeSteamExtractor_02 = texter(
+        "Processes up to 16 items at once",
+        "Tooltip_LargeSteamExtractor_02");
+    public static final String Tooltip_LargeSteamExtractor_Casing = texter(
+        "Ang Bronze Plated Bricks or Solid Steel Machine Casing",
+        "Tooltip_LargeSteamExtractor_Casing");
+
     public static final String NameLargeSteamCrusher = texter("Large Steam Crusher", "NameLargeSteamCrusher");
     public static final String LargeSteamCrusherRecipeType = texter("Macerator", "LargeSteamCrusherRecipeType");
     public static final String Tooltip_LargeSteamCrusher_00 = texter(
@@ -646,6 +678,32 @@ public class TextLocalization {
     public static final String Tooltip_LargeWiremill_Casing = texter(
         "Any Inconel Reinforced Casing",
         "Tooltip_LargeWiremill_Casing");
+
+    public static final String NameAlloyBlastSmelter = texter("Alloy Blast Smelter", "NameAlloyBlastSmelter");
+    public static final String AlloyBlastSmelterRecipeType = texter(
+        "Alloy Blast Smelter",
+        "AlloyBlastSmelterRecipeType");
+    public static final String Tooltip_AlloyBlastSmelter_00 = texter(
+        "Every time the formula temperature exceeds 900K, the energy consumption will be multiplied by 95%% (excluding overclocking)",
+        "Tooltip_AlloyBlastSmelter_00");
+    public static final String Tooltip_AlloyBlastSmelter_01 = texter(
+        "Every time the formula temperature exceeds 1800K, a non-destructive overclocking will be performed",
+        "Tooltip_AlloyBlastSmelter_01");
+    public static final String Tooltip_AlloyBlastSmelter_02 = texter(
+        "After each voltage level exceeds MV, the temperature will increase by 100K",
+        "Tooltip_AlloyBlastSmelter_02");
+    public static final String Tooltip_AlloyBlastSmelter_03 = texter(
+        "Only one Energy Hatch!",
+        "Tooltip_AlloyBlastSmelter_03");
+    public static final String Tooltip_AlloyBlastSmelter_04 = texter(
+        "It can run 16x recipes at most",
+        "Tooltip_AlloyBlastSmelter_04");
+    public static final String Tooltip_AlloyBlastSmelter_05 = texter(
+        "Insert the parallel control core into the controller to reduce power consumption!",
+        "Tooltip_AlloyBlastSmelter_05");
+    public static final String Tooltip_AlloyBlastSmelter_Casing = texter(
+        "Any Blast Smelter Casing Block",
+        "Tooltip_AlloyBlastSmelter_Casing");
 
     public static final String NameLargeMixer = texter("Large Mixer", "NameLargeMixer");
     public static final String LargeMixerRecipeType = texter("Mixer", "LargeMixerRecipeType");

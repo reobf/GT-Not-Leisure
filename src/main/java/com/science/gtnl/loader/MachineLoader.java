@@ -24,6 +24,7 @@ import com.science.gtnl.common.machine.multiblock.LargeSteamAlloySmelter;
 import com.science.gtnl.common.machine.multiblock.LargeSteamChemicalBath;
 import com.science.gtnl.common.machine.multiblock.LargeSteamCircuitAssembler;
 import com.science.gtnl.common.machine.multiblock.LargeSteamCrusher;
+import com.science.gtnl.common.machine.multiblock.LargeSteamExtractor;
 import com.science.gtnl.common.machine.multiblock.LargeSteamFurnace;
 import com.science.gtnl.common.machine.multiblock.LargeSteamThermalCentrifuge;
 import com.science.gtnl.common.machine.multiblock.LibraryOfRuina;
@@ -39,6 +40,7 @@ import com.science.gtnl.common.machine.multiblock.ReactionFurnace;
 import com.science.gtnl.common.machine.multiblock.RealArtificialStar;
 import com.science.gtnl.common.machine.multiblock.SmeltingMixingFurnace;
 import com.science.gtnl.common.machine.multiblock.SteamCracking;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.AlloyBlastSmelter;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.BlazeBlastFurnace;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.ChemicalPlant;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.ColdIceFreezer;
@@ -64,6 +66,7 @@ import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.L
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeMixer;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeSiftingFunnel;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeSolidifier;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeSteamOreWasher;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeWiremill;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.MegaBlastFurnace;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.VacuumFreezer;
@@ -142,6 +145,9 @@ public class MachineLoader {
     public static ItemStack EnergyInfuser;
     public static ItemStack LargeCanning;
     public static ItemStack Digester;
+    public static ItemStack AlloyBlastSmelter;
+    public static ItemStack LargeSteamExtractor;
+    public static ItemStack LargeSteamOreWasher;
 
     public static void loadMachines() {
 
@@ -445,6 +451,22 @@ public class MachineLoader {
 
         Digester = new Digester(21065, "Digester", TextLocalization.NameDigester).getStackForm(1);
         GTNLItemList.Digester.set(Digester);
+
+        AlloyBlastSmelter = new AlloyBlastSmelter(21066, "AlloyBlastSmelter", TextLocalization.NameAlloyBlastSmelter)
+            .getStackForm(1);
+        GTNLItemList.AlloyBlastSmelter.set(AlloyBlastSmelter);
+
+        LargeSteamExtractor = new LargeSteamExtractor(
+            21067,
+            "LargeSteamExtractor",
+            TextLocalization.NameLargeSteamExtractor).getStackForm(1);
+        GTNLItemList.LargeSteamExtractor.set(LargeSteamExtractor);
+
+        LargeSteamOreWasher = new LargeSteamOreWasher(
+            21068,
+            "LargeSteamOreWasher",
+            TextLocalization.NameLargeSteamOreWasher).getStackForm(1);
+        GTNLItemList.LargeSteamOreWasher.set(LargeSteamOreWasher);
 
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
             21919,

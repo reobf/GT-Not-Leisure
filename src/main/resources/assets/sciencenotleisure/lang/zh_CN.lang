@@ -881,6 +881,13 @@ Tooltip_LargeSteamCrusher_01=仅消耗正常需求125%%的蒸汽
 Tooltip_LargeSteamCrusher_02=一次可处理多达32个物品
 Tooltip_LargeSteamCrusher_Casing=任意镀铜砖块或脱氧钢机械方块
 
+NameLargeSteamExtractor=大型蒸汽提取机
+LargeSteamExtractorRecipeType=提取机
+Tooltip_LargeSteamExtractor_00=比同等级的单方块提取机快133%%
+Tooltip_LargeSteamExtractor_01=仅消耗正常需求90%%的蒸汽
+Tooltip_LargeSteamExtractor_02=一次可处理多达16个物品
+Tooltip_LargeSteamExtractor_Casing=任意镀铜砖块或脱氧钢机械方块
+
 NameComponentAssembler=部件组装机
 ComponentAssemblerRecipeType=部件装配线
 Tooltip_ComponentAssembler_00=批量组装基础部件(马达,泵)等
@@ -898,12 +905,21 @@ Tooltip_LargeSteamFurnace_01=仅消耗正常需求50%%的蒸汽
 Tooltip_LargeSteamFurnace_02=一次可处理多达32个物品
 Tooltip_LargeSteamFurnace_Casing=任意镀铜砖块或脱氧钢机械方块
 
-NameLargeSteamAlloySmelter=大型蒸汽合金炉
+NameLargeSteamAlloySmelter=大型蒸汽铸形炉
 LargeSteamAlloySmelterRecipeType=合金炉
 Tooltip_LargeSteamAlloySmelter_00=比同等级的单方块合金炉快30%%
 Tooltip_LargeSteamAlloySmelter_01=仅消耗正常需求80%%的蒸汽
 Tooltip_LargeSteamAlloySmelter_02=一次可处理多达16个物品
 Tooltip_LargeSteamAlloySmelter_Casing=任意镀铜砖块或脱氧钢机械方块
+
+NameLargeSteamOreWasher=大型蒸汽洗矿机
+LargeSteamOreWasherRecipeType=洗矿机 / 简易洗矿池
+LargeSteamOreWasher_Mode_0=洗矿机
+LargeSteamOreWasher_Mode_1=简易洗矿池
+Tooltip_LargeSteamOreWasher_00=比同等级的单方块洗矿机快167%%
+Tooltip_LargeSteamOreWasher_01=仅消耗正常需求60%%的蒸汽
+Tooltip_LargeSteamOreWasher_02=一次可处理多达32个物品
+Tooltip_LargeSteamOreWasher_Casing=任意镀铜砖块或脱氧钢机械方块
 
 NameLargeSteamThermalCentrifuge=大型蒸汽热力离心机
 LargeSteamThermalCentrifugeRecipeType=热力离心
@@ -988,6 +1004,16 @@ GT5U.gui.text.no_nitricacid=§7缺失硝酸
 Tooltip_Digester_00=提升线圈等级来获得更高的速度加成和耗电减免！
 Tooltip_Digester_01=超过MV后的每一级电压，都会将温度提高100K
 Tooltip_Digester_Casing=任意强化钨钢机械方块
+
+NameAlloyBlastSmelter=合金冶炼炉
+AlloyBlastSmelterRecipeType=合金冶炼炉
+Tooltip_AlloyBlastSmelter_00=每超过配方温度900K，耗能均将乘以95%%（不计超频）
+Tooltip_AlloyBlastSmelter_01=每超过配方温度1800K，将进行一次无损超频
+Tooltip_AlloyBlastSmelter_02=超过MV后的每一级电压，都会将温度提高100K
+Tooltip_AlloyBlastSmelter_03=只能安装一个能源仓!
+Tooltip_AlloyBlastSmelter_04=固定并行为16
+Tooltip_AlloyBlastSmelter_05=在控制器内放入并行控制核心来减少耗电！
+Tooltip_AlloyBlastSmelter_Casing=任意冶炼炉机械方块
 
 NamePetrochemicalPlant=石化工厂
 gtnl.recipe.PetrochemicalPlantRecipes=石化工厂
