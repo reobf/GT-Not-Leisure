@@ -579,6 +579,18 @@ public class TextLocalization {
         "Any Cutting Factory Frame",
         "Tooltip_LargeCutter_Casing");
 
+    public static final String NameDigester = texter("Digester", "NameDigester");
+    public static final String DigesterRecipeType = texter("Digester", "DigesterRecipeType");
+    public static final String Tooltip_Digester_00 = texter(
+        "Increase coil levels to gain higher speed boosts and reduced power consumption!",
+        "Tooltip_Digester_00");
+    public static final String Tooltip_Digester_01 = texter(
+        "After each voltage level exceeds MV, the temperature will increase by 100K",
+        "Tooltip_Digester_01");
+    public static final String Tooltip_Digester_Casing = texter(
+        "Any Robust Tungstensteel Machine Casing",
+        "Tooltip_Digester_Casing");
+
     public static final String NameLargeChemicalBath = texter("Large Chemical Bath", "NameLargeChemicalBath");
     public static final String LargeChemicalBathRecipeType = texter(
         "Ore Washer / Simple Washer / Chemical Bath",

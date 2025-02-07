@@ -154,9 +154,7 @@ public class LargeChemicalBath extends GTMMultiMachineBase<LargeChemicalBath> im
                         .dot(1)
                         .atLeast(InputHatch, OutputHatch, InputBus, OutputBus, Maintenance, Energy)
                         .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(blockCasings2Misc, 4))))
-                .addElement(
-                    'C',
-                    ofChain(ofBlock(Blocks.air, 0), ofBlock(Blocks.flowing_water, 0), ofBlock(Blocks.water, 0)))
+                .addElement('C', ofChain(ofBlock(Blocks.air, 0), ofBlock(Blocks.water, 0)))
                 .build();
         }
         return STRUCTURE_DEFINITION;

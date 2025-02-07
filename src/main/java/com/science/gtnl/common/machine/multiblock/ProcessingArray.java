@@ -93,7 +93,7 @@ public class ProcessingArray extends MultiMachineBase<ProcessingArray> implement
 
     @Override
     public boolean isEnablePerfectOverclock() {
-        return true;
+        return false;
     }
 
     @Override

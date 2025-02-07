@@ -982,6 +982,12 @@ Tooltip_Desulfurizer_01=每提升一个线圈等级，处理速度提升10%%
 Tooltip_Desulfurizer_02=机器可进行§c无损超频§7
 Tooltip_Desulfurizer_Casing=任意洁净不锈钢机械方块
 
+NameDigester=煮解池
+DigesterRecipeType=煮解池
+Tooltip_Digester_00=提升线圈等级来获得更高的速度加成和耗电减免！
+Tooltip_Digester_01=超过MV后的每一级电压，都会将温度提高100K
+Tooltip_Digester_Casing=任意强化钨钢机械方块
+
 NamePetrochemicalPlant=石化工厂
 gtnl.recipe.PetrochemicalPlantRecipes=石化工厂
 PetrochemicalPlantRecipeType=石化工厂

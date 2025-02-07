@@ -249,6 +249,7 @@ public enum GTNLItemList {
     LargeExtractor,
     EnergyInfuser,
     LargeCanning,
+    Digester,
 
     ReactionFurnace,
     LibraryOfRuina,

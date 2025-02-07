@@ -42,6 +42,7 @@ import com.science.gtnl.common.machine.multiblock.SteamCracking;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.BlazeBlastFurnace;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.ChemicalPlant;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.ColdIceFreezer;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.Digester;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.ElectricImplosionCompressor;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.EnergyInfuser;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeArcSmelter;
@@ -140,6 +141,7 @@ public class MachineLoader {
     public static ItemStack ReactionFurnace;
     public static ItemStack EnergyInfuser;
     public static ItemStack LargeCanning;
+    public static ItemStack Digester;
 
     public static void loadMachines() {
 
@@ -440,6 +442,9 @@ public class MachineLoader {
 
         LargeCanning = new LargeCanning(21064, "LargeCanning", TextLocalization.NameLargeCanning).getStackForm(1);
         GTNLItemList.LargeCanning.set(LargeCanning);
+
+        Digester = new Digester(21065, "Digester", TextLocalization.NameDigester).getStackForm(1);
+        GTNLItemList.Digester.set(Digester);
 
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
             21919,
