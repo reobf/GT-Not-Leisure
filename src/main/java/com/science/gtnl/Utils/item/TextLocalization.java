@@ -163,7 +163,7 @@ public class TextLocalization {
         "Super Crafting Input Bus (ME)",
         "SuperCraftingInputBusME");
     public static final String Tooltip_SuperCraftingInputHatchME_00 = texter(
-        "Fluid and item input for Multiblocks",
+        "Item input for Multiblocks",
         "Tooltip_SuperCraftingInputHatchME_00");
     public static final String Tooltip_SuperCraftingInputHatchME_01_00 = texter(
         "Hatch Tier: §l§1UIV",
@@ -183,6 +183,18 @@ public class TextLocalization {
     public static final String Tooltip_SuperCraftingInputHatchME_04 = texter(
         "Change ME connection behavior by right-clicking with wire cutter",
         "Tooltip_SuperCraftingInputHatchME_04");
+    public static final String Button_Tooltip_SuperCraftingInputHatchME_00 = texter(
+        "Place manual items",
+        "Button_Tooltip_SuperCraftingInputHatchME_00");
+    public static final String Button_Tooltip_SuperCraftingInputHatchME_01 = texter(
+        "Return all internally stored items back to AE",
+        "Button_Tooltip_SuperCraftingInputHatchME_01");
+    public static final String Button_Tooltip_SuperCraftingInputHatchME_02_00 = texter(
+        "Pattern Optimization:\n§7Allowed",
+        "Button_Tooltip_SuperCraftingInputHatchME_02_00");
+    public static final String Button_Tooltip_SuperCraftingInputHatchME_02_01 = texter(
+        "Pattern Optimization:\n§7Disabled",
+        "Button_Tooltip_SuperCraftingInputHatchME_02_01");
 
     public static final String Tooltip_LaserBeacon = texter(
         "Produces a high precision laser from a powerful current.",

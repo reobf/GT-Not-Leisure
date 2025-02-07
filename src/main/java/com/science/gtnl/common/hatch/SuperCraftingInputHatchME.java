@@ -50,6 +50,7 @@ import com.gtnewhorizons.modularui.common.widget.Scrollable;
 import com.gtnewhorizons.modularui.common.widget.SlotGroup;
 import com.gtnewhorizons.modularui.common.widget.SlotWidget;
 import com.science.gtnl.Utils.item.TextLocalization;
+import com.science.gtnl.Utils.item.TextUtils;
 
 import appeng.api.AEApi;
 import appeng.api.implementations.ICraftingPatternItem;
@@ -352,7 +353,8 @@ public class SuperCraftingInputHatchME extends MTEHatchInputBus
                 TextLocalization.Tooltip_SuperCraftingInputHatchME_02,
                 supportFluids ? TextLocalization.Tooltip_SuperCraftingInputHatchME_03_00
                     : TextLocalization.Tooltip_SuperCraftingInputHatchME_03_01,
-                TextLocalization.Tooltip_SuperCraftingInputHatchME_04 });
+                TextLocalization.Tooltip_SuperCraftingInputHatchME_04,
+                TextLocalization.Adder + TextUtils.SCIENCE_NOT_LEISURE });
         disableSort = true;
         this.supportFluids = supportFluids;
     }
@@ -734,7 +736,7 @@ public class SuperCraftingInputHatchME extends MTEHatchInputBus
         })
             .setPlayClickSound(true)
             .setBackground(GTUITextures.BUTTON_STANDARD, GTUITextures.OVERLAY_BUTTON_PLUS_LARGE)
-            .addTooltips(ImmutableList.of("Place manual items"))
+            .addTooltips(ImmutableList.of(TextLocalization.Button_Tooltip_SuperCraftingInputHatchME_00))
             .setSize(16, 16)
             .setPos(170, 46))
             .widget(new ButtonWidget().setOnClick((clickData, widget) -> {
@@ -744,7 +746,7 @@ public class SuperCraftingInputHatchME extends MTEHatchInputBus
             })
                 .setPlayClickSound(true)
                 .setBackground(GTUITextures.BUTTON_STANDARD, GTUITextures.OVERLAY_BUTTON_EXPORT)
-                .addTooltips(ImmutableList.of("Return all internally stored items back to AE"))
+                .addTooltips(ImmutableList.of(TextLocalization.Button_Tooltip_SuperCraftingInputHatchME_01))
                 .setSize(16, 16)
                 .setPos(170, 28))
             .widget(
@@ -752,8 +754,8 @@ public class SuperCraftingInputHatchME extends MTEHatchInputBus
                     .setToggle(() -> disablePatternOptimization, val -> disablePatternOptimization = val)
                     .setStaticTexture(GTUITextures.OVERLAY_BUTTON_PATTERN_OPTIMIZE)
                     .setVariableBackground(GTUITextures.BUTTON_STANDARD_TOGGLE)
-                    .addTooltip(0, "Pattern Optimization:\n§7Allowed")
-                    .addTooltip(1, "Pattern Optimization:\n§7Disabled")
+                    .addTooltip(0, TextLocalization.Button_Tooltip_SuperCraftingInputHatchME_02_00)
+                    .addTooltip(1, TextLocalization.Button_Tooltip_SuperCraftingInputHatchME_02_01)
                     .setPos(170, 10)
                     .setSize(16, 16));
     }
