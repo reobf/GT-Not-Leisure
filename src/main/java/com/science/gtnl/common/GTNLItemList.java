@@ -125,6 +125,8 @@ public enum GTNLItemList {
     FluidManaInputHatch,
     FluidIceInputHatch,
     FluidBlazeInputHatch,
+    SuperCraftingInputHatchME,
+    SuperCraftingInputBusME,
 
     LaserBeacon,
     BronzeBrickCasing,
@@ -247,7 +249,6 @@ public enum GTNLItemList {
     LargeExtractor,
     EnergyInfuser,
     LargeCanning,
-    SuperCraftingInputHatchME,
 
     ReactionFurnace,
     LibraryOfRuina,

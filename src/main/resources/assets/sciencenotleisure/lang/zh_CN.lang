@@ -16,10 +16,13 @@ HatchCustomFluid_02=允许的流体:
 HatchCustomFluid_03=空
 
 SuperCraftingInputHatchME=超级样板输入总成(ME)
+SuperCraftingInputBusME=超级样板输入总线(ME)
 Tooltip_SuperCraftingInputHatchME_00=为多方块机器输入物品和流体
-Tooltip_SuperCraftingInputHatchME_01=仓室等级: §l§1UIV
+Tooltip_SuperCraftingInputHatchME_01_00=仓室等级: §l§1UIV
+Tooltip_SuperCraftingInputHatchME_01_01=仓室等级: §dLuV
 Tooltip_SuperCraftingInputHatchME_02=根据放入其中的样板对接ME系统处理,为每个样板提供输入隔离
-Tooltip_SuperCraftingInputHatchME_03=支持包含流体的样板
+Tooltip_SuperCraftingInputHatchME_03_00=支持包含流体的样板
+Tooltip_SuperCraftingInputHatchME_03_01=不支持包含流体的样板
 Tooltip_SuperCraftingInputHatchME_04=手持剪线钳右键以改变仓室与ME网络的连接模式
 
 MetaCasing.0.name=测试机械方块

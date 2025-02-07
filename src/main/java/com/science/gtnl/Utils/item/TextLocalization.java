@@ -159,18 +159,27 @@ public class TextLocalization {
     public static final String SuperCraftingInputHatchME = texter(
         "Super Crafting Input Buffer (ME)",
         "SuperCraftingInputHatchME");
+    public static final String SuperCraftingInputBusME = texter(
+        "Super Crafting Input Bus (ME)",
+        "SuperCraftingInputBusME");
     public static final String Tooltip_SuperCraftingInputHatchME_00 = texter(
         "Fluid and item input for Multiblocks",
         "Tooltip_SuperCraftingInputHatchME_00");
-    public static final String Tooltip_SuperCraftingInputHatchME_01 = texter(
+    public static final String Tooltip_SuperCraftingInputHatchME_01_00 = texter(
         "Hatch Tier: §l§1UIV",
-        "Tooltip_SuperCraftingInputHatchME_01");
+        "Tooltip_SuperCraftingInputHatchME_01_00");
+    public static final String Tooltip_SuperCraftingInputHatchME_01_01 = texter(
+        "Hatch Tier: §dLuV",
+        "Tooltip_SuperCraftingInputHatchME_01_01");
     public static final String Tooltip_SuperCraftingInputHatchME_02 = texter(
         "Processes patterns directly from ME",
         "Tooltip_SuperCraftingInputHatchME_02");
-    public static final String Tooltip_SuperCraftingInputHatchME_03 = texter(
+    public static final String Tooltip_SuperCraftingInputHatchME_03_00 = texter(
         "It supports patterns including fluids",
-        "Tooltip_SuperCraftingInputHatchME_03");
+        "Tooltip_SuperCraftingInputHatchME_03_00");
+    public static final String Tooltip_SuperCraftingInputHatchME_03_01 = texter(
+        "It does not support patterns including fluids",
+        "Tooltip_SuperCraftingInputHatchME_03_01");
     public static final String Tooltip_SuperCraftingInputHatchME_04 = texter(
         "Change ME connection behavior by right-clicking with wire cutter",
         "Tooltip_SuperCraftingInputHatchME_04");

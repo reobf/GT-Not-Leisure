@@ -495,6 +495,13 @@ public class MachineLoader {
                 "Super Crafting Input Buffer (ME)",
                 TextLocalization.SuperCraftingInputHatchME,
                 true).getStackForm(1L));
+
+        GTNLItemList.SuperCraftingInputBusME.set(
+            new SuperCraftingInputHatchME(
+                21505,
+                "Super Crafting Input Bus (ME)",
+                TextLocalization.SuperCraftingInputBusME,
+                false).getStackForm(1L));
     }
 
     public static void run() {
