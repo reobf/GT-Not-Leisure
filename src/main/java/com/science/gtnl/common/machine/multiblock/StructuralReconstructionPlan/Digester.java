@@ -12,11 +12,13 @@ import javax.annotation.Nonnull;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
+import net.minecraftforge.fluids.FluidStack;
 
 import org.jetbrains.annotations.NotNull;
 
+import com.dreammaster.fluids.FluidList;
+import com.gtnewhorizon.structurelib.alignment.IAlignmentLimits;
 import com.gtnewhorizon.structurelib.alignment.constructable.ISurvivalConstructable;
 import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
@@ -37,12 +39,17 @@ import gregtech.api.logic.ProcessingLogic;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.check.CheckRecipeResult;
 import gregtech.api.recipe.check.CheckRecipeResultRegistry;
+import gregtech.api.recipe.check.SimpleCheckRecipeResult;
 import gregtech.api.render.TextureFactory;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.OverclockCalculator;
 import gregtech.common.blocks.BlockCasings4;
+import gtPlusPlus.api.objects.Logger;
+import gtPlusPlus.core.util.minecraft.FluidUtils;
 import gtnhlanth.api.recipe.LanthanidesRecipeMaps;
+import ic2.core.init.BlocksItems;
+import ic2.core.init.InternalName;
 
 public class Digester extends GTMMultiMachineBase<Digester> implements ISurvivalConstructable {
 
@@ -154,7 +161,6 @@ public class Digester extends GTMMultiMachineBase<Digester> implements ISurvival
 
         if (checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && checkHatch()
             && mCasing >= 55) {
-            replaceWater();
             this.mHeatingCapacity = (int) this.getCoilLevel()
                 .getHeat() + 100 * (BWUtil.getTier(this.getMaxInputEu()) - 2);
             return true;
@@ -197,6 +203,11 @@ public class Digester extends GTMMultiMachineBase<Digester> implements ISurvival
     }
 
     @Override
+    protected IAlignmentLimits getInitialAlignmentLimits() {
+        return (d, r, f) -> d.offsetY == 0 && r.isNotRotated() && !f.isVerticallyFliped();
+    }
+
+    @Override
     public ProcessingLogic createProcessingLogic() {
         return new ProcessingLogic() {
 
@@ -214,9 +225,12 @@ public class Digester extends GTMMultiMachineBase<Digester> implements ISurvival
 
             @Override
             protected @Nonnull CheckRecipeResult validateRecipe(@Nonnull GTRecipe recipe) {
-                return recipe.mSpecialValue <= Digester.this.getCoilLevel()
-                    .getHeat() ? CheckRecipeResultRegistry.SUCCESSFUL
-                        : CheckRecipeResultRegistry.insufficientHeat(recipe.mSpecialValue);
+                if (checkForNitricAcid()) {
+                    return recipe.mSpecialValue <= Digester.this.getCoilLevel()
+                        .getHeat() ? CheckRecipeResultRegistry.SUCCESSFUL
+                            : CheckRecipeResultRegistry.insufficientHeat(recipe.mSpecialValue);
+                }
+                return SimpleCheckRecipeResult.ofFailure("no_nitricacid");
             }
         };
     }
@@ -225,37 +239,62 @@ public class Digester extends GTMMultiMachineBase<Digester> implements ISurvival
         return CASING_INDEX;
     }
 
-    public void replaceWater() {
+    public boolean checkForNitricAcid() {
         IGregTechTileEntity aBaseMetaTileEntity = this.getBaseMetaTileEntity();
-        World world = aBaseMetaTileEntity.getWorld();
-        int baseX = aBaseMetaTileEntity.getXCoord();
-        int baseY = aBaseMetaTileEntity.getYCoord();
-        int baseZ = aBaseMetaTileEntity.getZCoord();
-
-        ForgeDirection frontFacing = aBaseMetaTileEntity.getFrontFacing();
-        ForgeDirection backFacing = frontFacing.getOpposite();
-
+        ForgeDirection backFacing = aBaseMetaTileEntity.getBackFacing();
         ForgeDirection leftDir = backFacing.getRotation(ForgeDirection.UP);
 
-        for (int stepBack = 5; stepBack >= 1; stepBack--) { // 向后5格到1格
+        int tAmount = 0;
+
+        for (int stepBack = 5; stepBack >= 1; stepBack--) {
             int mainX = backFacing.offsetX * stepBack;
             int mainZ = backFacing.offsetZ * stepBack;
 
-            for (int stepLeft = -2; stepLeft <= 2; stepLeft++) { // 向左2格到向右2格
+            for (int stepLeft = -2; stepLeft <= 2; stepLeft++) {
                 int sideX = leftDir.offsetX * stepLeft;
                 int sideZ = leftDir.offsetZ * stepLeft;
 
-                for (int stepUp = 1; stepUp <= 3; stepUp++) { // 向上1格到3格
-                    int x = baseX + mainX + sideX;
-                    int y = baseY + stepUp;
-                    int z = baseZ + mainZ + sideZ;
+                for (int stepUp = 1; stepUp <= 2; stepUp++) {
+                    int x = aBaseMetaTileEntity.getXCoord() + mainX + sideX;
+                    int y = aBaseMetaTileEntity.getYCoord() + stepUp;
+                    int z = aBaseMetaTileEntity.getZCoord() + mainZ + sideZ;
 
-                    Block block = world.getBlock(x, y, z);
-                    if (block == Blocks.air || block == Blocks.flowing_water) {
-                        world.setBlock(x, y, z, Blocks.water, 0, 3);
+                    Block tBlock = aBaseMetaTileEntity.getBlock(x, y, z);
+                    int metadata = aBaseMetaTileEntity.getMetaID(x, y, z);
+
+                    if (tBlock == Blocks.air || (tBlock == FluidList.NitricAcid.Fluid && metadata != 0)) {
+                        if (this.getStoredFluids() != null) {
+                            for (FluidStack stored : this.getStoredFluids()) {
+                                if (stored.isFluidEqual(FluidUtils.getFluidStack("nitricacid", 1))) {
+                                    if (stored.amount >= 1000) {
+                                        stored.amount -= 1000;
+                                        Block fluidUsed = null;
+                                        if (tBlock == Blocks.air
+                                            || (tBlock == FluidList.NitricAcid.Fluid && metadata != 0)) {
+                                            fluidUsed = FluidList.NitricAcid.Fluid;
+                                        } else if (tBlock == Blocks.water) {
+                                            fluidUsed = BlocksItems.getFluidBlock(InternalName.fluidDistilledWater);
+                                        }
+                                        aBaseMetaTileEntity.getWorld()
+                                            .setBlock(x, y, z, fluidUsed, 0, 3);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    if (tBlock == FluidList.NitricAcid.Fluid && metadata == 0) {
+                        ++tAmount;
                     }
                 }
             }
         }
+
+        boolean isValidFluid = tAmount >= 42;
+        if (isValidFluid) {
+            Logger.WARNING("Filled structure.");
+        } else {
+            Logger.WARNING("Did not fill structure.");
+        }
+        return isValidFluid;
     }
 }

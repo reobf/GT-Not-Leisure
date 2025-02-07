@@ -20,6 +20,7 @@ import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
+import com.gtnewhorizon.structurelib.alignment.IAlignmentLimits;
 import com.gtnewhorizon.structurelib.alignment.constructable.ISurvivalConstructable;
 import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
@@ -140,6 +141,11 @@ public class LargeChemicalBath extends GTMMultiMachineBase<LargeChemicalBath> im
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeChemicalBath_Casing)
             .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
         return tt;
+    }
+
+    @Override
+    protected IAlignmentLimits getInitialAlignmentLimits() {
+        return (d, r, f) -> d.offsetY == 0 && r.isNotRotated() && !f.isVerticallyFliped();
     }
 
     @Override

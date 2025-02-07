@@ -40,9 +40,7 @@ public class BlockExtremeAnvil extends BlockFalling {
 
     @Override
     public void func_149828_a(World world, int x, int y, int z, int meta) {
-        // 使用传入的元数据放置方块
-        world.setBlock(x, y, z, this, meta, 3); // 3 = 强制更新 + 通知客户端
-        // 原有音效和实体击杀逻辑
+        world.setBlock(x, y, z, this, meta, 3);
         world.playSoundEffect(
             x + 0.5D,
             y + 0.5D,
@@ -183,13 +181,12 @@ public class BlockExtremeAnvil extends BlockFalling {
         else {
             ItemStack foundationStack = new ItemStack(foundationBlock, 1, world.getBlockMetadata(x, y - 1, z));
             if (!hasOreTag(foundationStack, "neutronUnbreak")) {
-                world.func_147480_a(x, y - 1, z, true); // 立即销毁非法基础的情况
+                world.func_147480_a(x, y - 1, z, true);
             }
         }
     }
 
     private boolean shouldFall(World world, int x, int y, int z) {
-        // 下方是空气或液体时允许下落
         Block below = world.getBlock(x, y - 1, z);
         return below.isAir(world, x, y - 1, z) || below.getMaterial()
             .isLiquid() || below == Blocks.fire;
@@ -197,7 +194,6 @@ public class BlockExtremeAnvil extends BlockFalling {
 
     private void startFalling(World world, int x, int y, int z) {
         if (canFallInto(world, x, y - 1, z) && y >= 0) {
-            // 获取当前方块的元数据
             int meta = world.getBlockMetadata(x, y, z);
 
             EntityExtremeAnvil entity = new EntityExtremeAnvil(world, x + 0.5D, y + 0.5D, z + 0.5D, this, meta);
