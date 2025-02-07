@@ -64,6 +64,7 @@ public class BlockExtremeAnvil extends BlockFalling {
         return false;
     }
 
+    @SideOnly(Side.CLIENT)
     @Override
     public int getRenderType() {
         return ClientProxy.extremeAnvilRenderType;

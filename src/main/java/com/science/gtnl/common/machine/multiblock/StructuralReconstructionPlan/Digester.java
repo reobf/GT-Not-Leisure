@@ -142,9 +142,6 @@ public class Digester extends GTMMultiMachineBase<Digester> implements ISurvival
                         .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(sBlockCasings4, 0))))
                 .addElement('C', ofBlock(sBlockCasings4, 1))
                 .addElement('D', ofCoil(Digester::setCoilLevel, Digester::getCoilLevel))
-                .addElement(
-                    'E',
-                    ofChain(ofBlock(Blocks.air, 0), ofBlock(Blocks.flowing_water, 0), ofBlock(Blocks.water, 0)))
                 .build();
         }
         return STRUCTURE_DEFINITION;
@@ -221,7 +218,6 @@ public class Digester extends GTMMultiMachineBase<Digester> implements ISurvival
                     .getHeat() ? CheckRecipeResultRegistry.SUCCESSFUL
                         : CheckRecipeResultRegistry.insufficientHeat(recipe.mSpecialValue);
             }
-
         };
     }
 

@@ -464,9 +464,6 @@ public class BlockRegister {
         ItemStack EndPortalFrame = new ItemStack(Blocks.end_portal_frame, 1, 0);
         ItemStack CommandBlock = new ItemStack(Blocks.command_block, 1, 0);
 
-        Block cosmicNeutroniumBlock = GameRegistry.findBlock("Avaritia", "Resource_Block");
-        ItemStack CosmicNeutroniumBlock = new ItemStack(cosmicNeutroniumBlock, 1, 0);
-
         for (int LampMeta = 1; LampMeta <= 32; LampMeta++) {
             ItemStack LampTier = new ItemStack(MetaBlockGlow, 1, LampMeta);
             OreDictionary.registerOre("blockGlassHV", LampTier);
@@ -484,7 +481,6 @@ public class BlockRegister {
         OreDictionary.registerOre("neutronUnbreak", EndPortalFrame);
         OreDictionary.registerOre("neutronUnbreak", Bedrock);
         OreDictionary.registerOre("neutronUnbreak", ExtremeAnvilBlock);
-        OreDictionary.registerOre("neutronUnbreak", CosmicNeutroniumBlock);
         OreDictionary.registerOre("blockGlassUEV", GaiaGlass);
         OreDictionary.registerOre("blockGlassUV", TerraGlass);
         OreDictionary.registerOre("blockGlassLuV", FusionGlass);
