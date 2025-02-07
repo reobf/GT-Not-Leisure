@@ -1,61 +1,77 @@
 package com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
-import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaCasing;
 import static gregtech.api.GregTechAPI.sBlockCasings2;
 import static gregtech.api.enums.HatchElement.*;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Textures.BlockIcons.OVERLAY_FRONT_MULTI_CANNER;
+import static gregtech.api.enums.Textures.BlockIcons.OVERLAY_FRONT_MULTI_CANNER_ACTIVE;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
 import static gregtech.api.util.GTStructureUtility.ofFrame;
-import static gtPlusPlus.core.block.ModBlocks.blockCasingsMisc;
-import static gtPlusPlus.xmod.gregtech.common.blocks.textures.TexturesGtBlock.*;
+import static gtPlusPlus.core.block.ModBlocks.blockCasings2Misc;
 
+import java.util.Arrays;
+import java.util.Collection;
+
+import javax.annotation.Nonnull;
+
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.StatCollector;
 import net.minecraftforge.common.util.ForgeDirection;
 
 import com.gtnewhorizon.structurelib.alignment.constructable.ISurvivalConstructable;
 import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
+import com.gtnewhorizons.modularui.api.screen.ModularWindow;
+import com.gtnewhorizons.modularui.api.screen.UIBuildContext;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.TAE;
 import gregtech.api.enums.Textures;
+import gregtech.api.gui.modularui.GTUITextures;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.recipe.RecipeMap;
+import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.render.TextureFactory;
+import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
-import gtPlusPlus.api.recipe.GTPPRecipeMaps;
 
-public class LargeMixer extends GTMMultiMachineBase<LargeMixer> implements ISurvivalConstructable {
+public class LargeCanning extends GTMMultiMachineBase<LargeCanning> implements ISurvivalConstructable {
 
     public static final String STRUCTURE_PIECE_MAIN = "main";
-    private static IStructureDefinition<LargeMixer> STRUCTURE_DEFINITION = null;
-    public static final String LIL_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/large_mixer";
+    private static IStructureDefinition<LargeCanning> STRUCTURE_DEFINITION = null;
+    public static final String LA_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/large_canning";
     public static final int CASING_INDEX = TAE.GTPP_INDEX(11);
     public final int horizontalOffSet = 2;
-    public final int verticalOffSet = 4;
+    public final int verticalOffSet = 2;
     public final int depthOffSet = 0;
     public static String[][] shape;
+    private static final int MACHINEMODE_CANNER = 0;
+    private static final int MACHINEMODE_FLUIDCANNER = 1;
 
-    public LargeMixer(int aID, String aName, String aNameRegional) {
+    public LargeCanning(int aID, String aName, String aNameRegional) {
         super(aID, aName, aNameRegional);
-        shape = StructureUtils.readStructureFromFile(LIL_STRUCTURE_FILE_PATH);
+        shape = StructureUtils.readStructureFromFile(LA_STRUCTURE_FILE_PATH);
     }
 
-    public LargeMixer(String aName) {
+    public LargeCanning(String aName) {
         super(aName);
-        shape = StructureUtils.readStructureFromFile(LIL_STRUCTURE_FILE_PATH);
+        shape = StructureUtils.readStructureFromFile(LA_STRUCTURE_FILE_PATH);
     }
 
     @Override
     public IMetaTileEntity newMetaEntity(IGregTechTileEntity aTileEntity) {
-        return new LargeMixer(this.mName);
+        return new LargeCanning(this.mName);
     }
 
     @Override
@@ -64,12 +80,12 @@ public class LargeMixer extends GTMMultiMachineBase<LargeMixer> implements ISurv
         if (side == aFacing) {
             if (aActive) return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()),
                 TextureFactory.builder()
-                    .addIcon(oMCDIndustrialMixerActive)
+                    .addIcon(OVERLAY_FRONT_MULTI_CANNER_ACTIVE)
                     .extFacing()
                     .build() };
             return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()),
                 TextureFactory.builder()
-                    .addIcon(oMCDIndustrialMixer)
+                    .addIcon(OVERLAY_FRONT_MULTI_CANNER)
                     .extFacing()
                     .build() };
         }
@@ -82,13 +98,60 @@ public class LargeMixer extends GTMMultiMachineBase<LargeMixer> implements ISurv
 
     @Override
     public RecipeMap<?> getRecipeMap() {
-        return GTPPRecipeMaps.mixerNonCellRecipes;
+        return (machineMode == MACHINEMODE_FLUIDCANNER) ? RecipeMaps.fluidCannerRecipes : RecipeMaps.cannerRecipes;
+    }
+
+    @Nonnull
+    @Override
+    public Collection<RecipeMap<?>> getAvailableRecipeMaps() {
+        return Arrays.asList(RecipeMaps.fluidCannerRecipes, RecipeMaps.cannerRecipes);
+    }
+
+    @Override
+    public void saveNBTData(NBTTagCompound aNBT) {
+        super.saveNBTData(aNBT);
+        aNBT.setInteger("mode", machineMode);
+    }
+
+    @Override
+    public void loadNBTData(final NBTTagCompound aNBT) {
+        super.loadNBTData(aNBT);
+        machineMode = aNBT.getInteger("mode");
+    }
+
+    @Override
+    public void addUIWidgets(ModularWindow.Builder builder, UIBuildContext buildContext) {
+        super.addUIWidgets(builder, buildContext);
+        setMachineModeIcons();
+        builder.widget(createModeSwitchButton(builder));
+    }
+
+    @Override
+    public final void onScrewdriverRightClick(ForgeDirection side, EntityPlayer aPlayer, float aX, float aY, float aZ) {
+        this.machineMode = (byte) ((this.machineMode + 1) % 2);
+        GTUtility.sendChatToPlayer(aPlayer, StatCollector.translateToLocal("LargeCanning_Mode_" + this.machineMode));
+    }
+
+    @Override
+    public String getMachineModeName() {
+        return StatCollector.translateToLocal("LargeCanning_Mode_" + machineMode);
+    }
+
+    @Override
+    public void setMachineModeIcons() {
+        machineModeIcons.add(GTUITextures.OVERLAY_BUTTON_MACHINEMODE_PACKAGER);
+        machineModeIcons.add(GTUITextures.OVERLAY_BUTTON_MACHINEMODE_LPF_FLUID);
+    }
+
+    @Override
+    public boolean supportsMachineModeSwitch() {
+        return true;
     }
 
     @Override
     public MultiblockTooltipBuilder createTooltip() {
         MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
-        tt.addMachineType(TextLocalization.LargeMixerRecipeType)
+        tt.addMachineType(TextLocalization.LargeCanningRecipeType)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_00)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_01)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_02)
@@ -96,32 +159,31 @@ public class LargeMixer extends GTMMultiMachineBase<LargeMixer> implements ISurv
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
-            .beginStructureBlock(5, 6, 5, true)
-            .addInputHatch(TextLocalization.Tooltip_LargeMixer_Casing)
-            .addOutputHatch(TextLocalization.Tooltip_LargeMixer_Casing)
-            .addInputBus(TextLocalization.Tooltip_LargeMixer_Casing)
-            .addOutputBus(TextLocalization.Tooltip_LargeMixer_Casing)
-            .addEnergyHatch(TextLocalization.Tooltip_LargeMixer_Casing)
-            .addMaintenanceHatch(TextLocalization.Tooltip_LargeMixer_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
+            .beginStructureBlock(5, 5, 7, true)
+            .addInputHatch(TextLocalization.Tooltip_LargeCanning_Casing)
+            .addOutputHatch(TextLocalization.Tooltip_LargeCanning_Casing)
+            .addInputBus(TextLocalization.Tooltip_LargeCanning_Casing)
+            .addOutputBus(TextLocalization.Tooltip_LargeCanning_Casing)
+            .addEnergyHatch(TextLocalization.Tooltip_LargeCanning_Casing)
+            .addMaintenanceHatch(TextLocalization.Tooltip_LargeCanning_Casing)
+            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY + " §rX " + TextUtils.SRP);
         return tt;
     }
 
     @Override
-    public IStructureDefinition<LargeMixer> getStructureDefinition() {
+    public IStructureDefinition<LargeCanning> getStructureDefinition() {
         if (STRUCTURE_DEFINITION == null) {
-            STRUCTURE_DEFINITION = StructureDefinition.<LargeMixer>builder()
+            STRUCTURE_DEFINITION = StructureDefinition.<LargeCanning>builder()
                 .addShape(STRUCTURE_PIECE_MAIN, transpose(shape))
-                .addElement('A', ofBlock(MetaCasing, 12))
-                .addElement('B', ofFrame(Materials.TungstenSteel))
-                .addElement('C', ofBlock(sBlockCasings2, 14))
-                .addElement('D', ofBlock(sBlockCasings2, 15))
+                .addElement('A', ofBlockAnyMeta(GameRegistry.findBlock(IndustrialCraft2.ID, "blockAlloyGlass")))
+                .addElement('B', ofBlock(sBlockCasings2, 13))
+                .addElement('C', ofFrame(Materials.StainlessSteel))
                 .addElement(
-                    'E',
-                    buildHatchAdder(LargeMixer.class).casingIndex(CASING_INDEX)
+                    'D',
+                    buildHatchAdder(LargeCanning.class).casingIndex(CASING_INDEX)
                         .dot(1)
                         .atLeast(InputHatch, OutputHatch, InputBus, OutputBus, Maintenance, Energy)
-                        .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(blockCasingsMisc, 11))))
+                        .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(blockCasings2Misc, 4))))
                 .build();
         }
         return STRUCTURE_DEFINITION;
@@ -137,7 +199,7 @@ public class LargeMixer extends GTMMultiMachineBase<LargeMixer> implements ISurv
         }
 
         ParallelTier = getParallelTier(aStack);
-        return mCasing >= 50;
+        return mCasing >= 80;
     }
 
     @Override

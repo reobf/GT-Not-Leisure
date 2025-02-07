@@ -22,7 +22,7 @@ import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.Utils.item.TextUtils;
-import com.science.gtnl.common.hatch.MTEHatchCustomFluid;
+import com.science.gtnl.common.hatch.HatchCustomFluid;
 import com.science.gtnl.common.machine.multiMachineClasses.MultiMachineBase;
 
 import bartworks.util.BWUtil;
@@ -70,7 +70,7 @@ public class BlazeBlastFurnace extends MultiMachineBase<BlazeBlastFurnace> imple
         Materials.CarbonMonoxide.getGas(1000), Materials.SulfurDioxide.getGas(1000) };
 
     protected final ArrayList<MTEHatchOutput> mPollutionOutputHatches = new ArrayList<>();
-    public final ArrayList<MTEHatchCustomFluid> FluidBlazeInputHatch = new ArrayList<>();
+    public final ArrayList<HatchCustomFluid> FluidBlazeInputHatch = new ArrayList<>();
 
     public BlazeBlastFurnace(final int aID, final String aName, final String aNameRegional) {
         super(aID, aName, aNameRegional);
@@ -240,7 +240,7 @@ public class BlazeBlastFurnace extends MultiMachineBase<BlazeBlastFurnace> imple
             return false;
         } else {
             IMetaTileEntity aMetaTileEntity = aTileEntity.getMetaTileEntity();
-            if (aMetaTileEntity instanceof MTEHatchCustomFluid && aMetaTileEntity.getBaseMetaTileEntity()
+            if (aMetaTileEntity instanceof HatchCustomFluid && aMetaTileEntity.getBaseMetaTileEntity()
                 .getMetaTileID() == 21503) {
                 return addToMachineListInternal(FluidBlazeInputHatch, aTileEntity, aBaseCasingIndex);
             }
@@ -250,7 +250,7 @@ public class BlazeBlastFurnace extends MultiMachineBase<BlazeBlastFurnace> imple
 
     @Override
     public void updateSlots() {
-        for (MTEHatchCustomFluid tHatch : validMTEList(FluidBlazeInputHatch)) tHatch.updateSlots();
+        for (HatchCustomFluid tHatch : validMTEList(FluidBlazeInputHatch)) tHatch.updateSlots();
         super.updateSlots();
     }
 

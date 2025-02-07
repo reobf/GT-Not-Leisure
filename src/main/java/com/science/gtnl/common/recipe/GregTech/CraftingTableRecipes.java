@@ -135,9 +135,10 @@ public class CraftingTableRecipes implements IRecipePool {
         addCraftingRecipe(
             GTNLItemList.NeutroniumGearbox.get(1),
             new Object[] { "ABA", "CDC", "AEA", 'A',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 1L), 'B', "craftingToolHardHammer",
-                'C', GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Neutronium, 1L), 'D',
-                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Neutronium, 1L), 'E', "craftingToolWrench" });
+                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Neutronium, 1L), 'B',
+                "craftingToolHardHammer", 'C', GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Neutronium, 1L),
+                'D', GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Neutronium, 1L), 'E',
+                "craftingToolWrench" });
 
         addCraftingRecipe(
             GTNLItemList.EnergeticPhotovoltaicPowerStation.get(1),

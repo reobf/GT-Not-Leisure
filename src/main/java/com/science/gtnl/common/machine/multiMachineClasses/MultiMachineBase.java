@@ -42,7 +42,7 @@ import com.gtnewhorizons.modularui.common.widget.DynamicPositionedColumn;
 import com.gtnewhorizons.modularui.common.widget.DynamicPositionedRow;
 import com.gtnewhorizons.modularui.common.widget.Scrollable;
 import com.gtnewhorizons.modularui.common.widget.SlotWidget;
-import com.science.gtnl.common.hatch.MTEHatchCustomFluid;
+import com.science.gtnl.common.hatch.HatchCustomFluid;
 import com.science.gtnl.config.MainConfig;
 
 import gregtech.api.enums.GTValues;
@@ -397,8 +397,8 @@ public abstract class MultiMachineBase<T extends MultiMachineBase<T>> extends MT
         return rList;
     }
 
-    protected boolean depleteInputFromRestrictedHatches(Collection<MTEHatchCustomFluid> aHatches, int aAmount) {
-        for (final MTEHatchCustomFluid tHatch : validMTEList(aHatches)) {
+    protected boolean depleteInputFromRestrictedHatches(Collection<HatchCustomFluid> aHatches, int aAmount) {
+        for (final HatchCustomFluid tHatch : validMTEList(aHatches)) {
             FluidStack tLiquid = tHatch.getFluid();
             if (tLiquid == null || tLiquid.amount < aAmount) {
                 continue;

@@ -245,6 +245,9 @@ public enum GTNLItemList {
     LargeAutoclave,
     LargeSolidifier,
     LargeExtractor,
+    EnergyInfuser,
+    LargeCanning,
+    SuperCraftingInputHatchME,
 
     ReactionFurnace,
     LibraryOfRuina,

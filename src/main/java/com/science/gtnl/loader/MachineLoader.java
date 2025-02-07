@@ -4,7 +4,8 @@ import net.minecraft.item.ItemStack;
 
 import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.common.GTNLItemList;
-import com.science.gtnl.common.hatch.MTEHatchCustomFluid;
+import com.science.gtnl.common.hatch.HatchCustomFluid;
+import com.science.gtnl.common.hatch.SuperCraftingInputHatchME;
 import com.science.gtnl.common.machine.multiblock.AdvancedPhotovoltaicPowerStation;
 import com.science.gtnl.common.machine.multiblock.BloodSoulSacrificialArray;
 import com.science.gtnl.common.machine.multiblock.BrickedBlastFurnace;
@@ -42,10 +43,12 @@ import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.B
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.ChemicalPlant;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.ColdIceFreezer;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.ElectricImplosionCompressor;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.EnergyInfuser;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeArcSmelter;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeAssembler;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeAutoclave;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeBender;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeCanning;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeCentrifuge;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeChemicalBath;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeCutter;
@@ -135,6 +138,8 @@ public class MachineLoader {
     public static ItemStack LargeSolidifier;
     public static ItemStack LargeExtractor;
     public static ItemStack ReactionFurnace;
+    public static ItemStack EnergyInfuser;
+    public static ItemStack LargeCanning;
 
     public static void loadMachines() {
 
@@ -430,6 +435,12 @@ public class MachineLoader {
             .getStackForm(1);
         GTNLItemList.ReactionFurnace.set(ReactionFurnace);
 
+        EnergyInfuser = new EnergyInfuser(21063, "EnergyInfuser", TextLocalization.NameEnergyInfuser).getStackForm(1);
+        GTNLItemList.EnergyInfuser.set(EnergyInfuser);
+
+        LargeCanning = new LargeCanning(21064, "LargeCanning", TextLocalization.NameLargeCanning).getStackForm(1);
+        GTNLItemList.LargeCanning.set(LargeCanning);
+
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
             21919,
             "CheatOreProcessingFactory",
@@ -449,7 +460,7 @@ public class MachineLoader {
     public static void registerMTEHatch() {
 
         GTNLItemList.FluidManaInputHatch.set(
-            new MTEHatchCustomFluid(
+            new HatchCustomFluid(
                 FluidUtils.getFluidStack("fluidmana", 1)
                     .getFluid(),
                 512000,
@@ -459,7 +470,7 @@ public class MachineLoader {
                 6).getStackForm(1L));
 
         GTNLItemList.FluidIceInputHatch.set(
-            new MTEHatchCustomFluid(
+            new HatchCustomFluid(
                 FluidUtils.getFluidStack("ice", 1)
                     .getFluid(),
                 256000,
@@ -469,7 +480,7 @@ public class MachineLoader {
                 5).getStackForm(1L));
 
         GTNLItemList.FluidBlazeInputHatch.set(
-            new MTEHatchCustomFluid(
+            new HatchCustomFluid(
                 FluidUtils.getFluidStack("molten.blaze", 1)
                     .getFluid(),
                 256000,
@@ -477,6 +488,13 @@ public class MachineLoader {
                 "Fluid Blaze Input Hatch",
                 TextLocalization.FluidBlazeInputHatch,
                 5).getStackForm(1L));
+
+        GTNLItemList.SuperCraftingInputHatchME.set(
+            new SuperCraftingInputHatchME(
+                21504,
+                "Super Crafting Input Buffer (ME)",
+                TextLocalization.SuperCraftingInputHatchME,
+                true).getStackForm(1L));
     }
 
     public static void run() {

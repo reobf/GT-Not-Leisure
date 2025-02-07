@@ -24,14 +24,14 @@ import gregtech.api.render.TextureFactory;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.core.util.minecraft.FluidUtils;
 
-public class MTEHatchCustomFluid extends MTEHatch {
+public class HatchCustomFluid extends MTEHatch {
 
     public final Fluid mLockedFluid;
     public final int mFluidCapacity;
     protected FluidStack mLockedStack = null;
     protected String mTempMod = null;
 
-    public MTEHatchCustomFluid(Fluid aFluid, int aAmount, final int aID, final String aName, final String aNameRegional,
+    public HatchCustomFluid(Fluid aFluid, int aAmount, final int aID, final String aName, final String aNameRegional,
         int aTier) {
         super(
             aID,
@@ -45,8 +45,8 @@ public class MTEHatchCustomFluid extends MTEHatch {
         this.mFluidCapacity = aAmount;
     }
 
-    public MTEHatchCustomFluid(Fluid aFluid, int aAmount, final String aName, final int aTier,
-        final String[] aDescription, final ITexture[][][] aTextures) {
+    public HatchCustomFluid(Fluid aFluid, int aAmount, final String aName, final int aTier, final String[] aDescription,
+        final ITexture[][][] aTextures) {
         super(aName, aTier, 3, aDescription[0], aTextures);
         this.mLockedFluid = aFluid;
         this.mFluidCapacity = aAmount;
@@ -190,7 +190,7 @@ public class MTEHatchCustomFluid extends MTEHatch {
 
     @Override
     public MetaTileEntity newMetaEntity(final IGregTechTileEntity aTileEntity) {
-        return new MTEHatchCustomFluid(
+        return new HatchCustomFluid(
             this.mLockedFluid,
             this.mFluidCapacity,
             this.mName,

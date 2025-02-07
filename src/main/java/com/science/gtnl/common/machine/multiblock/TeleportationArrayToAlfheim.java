@@ -34,7 +34,7 @@ import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.Utils.rewrites.GTNL_ItemID;
-import com.science.gtnl.common.hatch.MTEHatchCustomFluid;
+import com.science.gtnl.common.hatch.HatchCustomFluid;
 import com.science.gtnl.common.machine.Special.PortalToAlfheimExplosion;
 import com.science.gtnl.common.machine.multiMachineClasses.MultiMachineBase;
 import com.science.gtnl.common.recipe.RecipeRegister;
@@ -62,7 +62,7 @@ public class TeleportationArrayToAlfheim extends MultiMachineBase<TeleportationA
 
     public String[][] shape;
     protected static GTNL_ItemID Bread;
-    public final ArrayList<MTEHatchCustomFluid> FluidManaInputHatch = new ArrayList<>();
+    public final ArrayList<HatchCustomFluid> FluidManaInputHatch = new ArrayList<>();
     private int mCasing;
     private static final int PORTAL_MODE = 0;
     private static final int NATURE_MODE = 1;
@@ -349,7 +349,7 @@ public class TeleportationArrayToAlfheim extends MultiMachineBase<TeleportationA
             return false;
         } else {
             IMetaTileEntity aMetaTileEntity = aTileEntity.getMetaTileEntity();
-            if (aMetaTileEntity instanceof MTEHatchCustomFluid && aMetaTileEntity.getBaseMetaTileEntity()
+            if (aMetaTileEntity instanceof HatchCustomFluid && aMetaTileEntity.getBaseMetaTileEntity()
                 .getMetaTileID() == 21501) {
                 return addToMachineListInternal(FluidManaInputHatch, aTileEntity, aBaseCasingIndex);
             }
@@ -359,7 +359,7 @@ public class TeleportationArrayToAlfheim extends MultiMachineBase<TeleportationA
 
     @Override
     public void updateSlots() {
-        for (MTEHatchCustomFluid tHatch : validMTEList(FluidManaInputHatch)) tHatch.updateSlots();
+        for (HatchCustomFluid tHatch : validMTEList(FluidManaInputHatch)) tHatch.updateSlots();
         super.updateSlots();
     }
 

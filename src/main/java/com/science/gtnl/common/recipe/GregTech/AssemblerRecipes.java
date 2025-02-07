@@ -563,7 +563,7 @@ public class AssemblerRecipes implements IRecipePool {
             .itemInputs(
                 GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Neutronium, 1L),
                 GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Neutronium, 2L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 4L),
+                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Neutronium, 4L),
                 GTUtility.getIntegratedCircuit(3))
             .itemOutputs(GTNLItemList.NeutroniumGearbox.get(1))
             .specialValue(0)

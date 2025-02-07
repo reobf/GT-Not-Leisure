@@ -11,6 +11,7 @@ import com.science.gtnl.Utils.item.TextHandler;
 import com.science.gtnl.common.block.Casings.Special.CrushingWheelsEventHandler;
 import com.science.gtnl.common.block.ReAvaritia.ExtremeAnvil.AnvilEventHandler;
 import com.science.gtnl.common.block.ReAvaritia.GooeyHandler;
+import com.science.gtnl.common.hatch.SuperCraftingInputHatchME;
 import com.science.gtnl.common.item.ReAvaritia.BlazeSword;
 import com.science.gtnl.common.item.ReAvaritia.ToolEvents;
 import com.science.gtnl.common.machine.multiMachineClasses.EdenGardenManager.EIGBucketLoader;
@@ -24,6 +25,7 @@ import com.science.gtnl.loader.OreDictLoader;
 import com.science.gtnl.loader.RecipeLoader;
 import com.science.gtnl.loader.ScriptLoader;
 
+import appeng.api.AEApi;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -139,6 +141,11 @@ public class ScienceNotLeisure {
 
         proxy.preInit(event);
         MaterialLoader.load();
+
+        AEApi.instance()
+            .registries()
+            .interfaceTerminal()
+            .register(SuperCraftingInputHatchME.class);
     }
 
     @Mod.EventHandler

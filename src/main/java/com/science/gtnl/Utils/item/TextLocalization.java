@@ -156,6 +156,25 @@ public class TextLocalization {
     public static final String HatchCustomFluid_02 = texter("Accepted Fluid: ", "HatchCustomFluid_02");
     public static final String HatchCustomFluid_03 = texter("Empty", "HatchCustomFluid_03");
 
+    public static final String SuperCraftingInputHatchME = texter(
+        "Super Crafting Input Buffer (ME)",
+        "SuperCraftingInputHatchME");
+    public static final String Tooltip_SuperCraftingInputHatchME_00 = texter(
+        "Fluid and item input for Multiblocks",
+        "Tooltip_SuperCraftingInputHatchME_00");
+    public static final String Tooltip_SuperCraftingInputHatchME_01 = texter(
+        "Hatch Tier: §l§1UIV",
+        "Tooltip_SuperCraftingInputHatchME_01");
+    public static final String Tooltip_SuperCraftingInputHatchME_02 = texter(
+        "Processes patterns directly from ME",
+        "Tooltip_SuperCraftingInputHatchME_02");
+    public static final String Tooltip_SuperCraftingInputHatchME_03 = texter(
+        "It supports patterns including fluids",
+        "Tooltip_SuperCraftingInputHatchME_03");
+    public static final String Tooltip_SuperCraftingInputHatchME_04 = texter(
+        "Change ME connection behavior by right-clicking with wire cutter",
+        "Tooltip_SuperCraftingInputHatchME_04");
+
     public static final String Tooltip_LaserBeacon = texter(
         "Produces a high precision laser from a powerful current.",
         "Tooltip_LaserBeacon");
@@ -524,6 +543,12 @@ public class TextLocalization {
     public static final String Tooltip_LargeExtractor_Casing = texter(
         "Any Wash Plant Casing",
         "Tooltip_LargeExtractor_Casing");
+
+    public static final String NameLargeCanning = texter("Large Canning", "NameLargeCanning");
+    public static final String LargeCanningRecipeType = texter("Fluid Canner / Canner", "LargeCanningRecipeType");
+    public static final String Tooltip_LargeCanning_Casing = texter(
+        "Any Wash Plant Casing",
+        "Tooltip_LargeCanning_Casing");
 
     public static final String NameLargeCutter = texter("Large Cutter", "NameLargeCutter");
     public static final String LargeCutterRecipeType = texter(
@@ -988,7 +1013,53 @@ public class TextLocalization {
         "Any Radiant Naquadah Alloy Casing",
         "Tooltip_TeleportationArrayToAlfheim_Casing");
 
+    public static final String NameEnergyInfuser = texter("EnergyInfuser", "NameEnergyInfuser");
+    public static final String EnergyInfuserRecipeType = texter("Energy Infuser", "EnergyInfuserRecipeType");
+    public static final String Tooltip_EnergyInfuser_00 = texter(
+        "Faster than the original EnergyInfuser!",
+        "Tooltip_EnergyInfuser_00");
+    public static final String Tooltip_EnergyInfuser_01 = texter(
+        "Can be used to charge items (lossless)",
+        "Tooltip_EnergyInfuser_01");
+    public static final String Tooltip_EnergyInfuser_02 = texter(
+        "Can be fed with UU-Matter to repair items",
+        "Tooltip_EnergyInfuser_02");
+    public static final String Tooltip_EnergyInfuser_03 = texter(
+        "Stocking Bus is not supported",
+        "Tooltip_EnergyInfuser_03");
+    public static final String Tooltip_EnergyInfuser_Casing = texter(
+        "Any Molecular Casing",
+        "Tooltip_EnergyInfuser_Casing");
+
     public static final String NameProcessingArray = texter("Re:Processing Array", "NameProcessingArray");
+    public static final String ProcessingArrayRecipeType = texter("Processing Array", "ProcessingArrayRecipeType");
+    public static final String Tooltip_ProcessingArray_00 = texter(
+        "Runs supplied machines as if placed in the world",
+        "Tooltip_ProcessingArray_00");
+    public static final String Tooltip_ProcessingArray_01 = texter(
+        "Place up to 64 singleblock GT machines into the controller",
+        "Tooltip_ProcessingArray_01");
+    public static final String Tooltip_ProcessingArray_02 = texter(
+        "Note that you still need to supply power to them all",
+        "Tooltip_ProcessingArray_02");
+    public static final String Tooltip_ProcessingArray_03 = texter(
+        "Use a screwdriver to enable separate input busses",
+        "Tooltip_ProcessingArray_03");
+    public static final String Tooltip_ProcessingArray_04 = texter(
+        "Doesn't work on certain machines, deal with it",
+        "Tooltip_ProcessingArray_04");
+    public static final String Tooltip_ProcessingArray_05 = texter(
+        "111%% faster than using single block machines of the same voltage",
+        "Tooltip_ProcessingArray_05");
+    public static final String Tooltip_ProcessingArray_06 = texter(
+        "Only uses (100 - Coil Tier * 3)%% of the EU/t normally required",
+        "Tooltip_ProcessingArray_06");
+    public static final String Tooltip_ProcessingArray_07 = texter(
+        "Parallel : Singleblocks * 2 + Voltage level * 4 + Coil level * 4",
+        "Tooltip_ProcessingArray_07");
+    public static final String Tooltip_ProcessingArray_Casing = texter(
+        "Any Clean Stainless Steel Machine Casing",
+        "Tooltip_ProcessingArray_Casing");
 
     public static final String NameRareEarthCentrifugal = texter("Rare Earth Centrifugal", "NameRareEarthCentrifugal");
     public static final String RareEarthCentrifugalRecipeType = texter(

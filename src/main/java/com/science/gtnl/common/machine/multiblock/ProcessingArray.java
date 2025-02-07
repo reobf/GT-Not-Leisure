@@ -31,6 +31,7 @@ import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
+import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.common.machine.multiMachineClasses.GTNLProcessingArrayManager;
 import com.science.gtnl.common.machine.multiMachineClasses.MultiMachineBase;
 
@@ -113,21 +114,22 @@ public class ProcessingArray extends MultiMachineBase<ProcessingArray> implement
     @Override
     public MultiblockTooltipBuilder createTooltip() {
         final MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
-        tt.addMachineType("Processing Array")
-            .addInfo("Runs supplied machines as if placed in the world")
-            .addInfo("Place up to 64 singleblock GT machines into the controller")
-            .addInfo("Note that you still need to supply power to them all")
-            .addInfo("Use a screwdriver to enable separate input busses")
-            .addInfo("Use a wire cutter to disable UEV+ downtiering")
-            .addInfo("Doesn't work on certain machines, deal with it")
-            .addInfo("Use it if you hate GT++, or want even more speed later on")
+        tt.addMachineType(TextLocalization.ProcessingArrayRecipeType)
+            .addInfo(TextLocalization.Tooltip_ProcessingArray_00)
+            .addInfo(TextLocalization.Tooltip_ProcessingArray_01)
+            .addInfo(TextLocalization.Tooltip_ProcessingArray_02)
+            .addInfo(TextLocalization.Tooltip_ProcessingArray_03)
+            .addInfo(TextLocalization.Tooltip_ProcessingArray_04)
+            .addInfo(TextLocalization.Tooltip_ProcessingArray_05)
+            .addInfo(TextLocalization.Tooltip_ProcessingArray_06)
+            .addInfo(TextLocalization.Tooltip_ProcessingArray_07)
             .beginStructureBlock(13, 6, 5, true)
-            .addEnergyHatch("Any casing", 1)
-            .addMaintenanceHatch("Any casing", 1)
-            .addInputBus("Any casing", 1)
-            .addInputHatch("Any casing", 1)
-            .addOutputBus("Any casing", 1)
-            .addOutputHatch("Any casing", 1)
+            .addEnergyHatch(TextLocalization.Tooltip_ProcessingArray_Casing, 1)
+            .addMaintenanceHatch(TextLocalization.Tooltip_ProcessingArray_Casing, 1)
+            .addInputBus(TextLocalization.Tooltip_ProcessingArray_Casing, 1)
+            .addInputHatch(TextLocalization.Tooltip_ProcessingArray_Casing, 1)
+            .addOutputBus(TextLocalization.Tooltip_ProcessingArray_Casing, 1)
+            .addOutputHatch(TextLocalization.Tooltip_ProcessingArray_Casing, 1)
             .toolTipFinisher();
         return tt;
     }
@@ -172,11 +174,9 @@ public class ProcessingArray extends MultiMachineBase<ProcessingArray> implement
 
     public RecipeMap<?> fetchRecipeMap() {
         if (isCorrectMachinePart(getControllerSlot())) {
-            // 先尝试通过 getMachineName 获取配方映射
             RecipeMap<?> recipeMap = GTNLProcessingArrayManager
                 .giveRecipeMap(GTNLProcessingArrayManager.getMachineName(getControllerSlot()));
 
-            // 如果未找到配方映射，再尝试通过 getFullMachineName 获取
             if (recipeMap == null) {
                 recipeMap = GTNLProcessingArrayManager
                     .giveRecipeMap(GTNLProcessingArrayManager.getFullMachineName(getControllerSlot()));
@@ -200,11 +200,9 @@ public class ProcessingArray extends MultiMachineBase<ProcessingArray> implement
 
     @Override
     public void sendStartMultiBlockSoundLoop() {
-        // 先尝试通过 getMachineName 获取声音资源
         SoundResource sound = GTNLProcessingArrayManager
             .getSoundResource(GTNLProcessingArrayManager.getMachineName(getControllerSlot()));
 
-        // 如果未找到声音资源，再尝试通过 getFullMachineName 获取
         if (sound == null) {
             sound = GTNLProcessingArrayManager
                 .getSoundResource(GTNLProcessingArrayManager.getFullMachineName(getControllerSlot()));
@@ -228,7 +226,6 @@ public class ProcessingArray extends MultiMachineBase<ProcessingArray> implement
     @NotNull
     public CheckRecipeResult checkProcessing() {
         if (!GTUtility.areStacksEqual(lastControllerStack, getControllerSlot())) {
-            // controller slot has changed
             lastControllerStack = getControllerSlot();
             mLastRecipeMap = fetchRecipeMap();
             setTierAndMult();
@@ -264,7 +261,7 @@ public class ProcessingArray extends MultiMachineBase<ProcessingArray> implement
             @Override
             public CheckRecipeResult process() {
                 setEuModifier(0.9);
-                setSpeedBonus(1 - (double) (3 * getCoilLevel().getTier()) / 100);
+                setSpeedBonus(1 - (3.0 * getCoilLevel().getTier()) / 100);
                 return super.process();
             }
 
@@ -296,7 +293,7 @@ public class ProcessingArray extends MultiMachineBase<ProcessingArray> implement
         if (getControllerSlot() == null) {
             return 0;
         }
-        return getControllerSlot().stackSize + GTUtility.getTier(this.getMaxInputVoltage()) * 4
+        return getControllerSlot().stackSize * 2 + GTUtility.getTier(this.getMaxInputVoltage()) * 4
             + getCoilLevel().getTier() * 4;
     }
 
@@ -384,7 +381,6 @@ public class ProcessingArray extends MultiMachineBase<ProcessingArray> implement
     @Override
     public final void onScrewdriverRightClick(ForgeDirection side, EntityPlayer aPlayer, float aX, float aY, float aZ) {
         if (aPlayer.isSneaking()) {
-            // Lock to single recipe
             super.onScrewdriverRightClick(side, aPlayer, aX, aY, aZ);
         } else {
             inputSeparation = !inputSeparation;
