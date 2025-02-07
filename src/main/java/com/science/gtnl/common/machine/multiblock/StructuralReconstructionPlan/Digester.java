@@ -29,6 +29,7 @@ import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
 import bartworks.util.BWUtil;
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.HeatingCoilLevel;
+import gregtech.api.enums.Textures;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
@@ -45,6 +46,7 @@ import gtnhlanth.api.recipe.LanthanidesRecipeMaps;
 
 public class Digester extends GTMMultiMachineBase<Digester> implements ISurvivalConstructable {
 
+    public static final int CASING_INDEX = ((BlockCasings4) GregTechAPI.sBlockCasings4).getTextureIndex(0);
     private int mHeatingCapacity = 0;
     private HeatingCoilLevel heatLevel;
     public static final String STRUCTURE_PIECE_MAIN = "main";
@@ -73,26 +75,28 @@ public class Digester extends GTMMultiMachineBase<Digester> implements ISurvival
     public ITexture[] getTexture(IGregTechTileEntity te, ForgeDirection side, ForgeDirection facing, int colorIndex,
         boolean active, boolean redstone) {
         if (side == facing) {
-            if (active) return new ITexture[] { casingTexturePages[0][47], TextureFactory.builder()
-                .addIcon(OVERLAY_FRONT_OIL_CRACKER_ACTIVE)
-                .extFacing()
-                .build(),
+            if (active) return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()),
+                TextureFactory.builder()
+                    .addIcon(OVERLAY_FRONT_OIL_CRACKER_ACTIVE)
+                    .extFacing()
+                    .build(),
                 TextureFactory.builder()
                     .addIcon(OVERLAY_FRONT_OIL_CRACKER_ACTIVE_GLOW)
                     .extFacing()
                     .glow()
                     .build() };
-            return new ITexture[] { casingTexturePages[0][47], TextureFactory.builder()
-                .addIcon(OVERLAY_FRONT_OIL_CRACKER)
-                .extFacing()
-                .build(),
+            return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()),
+                TextureFactory.builder()
+                    .addIcon(OVERLAY_FRONT_OIL_CRACKER)
+                    .extFacing()
+                    .build(),
                 TextureFactory.builder()
                     .addIcon(OVERLAY_FRONT_OIL_CRACKER_GLOW)
                     .extFacing()
                     .glow()
                     .build() };
         }
-        return new ITexture[] { casingTexturePages[0][47] };
+        return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()) };
     }
 
     @Override
@@ -132,14 +136,15 @@ public class Digester extends GTMMultiMachineBase<Digester> implements ISurvival
                 .addElement('A', ofBlock(sBlockCasings1, 11))
                 .addElement(
                     'B',
-                    buildHatchAdder(Digester.class)
-                        .casingIndex(((BlockCasings4) GregTechAPI.sBlockCasings4).getTextureIndex(0))
+                    buildHatchAdder(Digester.class).casingIndex(CASING_INDEX)
                         .dot(1)
                         .atLeast(InputHatch, OutputHatch, InputBus, OutputBus, Maintenance, Energy)
                         .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(sBlockCasings4, 0))))
                 .addElement('C', ofBlock(sBlockCasings4, 1))
                 .addElement('D', ofCoil(Digester::setCoilLevel, Digester::getCoilLevel))
-                .addElement('E', ofChain(ofBlock(Blocks.air, 0), ofBlock(Blocks.water, 0)))
+                .addElement(
+                    'E',
+                    ofChain(ofBlock(Blocks.air, 0), ofBlock(Blocks.flowing_water, 0), ofBlock(Blocks.water, 0)))
                 .build();
         }
         return STRUCTURE_DEFINITION;
@@ -218,6 +223,10 @@ public class Digester extends GTMMultiMachineBase<Digester> implements ISurvival
             }
 
         };
+    }
+
+    public int getCasingTextureID() {
+        return CASING_INDEX;
     }
 
     public void replaceWater() {
