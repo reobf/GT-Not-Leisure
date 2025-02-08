@@ -208,6 +208,7 @@ public class PetrochemicalPlant extends MultiMachineBase<PetrochemicalPlant> imp
     public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
         mCasing = 0;
         mLevel = 0;
+        setCoilLevel(HeatingCoilLevel.None);
 
         if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && checkHatch()) {
             return false;
@@ -215,7 +216,6 @@ public class PetrochemicalPlant extends MultiMachineBase<PetrochemicalPlant> imp
 
         IMetaTileEntity aMetaTileEntity = aBaseMetaTileEntity.getMetaTileEntity();
         if (aMetaTileEntity == null) return false;
-        setCoilLevel(HeatingCoilLevel.None);
         return mCasing >= 5 && getCoilLevel() != HeatingCoilLevel.None
             && this.mMufflerHatches.size() == 8
             && (mLevel = getCoilLevel().getTier() + 1) > 0;

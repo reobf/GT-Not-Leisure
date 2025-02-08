@@ -676,6 +676,12 @@ public class TextLocalization {
         "Any Wash Plant Casing",
         "Tooltip_LargeAutoclave_Casing");
 
+    public static final String NameLargeHammer = texter("Large Hammer", "NameLargeHammer");
+    public static final String LargeHammerRecipeType = texter("Hammer", "LargeHammerRecipeType");
+    public static final String Tooltip_LargeHammer_Casing = texter(
+        "Any Inconel Reinforced Casing",
+        "Tooltip_LargeHammer_Casing");
+
     public static final String NameLargeWiremill = texter("Large Wiremill", "NameLargeWiremill");
     public static final String LargeWiremillRecipeType = texter("Wiremill", "LargeWiremillRecipeType");
     public static final String Tooltip_LargeWiremill_Casing = texter(

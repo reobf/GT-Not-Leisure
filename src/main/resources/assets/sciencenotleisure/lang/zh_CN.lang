@@ -661,6 +661,10 @@ Tooltip_GTMMultiMachine_01=只需要使用配方要求功率的80%%
 Tooltip_GTMMultiMachine_02=初始并行为16
 Tooltip_GTMMultiMachine_03=在控制器内放入并行控制核心来提升最大并行数和减少耗电！
 
+NameLargeHammer=大型锻造锤
+LargeHammerRecipeType=锻造锤
+Tooltip_LargeHammer_Casing=任意强化镍铬机械方块
+
 NameLargeMixer=大型搅拌罐
 LargeMixerRecipeType=搅拌机
 Tooltip_LargeMixer_Casing=任意储罐拓展方块

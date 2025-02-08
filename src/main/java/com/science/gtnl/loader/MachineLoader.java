@@ -60,6 +60,7 @@ import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.L
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeExtractor;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeExtruder;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeForming;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeHammer;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeIndustrialLathe;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeMacerationTower;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeMaterialPress;
@@ -148,6 +149,7 @@ public class MachineLoader {
     public static ItemStack AlloyBlastSmelter;
     public static ItemStack LargeSteamExtractor;
     public static ItemStack LargeSteamOreWasher;
+    public static ItemStack LargeHammer;
 
     public static void loadMachines() {
 
@@ -467,6 +469,9 @@ public class MachineLoader {
             "LargeSteamOreWasher",
             TextLocalization.NameLargeSteamOreWasher).getStackForm(1);
         GTNLItemList.LargeSteamOreWasher.set(LargeSteamOreWasher);
+
+        LargeHammer = new LargeHammer(21069, "LargeHammer", TextLocalization.NameLargeHammer).getStackForm(1);
+        GTNLItemList.LargeHammer.set(LargeHammer);
 
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
             21919,
