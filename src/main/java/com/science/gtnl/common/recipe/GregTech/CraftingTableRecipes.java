@@ -123,7 +123,9 @@ public class CraftingTableRecipes implements IRecipePool {
 
         addCraftingRecipe(
             GTNLItemList.BrickedBlastFurnace.get(1),
-            new Object[] { "A  ", "   ", "   ", 'A', ItemList.Machine_Bricked_BlastFurnace.get(1) });
+            new Object[] { "ABA", "BCB", "ABA", 'A',
+                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Bronze, 1L), 'B',
+                GTNLItemList.PrecisionSteamMechanism.get(1), 'C', ItemList.Machine_Bricked_BlastFurnace.get(1) });
 
         addCraftingRecipe(
             GTNLItemList.NeutroniumPipeCasing.get(1),
@@ -171,5 +173,12 @@ public class CraftingTableRecipes implements IRecipePool {
                 GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.TungstenCarbide, 1L), 'B',
                 GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Ultimet, 1L), 'C',
                 ItemList.Casing_MiningOsmiridium.get(1L), 'D', ItemList.Electric_Motor_IV.get(1L) });
+
+        addCraftingRecipe(
+            GTNLItemList.SlicingBlades.get(2),
+            new Object[] { "AAA", "BCB", "BDB", 'A',
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenCarbide, 1L), 'B',
+                GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Ultimet, 1L), 'C',
+                GregtechItemList.Casing_CuttingFactoryFrame.get(1L), 'D', ItemList.Electric_Motor_IV.get(1L) });
     }
 }

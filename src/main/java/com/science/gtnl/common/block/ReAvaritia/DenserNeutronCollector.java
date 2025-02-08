@@ -1,5 +1,7 @@
 package com.science.gtnl.common.block.ReAvaritia;
 
+import static net.minecraft.block.BlockPistonBase.getPistonOrientation;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -15,8 +17,6 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-import org.lwjgl.opengl.GL11;
-
 import com.science.gtnl.ScienceNotLeisure;
 import com.science.gtnl.client.CreativeTabsLoader;
 
@@ -25,7 +25,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class DenserNeutronCollector extends BlockContainer {
 
-    private IIcon top, bottom, front, sideLeft, sideRight, side;
+    private IIcon bottom, front, sideLeft, sideRight, side, topFacingNorth, topFacingSouth, topFacingWest,
+        topFacingEast;
 
     public DenserNeutronCollector() {
         super(Material.iron);
@@ -39,87 +40,79 @@ public class DenserNeutronCollector extends BlockContainer {
     @SideOnly(Side.CLIENT)
     @Override
     public void registerBlockIcons(IIconRegister iconRegister) {
-        this.top = iconRegister.registerIcon("reavaritia:DenserNeutronCollector_Top");
         this.bottom = iconRegister.registerIcon("reavaritia:DenserNeutronCollector_Bottom");
         this.front = iconRegister.registerIcon("reavaritia:DenserNeutronCollector_Front");
         this.sideLeft = iconRegister.registerIcon("reavaritia:DenserNeutronCollector_SideLeft");
         this.sideRight = iconRegister.registerIcon("reavaritia:DenserNeutronCollector_SideRight");
         this.side = iconRegister.registerIcon("reavaritia:DenserNeutronCollector_Side");
+        this.topFacingNorth = iconRegister.registerIcon("reavaritia:DenserNeutronCollector_Top_North");
+        this.topFacingSouth = iconRegister.registerIcon("reavaritia:DenserNeutronCollector_Top_South");
+        this.topFacingWest = iconRegister.registerIcon("reavaritia:DenserNeutronCollector_Top_West");
+        this.topFacingEast = iconRegister.registerIcon("reavaritia:DenserNeutronCollector_Top_East");
     }
 
     @Override
     public IIcon getIcon(IBlockAccess world, int x, int y, int z, int side) {
         TileEntityNeutronCollector machine = (TileEntityNeutronCollector) world.getTileEntity(x, y, z);
-        int facing = 2;
-        if (machine != null) {
-            facing = machine.getFacing();
-        }
+        int facing = (machine != null) ? machine.getFacing() : 2;
+
         if (side == 0) return bottom;
-        if (side == 1) {
-            switch (facing) {
-                case 2:
-                    return top;
-                case 3:
-                    return rotateIcon(top, 180);
-                case 4:
-                    return rotateIcon(top, 90);
-                case 5:
-                    return rotateIcon(top, 270);
-                default:
-                    return top;
-            }
-        }
+        if (side == 1) return getTopIconByFacing(facing);
 
-        if (facing == 2) {
-            if (side == 2) return front;
-            if (side == 3) return this.side;
-            if (side == 4) return sideLeft;
-            if (side == 5) return sideRight;
-        } else if (facing == 3) {
-            if (side == 2) return this.side;
-            if (side == 3) return front;
-            if (side == 4) return sideRight;
-            if (side == 5) return sideLeft;
-        } else if (facing == 4) {
-            if (side == 2) return sideRight;
-            if (side == 3) return sideLeft;
-            if (side == 4) return front;
-            if (side == 5) return this.side;
-        } else if (facing == 5) {
-            if (side == 2) return sideLeft;
-            if (side == 3) return sideRight;
-            if (side == 4) return this.side;
-            if (side == 5) return front;
-        }
-
-        return this.side;
-    }
-
-    @Override
-    public IIcon getIcon(int side, int metadata) {
-        switch (side) {
-            case 0:
-                return bottom; // 地面
-            case 1:
-                return top; // 顶面
+        switch (facing) {
             case 2:
-                return this.side; // 后面
+                return getFacingIcon(side, front, this.side, sideLeft, sideRight);
             case 3:
-                return front; // 正面
+                return getFacingIcon(side, this.side, front, sideRight, sideLeft);
             case 4:
-                return sideLeft; // 正面左
+                return getFacingIcon(side, sideRight, sideLeft, front, this.side);
             case 5:
-                return sideRight; // 正面右
+                return getFacingIcon(side, sideLeft, sideRight, this.side, front);
             default:
                 return this.side;
         }
     }
 
-    private IIcon rotateIcon(IIcon icon, float angle) {
-        GL11.glPushMatrix();
-        GL11.glRotatef(angle, 0.0F, 0.0F, 1.0F);
-        GL11.glPopMatrix();
-        return icon;
+    private IIcon getTopIconByFacing(int facing) {
+        switch (facing) {
+            case 2:
+                return topFacingNorth;
+            case 3:
+                return topFacingSouth;
+            case 4:
+                return topFacingWest;
+            case 5:
+                return topFacingEast;
+            default:
+                return topFacingNorth;
+        }
+    }
+
+    private IIcon getFacingIcon(int side, IIcon front, IIcon back, IIcon left, IIcon right) {
+        if (side == 2) return front;
+        if (side == 3) return back;
+        if (side == 4) return left;
+        if (side == 5) return right;
+        return back;
+    }
+
+    @Override
+    public IIcon getIcon(int side, int metadata) {
+        int facing = getPistonOrientation(metadata);
+        if (side == 0) return bottom;
+        if (side == 1) return getTopIconByFacing(facing);
+        switch (side) {
+            case 2:
+                return this.side;
+            case 3:
+                return front;
+            case 4:
+                return sideLeft;
+            case 5:
+                return sideRight;
+            default:
+                return this.side;
+        }
     }
 
     @Override

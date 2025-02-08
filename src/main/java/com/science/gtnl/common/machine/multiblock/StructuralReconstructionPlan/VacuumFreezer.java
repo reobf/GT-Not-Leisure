@@ -63,7 +63,7 @@ public class VacuumFreezer extends MultiMachineBase<VacuumFreezer> implements IS
 
     @Override
     public boolean isEnablePerfectOverclock() {
-        return true;
+        return false;
     }
 
     @Override
@@ -194,7 +194,7 @@ public class VacuumFreezer extends MultiMachineBase<VacuumFreezer> implements IS
             @NotNull
             @Override
             public OverclockCalculator createOverclockCalculator(@NotNull GTRecipe recipe) {
-                return super.createOverclockCalculator(recipe).setMachineHeat(1800)
+                return super.createOverclockCalculator(recipe).setMachineHeat(3601)
                     .setRecipeHeat(0)
                     .setHeatOC(true)
                     .setHeatDiscount(false)

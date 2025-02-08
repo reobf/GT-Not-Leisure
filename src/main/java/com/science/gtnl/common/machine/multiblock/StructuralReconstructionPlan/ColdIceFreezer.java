@@ -83,6 +83,7 @@ public class ColdIceFreezer extends MultiMachineBase<ColdIceFreezer> implements 
             .addInfo(TextLocalization.Tooltip_ColdIceFreezer_00)
             .addInfo(TextLocalization.Tooltip_ColdIceFreezer_01)
             .addInfo(TextLocalization.Tooltip_ColdIceFreezer_02)
+            .addInfo(TextLocalization.Tooltip_ColdIceFreezer_03)
             .beginStructureBlock(5, 5, 9, true)
             .addInputBus(TextLocalization.Tooltip_ColdIceFreezer_Casing_00, 1)
             .addOutputBus(TextLocalization.Tooltip_ColdIceFreezer_Casing_00, 1)
@@ -220,6 +221,7 @@ public class ColdIceFreezer extends MultiMachineBase<ColdIceFreezer> implements 
     @Override
     protected ProcessingLogic createProcessingLogic() {
         return new ProcessingLogic().setSpeedBonus(0.5)
+            .setEuModifier(0.8)
             .setMaxParallelSupplier(this::getMaxParallelRecipes);
     }
 

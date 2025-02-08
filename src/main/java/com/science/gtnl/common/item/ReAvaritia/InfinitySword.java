@@ -171,7 +171,7 @@ public class InfinitySword extends ItemSword implements ICosmicRenderItem {
         for (Entity target : targets) {
             if (target == player) continue;
 
-            boolean isSneaking = player.isSneaking();
+            boolean isSneaking = !player.isSneaking();
             boolean isHostile = target instanceof IMob;
 
             if (isSneaking && !(isHostile || target instanceof EntityPlayer)) continue;

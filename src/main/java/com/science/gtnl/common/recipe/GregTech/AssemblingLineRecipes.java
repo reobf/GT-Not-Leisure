@@ -5,27 +5,28 @@ import static gregtech.api.util.GTRecipeBuilder.HOURS;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeConstants.*;
 
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fluids.FluidStack;
 
+import com.dreammaster.block.BlockList;
 import com.science.gtnl.Utils.enums.TierEU;
 import com.science.gtnl.common.GTNLItemList;
+import com.science.gtnl.common.block.Casings.BasicBlocks;
 import com.science.gtnl.common.materials.MaterialPool;
 import com.science.gtnl.common.recipe.IRecipePool;
 
+import bartworks.common.loaders.ItemRegistry;
 import bartworks.system.material.WerkstoffLoader;
-import gregtech.api.enums.GTValues;
-import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.MaterialsBotania;
-import gregtech.api.enums.MaterialsUEVplus;
-import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.*;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTUtility;
 import gtPlusPlus.core.material.MaterialMisc;
 import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.core.material.MaterialsElements;
+import gtPlusPlus.core.recipe.common.CI;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import tectech.recipe.TTRecipeAdder;
 import tectech.thing.CustomItemList;
@@ -236,5 +237,142 @@ public class AssemblingLineRecipes implements IRecipePool {
             .eut(TierEU.RECIPE_UIV)
             .duration(300 * SECONDS)
             .addTo(AssemblyLine);
+
+        GTValues.RA.stdBuilder()
+            .metadata(RESEARCH_ITEM, new ItemStack(Item.getItemFromBlock(BasicBlocks.NeutronCollector), 1))
+            .metadata(RESEARCH_TIME, 114514 * SECONDS)
+            .itemInputs(
+                new ItemStack(Item.getItemFromBlock(BasicBlocks.NeutronCollector), 1),
+                new ItemStack(Item.getItemFromBlock(BasicBlocks.NeutronCollector), 1),
+                new ItemStack(Item.getItemFromBlock(BasicBlocks.NeutronCollector), 1),
+                new ItemStack(Item.getItemFromBlock(BasicBlocks.NeutronCollector), 1),
+                ItemList.Electric_Motor_UHV.get(4L),
+                ItemList.Field_Generator_UHV.get(4L),
+                ItemList.Emitter_UHV.get(4L),
+                ItemList.Sensor_UHV.get(4L),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Infinity, 5L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 4L),
+                GTModHandler.getModItem(Avaritia.ID, "Resource", 16, 5),
+                GTOreDictUnificator.get(OrePrefixes.wireGt08, Materials.SuperconductorUHV, 16L))
+            .fluidInputs(Materials.CosmicNeutronium.getMolten(2304), Materials.Grade7PurifiedWater.getFluid(16000))
+            .itemOutputs(new ItemStack(Item.getItemFromBlock(BasicBlocks.DenseNeutronCollector), 1))
+            .eut(TierEU.RECIPE_UHV)
+            .duration(60 * SECONDS)
+            .addTo(AssemblyLine);
+
+        GTValues.RA.stdBuilder()
+            .metadata(RESEARCH_ITEM, new ItemStack(Item.getItemFromBlock(BasicBlocks.DenseNeutronCollector), 1))
+            .metadata(RESEARCH_TIME, 114514 * SECONDS)
+            .itemInputs(
+                new ItemStack(Item.getItemFromBlock(BasicBlocks.DenseNeutronCollector), 1),
+                new ItemStack(Item.getItemFromBlock(BasicBlocks.DenseNeutronCollector), 1),
+                new ItemStack(Item.getItemFromBlock(BasicBlocks.DenseNeutronCollector), 1),
+                new ItemStack(Item.getItemFromBlock(BasicBlocks.DenseNeutronCollector), 1),
+                ItemList.Electric_Motor_UHV.get(8L),
+                ItemList.Field_Generator_UHV.get(8L),
+                ItemList.Emitter_UHV.get(8L),
+                ItemList.Sensor_UHV.get(8L),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Infinity, 10L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 8L),
+                GTModHandler.getModItem(Avaritia.ID, "Resource", 32, 5),
+                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUHV, 16L))
+            .fluidInputs(Materials.CosmicNeutronium.getMolten(4608), Materials.Grade7PurifiedWater.getFluid(32000))
+            .itemOutputs(new ItemStack(Item.getItemFromBlock(BasicBlocks.DenserNeutronCollector), 1))
+            .eut(TierEU.RECIPE_UHV)
+            .duration(120 * SECONDS)
+            .addTo(AssemblyLine);
+
+        GTValues.RA.stdBuilder()
+            .metadata(RESEARCH_ITEM, new ItemStack(Item.getItemFromBlock(BasicBlocks.DenserNeutronCollector), 1))
+            .metadata(RESEARCH_TIME, 114514 * SECONDS)
+            .itemInputs(
+                new ItemStack(Item.getItemFromBlock(BasicBlocks.DenserNeutronCollector), 1),
+                new ItemStack(Item.getItemFromBlock(BasicBlocks.DenserNeutronCollector), 1),
+                new ItemStack(Item.getItemFromBlock(BasicBlocks.DenserNeutronCollector), 1),
+                new ItemStack(Item.getItemFromBlock(BasicBlocks.DenserNeutronCollector), 1),
+                ItemList.Electric_Motor_UEV.get(8L),
+                ItemList.Field_Generator_UEV.get(8L),
+                ItemList.Emitter_UEV.get(8L),
+                ItemList.Sensor_UEV.get(8L),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Infinity, 32L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 16L),
+                GTModHandler.getModItem(Avaritia.ID, "Resource", 64, 5),
+                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUHV, 32L),
+                GregtechItemList.Laser_Lens_Special.get(1))
+            .fluidInputs(Materials.CosmicNeutronium.getMolten(9216), Materials.Grade8PurifiedWater.getFluid(64000))
+            .itemOutputs(new ItemStack(Item.getItemFromBlock(BasicBlocks.DensestNeutronCollector), 1))
+            .eut(TierEU.RECIPE_UEV)
+            .duration(60 * SECONDS)
+            .addTo(AssemblyLine);
+
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
+            ItemRegistry.eic.copy(),
+            51200000,
+            51200,
+            (int) TierEU.RECIPE_UEV,
+            1,
+            new ItemStack[] { GTUtility.copyAmount(4, ItemRegistry.eic.copy()),
+                GTUtility.copyAmount(16, BlockList.NaquadahPlatedReinforcedStone.getIS()),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Osmiridium, 16),
+                GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Osmiridium, 32),
+                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.NaquadahAlloy, 64),
+                ItemList.Electric_Motor_UV.get(64), ItemList.Electric_Piston_UV.get(32),
+                ItemList.Conveyor_Module_UV.get(32), ItemList.Field_Generator_UV.get(16), ItemList.Robot_Arm_UV.get(16),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 8L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUV, 4L) },
+            new FluidStack[] { Materials.Grade6PurifiedWater.getFluid(128000),
+                MaterialsAlloy.BOTMIUM.getFluidStack(4608), WerkstoffLoader.Oganesson.getFluidOrGas(16000) },
+            GTNLItemList.ElectricImplosionCompressor.get(1),
+            120 * SECONDS,
+            (int) TierEU.RECIPE_UMV);
+
+        GTValues.RA.stdBuilder()
+            .metadata(RESEARCH_ITEM, ItemList.Machine_Multi_BlastFurnace.get(1))
+            .metadata(RESEARCH_TIME, 3600 * SECONDS)
+            .itemInputs(
+                GTUtility.copyAmount(4, ItemRegistry.megaMachines[0]),
+                GTUtility.copyAmount(4, ItemRegistry.megaMachines[0]),
+                GTUtility.copyAmount(4, ItemRegistry.megaMachines[0]),
+                GTUtility.copyAmount(4, ItemRegistry.megaMachines[0]),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 8L),
+                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.NaquadahAlloy, 32L),
+                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Tritanium, 32L),
+                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Americium, 32L),
+                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.BlackPlutonium, 32L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorZPM, 16L),
+                ItemList.Field_Generator_ZPM.get(4L),
+                ItemList.Energy_Module.get(1L))
+            .fluidInputs(
+                Materials.Grade4PurifiedWater.getFluid(64000),
+                MaterialsAlloy.INDALLOY_140.getFluidStack(14400),
+                MaterialsAlloy.ZERON_100.getFluidStack(18432),
+                Materials.SolderingAlloy.getMolten(36864))
+            .itemOutputs(GTNLItemList.MegaBlastFurnace.get(1))
+            .eut(TierEU.RECIPE_ZPM)
+            .duration(30 * SECONDS)
+            .addTo(AssemblyLine);
+
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
+            GregtechItemList.ChemicalPlant_Controller.get(1),
+            51200000,
+            25600,
+            (int) TierEU.RECIPE_UEV,
+            1,
+            new ItemStack[] { GregtechItemList.ChemicalPlant_Controller.get(8),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Osmiridium, 16),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.CosmicNeutronium, 8),
+                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Neutronium, 32),
+                ItemList.Electric_Motor_UV.get(16), ItemList.Electric_Pump_UV.get(16),
+                ItemList.Field_Generator_ZPM.get(8), GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Osmium, 32),
+                CI.getEmptyCatalyst(16), GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 24L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 20L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 16L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt08, Materials.ElectrumFlux, 32L) },
+            new FluidStack[] { MaterialsKevlar.Kevlar.getMolten(23040), Materials.CosmicNeutronium.getMolten(4608),
+                Materials.Grade6PurifiedWater.getFluid(32000), MaterialsAlloy.INDALLOY_140.getFluidStack(256000) },
+            GTNLItemList.HandOfJohnDavisonRockefeller.get(1),
+            60 * SECONDS,
+            (int) TierEU.RECIPE_UHV);
     }
 }

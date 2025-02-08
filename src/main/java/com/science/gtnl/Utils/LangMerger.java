@@ -155,6 +155,11 @@ public class LangMerger {
                         if (m.find()) {
                             String key = m.group(1)
                                 .trim();
+                            // 修复：去除现有键中的"S:"前缀
+                            if (key.startsWith("    S:")) {
+                                key = key.substring(6)
+                                    .trim();
+                            }
                             existingEntries.put(
                                 key,
                                 line.substring(line.indexOf('=') + 1)

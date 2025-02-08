@@ -111,6 +111,7 @@ public class ChemicalPlant extends GTMMultiMachineBase<ChemicalPlant> implements
         tt.addMachineType(TextLocalization.ChemicalPlantRecipeType)
             .addInfo(TextLocalization.Tooltip_ChemicalPlant_00)
             .addInfo(TextLocalization.Tooltip_ChemicalPlant_01)
+            .addInfo(TextLocalization.Tooltip_ChemicalPlant_02)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_02)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_03)
             .addSeparator()
@@ -185,6 +186,17 @@ public class ChemicalPlant extends GTMMultiMachineBase<ChemicalPlant> implements
                     .setSpeedBoost(1 - (getCoilLevel().getTier() - 1) * 0.05);
             }
         }.setMaxParallelSupplier(this::getMaxParallelRecipes);
+    }
+
+    @Override
+    public int getMaxParallelRecipes() {
+        int maxRecipes;
+        if (ParallelTier <= 2) {
+            maxRecipes = 16;
+        } else {
+            maxRecipes = (int) Math.pow(4, ParallelTier - 3);
+        }
+        return Math.min(maxRecipes, 512);
     }
 
     public void setCoilLevel(HeatingCoilLevel aCoilLevel) {

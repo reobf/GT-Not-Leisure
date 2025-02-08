@@ -1063,7 +1063,7 @@ Tooltip_EnergyInfuser_Casing=任意分子机械方块
 NameChemicalPlant=化工厂
 ChemicalPlantRecipeType=化学反应釜
 Tooltip_ChemicalPlant_00=线圈等级每高出白铜一级能耗与速度x5%%
-Tooltip_ChemicalPlant_01=并行数 = 2 ^ 电压等级，不高于256
+Tooltip_ChemicalPlant_01=并行数不高于512
 Tooltip_ChemicalPlant_02=机器可进行§c无损超频§7
 Tooltip_ChemicalPlant_Casing=任意化学惰性机械方块
 
@@ -1071,7 +1071,7 @@ NameVacuumFreezer=真空冷冻机
 VacuumFreezerRecipeType=真空冷冻机
 Tooltip_VacuumFreezer_00=比原版的真空冷冻机快125%%
 Tooltip_VacuumFreezer_01=并行数 = 8 + 2 * 电压等级
-Tooltip_VacuumFreezer_02=支持一次免费的§c无损超频§7!
+Tooltip_VacuumFreezer_02=支持两次免费的§c无损超频§7!
 Tooltip_VacuumFreezer_Casing=任意防冻机械方块
 
 NameBlazeBlastFurnace=烈焰高炉
@@ -1089,8 +1089,9 @@ NameColdIceFreezer=寒冰冷冻机
 FluidIceInputHatch=碎冰输入仓
 ColdIceFreezerRecipeType=凛冰冷冻机
 Tooltip_ColdIceFreezer_00=比真空冷冻机快200%%！
-Tooltip_ColdIceFreezer_01=最大并行数固定为64
-Tooltip_ColdIceFreezer_02=需每秒提供10x配方电压等级^2的碎冰
+Tooltip_ColdIceFreezer_01=只需要使用配方要求功率的80%%
+Tooltip_ColdIceFreezer_02=最大并行数固定为64
+Tooltip_ColdIceFreezer_03=需每秒提供10x配方电压等级^2的碎冰
 Tooltip_ColdIceFreezer_Casing_00=任意防冻机械方块
 Tooltip_ColdIceFreezer_Casing_01=顶部中心防冻机械方块
 

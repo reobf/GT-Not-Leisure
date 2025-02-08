@@ -1,8 +1,10 @@
 package com.science.gtnl.common.recipe.GregTech;
 
 import static com.science.gtnl.Mods.ScienceNotLeisure;
+import static com.science.gtnl.loader.IScriptLoader.missing;
 import static gregtech.api.enums.Mods.*;
 
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -10,9 +12,11 @@ import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.gthandler.CustomItemList;
 import com.science.gtnl.common.GTNLItemList;
+import com.science.gtnl.common.block.Casings.BasicBlocks;
 import com.science.gtnl.common.materials.MaterialPool;
 import com.science.gtnl.common.recipe.IRecipePool;
 
+import bartworks.common.loaders.ItemRegistry;
 import bartworks.system.material.WerkstoffLoader;
 import goodgenerator.util.ItemRefer;
 import gregtech.api.GregTechAPI;
@@ -30,6 +34,7 @@ import gtPlusPlus.core.item.ModItems;
 import gtPlusPlus.core.material.MaterialMisc;
 import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.core.material.MaterialsElements;
+import gtPlusPlus.core.util.minecraft.ItemUtils;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class AssemblerRecipes implements IRecipePool {
@@ -538,12 +543,414 @@ public class AssemblerRecipes implements IRecipePool {
             .addTo(As);
 
         GTValues.RA.stdBuilder()
-            .itemInputs(GTUtility.getIntegratedCircuit(16), ItemList.Machine_Multi_BlastFurnace.get(1L))
-            .itemOutputs(GTNLItemList.MegaBlastFurnace.get(1))
+            .itemInputs(
+                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Bronze, 4L),
+                GTNLItemList.PrecisionSteamMechanism.get(4),
+                ItemList.Machine_Bricked_BlastFurnace.get(1L))
+            .itemOutputs(GTNLItemList.BrickedBlastFurnace.get(1))
             .specialValue(0)
             .noOptimize()
-            .duration(50)
+            .duration(600)
             .eut(16)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                ItemList.Machine_EV_CircuitAssembler.get(2),
+                ItemList.Robot_Arm_EV.get(2),
+                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, 2L),
+                ItemList.Conveyor_Module_EV.get(2),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 2L))
+            .itemOutputs(GTNLItemList.LargeCircuitAssembler.get(1))
+            .specialValue(0)
+            .noOptimize()
+            .duration(200)
+            .eut(1920)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                ItemList.Hull_HV.get(1),
+                CustomItemList.AdsorptionFilter.get(1),
+                ItemList.Electric_Pump_HV.get(2),
+                ItemList.Electric_Motor_HV.get(1),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 2L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt08, Materials.Electrum, 2L))
+            .itemOutputs(GTNLItemList.Desulfurizer.get(1))
+            .specialValue(0)
+            .noOptimize()
+            .duration(200)
+            .eut(480)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                MaterialsAlloy.LEAGRISIUM.getPlateDouble(2),
+                GregtechItemList.Casing_AdvancedVacuum.get(1),
+                MaterialsAlloy.INCOLOY_MA956.getGear(2),
+                ItemList.Electric_Piston_IV.get(2L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 1L),
+                GregtechItemList.Gregtech_Computer_Cube.get(1L))
+            .itemOutputs(GregtechItemList.Industrial_Cryogenic_Freezer.get(1))
+            .specialValue(0)
+            .noOptimize()
+            .duration(120)
+            .eut(32070)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                MaterialsAlloy.HASTELLOY_N.getPlateDouble(2),
+                GregtechItemList.Casing_Adv_BlastFurnace.get(1),
+                MaterialsAlloy.HASTELLOY_W.getGear(2),
+                ItemList.Robot_Arm_IV.get(2L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 1L),
+                GregtechItemList.Gregtech_Computer_Cube.get(1L))
+            .itemOutputs(GregtechItemList.Machine_Adv_BlastFurnace.get(1))
+            .specialValue(0)
+            .noOptimize()
+            .duration(120)
+            .eut(32070)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GregtechItemList.Industrial_Cryogenic_Freezer.get(4),
+                GregtechItemList.Casing_AdvancedVacuum.get(4),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.HSSE, 16L),
+                ItemList.Electric_Motor_IV.get(16L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 2L),
+                MaterialsAlloy.INCOLOY_MA956.getGear(8),
+                MaterialsAlloy.LEAGRISIUM.getPlateDouble(16),
+                GTOreDictUnificator.get(OrePrefixes.rotor, Materials.TungstenSteel, 8L),
+                GregtechItemList.Gregtech_Computer_Cube.get(1L))
+            .itemOutputs(GTNLItemList.ColdIceFreezer.get(1))
+            .fluidInputs(Materials.SolderingAlloy.getMolten(4608))
+            .specialValue(0)
+            .noOptimize()
+            .duration(120)
+            .eut(32070)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GregtechItemList.Machine_Adv_BlastFurnace.get(4),
+                GregtechItemList.Casing_Adv_BlastFurnace.get(4),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorLuV, 16L),
+                ItemList.Robot_Arm_IV.get(4L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 2L),
+                MaterialsAlloy.INCOLOY_MA956.getGear(8),
+                MaterialsAlloy.HASTELLOY_N.getPlateDouble(16),
+                GregtechItemList.Gregtech_Computer_Cube.get(1L))
+            .itemOutputs(GTNLItemList.BlazeBlastFurnace.get(1))
+            .fluidInputs(Materials.SolderingAlloy.getMolten(4608))
+            .specialValue(0)
+            .noOptimize()
+            .duration(120)
+            .eut(32070)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                ItemList.Machine_Multi_LargeChemicalReactor.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Titanium, 4L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorEV, 4L),
+                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Polytetrafluoroethylene, 4L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 2L),
+                ItemList.Electric_Motor_EV.get(4L),
+                ItemList.Electric_Pump_EV.get(4L),
+                WerkstoffLoader.Ruridit.get(OrePrefixes.rotor, 4))
+            .itemOutputs(GTNLItemList.ChemicalPlant.get(1))
+            .fluidInputs(Materials.Polybenzimidazole.getMolten(1152))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(1920)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GregtechItemList.Industrial_Extruder.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 4L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.TPV, 4L),
+                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Polytetrafluoroethylene, 4L),
+                MaterialsAlloy.INCONEL_625.getPlateDouble(4),
+                ItemList.Electric_Piston_IV.get(2L),
+                ItemList.Conveyor_Module_IV.get(2L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1L))
+            .itemOutputs(GTNLItemList.LargeExtruder.get(1))
+            .fluidInputs(Materials.Polybenzimidazole.getMolten(1152))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(7680)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GregtechItemList.Industrial_CuttingFactoryController.get(1L),
+                GTModHandler.getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 4, 0, missing),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 2L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Platinum, 4L),
+                WerkstoffLoader.Ruridit.get(OrePrefixes.plateDouble, 4),
+                ItemList.Electric_Motor_IV.get(2L),
+                ItemList.Conveyor_Module_IV.get(2L),
+                ItemList.Component_Sawblade_Diamond.get(2L))
+            .itemOutputs(GTNLItemList.LargeCutter.get(1))
+            .fluidInputs(Materials.Polybenzimidazole.getMolten(1152))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(7680)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GregtechItemList.Industrial_MacerationStack.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 2L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Platinum, 4L),
+                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.TungstenSteel, 4L),
+                ItemList.Electric_Motor_IV.get(2L),
+                ItemList.Electric_Piston_IV.get(2L),
+                ItemList.Component_Grinder_Tungsten.get(4L))
+            .itemOutputs(GTNLItemList.LargeMacerationTower.get(1))
+            .fluidInputs(Materials.Polybenzimidazole.getMolten(1152))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(7680)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GregtechItemList.Industrial_Arc_Furnace.get(1L),
+                GTModHandler.getModItem(GTPlusPlus.ID, "item.itemBufferCore6", 2),
+                ItemList.Field_Generator_IV.get(1L),
+                ItemList.Emitter_IV.get(2L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 2L),
+                MaterialsAlloy.ZERON_100.getPlateDense(2),
+                GTOreDictUnificator.get(OrePrefixes.cableGt08, Materials.HSSG, 4L))
+            .itemOutputs(GTNLItemList.LargeArcSmelter.get(1))
+            .fluidInputs(Materials.Polybenzimidazole.getMolten(1152))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(7680)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GregtechItemList.Industrial_Sifter.get(1L),
+                MaterialsAlloy.INCONEL_792.getFrameBox(4),
+                GregtechItemList.Casing_SifterGrate.get(4),
+                ItemList.Electric_Piston_IV.get(2L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 2L),
+                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Osmiridium, 4L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Osmium, 4L))
+            .itemOutputs(GTNLItemList.LargeSiftingFunnel.get(1))
+            .fluidInputs(Materials.Polybenzimidazole.getMolten(1152))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(7680)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GregtechItemList.Casing_CokeOven.get(4L),
+                ItemList.Machine_IV_Brewery.get(1L),
+                ItemList.Machine_IV_Fermenter.get(1L),
+                ItemList.Machine_IV_FluidHeater.get(1L),
+                GTNLItemList.FusionGlass.get(8),
+                ItemList.Electric_Pump_IV.get(2L),
+                MaterialsAlloy.TANTALLOY_61.getPlateDouble(16),
+                GTOreDictUnificator.get(OrePrefixes.rotor, Materials.TungstenSteel, 8L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 4L))
+            .itemOutputs(GTNLItemList.LargeBrewer.get(1))
+            .fluidInputs(Materials.Polybenzimidazole.getMolten(1152))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(7680)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                ItemList.Machine_Multi_Lathe.get(1L),
+                MaterialsAlloy.AQUATIC_STEEL.getFrameBox(4),
+                ItemList.Electric_Motor_IV.get(2L),
+                ItemList.Electric_Piston_IV.get(2L),
+                WerkstoffLoader.AdemicSteel.get(OrePrefixes.plateDouble, 4),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 2L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Platinum, 4L))
+            .itemOutputs(GTNLItemList.LargeIndustrialLathe.get(1))
+            .fluidInputs(Materials.Polybenzimidazole.getMolten(1152))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(7680)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                ItemList.Machine_Multi_IndustrialCompressor.get(1L),
+                MaterialsAlloy.MARAGING350.getFrameBox(4),
+                ItemList.Electric_Piston_IV.get(4L),
+                ItemList.Robot_Arm_IV.get(2L),
+                WerkstoffLoader.AdemicSteel.get(OrePrefixes.plateDouble, 4),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 2L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Osmiridium, 4L))
+            .itemOutputs(GTNLItemList.LargeMaterialPress.get(1))
+            .fluidInputs(Materials.Polybenzimidazole.getMolten(1152))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(7680)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GregtechItemList.Industrial_WireFactory.get(1L),
+                MaterialsAlloy.MARAGING350.getFrameBox(4),
+                ItemList.Electric_Motor_IV.get(4L),
+                ItemList.Electric_Piston_IV.get(4L),
+                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.BlueSteel, 4L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 2L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Platinum, 4L))
+            .itemOutputs(GTNLItemList.LargeWiremill.get(1))
+            .fluidInputs(Materials.Polybenzimidazole.getMolten(1152))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(7680)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GregtechItemList.Industrial_PlatePress.get(1L),
+                MaterialsAlloy.MARAGING300.getFrameBox(4),
+                ItemList.Electric_Motor_IV.get(4L),
+                ItemList.Electric_Piston_IV.get(4L),
+                ItemList.Conveyor_Module_IV.get(4L),
+                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.RedSteel, 4L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 2L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Tungsten, 4L))
+            .itemOutputs(GTNLItemList.LargeBender.get(1))
+            .fluidInputs(Materials.Polybenzimidazole.getMolten(1152))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(7680)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GregtechItemList.Industrial_PlatePress.get(1L),
+                MaterialsAlloy.MARAGING250.getFrameBox(4),
+                ItemList.Electric_Motor_IV.get(4L),
+                ItemList.Electric_Piston_IV.get(4L),
+                ItemList.Robot_Arm_IV.get(2L),
+                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Invar, 4L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 2L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.TungstenSteel, 4L))
+            .itemOutputs(GTNLItemList.LargeForming.get(1))
+            .fluidInputs(Materials.Polybenzimidazole.getMolten(1152))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(7680)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GregtechItemList.Industrial_Electrolyzer.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 4L),
+                GTModHandler.getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 4, 0, missing),
+                ItemList.Electric_Pump_IV.get(2L),
+                MaterialsAlloy.STELLITE.getPlateDouble(4),
+                MaterialsAlloy.STELLITE.getRotor(8),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 2L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Osmium, 4L))
+            .itemOutputs(GTNLItemList.LargeElectrolyzer.get(1))
+            .fluidInputs(Materials.Polybenzimidazole.getMolten(1152))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(7680)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                ItemList.Machine_Multi_IndustrialElectromagneticSeparator.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 4L),
+                ItemList.Conveyor_Module_IV.get(2L),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.VanadiumGallium, 8L),
+                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Osmium, 4L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 2L),
+                ItemList.Electromagnet_Iron.get(1),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Platinum, 4L))
+            .itemOutputs(GTNLItemList.LargeElectromagnet.get(1))
+            .fluidInputs(Materials.Polybenzimidazole.getMolten(1152))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(7680)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                ItemList.Machine_IV_Assembler.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 4L),
+                ItemUtils.getSimpleStack(ModItems.itemCircuitLFTR, 1),
+                GregtechItemList.TransmissionComponent_IV.get(4),
+                ItemList.Electric_Motor_IV.get(8L),
+                ItemList.Conveyor_Module_IV.get(8L),
+                ItemList.Robot_Arm_IV.get(8L),
+                GregtechItemList.Gregtech_Computer_Cube.get(2),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 4L))
+            .itemOutputs(GTNLItemList.LargeAssembler.get(1))
+            .fluidInputs(Materials.Polybenzimidazole.getMolten(1152))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(7680)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GregtechItemList.Industrial_Mixer.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Naquadah, 4L),
+                GTModHandler.getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 4, 0, missing),
+                ItemList.Electric_Motor_IV.get(4L),
+                MaterialsAlloy.ZIRCONIUM_CARBIDE.getPlateDouble(4),
+                GTOreDictUnificator.get(OrePrefixes.rotor, Materials.TungstenSteel, 8L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 2L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.Osmium, 4L))
+            .itemOutputs(GTNLItemList.LargeMixer.get(1))
+            .fluidInputs(Materials.Polybenzimidazole.getMolten(1152))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(7680)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GregtechItemList.Industrial_Centrifuge.get(1L),
+                GregtechItemList.Industrial_ThermalCentrifuge.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Tungsten, 4L),
+                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Platinum, 2L),
+                ItemList.Electric_Motor_IV.get(4L),
+                MaterialsAlloy.INCOLOY_DS.getPlateDouble(8),
+                GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Naquadah, 4L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 2L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.Platinum, 4L))
+            .itemOutputs(GTNLItemList.LargeCentrifuge.get(1))
+            .fluidInputs(Materials.Polybenzimidazole.getMolten(1152))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(7680)
             .addTo(As);
 
         GTValues.RA.stdBuilder()
@@ -591,33 +998,6 @@ public class AssemblerRecipes implements IRecipePool {
             .addTo(As);
 
         GTValues.RA.stdBuilder()
-            .itemInputs(GTUtility.getIntegratedCircuit(16), GregtechItemList.Machine_Adv_BlastFurnace.get(1L))
-            .itemOutputs(GTNLItemList.BlazeBlastFurnace.get(1))
-            .specialValue(0)
-            .noOptimize()
-            .duration(50)
-            .eut(16)
-            .addTo(As);
-
-        GTValues.RA.stdBuilder()
-            .itemInputs(GTUtility.getIntegratedCircuit(16), GregtechItemList.Industrial_Cryogenic_Freezer.get(1L))
-            .itemOutputs(GTNLItemList.ColdIceFreezer.get(1))
-            .specialValue(0)
-            .noOptimize()
-            .duration(50)
-            .eut(16)
-            .addTo(As);
-
-        GTValues.RA.stdBuilder()
-            .itemInputs(GTUtility.getIntegratedCircuit(16), ItemList.Machine_Multi_LargeChemicalReactor.get(1L))
-            .itemOutputs(GTNLItemList.ChemicalPlant.get(1))
-            .specialValue(0)
-            .noOptimize()
-            .duration(50)
-            .eut(16)
-            .addTo(As);
-
-        GTValues.RA.stdBuilder()
             .itemInputs(
                 GTUtility.getIntegratedCircuit(6),
                 GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.StainlessSteel, 2L),
@@ -633,12 +1013,20 @@ public class AssemblerRecipes implements IRecipePool {
             .addTo(As);
 
         GTValues.RA.stdBuilder()
-            .itemInputs(GTUtility.getIntegratedCircuit(16), ItemList.Machine_Multi_VacuumFreezer.get(1L))
+            .itemInputs(
+                ItemList.Machine_Multi_VacuumFreezer.get(1L),
+                ItemList.Casing_FrostProof.get(2L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Gold, 4L),
+                ItemList.Electric_Motor_HV.get(2L),
+                ItemList.Electric_Pump_HV.get(2L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 2L),
+                GTOreDictUnificator.get(OrePrefixes.rotor, Materials.StainlessSteel, 2L))
             .itemOutputs(GTNLItemList.VacuumFreezer.get(1))
+            .fluidInputs(Materials.Aluminium.getMolten(1152))
             .specialValue(0)
             .noOptimize()
-            .duration(50)
-            .eut(16)
+            .duration(200)
+            .eut(480)
             .addTo(As);
 
         GTValues.RA.stdBuilder()
@@ -660,6 +1048,24 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
+                GTOreDictUnificator.get(OrePrefixes.block, Materials.BlackPlutonium, 4),
+                GTOreDictUnificator.get(OrePrefixes.block, Materials.CosmicNeutronium, 12),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Bedrockium, 8),
+                GTModHandler.getModItem(Avaritia.ID, "Crystal_Matrix", 4),
+                ItemList.Electric_Motor_UV.get(2L),
+                ItemList.Sensor_UV.get(4L),
+                ItemList.Emitter_UV.get(4L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 4),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4))
+            .itemOutputs(new ItemStack(Item.getItemFromBlock(BasicBlocks.NeutronCollector), 1))
+            .specialValue(0)
+            .noOptimize()
+            .duration(200)
+            .eut(491520)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
                 MaterialPool.MolybdenumDisilicide.get(OrePrefixes.ring, 32),
                 CustomItemList.MicaInsulatorFoil.get(16L))
             .fluidInputs(MaterialPool.HSLASteel.getMolten(144))
@@ -668,6 +1074,19 @@ public class AssemblerRecipes implements IRecipePool {
             .noOptimize()
             .duration(500)
             .eut(1920)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                new ItemStack(Item.getItemFromBlock(ItemRegistry.bw_realglas), 1, 4),
+                ItemList.Casing_Fusion.get(1),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Naquadah, 1))
+            .fluidInputs(Materials.NiobiumTitanium.getMolten(1152))
+            .itemOutputs(GTNLItemList.FusionGlass.get(4))
+            .specialValue(0)
+            .noOptimize()
+            .duration(200)
+            .eut(30720)
             .addTo(As);
 
         GTValues.RA.stdBuilder()
@@ -719,6 +1138,19 @@ public class AssemblerRecipes implements IRecipePool {
                 ItemList.Casing_MiningOsmiridium.get(1L),
                 ItemList.Electric_Motor_IV.get(1L))
             .itemOutputs(GTNLItemList.CrushingWheels.get(2))
+            .specialValue(0)
+            .noOptimize()
+            .duration(50)
+            .eut(16)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenCarbide, 3L),
+                GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Ultimet, 4L),
+                GregtechItemList.Casing_CuttingFactoryFrame.get(1L),
+                ItemList.Electric_Motor_IV.get(1L))
+            .itemOutputs(GTNLItemList.SlicingBlades.get(2))
             .specialValue(0)
             .noOptimize()
             .duration(50)

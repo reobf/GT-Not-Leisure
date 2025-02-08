@@ -444,8 +444,11 @@ public class TextLocalization {
         "For each coil grade higher than white copper, energy consumption and speed increase by 5%%",
         "Tooltip_ChemicalPlant_00");
     public static final String Tooltip_ChemicalPlant_01 = texter(
-        "It gains §cperfect overclock§7",
+        "Max parallels does not exceed 512",
         "Tooltip_ChemicalPlant_01");
+    public static final String Tooltip_ChemicalPlant_02 = texter(
+        "It gains §cperfect overclock§7",
+        "Tooltip_ChemicalPlant_02");
     public static final String Tooltip_ChemicalPlant_Casing = texter(
         "Any Chemically Inert Machine Casing",
         "Tooltip_ChemicalPlant_Casing");
@@ -459,7 +462,7 @@ public class TextLocalization {
         "Parallel number = 8 + 2 * Voltage level",
         "Tooltip_VacuumFreezer_01");
     public static final String Tooltip_VacuumFreezer_02 = texter(
-        "You can perform one free §cperfect overclock§7!",
+        "You can perform two free §cperfect overclock§7!",
         "Tooltip_VacuumFreezer_02");
     public static final String Tooltip_VacuumFreezer_Casing = texter(
         "Any Frost Proof Machine Casing",
@@ -1072,11 +1075,14 @@ public class TextLocalization {
         "Fast than Vacuum Freezer 200%%!",
         "Tooltip_ColdIceFreezer_00");
     public static final String Tooltip_ColdIceFreezer_01 = texter(
-        "The maximum parallel fixed is 64",
+        "Only uses 80%% of the EU/t normally required",
         "Tooltip_ColdIceFreezer_01");
     public static final String Tooltip_ColdIceFreezer_02 = texter(
-        "Need to provide 10x formula voltage level ^ 2 of crushed ice per second",
+        "The maximum parallel fixed is 64",
         "Tooltip_ColdIceFreezer_02");
+    public static final String Tooltip_ColdIceFreezer_03 = texter(
+        "Need to provide 10x formula voltage level ^ 2 of crushed ice per second",
+        "Tooltip_ColdIceFreezer_03");
     public static final String Tooltip_ColdIceFreezer_Casing_00 = texter(
         "Any Frost Proof Machine Casing",
         "Tooltip_ColdIceFreezer_Casing_00");
