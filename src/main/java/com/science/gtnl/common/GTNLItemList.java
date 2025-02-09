@@ -253,6 +253,7 @@ public enum GTNLItemList {
     AlloyBlastSmelter,
     LargeSteamOreWasher,
     LargeHammer,
+    IsaMill,
 
     LargeSteamExtractor,
     ReactionFurnace,

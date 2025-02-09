@@ -1,5 +1,7 @@
 package com.science.gtnl.common.recipe;
 
+import java.util.Comparator;
+
 import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.common.recipe.Special.RealArtificialStar_SpecialValueFormatter;
 
@@ -7,6 +9,7 @@ import gregtech.api.gui.modularui.GTUITextures;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMapBackend;
 import gregtech.api.recipe.RecipeMapBuilder;
+import gregtech.api.util.GTRecipe;
 
 public class RecipeRegister {
 
@@ -197,6 +200,18 @@ public class RecipeRegister {
         .neiHandlerInfo(
             builder -> builder.setDisplayStack(GTNLItemList.IndustrialArcaneAssembler.get(1))
                 .setMaxRecipesPerPage(1))
+        .disableOptimize()
+        .build();
+
+    public static RecipeMap<RecipeMapBackend> IsaMillRecipes = RecipeMapBuilder.of("gtnl.recipe.IsaMillRecipes")
+        .maxIO(2, 1, 1, 0)
+        .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
+        .neiHandlerInfo(
+            builder -> builder.setDisplayStack(GTNLItemList.IsaMill.get(1))
+                .setMaxRecipesPerPage(1))
+        .neiRecipeComparator(
+            Comparator.<GTRecipe, Integer>comparing(recipe -> recipe.getMetadataOrDefault(IsaMillTierKey.INSTANCE, 0))
+                .thenComparing(GTRecipe::compareTo))
         .disableOptimize()
         .build();
 }

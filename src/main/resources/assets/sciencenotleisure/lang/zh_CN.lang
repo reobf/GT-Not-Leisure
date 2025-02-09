@@ -665,6 +665,16 @@ NameLargeHammer=大型锻造锤
 LargeHammerRecipeType=锻造锤
 Tooltip_LargeHammer_Casing=任意强化镍铬机械方块
 
+NameIsaMill=艾萨研磨机
+gtnl.recipe.IsaMillRecipes=湿法碾磨
+IsaMillRecipeType=湿法碾磨
+Tooltip_IsaMill_00=工业级湿法碾磨
+Tooltip_IsaMill_01=玻璃等级限制了能源仓等级，UHV玻璃解锁所有等级
+Tooltip_IsaMill_02=机器可进行§c无损超频§7
+Tooltip_IsaMill_Casing=任意艾萨研磨外围机械方块
+Interaction_DESCRIPTION_Index_700=需要铝研磨球
+Interaction_DESCRIPTION_Index_701=需要皂石研磨球
+
 NameLargeMixer=大型搅拌罐
 LargeMixerRecipeType=搅拌机
 Tooltip_LargeMixer_Casing=任意储罐拓展方块

@@ -47,6 +47,7 @@ import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.C
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.Digester;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.ElectricImplosionCompressor;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.EnergyInfuser;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.IsaMill;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeArcSmelter;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeAssembler;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeAutoclave;
@@ -150,6 +151,7 @@ public class MachineLoader {
     public static ItemStack LargeSteamExtractor;
     public static ItemStack LargeSteamOreWasher;
     public static ItemStack LargeHammer;
+    public static ItemStack IsaMill;
 
     public static void loadMachines() {
 
@@ -472,6 +474,9 @@ public class MachineLoader {
 
         LargeHammer = new LargeHammer(21069, "LargeHammer", TextLocalization.NameLargeHammer).getStackForm(1);
         GTNLItemList.LargeHammer.set(LargeHammer);
+
+        IsaMill = new IsaMill(21070, "IsaMill", TextLocalization.NameIsaMill).getStackForm(1);
+        GTNLItemList.IsaMill.set(IsaMill);
 
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
             21919,

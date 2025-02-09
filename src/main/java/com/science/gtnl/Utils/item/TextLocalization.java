@@ -688,6 +688,15 @@ public class TextLocalization {
         "Any Inconel Reinforced Casing",
         "Tooltip_LargeWiremill_Casing");
 
+    public static final String NameIsaMill = texter("Isa Mill", "NameIsaMill");
+    public static final String IsaMillRecipeType = texter("Isa Mill", "IsaMillRecipeType");
+    public static final String Tooltip_IsaMill_00 = texter("Industrial Wet Milling", "Tooltip_IsaMill_00");
+    public static final String Tooltip_IsaMill_01 = texter(
+        "Energy hatch limited by glass tier, UHV Glass unlocks all",
+        "Tooltip_IsaMill_01");
+    public static final String Tooltip_IsaMill_02 = texter("It gains §cperfect overclock§7", "Tooltip_IsaMill_02");
+    public static final String Tooltip_IsaMill_Casing = texter("Any IsaMill Exterior Casing", "Tooltip_IsaMill_Casing");
+
     public static final String NameAlloyBlastSmelter = texter("Alloy Blast Smelter", "NameAlloyBlastSmelter");
     public static final String AlloyBlastSmelterRecipeType = texter(
         "Alloy Blast Smelter",
