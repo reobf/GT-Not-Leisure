@@ -114,7 +114,6 @@ public class SmeltingMixingFurnace extends WirelessEnergyMultiMachineBase<Smelti
             .addInputHatch(TextLocalization.Tooltip_SmeltingMixingFurnace_Casing, 1)
             .addOutputHatch(TextLocalization.Tooltip_SmeltingMixingFurnace_Casing, 1)
             .addEnergyHatch(TextLocalization.Tooltip_SmeltingMixingFurnace_Casing, 1)
-            .addMaintenanceHatch(TextLocalization.Tooltip_SmeltingMixingFurnace_Casing, 1)
             .toolTipFinisher(TextUtils.SNL + TextUtils.SQY);
         return tt;
     }
@@ -214,7 +213,7 @@ public class SmeltingMixingFurnace extends WirelessEnergyMultiMachineBase<Smelti
         tCountCasing = 0;
         wirelessMode = false;
         if (!checkPiece(STRUCTURE_PIECE_MAIN, HORIZONTAL_OFF_SET, VERTICAL_OFF_SET, DEPTH_OFF_SET)) return false;
-        if (tCountCasing <= 15 && !checkHatches() && mGlassTier < VoltageIndex.UIV) {
+        if (tCountCasing <= 15 && !checkHatches() && mGlassTier < VoltageIndex.UEV) {
             updateHatchTexture();
             return false;
         }
