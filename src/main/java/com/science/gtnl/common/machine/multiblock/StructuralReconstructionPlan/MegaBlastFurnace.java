@@ -272,12 +272,15 @@ public class MegaBlastFurnace extends GTMMultiMachineBase<MegaBlastFurnace> impl
     }
 
     @Override
-    public boolean checkMachine(IGregTechTileEntity iGregTechTileEntity, ItemStack itemStack) {
+    public boolean checkMachine(IGregTechTileEntity iGregTechTileEntity, ItemStack aStack) {
         this.mHeatingCapacity = 0;
         mCasing = 0;
+        ParallelTier = 0;
         this.setCoilLevel(HeatingCoilLevel.None);
 
-        if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet)) return false;
+        if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && checkHatch()) {
+            return false;
+        }
 
         if (getCoilLevel() == HeatingCoilLevel.None) return false;
 
@@ -286,7 +289,8 @@ public class MegaBlastFurnace extends GTMMultiMachineBase<MegaBlastFurnace> impl
         this.mHeatingCapacity = (int) this.getCoilLevel()
             .getHeat() + 100 * (BWUtil.getTier(this.getMaxInputEu()) - 2);
 
-        return mCasing >= 3500 && checkHatch();
+        ParallelTier = getParallelTier(aStack);
+        return mCasing >= 3500;
     }
 
     @Override

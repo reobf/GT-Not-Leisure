@@ -10,7 +10,6 @@ import static org.lwjgl.LWJGLUtil.log;
 
 import java.util.ArrayList;
 
-import com.science.gtnl.Utils.item.TextUtils;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -24,6 +23,7 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
+import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
 import com.science.gtnl.common.recipe.IsaMillTierKey;
 import com.science.gtnl.common.recipe.RecipeRegister;
@@ -158,6 +158,7 @@ public class IsaMill extends GTMMultiMachineBase<IsaMill> implements ISurvivalCo
     public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
         mCasing = 0;
         glassTier = 0;
+        ParallelTier = 0;
         mMillingBallBuses.clear();
 
         if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && checkHatch()) {
@@ -170,6 +171,7 @@ public class IsaMill extends GTMMultiMachineBase<IsaMill> implements ISurvivalCo
             }
         }
 
+        ParallelTier = getParallelTier(aStack);
         return mCasing >= 48 && mMillingBallBuses.size() == 1;
     }
 

@@ -163,6 +163,7 @@ public class Digester extends GTMMultiMachineBase<Digester> implements ISurvival
             && mCasing >= 45) {
             this.mHeatingCapacity = (int) this.getCoilLevel()
                 .getHeat() + 100 * (BWUtil.getTier(this.getMaxInputEu()) - 2);
+            ParallelTier = getParallelTier(aStack);
             return true;
         } else {
             return false;

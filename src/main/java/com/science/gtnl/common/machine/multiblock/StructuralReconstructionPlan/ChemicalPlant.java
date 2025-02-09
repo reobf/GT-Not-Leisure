@@ -169,9 +169,14 @@ public class ChemicalPlant extends GTMMultiMachineBase<ChemicalPlant> implements
     @Override
     public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
         mCasing = 0;
+        ParallelTier = 0;
 
-        return checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && mCasing >= 50
-            && checkHatch();
+        if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && checkHatch()) {
+            return false;
+        }
+
+        ParallelTier = getParallelTier(aStack);
+        return mCasing >= 50;
     }
 
     @Override
