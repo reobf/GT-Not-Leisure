@@ -1,13 +1,14 @@
 package com.science.gtnl.common.recipe.GregTech;
 
 import static gregtech.api.enums.Mods.*;
-import static gregtech.api.util.GTRecipeBuilder.HOURS;
-import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeBuilder.*;
 import static gregtech.api.util.GTRecipeConstants.*;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.block.BlockList;
@@ -41,6 +42,10 @@ public class AssemblingLineRecipes implements IRecipePool {
 
     @Override
     public void loadRecipes() {
+
+        Fluid solderIndalloy = FluidRegistry.getFluid("molten.indalloy140") != null
+            ? FluidRegistry.getFluid("molten.indalloy140")
+            : FluidRegistry.getFluid("molten.solderingalloy");
 
         ItemStack CrystalStuddedCosmicNeutroniumWand = GTModHandler.getModItem(Thaumcraft.ID, "WandCasting", 1, 9000);
         NBTTagCompound CrystalStuddedCosmicNeutroniumWandType = CrystalStuddedCosmicNeutroniumWand.getTagCompound();

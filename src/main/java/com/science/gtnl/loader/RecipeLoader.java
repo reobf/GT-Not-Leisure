@@ -32,6 +32,7 @@ import com.science.gtnl.common.recipe.GregTech.FluidExtraction;
 import com.science.gtnl.common.recipe.GregTech.FusionReactorRecipes;
 import com.science.gtnl.common.recipe.GregTech.MixerRecipes;
 import com.science.gtnl.common.recipe.GregTech.PlasmaForgeRecipes;
+import com.science.gtnl.common.recipe.GregTech.SpaceAssemblerRecipes;
 import com.science.gtnl.common.recipe.GregTech.TranscendentPlasmaMixerRecipes;
 import com.science.gtnl.common.recipe.GregTech.multiDehydratorRecipes;
 import com.science.gtnl.common.recipe.IRecipePool;
@@ -52,7 +53,7 @@ public class RecipeLoader {
             new PetrochemicalPlantRecipes(), new FusionReactorRecipes(), new SmeltingMixingFurnaceRecipes(),
             new FluidExtraction(), new DigesterRecipes(), new DissolutionTankRecipes(), new CentrifugeRecipes(),
             new ChemicalDehydratorRecipes(), new RareEarthCentrifugalRecipes(), new MatterFabricatorRecipes(),
-            new TheTwilightForestRecipes(), new IsaMillRecipes() };
+            new TheTwilightForestRecipes(), new IsaMillRecipes(), new SpaceAssemblerRecipes() };
         for (IRecipePool recipePool : recipePools) {
             recipePool.loadRecipes();
         }
