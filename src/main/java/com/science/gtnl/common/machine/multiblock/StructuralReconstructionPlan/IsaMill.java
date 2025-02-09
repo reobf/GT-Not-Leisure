@@ -10,6 +10,7 @@ import static org.lwjgl.LWJGLUtil.log;
 
 import java.util.ArrayList;
 
+import com.science.gtnl.Utils.item.TextUtils;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -93,7 +94,7 @@ public class IsaMill extends GTMMultiMachineBase<IsaMill> implements ISurvivalCo
             .addOutputBus(TextLocalization.Tooltip_IsaMill_Casing, 1)
             .addEnergyHatch(TextLocalization.Tooltip_IsaMill_Casing, 1)
             .addMaintenanceHatch(TextLocalization.Tooltip_IsaMill_Casing, 1)
-            .toolTipFinisher();
+            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY + " §rX " + TextUtils.SRP);
         return tt;
     }
 
