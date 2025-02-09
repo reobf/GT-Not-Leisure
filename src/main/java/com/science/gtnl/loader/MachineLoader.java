@@ -47,6 +47,7 @@ import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.C
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.Digester;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.ElectricImplosionCompressor;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.EnergyInfuser;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.FlotationCellRegulator;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.IsaMill;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeArcSmelter;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeAssembler;
@@ -78,6 +79,7 @@ import com.science.gtnl.common.machine.multiblock.WhiteNightGenerator;
 
 import gtPlusPlus.api.objects.Logger;
 import gtPlusPlus.core.util.minecraft.FluidUtils;
+import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.MTEHatchSolidifier;
 import tectech.thing.metaTileEntity.hatch.MTEHatchCapacitor;
 import tectech.thing.metaTileEntity.hatch.MTEHatchRack;
 
@@ -152,6 +154,7 @@ public class MachineLoader {
     public static ItemStack LargeSteamOreWasher;
     public static ItemStack LargeHammer;
     public static ItemStack IsaMill;
+    public static ItemStack FlotationCellRegulator;
 
     public static void loadMachines() {
 
@@ -478,6 +481,12 @@ public class MachineLoader {
         IsaMill = new IsaMill(21070, "IsaMill", TextLocalization.NameIsaMill).getStackForm(1);
         GTNLItemList.IsaMill.set(IsaMill);
 
+        FlotationCellRegulator = new FlotationCellRegulator(
+            21071,
+            "FlotationCellRegulator",
+            TextLocalization.NameFlotationCellRegulator).getStackForm(1);
+        GTNLItemList.FlotationCellRegulator.set(FlotationCellRegulator);
+
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
             21919,
             "CheatOreProcessingFactory",
@@ -539,6 +548,10 @@ public class MachineLoader {
                 "Super Crafting Input Bus (ME)",
                 TextLocalization.SuperCraftingInputBusME,
                 false).getStackForm(1L));
+
+        GTNLItemList.GT_MetaTileEntity_Solidifier_MAX.set(
+            new MTEHatchSolidifier(21506, "Solidifier Hatch MAX", TextLocalization.SolidifierHatchMAX, 14)
+                .getStackForm(1L));
     }
 
     public static void run() {

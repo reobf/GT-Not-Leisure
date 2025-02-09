@@ -127,6 +127,7 @@ public enum GTNLItemList {
     FluidBlazeInputHatch,
     SuperCraftingInputHatchME,
     SuperCraftingInputBusME,
+    GT_MetaTileEntity_Solidifier_MAX,
 
     LaserBeacon,
     BronzeBrickCasing,
@@ -254,6 +255,7 @@ public enum GTNLItemList {
     LargeSteamOreWasher,
     LargeHammer,
     IsaMill,
+    FlotationCellRegulator,
 
     LargeSteamExtractor,
     ReactionFurnace,

@@ -347,6 +347,7 @@ public class SuperCraftingInputHatchME extends MTEHatchInputBus
             supportFluids ? 11 : 6,
             MAX_INV_COUNT,
             new String[] { TextLocalization.Tooltip_SuperCraftingInputHatchME_00,
+                TextLocalization.Tooltip_SuperCraftingInputHatchME_01,
                 supportFluids ? TextLocalization.Tooltip_SuperCraftingInputHatchME_01_00
                     : TextLocalization.Tooltip_SuperCraftingInputHatchME_01_01,
                 TextLocalization.Tooltip_SuperCraftingInputHatchME_02,

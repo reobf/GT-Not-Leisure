@@ -1,4 +1,4 @@
-package com.science.gtnl.common.item.items;
+package com.science.gtnl.common.item;
 
 import net.minecraft.item.Item;
 

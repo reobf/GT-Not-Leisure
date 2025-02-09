@@ -1,8 +1,8 @@
 package com.science.gtnl.common.item;
 
 import static com.science.gtnl.Utils.item.TextHandler.texter;
-import static com.science.gtnl.common.item.items.BasicItems.MetaItem;
-import static com.science.gtnl.common.item.items.ItemAdder.initItem;
+import static com.science.gtnl.common.item.BasicItems.MetaItem;
+import static com.science.gtnl.common.item.ItemAdder.initItem;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

@@ -8,8 +8,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.common.util.ForgeDirection;
 
-import com.science.gtnl.Utils.item.TextUtils;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import gregtech.api.enums.Textures;
@@ -35,8 +33,7 @@ public class MTEHatchSterileMaintenance extends MTEHatchMaintenance {
 
     @Override
     public String[] getDescription() {
-        return new String[] { TextUtils.SNL + TextUtils.STERILE,
-            translateToLocal("gt.blockmachines.gtnl.sterilemaintenance.desc.0"), // 自动维护多方块的无菌环境
+        return new String[] { translateToLocal("gt.blockmachines.gtnl.sterilemaintenance.desc.0"), // 自动维护多方块的无菌环境
             translateToLocal("gt.blockmachines.gtnl.sterilemaintenance.desc.1"), // 修复其他组件但不修复自身。
             EnumChatFormatting.AQUA + translateToLocal("gt.blockmachines.gtnl.sterilemaintenance.desc.2") // 修复仅适用于平民！
         };

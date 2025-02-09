@@ -1,4 +1,4 @@
-package com.science.gtnl.common.item.items;
+package com.science.gtnl.common.item;
 
 import java.util.ArrayList;
 import java.util.List;

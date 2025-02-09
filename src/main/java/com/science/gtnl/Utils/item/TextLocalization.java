@@ -156,6 +156,8 @@ public class TextLocalization {
     public static final String HatchCustomFluid_02 = texter("Accepted Fluid: ", "HatchCustomFluid_02");
     public static final String HatchCustomFluid_03 = texter("Empty", "HatchCustomFluid_03");
 
+    public static final String SolidifierHatchMAX = texter("Solidifier Hatch MAX", "SolidifierHatchMAX");
+
     public static final String SuperCraftingInputHatchME = texter(
         "Super Crafting Input Buffer (ME)",
         "SuperCraftingInputHatchME");
@@ -165,8 +167,11 @@ public class TextLocalization {
     public static final String Tooltip_SuperCraftingInputHatchME_00 = texter(
         "Item input for Multiblocks",
         "Tooltip_SuperCraftingInputHatchME_00");
+    public static final String Tooltip_SuperCraftingInputHatchME_01 = texter(
+        "Pattern slot: 360",
+        "Tooltip_SuperCraftingInputHatchME_01");
     public static final String Tooltip_SuperCraftingInputHatchME_01_00 = texter(
-        "Hatch Tier: §l§1UIV",
+        "Hatch Tier: §5UEV",
         "Tooltip_SuperCraftingInputHatchME_01_00");
     public static final String Tooltip_SuperCraftingInputHatchME_01_01 = texter(
         "Hatch Tier: §dLuV",
@@ -687,6 +692,22 @@ public class TextLocalization {
     public static final String Tooltip_LargeWiremill_Casing = texter(
         "Any Inconel Reinforced Casing",
         "Tooltip_LargeWiremill_Casing");
+
+    public static final String NameFlotationCellRegulator = texter(
+        "Flotation Cell Regulator",
+        "NameFlotationCellRegulator");
+    public static final String FlotationCellRegulatorRecipeType = texter(
+        "Cell Regulator",
+        "FlotationCellRegulatorRecipeType");
+    public static final String Tooltip_FlotationCellRegulator_00 = texter(
+        "Energy hatch limited by glass tier, UHV Glass unlocks all",
+        "Tooltip_FlotationCellRegulator_00");
+    public static final String Tooltip_FlotationCellRegulator_01 = texter(
+        "It gains §cperfect overclock§7",
+        "Tooltip_FlotationCellRegulator_01");
+    public static final String Tooltip_FlotationCellRegulator_Casing = texter(
+        "Any Hastelloy-X Structural Block",
+        "Tooltip_FlotationCellRegulator_Casing");
 
     public static final String NameIsaMill = texter("Isa Mill", "NameIsaMill");
     public static final String IsaMillRecipeType = texter("Isa Mill", "IsaMillRecipeType");

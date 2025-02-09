@@ -16,7 +16,6 @@ import com.science.gtnl.common.item.ReAvaritia.BlazeSword;
 import com.science.gtnl.common.item.ReAvaritia.ToolEvents;
 import com.science.gtnl.common.machine.multiMachineClasses.EdenGardenManager.EIGBucketLoader;
 import com.science.gtnl.common.machine.multiblock.MeteorMiner;
-import com.science.gtnl.common.recipe.GTNLRecipeRemover;
 import com.science.gtnl.config.MainConfig;
 import com.science.gtnl.loader.LazyStaticsInitLoader;
 import com.science.gtnl.loader.MachineLoader;
@@ -108,8 +107,6 @@ public class ScienceNotLeisure {
         RecipeLoader.loadRecipes();
         RecipeLoader.loadRecipesPostInit();
         MeteorMiner.initializeBlacklist();
-
-        GTNLRecipeRemover.run();
 
         new LazyStaticsInitLoader().initStaticsOnCompleteInit();
 

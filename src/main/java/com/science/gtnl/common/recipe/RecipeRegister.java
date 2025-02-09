@@ -214,4 +214,14 @@ public class RecipeRegister {
                 .thenComparing(GTRecipe::compareTo))
         .disableOptimize()
         .build();
+
+    public static RecipeMap<RecipeMapBackend> CellRegulatorRecipes = RecipeMapBuilder
+        .of("gtnl.recipe.CellRegulatorRecipes")
+        .maxIO(2, 0, 1, 1)
+        .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
+        .neiHandlerInfo(
+            builder -> builder.setDisplayStack(GTNLItemList.FlotationCellRegulator.get(1))
+                .setMaxRecipesPerPage(1))
+        .disableOptimize()
+        .build();
 }

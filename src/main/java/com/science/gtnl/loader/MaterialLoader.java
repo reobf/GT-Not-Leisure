@@ -2,6 +2,7 @@ package com.science.gtnl.loader;
 
 import com.science.gtnl.common.block.BlockRegister;
 import com.science.gtnl.common.item.ItemRegister;
+import com.science.gtnl.common.item.items.MilledOre;
 import com.science.gtnl.common.materials.MaterialPool;
 
 import bartworks.API.WerkstoffAdderRegistry;
@@ -21,5 +22,7 @@ public class MaterialLoader {
         BlockRegister.registryOreDictionary();
 
         WerkstoffAdderRegistry.addWerkstoffAdder(new MaterialPool());
+
+        new MilledOre();
     }
 }

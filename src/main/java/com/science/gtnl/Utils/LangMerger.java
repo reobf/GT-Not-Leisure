@@ -112,7 +112,6 @@ public class LangMerger {
         boolean hasConflictMarker = false;
         boolean hasLanguageBlock = false;
         boolean hasConfigFileHeader = false;
-        boolean hasClosingBracket = false;
 
         if (targetFile.exists()) {
             try (BufferedReader reader = new BufferedReader(
@@ -139,11 +138,6 @@ public class LangMerger {
                         hasConfigFileHeader = true;
                     }
 
-                    if (line.trim()
-                        .equals("}")) {
-                        hasClosingBracket = true;
-                    }
-
                     if (inLanguageBlock) {
                         if (line.trim()
                             .equals("}")) {
@@ -155,7 +149,6 @@ public class LangMerger {
                         if (m.find()) {
                             String key = m.group(1)
                                 .trim();
-                            // 修复关键点：使用正则表达式去除所有可能的"S:"前缀
                             key = key.replaceAll("^\\s*S:", "")
                                 .trim();
                             existingEntries.put(
@@ -212,7 +205,10 @@ public class LangMerger {
                     .append("\n");
             });
 
-        if (!hasClosingBracket) {
+        // 检查最后一行是否存在 "}"，如果不存在则添加一个
+        String lastLine = content.toString()
+            .trim();
+        if (!lastLine.endsWith("}")) {
             content.append("}\n");
         }
 
