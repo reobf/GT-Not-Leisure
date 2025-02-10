@@ -1,16 +1,3 @@
-/*
- * Copyright (c) 2018-2020 bartimaeusnek Permission is hereby granted, free of charge, to any person obtaining a copy of
- * this software and associated documentation files (the "Software"), to deal in the Software without restriction,
- * including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following
- * conditions: The above copyright notice and this permission notice shall be included in all copies or substantial
- * portions of the Software. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
- * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
- * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
- * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
- * DEALINGS IN THE SOFTWARE.
- */
-
 package com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
@@ -46,6 +33,7 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
+import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.MultiMachineBase;
 
 import bartworks.API.BorosilicateGlass;
@@ -146,7 +134,7 @@ public class Incubator extends MultiMachineBase<Incubator> implements ISurvivalC
             .addInputHatch(TextLocalization.Tooltip_Incubator_Casing, 1)
             .addOutputHatch(TextLocalization.Tooltip_Incubator_Casing, 1)
             .addEnergyHatch(TextLocalization.Tooltip_Incubator_Casing, 1)
-            .toolTipFinisher();
+            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY + " §rX " + TextUtils.SRP);
         return tt;
     }
 
@@ -259,7 +247,7 @@ public class Incubator extends MultiMachineBase<Incubator> implements ISurvivalC
 
     @Override
     public int getMaxParallelRecipes() {
-        return 8;
+        return 4;
     }
 
     protected GTRecipe recipeWithMultiplier(GTRecipe recipe, FluidStack[] fluidInputs) {

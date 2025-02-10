@@ -447,6 +447,8 @@ public class BlockRegister {
         GTNLItemList.GaiaStabilizedForceFieldCasing.set(
             MetaBlockConstructors
                 .initMetaBlockCasing("Gaia Stabilized Force Field Casing", (byte) 17, BasicBlocks.MetaCasing));
+        GTNLItemList.HyperCore
+            .set(MetaBlockConstructors.initMetaBlockCasing("Hyper Core", (byte) 18, BasicBlocks.MetaCasing));
     }
 
     public static void registry() {

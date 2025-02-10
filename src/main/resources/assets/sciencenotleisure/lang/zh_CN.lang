@@ -31,6 +31,10 @@ Button_Tooltip_SuperCraftingInputHatchME_02_00=样板优化: 允许
 Button_Tooltip_SuperCraftingInputHatchME_02_01=样板优化: 关闭
 
 SolidifierHatchMAX=固化仓 X
+DebugEnergyHatch=Debug能源仓
+Tooltip_DebugEnergyHatch_00=凭空而生的能量
+Tooltip_DebugEnergyHatch_01=§9无限能源的生产/消耗设备
+Tooltip_DebugEnergyHatch_02=§9它们从何而来?
 
 MetaCasing.0.name=测试机械方块
 MetaCasing.1.name=蒸汽装配机械方块
@@ -50,6 +54,7 @@ MetaCasing.14.name=压力平衡机械方块
 MetaCasing.15.name=ABS超固态外壳
 MetaCasing.16.name=引力聚焦方块
 MetaCasing.17.name=盖亚稳定力场机械方块
+MetaCasing.18.name=超能核心
 
 MetaBlock.0.name=测试方块
 MetaBlock.1.name=§d新视野线圈
@@ -809,6 +814,11 @@ Tooltip_LargeAssembler_00=能源仓限制了机器工作的电压等级+1
 Tooltip_LargeAssembler_01=玻璃等级限制了能源仓等级，UHV玻璃解锁所有等级
 Tooltip_LargeAssembler_Casing=任意批量生产框架
 
+NameLargeEngravingLaser=大型激光蚀刻机
+LargeEngravingLaserRecipeType=激光蚀刻机
+Tooltip_LargeEngravingLaser_00=玻璃等级限制了能源仓等级，UHV玻璃解锁所有等级
+Tooltip_LargeEngravingLaser_Casing=任意激光抑制机械方块
+
 NameElectricImplosionCompressor=电力聚爆压缩机
 ElectricImplosionCompressorRecipeType=电动聚爆压缩机
 Tooltip_ElectricImplosionCompressor_Casing=任意强化钨钢机械方块
@@ -1052,10 +1062,21 @@ Tooltip_Digester_Casing=任意强化钨钢机械方块
 NameIncubator=培养缸
 IncubatorRecipeType=细菌培养缸
 Tooltip_Incubator_00=不再需要保持输出仓半满!
-Tooltip_Incubator_01=固定并行为8
+Tooltip_Incubator_01=固定并行为4
 Tooltip_Incubator_02=玻璃等级限制了能源仓等级，UHV玻璃解锁所有等级
 Tooltip_Incubator_Radio_Hatch=放射仓
 Tooltip_Incubator_Casing=任意塑料混凝土方块
+
+NameLargeIncubator=大型培养缸
+LargeIncubatorRecipeType=细菌培养缸
+Tooltip_LargeIncubator_00=比相同电压的单方块机器快500%%
+Tooltip_LargeIncubator_01=只需要使用配方要求功率的60%%
+Tooltip_LargeIncubator_02=不再需要保持输出仓半满
+Tooltip_LargeIncubator_03=无视玻璃等级要求和精确剂量要求
+Tooltip_LargeIncubator_04=并行数：4 * 培养皿数量 + 2 * 电压等级 * 玻璃等级
+Tooltip_LargeIncubator_05=机器可进行§c无损超频§7
+Tooltip_LargeIncubator_Radio_Hatch=放射仓
+Tooltip_LargeIncubator_Casing=任意塑料混凝土方块
 
 NameAlloyBlastSmelter=合金冶炼炉
 AlloyBlastSmelterRecipeType=合金冶炼炉

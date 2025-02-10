@@ -158,6 +158,17 @@ public class TextLocalization {
 
     public static final String SolidifierHatchMAX = texter("Solidifier Hatch MAX", "SolidifierHatchMAX");
 
+    public static final String DebugEnergyHatch = texter("Debug Energy Hatch", "DebugEnergyHatch");
+    public static final String Tooltip_DebugEnergyHatch_00 = texter(
+        "Energy Born Out of Thin Air",
+        "Tooltip_DebugEnergyHatch_00");
+    public static final String Tooltip_DebugEnergyHatch_01 = texter(
+        "§9Infinite Producer/Consumer",
+        "Tooltip_DebugEnergyHatch_01");
+    public static final String Tooltip_DebugEnergyHatch_02 = texter(
+        "§9Where do they come from?",
+        "Tooltip_DebugEnergyHatch_02");
+
     public static final String SuperCraftingInputHatchME = texter(
         "Super Crafting Input Buffer (ME)",
         "SuperCraftingInputHatchME");
@@ -470,6 +481,33 @@ public class TextLocalization {
     public static final String Tooltip_Incubator_Radio_Hatch = texter("Radio Hatch", "Tooltip_Incubator_Radio_Hatch");
     public static final String Tooltip_Incubator_Casing = texter("Any Plascrete Block", "Tooltip_Incubator_Casing");
 
+    public static final String NameLargeIncubator = texter("Large Incubator", "NameLargeIncubator");
+    public static final String LargeIncubatorRecipeType = texter("Bacterial Vat", "LargeIncubatorRecipeType");
+    public static final String Tooltip_LargeIncubator_00 = texter(
+        "500%% faster than using single block machines of the same voltage",
+        "Tooltip_LargeIncubator_00");
+    public static final String Tooltip_LargeIncubator_01 = texter(
+        "Only uses 60%% of the EU/t normally required",
+        "Tooltip_LargeIncubator_01");
+    public static final String Tooltip_LargeIncubator_02 = texter(
+        "No need to keep the Output Hatch half filled for efficiency anymore!",
+        "Tooltip_LargeIncubator_02");
+    public static final String Tooltip_LargeIncubator_03 = texter(
+        "Ignoring Glass Grade Requirements and Precise Dosage Requirements",
+        "Tooltip_LargeIncubator_03");
+    public static final String Tooltip_LargeIncubator_04 = texter(
+        "Parallel: 4 * Number of Petri Dishes + 2 * Voltage Level * Glass Grade",
+        "Tooltip_LargeIncubator_04");
+    public static final String Tooltip_LargeIncubator_05 = texter(
+        "It gains §cperfect overclock§7",
+        "Tooltip_LargeIncubator_05");
+    public static final String Tooltip_LargeIncubator_Radio_Hatch = texter(
+        "Radio Hatch",
+        "Tooltip_LargeIncubator_Radio_Hatch");
+    public static final String Tooltip_LargeIncubator_Casing = texter(
+        "Any Plascrete Block",
+        "Tooltip_LargeIncubator_Casing");
+
     public static final String NameVacuumFreezer = texter("Vacuum Freezer", "NameVacuumFreezer");
     public static final String VacuumFreezerRecipeType = texter("Vacuum Freezer", "VacuumFreezerRecipeType");
     public static final String Tooltip_VacuumFreezer_00 = texter(
@@ -721,6 +759,17 @@ public class TextLocalization {
     public static final String Tooltip_LargeWiremill_Casing = texter(
         "Any Inconel Reinforced Casing",
         "Tooltip_LargeWiremill_Casing");
+
+    public static final String NameLargeEngravingLaser = texter("Large Engraving Laser", "NameLargeEngravingLaser");
+    public static final String LargeEngravingLaserRecipeType = texter(
+        "Laser Engraver",
+        "LargeEngravingLaserRecipeType");
+    public static final String Tooltip_LargeEngravingLaser_00 = texter(
+        "Energy hatch limited by glass tier, UHV Glass unlocks all",
+        "Tooltip_LargeEngravingLaser_00");
+    public static final String Tooltip_LargeEngravingLaser_Casing = texter(
+        "Any Laser Containment Casing",
+        "Tooltip_LargeEngravingLaser_Casing");
 
     public static final String NameFlotationCellRegulator = texter(
         "Flotation Cell Regulator",

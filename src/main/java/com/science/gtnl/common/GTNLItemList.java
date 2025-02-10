@@ -34,6 +34,7 @@ public enum GTNLItemList {
     ABSUltraSolidCasing,
     GravitationalFocusingLensBlock,
     GaiaStabilizedForceFieldCasing,
+    HyperCore,
 
     TrollFace,
     DepletedExcitedNaquadahFuelRod,
@@ -127,7 +128,8 @@ public enum GTNLItemList {
     FluidBlazeInputHatch,
     SuperCraftingInputHatchME,
     SuperCraftingInputBusME,
-    GT_MetaTileEntity_Solidifier_MAX,
+    SolidifierHatchMAX,
+    DebugEnergyHatch,
 
     LaserBeacon,
     BronzeBrickCasing,
@@ -259,7 +261,9 @@ public enum GTNLItemList {
     VacuumDryingFurnace,
     LargeDistillery,
     Incubator,
+    LargeEngravingLaser,
 
+    LargeIncubator,
     LargeSteamExtractor,
     ReactionFurnace,
     LibraryOfRuina,

@@ -4,6 +4,7 @@ import net.minecraft.item.ItemStack;
 
 import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.common.GTNLItemList;
+import com.science.gtnl.common.hatch.DebugEnergyHatch;
 import com.science.gtnl.common.hatch.HatchCustomFluid;
 import com.science.gtnl.common.hatch.SuperCraftingInputHatchME;
 import com.science.gtnl.common.machine.multiblock.AdvancedPhotovoltaicPowerStation;
@@ -20,6 +21,7 @@ import com.science.gtnl.common.machine.multiblock.IndustrialArcaneAssembler;
 import com.science.gtnl.common.machine.multiblock.LapotronChip;
 import com.science.gtnl.common.machine.multiblock.LargeBrewer;
 import com.science.gtnl.common.machine.multiblock.LargeCircuitAssembler;
+import com.science.gtnl.common.machine.multiblock.LargeIncubator;
 import com.science.gtnl.common.machine.multiblock.LargeSteamAlloySmelter;
 import com.science.gtnl.common.machine.multiblock.LargeSteamChemicalBath;
 import com.science.gtnl.common.machine.multiblock.LargeSteamCircuitAssembler;
@@ -61,6 +63,7 @@ import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.L
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeDistillery;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeElectrolyzer;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeElectromagnet;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeEngravingLaser;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeExtractor;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeExtruder;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeForming;
@@ -161,6 +164,8 @@ public class MachineLoader {
     public static ItemStack VacuumDryingFurnace;
     public static ItemStack LargeDistillery;
     public static ItemStack Incubator;
+    public static ItemStack LargeIncubator;
+    public static ItemStack LargeEngravingLaser;
 
     public static void loadMachines() {
 
@@ -506,6 +511,16 @@ public class MachineLoader {
         Incubator = new Incubator(21074, "Incubator", TextLocalization.NameIncubator).getStackForm(1);
         GTNLItemList.Incubator.set(Incubator);
 
+        LargeIncubator = new LargeIncubator(21075, "LargeIncubator", TextLocalization.NameLargeIncubator)
+            .getStackForm(1);
+        GTNLItemList.LargeIncubator.set(LargeIncubator);
+
+        LargeEngravingLaser = new LargeEngravingLaser(
+            21076,
+            "LargeEngravingLaser",
+            TextLocalization.NameLargeEngravingLaser).getStackForm(1);
+        GTNLItemList.LargeEngravingLaser.set(LargeEngravingLaser);
+
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
             21919,
             "CheatOreProcessingFactory",
@@ -568,9 +583,12 @@ public class MachineLoader {
                 TextLocalization.SuperCraftingInputBusME,
                 false).getStackForm(1L));
 
-        GTNLItemList.GT_MetaTileEntity_Solidifier_MAX.set(
+        GTNLItemList.SolidifierHatchMAX.set(
             new MTEHatchSolidifier(21506, "Solidifier Hatch MAX", TextLocalization.SolidifierHatchMAX, 14)
                 .getStackForm(1L));
+
+        GTNLItemList.DebugEnergyHatch.set(
+            new DebugEnergyHatch(21507, "Debug Energy Hatch", TextLocalization.DebugEnergyHatch, 14).getStackForm(1L));
     }
 
     public static void run() {
