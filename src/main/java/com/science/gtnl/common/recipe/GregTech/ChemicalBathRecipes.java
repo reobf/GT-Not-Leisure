@@ -1,8 +1,11 @@
 package com.science.gtnl.common.recipe.GregTech;
 
 import static com.science.gtnl.loader.IScriptLoader.missing;
+import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.util.GTModHandler.getModItem;
 
+import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.science.gtnl.Utils.recipes.RecipeBuilder;
@@ -36,6 +39,16 @@ public class ChemicalBathRecipes implements IRecipePool {
             .noOptimize()
             .duration(200)
             .eut(7680)
+            .addTo(cBR);
+
+        RecipeBuilder.builder()
+            .itemInputs(getModItem(OpenBlocks.ID, "sponge", 1))
+            .fluidInputs(FluidRegistry.getFluidStack("dye.chemical.dyeyellow", 576))
+            .itemOutputs(new ItemStack(Blocks.sponge, 1))
+            .specialValue(0)
+            .noOptimize()
+            .duration(100)
+            .eut(16)
             .addTo(cBR);
     }
 }

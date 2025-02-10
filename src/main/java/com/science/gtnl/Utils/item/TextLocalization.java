@@ -458,6 +458,18 @@ public class TextLocalization {
         "Any Chemically Inert Machine Casing",
         "Tooltip_ChemicalPlant_Casing");
 
+    public static final String NameIncubator = texter("Incubator", "NameIncubator");
+    public static final String IncubatorRecipeType = texter("Bacterial Vat", "IncubatorRecipeType");
+    public static final String Tooltip_Incubator_00 = texter(
+        "No need to keep the Output Hatch half filled for efficiency anymore!",
+        "Tooltip_Incubator_00");
+    public static final String Tooltip_Incubator_01 = texter("It can run 8x recipes at most", "Tooltip_Incubator_01");
+    public static final String Tooltip_Incubator_02 = texter(
+        "Energy hatch limited by glass tier, UHV Glass unlocks all",
+        "Tooltip_Incubator_02");
+    public static final String Tooltip_Incubator_Radio_Hatch = texter("Radio Hatch", "Tooltip_Incubator_Radio_Hatch");
+    public static final String Tooltip_Incubator_Casing = texter("Any Plascrete Block", "Tooltip_Incubator_Casing");
+
     public static final String NameVacuumFreezer = texter("Vacuum Freezer", "NameVacuumFreezer");
     public static final String VacuumFreezerRecipeType = texter("Vacuum Freezer", "VacuumFreezerRecipeType");
     public static final String Tooltip_VacuumFreezer_00 = texter(

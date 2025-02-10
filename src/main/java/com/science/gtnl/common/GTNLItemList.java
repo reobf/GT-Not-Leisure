@@ -258,6 +258,7 @@ public enum GTNLItemList {
     FlotationCellRegulator,
     VacuumDryingFurnace,
     LargeDistillery,
+    Incubator,
 
     LargeSteamExtractor,
     ReactionFurnace,

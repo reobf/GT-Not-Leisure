@@ -1049,6 +1049,14 @@ Tooltip_Digester_00=提升线圈等级来获得更高的速度加成和耗电减
 Tooltip_Digester_01=超过MV后的每一级电压，都会将温度提高100K
 Tooltip_Digester_Casing=任意强化钨钢机械方块
 
+NameIncubator=培养缸
+IncubatorRecipeType=细菌培养缸
+Tooltip_Incubator_00=不再需要保持输出仓半满!
+Tooltip_Incubator_01=固定并行为8
+Tooltip_Incubator_02=玻璃等级限制了能源仓等级，UHV玻璃解锁所有等级
+Tooltip_Incubator_Radio_Hatch=放射仓
+Tooltip_Incubator_Casing=任意塑料混凝土方块
+
 NameAlloyBlastSmelter=合金冶炼炉
 AlloyBlastSmelterRecipeType=合金冶炼炉
 Tooltip_AlloyBlastSmelter_00=每超过配方温度900K，耗能均将乘以95%%（不计超频）

@@ -48,6 +48,7 @@ import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.D
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.ElectricImplosionCompressor;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.EnergyInfuser;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.FlotationCellRegulator;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.Incubator;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.IsaMill;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeArcSmelter;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeAssembler;
@@ -159,6 +160,7 @@ public class MachineLoader {
     public static ItemStack FlotationCellRegulator;
     public static ItemStack VacuumDryingFurnace;
     public static ItemStack LargeDistillery;
+    public static ItemStack Incubator;
 
     public static void loadMachines() {
 
@@ -500,6 +502,9 @@ public class MachineLoader {
         LargeDistillery = new LargeDistillery(21073, "LargeDistillery", TextLocalization.NameLargeDistillery)
             .getStackForm(1);
         GTNLItemList.LargeDistillery.set(LargeDistillery);
+
+        Incubator = new Incubator(21074, "Incubator", TextLocalization.NameIncubator).getStackForm(1);
+        GTNLItemList.Incubator.set(Incubator);
 
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
             21919,
