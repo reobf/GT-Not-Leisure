@@ -266,9 +266,8 @@ public class PrimitiveDistillationTower extends MTESteamMultiBase<PrimitiveDisti
     }
 
     @Override
-    public IAlignmentLimits getInitialAlignmentLimits() {
-        return (d, r, f) -> (d.flag & (ForgeDirection.UP.flag | ForgeDirection.DOWN.flag)) == 0 && r.isNotRotated()
-            && !f.isVerticallyFliped();
+    protected IAlignmentLimits getInitialAlignmentLimits() {
+        return (d, r, f) -> d.offsetY == 0 && r.isNotRotated() && !f.isVerticallyFliped();
     }
 
     @Override

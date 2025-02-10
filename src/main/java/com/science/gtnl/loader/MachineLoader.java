@@ -57,6 +57,7 @@ import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.L
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeCentrifuge;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeChemicalBath;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeCutter;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeDistillery;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeElectrolyzer;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeElectromagnet;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeExtractor;
@@ -72,6 +73,7 @@ import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.L
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeSteamOreWasher;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeWiremill;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.MegaBlastFurnace;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.VacuumDryingFurnace;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.VacuumFreezer;
 import com.science.gtnl.common.machine.multiblock.TeleportationArrayToAlfheim;
 import com.science.gtnl.common.machine.multiblock.VibrantPhotovoltaicPowerStation;
@@ -155,6 +157,8 @@ public class MachineLoader {
     public static ItemStack LargeHammer;
     public static ItemStack IsaMill;
     public static ItemStack FlotationCellRegulator;
+    public static ItemStack VacuumDryingFurnace;
+    public static ItemStack LargeDistillery;
 
     public static void loadMachines() {
 
@@ -486,6 +490,16 @@ public class MachineLoader {
             "FlotationCellRegulator",
             TextLocalization.NameFlotationCellRegulator).getStackForm(1);
         GTNLItemList.FlotationCellRegulator.set(FlotationCellRegulator);
+
+        VacuumDryingFurnace = new VacuumDryingFurnace(
+            21072,
+            "VacuumDryingFurnace",
+            TextLocalization.NameVacuumDryingFurnace).getStackForm(1);
+        GTNLItemList.VacuumDryingFurnace.set(VacuumDryingFurnace);
+
+        LargeDistillery = new LargeDistillery(21073, "LargeDistillery", TextLocalization.NameLargeDistillery)
+            .getStackForm(1);
+        GTNLItemList.LargeDistillery.set(LargeDistillery);
 
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
             21919,

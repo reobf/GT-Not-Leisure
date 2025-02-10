@@ -556,8 +556,8 @@ public class IsaMillRecipes implements IRecipePool {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 GTUtility.getIntegratedCircuit(1),
-                GTOreDictUnificator.get(OrePrefixes.ore, Materials.Naquadah, 1L))
-            .itemOutputs(setStackSize(new ItemStack(MilledOre.milledNaquadah, 1), 96))
+                GTOreDictUnificator.get(OrePrefixes.ore, Materials.NaquadahEnriched, 1L))
+            .itemOutputs(setStackSize(new ItemStack(MilledOre.milledNaquadahEnriched, 1), 96))
             .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 100))
             .metadata(ISAMILL_TIER, 2)
             .noOptimize()
@@ -568,8 +568,8 @@ public class IsaMillRecipes implements IRecipePool {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 GTUtility.getIntegratedCircuit(10),
-                GTOreDictUnificator.get(OrePrefixes.ore, Materials.Naquadah, 1L))
-            .itemOutputs(setStackSize(new ItemStack(MilledOre.milledNaquadah, 1), 72))
+                GTOreDictUnificator.get(OrePrefixes.ore, Materials.NaquadahEnriched, 1L))
+            .itemOutputs(setStackSize(new ItemStack(MilledOre.milledNaquadahEnriched, 1), 72))
             .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 100))
             .metadata(ISAMILL_TIER, 1)
             .noOptimize()
@@ -580,8 +580,8 @@ public class IsaMillRecipes implements IRecipePool {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 GTUtility.getIntegratedCircuit(1),
-                GTOreDictUnificator.get(OrePrefixes.ore, Materials.Naquadah, 16L))
-            .itemOutputs(setStackSize(new ItemStack(MilledOre.milledNaquadah, 1), 48))
+                GTOreDictUnificator.get(OrePrefixes.ore, Materials.NaquadahEnriched, 16L))
+            .itemOutputs(setStackSize(new ItemStack(MilledOre.milledNaquadahEnriched, 1), 48))
             .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 50))
             .metadata(ISAMILL_TIER, 2)
             .noOptimize()
@@ -592,8 +592,8 @@ public class IsaMillRecipes implements IRecipePool {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 GTUtility.getIntegratedCircuit(10),
-                GTOreDictUnificator.get(OrePrefixes.ore, Materials.Naquadah, 16L))
-            .itemOutputs(setStackSize(new ItemStack(MilledOre.milledNaquadah, 1), 36))
+                GTOreDictUnificator.get(OrePrefixes.ore, Materials.NaquadahEnriched, 16L))
+            .itemOutputs(setStackSize(new ItemStack(MilledOre.milledNaquadahEnriched, 1), 36))
             .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 50))
             .metadata(ISAMILL_TIER, 1)
             .noOptimize()

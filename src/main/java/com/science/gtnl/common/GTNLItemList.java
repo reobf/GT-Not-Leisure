@@ -256,6 +256,8 @@ public enum GTNLItemList {
     LargeHammer,
     IsaMill,
     FlotationCellRegulator,
+    VacuumDryingFurnace,
+    LargeDistillery,
 
     LargeSteamExtractor,
     ReactionFurnace,

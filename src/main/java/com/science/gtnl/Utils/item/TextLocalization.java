@@ -619,6 +619,23 @@ public class TextLocalization {
         "Any Cutting Factory Frame",
         "Tooltip_LargeCutter_Casing");
 
+    public static final String NameVacuumDryingFurnace = texter("Vacuum Drying Furnace", "NameVacuumDryingFurnace");
+    public static final String VacuumDryingFurnaceRecipeType = texter(
+        "Vacuum Furnace / Dehydrator",
+        "VacuumDryingFurnaceRecipeType");
+    public static final String Tooltip_VacuumDryingFurnace_00 = texter(
+        "Every time the formula temperature exceeds 900K, the energy consumption will be multiplied by 95%% (excluding overclocking)",
+        "Tooltip_VacuumDryingFurnace_00");
+    public static final String Tooltip_VacuumDryingFurnace_01 = texter(
+        "Every time the formula temperature exceeds 1800K, a non-destructive overclocking will be performed",
+        "Tooltip_VacuumDryingFurnace_01");
+    public static final String Tooltip_VacuumDryingFurnace_02 = texter(
+        "After each voltage level exceeds MV, the temperature will increase by 100K",
+        "Tooltip_VacuumDryingFurnace_02");
+    public static final String Tooltip_VacuumDryingFurnace_Casing = texter(
+        "Any Vacuum Casing",
+        "Tooltip_VacuumDryingFurnace_Casing");
+
     public static final String NameDigester = texter("Digester", "NameDigester");
     public static final String DigesterRecipeType = texter("Digester", "DigesterRecipeType");
     public static final String Tooltip_Digester_00 = texter(
@@ -749,6 +766,14 @@ public class TextLocalization {
     public static final String Tooltip_LargeMixer_Casing = texter(
         "Any Multitank Exterior Casing",
         "Tooltip_LargeMixer_Casing");
+
+    public static final String NameLargeDistillery = texter("Large Distillery", "NameLargeDistillery");
+    public static final String LargeDistilleryRecipeType = texter(
+        "Distillation Tower / Distillery",
+        "LargeDistilleryRecipeType");
+    public static final String Tooltip_LargeDistillery_Casing = texter(
+        "Any Multitank Exterior Casing",
+        "Tooltip_LargeDistillery_Casing");
 
     public static final String NameLargeElectromagnet = texter("Large Electromagnet", "NameLargeElectromagnet");
     public static final String LargeElectromagnetRecipeType = texter(

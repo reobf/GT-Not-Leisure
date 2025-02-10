@@ -11,12 +11,12 @@ import gtPlusPlus.core.util.minecraft.FluidUtils;
 
 public class MilledOre extends ItemPackage {
 
-    public static Fluid NaquadahFlotationFroth;
-    public static Item milledNaquadah;
+    public static Fluid NaquadahEnrichedFlotationFroth;
+    public static Item milledNaquadahEnriched;
 
     @Override
     public void items() {
-        milledNaquadah = BaseItemMilledOre.generate(Materials.Naquadah, (int) TierEU.RECIPE_ZPM);
+        milledNaquadahEnriched = BaseItemMilledOre.generate(Materials.NaquadahEnriched, (int) TierEU.RECIPE_ZPM);
     }
 
     @Override
@@ -27,18 +27,19 @@ public class MilledOre extends ItemPackage {
     @Override
     public void fluids() {
 
-        short[] aNaquadahFrothRGB = Materials.Naquadah.mRGBa;
-        NaquadahFlotationFroth = FluidUtils.generateFluidNoPrefix(
-            "froth.naquadahflotation",
-            "Nquadah Froth",
+        short[] aNaquadahEnrichedFrothRGB = Materials.NaquadahEnriched.mRGBa;
+        NaquadahEnrichedFlotationFroth = FluidUtils.generateFluidNoPrefix(
+            "froth.naquadahenrichedflotation",
+            "Nquadah Enriched Froth",
             32 + 175,
-            new short[] { aNaquadahFrothRGB[0], aNaquadahFrothRGB[1], aNaquadahFrothRGB[2], 100 },
+            new short[] { aNaquadahEnrichedFrothRGB[0], aNaquadahEnrichedFrothRGB[1], aNaquadahEnrichedFrothRGB[2],
+                100 },
             true);
     }
 
     @Override
     public String errorMessage() {
-        return "Failed to generate recipes for OreMillingProc.";
+        return "GTNL:Failed to generate recipes for OreMillingProc.";
     }
 
     @Override

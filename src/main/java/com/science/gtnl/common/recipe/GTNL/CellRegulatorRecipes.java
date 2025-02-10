@@ -1,6 +1,6 @@
 package com.science.gtnl.common.recipe.GTNL;
 
-import static com.science.gtnl.common.item.items.MilledOre.NaquadahFlotationFroth;
+import static com.science.gtnl.common.item.items.MilledOre.NaquadahEnrichedFlotationFroth;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gtPlusPlus.core.item.chemistry.MilledOreProcessing.*;
 
@@ -45,12 +45,12 @@ public class CellRegulatorRecipes implements IRecipePool {
             .eut(TierEU.RECIPE_LuV)
             .addTo(CRR);
 
-        aMat = MaterialUtils.generateMaterialFromGtENUM(Materials.Naquadah);
+        aMat = MaterialUtils.generateMaterialFromGtENUM(Materials.NaquadahEnriched);
         FlotationRecipeHandler.registerOreType(aMat);
         GTValues.RA.stdBuilder()
             .itemInputs(ItemUtils.getSimpleStack(GenericChem.mPotassiumEthylXanthate, 64), aMat.getMilled(64))
             .fluidInputs(FluidUtils.getFluidStack(PineOil, 140000))
-            .fluidOutputs(FluidUtils.getFluidStack(NaquadahFlotationFroth, 1000))
+            .fluidOutputs(FluidUtils.getFluidStack(NaquadahEnrichedFlotationFroth, 1000))
             .duration(8 * MINUTES)
             .eut(TierEU.RECIPE_LuV)
             .addTo(CRR);

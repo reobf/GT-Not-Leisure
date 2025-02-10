@@ -422,10 +422,10 @@ Tooltip_MatterCluster_01=§8§o按下SHIFT显示详细信息。
 item.record.sus.desc=Software Update Services
 item.record.newhorizons.desc=Sweet Dreams (Bonus Track)
 
-item.milledNaquadah.name=研磨硅岩矿
-item.FrothNaquadahflotation.name=硅岩浮选泡沫单元
-gtplusplus.fluid.naquadahfroth=硅岩泡沫
-fluid.froth.naquadahflotation=硅岩泡沫
+item.milledNaquadahEnriched.name=研磨富集硅岩矿
+item.FrothNaquadahEnrichedflotation.name=富集硅岩浮选泡沫单元
+gtplusplus.fluid.naquadahenrichedfroth=富集硅岩泡沫
+fluid.froth.naquadahenrichedflotation=富集硅岩泡沫
 
 bw.werkstoff.25001.name=六硝基六氮杂异伍兹烷
 bw.werkstoff.25002.name=粗制六硝基六氮杂异伍兹烷
@@ -690,9 +690,24 @@ Tooltip_FlotationCellRegulator_00=玻璃等级限制了能源仓等级，UHV玻�
 Tooltip_FlotationCellRegulator_01=机器可进行§c无损超频§7
 Tooltip_FlotationCellRegulator_Casing=任意哈斯特洛伊合金-X结构方块
 
+NameVacuumDryingFurnace=真空干燥炉
+VacuumDryingFurnaceRecipeType=真空炉 / 脱水机
+VacuumDryingFurnace_Mode_0=真空炉
+VacuumDryingFurnace_Mode_1=脱水机
+Tooltip_VacuumDryingFurnace_00=每超过配方温度900K，耗能均将乘以95%%（不计超频）
+Tooltip_VacuumDryingFurnace_01=每超过配方温度1800K，将进行一次无损超频
+Tooltip_VacuumDryingFurnace_02=超过MV后的每一级电压，都会将温度提高100K
+Tooltip_VacuumDryingFurnace_Casing=任意真空机械方块
+
 NameLargeMixer=大型搅拌罐
 LargeMixerRecipeType=搅拌机
 Tooltip_LargeMixer_Casing=任意储罐拓展方块
+
+NameLargeDistillery=大型分馏蒸馏厂
+LargeDistilleryRecipeType=蒸馏塔 / 蒸馏室
+LargeDistillery_Mode_0=蒸馏塔
+LargeDistillery_Mode_1=蒸馏室
+Tooltip_LargeDistillery_Casing=任意储罐拓展方块
 
 NameLargeMacerationTower=大型研磨塔
 LargeMacerationTowerRecipeType=粉碎机

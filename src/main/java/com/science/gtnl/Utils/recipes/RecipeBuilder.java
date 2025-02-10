@@ -1,9 +1,14 @@
 package com.science.gtnl.Utils.recipes;
 
+import javax.annotation.Nullable;
+
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
 import gregtech.api.recipe.RecipeMap;
+import gregtech.api.recipe.RecipeMetadataKey;
+import gregtech.api.recipe.metadata.IRecipeMetadataStorage;
+import gregtech.api.recipe.metadata.RecipeMetadataStorage;
 import gregtech.api.util.GTRecipe;
 
 public class RecipeBuilder {
@@ -20,6 +25,9 @@ public class RecipeBuilder {
     public int eut = 0;
     public int duration = 0;
     public int specialValue = 0;
+    @Nullable
+    protected IRecipeMetadataStorage metadataStorage;
+    protected boolean skip = false;
 
     public RecipeBuilder() {}
 
@@ -97,6 +105,15 @@ public class RecipeBuilder {
         tempRecipe.mOutputs = outputItems.clone();
 
         recipeMap.add(tempRecipe);
+        return this;
+    }
+
+    public <T> RecipeBuilder metadata(RecipeMetadataKey<T> key, T value) {
+        if (skip) return this;
+        if (metadataStorage == null) {
+            metadataStorage = new RecipeMetadataStorage();
+        }
+        metadataStorage.store(key, value);
         return this;
     }
 }
