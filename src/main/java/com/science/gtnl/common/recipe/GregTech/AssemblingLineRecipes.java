@@ -7,8 +7,6 @@ import static gregtech.api.util.GTRecipeConstants.*;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraftforge.fluids.Fluid;
-import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.block.BlockList;
@@ -20,6 +18,7 @@ import com.science.gtnl.common.recipe.IRecipePool;
 
 import bartworks.common.loaders.ItemRegistry;
 import bartworks.system.material.WerkstoffLoader;
+import goodgenerator.util.ItemRefer;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -42,10 +41,6 @@ public class AssemblingLineRecipes implements IRecipePool {
 
     @Override
     public void loadRecipes() {
-
-        Fluid solderIndalloy = FluidRegistry.getFluid("molten.indalloy140") != null
-            ? FluidRegistry.getFluid("molten.indalloy140")
-            : FluidRegistry.getFluid("molten.solderingalloy");
 
         ItemStack CrystalStuddedCosmicNeutroniumWand = GTModHandler.getModItem(Thaumcraft.ID, "WandCasting", 1, 9000);
         NBTTagCompound CrystalStuddedCosmicNeutroniumWandType = CrystalStuddedCosmicNeutroniumWand.getTagCompound();
@@ -383,6 +378,44 @@ public class AssemblingLineRecipes implements IRecipePool {
             new FluidStack[] { MaterialsKevlar.Kevlar.getMolten(23040), Materials.CosmicNeutronium.getMolten(4608),
                 Materials.Grade6PurifiedWater.getFluid(32000), MaterialsAlloy.INDALLOY_140.getFluidStack(256000) },
             GTNLItemList.HandOfJohnDavisonRockefeller.get(1),
+            60 * SECONDS,
+            (int) TierEU.RECIPE_UHV);
+
+        GTValues.RA.stdBuilder()
+            .metadata(RESEARCH_ITEM, ItemList.Hatch_CraftingInput_Bus_ME_ItemOnly.get(1))
+            .metadata(RESEARCH_TIME, 6 * HOURS)
+            .itemInputs(
+                ItemList.Hatch_CraftingInput_Bus_ME_ItemOnly.get(1),
+                GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 60),
+                ItemList.Hatch_Input_Bus_ME_Advanced.get(2),
+                GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 16, 54),
+                GTModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockController", 1),
+                GTModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockDenseEnergyCell", 1),
+                GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 5, 440),
+                GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 480))
+            .fluidInputs(Materials.SolderingAlloy.getMolten(4608), MaterialsAlloy.INDALLOY_140.getFluidStack(2304))
+            .itemOutputs(GTNLItemList.SuperCraftingInputBusME.get(1))
+            .eut(TierEU.RECIPE_LuV)
+            .duration(30 * SECONDS)
+            .addTo(AssemblyLine);
+
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
+            ItemList.Hatch_CraftingInput_Bus_ME.get(1),
+            1920000,
+            4000,
+            (int) TierEU.RECIPE_UEV,
+            1,
+            new ItemStack[] { ItemList.Hatch_CraftingInput_Bus_ME.get(1), ItemRefer.Fluid_Storage_Core_T7.get(4),
+                GTModHandler.getModItem(AvaritiaAddons.ID, "InfinityChest", 4),
+                GTModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockCreativeEnergyCell", 1),
+                GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 16, 60),
+                GTModHandler.getModItem(AE2FluidCraft.ID, "fluid_part", 16, 7),
+                ItemList.Hatch_Input_Bus_ME_Advanced.get(4), ItemList.Hatch_Input_ME_Advanced.get(4),
+                GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 64, 54) },
+            new FluidStack[] { MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(73728),
+                Materials.Infinity.getMolten(18432), Materials.RadoxPolymer.getMolten(18432),
+                MaterialsAlloy.INDALLOY_140.getFluidStack(512000) },
+            GTNLItemList.SuperCraftingInputHatchME.get(1),
             60 * SECONDS,
             (int) TierEU.RECIPE_UHV);
     }

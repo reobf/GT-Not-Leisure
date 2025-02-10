@@ -2,7 +2,9 @@ package com.science.gtnl.common.hatch;
 
 import static gregtech.api.enums.GTValues.VN;
 
-import java.util.function.*;
+import java.util.function.Consumer;
+import java.util.function.LongConsumer;
+import java.util.function.LongSupplier;
 
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
@@ -76,7 +78,7 @@ public class DebugEnergyHatch extends MTEHatchEnergy implements IAddUIWidgets, I
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister aBlockIconRegister) {
         super.registerIcons(aBlockIconRegister);
-        GENNY = new GTRenderedTexture(new Textures.BlockIcons.CustomIcon("iconsets/GENNY"));
+        GENNY = new GTRenderedTexture(new Textures.BlockIcons.CustomIcon("iconsets/OVERLAY_ENERGY_ON_WIRELESS_LASER"));
     }
 
     @Override
