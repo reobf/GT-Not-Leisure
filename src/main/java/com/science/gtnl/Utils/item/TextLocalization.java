@@ -787,6 +787,18 @@ public class TextLocalization {
         "Any Hastelloy-X Structural Block",
         "Tooltip_FlotationCellRegulator_Casing");
 
+    public static final String NameFishingGround = texter("Fishing Ground", "NameFishingGround");
+    public static final String FishingGroundRecipeType = texter("Fishing Ground", "FishingGroundRecipeType");
+    public static final String Tooltip_FishingGround_00 = texter(
+        "Combine Algae Farm and Zhuhai - Fishing Port together!",
+        "Tooltip_FishingGround_00");
+    public static final String Tooltip_FishingGround_01 = texter(
+        "It gains §cperfect overclock§7",
+        "Tooltip_FishingGround_01");
+    public static final String Tooltip_FishingGround_Casing = texter(
+        "Any Hastelloy-X Structural Block",
+        "Tooltip_FishingGround_Casing");
+
     public static final String NameIsaMill = texter("Isa Mill", "NameIsaMill");
     public static final String IsaMillRecipeType = texter("Isa Mill", "IsaMillRecipeType");
     public static final String Tooltip_IsaMill_00 = texter("Industrial Wet Milling", "Tooltip_IsaMill_00");

@@ -49,6 +49,7 @@ import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.C
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.Digester;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.ElectricImplosionCompressor;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.EnergyInfuser;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.FishingGround;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.FlotationCellRegulator;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.Incubator;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.IsaMill;
@@ -166,6 +167,7 @@ public class MachineLoader {
     public static ItemStack Incubator;
     public static ItemStack LargeIncubator;
     public static ItemStack LargeEngravingLaser;
+    public static ItemStack FishingGround;
 
     public static void loadMachines() {
 
@@ -520,6 +522,9 @@ public class MachineLoader {
             "LargeEngravingLaser",
             TextLocalization.NameLargeEngravingLaser).getStackForm(1);
         GTNLItemList.LargeEngravingLaser.set(LargeEngravingLaser);
+
+        FishingGround = new FishingGround(21077, "FishingGround", TextLocalization.NameFishingGround).getStackForm(1);
+        GTNLItemList.FishingGround.set(FishingGround);
 
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
             21919,

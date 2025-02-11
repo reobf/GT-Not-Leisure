@@ -814,6 +814,13 @@ Tooltip_LargeAssembler_00=能源仓限制了机器工作的电压等级+1
 Tooltip_LargeAssembler_01=玻璃等级限制了能源仓等级，UHV玻璃解锁所有等级
 Tooltip_LargeAssembler_Casing=任意批量生产框架
 
+NameFishingGround=渔场
+gtnl.recipe.FishingGroundRecipes=渔场
+FishingGroundRecipeType=渔场
+Tooltip_FishingGround_00=把珠海渔场和藻类农场结合在一起!
+Tooltip_FishingGround_01=机器可进行§c无损超频§7
+Tooltip_FishingGround_Casing=任意哈斯特洛伊-X结构方块
+
 NameLargeEngravingLaser=大型激光蚀刻机
 LargeEngravingLaserRecipeType=激光蚀刻机
 Tooltip_LargeEngravingLaser_00=玻璃等级限制了能源仓等级，UHV玻璃解锁所有等级

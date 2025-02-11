@@ -262,6 +262,7 @@ public enum GTNLItemList {
     LargeDistillery,
     Incubator,
     LargeEngravingLaser,
+    FishingGround,
 
     LargeIncubator,
     LargeSteamExtractor,

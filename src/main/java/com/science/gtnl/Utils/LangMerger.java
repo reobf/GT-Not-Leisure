@@ -60,7 +60,7 @@ public class LangMerger {
     }
 
     private String[] getSupportedLanguages() {
-        return new String[] { "en_US", "zh_CN" }; // 可以根据需要添加更多语言代码
+        return new String[] { "en_US", "zh_CN" };
     }
 
     private Map<String, String> loadModEntries(String langCode) throws IOException {
@@ -104,7 +104,7 @@ public class LangMerger {
             .exists()
             && !targetFile.getParentFile()
                 .mkdirs()) {
-            throw new IOException("无法创建目录: " + targetFile.getParent());
+            throw new IOException("Error create language file: " + targetFile.getParent());
         }
 
         StringBuilder header = new StringBuilder();
@@ -205,7 +205,6 @@ public class LangMerger {
                     .append("\n");
             });
 
-        // 检查最后一行是否存在 "}"，如果不存在则添加一个
         String lastLine = content.toString()
             .trim();
         if (!lastLine.endsWith("}")) {

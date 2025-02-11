@@ -5,6 +5,7 @@ import com.science.gtnl.common.machine.multiMachineClasses.GTNLProcessingArrayRe
 import com.science.gtnl.common.materials.MaterialPool;
 import com.science.gtnl.common.recipe.GTNL.CellRegulatorRecipes;
 import com.science.gtnl.common.recipe.GTNL.DesulfurizerRecipes;
+import com.science.gtnl.common.recipe.GTNL.FishingGroundRecipes;
 import com.science.gtnl.common.recipe.GTNL.IsaMillRecipes;
 import com.science.gtnl.common.recipe.GTNL.ManaInfusionRecipes;
 import com.science.gtnl.common.recipe.GTNL.MatterFabricatorRecipes;
@@ -56,7 +57,7 @@ public class RecipeLoader {
             new FluidExtraction(), new DigesterRecipes(), new DissolutionTankRecipes(), new CentrifugeRecipes(),
             new ChemicalDehydratorRecipes(), new RareEarthCentrifugalRecipes(), new MatterFabricatorRecipes(),
             new TheTwilightForestRecipes(), new IsaMillRecipes(), new SpaceAssemblerRecipes(),
-            new CellRegulatorRecipes(), new VacuumFurnaceRecipes() };
+            new CellRegulatorRecipes(), new VacuumFurnaceRecipes(), new FishingGroundRecipes() };
         for (IRecipePool recipePool : recipePools) {
             recipePool.loadRecipes();
         }

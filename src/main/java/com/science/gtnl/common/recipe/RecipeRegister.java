@@ -191,6 +191,17 @@ public class RecipeRegister {
         .disableOptimize()
         .build();
 
+    public static RecipeMap<GTNLRecipeMapBackend> FishingGroundRecipes = RecipeMapBuilder
+        .of("gtnl.recipe.FishingGroundRecipes", GTNLRecipeMapBackend::new)
+        .maxIO(4, 32, 4, 0)
+        .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
+        .frontend(GeneralFrontend::new)
+        .neiHandlerInfo(
+            builder -> builder.setDisplayStack(GTNLItemList.LibraryOfRuina.get(1))
+                .setMaxRecipesPerPage(1))
+        .disableOptimize()
+        .build();
+
     public static RecipeMap<RecipeMapBackend> IndustrialInfusionCraftingRecipes = RecipeMapBuilder
         .of("gtnl.recipe.IndustrialInfusionCraftingRecipes")
         .maxIO(25, 1, 0, 0)
