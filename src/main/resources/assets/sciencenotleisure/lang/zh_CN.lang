@@ -36,6 +36,19 @@ Tooltip_DebugEnergyHatch_00=凭空而生的能量
 Tooltip_DebugEnergyHatch_01=§9无限能源的生产/消耗设备
 Tooltip_DebugEnergyHatch_02=§9它们从何而来?
 
+NinefoldInputHatchEV=九重输入仓(EV)
+NinefoldInputHatchIV=九重输入仓(IV)
+NinefoldInputHatchLuV=九重输入仓(LuV)
+NinefoldInputHatchZPM=九重输入仓(ZPM)
+NinefoldInputHatchUV=九重输入仓(UV)
+NinefoldInputHatchUHV=九重输入仓(UHV)
+NinefoldInputHatchUEV=九重输入仓(UEV)
+NinefoldInputHatchUIV=九重输入仓(UIV)
+NinefoldInputHatchUMV=九重输入仓(UMV)
+NinefoldInputHatchUXV=九重输入仓(UXV)
+HumongousNinefoldInputHatch=巨型九重输入仓
+Tooltip_NinefoldInputHatch_00=容量: 
+
 MetaCasing.0.name=测试机械方块
 MetaCasing.1.name=蒸汽装配机械方块
 MetaCasing.2.name=散热片

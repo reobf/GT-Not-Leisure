@@ -180,5 +180,11 @@ public class CraftingTableRecipes implements IRecipePool {
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenCarbide, 1L), 'B',
                 GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Ultimet, 1L), 'C',
                 GregtechItemList.Casing_CuttingFactoryFrame.get(1L), 'D', ItemList.Electric_Motor_IV.get(1L) });
+
+        addCraftingRecipe(
+            tectech.thing.CustomItemList.hatch_CreativeMaintenance.get(1),
+            new Object[] { "ABA", "CDC", "ABA", 'A', GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1L),
+                'B', ItemList.Hatch_Maintenance.get(1L), 'C', ItemList.Robot_Arm_HV.get(1L), 'D',
+                ItemList.Hull_HV.get(1L) });
     }
 }

@@ -169,6 +169,21 @@ public class TextLocalization {
         "§9Where do they come from?",
         "Tooltip_DebugEnergyHatch_02");
 
+    public static final String NinefoldInputHatchEV = texter("Ninefold Input Hatch (EV)", "NinefoldInputHatchEV");
+    public static final String NinefoldInputHatchIV = texter("Ninefold Input Hatch (IV)", "NinefoldInputHatchIV");
+    public static final String NinefoldInputHatchLuV = texter("Ninefold Input Hatch (LuV)", "NinefoldInputHatchLuV");
+    public static final String NinefoldInputHatchZPM = texter("Ninefold Input Hatch (ZPM)", "NinefoldInputHatchZPM");
+    public static final String NinefoldInputHatchUV = texter("Ninefold Input Hatch (UV)", "NinefoldInputHatchUV");
+    public static final String NinefoldInputHatchUHV = texter("Ninefold Input Hatch (UHV)", "NinefoldInputHatchUHV");
+    public static final String NinefoldInputHatchUEV = texter("Ninefold Input Hatch (UEV)", "NinefoldInputHatchUEV");
+    public static final String NinefoldInputHatchUIV = texter("Ninefold Input Hatch (UIV)", "NinefoldInputHatchUIV");
+    public static final String NinefoldInputHatchUMV = texter("Ninefold Input Hatch (UMV)", "NinefoldInputHatchUMV");
+    public static final String NinefoldInputHatchUXV = texter("Ninefold Input Hatch (UXV)", "NinefoldInputHatchUXV");
+    public static final String HumongousNinefoldInputHatch = texter(
+        "Humongous Ninefold Input Hatch",
+        "HumongousNinefoldInputHatch");
+    public static final String Tooltip_NinefoldInputHatch_00 = texter("Capacity: ", "Tooltip_NinefoldInputHatch_00");
+
     public static final String SuperCraftingInputHatchME = texter(
         "Super Crafting Input Buffer (ME)",
         "SuperCraftingInputHatchME");

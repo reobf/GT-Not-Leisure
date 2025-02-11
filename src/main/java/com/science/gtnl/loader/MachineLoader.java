@@ -4,9 +4,7 @@ import net.minecraft.item.ItemStack;
 
 import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.common.GTNLItemList;
-import com.science.gtnl.common.hatch.DebugEnergyHatch;
-import com.science.gtnl.common.hatch.HatchCustomFluid;
-import com.science.gtnl.common.hatch.SuperCraftingInputHatchME;
+import com.science.gtnl.common.hatch.*;
 import com.science.gtnl.common.machine.multiblock.AdvancedPhotovoltaicPowerStation;
 import com.science.gtnl.common.machine.multiblock.BloodSoulSacrificialArray;
 import com.science.gtnl.common.machine.multiblock.BrickedBlastFurnace;
@@ -171,20 +169,6 @@ public class MachineLoader {
 
     public static void loadMachines() {
 
-        /*
-         * hatch_AutoSterileMaintenanceHatch.set(
-         * new MTEHatchSterileMaintenance(
-         * 21001,
-         * "gtnl.sterile.maintenance",
-         * "Auto-Taping Sterile Maintenance Hatch",
-         * 14).getStackForm(1L));
-         * MTEInfinityHatchOutputBusME.set(
-         * new MTEInfinityHatchOutputBusME(21002, "gtnl.ae2.InfinityOutputBusME", "Infinity Output Bus (ME)", 4)
-         * .getStackForm(1L));
-         * MTEInfinityHatchOutputME.set(
-         * new MTEInfinityHatchOutputME(21003, "gtnl.ae2.InfinityOutputME", "Infinity Output Hatch (ME)", 3)
-         * .getStackForm(1L));
-         */
         EdenGarden = new EdenGarden(21004, "EdenGarden", TextLocalization.NameEdenGarden).getStackForm(1);
         GTNLItemList.EdenGarden.set(EdenGarden);
 
@@ -594,6 +578,53 @@ public class MachineLoader {
 
         GTNLItemList.DebugEnergyHatch.set(
             new DebugEnergyHatch(21507, "Debug Energy Hatch", TextLocalization.DebugEnergyHatch, 14).getStackForm(1L));
+
+        GTNLItemList.NinefoldInputHatchEV.set(
+            new NinefoldInputHatch(21508, 9, "Ninefold Input Hatch EV", TextLocalization.NinefoldInputHatchEV, 4)
+                .getStackForm(1L));
+
+        GTNLItemList.NinefoldInputHatchIV.set(
+            new NinefoldInputHatch(21509, 9, "Ninefold Input Hatch IV", TextLocalization.NinefoldInputHatchIV, 5)
+                .getStackForm(1L));
+
+        GTNLItemList.NinefoldInputHatchLuV.set(
+            new NinefoldInputHatch(21510, 9, "Ninefold Input Hatch LuV", TextLocalization.NinefoldInputHatchLuV, 6)
+                .getStackForm(1L));
+
+        GTNLItemList.NinefoldInputHatchZPM.set(
+            new NinefoldInputHatch(21511, 9, "Ninefold Input Hatch ZPM", TextLocalization.NinefoldInputHatchZPM, 7)
+                .getStackForm(1L));
+
+        GTNLItemList.NinefoldInputHatchUV.set(
+            new NinefoldInputHatch(21512, 9, "Ninefold Input Hatch UV", TextLocalization.NinefoldInputHatchUV, 8)
+                .getStackForm(1L));
+
+        GTNLItemList.NinefoldInputHatchUHV.set(
+            new NinefoldInputHatch(21513, 9, "Ninefold Input Hatch UHV", TextLocalization.NinefoldInputHatchUHV, 9)
+                .getStackForm(1L));
+
+        GTNLItemList.NinefoldInputHatchUEV.set(
+            new NinefoldInputHatch(21514, 9, "Ninefold Input Hatch UEV", TextLocalization.NinefoldInputHatchUEV, 10)
+                .getStackForm(1L));
+
+        GTNLItemList.NinefoldInputHatchUIV.set(
+            new NinefoldInputHatch(21515, 9, "Ninefold Input Hatch UIV", TextLocalization.NinefoldInputHatchUIV, 11)
+                .getStackForm(1L));
+
+        GTNLItemList.NinefoldInputHatchUMV.set(
+            new NinefoldInputHatch(21516, 9, "Ninefold Input Hatch UMV", TextLocalization.NinefoldInputHatchUMV, 12)
+                .getStackForm(1L));
+
+        GTNLItemList.NinefoldInputHatchUXV.set(
+            new NinefoldInputHatch(21517, 9, "Ninefold Input Hatch UXV", TextLocalization.NinefoldInputHatchUXV, 13)
+                .getStackForm(1L));
+
+        GTNLItemList.HumongousNinefoldInputHatch.set(
+            new HumongousNinefoldInputHatch(
+                21518,
+                9,
+                "Humongous Ninefold Input Hatch",
+                TextLocalization.HumongousNinefoldInputHatch).getStackForm(1L));
     }
 
     public static void run() {

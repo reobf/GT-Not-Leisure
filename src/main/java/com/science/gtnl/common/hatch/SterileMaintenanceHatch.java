@@ -18,16 +18,16 @@ import gregtech.api.metatileentity.implementations.MTEHatchMaintenance;
 import gregtech.api.objects.GTRenderedTexture;
 import tectech.util.TTUtility;
 
-public class MTEHatchSterileMaintenance extends MTEHatchMaintenance {
+public class SterileMaintenanceHatch extends MTEHatchMaintenance {
 
     private static Textures.BlockIcons.CustomIcon face;
 
-    public MTEHatchSterileMaintenance(int aID, String aName, String aNameRegional, int aTier) {
+    public SterileMaintenanceHatch(int aID, String aName, String aNameRegional, int aTier) {
         super(aID, aName, aNameRegional, aTier);
         TTUtility.setTier(aTier, this);
     }
 
-    public MTEHatchSterileMaintenance(String aName, int aTier, String[] aDescription, ITexture[][][] aTextures) {
+    public SterileMaintenanceHatch(String aName, int aTier, String[] aDescription, ITexture[][][] aTextures) {
         super(aName, aTier, aDescription, aTextures, false);
     }
 
@@ -60,7 +60,7 @@ public class MTEHatchSterileMaintenance extends MTEHatchMaintenance {
 
     @Override
     public MetaTileEntity newMetaEntity(IGregTechTileEntity aTileEntity) {
-        return new MTEHatchSterileMaintenance(this.mName, this.mTier, this.mDescriptionArray, this.mTextures);
+        return new SterileMaintenanceHatch(this.mName, this.mTier, this.mDescriptionArray, this.mTextures);
     }
 
     @Override

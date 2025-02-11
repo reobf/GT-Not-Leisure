@@ -27,7 +27,7 @@ import gregtech.api.render.TextureFactory;
 import gregtech.api.util.GTUtility;
 
 // 此处无法判断同一仓室下多个槽位，导致只能输出一种流体并填满第一个槽位，推测可能无法检查其他槽位
-public class MTEQuadrupleOutputHatch extends MTEHatchOutput implements IAddUIWidgets {
+public class QuadrupleOutputHatch extends MTEHatchOutput implements IAddUIWidgets {
 
     public FluidStack[] mStoredFluid;
     public FluidStackTank[] fluidTanks;
@@ -35,7 +35,7 @@ public class MTEQuadrupleOutputHatch extends MTEHatchOutput implements IAddUIWid
     public byte mMode = 0;
     public String lockedFluidName = null;
 
-    public MTEQuadrupleOutputHatch(int aID, String aName, String aNameRegional, int aTier) {
+    public QuadrupleOutputHatch(int aID, String aName, String aNameRegional, int aTier) {
         super(
             aID,
             aName,
@@ -53,8 +53,7 @@ public class MTEQuadrupleOutputHatch extends MTEHatchOutput implements IAddUIWid
         initializeFluidTanks(4);
     }
 
-    public MTEQuadrupleOutputHatch(String aName, int aSlot, int aTier, String[] aDescription,
-        ITexture[][][] aTextures) {
+    public QuadrupleOutputHatch(String aName, int aSlot, int aTier, String[] aDescription, ITexture[][][] aTextures) {
         super(aName, 4, aTier, aDescription, aTextures);
         mStoredFluid = new FluidStack[4];
         fluidTanks = new FluidStackTank[4];
@@ -74,7 +73,7 @@ public class MTEQuadrupleOutputHatch extends MTEHatchOutput implements IAddUIWid
 
     @Override
     public MetaTileEntity newMetaEntity(IGregTechTileEntity aTileEntity) {
-        return new MTEQuadrupleOutputHatch(mName, getMaxType(), mTier, mDescriptionArray, mTextures);
+        return new QuadrupleOutputHatch(mName, getMaxType(), mTier, mDescriptionArray, mTextures);
     }
 
     public int getMaxType() {
