@@ -20,6 +20,7 @@ import com.gtnewhorizons.modularui.common.widget.DrawableWidget;
 import com.gtnewhorizons.modularui.common.widget.TextWidget;
 import com.gtnewhorizons.modularui.common.widget.textfield.NumericWidget;
 import com.science.gtnl.Utils.item.TextLocalization;
+import com.science.gtnl.Utils.item.TextUtils;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -54,7 +55,7 @@ public class DebugEnergyHatch extends MTEHatchEnergy implements IAddUIWidgets, I
             aNameRegional,
             aTier,
             new String[] { TextLocalization.Tooltip_DebugEnergyHatch_00, TextLocalization.Tooltip_DebugEnergyHatch_01,
-                TextLocalization.Tooltip_DebugEnergyHatch_02, TextLocalization.Adder + "Science Not Leisure" });
+                TextLocalization.Tooltip_DebugEnergyHatch_02, TextLocalization.Adder + TextUtils.SCIENCE_NOT_LEISURE });
         TTUtility.setTier(aTier, this);
     }
 

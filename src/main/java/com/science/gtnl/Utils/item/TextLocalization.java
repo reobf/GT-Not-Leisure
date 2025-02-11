@@ -8,6 +8,10 @@ import gregtech.api.util.GTLanguageManager;
 
 public class TextLocalization {
 
+    public static final String Science_Not_Leisure = texter(
+        "§4S§6c§ei§2e§bn§9c§de §4N§6o§et §2L§be§9i§ds§4u§6r§ee",
+        "Science_Not_Leisure");
+
     public static final String Tooltip_Testitem_00 = texter("If you see this tooltip", "Tooltip_Testitem_00");
     public static final String Tooltip_Testitem_01 = texter("Welcome to GT Not Leisure!", "Tooltip_Testitem_01");
     public static final String Tooltip_Testitem_02 = texter(
@@ -156,7 +160,40 @@ public class TextLocalization {
     public static final String HatchCustomFluid_02 = texter("Accepted Fluid: ", "HatchCustomFluid_02");
     public static final String HatchCustomFluid_03 = texter("Empty", "HatchCustomFluid_03");
 
-    public static final String SolidifierHatchMAX = texter("Solidifier Hatch MAX", "SolidifierHatchMAX");
+    public static final String DualInputHatchLV = texter("Dual Input Hatch LV", "DualInputHatchLV");
+    public static final String DualInputHatchMV = texter("Dual Input Hatch MV", "DualInputHatchMV");
+    public static final String DualInputHatchHV = texter("Dual Input Hatch HV", "DualInputHatchHV");
+    public static final String DualInputHatchEV = texter("Dual Input Hatch EV", "DualInputHatchEV");
+    public static final String DualInputHatchIV = texter("Dual Input Hatch IV", "DualInputHatchIV");
+    public static final String DualInputHatchLuV = texter("Dual Input Hatch LuV", "DualInputHatchLuV");
+    public static final String DualInputHatchZPM = texter("Dual Input Hatch ZPM", "DualInputHatchZPM");
+    public static final String DualInputHatchUV = texter("Dual Input Hatch UV", "DualInputHatchUV");
+    public static final String DualInputHatchUHV = texter("Dual Input Hatch UHV", "DualInputHatchUHV");
+    public static final String DualInputHatchUEV = texter("Dual Input Hatch UEV", "DualInputHatchUEV");
+    public static final String DualInputHatchUIV = texter("Dual Input Hatch UIV", "DualInputHatchUIV");
+    public static final String DualInputHatchUMV = texter("Dual Input Hatch UMV", "DualInputHatchUMV");
+    public static final String DualInputHatchUXV = texter("Dual Input Hatch UXV", "DualInputHatchUXV");
+    public static final String DualInputHatchMAX = texter("Dual Input Hatch MAX", "DualInputHatchMAX");
+    public static final String Tooltip_DualInputHatch_00 = texter(
+        "Item and Fluid Input for Multiblocks",
+        "Tooltip_DualInputHatch_00");
+    public static final String Tooltip_DualInputHatch_01 = texter("Item slot amount: ", "Tooltip_DualInputHatch_01");
+    public static final String Tooltip_DualInputHatch_02_00 = texter(
+        "Fluid capacity: ",
+        "Tooltip_DualInputHatch_02_00");
+    public static final String Tooltip_DualInputHatch_02_01 = texter(
+        " fluid slots in total, each ",
+        "Tooltip_DualInputHatch_02_01");
+
+    public static final String HumongousSolidifierHatch = texter(
+        "Humongous Solidifier Hatch",
+        "HumongousSolidifierHatch");
+    public static final String Tooltip_HumongousSolidifierHatch_00 = texter(
+        "Fluid Input with Mold for Fluid Shaper",
+        "Tooltip_HumongousSolidifierHatch_00");
+    public static final String Tooltip_HumongousSolidifierHatch_01 = texter(
+        "Capacity: 2147483647 L",
+        "Tooltip_HumongousSolidifierHatch_01");
 
     public static final String DebugEnergyHatch = texter("Debug Energy Hatch", "DebugEnergyHatch");
     public static final String Tooltip_DebugEnergyHatch_00 = texter(
@@ -182,7 +219,16 @@ public class TextLocalization {
     public static final String HumongousNinefoldInputHatch = texter(
         "Humongous Ninefold Input Hatch",
         "HumongousNinefoldInputHatch");
-    public static final String Tooltip_NinefoldInputHatch_00 = texter("Capacity: ", "Tooltip_NinefoldInputHatch_00");
+    public static final String Tooltip_NinefoldInputHatch_00 = texter(
+        "Fluid Input for Multiblocks",
+        "Tooltip_NinefoldInputHatch_00");
+    public static final String Tooltip_NinefoldInputHatch_01 = texter("Capacity: ", "Tooltip_NinefoldInputHatch_01");
+    public static final String Tooltip_NinefoldInputHatch_02_00 = texter(
+        "Can hold ",
+        "Tooltip_NinefoldInputHatch_02_00");
+    public static final String Tooltip_NinefoldInputHatch_02_01 = texter(
+        " types of fluid",
+        "Tooltip_NinefoldInputHatch_02_01");
 
     public static final String SuperCraftingInputHatchME = texter(
         "Super Crafting Input Buffer (ME)",

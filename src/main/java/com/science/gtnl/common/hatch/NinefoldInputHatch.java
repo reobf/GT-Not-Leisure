@@ -13,6 +13,7 @@ import com.gtnewhorizons.modularui.api.screen.UIBuildContext;
 import com.gtnewhorizons.modularui.common.fluid.FluidStackTank;
 import com.gtnewhorizons.modularui.common.widget.FluidSlotWidget;
 import com.science.gtnl.Utils.item.TextLocalization;
+import com.science.gtnl.Utils.item.TextUtils;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -35,10 +36,21 @@ public class NinefoldInputHatch extends MTEHatchInput implements IAddUIWidgets {
     private static Textures.BlockIcons.CustomIcon face;
 
     public NinefoldInputHatch(int aID, int aSlot, String aName, String aNameRegional, int aTier) {
-        super(aID, aSlot, aName, aNameRegional, aTier);
+        super(
+            aID,
+            aSlot,
+            aName,
+            aNameRegional,
+            aTier,
+            new String[] { TextLocalization.Tooltip_NinefoldInputHatch_00, "",
+                TextLocalization.Tooltip_NinefoldInputHatch_02_00 + GTUtility.formatNumbers(aSlot)
+                    + TextLocalization.Tooltip_NinefoldInputHatch_02_01,
+                TextLocalization.Adder + TextUtils.SCIENCE_NOT_LEISURE });
         this.mStoredFluid = new FluidStack[aSlot];
         fluidTanks = new FluidStackTank[aSlot];
         mCapacityPer = getCapacityPerTank(aTier, aSlot);
+        mDescriptionArray[1] = TextLocalization.Tooltip_NinefoldInputHatch_01 + GTUtility.formatNumbers(mCapacityPer)
+            + "L";
     }
 
     public NinefoldInputHatch(int aID, int aSlot, String aName, String aNameRegional, int aTier,
@@ -47,6 +59,8 @@ public class NinefoldInputHatch extends MTEHatchInput implements IAddUIWidgets {
         this.mStoredFluid = new FluidStack[aSlot];
         fluidTanks = new FluidStackTank[aSlot];
         mCapacityPer = getCapacityPerTank(aTier, aSlot);
+        mDescriptionArray[1] = TextLocalization.Tooltip_NinefoldInputHatch_01 + GTUtility.formatNumbers(mCapacityPer)
+            + "L";
     }
 
     public NinefoldInputHatch(String aName, int aSlot, int aTier, String[] aDescription, ITexture[][][] aTextures) {
@@ -61,11 +75,8 @@ public class NinefoldInputHatch extends MTEHatchInput implements IAddUIWidgets {
                 fluid -> mStoredFluid[index] = fluid,
                 mCapacityPer);
         }
-        if (mDescriptionArray != null && mDescriptionArray.length > 1) {
-            mDescriptionArray[1] = TextLocalization.Tooltip_NinefoldInputHatch_00
-                + GTUtility.formatNumbers(mCapacityPer)
-                + "L";
-        }
+        mDescriptionArray[1] = TextLocalization.Tooltip_NinefoldInputHatch_01 + GTUtility.formatNumbers(mCapacityPer)
+            + "L";
     }
 
     @Override

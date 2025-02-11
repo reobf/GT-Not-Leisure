@@ -4,11 +4,7 @@ import net.minecraft.item.ItemStack;
 
 import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.common.GTNLItemList;
-import com.science.gtnl.common.hatch.DebugEnergyHatch;
-import com.science.gtnl.common.hatch.HatchCustomFluid;
-import com.science.gtnl.common.hatch.HumongousNinefoldInputHatch;
-import com.science.gtnl.common.hatch.NinefoldInputHatch;
-import com.science.gtnl.common.hatch.SuperCraftingInputHatchME;
+import com.science.gtnl.common.hatch.*;
 import com.science.gtnl.common.machine.multiblock.AdvancedPhotovoltaicPowerStation;
 import com.science.gtnl.common.machine.multiblock.BloodSoulSacrificialArray;
 import com.science.gtnl.common.machine.multiblock.BrickedBlastFurnace;
@@ -88,7 +84,6 @@ import com.science.gtnl.common.machine.multiblock.WhiteNightGenerator;
 
 import gtPlusPlus.api.objects.Logger;
 import gtPlusPlus.core.util.minecraft.FluidUtils;
-import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.MTEHatchSolidifier;
 import tectech.thing.metaTileEntity.hatch.MTEHatchCapacitor;
 import tectech.thing.metaTileEntity.hatch.MTEHatchRack;
 
@@ -576,9 +571,12 @@ public class MachineLoader {
                 TextLocalization.SuperCraftingInputBusME,
                 false).getStackForm(1L));
 
-        GTNLItemList.SolidifierHatchMAX.set(
-            new MTEHatchSolidifier(21506, "Solidifier Hatch MAX", TextLocalization.SolidifierHatchMAX, 14)
-                .getStackForm(1L));
+        GTNLItemList.HumongousSolidifierHatch.set(
+            new HumongousSolidifierHatch(
+                21506,
+                "Humongous Solidifier Hatch",
+                TextLocalization.HumongousSolidifierHatch,
+                14).getStackForm(1L));
 
         GTNLItemList.DebugEnergyHatch.set(
             new DebugEnergyHatch(21507, "Debug Energy Hatch", TextLocalization.DebugEnergyHatch, 14).getStackForm(1L));
@@ -629,6 +627,48 @@ public class MachineLoader {
                 9,
                 "Humongous Ninefold Input Hatch",
                 TextLocalization.HumongousNinefoldInputHatch).getStackForm(1L));
+
+        GTNLItemList.DualInputHatchLV.set(
+            new DualInputHatch(21519, "Dual Input Hatch LV", TextLocalization.DualInputHatchLV, 1).getStackForm(1));
+
+        GTNLItemList.DualInputHatchMV.set(
+            new DualInputHatch(21520, "Dual Input Hatch MV", TextLocalization.DualInputHatchMV, 2).getStackForm(1));
+
+        GTNLItemList.DualInputHatchHV.set(
+            new DualInputHatch(21521, "Dual Input Hatch HV", TextLocalization.DualInputHatchHV, 3).getStackForm(1));
+
+        GTNLItemList.DualInputHatchEV.set(
+            new DualInputHatch(21522, "Dual Input Hatch EV", TextLocalization.DualInputHatchEV, 4).getStackForm(1));
+
+        GTNLItemList.DualInputHatchIV.set(
+            new DualInputHatch(21523, "Dual Input Hatch IV", TextLocalization.DualInputHatchIV, 5).getStackForm(1));
+
+        GTNLItemList.DualInputHatchLuV.set(
+            new DualInputHatch(21524, "Dual Input Hatch LuV", TextLocalization.DualInputHatchLuV, 6).getStackForm(1));
+
+        GTNLItemList.DualInputHatchZPM.set(
+            new DualInputHatch(21525, "Dual Input Hatch ZPM", TextLocalization.DualInputHatchZPM, 7).getStackForm(1));
+
+        GTNLItemList.DualInputHatchUV.set(
+            new DualInputHatch(21526, "Dual Input Hatch UV", TextLocalization.DualInputHatchUV, 8).getStackForm(1));
+
+        GTNLItemList.DualInputHatchUHV.set(
+            new DualInputHatch(21527, "Dual Input Hatch UHV", TextLocalization.DualInputHatchUHV, 9).getStackForm(1));
+
+        GTNLItemList.DualInputHatchUEV.set(
+            new DualInputHatch(21528, "Dual Input Hatch UEV", TextLocalization.DualInputHatchUEV, 10).getStackForm(1));
+
+        GTNLItemList.DualInputHatchUIV.set(
+            new DualInputHatch(21529, "Dual Input Hatch UIV", TextLocalization.DualInputHatchUIV, 11).getStackForm(1));
+
+        GTNLItemList.DualInputHatchUMV.set(
+            new DualInputHatch(21530, "Dual Input Hatch UMV", TextLocalization.DualInputHatchUMV, 12).getStackForm(1));
+
+        GTNLItemList.DualInputHatchUXV.set(
+            new DualInputHatch(21531, "Dual Input Hatch UXV", TextLocalization.DualInputHatchUXV, 13).getStackForm(1));
+
+        GTNLItemList.DualInputHatchMAX.set(
+            new DualInputHatch(21532, "Dual Input Hatch MAX", TextLocalization.DualInputHatchMAX, 14).getStackForm(1));
     }
 
     public static void run() {

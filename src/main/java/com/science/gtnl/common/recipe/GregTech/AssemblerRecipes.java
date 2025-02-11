@@ -1181,13 +1181,41 @@ public class AssemblerRecipes implements IRecipePool {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 ItemList.Hatch_Output_EV.get(1L),
-                GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 440),
+                GTModHandler.getModItem(AE2FluidCraft.ID, "part_fluid_interface", 1),
                 GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 30))
             .itemOutputs(MEoutputHatch)
             .specialValue(0)
             .noOptimize()
             .duration(300)
             .eut(480)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                ItemList.Hatch_Input_IV.get(1L),
+                GTModHandler.getModItem(AE2FluidCraft.ID, "part_fluid_interface", 1),
+                ItemList.Electric_Pump_IV.get(1),
+                ItemList.Sensor_IV.get(1),
+                GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 30))
+            .itemOutputs(ItemList.Hatch_Input_ME_Advanced.get(1))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(7680)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                ItemList.Hatch_Input_Bus_IV.get(1L),
+                GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 440),
+                ItemList.Conveyor_Module_IV.get(1),
+                ItemList.Sensor_IV.get(1),
+                GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 30))
+            .itemOutputs(ItemList.Hatch_Input_Bus_ME_Advanced.get(1))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(7680)
             .addTo(As);
     }
 }

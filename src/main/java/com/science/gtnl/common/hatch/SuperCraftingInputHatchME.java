@@ -50,6 +50,7 @@ import com.gtnewhorizons.modularui.common.widget.Scrollable;
 import com.gtnewhorizons.modularui.common.widget.SlotGroup;
 import com.gtnewhorizons.modularui.common.widget.SlotWidget;
 import com.science.gtnl.Utils.item.TextLocalization;
+import com.science.gtnl.Utils.item.TextUtils;
 
 import appeng.api.AEApi;
 import appeng.api.implementations.ICraftingPatternItem;
@@ -354,7 +355,7 @@ public class SuperCraftingInputHatchME extends MTEHatchInputBus
                 supportFluids ? TextLocalization.Tooltip_SuperCraftingInputHatchME_03_00
                     : TextLocalization.Tooltip_SuperCraftingInputHatchME_03_01,
                 TextLocalization.Tooltip_SuperCraftingInputHatchME_04,
-                TextLocalization.Adder + "Science Not Leisure" });
+                TextLocalization.Adder + TextUtils.SCIENCE_NOT_LEISURE });
         disableSort = true;
         this.supportFluids = supportFluids;
     }

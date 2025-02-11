@@ -3,14 +3,15 @@ itemGroup.ReAvaritia=无尽：重生
 StructuralReconstructionPlan=结构代替计划
 AppliedEnergistics2=应用能源2
 
-Adder=添加者: 
+Adder=添加模组: 
+Science_Not_Leisure=§4S§6c§ei§2e§bn§9c§de §4N§6o§et §2L§be§9i§ds§4u§6r§ee
 
 Waila.General.WirelessMode=无线模式
 Waila.General.CurrentEuCost=当前EU消耗
 OverclockType.Description.01=每次超频时, 耗时除以
 OverclockType.Description.02=耗电乘以
 
-HatchCustomFluid_00=多方块的流体输入
+HatchCustomFluid_00=为多方块机器输入流体
 HatchCustomFluid_01=容量: 
 HatchCustomFluid_02=允许的流体: 
 HatchCustomFluid_03=空
@@ -30,7 +31,10 @@ Button_Tooltip_SuperCraftingInputHatchME_01=将所有的已存储物品返回到
 Button_Tooltip_SuperCraftingInputHatchME_02_00=样板优化: 允许
 Button_Tooltip_SuperCraftingInputHatchME_02_01=样板优化: 关闭
 
-SolidifierHatchMAX=固化仓 X
+HumongousSolidifierHatch=巨型固化仓
+Tooltip_HumongousSolidifierHatch_00=为§e流体塑形机§r带模具输入流体
+Tooltip_HumongousSolidifierHatch_01=容量: 2147483647 L
+
 DebugEnergyHatch=Debug能源仓
 Tooltip_DebugEnergyHatch_00=凭空而生的能量
 Tooltip_DebugEnergyHatch_01=§9无限能源的生产/消耗设备
@@ -47,7 +51,29 @@ NinefoldInputHatchUIV=九重输入仓(UIV)
 NinefoldInputHatchUMV=九重输入仓(UMV)
 NinefoldInputHatchUXV=九重输入仓(UXV)
 HumongousNinefoldInputHatch=巨型九重输入仓
-Tooltip_NinefoldInputHatch_00=容量: 
+Tooltip_NinefoldInputHatch_00=为多方块机器输入流体
+Tooltip_NinefoldInputHatch_01=容量: 
+Tooltip_NinefoldInputHatch_02_00=可容纳
+Tooltip_NinefoldInputHatch_02_01=种流体
+
+DualInputHatchLV=输入总成(LV)
+DualInputHatchMV=输入总成(MV)
+DualInputHatchHV=输入总成(HV)
+DualInputHatchEV=输入总成(EV)
+DualInputHatchIV=输入总成(IV)
+DualInputHatchLuV=输入总成(LuV)
+DualInputHatchZPM=输入总成(ZPM)
+DualInputHatchUV=输入总成(UV)
+DualInputHatchUHV=输入总成(UHV)
+DualInputHatchUEV=输入总成(UEV)
+DualInputHatchUIV=输入总成(UIV)
+DualInputHatchUMV=输入总成(UMV)
+DualInputHatchUXV=输入总成(UXV)
+DualInputHatchMAX=输入总成(MAX)
+Tooltip_DualInputHatch_00=为多方块机器输入物品和流体
+Tooltip_DualInputHatch_01=物品槽位数量: 
+Tooltip_DualInputHatch_02_00=流体容量: 共
+Tooltip_DualInputHatch_02_01=个流体槽, 每个
 
 MetaCasing.0.name=测试机械方块
 MetaCasing.1.name=蒸汽装配机械方块

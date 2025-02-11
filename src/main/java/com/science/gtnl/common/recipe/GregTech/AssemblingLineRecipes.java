@@ -418,5 +418,42 @@ public class AssemblingLineRecipes implements IRecipePool {
             GTNLItemList.SuperCraftingInputHatchME.get(1),
             60 * SECONDS,
             (int) TierEU.RECIPE_UHV);
+
+        GTValues.RA.stdBuilder()
+            .metadata(RESEARCH_ITEM, GTNLItemList.DualInputHatchLuV.get(1))
+            .metadata(RESEARCH_TIME, 32 * MINUTES)
+            .itemInputs(
+                GTNLItemList.DualInputHatchLuV.get(1),
+                ItemList.Emitter_LuV.get(1),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4L),
+                GTModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 3),
+                GTModHandler.getModItem(AE2FluidCraft.ID, "fluid_interface", 3),
+                GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 30),
+                GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 27),
+                GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Europium, 32L),
+                GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Europium, 32L),
+                GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Europium, 32L))
+            .fluidInputs(Materials.SolderingAlloy.getMolten(576), Materials.Lubricant.getFluid(500))
+            .itemOutputs(ItemList.Hatch_CraftingInput_Bus_ME.get(1))
+            .eut(TierEU.RECIPE_LuV)
+            .duration(30 * SECONDS)
+            .addTo(AssemblyLine);
+
+        GTValues.RA.stdBuilder()
+            .metadata(RESEARCH_ITEM, ItemList.Hatch_CraftingInput_Bus_ME.get(1))
+            .metadata(RESEARCH_TIME, 4 * HOURS)
+            .itemInputs(
+                ItemList.Hull_LuV.get(1),
+                ItemList.Sensor_LuV.get(2),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 1L),
+                GTModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockQuantumLinkChamber", 1),
+                GTModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockQuantumRing", 2),
+                GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Europium, 32L),
+                GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Europium, 32L))
+            .fluidInputs(Materials.SolderingAlloy.getMolten(576), Materials.Lubricant.getFluid(500))
+            .itemOutputs(ItemList.Hatch_CraftingInput_Bus_Slave.get(1))
+            .eut(TierEU.RECIPE_ZPM)
+            .duration(30 * SECONDS)
+            .addTo(AssemblyLine);
     }
 }
