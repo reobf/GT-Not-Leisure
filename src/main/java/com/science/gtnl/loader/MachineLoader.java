@@ -4,7 +4,11 @@ import net.minecraft.item.ItemStack;
 
 import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.common.GTNLItemList;
-import com.science.gtnl.common.hatch.*;
+import com.science.gtnl.common.hatch.DebugEnergyHatch;
+import com.science.gtnl.common.hatch.HatchCustomFluid;
+import com.science.gtnl.common.hatch.HumongousNinefoldInputHatch;
+import com.science.gtnl.common.hatch.NinefoldInputHatch;
+import com.science.gtnl.common.hatch.SuperCraftingInputHatchME;
 import com.science.gtnl.common.machine.multiblock.AdvancedPhotovoltaicPowerStation;
 import com.science.gtnl.common.machine.multiblock.BloodSoulSacrificialArray;
 import com.science.gtnl.common.machine.multiblock.BrickedBlastFurnace;
