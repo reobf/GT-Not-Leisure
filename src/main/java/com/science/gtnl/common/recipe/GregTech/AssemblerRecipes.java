@@ -20,11 +20,7 @@ import bartworks.common.loaders.ItemRegistry;
 import bartworks.system.material.WerkstoffLoader;
 import goodgenerator.util.ItemRefer;
 import gregtech.api.GregTechAPI;
-import gregtech.api.enums.GTValues;
-import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.MaterialsBotania;
-import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.*;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.util.GTModHandler;
@@ -1216,6 +1212,216 @@ public class AssemblerRecipes implements IRecipePool {
             .noOptimize()
             .duration(300)
             .eut(7680)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Steel, 1L),
+                ItemList.Hatch_Input_Bus_LV.get(1L),
+                ItemList.Hatch_Input_LV.get(1L),
+                ItemList.Automation_ChestBuffer_LV.get(1),
+                GTOreDictUnificator.get(OrePrefixes.pipeNonuple, Materials.Bronze, 1L))
+            .itemOutputs(GTNLItemList.DualInputHatchLV.get(1))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(30)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 1L),
+                ItemList.Hatch_Input_Bus_MV.get(1L),
+                ItemList.Hatch_Input_MV.get(1L),
+                ItemList.Automation_ChestBuffer_MV.get(1),
+                GTOreDictUnificator.get(OrePrefixes.pipeNonuple, Materials.Steel, 1L))
+            .itemOutputs(GTNLItemList.DualInputHatchMV.get(1))
+            .fluidInputs(Materials.SolderingAlloy.getMolten(144))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(120)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.StainlessSteel, 1L),
+                ItemList.Hatch_Input_Bus_HV.get(1L),
+                ItemList.Hatch_Input_HV.get(1L),
+                ItemList.Automation_ChestBuffer_HV.get(1),
+                GTOreDictUnificator.get(OrePrefixes.pipeNonuple, Materials.StainlessSteel, 1L))
+            .itemOutputs(GTNLItemList.DualInputHatchHV.get(1))
+            .fluidInputs(Materials.SolderingAlloy.getMolten(144))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(480)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Titanium, 1L),
+                ItemList.Hatch_Input_Bus_EV.get(1L),
+                ItemList.Hatch_Input_EV.get(1L),
+                ItemList.Automation_ChestBuffer_EV.get(1),
+                GTOreDictUnificator.get(OrePrefixes.pipeNonuple, Materials.Titanium, 1L))
+            .itemOutputs(GTNLItemList.DualInputHatchEV.get(1))
+            .fluidInputs(Materials.SolderingAlloy.getMolten(144))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(1920)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Tungstate, 1L),
+                ItemList.Hatch_Input_Bus_IV.get(1L),
+                ItemList.Hatch_Input_IV.get(1L),
+                ItemList.Automation_ChestBuffer_IV.get(1),
+                GTOreDictUnificator.get(OrePrefixes.pipeNonuple, Materials.Tungstate, 1L))
+            .itemOutputs(GTNLItemList.DualInputHatchIV.get(1))
+            .fluidInputs(Materials.SolderingAlloy.getMolten(144))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(7680)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Iridium, 1L),
+                ItemList.Hatch_Input_Bus_LuV.get(1L),
+                ItemList.Hatch_Input_LuV.get(1L),
+                ItemList.Automation_ChestBuffer_LuV.get(1),
+                GTOreDictUnificator.get(OrePrefixes.pipeNonuple, Materials.NiobiumTitanium, 1L))
+            .itemOutputs(GTNLItemList.DualInputHatchLuV.get(1))
+            .fluidInputs(Materials.SolderingAlloy.getMolten(144))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(30720)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.NaquadahAlloy, 1L),
+                ItemList.Hatch_Input_Bus_ZPM.get(1L),
+                ItemList.Hatch_Input_ZPM.get(1L),
+                ItemList.Automation_ChestBuffer_ZPM.get(1),
+                GTOreDictUnificator.get(OrePrefixes.pipeNonuple, Materials.Naquadah, 1L))
+            .itemOutputs(GTNLItemList.DualInputHatchZPM.get(1))
+            .fluidInputs(Materials.SolderingAlloy.getMolten(144))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(122880)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Osmium, 1L),
+                ItemList.Hatch_Input_Bus_UV.get(1L),
+                ItemList.Hatch_Input_UV.get(1L),
+                ItemList.Automation_ChestBuffer_UV.get(1),
+                GTOreDictUnificator.get(OrePrefixes.pipeNonuple, Materials.MysteriousCrystal, 1L))
+            .itemOutputs(GTNLItemList.DualInputHatchUV.get(1))
+            .fluidInputs(Materials.SolderingAlloy.getMolten(144))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(491520)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Neutronium, 1L),
+                GregtechItemList.Hatch_SuperBus_Input_EV.get(1L),
+                ItemList.Hatch_Input_UHV.get(1L),
+                ItemList.Automation_ChestBuffer_UHV.get(1),
+                GTOreDictUnificator.get(OrePrefixes.pipeNonuple, Materials.Neutronium, 1L))
+            .itemOutputs(GTNLItemList.DualInputHatchUHV.get(1))
+            .fluidInputs(Materials.SolderingAlloy.getMolten(144))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(1966080)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Bedrockium, 1L),
+                GregtechItemList.Hatch_SuperBus_Input_IV.get(1L),
+                ItemList.Hatch_Input_UEV.get(1L),
+                ItemList.Automation_ChestBuffer_UEV.get(1),
+                GTOreDictUnificator.get(OrePrefixes.pipeNonuple, Materials.Infinity, 1L))
+            .itemOutputs(GTNLItemList.DualInputHatchUEV.get(1))
+            .fluidInputs(Materials.SolderingAlloy.getMolten(144))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(7864320)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.BlackPlutonium, 1L),
+                GregtechItemList.Hatch_SuperBus_Input_LuV.get(1L),
+                ItemList.Hatch_Input_UIV.get(1L),
+                ItemList.Automation_ChestBuffer_UIV.get(1),
+                GTOreDictUnificator.get(OrePrefixes.pipeNonuple, MaterialsUEVplus.TranscendentMetal, 1L))
+            .itemOutputs(GTNLItemList.DualInputHatchUIV.get(1))
+            .fluidInputs(Materials.SolderingAlloy.getMolten(144))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(31457280)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTOreDictUnificator.get(OrePrefixes.frameGt, MaterialsUEVplus.SpaceTime, 1L),
+                GregtechItemList.Hatch_SuperBus_Input_ZPM.get(1L),
+                ItemList.Hatch_Input_UMV.get(1L),
+                ItemList.Automation_ChestBuffer_UMV.get(1),
+                GTOreDictUnificator.get(OrePrefixes.pipeNonuple, MaterialsUEVplus.SpaceTime, 1L))
+            .itemOutputs(GTNLItemList.DualInputHatchUMV.get(1))
+            .fluidInputs(Materials.SolderingAlloy.getMolten(144))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(125829120)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTOreDictUnificator.get(OrePrefixes.frameGt, MaterialsUEVplus.MagMatter, 1L),
+                GregtechItemList.Hatch_SuperBus_Input_UV.get(1L),
+                ItemList.Hatch_Input_UXV.get(1L),
+                ItemList.Automation_ChestBuffer_UMV.get(2),
+                GTOreDictUnificator.get(OrePrefixes.pipeNonuple, MaterialsUEVplus.SpaceTime, 2L))
+            .itemOutputs(GTNLItemList.DualInputHatchUXV.get(1))
+            .fluidInputs(Materials.SolderingAlloy.getMolten(144))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(503316480)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTOreDictUnificator
+                    .get(OrePrefixes.frameGt, MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter, 1L),
+                GregtechItemList.Hatch_SuperBus_Input_UV.get(1L),
+                ItemList.Hatch_Input_MAX.get(1L),
+                ItemList.Automation_ChestBuffer_UMV.get(4),
+                GTOreDictUnificator.get(OrePrefixes.pipeNonuple, MaterialsUEVplus.SpaceTime, 4L))
+            .itemOutputs(GTNLItemList.DualInputHatchMAX.get(1))
+            .fluidInputs(Materials.SolderingAlloy.getMolten(144))
+            .specialValue(0)
+            .noOptimize()
+            .duration(300)
+            .eut(2013265920)
             .addTo(As);
     }
 }

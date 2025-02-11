@@ -29,6 +29,7 @@ import com.science.gtnl.common.recipe.GregTech.CompressorRecipes;
 import com.science.gtnl.common.recipe.GregTech.CraftingTableRecipes;
 import com.science.gtnl.common.recipe.GregTech.DigesterRecipes;
 import com.science.gtnl.common.recipe.GregTech.DissolutionTankRecipes;
+import com.science.gtnl.common.recipe.GregTech.DistilleryRecipes;
 import com.science.gtnl.common.recipe.GregTech.ElectrolyzerRecipes;
 import com.science.gtnl.common.recipe.GregTech.FluidExtraction;
 import com.science.gtnl.common.recipe.GregTech.FusionReactorRecipes;
@@ -56,7 +57,7 @@ public class RecipeLoader {
             new FluidExtraction(), new DigesterRecipes(), new DissolutionTankRecipes(), new CentrifugeRecipes(),
             new ChemicalDehydratorRecipes(), new RareEarthCentrifugalRecipes(), new MatterFabricatorRecipes(),
             new TheTwilightForestRecipes(), new IsaMillRecipes(), new CellRegulatorRecipes(),
-            new VacuumFurnaceRecipes(), new FishingGroundRecipes() };
+            new VacuumFurnaceRecipes(), new FishingGroundRecipes(), new DistilleryRecipes() };
         for (IRecipePool recipePool : recipePools) {
             recipePool.loadRecipes();
         }
