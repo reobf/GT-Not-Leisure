@@ -59,8 +59,8 @@ public class Digester extends GTMMultiMachineBase<Digester> implements ISurvival
     public static final String STRUCTURE_PIECE_MAIN = "main";
     private static IStructureDefinition<Digester> STRUCTURE_DEFINITION = null;
     public static final String D_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/digester";
-    public final int horizontalOffSet = 2;
-    public final int verticalOffSet = 4;
+    public final int horizontalOffSet = 3;
+    public final int verticalOffSet = 3;
     public final int depthOffSet = 0;
     public static String[][] shape;
 

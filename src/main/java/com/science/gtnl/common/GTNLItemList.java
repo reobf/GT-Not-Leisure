@@ -290,6 +290,7 @@ public enum GTNLItemList {
     LargeEngravingLaser,
     FishingGround,
 
+    ElementCopying,
     LargeIncubator,
     LargeSteamExtractor,
     ReactionFurnace,

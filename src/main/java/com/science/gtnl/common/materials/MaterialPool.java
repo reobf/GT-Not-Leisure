@@ -869,6 +869,380 @@ public class MaterialPool implements Runnable {
         new Pair<>(Materials.Titanium, 1),
         new Pair<>(Materials.Molybdenum, 1));
 
+    public static final Werkstoff Actinium = new Werkstoff(
+        new short[] { 135, 151, 186 },
+        "Actinium",
+        subscriptNumbers("Ac"),
+        new Werkstoff.Stats().setToxic(true),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().onlyDust()
+            .addMolten()
+            .addMetalItems()
+            .addCraftingMetalWorkingItems()
+            .addSimpleMetalWorkingItems()
+            .addMultipleIngotMetalWorkingItems()
+            .addMetaSolidifierRecipes()
+            .addMetalCraftingSolidifierRecipes(),
+        offsetID_01 + 73,
+        TextureSet.SET_SHINY);
+
+    public static final Werkstoff Rutherfordium = new Werkstoff(
+        new short[] { 84, 76, 68 },
+        "Rutherfordium",
+        subscriptNumbers("Rf"),
+        new Werkstoff.Stats().setToxic(true),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().onlyDust()
+            .addMolten()
+            .addMetalItems()
+            .addCraftingMetalWorkingItems()
+            .addSimpleMetalWorkingItems()
+            .addMultipleIngotMetalWorkingItems()
+            .addMetaSolidifierRecipes()
+            .addMetalCraftingSolidifierRecipes(),
+        offsetID_01 + 74,
+        TextureSet.SET_SHINY);
+
+    public static final Werkstoff Dubnium = new Werkstoff(
+        new short[] { 135, 151, 186 },
+        "Dubnium",
+        subscriptNumbers("Db"),
+        new Werkstoff.Stats().setToxic(true),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().onlyDust()
+            .addMolten()
+            .addMetalItems()
+            .addCraftingMetalWorkingItems()
+            .addSimpleMetalWorkingItems()
+            .addMultipleIngotMetalWorkingItems()
+            .addMetaSolidifierRecipes()
+            .addMetalCraftingSolidifierRecipes(),
+        offsetID_01 + 75,
+        TextureSet.SET_SHINY);
+
+    public static final Werkstoff Seaborgium = new Werkstoff(
+        new short[] { 20, 154, 200 },
+        "Seaborgium",
+        subscriptNumbers("Sg"),
+        new Werkstoff.Stats().setToxic(true),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().onlyDust()
+            .addMolten()
+            .addMetalItems()
+            .addCraftingMetalWorkingItems()
+            .addSimpleMetalWorkingItems()
+            .addMultipleIngotMetalWorkingItems()
+            .addMetaSolidifierRecipes()
+            .addMetalCraftingSolidifierRecipes(),
+        offsetID_01 + 76,
+        TextureSet.SET_SHINY);
+
+    public static final Werkstoff Technetium = new Werkstoff(
+        new short[] { 91, 38, 176 },
+        "Technetium",
+        subscriptNumbers("Tc"),
+        new Werkstoff.Stats().setToxic(true),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().onlyDust()
+            .addMolten()
+            .addMetalItems()
+            .addCraftingMetalWorkingItems()
+            .addSimpleMetalWorkingItems()
+            .addMultipleIngotMetalWorkingItems()
+            .addMetaSolidifierRecipes()
+            .addMetalCraftingSolidifierRecipes(),
+        offsetID_01 + 77,
+        TextureSet.SET_SHINY);
+
+    public static final Werkstoff Bohrium = new Werkstoff(
+        new short[] { 174, 81, 200 },
+        "Bohrium",
+        subscriptNumbers("Bh"),
+        new Werkstoff.Stats().setToxic(true),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().onlyDust()
+            .addMolten()
+            .addMetalItems()
+            .addCraftingMetalWorkingItems()
+            .addSimpleMetalWorkingItems()
+            .addMultipleIngotMetalWorkingItems()
+            .addMetaSolidifierRecipes()
+            .addMetalCraftingSolidifierRecipes(),
+        offsetID_01 + 78,
+        TextureSet.SET_SHINY);
+
+    public static final Werkstoff Hassium = new Werkstoff(
+        new short[] { 90, 106, 105 },
+        "Hassium",
+        subscriptNumbers("Hs"),
+        new Werkstoff.Stats().setToxic(true),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().onlyDust()
+            .addMolten()
+            .addMetalItems()
+            .addCraftingMetalWorkingItems()
+            .addSimpleMetalWorkingItems()
+            .addMultipleIngotMetalWorkingItems()
+            .addMetaSolidifierRecipes()
+            .addMetalCraftingSolidifierRecipes(),
+        offsetID_01 + 79,
+        TextureSet.SET_SHINY);
+
+    public static final Werkstoff Meitnerium = new Werkstoff(
+        new short[] { 62, 47, 102 },
+        "Meitnerium",
+        subscriptNumbers("Mt"),
+        new Werkstoff.Stats().setToxic(true),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().onlyDust()
+            .addMolten()
+            .addMetalItems()
+            .addCraftingMetalWorkingItems()
+            .addSimpleMetalWorkingItems()
+            .addMultipleIngotMetalWorkingItems()
+            .addMetaSolidifierRecipes()
+            .addMetalCraftingSolidifierRecipes(),
+        offsetID_01 + 80,
+        TextureSet.SET_SHINY);
+
+    public static final Werkstoff Darmstadtium = new Werkstoff(
+        new short[] { 68, 100, 77 },
+        "Darmstadtium",
+        subscriptNumbers("Ds"),
+        new Werkstoff.Stats().setToxic(true),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().onlyDust()
+            .addMolten()
+            .addMetalItems()
+            .addCraftingMetalWorkingItems()
+            .addSimpleMetalWorkingItems()
+            .addMultipleIngotMetalWorkingItems()
+            .addMetaSolidifierRecipes()
+            .addMetalCraftingSolidifierRecipes(),
+        offsetID_01 + 81,
+        TextureSet.SET_SHINY);
+
+    public static final Werkstoff Roentgenium = new Werkstoff(
+        new short[] { 44, 110, 56 },
+        "Roentgenium",
+        subscriptNumbers("Rg"),
+        new Werkstoff.Stats().setToxic(true),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().onlyDust()
+            .addMolten()
+            .addMetalItems()
+            .addCraftingMetalWorkingItems()
+            .addSimpleMetalWorkingItems()
+            .addMultipleIngotMetalWorkingItems()
+            .addMetaSolidifierRecipes()
+            .addMetalCraftingSolidifierRecipes(),
+        offsetID_01 + 82,
+        TextureSet.SET_SHINY);
+
+    public static final Werkstoff Copernicium = new Werkstoff(
+        new short[] { 67, 72, 73 },
+        "Copernicium",
+        subscriptNumbers("Cn"),
+        new Werkstoff.Stats().setToxic(true),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().onlyDust()
+            .addMolten()
+            .addMetalItems()
+            .addCraftingMetalWorkingItems()
+            .addSimpleMetalWorkingItems()
+            .addMultipleIngotMetalWorkingItems()
+            .addMetaSolidifierRecipes()
+            .addMetalCraftingSolidifierRecipes(),
+        offsetID_01 + 83,
+        TextureSet.SET_SHINY);
+
+    public static final Werkstoff Moscovium = new Werkstoff(
+        new short[] { 33, 21, 50 },
+        "Moscovium",
+        subscriptNumbers("Mc"),
+        new Werkstoff.Stats().setToxic(true),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().onlyDust()
+            .addMolten()
+            .addMetalItems()
+            .addCraftingMetalWorkingItems()
+            .addSimpleMetalWorkingItems()
+            .addMultipleIngotMetalWorkingItems()
+            .addMetaSolidifierRecipes()
+            .addMetalCraftingSolidifierRecipes(),
+        offsetID_01 + 84,
+        TextureSet.SET_SHINY);
+
+    public static final Werkstoff Livermorium = new Werkstoff(
+        new short[] { 115, 115, 115 },
+        "Livermorium",
+        subscriptNumbers("Lv"),
+        new Werkstoff.Stats().setToxic(true),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().onlyDust()
+            .addMolten()
+            .addMetalItems()
+            .addCraftingMetalWorkingItems()
+            .addSimpleMetalWorkingItems()
+            .addMultipleIngotMetalWorkingItems()
+            .addMetaSolidifierRecipes()
+            .addMetalCraftingSolidifierRecipes(),
+        offsetID_01 + 85,
+        TextureSet.SET_SHINY);
+
+    public static final Werkstoff Astatine = new Werkstoff(
+        new short[] { 64, 23, 53 },
+        "Astatine",
+        subscriptNumbers("At"),
+        new Werkstoff.Stats().setToxic(true),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().onlyDust()
+            .addMolten()
+            .addMetalItems()
+            .addCraftingMetalWorkingItems()
+            .addSimpleMetalWorkingItems()
+            .addMultipleIngotMetalWorkingItems()
+            .addMetaSolidifierRecipes()
+            .addMetalCraftingSolidifierRecipes(),
+        offsetID_01 + 86,
+        TextureSet.SET_SHINY);
+
+    public static final Werkstoff Tennessine = new Werkstoff(
+        new short[] { 92, 71, 150 },
+        "Tennessine",
+        subscriptNumbers("Ts"),
+        new Werkstoff.Stats().setToxic(true),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().onlyDust()
+            .addMolten()
+            .addMetalItems()
+            .addCraftingMetalWorkingItems()
+            .addSimpleMetalWorkingItems()
+            .addMultipleIngotMetalWorkingItems()
+            .addMetaSolidifierRecipes()
+            .addMetalCraftingSolidifierRecipes(),
+        offsetID_01 + 87,
+        TextureSet.SET_SHINY);
+
+    public static final Werkstoff Francium = new Werkstoff(
+        new short[] { 133, 133, 133 },
+        "Francium",
+        subscriptNumbers("Fr"),
+        new Werkstoff.Stats().setToxic(true),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().onlyDust()
+            .addMolten()
+            .addMetalItems()
+            .addCraftingMetalWorkingItems()
+            .addSimpleMetalWorkingItems()
+            .addMultipleIngotMetalWorkingItems()
+            .addMetaSolidifierRecipes()
+            .addMetalCraftingSolidifierRecipes(),
+        offsetID_01 + 88,
+        TextureSet.SET_SHINY);
+
+    public static final Werkstoff Berkelium = new Werkstoff(
+        new short[] { 78, 70, 106 },
+        "Berkelium",
+        subscriptNumbers("Bk"),
+        new Werkstoff.Stats().setToxic(true),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().onlyDust()
+            .addMolten()
+            .addMetalItems()
+            .addCraftingMetalWorkingItems()
+            .addSimpleMetalWorkingItems()
+            .addMultipleIngotMetalWorkingItems()
+            .addMetaSolidifierRecipes()
+            .addMetalCraftingSolidifierRecipes(),
+        offsetID_01 + 89,
+        TextureSet.SET_SHINY);
+
+    public static final Werkstoff Einsteinium = new Werkstoff(
+        new short[] { 161, 124, 0 },
+        "Einsteinium",
+        subscriptNumbers("Es"),
+        new Werkstoff.Stats().setToxic(true),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().onlyDust()
+            .addMolten()
+            .addMetalItems()
+            .addCraftingMetalWorkingItems()
+            .addSimpleMetalWorkingItems()
+            .addMultipleIngotMetalWorkingItems()
+            .addMetaSolidifierRecipes()
+            .addMetalCraftingSolidifierRecipes(),
+        offsetID_01 + 90,
+        TextureSet.SET_SHINY);
+
+    public static final Werkstoff Mendelevium = new Werkstoff(
+        new short[] { 23, 57, 159 },
+        "Mendelevium",
+        subscriptNumbers("Md"),
+        new Werkstoff.Stats().setToxic(true),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().onlyDust()
+            .addMolten()
+            .addMetalItems()
+            .addCraftingMetalWorkingItems()
+            .addSimpleMetalWorkingItems()
+            .addMultipleIngotMetalWorkingItems()
+            .addMetaSolidifierRecipes()
+            .addMetalCraftingSolidifierRecipes(),
+        offsetID_01 + 91,
+        TextureSet.SET_SHINY);
+
+    public static final Werkstoff Nobelium = new Werkstoff(
+        new short[] { 48, 56, 69 },
+        "Nobelium",
+        subscriptNumbers("No"),
+        new Werkstoff.Stats().setToxic(true),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().onlyDust()
+            .addMolten()
+            .addMetalItems()
+            .addCraftingMetalWorkingItems()
+            .addSimpleMetalWorkingItems()
+            .addMultipleIngotMetalWorkingItems()
+            .addMetaSolidifierRecipes()
+            .addMetalCraftingSolidifierRecipes(),
+        offsetID_01 + 92,
+        TextureSet.SET_SHINY);
+
+    public static final Werkstoff Lawrencium = new Werkstoff(
+        new short[] { 73, 92, 92 },
+        "Lawrencium",
+        subscriptNumbers("Lr"),
+        new Werkstoff.Stats().setToxic(true),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().onlyDust()
+            .addMolten()
+            .addMetalItems()
+            .addCraftingMetalWorkingItems()
+            .addSimpleMetalWorkingItems()
+            .addMultipleIngotMetalWorkingItems()
+            .addMetaSolidifierRecipes()
+            .addMetalCraftingSolidifierRecipes(),
+        offsetID_01 + 93,
+        TextureSet.SET_SHINY);
+
+    public static final Werkstoff Nihonium = new Werkstoff(
+        new short[] { 39, 45, 68 },
+        "Nihonium",
+        subscriptNumbers("Nh"),
+        new Werkstoff.Stats().setToxic(true),
+        Werkstoff.Types.ELEMENT,
+        new Werkstoff.GenerationFeatures().onlyDust()
+            .addMolten()
+            .addMetalItems()
+            .addCraftingMetalWorkingItems()
+            .addSimpleMetalWorkingItems()
+            .addMultipleIngotMetalWorkingItems()
+            .addMetaSolidifierRecipes()
+            .addMetalCraftingSolidifierRecipes(),
+        offsetID_01 + 94,
+        TextureSet.SET_SHINY);
+
     public static final Werkstoff Periodicium = new Werkstoff(
         new short[] { 60, 74, 243 },
         "Periodicium",
@@ -886,7 +1260,7 @@ public class MaterialPool implements Runnable {
                 + "((Bk61Cf43Es38Fm48Md58No30Lr56)"
                 + "(Rf45Db53Sg51Bh65Hs31Mt46Ds57Rg54Cn48Nh64Fl44Mc33Lv52Ts41Og58))"
                 + "((Ke41Rp56Nq35Nq+54Nq*38Su60Ad66(SpPu)67(SpNt)39D55Oh50De63Qt35D*30(IcMa)65If*38Nt42Hy66En64)"
-                + "(Gs39TsЖ66TtЖ67〄62Fs⚶45Hy⚶53✢64En⦼53M⎋65⸎46✦◆✦48✧◇✧52Og*52Sh⏧68)"
+                + "(Gs39TsЖ66TtЖ67〄62Fs⚶45Hy⚶53✢64En⦼53M⎋65⸎46✦◆✦48✧◇✧52Og*52Sh⏧68Tn57)"
                 + "((⌘☯𓍰𓍱𓍲𓍳𓍴𓍵𓍶𓍷𓍸☯⌘)66(⚷⚙⚷Ni4Ti6)40Fc⚙37҈30҉33«»67Rt*51۞47Rc62Si*68)"
                 + "(Fs61Ef30Ut69Tr66Ms40If53He*43Ai32Or55Vy36⬟⯂⬢⬣⯃⯄32Tt33Cc56Vu58Ao52))???144)"),
         new Werkstoff.Stats().setToxic(true),

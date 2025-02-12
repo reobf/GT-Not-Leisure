@@ -18,6 +18,7 @@ import com.science.gtnl.common.recipe.IRecipePool;
 
 import bartworks.common.loaders.ItemRegistry;
 import bartworks.system.material.WerkstoffLoader;
+import goodgenerator.items.GGMaterial;
 import goodgenerator.util.ItemRefer;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -455,5 +456,22 @@ public class AssemblingLineRecipes implements IRecipePool {
             .eut(TierEU.RECIPE_ZPM)
             .duration(30 * SECONDS)
             .addTo(AssemblyLine);
+
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
+            ItemRefer.Field_Restriction_Glass.get(1),
+            51200000,
+            12800,
+            (int) TierEU.RECIPE_UV,
+            1,
+            new ItemStack[] { CustomItemList.eM_Hollow.get(1), ItemList.Field_Generator_LuV.get(4),
+                GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorLuV, 6L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4L), ItemList.WetTransformer_UHV_UV.get(1L),
+                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.VanadiumGallium, 6L),
+                GGMaterial.enrichedNaquadahAlloy.get(OrePrefixes.plateDouble, 4) },
+            new FluidStack[] { Materials.Lanthanum.getMolten(2304), Materials.CobaltBrass.getMolten(5760),
+                Materials.BatteryAlloy.getMolten(5760), MaterialPool.MolybdenumDisilicide.getMolten(1296) },
+            CustomItemList.eM_Containment_Field.get(1),
+            25 * SECONDS,
+            (int) TierEU.RECIPE_UV);
     }
 }

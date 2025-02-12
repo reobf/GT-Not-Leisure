@@ -821,6 +821,15 @@ public class TextLocalization {
         "Any Inconel Reinforced Casing",
         "Tooltip_LargeWiremill_Casing");
 
+    public static final String NameElementCopying = texter("Element Copying", "NameElementCopying");
+    public static final String ElementCopyingRecipeType = texter("Element Copying", "ElementCopyingRecipeType");
+    public static final String Tooltip_ElementCopying_00 = texter(
+        "It gains §cperfect overclock§7",
+        "Tooltip_ElementCopying_00");
+    public static final String Tooltip_ElementCopying_Casing = texter(
+        "Any Molecular Casing",
+        "Tooltip_ElementCopying_Casing");
+
     public static final String NameLargeEngravingLaser = texter("Large Engraving Laser", "NameLargeEngravingLaser");
     public static final String LargeEngravingLaserRecipeType = texter(
         "Laser Engraver",

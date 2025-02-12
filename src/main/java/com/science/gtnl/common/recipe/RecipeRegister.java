@@ -235,4 +235,14 @@ public class RecipeRegister {
                 .setMaxRecipesPerPage(1))
         .disableOptimize()
         .build();
+
+    public static RecipeMap<RecipeMapBackend> ElementCopyingRecipes = RecipeMapBuilder
+        .of("gtnl.recipe.ElementCopyingRecipes")
+        .maxIO(3, 9, 1, 3)
+        .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
+        .neiHandlerInfo(
+            builder -> builder.setDisplayStack(GTNLItemList.ElementCopying.get(1))
+                .setMaxRecipesPerPage(1))
+        .disableOptimize()
+        .build();
 }

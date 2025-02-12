@@ -4,6 +4,7 @@ import net.minecraftforge.client.MinecraftForgeClient;
 
 import com.science.gtnl.Utils.GuiEventHandler;
 import com.science.gtnl.Utils.LangMerger;
+import com.science.gtnl.Utils.LanguageManager;
 import com.science.gtnl.common.block.ReAvaritia.ExtremeAnvil.RenderExtremeAnvil;
 import com.science.gtnl.common.block.ReAvaritia.ExtremeAnvil.TileEntityExtremeAnvil;
 import com.science.gtnl.common.block.Render.MeteorMinerRenderer;
@@ -27,6 +28,7 @@ public class ClientProxy extends CommonProxy {
         super.init(event);
         new RealArtificialStarRender();
         new MeteorMinerRenderer();
+        LanguageManager.writePlaceholderStrings();
         RenderingRegistry.registerBlockHandler(new StarRender());
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityExtremeAnvil.class, new RenderExtremeAnvil());
         extremeAnvilRenderType = RenderingRegistry.getNextAvailableRenderId();

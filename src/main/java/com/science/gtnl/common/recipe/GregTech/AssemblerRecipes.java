@@ -1280,11 +1280,11 @@ public class AssemblerRecipes implements IRecipePool {
 
         GTValues.RA.stdBuilder()
             .itemInputs(
-                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Tungstate, 1L),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 1L),
                 ItemList.Hatch_Input_Bus_IV.get(1L),
                 ItemList.Hatch_Input_IV.get(1L),
                 ItemList.Automation_ChestBuffer_IV.get(1),
-                GTOreDictUnificator.get(OrePrefixes.pipeNonuple, Materials.Tungstate, 1L))
+                GTOreDictUnificator.get(OrePrefixes.pipeNonuple, Materials.TungstenSteel, 1L))
             .itemOutputs(GTNLItemList.DualInputHatchIV.get(1))
             .fluidInputs(Materials.SolderingAlloy.getMolten(144))
             .specialValue(0)

@@ -18,6 +18,7 @@ import com.science.gtnl.common.machine.multiblock.CheatOreProcessingFactory;
 import com.science.gtnl.common.machine.multiblock.ComponentAssembler;
 import com.science.gtnl.common.machine.multiblock.Desulfurizer;
 import com.science.gtnl.common.machine.multiblock.EdenGarden;
+import com.science.gtnl.common.machine.multiblock.ElementCopying;
 import com.science.gtnl.common.machine.multiblock.EnergeticPhotovoltaicPowerStation;
 import com.science.gtnl.common.machine.multiblock.GenerationEarthEngine;
 import com.science.gtnl.common.machine.multiblock.HandOfJohnDavisonRockefeller;
@@ -171,6 +172,7 @@ public class MachineLoader {
     public static ItemStack LargeIncubator;
     public static ItemStack LargeEngravingLaser;
     public static ItemStack FishingGround;
+    public static ItemStack ElementCopying;
 
     public static void loadMachines() {
 
@@ -514,6 +516,10 @@ public class MachineLoader {
 
         FishingGround = new FishingGround(21077, "FishingGround", TextLocalization.NameFishingGround).getStackForm(1);
         GTNLItemList.FishingGround.set(FishingGround);
+
+        ElementCopying = new ElementCopying(21078, "ElementCopying", TextLocalization.NameElementCopying)
+            .getStackForm(1);
+        GTNLItemList.ElementCopying.set(ElementCopying);
 
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
             21919,
