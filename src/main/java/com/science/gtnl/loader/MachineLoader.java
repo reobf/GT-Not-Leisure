@@ -58,6 +58,7 @@ import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.F
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.FlotationCellRegulator;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.Incubator;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.IsaMill;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeAlloySmelter;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeArcSmelter;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeAssembler;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeAutoclave;
@@ -78,6 +79,7 @@ import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.L
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeMacerationTower;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeMaterialPress;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeMixer;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargePacker;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeSiftingFunnel;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeSolidifier;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeSteamOreWasher;
@@ -88,6 +90,7 @@ import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.V
 import com.science.gtnl.common.machine.multiblock.TeleportationArrayToAlfheim;
 import com.science.gtnl.common.machine.multiblock.VibrantPhotovoltaicPowerStation;
 import com.science.gtnl.common.machine.multiblock.WhiteNightGenerator;
+import com.science.gtnl.common.machine.multiblock.WoodDistillation;
 
 import gtPlusPlus.api.objects.Logger;
 import gtPlusPlus.core.util.minecraft.FluidUtils;
@@ -173,6 +176,9 @@ public class MachineLoader {
     public static ItemStack LargeEngravingLaser;
     public static ItemStack FishingGround;
     public static ItemStack ElementCopying;
+    public static ItemStack WoodDistillation;
+    public static ItemStack LargePacker;
+    public static ItemStack LargeAlloySmelter;
 
     public static void loadMachines() {
 
@@ -520,6 +526,17 @@ public class MachineLoader {
         ElementCopying = new ElementCopying(21078, "ElementCopying", TextLocalization.NameElementCopying)
             .getStackForm(1);
         GTNLItemList.ElementCopying.set(ElementCopying);
+
+        WoodDistillation = new WoodDistillation(21079, "WoodDistillation", TextLocalization.NameWoodDistillation)
+            .getStackForm(1);
+        GTNLItemList.WoodDistillation.set(WoodDistillation);
+
+        LargePacker = new LargePacker(21080, "LargePacker", TextLocalization.NameLargePacker).getStackForm(1);
+        GTNLItemList.LargePacker.set(LargePacker);
+
+        LargeAlloySmelter = new LargeAlloySmelter(21081, "LargeAlloySmelter", TextLocalization.NameLargeAlloySmelter)
+            .getStackForm(1);
+        GTNLItemList.LargeAlloySmelter.set(LargeAlloySmelter);
 
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
             21919,

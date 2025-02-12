@@ -3,7 +3,8 @@ package com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan;
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
 import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.enums.HatchElement.*;
-import static gregtech.api.enums.Textures.BlockIcons.*;
+import static gregtech.api.enums.Textures.BlockIcons.OVERLAY_FRONT_MULTI_SMELTER;
+import static gregtech.api.enums.Textures.BlockIcons.OVERLAY_FRONT_MULTI_SMELTER_ACTIVE;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
 import static gregtech.api.util.GTStructureUtility.ofCoil;
 
@@ -33,39 +34,33 @@ import gregtech.api.render.TextureFactory;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.OverclockCalculator;
-import gregtech.common.blocks.BlockCasings8;
+import gregtech.common.blocks.BlockCasings1;
 
-public class ChemicalPlant extends GTMMultiMachineBase<ChemicalPlant> implements ISurvivalConstructable {
+public class LargeAlloySmelter extends GTMMultiMachineBase<LargeAlloySmelter> implements ISurvivalConstructable {
 
-    public static final int CASING_INDEX = ((BlockCasings8) sBlockCasings8).getTextureIndex(0);
-    private HeatingCoilLevel mCoilLevel;
-    private int mCasing;
-    private static IStructureDefinition<ChemicalPlant> STRUCTURE_DEFINITION = null;
     public static final String STRUCTURE_PIECE_MAIN = "main";
-    public static String[][] shape;
-    public static final String CP_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/chemical_plant";
-    public final int horizontalOffSet = 0;
-    public final int verticalOffSet = 3;
+    private static IStructureDefinition<LargeAlloySmelter> STRUCTURE_DEFINITION = null;
+    public static final String LAS_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/large_alloy_smelter";
+    public static final int CASING_INDEX = ((BlockCasings1) sBlockCasings1).getTextureIndex(11);
+    public final int horizontalOffSet = 2;
+    public final int verticalOffSet = 2;
     public final int depthOffSet = 0;
+    public static String[][] shape;
+    private HeatingCoilLevel mCoilLevel;
 
-    public ChemicalPlant(int aID, String aName, String aNameRegional) {
+    public LargeAlloySmelter(int aID, String aName, String aNameRegional) {
         super(aID, aName, aNameRegional);
-        shape = StructureUtils.readStructureFromFile(CP_STRUCTURE_FILE_PATH);
+        shape = StructureUtils.readStructureFromFile(LAS_STRUCTURE_FILE_PATH);
     }
 
-    public ChemicalPlant(String aName) {
+    public LargeAlloySmelter(String aName) {
         super(aName);
-        shape = StructureUtils.readStructureFromFile(CP_STRUCTURE_FILE_PATH);
-    }
-
-    @Override
-    public boolean isEnablePerfectOverclock() {
-        return true;
+        shape = StructureUtils.readStructureFromFile(LAS_STRUCTURE_FILE_PATH);
     }
 
     @Override
     public IMetaTileEntity newMetaEntity(IGregTechTileEntity aTileEntity) {
-        return new ChemicalPlant(this.mName);
+        return new LargeAlloySmelter(this.mName);
     }
 
     @Override
@@ -74,23 +69,13 @@ public class ChemicalPlant extends GTMMultiMachineBase<ChemicalPlant> implements
         if (side == aFacing) {
             if (aActive) return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()),
                 TextureFactory.builder()
-                    .addIcon(OVERLAY_FRONT_LARGE_CHEMICAL_REACTOR_ACTIVE)
+                    .addIcon(OVERLAY_FRONT_MULTI_SMELTER_ACTIVE)
                     .extFacing()
-                    .build(),
-                TextureFactory.builder()
-                    .addIcon(OVERLAY_FRONT_LARGE_CHEMICAL_REACTOR_ACTIVE_GLOW)
-                    .extFacing()
-                    .glow()
                     .build() };
             return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()),
                 TextureFactory.builder()
-                    .addIcon(OVERLAY_FRONT_LARGE_CHEMICAL_REACTOR)
+                    .addIcon(OVERLAY_FRONT_MULTI_SMELTER)
                     .extFacing()
-                    .build(),
-                TextureFactory.builder()
-                    .addIcon(OVERLAY_FRONT_LARGE_CHEMICAL_REACTOR_GLOW)
-                    .extFacing()
-                    .glow()
                     .build() };
         }
         return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()) };
@@ -102,48 +87,77 @@ public class ChemicalPlant extends GTMMultiMachineBase<ChemicalPlant> implements
 
     @Override
     public RecipeMap<?> getRecipeMap() {
-        return RecipeMaps.multiblockChemicalReactorRecipes;
+        return RecipeMaps.alloySmelterRecipes;
     }
 
     @Override
     public MultiblockTooltipBuilder createTooltip() {
         MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
-        tt.addMachineType(TextLocalization.ChemicalPlantRecipeType)
-            .addInfo(TextLocalization.Tooltip_ChemicalPlant_00)
-            .addInfo(TextLocalization.Tooltip_ChemicalPlant_01)
-            .addInfo(TextLocalization.Tooltip_ChemicalPlant_02)
+        tt.addMachineType(TextLocalization.LargeAlloySmelterRecipeType)
+            .addInfo(TextLocalization.Tooltip_GTMMultiMachine_00)
+            .addInfo(TextLocalization.Tooltip_GTMMultiMachine_01)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_02)
+            .addInfo(TextLocalization.Tooltip_LargeAlloySmelter_00)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_03)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
-            .beginStructureBlock(5, 5, 5, true)
-            .addInputHatch(TextLocalization.Tooltip_ChemicalPlant_Casing)
-            .addOutputHatch(TextLocalization.Tooltip_ChemicalPlant_Casing)
-            .addInputBus(TextLocalization.Tooltip_ChemicalPlant_Casing)
-            .addOutputBus(TextLocalization.Tooltip_ChemicalPlant_Casing)
-            .addEnergyHatch(TextLocalization.Tooltip_ChemicalPlant_Casing)
-            .addMaintenanceHatch(TextLocalization.Tooltip_ChemicalPlant_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
+            .beginStructureBlock(5, 3, 5, true)
+            .addInputBus(TextLocalization.Tooltip_LargeAlloySmelter_Casing)
+            .addOutputBus(TextLocalization.Tooltip_LargeAlloySmelter_Casing)
+            .addEnergyHatch(TextLocalization.Tooltip_LargeAlloySmelter_Casing)
+            .addMaintenanceHatch(TextLocalization.Tooltip_LargeAlloySmelter_Casing)
+            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY + " §rX " + TextUtils.SRP);
         return tt;
     }
 
     @Override
-    public IStructureDefinition<ChemicalPlant> getStructureDefinition() {
+    public IStructureDefinition<LargeAlloySmelter> getStructureDefinition() {
         if (STRUCTURE_DEFINITION == null) {
-            STRUCTURE_DEFINITION = StructureDefinition.<ChemicalPlant>builder()
+            STRUCTURE_DEFINITION = StructureDefinition.<LargeAlloySmelter>builder()
                 .addShape(STRUCTURE_PIECE_MAIN, transpose(shape))
-                .addElement('A', ofCoil(ChemicalPlant::setCoilLevel, ChemicalPlant::getCoilLevel))
                 .addElement(
-                    'B',
-                    buildHatchAdder(ChemicalPlant.class).casingIndex(CASING_INDEX)
+                    'A',
+                    buildHatchAdder(LargeAlloySmelter.class).casingIndex(CASING_INDEX)
                         .dot(1)
-                        .atLeast(InputHatch, OutputHatch, InputBus, OutputBus, Maintenance, Energy)
-                        .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(sBlockCasings8, 0))))
-                .addElement('C', ofBlock(sBlockCasings8, 1))
+                        .atLeast(InputBus, OutputBus, Maintenance, Energy)
+                        .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(sBlockCasings1, 11))))
+                .addElement('B', ofBlock(sBlockCasings2, 0))
+                .addElement('C', ofBlock(sBlockCasings2, 13))
+                .addElement('D', ofCoil(LargeAlloySmelter::setCoilLevel, LargeAlloySmelter::getCoilLevel))
+                .addElement('E', Muffler.newAny(CASING_INDEX, 1))
                 .build();
         }
         return STRUCTURE_DEFINITION;
+    }
+
+    @Override
+    public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
+        mCasing = 0;
+        ParallelTier = 0;
+        this.setCoilLevel(HeatingCoilLevel.None);
+
+        if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && checkHatch()) {
+            return false;
+        }
+
+        if (mMaintenanceHatches.size() != 1 && mMufflerHatches.size() != 1) return false;
+        ParallelTier = getParallelTier(aStack);
+        return mCasing >= 25;
+    }
+
+    @Override
+    public ProcessingLogic createProcessingLogic() {
+        return new ProcessingLogic() {
+
+            @NotNull
+            @Override
+            public OverclockCalculator createOverclockCalculator(@NotNull GTRecipe recipe) {
+                return OverclockCalculator.ofNoOverclock(recipe)
+                    .setEUtDiscount(0.8 - (ParallelTier / 50.0) - (getCoilLevel().getTier() / 50.0))
+                    .setSpeedBoost(0.6 - (ParallelTier / 200.0) - (getCoilLevel().getTier() / 50.0));
+            }
+        }.setMaxParallelSupplier(this::getMaxParallelRecipes);
     }
 
     @Override
@@ -164,47 +178,6 @@ public class ChemicalPlant extends GTMMultiMachineBase<ChemicalPlant> implements
             env,
             false,
             true);
-    }
-
-    @Override
-    public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
-        mCasing = 0;
-        ParallelTier = 0;
-        this.setCoilLevel(HeatingCoilLevel.None);
-
-        if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && checkHatch()) {
-            return false;
-        }
-
-        if (getCoilLevel() == HeatingCoilLevel.None) return false;
-
-        ParallelTier = getParallelTier(aStack);
-        return mCasing >= 50;
-    }
-
-    @Override
-    public ProcessingLogic createProcessingLogic() {
-        return new ProcessingLogic() {
-
-            @NotNull
-            @Override
-            public OverclockCalculator createOverclockCalculator(@NotNull GTRecipe recipe) {
-                return OverclockCalculator.ofNoOverclock(recipe)
-                    .setEUtDiscount(1 + (getCoilLevel().getTier() - 1) * 0.05)
-                    .setSpeedBoost(1 - (getCoilLevel().getTier() - 1) * 0.05);
-            }
-        }.setMaxParallelSupplier(this::getMaxParallelRecipes);
-    }
-
-    @Override
-    public int getMaxParallelRecipes() {
-        int maxRecipes;
-        if (ParallelTier <= 2) {
-            maxRecipes = 16;
-        } else {
-            maxRecipes = (int) Math.pow(4, ParallelTier - 3);
-        }
-        return Math.min(maxRecipes, 512);
     }
 
     public void setCoilLevel(HeatingCoilLevel aCoilLevel) {

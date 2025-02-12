@@ -1,11 +1,11 @@
-package com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan;
+package com.science.gtnl.common.machine.multiblock;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
+import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaCasing;
 import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.enums.HatchElement.*;
-import static gregtech.api.enums.Textures.BlockIcons.*;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
-import static gregtech.api.util.GTStructureUtility.ofCoil;
+import static gregtech.api.util.GTStructureUtility.ofFrame;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.ForgeDirection;
@@ -20,52 +20,46 @@ import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
+import com.science.gtnl.common.recipe.RecipeRegister;
 
-import gregtech.api.enums.HeatingCoilLevel;
+import gregtech.api.enums.Materials;
 import gregtech.api.enums.Textures;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.logic.ProcessingLogic;
 import gregtech.api.recipe.RecipeMap;
-import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.render.TextureFactory;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.OverclockCalculator;
-import gregtech.common.blocks.BlockCasings8;
+import gregtech.common.blocks.BlockCasings1;
 
-public class ChemicalPlant extends GTMMultiMachineBase<ChemicalPlant> implements ISurvivalConstructable {
+public class WoodDistillation extends GTMMultiMachineBase<WoodDistillation> implements ISurvivalConstructable {
 
-    public static final int CASING_INDEX = ((BlockCasings8) sBlockCasings8).getTextureIndex(0);
-    private HeatingCoilLevel mCoilLevel;
-    private int mCasing;
-    private static IStructureDefinition<ChemicalPlant> STRUCTURE_DEFINITION = null;
+    public static final int CASING_INDEX = ((BlockCasings1) sBlockCasings1).getTextureIndex(11);
+    public int mCasing;
+    public static IStructureDefinition<WoodDistillation> STRUCTURE_DEFINITION = null;
     public static final String STRUCTURE_PIECE_MAIN = "main";
     public static String[][] shape;
-    public static final String CP_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/chemical_plant";
-    public final int horizontalOffSet = 0;
-    public final int verticalOffSet = 3;
-    public final int depthOffSet = 0;
+    public static final String WD_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/wood_distillation";
+    public final int horizontalOffSet = 11;
+    public final int verticalOffSet = 18;
+    public final int depthOffSet = 2;
 
-    public ChemicalPlant(int aID, String aName, String aNameRegional) {
+    public WoodDistillation(int aID, String aName, String aNameRegional) {
         super(aID, aName, aNameRegional);
-        shape = StructureUtils.readStructureFromFile(CP_STRUCTURE_FILE_PATH);
+        shape = StructureUtils.readStructureFromFile(WD_STRUCTURE_FILE_PATH);
     }
 
-    public ChemicalPlant(String aName) {
+    public WoodDistillation(String aName) {
         super(aName);
-        shape = StructureUtils.readStructureFromFile(CP_STRUCTURE_FILE_PATH);
-    }
-
-    @Override
-    public boolean isEnablePerfectOverclock() {
-        return true;
+        shape = StructureUtils.readStructureFromFile(WD_STRUCTURE_FILE_PATH);
     }
 
     @Override
     public IMetaTileEntity newMetaEntity(IGregTechTileEntity aTileEntity) {
-        return new ChemicalPlant(this.mName);
+        return new WoodDistillation(this.mName);
     }
 
     @Override
@@ -74,21 +68,21 @@ public class ChemicalPlant extends GTMMultiMachineBase<ChemicalPlant> implements
         if (side == aFacing) {
             if (aActive) return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()),
                 TextureFactory.builder()
-                    .addIcon(OVERLAY_FRONT_LARGE_CHEMICAL_REACTOR_ACTIVE)
+                    .addIcon(Textures.BlockIcons.OVERLAY_FRONT_OIL_CRACKER_ACTIVE)
                     .extFacing()
                     .build(),
                 TextureFactory.builder()
-                    .addIcon(OVERLAY_FRONT_LARGE_CHEMICAL_REACTOR_ACTIVE_GLOW)
+                    .addIcon(Textures.BlockIcons.OVERLAY_FRONT_OIL_CRACKER_ACTIVE_GLOW)
                     .extFacing()
                     .glow()
                     .build() };
             return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingTextureID()),
                 TextureFactory.builder()
-                    .addIcon(OVERLAY_FRONT_LARGE_CHEMICAL_REACTOR)
+                    .addIcon(Textures.BlockIcons.OVERLAY_FRONT_OIL_CRACKER)
                     .extFacing()
                     .build(),
                 TextureFactory.builder()
-                    .addIcon(OVERLAY_FRONT_LARGE_CHEMICAL_REACTOR_GLOW)
+                    .addIcon(Textures.BlockIcons.OVERLAY_FRONT_OIL_CRACKER_GLOW)
                     .extFacing()
                     .glow()
                     .build() };
@@ -102,45 +96,49 @@ public class ChemicalPlant extends GTMMultiMachineBase<ChemicalPlant> implements
 
     @Override
     public RecipeMap<?> getRecipeMap() {
-        return RecipeMaps.multiblockChemicalReactorRecipes;
+        return RecipeRegister.WoodDistillationRecipes;
     }
 
     @Override
     public MultiblockTooltipBuilder createTooltip() {
         MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
-        tt.addMachineType(TextLocalization.ChemicalPlantRecipeType)
-            .addInfo(TextLocalization.Tooltip_ChemicalPlant_00)
-            .addInfo(TextLocalization.Tooltip_ChemicalPlant_01)
-            .addInfo(TextLocalization.Tooltip_ChemicalPlant_02)
+        tt.addMachineType(TextLocalization.WoodDistillationRecipeType)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_02)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_03)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
-            .beginStructureBlock(5, 5, 5, true)
-            .addInputHatch(TextLocalization.Tooltip_ChemicalPlant_Casing)
-            .addOutputHatch(TextLocalization.Tooltip_ChemicalPlant_Casing)
-            .addInputBus(TextLocalization.Tooltip_ChemicalPlant_Casing)
-            .addOutputBus(TextLocalization.Tooltip_ChemicalPlant_Casing)
-            .addEnergyHatch(TextLocalization.Tooltip_ChemicalPlant_Casing)
-            .addMaintenanceHatch(TextLocalization.Tooltip_ChemicalPlant_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
+            .beginStructureBlock(23, 20, 15, true)
+            .addInputHatch(TextLocalization.Tooltip_WoodDistillation_Casing)
+            .addInputBus(TextLocalization.Tooltip_WoodDistillation_Casing)
+            .addOutputBus(TextLocalization.Tooltip_WoodDistillation_Casing)
+            .addEnergyHatch(TextLocalization.Tooltip_WoodDistillation_Casing)
+            .addMaintenanceHatch(TextLocalization.Tooltip_WoodDistillation_Casing)
+            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY);
         return tt;
     }
 
     @Override
-    public IStructureDefinition<ChemicalPlant> getStructureDefinition() {
+    public IStructureDefinition<WoodDistillation> getStructureDefinition() {
         if (STRUCTURE_DEFINITION == null) {
-            STRUCTURE_DEFINITION = StructureDefinition.<ChemicalPlant>builder()
+            STRUCTURE_DEFINITION = StructureDefinition.<WoodDistillation>builder()
                 .addShape(STRUCTURE_PIECE_MAIN, transpose(shape))
-                .addElement('A', ofCoil(ChemicalPlant::setCoilLevel, ChemicalPlant::getCoilLevel))
+                .addElement('A', ofBlock(MetaCasing, 2))
                 .addElement(
                     'B',
-                    buildHatchAdder(ChemicalPlant.class).casingIndex(CASING_INDEX)
+                    buildHatchAdder(WoodDistillation.class).casingIndex(CASING_INDEX)
                         .dot(1)
-                        .atLeast(InputHatch, OutputHatch, InputBus, OutputBus, Maintenance, Energy)
-                        .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(sBlockCasings8, 0))))
-                .addElement('C', ofBlock(sBlockCasings8, 1))
+                        .atLeast(InputHatch, OutputHatch, InputBus, OutputBus, Maintenance, Energy.or(ExoticEnergy))
+                        .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(sBlockCasings1, 11))))
+                .addElement('C', ofBlock(sBlockCasings2, 1))
+                .addElement('D', ofBlock(sBlockCasings2, 13))
+                .addElement('E', ofBlock(sBlockCasings3, 11))
+                .addElement('F', ofBlock(sBlockCasings3, 14))
+                .addElement('G', ofBlock(sBlockCasings4, 1))
+                .addElement('H', ofBlock(sBlockCasings4, 10))
+                .addElement('I', ofBlock(sBlockCasings6, 3))
+                .addElement('J', ofFrame(Materials.StainlessSteel))
+                .addElement('K', Muffler.newAny(CASING_INDEX, 2))
                 .build();
         }
         return STRUCTURE_DEFINITION;
@@ -169,17 +167,12 @@ public class ChemicalPlant extends GTMMultiMachineBase<ChemicalPlant> implements
     @Override
     public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
         mCasing = 0;
-        ParallelTier = 0;
-        this.setCoilLevel(HeatingCoilLevel.None);
 
         if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && checkHatch()) {
             return false;
         }
 
-        if (getCoilLevel() == HeatingCoilLevel.None) return false;
-
-        ParallelTier = getParallelTier(aStack);
-        return mCasing >= 50;
+        return mCasing >= 220 && this.mMufflerHatches.size() == 2;
     }
 
     @Override
@@ -190,28 +183,9 @@ public class ChemicalPlant extends GTMMultiMachineBase<ChemicalPlant> implements
             @Override
             public OverclockCalculator createOverclockCalculator(@NotNull GTRecipe recipe) {
                 return OverclockCalculator.ofNoOverclock(recipe)
-                    .setEUtDiscount(1 + (getCoilLevel().getTier() - 1) * 0.05)
-                    .setSpeedBoost(1 - (getCoilLevel().getTier() - 1) * 0.05);
+                    .setEUtDiscount(1 - (ParallelTier / 50.0))
+                    .setSpeedBoost(1 - (ParallelTier / 200.0));
             }
         }.setMaxParallelSupplier(this::getMaxParallelRecipes);
-    }
-
-    @Override
-    public int getMaxParallelRecipes() {
-        int maxRecipes;
-        if (ParallelTier <= 2) {
-            maxRecipes = 16;
-        } else {
-            maxRecipes = (int) Math.pow(4, ParallelTier - 3);
-        }
-        return Math.min(maxRecipes, 512);
-    }
-
-    public void setCoilLevel(HeatingCoilLevel aCoilLevel) {
-        this.mCoilLevel = aCoilLevel;
-    }
-
-    public HeatingCoilLevel getCoilLevel() {
-        return this.mCoilLevel;
     }
 }

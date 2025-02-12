@@ -840,6 +840,22 @@ LargeBrewer_Mode_1=发酵槽
 LargeBrewer_Mode_2=流体加热器
 Tooltip_LargeBrewer_Casing=任意焦炉机械方块
 
+NameWoodDistillation=木化工厂
+gtnl.recipe.WoodDistillationRecipes=集成木质生物质热解
+WoodDistillationRecipeType=集成木质生物质热解
+Tooltip_WoodDistillation_Casing=任意隔热机械方块
+
+NameLargePacker=大型打包机
+LargePackerRecipeType=打包机 / 解包器
+LargePacker_Mode_0=打包机
+LargePacker_Mode_1=解包器
+Tooltip_LargePacker_Casing=任意强化钨钢机械方块
+
+NameLargeAlloySmelter=大型合金炉
+LargeAlloySmelterRecipeType=合金炉
+Tooltip_LargeAlloySmelter_00=每级线圈额外提供2%%的加速和耗电减免!
+Tooltip_LargeAlloySmelter_Casing=任意隔热机械方块
+
 NameLargeIndustrialLathe=大型工业车床
 LargeIndustrialLatheRecipeType=车床
 Tooltip_LargeIndustrialLathe_Casing=任意强化镍铬机械方块

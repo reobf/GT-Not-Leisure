@@ -1,60 +1,20 @@
-    "      CCC      "
-    "     CCBCC     "
-    "     CCBCC     "
+    " AAA "
+    " DDD "
+    "AA~AA"
 },{
-    "     CFCFC     "
-    "   CCEEEEECC   "
-    "   CCCCCCCCC   "
+    "ABBBA"
+    "D D D"
+    "AAAAA"
 },{
-    "   CCD   DCC   "
-    "  CEEECACEEEC  "
-    "  CCCCCACCCCC  "
+    "ABEBA"
+    "DDCDD"
+    "AAAAA"
 },{
-    "  CD       DC  "
-    " CEECC   CCEEC "
-    " CCCCC   CCCCC "
+    "ABBBA"
+    "D D D"
+    "AAAAA"
 },{
-    "  C         C  "
-    " CEC       CEC "
-    " CCC       CCC "
-},{
-    " CD         DC "
-    "CEEC       CEEC"
-    "CCCC       CCCC"
-},{
-    "CF           FC"
-    "CEC         CEC"
-    "CCC         CCC"
-},{
-    "CC           CC"
-    "BEA         AEB"
-    "BCA         ACB"
-},{
-    "CF           FC"
-    "CEC         CEC"
-    "CCC         CCC"
-},{
-    " CD         DC "
-    "CEEC       CEEC"
-    "CCCC       CCCC"
-},{
-    "  C         C  "
-    " CEC       CEC "
-    " CCC       CCC "
-},{
-    "  CD       DC  "
-    " CEECC   CCEEC "
-    " CCCCC   CCCCC "
-},{
-    "   CCD G DCC   "
-    "  CEEECACEEEC  "
-    "  CCCCCACCCCC  "
-},{
-    "     CFCFC     "
-    "   CCEEEEECC   "
-    "   CCCCCCCCC   "
-},{
-    "      CCC      "
-    "     CCBCC     "
-    "     CCBCC     "
+    " AAA "
+    " DDD "
+    "AAAAA"
 }}

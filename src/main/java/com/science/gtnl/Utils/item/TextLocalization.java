@@ -821,6 +821,29 @@ public class TextLocalization {
         "Any Inconel Reinforced Casing",
         "Tooltip_LargeWiremill_Casing");
 
+    public static final String NameLargeAlloySmelter = texter("Large Alloy Smelter", "NameLargeAlloySmelter");
+    public static final String LargeAlloySmelterRecipeType = texter("Alloy Smelter", "LargeAlloySmelterRecipeType");
+    public static final String Tooltip_LargeAlloySmelter_00 = texter(
+        "Each level of coil provides an additional 2%% increase in speed and a reduction in power consumption!",
+        "Tooltip_LargeAlloySmelter_00");
+    public static final String Tooltip_LargeAlloySmelter_Casing = texter(
+        "Any Heat Proof Machine Casing",
+        "Tooltip_LargeAlloySmelter_Casing");
+
+    public static final String NameLargePacker = texter("Large Packer", "NameLargePacker");
+    public static final String LargePackerRecipeType = texter("Packager / Unpackager", "LargePackerRecipeType");
+    public static final String Tooltip_LargePacker_Casing = texter(
+        "Any Robust Tungstensteel Machine Casing",
+        "Tooltip_LargePacker_Casing");
+
+    public static final String NameWoodDistillation = texter("Wood Distillation", "NameWoodDistillation");
+    public static final String WoodDistillationRecipeType = texter(
+        "Integrated Lignocellulosic Biomass Pyrolysis",
+        "WoodDistillationRecipeType");
+    public static final String Tooltip_WoodDistillation_Casing = texter(
+        "Any Heat Proof Machine Casing",
+        "Tooltip_WoodDistillation_Casing");
+
     public static final String NameElementCopying = texter("Element Copying", "NameElementCopying");
     public static final String ElementCopyingRecipeType = texter("Element Copying", "ElementCopyingRecipeType");
     public static final String Tooltip_ElementCopying_00 = texter(

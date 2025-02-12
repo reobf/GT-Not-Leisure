@@ -245,4 +245,15 @@ public class RecipeRegister {
                 .setMaxRecipesPerPage(1))
         .disableOptimize()
         .build();
+
+    public static RecipeMap<GTNLRecipeMapBackend> WoodDistillationRecipes = RecipeMapBuilder
+        .of("gtnl.recipe.WoodDistillationRecipes", GTNLRecipeMapBackend::new)
+        .maxIO(1, 1, 1, 16)
+        .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
+        .frontend(GeneralFrontend::new)
+        .neiHandlerInfo(
+            builder -> builder.setDisplayStack(GTNLItemList.WoodDistillation.get(1))
+                .setMaxRecipesPerPage(1))
+        .disableOptimize()
+        .build();
 }
