@@ -31,6 +31,7 @@ import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.Utils.item.TextUtils;
+import com.science.gtnl.common.recipe.RecipeRegister;
 
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Textures;
@@ -38,6 +39,7 @@ import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.metatileentity.implementations.MTEHatchDynamo;
+import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.check.CheckRecipeResult;
 import gregtech.api.recipe.check.CheckRecipeResultRegistry;
 import gregtech.api.render.TextureFactory;
@@ -51,6 +53,7 @@ public class LargeNaquadahReactor extends TTMultiblockBase implements IConstruct
 
     private int mCasing;
     private boolean Oxygen = false;
+    private int multiplier = 1;
     private long SetEUt = 0;
     private static IStructureDefinition<LargeNaquadahReactor> STRUCTURE_DEFINITION = null;
     public static final String STRUCTURE_PIECE_MAIN = "main";
@@ -135,6 +138,11 @@ public class LargeNaquadahReactor extends TTMultiblockBase implements IConstruct
     }
 
     @Override
+    public RecipeMap<?> getRecipeMap() {
+        return RecipeRegister.NaquadahReactorRecipes;
+    }
+
+    @Override
     @NotNull
     public CheckRecipeResult checkProcessing_EM() {
         boolean fuelTierI = false;
@@ -144,7 +152,7 @@ public class LargeNaquadahReactor extends TTMultiblockBase implements IConstruct
         boolean nitrogenPlasma = false;
         Oxygen = false;
         SetEUt = 524288;
-        int multiplier = 1;
+        multiplier = 1;
 
         List<FluidStack> tFluids = getStoredFluids();
         if (tFluids.isEmpty()) return CheckRecipeResultRegistry.NO_RECIPE;
@@ -283,7 +291,7 @@ public class LargeNaquadahReactor extends TTMultiblockBase implements IConstruct
 
     @Override
     public boolean onRunningTick(ItemStack stack) {
-        if ((this.mProgresstime + 1) % 20 == 0) {
+        if ((this.mProgresstime + 1) % 20 == 0 && this.mProgresstime > 0) {
             if (Oxygen) {
                 if (!drainFluid("oxygen", 2000)) {
                     stopMachine(ShutDownReasonRegistry.NO_REPAIR);
@@ -360,11 +368,19 @@ public class LargeNaquadahReactor extends TTMultiblockBase implements IConstruct
     @Override
     public void saveNBTData(NBTTagCompound aNBT) {
         super.saveNBTData(aNBT);
+
+        aNBT.setLong("SetEUt", SetEUt);
+        aNBT.setBoolean("Oxygen", Oxygen);
+        aNBT.setInteger("Multiplier", multiplier);
     }
 
     @Override
     public void loadNBTData(NBTTagCompound aNBT) {
         super.loadNBTData(aNBT);
+
+        SetEUt = aNBT.getLong("SetEUt");
+        Oxygen = aNBT.getBoolean("Oxygen");
+        multiplier = aNBT.getInteger("Multiplier");
     }
 
     @Override

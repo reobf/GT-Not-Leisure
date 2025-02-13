@@ -843,7 +843,9 @@ LargeBrewer_Mode_2=流体加热器
 Tooltip_LargeBrewer_Casing=任意焦炉机械方块
 
 NameLargeNaquadahReactor=大型硅岩反应堆
+gtnl.recipe.NaquadahReactorRecipes=硅岩反应
 LargeNaquadahReactorRecipeType=硅岩反应
+NEI.NaquadahReactorRecipes.specialValue=产能功率: 
 Tooltip_LargeNaquadahReactor_00=固定并行为4
 Tooltip_LargeNaquadahReactor_01=可以在配方开始的时候输入氧气
 Tooltip_LargeNaquadahReactor_02=这会让时间减半，功率翻倍

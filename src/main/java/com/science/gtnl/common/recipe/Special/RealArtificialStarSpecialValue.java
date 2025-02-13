@@ -8,9 +8,9 @@ import java.util.List;
 import gregtech.nei.RecipeDisplayInfo;
 import gregtech.nei.formatter.INEISpecialInfoFormatter;
 
-public class RealArtificialStar_SpecialValueFormatter implements INEISpecialInfoFormatter {
+public class RealArtificialStarSpecialValue implements INEISpecialInfoFormatter {
 
-    public static final RealArtificialStar_SpecialValueFormatter INSTANCE = new RealArtificialStar_SpecialValueFormatter();
+    public static final RealArtificialStarSpecialValue INSTANCE = new RealArtificialStarSpecialValue();
 
     @Override
     public List<String> format(RecipeDisplayInfo recipeInfo) {

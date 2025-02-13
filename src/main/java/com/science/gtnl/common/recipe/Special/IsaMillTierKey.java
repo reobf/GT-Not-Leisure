@@ -1,4 +1,4 @@
-package com.science.gtnl.common.recipe;
+package com.science.gtnl.common.recipe.Special;
 
 import static gregtech.api.util.GTUtility.trans;
 

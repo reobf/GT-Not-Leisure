@@ -11,6 +11,7 @@ import com.science.gtnl.common.recipe.GTNL.IsaMillRecipes;
 import com.science.gtnl.common.recipe.GTNL.ManaInfusionRecipes;
 import com.science.gtnl.common.recipe.GTNL.MatterFabricatorRecipes;
 import com.science.gtnl.common.recipe.GTNL.MolecularTransformerRecipes;
+import com.science.gtnl.common.recipe.GTNL.NaquadahReactorRecipes;
 import com.science.gtnl.common.recipe.GTNL.NatureSpiritArrayRecipes;
 import com.science.gtnl.common.recipe.GTNL.PetrochemicalPlantRecipes;
 import com.science.gtnl.common.recipe.GTNL.PortalToAlfheimRecipes;
@@ -63,7 +64,7 @@ public class RecipeLoader {
             new TheTwilightForestRecipes(), new IsaMillRecipes(), new CellRegulatorRecipes(),
             new VacuumFurnaceRecipes(), new FishingGroundRecipes(), new DistilleryRecipes(),
             new ElementCopyingRecipes(), new AlloySmelterRecipes(), new MolecularTransformerRecipes(),
-            new WoodDistillationRecipes() };
+            new WoodDistillationRecipes(), new NaquadahReactorRecipes() };
         for (IRecipePool recipePool : recipePools) {
             recipePool.loadRecipes();
         }

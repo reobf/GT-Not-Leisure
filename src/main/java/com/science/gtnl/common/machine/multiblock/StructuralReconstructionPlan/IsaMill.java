@@ -25,8 +25,8 @@ import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
-import com.science.gtnl.common.recipe.IsaMillTierKey;
 import com.science.gtnl.common.recipe.RecipeRegister;
+import com.science.gtnl.common.recipe.Special.IsaMillTierKey;
 
 import bartworks.API.BorosilicateGlass;
 import cpw.mods.fml.common.registry.GameRegistry;

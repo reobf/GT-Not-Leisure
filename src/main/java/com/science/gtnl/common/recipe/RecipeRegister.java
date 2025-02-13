@@ -3,8 +3,11 @@ package com.science.gtnl.common.recipe;
 import java.util.Comparator;
 
 import com.science.gtnl.common.GTNLItemList;
-import com.science.gtnl.common.recipe.Special.RealArtificialStar_SpecialValueFormatter;
+import com.science.gtnl.common.recipe.Special.IsaMillTierKey;
+import com.science.gtnl.common.recipe.Special.NaquadahReactorSpecialValue;
+import com.science.gtnl.common.recipe.Special.RealArtificialStarSpecialValue;
 
+import goodgenerator.client.GUI.GGUITextures;
 import gregtech.api.gui.modularui.GTUITextures;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMapBackend;
@@ -57,7 +60,7 @@ public class RecipeRegister {
     public static final RecipeMap<RecipeMapBackend> RealArtificialStarRecipes = RecipeMapBuilder
         .of("gtnl.recipe.ArtificialStarGeneratingRecipes")
         .maxIO(1, 1, 0, 0)
-        .neiSpecialInfoFormatter(RealArtificialStar_SpecialValueFormatter.INSTANCE)
+        .neiSpecialInfoFormatter(RealArtificialStarSpecialValue.INSTANCE)
         .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
         .neiHandlerInfo(builder -> builder.setDisplayStack(GTNLItemList.RealArtificialStar.get(1)))
         .disableOptimize()
@@ -265,5 +268,17 @@ public class RecipeRegister {
             builder -> builder.setDisplayStack(GTNLItemList.MolecularTransformer.get(1))
                 .setMaxRecipesPerPage(1))
         .disableOptimize()
+        .build();
+
+    public static final RecipeMap<RecipeMapBackend> NaquadahReactorRecipes = RecipeMapBuilder
+        .of("gtnl.recipe.NaquadahReactorRecipes")
+        .maxIO(0, 0, 2, 0)
+        .dontUseProgressBar()
+        .neiSpecialInfoFormatter(NaquadahReactorSpecialValue.INSTANCE)
+        .neiHandlerInfo(
+            builder -> builder.setDisplayStack(GTNLItemList.LargeNaquadahReactor.get(1))
+                .setMaxRecipesPerPage(1))
+        .disableOptimize()
+        .addSpecialTexture(59, 20, 58, 42, GGUITextures.PICTURE_NAQUADAH_REACTOR)
         .build();
 }
