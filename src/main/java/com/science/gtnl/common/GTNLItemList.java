@@ -292,6 +292,7 @@ public enum GTNLItemList {
     FishingGround,
     LargePacker,
     LargeAlloySmelter,
+    LargePyrolyseOven,
 
     MolecularTransformer,
     WoodDistillation,

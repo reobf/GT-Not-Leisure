@@ -821,6 +821,12 @@ public class TextLocalization {
         "Any Inconel Reinforced Casing",
         "Tooltip_LargeWiremill_Casing");
 
+    public static final String NameLargePyrolyseOven = texter("Large Pyrolyse Oven", "NameLargePyrolyseOven");
+    public static final String LargePyrolyseOvenRecipeType = texter("Pyrolyse", "LargePyrolyseOvenRecipeType");
+    public static final String Tooltip_LargePyrolyseOven_Casing = texter(
+        "Any Clean Stainless Steel Machine Casing",
+        "Tooltip_LargePyrolyseOven_Casing");
+
     public static final String NameMolecularTransformer = texter("Molecular Transformer", "NameMolecularTransformer");
     public static final String MolecularTransformerRecipeType = texter(
         "Molecular Transformer",
@@ -1396,7 +1402,7 @@ public class TextLocalization {
         "Parallel : Singleblocks * 2 + Voltage level * 4 + Coil level * 4",
         "Tooltip_ProcessingArray_07");
     public static final String Tooltip_ProcessingArray_Casing = texter(
-        "Any Clean Stainless Steel Machine Casing",
+        "Any Stable Titanium Machine Casing",
         "Tooltip_ProcessingArray_Casing");
 
     public static final String NameRareEarthCentrifugal = texter("Rare Earth Centrifugal", "NameRareEarthCentrifugal");

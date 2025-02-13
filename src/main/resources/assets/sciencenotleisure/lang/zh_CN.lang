@@ -847,6 +847,10 @@ WoodDistillationRecipeType=集成木质生物质热解
 Tooltip_WoodDistillation_00=最终产出：配方输出 * 电压等级 * 2
 Tooltip_WoodDistillation_Casing=任意隔热机械方块
 
+NameLargePyrolyseOven=大型热解炉
+LargePyrolyseOvenRecipeType=热解炉
+Tooltip_LargePyrolyseOven_Casing=任意洁净不锈钢机械方块
+
 NameLargePacker=大型打包机
 LargePackerRecipeType=打包机 / 解包器
 LargePacker_Mode_0=打包机
@@ -1265,7 +1269,7 @@ Tooltip_ProcessingArray_04=对特定机器无效
 Tooltip_ProcessingArray_05=比相同电压的单方块机器快111%%
 Tooltip_ProcessingArray_06=只需要使用配方要求功率的(100 - 线圈等级 * 3)%%
 Tooltip_ProcessingArray_07=并行数：单方块GT机器数量 * 2 + 电压等级 * 4 + 线圈等级 * 4
-Tooltip_ProcessingArray_Casing=任意洁净不锈钢机械方块
+Tooltip_ProcessingArray_Casing=任意加强钛机械方块
 
 NameEnergyInfuser=能量注入仪
 EnergyInfuserRecipeType=能量注入仪

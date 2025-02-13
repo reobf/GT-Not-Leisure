@@ -14,6 +14,7 @@ import java.util.List;
 
 import javax.annotation.Nonnull;
 
+import com.science.gtnl.Utils.item.TextUtils;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
@@ -71,15 +72,15 @@ public class ProcessingArray extends MultiMachineBase<ProcessingArray> implement
     public RecipeMap<?> mLastRecipeMap;
     public ItemStack lastControllerStack;
     public int tTier = 0;
-    public int horizontalOffset = 6;
-    public int verticalOffset = 4;
+    public int horizontalOffset = 2;
+    public int verticalOffset = 3;
     public int depthOffset = 0;
     public static IStructureDefinition<ProcessingArray> STRUCTURE_DEFINITION = null;
     public static final String STRUCTURE_PIECE_MAIN = "main";
     public static String[][] shape;
     public static final String PA_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/processing_array";
     public HeatingCoilLevel mHeatingCapacity;
-    public static final int CASING_INDEX = ((BlockCasings4) sBlockCasings4).getTextureIndex(1);
+    public static final int CASING_INDEX = ((BlockCasings4) sBlockCasings4).getTextureIndex(2);
 
     public ProcessingArray(int aID, String aName, String aNameRegional) {
         super(aID, aName, aNameRegional);
@@ -98,7 +99,11 @@ public class ProcessingArray extends MultiMachineBase<ProcessingArray> implement
 
     @Override
     public int getMaxParallelRecipes() {
-        return 1;
+        if (getControllerSlot() == null) {
+            return 0;
+        }
+        return getControllerSlot().stackSize * 2 + GTUtility.getTier(this.getMaxInputVoltage()) * 4
+            + getCoilLevel().getTier() * 4;
     }
 
     @Override
@@ -123,14 +128,14 @@ public class ProcessingArray extends MultiMachineBase<ProcessingArray> implement
             .addInfo(TextLocalization.Tooltip_ProcessingArray_05)
             .addInfo(TextLocalization.Tooltip_ProcessingArray_06)
             .addInfo(TextLocalization.Tooltip_ProcessingArray_07)
-            .beginStructureBlock(13, 6, 5, true)
+            .beginStructureBlock(5, 5, 5, true)
             .addEnergyHatch(TextLocalization.Tooltip_ProcessingArray_Casing, 1)
             .addMaintenanceHatch(TextLocalization.Tooltip_ProcessingArray_Casing, 1)
             .addInputBus(TextLocalization.Tooltip_ProcessingArray_Casing, 1)
             .addInputHatch(TextLocalization.Tooltip_ProcessingArray_Casing, 1)
             .addOutputBus(TextLocalization.Tooltip_ProcessingArray_Casing, 1)
             .addOutputHatch(TextLocalization.Tooltip_ProcessingArray_Casing, 1)
-            .toolTipFinisher();
+            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY + " §rX " + TextUtils.SRP);
         return tt;
     }
 
@@ -265,7 +270,7 @@ public class ProcessingArray extends MultiMachineBase<ProcessingArray> implement
                 return super.process();
             }
 
-        }.setMaxParallelSupplier(this::getMaxParallel);
+        }.setMaxParallelSupplier(this::getMaxParallelRecipes);
     }
 
     @Override
@@ -276,7 +281,7 @@ public class ProcessingArray extends MultiMachineBase<ProcessingArray> implement
     @Override
     public void setProcessingLogicPower(ProcessingLogic logic) {
         logic.setAvailableVoltage(GTValues.V[tTier] * (mLastRecipeMap != null ? mLastRecipeMap.getAmperage() : 1));
-        logic.setAvailableAmperage(getMaxParallel());
+        logic.setAvailableAmperage(getMaxParallelRecipes());
         logic.setAmperageOC(false);
     }
 
@@ -287,14 +292,6 @@ public class ProcessingArray extends MultiMachineBase<ProcessingArray> implement
         } else {
             tTier = 0;
         }
-    }
-
-    public int getMaxParallel() {
-        if (getControllerSlot() == null) {
-            return 0;
-        }
-        return getControllerSlot().stackSize * 2 + GTUtility.getTier(this.getMaxInputVoltage()) * 4
-            + getCoilLevel().getTier() * 4;
     }
 
     @Override
@@ -323,18 +320,17 @@ public class ProcessingArray extends MultiMachineBase<ProcessingArray> implement
         if (STRUCTURE_DEFINITION == null) {
             STRUCTURE_DEFINITION = StructureDefinition.<ProcessingArray>builder()
                 .addShape(STRUCTURE_PIECE_MAIN, transpose(shape))
-                .addElement('A', ofBlock(sBlockCasings1, 11))
                 .addElement(
-                    'B',
+                    'A',
                     buildHatchAdder(ProcessingArray.class)
-                        .atLeast(InputHatch, OutputHatch, InputBus, OutputBus, Maintenance, Energy.or(ExoticEnergy))
+                        .atLeast(InputHatch, OutputHatch, InputBus, OutputBus, Maintenance, Energy)
                         .casingIndex(CASING_INDEX)
                         .dot(1)
-                        .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(sBlockCasings4, 1))))
+                        .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(sBlockCasings4, 2))))
+                .addElement('B', ofBlock(sBlockCasings2, 14))
                 .addElement('C', ofCoil(ProcessingArray::setCoilLevel, ProcessingArray::getCoilLevel))
-                .addElement('D', ofFrame(Materials.StainlessSteel))
-                .addElement('E', ofFrame(Materials.PulsatingIron))
-                .addElement('F', Muffler.newAny(CASING_INDEX, 2))
+                .addElement('D', ofFrame(Materials.Titanium))
+                .addElement('E', Muffler.newAny(CASING_INDEX, 1))
                 .build();
         }
         return STRUCTURE_DEFINITION;
@@ -393,6 +389,7 @@ public class ProcessingArray extends MultiMachineBase<ProcessingArray> implement
     @Override
     public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
         mCasing = 0;
+        setCoilLevel(HeatingCoilLevel.None);
 
         if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffset, verticalOffset, depthOffset) && checkHatch()) {
             return false;
@@ -401,10 +398,9 @@ public class ProcessingArray extends MultiMachineBase<ProcessingArray> implement
         if (GTUtility.getTier(this.getMaxInputVoltage()) > tTier + 4) {
             return false;
         }
-        setCoilLevel(HeatingCoilLevel.None);
         return mCasing >= 120 && mMaintenanceHatches.size() == 1
             && getCoilLevel() != HeatingCoilLevel.None
-            && this.mMufflerHatches.size() == 2;
+            && this.mMufflerHatches.size() == 1;
     }
 
     @Override
@@ -481,7 +477,7 @@ public class ProcessingArray extends MultiMachineBase<ProcessingArray> implement
                 + " x",
             StatCollector.translateToLocal("GT5U.PA.parallel") + ": "
                 + EnumChatFormatting.GREEN
-                + GTUtility.formatNumbers(getMaxParallel())
+                + GTUtility.formatNumbers(getMaxParallelRecipes())
                 + EnumChatFormatting.RESET };
     }
 

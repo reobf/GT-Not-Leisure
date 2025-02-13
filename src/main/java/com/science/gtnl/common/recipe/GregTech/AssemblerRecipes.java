@@ -4,6 +4,7 @@ import static com.science.gtnl.Mods.ScienceNotLeisure;
 import static com.science.gtnl.loader.IScriptLoader.missing;
 import static gregtech.api.enums.Mods.*;
 
+import gtPlusPlus.core.item.crafting.ItemDummyResearch;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -533,7 +534,7 @@ public class AssemblerRecipes implements IRecipePool {
                 GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, 32),
                 GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 8L),
                 GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 4L),
-                ItemList.Casing_CleanStainlessSteel.get(32L),
+                ItemList.Casing_StableTitanium.get(4L),
                 GregtechItemList.GTPP_Casing_EV.get(8L))
             .fluidInputs(Materials.SolderingAlloy.getMolten(18432))
             .itemOutputs(GTNLItemList.ProcessingArray.get(1))
@@ -1427,6 +1428,56 @@ public class AssemblerRecipes implements IRecipePool {
             .noOptimize()
             .duration(300)
             .eut(2013265920)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTNLItemList.LargePyrolyseOven.get(2),
+                GTNLItemList.LargeDistillery.get(4),
+                ItemList.Emitter_IV.get(4L),
+                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.StainlessSteel, 8L),
+                ItemList.Electric_Pump_IV.get(8L),
+                MaterialsAlloy.AQUATIC_STEEL.getPlate(16),
+                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.StainlessSteel, 32L))
+            .itemOutputs(GTNLItemList.WoodDistillation.get(1))
+            .fluidInputs(Materials.SolderingAlloy.getMolten(1296))
+            .specialValue(0)
+            .noOptimize()
+            .duration(400)
+            .eut(7680)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                ItemDummyResearch.getResearchStack(ItemDummyResearch.ASSEMBLY_LINE_RESEARCH.RESEARCH_11_MOLECULAR_TRANSFORMER, 1),
+                MaterialsAlloy.ZERON_100.getFrameBox(8),
+                GTOreDictUnificator.get(OrePrefixes.cableGt16, Materials.Platinum, 8L),
+                MaterialsAlloy.BABBIT_ALLOY.getPlate(16),
+                MaterialsAlloy.HG1223.getFineWire(32),
+                ItemList.Emitter_LuV.get(8L),
+                ItemList.Energy_LapotronicOrb.get(2L),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 8L),
+                ItemList.Field_Generator_EV.get(8L))
+            .itemOutputs(GTNLItemList.MolecularTransformer.get(1))
+            .fluidInputs(MaterialsAlloy.NITINOL_60.getFluidStack(2304))
+            .specialValue(0)
+            .noOptimize()
+            .duration(200)
+            .eut(7680)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                ItemList.PyrolyseOven.get(1),
+                ItemList.Field_Generator_HV.get(2L),
+                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.StainlessSteel, 2L),
+                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.StainlessSteel, 4L))
+            .itemOutputs(GTNLItemList.LargePyrolyseOven.get(1))
+            .fluidInputs(Materials.SolderingAlloy.getMolten(576))
+            .specialValue(0)
+            .noOptimize()
+            .duration(400)
+            .eut(480)
             .addTo(As);
     }
 }
