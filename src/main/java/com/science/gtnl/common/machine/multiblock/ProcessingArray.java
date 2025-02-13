@@ -14,7 +14,6 @@ import java.util.List;
 
 import javax.annotation.Nonnull;
 
-import com.science.gtnl.Utils.item.TextUtils;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
@@ -33,6 +32,7 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
+import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTNLProcessingArrayManager;
 import com.science.gtnl.common.machine.multiMachineClasses.MultiMachineBase;
 

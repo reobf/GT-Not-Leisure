@@ -80,11 +80,11 @@ import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.L
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeMaterialPress;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeMixer;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargePacker;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargePyrolyseOven;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeSiftingFunnel;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeSolidifier;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeSteamOreWasher;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeWiremill;
-import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargePyrolyseOven;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.MegaBlastFurnace;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.MolecularTransformer;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.VacuumDryingFurnace;
@@ -548,10 +548,8 @@ public class MachineLoader {
             TextLocalization.NameMolecularTransformer).getStackForm(1);
         GTNLItemList.MolecularTransformer.set(MolecularTransformer);
 
-        LargePyrolyseOven = new LargePyrolyseOven(
-            21083,
-            "LargePyrolyseOven",
-            TextLocalization.NameLargePyrolyseOven).getStackForm(1);
+        LargePyrolyseOven = new LargePyrolyseOven(21083, "LargePyrolyseOven", TextLocalization.NameLargePyrolyseOven)
+            .getStackForm(1);
         GTNLItemList.LargePyrolyseOven.set(LargePyrolyseOven);
 
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
