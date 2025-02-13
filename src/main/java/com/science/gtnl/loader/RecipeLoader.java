@@ -10,6 +10,7 @@ import com.science.gtnl.common.recipe.GTNL.FishingGroundRecipes;
 import com.science.gtnl.common.recipe.GTNL.IsaMillRecipes;
 import com.science.gtnl.common.recipe.GTNL.ManaInfusionRecipes;
 import com.science.gtnl.common.recipe.GTNL.MatterFabricatorRecipes;
+import com.science.gtnl.common.recipe.GTNL.MolecularTransformerRecipes;
 import com.science.gtnl.common.recipe.GTNL.NatureSpiritArrayRecipes;
 import com.science.gtnl.common.recipe.GTNL.PetrochemicalPlantRecipes;
 import com.science.gtnl.common.recipe.GTNL.PortalToAlfheimRecipes;
@@ -19,7 +20,9 @@ import com.science.gtnl.common.recipe.GTNL.RealArtificialStarRecipes;
 import com.science.gtnl.common.recipe.GTNL.SmeltingMixingFurnaceRecipes;
 import com.science.gtnl.common.recipe.GTNL.SteamCrackerRecipes;
 import com.science.gtnl.common.recipe.GTNL.TheTwilightForestRecipes;
+import com.science.gtnl.common.recipe.GTNL.WoodDistillationRecipes;
 import com.science.gtnl.common.recipe.GregTech.AlloyBlastSmelterRecipes;
+import com.science.gtnl.common.recipe.GregTech.AlloySmelterRecipes;
 import com.science.gtnl.common.recipe.GregTech.AssemblerRecipes;
 import com.science.gtnl.common.recipe.GregTech.AssemblingLineRecipes;
 import com.science.gtnl.common.recipe.GregTech.CentrifugeRecipes;
@@ -59,7 +62,8 @@ public class RecipeLoader {
             new ChemicalDehydratorRecipes(), new RareEarthCentrifugalRecipes(), new MatterFabricatorRecipes(),
             new TheTwilightForestRecipes(), new IsaMillRecipes(), new CellRegulatorRecipes(),
             new VacuumFurnaceRecipes(), new FishingGroundRecipes(), new DistilleryRecipes(),
-            new ElementCopyingRecipes() };
+            new ElementCopyingRecipes(), new AlloySmelterRecipes(), new MolecularTransformerRecipes(),
+            new WoodDistillationRecipes() };
         for (IRecipePool recipePool : recipePools) {
             recipePool.loadRecipes();
         }

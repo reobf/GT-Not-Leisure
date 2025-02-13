@@ -7,8 +7,11 @@ import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
 import static gregtech.api.util.GTStructureUtility.ofFrame;
 
+import javax.annotation.Nonnull;
+
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.ForgeDirection;
+import net.minecraftforge.fluids.FluidStack;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -29,8 +32,11 @@ import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.logic.ProcessingLogic;
 import gregtech.api.recipe.RecipeMap;
+import gregtech.api.recipe.check.CheckRecipeResult;
+import gregtech.api.recipe.check.CheckRecipeResultRegistry;
 import gregtech.api.render.TextureFactory;
 import gregtech.api.util.GTRecipe;
+import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.OverclockCalculator;
 import gregtech.common.blocks.BlockCasings1;
@@ -103,6 +109,7 @@ public class WoodDistillation extends GTMMultiMachineBase<WoodDistillation> impl
     public MultiblockTooltipBuilder createTooltip() {
         MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
         tt.addMachineType(TextLocalization.WoodDistillationRecipeType)
+            .addInfo(TextLocalization.Tooltip_WoodDistillation_00)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_02)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_03)
             .addSeparator()
@@ -187,5 +194,48 @@ public class WoodDistillation extends GTMMultiMachineBase<WoodDistillation> impl
                     .setSpeedBoost(1 - (ParallelTier / 200.0));
             }
         }.setMaxParallelSupplier(this::getMaxParallelRecipes);
+    }
+
+    @Nonnull
+    @Override
+    public CheckRecipeResult checkProcessing() {
+        if (processingLogic == null) {
+            return checkRecipe(mInventory[1]) ? CheckRecipeResultRegistry.SUCCESSFUL
+                : CheckRecipeResultRegistry.NO_RECIPE;
+        }
+
+        setupProcessingLogic(processingLogic);
+
+        CheckRecipeResult result = doCheckRecipe();
+        result = postCheckRecipe(result, processingLogic);
+        updateSlots();
+        if (!result.wasSuccessful()) return result;
+
+        mEfficiency = 10000;
+        mEfficiencyIncrease = 10000;
+        mMaxProgresstime = processingLogic.getDuration();
+        setEnergyUsage(processingLogic);
+
+        ItemStack[] outputItems = processingLogic.getOutputItems();
+        if (outputItems != null) {
+            for (ItemStack itemStack : outputItems) {
+                if (itemStack != null) {
+                    itemStack.stackSize *= GTUtility.getTier(this.getMaxInputVoltage()) * 2;
+                }
+            }
+        }
+        mOutputItems = outputItems;
+
+        FluidStack[] outputFluids = processingLogic.getOutputFluids();
+        if (outputFluids != null) {
+            for (FluidStack fluidStack : outputFluids) {
+                if (fluidStack != null) {
+                    fluidStack.amount *= GTUtility.getTier(this.getMaxInputVoltage()) * 2;
+                }
+            }
+        }
+        mOutputFluids = outputFluids;
+
+        return result;
     }
 }

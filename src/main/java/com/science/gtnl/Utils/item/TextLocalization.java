@@ -821,6 +821,17 @@ public class TextLocalization {
         "Any Inconel Reinforced Casing",
         "Tooltip_LargeWiremill_Casing");
 
+    public static final String NameMolecularTransformer = texter("Molecular Transformer", "NameMolecularTransformer");
+    public static final String MolecularTransformerRecipeType = texter(
+        "Molecular Transformer",
+        "MolecularTransformerRecipeType");
+    public static final String Tooltip_MolecularTransformer_00 = texter(
+        "Support §9Tec§1Tech §rLaser Hatch!",
+        "Tooltip_MolecularTransformer_00");
+    public static final String Tooltip_MolecularTransformer_Casing = texter(
+        "Any Chemically Inert Machine Casing",
+        "Tooltip_MolecularTransformer_Casing");
+
     public static final String NameLargeAlloySmelter = texter("Large Alloy Smelter", "NameLargeAlloySmelter");
     public static final String LargeAlloySmelterRecipeType = texter("Alloy Smelter", "LargeAlloySmelterRecipeType");
     public static final String Tooltip_LargeAlloySmelter_00 = texter(
@@ -840,6 +851,9 @@ public class TextLocalization {
     public static final String WoodDistillationRecipeType = texter(
         "Integrated Lignocellulosic Biomass Pyrolysis",
         "WoodDistillationRecipeType");
+    public static final String Tooltip_WoodDistillation_00 = texter(
+        "Final output : Recipe output * Voltage tier * 2",
+        "Tooltip_WoodDistillation_00");
     public static final String Tooltip_WoodDistillation_Casing = texter(
         "Any Heat Proof Machine Casing",
         "Tooltip_WoodDistillation_Casing");

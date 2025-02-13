@@ -306,6 +306,7 @@ public class ItemRegister {
         GTNLItemList.SnowQueenBook.set(initItem("§bCity Star - Snow Queen Book", 70));
         GTNLItemList.FinalBook.set(initItem("§bCity Star - Final Book", 71));
         GTNLItemList.GiantBook.set(initItem("§dRumor - Giant Book", 72));
+        GTNLItemList.ClayedGlowstone.set(initItem("Clayed Glowstone", 73));
     }
 
     public static void registry() {

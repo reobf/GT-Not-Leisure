@@ -300,7 +300,9 @@ public class LargeSteamCircuitAssembler extends MTESteamMultiBase<LargeSteamCirc
 
     @Override
     public int getTierRecipes() {
-        return 3;
+        if (tierMachine == 2) {
+            return 3;
+        } else return 1;
     }
 
     @Override
@@ -319,7 +321,7 @@ public class LargeSteamCircuitAssembler extends MTESteamMultiBase<LargeSteamCirc
             .addInputBus(TextLocalization.Tooltip_LargeSteamCircuitAssembler_Casing, 1)
             .addInputHatch(TextLocalization.Tooltip_LargeSteamCircuitAssembler_Casing, 1)
             .addOutputBus(TextLocalization.Tooltip_LargeSteamCircuitAssembler_Casing, 1)
-            .toolTipFinisher(TextUtils.SNL);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE);
         return tt;
     }
 

@@ -256,4 +256,14 @@ public class RecipeRegister {
                 .setMaxRecipesPerPage(1))
         .disableOptimize()
         .build();
+
+    public static RecipeMap<RecipeMapBackend> MolecularTransformerRecipes = RecipeMapBuilder
+        .of("gtnl.recipe.MolecularTransformerRecipes")
+        .maxIO(1, 1, 0, 0)
+        .progressBar(GTUITextures.PROGRESSBAR_ARROW_MULTIPLE)
+        .neiHandlerInfo(
+            builder -> builder.setDisplayStack(GTNLItemList.MolecularTransformer.get(1))
+                .setMaxRecipesPerPage(1))
+        .disableOptimize()
+        .build();
 }

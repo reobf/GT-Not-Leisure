@@ -85,6 +85,7 @@ import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.L
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeSteamOreWasher;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.LargeWiremill;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.MegaBlastFurnace;
+import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.MolecularTransformer;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.VacuumDryingFurnace;
 import com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan.VacuumFreezer;
 import com.science.gtnl.common.machine.multiblock.TeleportationArrayToAlfheim;
@@ -179,6 +180,7 @@ public class MachineLoader {
     public static ItemStack WoodDistillation;
     public static ItemStack LargePacker;
     public static ItemStack LargeAlloySmelter;
+    public static ItemStack MolecularTransformer;
 
     public static void loadMachines() {
 
@@ -537,6 +539,12 @@ public class MachineLoader {
         LargeAlloySmelter = new LargeAlloySmelter(21081, "LargeAlloySmelter", TextLocalization.NameLargeAlloySmelter)
             .getStackForm(1);
         GTNLItemList.LargeAlloySmelter.set(LargeAlloySmelter);
+
+        MolecularTransformer = new MolecularTransformer(
+            21082,
+            "MolecularTransformer",
+            TextLocalization.NameMolecularTransformer).getStackForm(1);
+        GTNLItemList.MolecularTransformer.set(MolecularTransformer);
 
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
             21919,

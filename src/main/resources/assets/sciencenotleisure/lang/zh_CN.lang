@@ -391,6 +391,7 @@ MetaItem.69.name=杂质 - 雪人首领之书
 MetaItem.70.name=§b都市之星 - 冰雪女王之书
 MetaItem.71.name=§b都市之星 - 终焉之书
 MetaItem.72.name=§d传闻 - 巨人之书
+MetaItem.73.name=黏土荧石粉
 
 item.TestItem.name=测试物品
 Tooltip_Testitem_00=如果你看到了这个Tooltip
@@ -843,6 +844,7 @@ Tooltip_LargeBrewer_Casing=任意焦炉机械方块
 NameWoodDistillation=木化工厂
 gtnl.recipe.WoodDistillationRecipes=集成木质生物质热解
 WoodDistillationRecipeType=集成木质生物质热解
+Tooltip_WoodDistillation_00=最终产出：配方输出 * 电压等级 * 2
 Tooltip_WoodDistillation_Casing=任意隔热机械方块
 
 NameLargePacker=大型打包机
@@ -855,6 +857,12 @@ NameLargeAlloySmelter=大型合金炉
 LargeAlloySmelterRecipeType=合金炉
 Tooltip_LargeAlloySmelter_00=每级线圈额外提供2%%的加速和耗电减免!
 Tooltip_LargeAlloySmelter_Casing=任意隔热机械方块
+
+NameMolecularTransformer=分子重组仪
+gtnl.recipe.MolecularTransformerRecipes=物质重组
+MolecularTransformerRecipeType=物质重组
+Tooltip_MolecularTransformer_00=支持§9Tec§1Tech§r能源仓！
+Tooltip_MolecularTransformer_Casing=任意化学惰性机械方块
 
 NameLargeIndustrialLathe=大型工业车床
 LargeIndustrialLatheRecipeType=车床

@@ -91,8 +91,7 @@ public class ToolHelper {
 
         Material mat = world.getBlock(x, y, z)
             .getMaterial();
-        if (!world.isRemote && blk != null
-            && !blk.isAir(world, x, y, z)/* && blk.getPlayerRelativeBlockHardness(player, world, x, y, z) > 0 */) {
+        if (!world.isRemote && blk != null && !blk.isAir(world, x, y, z)) {
             if (blk == Blocks.grass && stack.getItem() == InfinityAxe) world.setBlock(x, y, z, Blocks.dirt);
             if (!blk.canHarvestBlock(player, meta) || !isRightMaterial(mat, materialsListing)) return;
 

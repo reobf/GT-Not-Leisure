@@ -109,6 +109,7 @@ public enum GTNLItemList {
     SnowQueenBook,
     FinalBook,
     GiantBook,
+    ClayedGlowstone,
 
     StargateCoil,
     StargateTier0,
@@ -292,6 +293,7 @@ public enum GTNLItemList {
     LargePacker,
     LargeAlloySmelter,
 
+    MolecularTransformer,
     WoodDistillation,
     ElementCopying,
     LargeIncubator,
