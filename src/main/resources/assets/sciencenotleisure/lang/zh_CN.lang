@@ -848,7 +848,7 @@ Tooltip_WoodDistillation_00=最终产出：配方输出 * 电压等级 * 2
 Tooltip_WoodDistillation_Casing=任意隔热机械方块
 
 NameLargePyrolyseOven=大型热解炉
-LargePyrolyseOvenRecipeType=热解炉
+LargePyrolyseOvenRecipeType=焦炉
 Tooltip_LargePyrolyseOven_Casing=任意洁净不锈钢机械方块
 
 NameLargePacker=大型打包机

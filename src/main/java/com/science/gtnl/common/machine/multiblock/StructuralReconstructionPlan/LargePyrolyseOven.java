@@ -8,6 +8,7 @@ import static gregtech.api.enums.Textures.BlockIcons.OVERLAY_FRONT_PYROLYSE_OVEN
 import static gregtech.api.util.GTStructureUtility.*;
 import static gregtech.api.util.GTStructureUtility.ofFrame;
 
+import gtPlusPlus.api.recipe.GTPPRecipeMaps;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.ForgeDirection;
 
@@ -83,7 +84,7 @@ public class LargePyrolyseOven extends GTMMultiMachineBase<LargePyrolyseOven> im
 
     @Override
     public RecipeMap<?> getRecipeMap() {
-        return RecipeMaps.pyrolyseRecipes;
+        return GTPPRecipeMaps.cokeOvenRecipes;
     }
 
     @Override
