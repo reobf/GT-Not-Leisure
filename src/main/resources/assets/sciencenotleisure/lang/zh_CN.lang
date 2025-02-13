@@ -5,6 +5,7 @@ AppliedEnergistics2=应用能源2
 
 Adder=添加模组: 
 Science_Not_Leisure=§4S§6c§ei§2e§bn§9c§de §4N§6o§et §2L§be§9i§ds§4u§6r§ee
+Tooltip_Tectech_Hatch=支持§9Tec§1Tech§r能源仓！
 
 Waila.General.WirelessMode=无线模式
 Waila.General.CurrentEuCost=当前EU消耗
@@ -841,6 +842,14 @@ LargeBrewer_Mode_1=发酵槽
 LargeBrewer_Mode_2=流体加热器
 Tooltip_LargeBrewer_Casing=任意焦炉机械方块
 
+NameLargeNaquadahReactor=大型硅岩反应堆
+LargeNaquadahReactorRecipeType=硅岩反应
+Tooltip_LargeNaquadahReactor_00=固定并行为4
+Tooltip_LargeNaquadahReactor_01=可以在配方开始的时候输入氧气
+Tooltip_LargeNaquadahReactor_02=这会让时间减半，功率翻倍
+Tooltip_LargeNaquadahReactor_03=代价是每秒会消耗2000L的氧气
+Tooltip_LargeNaquadahReactor_Casing=任意放射硅岩合金机械方块
+
 NameWoodDistillation=木化工厂
 gtnl.recipe.WoodDistillationRecipes=集成木质生物质热解
 WoodDistillationRecipeType=集成木质生物质热解
@@ -865,7 +874,6 @@ Tooltip_LargeAlloySmelter_Casing=任意隔热机械方块
 NameMolecularTransformer=分子重组仪
 gtnl.recipe.MolecularTransformerRecipes=物质重组
 MolecularTransformerRecipeType=物质重组
-Tooltip_MolecularTransformer_00=支持§9Tec§1Tech§r能源仓！
 Tooltip_MolecularTransformer_Casing=任意化学惰性机械方块
 
 NameLargeIndustrialLathe=大型工业车床
@@ -1435,9 +1443,8 @@ Tooltip_MegaBlastFurnaceRecipeType=工业高炉
 Tooltip_MegaBlastFurnace_00=每超过配方温度900K，耗能均将乘以95%%（不计超频）
 Tooltip_MegaBlastFurnace_01=每超过配方温度1800K，将进行一次无损超频
 Tooltip_MegaBlastFurnace_02=超过MV后的每一级电压，都会将温度提高100K
-Tooltip_MegaBlastFurnace_03=支持§9Tec§1Tech§r能源仓！
-Tooltip_MegaBlastFurnace_04=并行数 = 256 + 8 * 电压等级 + 16 * 线圈等级
-Tooltip_MegaBlastFurnace_05=比相同电压的单方块机器快400%%
+Tooltip_MegaBlastFurnace_03=并行数 = 256 + 8 * 电压等级 + 16 * 线圈等级
+Tooltip_MegaBlastFurnace_04=比相同电压的单方块机器快400%%
 Tooltip_MegaBlastFurnace_Casing_00=任意冶炼炉机械方块
 Tooltip_MegaBlastFurnace_Casing_01=回收气体，任意脱氧钢机械方块
 Tooltip_MegaBlastFurnace_Casing_02=顶部中心放射硅岩合金机械方块

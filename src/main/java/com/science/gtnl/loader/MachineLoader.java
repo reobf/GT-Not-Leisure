@@ -27,6 +27,7 @@ import com.science.gtnl.common.machine.multiblock.LapotronChip;
 import com.science.gtnl.common.machine.multiblock.LargeBrewer;
 import com.science.gtnl.common.machine.multiblock.LargeCircuitAssembler;
 import com.science.gtnl.common.machine.multiblock.LargeIncubator;
+import com.science.gtnl.common.machine.multiblock.LargeNaquadahReactor;
 import com.science.gtnl.common.machine.multiblock.LargeSteamAlloySmelter;
 import com.science.gtnl.common.machine.multiblock.LargeSteamChemicalBath;
 import com.science.gtnl.common.machine.multiblock.LargeSteamCircuitAssembler;
@@ -183,6 +184,7 @@ public class MachineLoader {
     public static ItemStack LargeAlloySmelter;
     public static ItemStack MolecularTransformer;
     public static ItemStack LargePyrolyseOven;
+    public static ItemStack LargeNaquadahReactor;
 
     public static void loadMachines() {
 
@@ -551,6 +553,12 @@ public class MachineLoader {
         LargePyrolyseOven = new LargePyrolyseOven(21083, "LargePyrolyseOven", TextLocalization.NameLargePyrolyseOven)
             .getStackForm(1);
         GTNLItemList.LargePyrolyseOven.set(LargePyrolyseOven);
+
+        LargeNaquadahReactor = new LargeNaquadahReactor(
+            21084,
+            "LargeNaquadahReactor",
+            TextLocalization.NameLargeNaquadahReactor).getStackForm(1);
+        GTNLItemList.LargeNaquadahReactor.set(LargeNaquadahReactor);
 
         CheatOreProcessingFactory = new CheatOreProcessingFactory(
             21919,

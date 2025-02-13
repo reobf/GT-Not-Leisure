@@ -11,6 +11,9 @@ public class TextLocalization {
     public static final String Science_Not_Leisure = texter(
         "§4S§6c§ei§2e§bn§9c§de §4N§6o§et §2L§be§9i§ds§4u§6r§ee",
         "Science_Not_Leisure");
+    public static final String Tooltip_Tectech_Hatch = texter(
+        "Support §9Tec§1Tech §rLaser Hatch!",
+        "Tooltip_Tectech_Hatch");
 
     public static final String Tooltip_Testitem_00 = texter("If you see this tooltip", "Tooltip_Testitem_00");
     public static final String Tooltip_Testitem_01 = texter("Welcome to GT Not Leisure!", "Tooltip_Testitem_01");
@@ -535,7 +538,7 @@ public class TextLocalization {
     public static final String Tooltip_Incubator_00 = texter(
         "No need to keep the Output Hatch half filled for efficiency anymore!",
         "Tooltip_Incubator_00");
-    public static final String Tooltip_Incubator_01 = texter("It can run 8x recipes at most", "Tooltip_Incubator_01");
+    public static final String Tooltip_Incubator_01 = texter("It can run 4x recipes at most", "Tooltip_Incubator_01");
     public static final String Tooltip_Incubator_02 = texter(
         "Energy hatch limited by glass tier, UHV Glass unlocks all",
         "Tooltip_Incubator_02");
@@ -630,6 +633,26 @@ public class TextLocalization {
     public static final String Tooltip_VibrantPhotovoltaicPowerStation_Casing = texter(
         "Any Robust Tungstensteel Machine Casing",
         "Tooltip_VibrantPhotovoltaicPowerStation_Casing");
+
+    public static final String NameLargeNaquadahReactor = texter("Large Naquadah Reactor", "NameLargeNaquadahReactor");
+    public static final String LargeNaquadahReactorRecipeType = texter(
+        "Naquadah Reactor",
+        "LargeNaquadahReactorRecipeType");
+    public static final String Tooltip_LargeNaquadahReactor_00 = texter(
+        "It can run 4x recipes at most",
+        "Tooltip_LargeNaquadahReactor_00");
+    public static final String Tooltip_LargeNaquadahReactor_01 = texter(
+        "Can input oxygen at the beginning of the recipe",
+        "Tooltip_LargeNaquadahReactor_01");
+    public static final String Tooltip_LargeNaquadahReactor_02 = texter(
+        "This will cut the time in half and double the power",
+        "Tooltip_LargeNaquadahReactor_02");
+    public static final String Tooltip_LargeNaquadahReactor_03 = texter(
+        "The cost is that it will consume 2000L of oxygen per second",
+        "Tooltip_LargeNaquadahReactor_03");
+    public static final String Tooltip_LargeNaquadahReactor_Casing = texter(
+        "Any Radiant Naquadah Alloy Casing",
+        "Tooltip_LargeNaquadahReactor_Casing");
 
     public static final String NameLargeCircuitAssembler = texter(
         "Large Circuit Assembler",
@@ -831,9 +854,6 @@ public class TextLocalization {
     public static final String MolecularTransformerRecipeType = texter(
         "Molecular Transformer",
         "MolecularTransformerRecipeType");
-    public static final String Tooltip_MolecularTransformer_00 = texter(
-        "Support §9Tec§1Tech §rLaser Hatch!",
-        "Tooltip_MolecularTransformer_00");
     public static final String Tooltip_MolecularTransformer_Casing = texter(
         "Any Chemically Inert Machine Casing",
         "Tooltip_MolecularTransformer_Casing");
@@ -1427,14 +1447,11 @@ public class TextLocalization {
         "After each voltage level exceeds MV, the temperature will increase by 100K",
         "Tooltip_MegaBlastFurnace_02");
     public static final String Tooltip_MegaBlastFurnace_03 = texter(
-        "Support §9Tec§1Tech §rLaser Hatch!",
+        "It can run 256x recipes at most",
         "Tooltip_MegaBlastFurnace_03");
     public static final String Tooltip_MegaBlastFurnace_04 = texter(
-        "It can run 256x recipes at most",
-        "Tooltip_MegaBlastFurnace_04");
-    public static final String Tooltip_MegaBlastFurnace_05 = texter(
         "400%% faster than single-block machines of the same voltage",
-        "Tooltip_MegaBlastFurnace_05");
+        "Tooltip_MegaBlastFurnace_04");
     public static final String Tooltip_MegaBlastFurnace_Casing_00 = texter(
         "Any Blast Smelter Casing Block",
         "Tooltip_MegaBlastFurnace_Casing_00");

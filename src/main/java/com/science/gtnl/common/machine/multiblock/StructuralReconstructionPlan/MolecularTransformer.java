@@ -90,7 +90,7 @@ public class MolecularTransformer extends GTMMultiMachineBase<MolecularTransform
     public MultiblockTooltipBuilder createTooltip() {
         MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
         tt.addMachineType(TextLocalization.MolecularTransformerRecipeType)
-            .addInfo(TextLocalization.Tooltip_MolecularTransformer_00)
+            .addInfo(TextLocalization.Tooltip_Tectech_Hatch)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_02)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_03)
             .addSeparator()
