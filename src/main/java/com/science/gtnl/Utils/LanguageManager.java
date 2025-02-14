@@ -152,7 +152,7 @@ public class LanguageManager {
         addStringLocalization("Material.germaniumtungstennitride", "锗-钨氮化物");
         addStringLocalization("Material.polyetheretherketone", "聚醚醚酮");
         addStringLocalization("Material.fluidmana", "液态魔力");
-        addStringLocalization("Material.depletedexcitednaquadah", "激发的混合硅岩基燃料");
+        addStringLocalization("Material.excitednaquadah", "激发的混合硅岩基燃料");
         addStringLocalization("Material.rareearthhydroxides", "稀土氢氧化物");
         addStringLocalization("Material.rareearthchlorides", "稀土氯化物");
         addStringLocalization("Material.rareearthoxide", "稀土氧化物");
@@ -251,7 +251,7 @@ public class LanguageManager {
         addStringLocalization("fluid.germaniumtungstennitride", "锗-钨氮化物");
         addStringLocalization("fluid.polyetheretherketone", "聚醚醚酮");
         addStringLocalization("fluid.fluidmana", "液态魔力");
-        addStringLocalization("fluid.depletedexcitednaquadah", "激发的混合硅岩基燃料");
+        addStringLocalization("fluid.excitednaquadah", "激发的混合硅岩基燃料");
         addStringLocalization("fluid.rareearthhydroxides", "稀土氢氧化物");
         addStringLocalization("fluid.rareearthchlorides", "稀土氯化物");
         addStringLocalization("fluid.rareearthoxide", "稀土氧化物");
