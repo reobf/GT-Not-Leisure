@@ -20,8 +20,8 @@ import com.science.gtnl.config.MainConfig;
 import com.science.gtnl.loader.LazyStaticsInitLoader;
 import com.science.gtnl.loader.MachineLoader;
 import com.science.gtnl.loader.MaterialLoader;
-import com.science.gtnl.loader.OreDictLoader;
 import com.science.gtnl.loader.RecipeLoader;
+import com.science.gtnl.loader.RecipeLoaderRunnable;
 import com.science.gtnl.loader.ScriptLoader;
 
 import appeng.api.AEApi;
@@ -96,16 +96,13 @@ public class ScienceNotLeisure {
     public void postInit(FMLPostInitializationEvent event) {
         proxy.postInit(event);
         EIGBucketLoader.LoadEIGBuckets();
-        RecipeLoader.RecipeLoad();
     }
 
     @Mod.EventHandler
     // postInit "Handle interaction with other mods, complete your setup based on this." (Remove if not needed)
     public void completeInit(FMLLoadCompleteEvent event) {
         ScriptLoader.run();
-        OreDictLoader.loadOreDictionary();
         RecipeLoader.loadRecipes();
-        RecipeLoader.loadRecipesPostInit();
         MeteorMiner.initializeBlacklist();
 
         new LazyStaticsInitLoader().initStaticsOnCompleteInit();
@@ -125,19 +122,17 @@ public class ScienceNotLeisure {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         File configDir = new File(event.getModConfigurationDirectory(), "GTNotLeisure");
-
         if (!configDir.exists()) {
             configDir.mkdirs();
         }
-
         File mainConfigFile = new File(configDir, "main.cfg");
-
         MainConfig.init(mainConfigFile);
 
         BlazeSword.registerEntity();
 
         proxy.preInit(event);
         MaterialLoader.load();
+        new RecipeLoaderRunnable().run();
 
         AEApi.instance()
             .registries()

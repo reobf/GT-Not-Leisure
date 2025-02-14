@@ -1,5 +1,8 @@
 package com.science.gtnl.loader;
 
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
+
 import com.science.gtnl.common.machine.OreProcessing.OP_NormalProcessing;
 import com.science.gtnl.common.machine.multiMachineClasses.GTNLProcessingArrayRecipeLoader;
 import com.science.gtnl.common.materials.MaterialPool;
@@ -21,7 +24,6 @@ import com.science.gtnl.common.recipe.GTNL.RealArtificialStarRecipes;
 import com.science.gtnl.common.recipe.GTNL.SmeltingMixingFurnaceRecipes;
 import com.science.gtnl.common.recipe.GTNL.SteamCrackerRecipes;
 import com.science.gtnl.common.recipe.GTNL.TheTwilightForestRecipes;
-import com.science.gtnl.common.recipe.GTNL.WoodDistillationRecipes;
 import com.science.gtnl.common.recipe.GregTech.AlloyBlastSmelterRecipes;
 import com.science.gtnl.common.recipe.GregTech.AlloySmelterRecipes;
 import com.science.gtnl.common.recipe.GregTech.AssemblerRecipes;
@@ -44,6 +46,7 @@ import com.science.gtnl.common.recipe.GregTech.TranscendentPlasmaMixerRecipes;
 import com.science.gtnl.common.recipe.GregTech.VacuumFurnaceRecipes;
 import com.science.gtnl.common.recipe.GregTech.multiDehydratorRecipes;
 import com.science.gtnl.common.recipe.IRecipePool;
+import com.science.gtnl.common.recipe.Special.PortalToAlfheimOreRecipes;
 import com.science.gtnl.common.recipe.Thaumcraft.InfusionCraftingRecipesPool;
 import com.science.gtnl.common.recipe.Thaumcraft.ShapedArcaneCraftingRecipesPool;
 
@@ -64,22 +67,23 @@ public class RecipeLoader {
             new TheTwilightForestRecipes(), new IsaMillRecipes(), new CellRegulatorRecipes(),
             new VacuumFurnaceRecipes(), new FishingGroundRecipes(), new DistilleryRecipes(),
             new ElementCopyingRecipes(), new AlloySmelterRecipes(), new MolecularTransformerRecipes(),
-            new WoodDistillationRecipes(), new NaquadahReactorRecipes() };
-        for (IRecipePool recipePool : recipePools) {
-            recipePool.loadRecipes();
-        }
-        new OP_NormalProcessing().enumOreProcessingRecipes();
-        GTNLProcessingArrayRecipeLoader.registerDefaultGregtechMaps();
-    }
+            new NaquadahReactorRecipes() };
 
-    public static void loadRecipesPostInit() {
+        new OP_NormalProcessing().enumOreProcessingRecipes();
         new ShapedArcaneCraftingRecipesPool().loadRecipes();
         new InfusionCraftingRecipesPool().loadRecipes();
-    }
+        GTNLProcessingArrayRecipeLoader.registerDefaultGregtechMaps();
 
-    public static void RecipeLoad() {
         CrackRecipeAdder.reAddBlastRecipe(MaterialPool.MolybdenumDisilicide, 800, 1920, 2300, true);
         CrackRecipeAdder.reAddBlastRecipe(MaterialPool.HSLASteel, 1000, 480, 1711, true);
         CrackRecipeAdder.reAddBlastRecipe(MaterialPool.Germaniumtungstennitride, 800, 30720, 8200, true);
+
+        for (IRecipePool recipePool : recipePools) {
+            recipePool.loadRecipes();
+        }
+
+        for (ItemStack stone : OreDictionary.getOres("stone")) {
+            PortalToAlfheimOreRecipes.addManaInfusionOreRecipes(stone);
+        }
     }
 }

@@ -650,6 +650,9 @@ public class TextLocalization {
     public static final String Tooltip_LargeNaquadahReactor_03 = texter(
         "The cost is that it will consume 2000L of oxygen per second",
         "Tooltip_LargeNaquadahReactor_03");
+    public static final String Tooltip_LargeNaquadahReactor_04 = texter(
+        "Only use without introducing hydrogen!",
+        "Tooltip_LargeNaquadahReactor_04");
     public static final String Tooltip_LargeNaquadahReactor_Casing = texter(
         "Any Radiant Naquadah Alloy Casing",
         "Tooltip_LargeNaquadahReactor_Casing");

@@ -17,6 +17,8 @@ import java.util.List;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.util.StatCollector;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
@@ -43,9 +45,12 @@ import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.check.CheckRecipeResult;
 import gregtech.api.recipe.check.CheckRecipeResultRegistry;
 import gregtech.api.render.TextureFactory;
+import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.shutdown.ShutDownReasonRegistry;
 import gregtech.common.blocks.BlockCasings8;
+import mcp.mobius.waila.api.IWailaConfigHandler;
+import mcp.mobius.waila.api.IWailaDataAccessor;
 import tectech.thing.metaTileEntity.hatch.MTEHatchDynamoMulti;
 import tectech.thing.metaTileEntity.multi.base.TTMultiblockBase;
 
@@ -82,6 +87,7 @@ public class LargeNaquadahReactor extends TTMultiblockBase implements IConstruct
             .addInfo(TextLocalization.Tooltip_LargeNaquadahReactor_01)
             .addInfo(TextLocalization.Tooltip_LargeNaquadahReactor_02)
             .addInfo(TextLocalization.Tooltip_LargeNaquadahReactor_03)
+            .addInfo(TextLocalization.Tooltip_LargeNaquadahReactor_04)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
@@ -294,7 +300,7 @@ public class LargeNaquadahReactor extends TTMultiblockBase implements IConstruct
         if ((this.mProgresstime + 1) % 20 == 0 && this.mProgresstime > 0) {
             if (Oxygen) {
                 if (!drainFluid("oxygen", 2000)) {
-                    stopMachine(ShutDownReasonRegistry.NO_REPAIR);
+                    stopMachine(ShutDownReasonRegistry.NONE);
                     return false;
                 }
             }
@@ -312,7 +318,7 @@ public class LargeNaquadahReactor extends TTMultiblockBase implements IConstruct
 
                 if (actualTransfer.compareTo(BigInteger.ZERO) > 0) {
                     if (actualTransfer.compareTo(BigInteger.valueOf(Long.MAX_VALUE)) > 0) {
-                        stopMachine(ShutDownReasonRegistry.POWER_LOSS);
+                        stopMachine(ShutDownReasonRegistry.STRUCTURE_INCOMPLETE);
                         return false;
                     }
                     long transfer = actualTransfer.longValueExact();
@@ -334,7 +340,7 @@ public class LargeNaquadahReactor extends TTMultiblockBase implements IConstruct
 
                     if (actualTransfer.compareTo(BigInteger.ZERO) > 0) {
                         if (actualTransfer.compareTo(BigInteger.valueOf(Long.MAX_VALUE)) > 0) {
-                            stopMachine(ShutDownReasonRegistry.POWER_LOSS);
+                            stopMachine(ShutDownReasonRegistry.STRUCTURE_INCOMPLETE);
                             return false;
                         }
                         long transfer = actualTransfer.longValueExact();
@@ -346,11 +352,41 @@ public class LargeNaquadahReactor extends TTMultiblockBase implements IConstruct
                 }
             }
             if (euPerSecond.compareTo(BigInteger.ZERO) > 0) {
-                stopMachine(ShutDownReasonRegistry.POWER_LOSS);
+                stopMachine(ShutDownReasonRegistry.STRUCTURE_INCOMPLETE);
                 return false;
             }
         }
         return super.onRunningTick(stack);
+    }
+
+    @Override
+    public void getWailaBody(ItemStack itemStack, List<String> currentTip, IWailaDataAccessor accessor,
+        IWailaConfigHandler config) {
+        super.getWailaBody(itemStack, currentTip, accessor, config);
+        final NBTTagCompound tag = accessor.getNBTData();
+        if (tag.hasKey("SetEUt")) {
+            currentTip.add(
+                StatCollector.translateToLocal("LargeNaquadahReactor.Generates.0") + EnumChatFormatting.WHITE
+                    + tag.getLong("SetEUt")
+                    + " EU/t"
+                    + EnumChatFormatting.RESET);
+        }
+        if (tag.hasKey("Oxygen")) {
+            currentTip.add(
+                StatCollector.translateToLocal("LargeNaquadahReactor.Generates.1") + EnumChatFormatting.WHITE
+                    + tag.getBoolean("Oxygen")
+                    + EnumChatFormatting.RESET);
+        }
+    }
+
+    @Override
+    public String[] getInfoData() {
+        String[] info = super.getInfoData();
+        info[4] = StatCollector.translateToLocal("LargeNaquadahReactor.Generates") + EnumChatFormatting.RED
+            + GTUtility.formatNumbers(Math.abs(this.SetEUt))
+            + EnumChatFormatting.RESET
+            + " EU/t";
+        return info;
     }
 
     @Override
@@ -368,7 +404,6 @@ public class LargeNaquadahReactor extends TTMultiblockBase implements IConstruct
     @Override
     public void saveNBTData(NBTTagCompound aNBT) {
         super.saveNBTData(aNBT);
-
         aNBT.setLong("SetEUt", SetEUt);
         aNBT.setBoolean("Oxygen", Oxygen);
         aNBT.setInteger("Multiplier", multiplier);
@@ -377,15 +412,9 @@ public class LargeNaquadahReactor extends TTMultiblockBase implements IConstruct
     @Override
     public void loadNBTData(NBTTagCompound aNBT) {
         super.loadNBTData(aNBT);
-
         SetEUt = aNBT.getLong("SetEUt");
         Oxygen = aNBT.getBoolean("Oxygen");
         multiplier = aNBT.getInteger("Multiplier");
-    }
-
-    @Override
-    public int getDamageToComponent(ItemStack aStack) {
-        return 1;
     }
 
     @Override

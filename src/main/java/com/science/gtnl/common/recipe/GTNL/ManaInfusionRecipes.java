@@ -741,17 +741,6 @@ public class ManaInfusionRecipes implements IRecipePool {
         RecipeBuilder.builder()
             .itemInputs(
                 GTUtility.copyAmount(0, GTModHandler.getModItem("Botania", "alchemyCatalyst", 1)),
-                GTModHandler.getModItem("minecraft", "stone", 1, 0))
-            .itemOutputs(GTModHandler.getModItem("Botania", "stone", 1, 0))
-            .fluidInputs(MaterialPool.FluidMana.getFluidOrGas(200))
-            .noOptimize()
-            .duration(20)
-            .eut(2048)
-            .addTo(MIR);
-
-        RecipeBuilder.builder()
-            .itemInputs(
-                GTUtility.copyAmount(0, GTModHandler.getModItem("Botania", "alchemyCatalyst", 1)),
                 GTModHandler.getModItem("minecraft", "quartz", 1, 0))
             .itemOutputs(GTModHandler.getModItem("Botania", "manaResource", 1, 10))
             .fluidInputs(MaterialPool.FluidMana.getFluidOrGas(200))

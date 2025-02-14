@@ -846,10 +846,13 @@ NameLargeNaquadahReactor=大型硅岩反应堆
 gtnl.recipe.NaquadahReactorRecipes=硅岩反应
 LargeNaquadahReactorRecipeType=硅岩反应
 NEI.NaquadahReactorRecipes.specialValue=产能功率: 
+LargeNaquadahReactor.Generates.0=产能功率: 
+LargeNaquadahReactor.Generates.1=使用氧气加速: 
 Tooltip_LargeNaquadahReactor_00=固定并行为4
 Tooltip_LargeNaquadahReactor_01=可以在配方开始的时候输入氧气
 Tooltip_LargeNaquadahReactor_02=这会让时间减半，功率翻倍
 Tooltip_LargeNaquadahReactor_03=代价是每秒会消耗2000L的氧气
+Tooltip_LargeNaquadahReactor_04=只能在不输入氢气的情况下使用!
 Tooltip_LargeNaquadahReactor_Casing=任意放射硅岩合金机械方块
 
 NameWoodDistillation=木化工厂
