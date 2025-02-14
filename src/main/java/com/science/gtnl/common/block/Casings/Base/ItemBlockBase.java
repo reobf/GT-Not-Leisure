@@ -37,7 +37,7 @@ public class ItemBlockBase extends ItemBlock {
         super(aBlock);
         setHasSubtypes(true);
         setMaxDamage(0);
-        this.setCreativeTab(CreativeTabsLoader.GTNotLeisure);
+        this.setCreativeTab(CreativeTabsLoader.GTNotLeisureBlock);
     }
 
     // endregion

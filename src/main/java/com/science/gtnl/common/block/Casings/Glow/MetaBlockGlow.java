@@ -34,7 +34,7 @@ public class MetaBlockGlow extends Block {
         this.setLightLevel(150);
         this.setHardness(1.0F);
         this.setResistance(5.0F);
-        this.setCreativeTab(CreativeTabsLoader.GTNotLeisure);
+        this.setCreativeTab(CreativeTabsLoader.GTNotLeisureBlock);
     }
 
     public MetaBlockGlow(String unlocalizedName, String localName) {

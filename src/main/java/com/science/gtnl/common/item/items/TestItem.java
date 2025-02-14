@@ -20,7 +20,7 @@ public class TestItem extends Item {
         super();
 
         this.setUnlocalizedName("TestItem");
-        this.setCreativeTab(CreativeTabsLoader.GTNotLeisure);
+        this.setCreativeTab(CreativeTabsLoader.GTNotLeisureItem);
         this.setTextureName("sciencenotleisure:TestItem");
     }
 

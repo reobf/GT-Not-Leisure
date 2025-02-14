@@ -35,7 +35,7 @@ public abstract class MetaCasingBase extends Block implements IMetaBlock {
     public MetaCasingBase(String unlocalizedName) {
         super(Material.iron);
         this.unlocalizedName = unlocalizedName;
-        this.setCreativeTab(CreativeTabsLoader.GTNotLeisure);
+        this.setCreativeTab(CreativeTabsLoader.GTNotLeisureBlock);
     }
 
     // region Abstract

@@ -31,7 +31,7 @@ public class MetaBlockBase extends Block {
 
     public MetaBlockBase() {
         this(Material.iron);
-        this.setCreativeTab(CreativeTabsLoader.GTNotLeisure);
+        this.setCreativeTab(CreativeTabsLoader.GTNotLeisureBlock);
     }
 
     public MetaBlockBase(String unlocalizedName, String localName) {

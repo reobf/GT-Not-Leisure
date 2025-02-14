@@ -35,7 +35,7 @@ public class MetaBlockGlass extends Block {
         this.setHardness(1.0F);
         this.setLightOpacity(0);
         this.setResistance(5.0F);
-        this.setCreativeTab(CreativeTabsLoader.GTNotLeisure);
+        this.setCreativeTab(CreativeTabsLoader.GTNotLeisureBlock);
     }
 
     public MetaBlockGlass(String unlocalizedName, String localName) {

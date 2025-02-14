@@ -34,7 +34,7 @@ public class MetaBlockColumn extends Block {
         this.setResistance(6000000.0F);
         this.TextureName = new String[] { "Side", "Top", "Bottom" };
         this.TextureMap = new HashMap<>();
-        this.setCreativeTab(CreativeTabsLoader.GTNotLeisure);
+        this.setCreativeTab(CreativeTabsLoader.GTNotLeisureBlock);
     }
 
     public MetaBlockColumn(String unlocalizedName, String localName) {

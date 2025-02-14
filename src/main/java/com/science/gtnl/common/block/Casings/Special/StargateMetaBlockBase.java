@@ -27,7 +27,7 @@ public class StargateMetaBlockBase extends Block {
         this.setHardness(1.0F);
         this.setResistance(6000000.0F);
         this.setBlockName(UnlocalizedName);
-        this.setCreativeTab(CreativeTabsLoader.GTNotLeisure);
+        this.setCreativeTab(CreativeTabsLoader.GTNotLeisureBlock);
         this.TextureName = TextureName;
         this.setBlockTextureName(RESOURCE_ROOT_ID + ":" + "Stargate/" + "Stargate_Coil_Compressed");
     }

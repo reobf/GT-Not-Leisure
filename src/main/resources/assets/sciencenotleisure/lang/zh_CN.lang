@@ -1,4 +1,6 @@
-itemGroup.GTNotLeisure=GT不再业余
+itemGroup.GTNotLeisureItem=GT不再业余: 物品
+itemGroup.GTNotLeisureMachine=GT不再业余: 机器
+itemGroup.GTNotLeisureBlock=GT不再业余: 方块
 itemGroup.ReAvaritia=无尽：重生
 StructuralReconstructionPlan=结构代替计划
 AppliedEnergistics2=应用能源2
