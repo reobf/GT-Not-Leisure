@@ -1472,6 +1472,159 @@ public class TextLocalization {
     public static final String Tooltip_WhiteNightGenerator_00 = texter(
         "§f§l§oRise, my servants. Rise and serve me.",
         "Tooltip_WhiteNightGenerator_00");
+    public static final String Tooltip_WhiteNightGenerator_01 = texter(
+        "§rInflict damage to a large area of entities and generate power. Entities will be §ckilled instantly§r if damaged too many times.",
+        "Tooltip_WhiteNightGenerator_01");
+    public static final String Tooltip_WhiteNightGenerator_02 = texter(
+        "§rIf the same type of entity is damaged too many times, it will be skipped!",
+        "Tooltip_WhiteNightGenerator_02");
+    public static final String Tooltip_WhiteNightGenerator_03 = texter(
+        "§rEntities with health below a certain threshold will be §ckilled instantly.",
+        "Tooltip_WhiteNightGenerator_03");
+    public static final String Tooltip_WhiteNightGenerator_04 = texter(
+        "§rDeal §cmagical damage§r equal to §c5*number of entities killed§r to players in the current dimension and apply several debuffs.",
+        "Tooltip_WhiteNightGenerator_04");
+    public static final String Tooltip_WhiteNightGenerator_05 = texter(
+        "§rThis machine has an §cAnti-Kabbalah Counter§r with a maximum of 3, reducing by 1 each time the machine operates, generating a redstone signal when maintenance is required.",
+        "Tooltip_WhiteNightGenerator_05");
+    public static final String Tooltip_WhiteNightGenerator_06 = texter(
+        "§rThe redstone signal strength will be interpreted as a 4-bit binary number from 0 to 15.",
+        "Tooltip_WhiteNightGenerator_06");
+    public static final String Tooltip_WhiteNightGenerator_07 = texter(
+        "§rMark the least significant bit as bit 4 and the most significant bit as bit 1.",
+        "Tooltip_WhiteNightGenerator_07");
+    public static final String Tooltip_WhiteNightGenerator_08 = texter(
+        "§rBit 1: §e§oDetected instruction system failure.",
+        "Tooltip_WhiteNightGenerator_08");
+    public static final String Tooltip_WhiteNightGenerator_09 = texter(
+        "§rIf this bit is 1, mark the least significant bit as bit 1 and the most significant bit as bit 4.",
+        "Tooltip_WhiteNightGenerator_09");
+    public static final String Tooltip_WhiteNightGenerator_10 = texter(
+        "§rThe output signal is not adjusted for bit 1!",
+        "Tooltip_WhiteNightGenerator_10");
+    public static final String Tooltip_WhiteNightGenerator_11 = texter(
+        "§rBit 2: §6§oDetected major Anti-Kabbalah energy collapse.",
+        "Tooltip_WhiteNightGenerator_11");
+    public static final String Tooltip_WhiteNightGenerator_12 = texter(
+        "§rIf this bit is 1, the corresponding suppressor fluid should be input.",
+        "Tooltip_WhiteNightGenerator_12");
+    public static final String Tooltip_WhiteNightGenerator_13 = texter(
+        "§rTo determine which fluid to insert, interpret bits 1 and 3 as a 2-bit binary number.",
+        "Tooltip_WhiteNightGenerator_13");
+    public static final String Tooltip_WhiteNightGenerator_14 = texter(
+        "§r0: 10000L molten neutron / 1: 7500L molten infinity / 2: 5000L temporal / 3: 2500L magnetic matter.",
+        "Tooltip_WhiteNightGenerator_14");
+    public static final String Tooltip_WhiteNightGenerator_15 = texter(
+        "§rBit 3: §7§oTick-tock... Tick-tock...",
+        "Tooltip_WhiteNightGenerator_15");
+    public static final String Tooltip_WhiteNightGenerator_16 = texter(
+        "§rIf this bit is 1, 5000000L purified water should be input.",
+        "Tooltip_WhiteNightGenerator_16");
+    public static final String Tooltip_WhiteNightGenerator_17 = texter(
+        "§rUsing higher levels of purified water can increase the probability during checks!",
+        "Tooltip_WhiteNightGenerator_17");
+    public static final String Tooltip_WhiteNightGenerator_18 = texter(
+        "§rOutput multiplier: Level 5: 2%% / Level 6: 3%% / Level 7: 4%% / Level 8: 5%%.",
+        "Tooltip_WhiteNightGenerator_18");
+    public static final String Tooltip_WhiteNightGenerator_19 = texter(
+        "§rBit 4: §c§oBlood mist pervades, corpses lie everywhere.",
+        "Tooltip_WhiteNightGenerator_19");
+    public static final String Tooltip_WhiteNightGenerator_20 = texter(
+        "§rIf this bit is 1, 100000L of blood and 1 flawless core should be input.",
+        "Tooltip_WhiteNightGenerator_20");
+    public static final String Tooltip_WhiteNightGenerator_21 = texter(
+        "§rNo bit: §oInnocent self.",
+        "Tooltip_WhiteNightGenerator_21");
+    public static final String Tooltip_WhiteNightGenerator_22 = texter(
+        "§rTree of Light.",
+        "Tooltip_WhiteNightGenerator_22");
+    public static final String Tooltip_WhiteNightGenerator_23 = texter(
+        "§rMachine energy overload, 10000L of expanded spatial fluid needed.",
+        "Tooltip_WhiteNightGenerator_23");
+    public static final String Tooltip_WhiteNightGenerator_24 = texter(
+        "§rAfter maintenance failure, the check result will immediately become §c§oPoor!",
+        "Tooltip_WhiteNightGenerator_24");
+    public static final String Tooltip_WhiteNightGenerator_25 = texter(
+        "§rAfter successful maintenance, there will be 35 probability checks, §owith a 2-second interval for each check.",
+        "Tooltip_WhiteNightGenerator_25");
+    public static final String Tooltip_WhiteNightGenerator_26 = texter(
+        "§rIf the number of checks is not completed during the current operation, the remaining unchecked results will immediately be no.",
+        "Tooltip_WhiteNightGenerator_26");
+    public static final String Tooltip_WhiteNightGenerator_27 = texter(
+        "§rThe base probability is §c45%%§r, which can be increased by inserting higher-level field generators into the host.",
+        "Tooltip_WhiteNightGenerator_27");
+    public static final String Tooltip_WhiteNightGenerator_28 = texter(
+        "§r§oAs the cumulative number of checks increases, both check time and probability will increase.",
+        "Tooltip_WhiteNightGenerator_28");
+    public static final String Tooltip_WhiteNightGenerator_29 = texter(
+        "§r§c§oEvery 5 entities killed will immediately reduce the Anti-Kabbalah Counter by 1.",
+        "Tooltip_WhiteNightGenerator_29");
+    public static final String Tooltip_WhiteNightGenerator_30 = texter(
+        "§r§c§oIf the machine does not damage any entities during operation, the Anti-Kabbalah Counter will be reduced by 1.",
+        "Tooltip_WhiteNightGenerator_30");
+    public static final String Tooltip_WhiteNightGenerator_31 = texter(
+        "§rIf the check result is §a§oExcellent (26~35)§r, a large amount of power is generated, the player is fully healed and buffed, and the Anti-Kabbalah Counter will increase by 1.",
+        "Tooltip_WhiteNightGenerator_31");
+    public static final String Tooltip_WhiteNightGenerator_32 = texter(
+        "§rIf the result is §e§oGood (6~15)§r, a small amount of power is generated, the player is healed by 5 health points, and there is a 50%% chance the Anti-Kabbalah Counter will increase by 1.",
+        "Tooltip_WhiteNightGenerator_32");
+    public static final String Tooltip_WhiteNightGenerator_33 = texter(
+        "§rIf the result is §c§oPoor (0~15)§r, the player is debuffed, several monsters are randomly spawned, and the machine shuts down.",
+        "Tooltip_WhiteNightGenerator_33");
+    public static final String Tooltip_WhiteNightGenerator_34 = texter(
+        "§r§cEvery 10 maintenance cycles will increase the Anti-Kabbalah Meltdown Level by 1§r, up to a maximum of 10, reducing the success rate by 1%% per level.",
+        "Tooltip_WhiteNightGenerator_34");
+    public static final String Tooltip_WhiteNightGenerator_35 = texter(
+        "§rWhen the Anti-Kabbalah Meltdown Level increases, the machine enters §cAnti-Kabbalah Energy Meltdown State§r, requiring immediate maintenance within 1 minute.",
+        "Tooltip_WhiteNightGenerator_35");
+    public static final String Tooltip_WhiteNightGenerator_36 = texter(
+        "§rIf no maintenance is performed during the §cAnti-Kabbalah Energy Meltdown State§r, the Anti-Kabbalah Counter will drop to 0 after the countdown ends.",
+        "Tooltip_WhiteNightGenerator_36");
+    public static final String Tooltip_WhiteNightGenerator_37 = texter(
+        "§rAs the Anti-Kabbalah Meltdown Level rises, challenges such as §oDawn, Noon, Dusk, and Midnight§r will be generated.",
+        "Tooltip_WhiteNightGenerator_37");
+    public static final String Tooltip_WhiteNightGenerator_38 = texter(
+        "§rChallenge types include §aGreen§r, §6Amber§r, §dViolet§r, §cCrimson§r, and §9Indigo.",
+        "Tooltip_WhiteNightGenerator_38");
+    public static final String Tooltip_WhiteNightGenerator_39 = texter(
+        "§rIf the §cAnti-Kabbalah Meltdown Level reaches 10§r, all challenge types will become §oPale§r, significantly increasing both difficulty and rewards.",
+        "Tooltip_WhiteNightGenerator_39");
+    public static final String Tooltip_WhiteNightGenerator_40 = texter(
+        "§rCompleting challenges generates a portion of the machine's current EU power per second multiplied by the total duration:",
+        "Tooltip_WhiteNightGenerator_40");
+    public static final String Tooltip_WhiteNightGenerator_41 = texter(
+        "§rDawn: 10%%",
+        "Tooltip_WhiteNightGenerator_41");
+    public static final String Tooltip_WhiteNightGenerator_42 = texter(
+        "§rNoon: 15%%",
+        "Tooltip_WhiteNightGenerator_42");
+    public static final String Tooltip_WhiteNightGenerator_43 = texter(
+        "§rDusk: 20%%",
+        "Tooltip_WhiteNightGenerator_43");
+    public static final String Tooltip_WhiteNightGenerator_44 = texter(
+        "§rMidnight: 25%%",
+        "Tooltip_WhiteNightGenerator_44");
+    public static final String Tooltip_WhiteNightGenerator_45 = texter(
+        "§r§cWhen the Anti-Kabbalah Counter reaches 0, a large explosion is triggered causing five billion pollution.",
+        "Tooltip_WhiteNightGenerator_45");
+    public static final String Tooltip_WhiteNightGenerator_46 = texter(
+        "§r§cA large number of monsters, 11 Ender Dragons, and 1 Wither will spawn, and the machine cannot be restarted until no Wither or Ender Dragon is detected within the area.",
+        "Tooltip_WhiteNightGenerator_46");
+    public static final String Tooltip_WhiteNightGenerator_47 = texter(
+        "§r§cPlayers within the area will take 500 magic damage plus 5000 physical damage.",
+        "Tooltip_WhiteNightGenerator_47");
+    public static final String Tooltip_WhiteNightGenerator_48 = texter(
+        "§rDuring operation, generate §a2147483647 * total damage dealt to all entities * number of entity types * 500§r EU per second. A field generator must be placed in the host to complete the structural check.",
+        "Tooltip_WhiteNightGenerator_48");
+    public static final String Tooltip_WhiteNightGenerator_49 = texter(
+        "§rThe operation time is fixed at 500 seconds.",
+        "Tooltip_WhiteNightGenerator_49");
+    public static final String Tooltip_WhiteNightGenerator_50 = texter(
+        "§r§0§o§mInstall the Terminal Spiral to ignore the above mechanisms.",
+        "Tooltip_WhiteNightGenerator_50");
+    public static final String Tooltip_WhiteNightGenerator_51 = texter(
+        "§r§c§oWarning, during machine operation, internal EU buffer is generated. Breaking it will cause an immediate explosion!",
+        "Tooltip_WhiteNightGenerator_51");
     public static final String Awe_Cancel_01 = texter(
         "§f§lDon't be afraid, I am with you. You can never leave unless I allow it.",
         "Awe_Cancel_01");

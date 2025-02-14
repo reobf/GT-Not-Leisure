@@ -110,6 +110,7 @@ public enum GTNLItemList {
     FinalBook,
     GiantBook,
     ClayedGlowstone,
+    QuantumDisk,
 
     StargateCoil,
     StargateTier0,
