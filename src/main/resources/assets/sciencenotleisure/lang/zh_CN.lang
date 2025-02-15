@@ -53,6 +53,7 @@ NinefoldInputHatchUEV=九重输入仓(UEV)
 NinefoldInputHatchUIV=九重输入仓(UIV)
 NinefoldInputHatchUMV=九重输入仓(UMV)
 NinefoldInputHatchUXV=九重输入仓(UXV)
+NinefoldInputHatchMAX=九重输入仓(MAX)
 HumongousNinefoldInputHatch=巨型九重输入仓
 Tooltip_NinefoldInputHatch_00=为多方块机器输入流体
 Tooltip_NinefoldInputHatch_01=容量: 

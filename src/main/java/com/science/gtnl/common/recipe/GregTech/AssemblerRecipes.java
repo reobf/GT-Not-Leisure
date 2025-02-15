@@ -1573,5 +1573,54 @@ public class AssemblerRecipes implements IRecipePool {
             .duration(400)
             .eut(7680)
             .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTUtility.getIntegratedCircuit(1),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 4L),
+                GregtechItemList.GT_MetaTileEntity_Solidifier_I.get(1),
+                GTNLItemList.NinefoldInputHatchIV.get(1),
+                ItemList.Automation_ChestBuffer_IV.get(4),
+                GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.TungstenSteel, 4L),
+                GTModHandler.getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 1, 0, missing))
+            .itemOutputs(GTNLItemList.HumongousSolidifierHatch.get(1))
+            .fluidInputs(Materials.SolderingAlloy.getMolten(576))
+            .specialValue(0)
+            .noOptimize()
+            .duration(600)
+            .eut(30720)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                ItemList.Hull_IV.get(1),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 2L),
+                GregtechItemList.Hatch_Input_Cryotheum.get(1),
+                GTOreDictUnificator.get(OrePrefixes.rotor, Materials.TungstenSteel, 2L),
+                GregtechItemList.GTFluidTank_HV.get(1),
+                MaterialsAlloy.MARAGING250.getPlateDouble(4))
+            .itemOutputs(GTNLItemList.FluidIceInputHatch.get(1))
+            .fluidInputs(Materials.SolderingAlloy.getMolten(1296))
+            .specialValue(0)
+            .noOptimize()
+            .duration(200)
+            .eut(7680)
+            .addTo(As);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                ItemList.Hull_IV.get(1),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 2L),
+                GregtechItemList.Hatch_Input_Pyrotheum.get(1),
+                GTOreDictUnificator.get(OrePrefixes.rotor, Materials.TungstenSteel, 2L),
+                GregtechItemList.GTFluidTank_HV.get(1),
+                MaterialsAlloy.MARAGING350.getPlateDouble(4))
+            .itemOutputs(GTNLItemList.FluidBlazeInputHatch.get(1))
+            .fluidInputs(Materials.SolderingAlloy.getMolten(1296))
+            .specialValue(0)
+            .noOptimize()
+            .duration(200)
+            .eut(7680)
+            .addTo(As);
     }
 }

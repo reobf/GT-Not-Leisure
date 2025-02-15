@@ -12,6 +12,7 @@ import com.science.gtnl.common.recipe.IRecipePool;
 
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
@@ -185,5 +186,71 @@ public class CraftingTableRecipes implements IRecipePool {
             tectech.thing.CustomItemList.hatch_CreativeMaintenance.get(1),
             new Object[] { "ABA", "CDC", "ABA", 'A', "circuitAdvanced", 'B', ItemList.Hatch_Maintenance.get(1L), 'C',
                 ItemList.Robot_Arm_HV.get(1L), 'D', ItemList.Hull_HV.get(1L) });
+
+        addCraftingRecipe(
+            GTNLItemList.NinefoldInputHatchEV.get(1),
+            new Object[] { " A ", " B ", "   ", 'A',
+                GTOreDictUnificator.get(OrePrefixes.pipeNonuple, Materials.Titanium, 1L), 'B',
+                ItemList.Hatch_Input_EV.get(1L) });
+
+        addCraftingRecipe(
+            GTNLItemList.NinefoldInputHatchIV.get(1),
+            new Object[] { " A ", " B ", "   ", 'A',
+                GTOreDictUnificator.get(OrePrefixes.pipeNonuple, Materials.TungstenSteel, 1L), 'B',
+                ItemList.Hatch_Input_IV.get(1L) });
+
+        addCraftingRecipe(
+            GTNLItemList.NinefoldInputHatchLuV.get(1),
+            new Object[] { " A ", " B ", "   ", 'A',
+                GTOreDictUnificator.get(OrePrefixes.pipeNonuple, Materials.NiobiumTitanium, 1L), 'B',
+                ItemList.Hatch_Input_LuV.get(1L) });
+
+        addCraftingRecipe(
+            GTNLItemList.NinefoldInputHatchZPM.get(1),
+            new Object[] { " A ", " B ", "   ", 'A',
+                GTOreDictUnificator.get(OrePrefixes.pipeNonuple, Materials.Enderium, 1L), 'B',
+                ItemList.Hatch_Input_ZPM.get(1L) });
+
+        addCraftingRecipe(
+            GTNLItemList.NinefoldInputHatchUV.get(1),
+            new Object[] { " A ", " B ", "   ", 'A',
+                GTOreDictUnificator.get(OrePrefixes.pipeNonuple, Materials.Naquadah, 1L), 'B',
+                ItemList.Hatch_Input_UV.get(1L) });
+
+        addCraftingRecipe(
+            GTNLItemList.NinefoldInputHatchUHV.get(1),
+            new Object[] { " A ", " B ", "   ", 'A',
+                GTOreDictUnificator.get(OrePrefixes.pipeNonuple, Materials.Neutronium, 1L), 'B',
+                ItemList.Hatch_Input_UHV.get(1L) });
+
+        addCraftingRecipe(
+            GTNLItemList.NinefoldInputHatchUEV.get(1),
+            new Object[] { " A ", " B ", "   ", 'A',
+                GTOreDictUnificator.get(OrePrefixes.pipeNonuple, Materials.NetherStar, 1L), 'B',
+                ItemList.Hatch_Input_UEV.get(1L) });
+
+        addCraftingRecipe(
+            GTNLItemList.NinefoldInputHatchUIV.get(1),
+            new Object[] { " A ", " B ", "   ", 'A',
+                GTOreDictUnificator.get(OrePrefixes.pipeNonuple, Materials.MysteriousCrystal, 1L), 'B',
+                ItemList.Hatch_Input_UIV.get(1L) });
+
+        addCraftingRecipe(
+            GTNLItemList.NinefoldInputHatchUMV.get(1),
+            new Object[] { " A ", " B ", "   ", 'A',
+                GTOreDictUnificator.get(OrePrefixes.pipeNonuple, Materials.DraconiumAwakened, 1L), 'B',
+                ItemList.Hatch_Input_UMV.get(1L) });
+
+        addCraftingRecipe(
+            GTNLItemList.NinefoldInputHatchUXV.get(1),
+            new Object[] { " A ", " B ", "   ", 'A',
+                GTOreDictUnificator.get(OrePrefixes.pipeNonuple, Materials.Infinity, 1L), 'B',
+                ItemList.Hatch_Input_UXV.get(1L) });
+
+        addCraftingRecipe(
+            GTNLItemList.NinefoldInputHatchMAX.get(1),
+            new Object[] { " A ", " B ", "   ", 'A',
+                GTOreDictUnificator.get(OrePrefixes.pipeNonuple, MaterialsUEVplus.SpaceTime, 1L), 'B',
+                ItemList.Hatch_Input_MAX.get(1L) });
     }
 }

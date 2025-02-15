@@ -134,7 +134,6 @@ public class QuadrupleOutputHatch extends MTEHatchOutput implements IAddUIWidget
 
         int totalFilled = 0;
 
-        // 先尝试填充已有相同流体的槽位
         for (int i = 0; i < mStoredFluid.length; i++) {
             if (mStoredFluid[i] != null && mStoredFluid[i].isFluidEqual(aFluid)) {
                 int tFilled = Math.min(aFluid.amount - totalFilled, mCapacityPer - mStoredFluid[i].amount);
@@ -145,11 +144,10 @@ public class QuadrupleOutputHatch extends MTEHatchOutput implements IAddUIWidget
                 } else if (tFilled > 0) {
                     totalFilled += tFilled;
                 }
-                if (totalFilled >= aFluid.amount) return totalFilled; // 完成填充后退出方法
+                if (totalFilled >= aFluid.amount) return totalFilled;
             }
         }
 
-        // 再尝试填充空槽位
         for (int i = 0; i < mStoredFluid.length; i++) {
             if (mStoredFluid[i] == null) {
                 int tFilled = Math.min(aFluid.amount - totalFilled, mCapacityPer);
@@ -161,7 +159,7 @@ public class QuadrupleOutputHatch extends MTEHatchOutput implements IAddUIWidget
                 } else if (tFilled > 0) {
                     totalFilled += tFilled;
                 }
-                if (totalFilled >= aFluid.amount) return totalFilled; // 完成填充后退出方法
+                if (totalFilled >= aFluid.amount) return totalFilled;
             }
         }
 
@@ -188,8 +186,6 @@ public class QuadrupleOutputHatch extends MTEHatchOutput implements IAddUIWidget
         }
         return tRemove;
     }
-
-    // 其他辅助方法...
 
     @Override
     public void onScrewdriverRightClick(ForgeDirection side, EntityPlayer aPlayer, float aX, float aY, float aZ) {

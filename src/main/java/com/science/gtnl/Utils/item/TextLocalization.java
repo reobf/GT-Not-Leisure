@@ -219,6 +219,7 @@ public class TextLocalization {
     public static final String NinefoldInputHatchUIV = texter("Ninefold Input Hatch (UIV)", "NinefoldInputHatchUIV");
     public static final String NinefoldInputHatchUMV = texter("Ninefold Input Hatch (UMV)", "NinefoldInputHatchUMV");
     public static final String NinefoldInputHatchUXV = texter("Ninefold Input Hatch (UXV)", "NinefoldInputHatchUXV");
+    public static final String NinefoldInputHatchMAX = texter("Ninefold Input Hatch (MAX)", "NinefoldInputHatchMAX");
     public static final String HumongousNinefoldInputHatch = texter(
         "Humongous Ninefold Input Hatch",
         "HumongousNinefoldInputHatch");

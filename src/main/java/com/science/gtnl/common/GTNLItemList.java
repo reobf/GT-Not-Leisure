@@ -304,6 +304,7 @@ public enum GTNLItemList {
     NinefoldInputHatchUIV,
     NinefoldInputHatchUMV,
     NinefoldInputHatchUXV,
+    NinefoldInputHatchMAX,
     HumongousNinefoldInputHatch,
     DualInputHatchLV,
     DualInputHatchMV,

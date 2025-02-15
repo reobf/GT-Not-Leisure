@@ -8,11 +8,14 @@ import static gregtech.api.enums.Textures.BlockIcons.OVERLAY_FRONT_MULTI_CANNER_
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
 import static gtPlusPlus.core.block.ModBlocks.blockCasings2Misc;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.ForgeDirection;
+import net.minecraftforge.fluids.FluidStack;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -23,7 +26,7 @@ import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.Utils.item.TextUtils;
-import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
+import com.science.gtnl.common.GTNLItemList;
 
 import ggfab.api.GGFabRecipeMaps;
 import gregtech.api.enums.TAE;
@@ -32,16 +35,26 @@ import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.logic.ProcessingLogic;
+import gregtech.api.metatileentity.implementations.MTEExtendedPowerMultiBlockBase;
+import gregtech.api.metatileentity.implementations.MTEHatchInput;
+import gregtech.api.metatileentity.implementations.MTEHatchInputBus;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.recipe.check.CheckRecipeResult;
+import gregtech.api.recipe.check.CheckRecipeResultRegistry;
 import gregtech.api.render.TextureFactory;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.OverclockCalculator;
+import gregtech.common.tileentities.machines.IDualInputHatch;
+import gregtech.common.tileentities.machines.IDualInputInventory;
+import gregtech.common.tileentities.machines.MTEHatchCraftingInputME;
+import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.MTEHatchSolidifier;
 
-public class LargeSolidifier extends GTMMultiMachineBase<LargeSolidifier> implements ISurvivalConstructable {
+public class LargeSolidifier extends MTEExtendedPowerMultiBlockBase<LargeSolidifier> implements ISurvivalConstructable {
 
+    protected int mCasing;
+    protected int ParallelTier;
     public static final String STRUCTURE_PIECE_MAIN = "main";
     private static IStructureDefinition<LargeSolidifier> STRUCTURE_DEFINITION = null;
     public static final String LS_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/large_solidifier";
@@ -59,6 +72,36 @@ public class LargeSolidifier extends GTMMultiMachineBase<LargeSolidifier> implem
     public LargeSolidifier(String aName) {
         super(aName);
         shape = StructureUtils.readStructureFromFile(LS_STRUCTURE_FILE_PATH);
+    }
+
+    @Override
+    public boolean isCorrectMachinePart(ItemStack aStack) {
+        return true;
+    }
+
+    @Override
+    public int getMaxEfficiency(ItemStack aStack) {
+        return 10000;
+    }
+
+    @Override
+    public int getDamageToComponent(ItemStack aStack) {
+        return 0;
+    }
+
+    @Override
+    public boolean explodesOnComponentBreak(ItemStack aStack) {
+        return false;
+    }
+
+    @Override
+    public boolean supportsVoidProtection() {
+        return true;
+    }
+
+    @Override
+    public boolean supportsBatchMode() {
+        return true;
     }
 
     @Override
@@ -126,6 +169,85 @@ public class LargeSolidifier extends GTMMultiMachineBase<LargeSolidifier> implem
         }.setMaxParallelSupplier(this::getMaxParallelRecipes);
     }
 
+    @NotNull
+    @Override
+    protected CheckRecipeResult doCheckRecipe() {
+        CheckRecipeResult result = CheckRecipeResultRegistry.NO_RECIPE;
+
+        // check crafting input hatches first
+        if (supportsCraftingMEBuffer()) {
+            for (IDualInputHatch dualInputHatch : mDualInputHatches) {
+                for (var it = dualInputHatch.inventories(); it.hasNext();) {
+                    IDualInputInventory slot = it.next();
+                    processingLogic.setInputItems(slot.getItemInputs());
+                    processingLogic.setInputFluids(slot.getFluidInputs());
+                    CheckRecipeResult foundResult = processingLogic.process();
+                    if (foundResult.wasSuccessful()) {
+                        return foundResult;
+                    }
+                    if (foundResult != CheckRecipeResultRegistry.NO_RECIPE) {
+                        // Recipe failed in interesting way, so remember that and continue searching
+                        result = foundResult;
+                    }
+                }
+            }
+        }
+
+        // Logic for GT_MetaTileEntity_Hatch_Solidifier
+        for (MTEHatchInput solidifierHatch : mInputHatches) {
+            if (solidifierHatch instanceof MTEHatchSolidifier hatch) {
+                ItemStack mold = hatch.getMold();
+                FluidStack fluid = solidifierHatch.getFluid();
+
+                if (mold != null && fluid != null) {
+                    List<ItemStack> inputItems = new ArrayList<>();
+                    inputItems.add(mold);
+
+                    processingLogic.setInputItems(inputItems.toArray(new ItemStack[0]));
+                    processingLogic.setInputFluids(fluid);
+
+                    CheckRecipeResult foundResult = processingLogic.process();
+                    if (foundResult.wasSuccessful()) {
+                        return foundResult;
+                    }
+                    if (foundResult != CheckRecipeResultRegistry.NO_RECIPE) {
+                        // Recipe failed in interesting way, so remember that and continue searching
+                        result = foundResult;
+                    }
+                }
+            }
+        }
+
+        processingLogic.clear();
+        processingLogic.setInputFluids(getStoredFluids());
+        // Default logic
+        for (MTEHatchInputBus bus : mInputBusses) {
+            if (bus instanceof MTEHatchCraftingInputME) {
+                continue;
+            }
+            List<ItemStack> inputItems = new ArrayList<>();
+            for (int i = bus.getSizeInventory() - 1; i >= 0; i--) {
+                ItemStack stored = bus.getStackInSlot(i);
+                if (stored != null) {
+                    inputItems.add(stored);
+                }
+            }
+            if (canUseControllerSlotForRecipe() && getControllerSlot() != null) {
+                inputItems.add(getControllerSlot());
+            }
+            processingLogic.setInputItems(inputItems.toArray(new ItemStack[0]));
+            CheckRecipeResult foundResult = processingLogic.process();
+            if (foundResult.wasSuccessful()) {
+                return foundResult;
+            }
+            if (foundResult != CheckRecipeResultRegistry.NO_RECIPE) {
+                // Recipe failed in interesting way, so remember that and continue searching
+                result = foundResult;
+            }
+        }
+        return result;
+    }
+
     @Override
     public MultiblockTooltipBuilder createTooltip() {
         MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
@@ -178,6 +300,10 @@ public class LargeSolidifier extends GTMMultiMachineBase<LargeSolidifier> implem
         return mCasing >= 45;
     }
 
+    public boolean checkHatch() {
+        return mMaintenanceHatches.size() <= 1 && (this.getPollutionPerSecond(null) <= 0 || !mMufflerHatches.isEmpty());
+    }
+
     @Override
     public void construct(ItemStack stackSize, boolean hintsOnly) {
         buildPiece(STRUCTURE_PIECE_MAIN, stackSize, hintsOnly, horizontalOffSet, verticalOffSet, depthOffSet);
@@ -196,6 +322,48 @@ public class LargeSolidifier extends GTMMultiMachineBase<LargeSolidifier> implem
             env,
             false,
             true);
+    }
+
+    public int getMaxParallelRecipes() {
+        if (ParallelTier <= 1) {
+            return 8;
+        } else {
+            return (int) Math.pow(4, ParallelTier - 2);
+        }
+    }
+
+    public int getParallelTier(ItemStack inventory) {
+        if (inventory == null) return 0;
+        if (inventory.isItemEqual(GTNLItemList.LVParallelControllerCore.getInternalStack_unsafe())) {
+            return 1;
+        } else if (inventory.isItemEqual(GTNLItemList.MVParallelControllerCore.getInternalStack_unsafe())) {
+            return 2;
+        } else if (inventory.isItemEqual(GTNLItemList.HVParallelControllerCore.getInternalStack_unsafe())) {
+            return 3;
+        } else if (inventory.isItemEqual(GTNLItemList.EVParallelControllerCore.getInternalStack_unsafe())) {
+            return 4;
+        } else if (inventory.isItemEqual(GTNLItemList.IVParallelControllerCore.getInternalStack_unsafe())) {
+            return 5;
+        } else if (inventory.isItemEqual(GTNLItemList.LuVParallelControllerCore.getInternalStack_unsafe())) {
+            return 6;
+        } else if (inventory.isItemEqual(GTNLItemList.ZPMParallelControllerCore.getInternalStack_unsafe())) {
+            return 7;
+        } else if (inventory.isItemEqual(GTNLItemList.UVParallelControllerCore.getInternalStack_unsafe())) {
+            return 8;
+        } else if (inventory.isItemEqual(GTNLItemList.UHVParallelControllerCore.getInternalStack_unsafe())) {
+            return 9;
+        } else if (inventory.isItemEqual(GTNLItemList.UEVParallelControllerCore.getInternalStack_unsafe())) {
+            return 10;
+        } else if (inventory.isItemEqual(GTNLItemList.UIVParallelControllerCore.getInternalStack_unsafe())) {
+            return 11;
+        } else if (inventory.isItemEqual(GTNLItemList.UMVParallelControllerCore.getInternalStack_unsafe())) {
+            return 12;
+        } else if (inventory.isItemEqual(GTNLItemList.UXVParallelControllerCore.getInternalStack_unsafe())) {
+            return 13;
+        } else if (inventory.isItemEqual(GTNLItemList.MAXParallelControllerCore.getInternalStack_unsafe())) {
+            return 14;
+        }
+        return 0;
     }
 
 }

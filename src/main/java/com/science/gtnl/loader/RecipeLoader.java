@@ -41,6 +41,7 @@ import com.science.gtnl.common.recipe.GregTech.DragonEvolutionFusionCraftingReci
 import com.science.gtnl.common.recipe.GregTech.ElectrolyzerRecipes;
 import com.science.gtnl.common.recipe.GregTech.FluidExtraction;
 import com.science.gtnl.common.recipe.GregTech.FusionReactorRecipes;
+import com.science.gtnl.common.recipe.GregTech.LaserEngraverRecipes;
 import com.science.gtnl.common.recipe.GregTech.MixerRecipes;
 import com.science.gtnl.common.recipe.GregTech.PlasmaForgeRecipes;
 import com.science.gtnl.common.recipe.GregTech.TranscendentPlasmaMixerRecipes;
@@ -68,7 +69,7 @@ public class RecipeLoader {
             new TheTwilightForestRecipes(), new IsaMillRecipes(), new CellRegulatorRecipes(),
             new VacuumFurnaceRecipes(), new FishingGroundRecipes(), new DistilleryRecipes(),
             new ElementCopyingRecipes(), new AlloySmelterRecipes(), new MolecularTransformerRecipes(),
-            new NaquadahReactorRecipes(), new DragonEvolutionFusionCraftingRecipes() };
+            new NaquadahReactorRecipes(), new DragonEvolutionFusionCraftingRecipes(), new LaserEngraverRecipes() };
 
         new OP_NormalProcessing().enumOreProcessingRecipes();
         new ShapedArcaneCraftingRecipesPool().loadRecipes();
