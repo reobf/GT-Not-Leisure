@@ -180,7 +180,7 @@ public class MatterFabricator extends GTMMultiMachineBase<MatterFabricator> impl
         boolean hasCircuit2 = false;
         int maxParallelRecipes = getMaxParallelRecipes();
 
-        for (ItemStack item : getStoredInputs()) {
+        for (ItemStack item : getAllStoredInputs()) {
             if (item != null) {
                 if (item.getItem() == getIntegratedCircuit(1).getItem()
                     && item.getItemDamage() == getIntegratedCircuit(1).getItemDamage()) {
@@ -199,7 +199,7 @@ public class MatterFabricator extends GTMMultiMachineBase<MatterFabricator> impl
             return CheckRecipeResultRegistry.NO_RECIPE;
         }
 
-        for (ItemStack item : getStoredInputs()) {
+        for (ItemStack item : getAllStoredInputs()) {
             if (GTUtility.isStackInvalid(item)) continue;
 
             ItemData itemData = GTOreDictUnificator.getItemData(item);

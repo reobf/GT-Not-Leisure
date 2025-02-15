@@ -200,7 +200,7 @@ public class ChemicalPlant extends GTMMultiMachineBase<ChemicalPlant> implements
     public int getMaxParallelRecipes() {
         int maxRecipes;
         if (ParallelTier <= 2) {
-            maxRecipes = 16;
+            maxRecipes = 8;
         } else {
             maxRecipes = (int) Math.pow(4, ParallelTier - 3);
         }

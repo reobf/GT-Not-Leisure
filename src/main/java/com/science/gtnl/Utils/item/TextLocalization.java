@@ -1053,7 +1053,7 @@ public class TextLocalization {
         "Only uses 80%% of the EU/t normally required",
         "Tooltip_GTMMultiMachine_01");
     public static final String Tooltip_GTMMultiMachine_02 = texter(
-        "It can run 16x recipes at most",
+        "It can run 8x recipes at most",
         "Tooltip_GTMMultiMachine_02");
     public static final String Tooltip_GTMMultiMachine_03 = texter(
         "Insert the parallel control core into the controller to increase the maximum parallelism and reduce power consumption!",

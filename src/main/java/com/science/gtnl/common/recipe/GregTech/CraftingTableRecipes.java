@@ -12,7 +12,6 @@ import com.science.gtnl.common.recipe.IRecipePool;
 
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
@@ -186,83 +185,5 @@ public class CraftingTableRecipes implements IRecipePool {
             tectech.thing.CustomItemList.hatch_CreativeMaintenance.get(1),
             new Object[] { "ABA", "CDC", "ABA", 'A', "circuitAdvanced", 'B', ItemList.Hatch_Maintenance.get(1L), 'C',
                 ItemList.Robot_Arm_HV.get(1L), 'D', ItemList.Hull_HV.get(1L) });
-
-        addCraftingRecipe(
-            GTNLItemList.LVParallelControllerCore.get(1),
-            new Object[] { "ABC", "BDB", "EBE", 'A', ItemList.Sensor_LV, 'B', "circuitGood", 'C',
-                ItemList.Emitter_LV.get(1L), 'D', ItemList.Hull_LV.get(1L), 'E',
-                GTOreDictUnificator.get(OrePrefixes.cableGt02, Materials.Tin, 1L) });
-
-        addCraftingRecipe(
-            GTNLItemList.MVParallelControllerCore.get(1),
-            new Object[] { "ABC", "BDB", "EBE", 'A', ItemList.Sensor_MV, 'B', "circuitAdvanced", 'C',
-                ItemList.Emitter_MV.get(1L), 'D', ItemList.Hull_MV.get(1L), 'E',
-                GTOreDictUnificator.get(OrePrefixes.cableGt02, Materials.AnnealedCopper, 1L) });
-
-        addCraftingRecipe(
-            GTNLItemList.HVParallelControllerCore.get(1),
-            new Object[] { "ABC", "BDB", "EBE", 'A', ItemList.Sensor_HV, 'B', "circuitData", 'C',
-                ItemList.Emitter_HV.get(1L), 'D', ItemList.Hull_HV.get(1L), 'E',
-                GTOreDictUnificator.get(OrePrefixes.cableGt02, Materials.BlueAlloy, 1L) });
-
-        addCraftingRecipe(
-            GTNLItemList.EVParallelControllerCore.get(1),
-            new Object[] { "ABC", "BDB", "EBE", 'A', ItemList.Sensor_EV, 'B', "circuitElite", 'C',
-                ItemList.Emitter_EV.get(1L), 'D', ItemList.Hull_EV.get(1L), 'E',
-                GTOreDictUnificator.get(OrePrefixes.cableGt02, Materials.Aluminium, 1L) });
-
-        addCraftingRecipe(
-            GTNLItemList.IVParallelControllerCore.get(1),
-            new Object[] { "ABC", "BDB", "EBE", 'A', ItemList.Sensor_IV, 'B', "circuitMaster", 'C',
-                ItemList.Emitter_IV.get(1L), 'D', ItemList.Hull_IV.get(1L), 'E',
-                GTOreDictUnificator.get(OrePrefixes.cableGt02, Materials.Platinum, 1L) });
-
-        addCraftingRecipe(
-            GTNLItemList.LuVParallelControllerCore.get(1),
-            new Object[] { "ABC", "BDB", "EBE", 'A', ItemList.Sensor_LuV, 'B', "circuitUltimate", 'C',
-                ItemList.Emitter_LuV.get(1L), 'D', ItemList.Hull_LuV.get(1L), 'E',
-                GTOreDictUnificator.get(OrePrefixes.cableGt02, Materials.NiobiumTitanium, 1L) });
-
-        addCraftingRecipe(
-            GTNLItemList.ZPMParallelControllerCore.get(1),
-            new Object[] { "ABC", "BDB", "EBE", 'A', ItemList.Sensor_ZPM, 'B', "circuitSuperconductor", 'C',
-                ItemList.Emitter_ZPM.get(1L), 'D', ItemList.Hull_ZPM.get(1L), 'E',
-                GTOreDictUnificator.get(OrePrefixes.cableGt02, Materials.VanadiumGallium, 1L) });
-
-        addCraftingRecipe(
-            GTNLItemList.UVParallelControllerCore.get(1),
-            new Object[] { "ABC", "BDB", "EBE", 'A', ItemList.Sensor_UV, 'B', "circuitInfinite", 'C',
-                ItemList.Emitter_UV.get(1L), 'D', ItemList.Hull_UV.get(1L), 'E',
-                GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUV, 1L) });
-
-        addCraftingRecipe(
-            GTNLItemList.UHVParallelControllerCore.get(1),
-            new Object[] { "ABC", "BDB", "EBE", 'A', ItemList.Sensor_UHV, 'B', "circuitBio", 'C',
-                ItemList.Emitter_UHV.get(1L), 'D', ItemList.Hull_MAX.get(1L), 'E',
-                GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUHV, 1L) });
-
-        addCraftingRecipe(
-            GTNLItemList.UEVParallelControllerCore.get(1),
-            new Object[] { "ABC", "BDB", "EBE", 'A', ItemList.Sensor_UEV, 'B', "circuitOptical", 'C',
-                ItemList.Emitter_UEV.get(1L), 'D', ItemList.Hull_UEV.get(1L), 'E',
-                GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUEV, 1L) });
-
-        addCraftingRecipe(
-            GTNLItemList.UIVParallelControllerCore.get(1),
-            new Object[] { "ABC", "BDB", "EBE", 'A', ItemList.Sensor_UIV, 'B', "circuitExotic", 'C',
-                ItemList.Emitter_UIV.get(1L), 'D', ItemList.Hull_UIV.get(1L), 'E',
-                GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUIV, 1L) });
-
-        addCraftingRecipe(
-            GTNLItemList.UMVParallelControllerCore.get(1),
-            new Object[] { "ABC", "BDB", "EBE", 'A', ItemList.Sensor_UMV, 'B', "circuitCosmic", 'C',
-                ItemList.Emitter_UMV.get(1L), 'D', ItemList.Hull_UMV.get(1L), 'E',
-                GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUMV, 1L) });
-
-        addCraftingRecipe(
-            GTNLItemList.UXVParallelControllerCore.get(1),
-            new Object[] { "ABC", "BDB", "EBE", 'A', ItemList.Sensor_UXV, 'B', "circuitTranscendent", 'C',
-                ItemList.Emitter_UXV.get(1L), 'D', ItemList.Hull_UXV.get(1L), 'E',
-                GTOreDictUnificator.get(OrePrefixes.wireGt02, MaterialsUEVplus.SpaceTime, 1L) });
     }
 }

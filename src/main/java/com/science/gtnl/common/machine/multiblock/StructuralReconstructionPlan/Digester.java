@@ -233,7 +233,7 @@ public class Digester extends GTMMultiMachineBase<Digester> implements ISurvival
                 }
                 return SimpleCheckRecipeResult.ofFailure("no_nitricacid");
             }
-        };
+        }.setMaxParallelSupplier(this::getMaxParallelRecipes);
     }
 
     public int getCasingTextureID() {

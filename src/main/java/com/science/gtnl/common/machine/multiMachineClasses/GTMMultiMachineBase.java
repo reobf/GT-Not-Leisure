@@ -52,10 +52,10 @@ public abstract class GTMMultiMachineBase<T extends GTMMultiMachineBase<T>> exte
 
     @Override
     public int getMaxParallelRecipes() {
-        if (ParallelTier <= 2) {
-            return 16;
+        if (ParallelTier <= 1) {
+            return 8;
         } else {
-            return (int) Math.pow(4, ParallelTier - 3);
+            return (int) Math.pow(4, ParallelTier - 2);
         }
     }
 

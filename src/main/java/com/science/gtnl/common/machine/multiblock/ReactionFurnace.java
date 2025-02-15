@@ -244,7 +244,7 @@ public class ReactionFurnace extends GTMMultiMachineBase<ReactionFurnace> implem
     @Override
     public int getMaxParallelRecipes() {
         if (ParallelTier <= 2) {
-            return 16;
+            return 8;
         } else {
             return (int) Math.pow(4, ParallelTier - 3) * 512 - 1;
         }

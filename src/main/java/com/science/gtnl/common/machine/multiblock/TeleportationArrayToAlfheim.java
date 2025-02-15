@@ -169,7 +169,7 @@ public class TeleportationArrayToAlfheim extends MultiMachineBase<TeleportationA
         boolean shouldExplode = false;
         long Strength = 0;
         IGregTechTileEntity aBaseMetaTileEntity = getBaseMetaTileEntity();
-        for (ItemStack items : getStoredInputs()) {
+        for (ItemStack items : getAllStoredInputs()) {
             if (Bread.equalItemStack(items)) {
                 Strength += 50L * items.stackSize;
                 shouldExplode = true;
