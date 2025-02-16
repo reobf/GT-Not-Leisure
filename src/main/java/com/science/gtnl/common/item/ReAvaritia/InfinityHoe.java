@@ -24,7 +24,7 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.EnumHelper;
 
-import com.science.gtnl.client.CreativeTabsLoader;
+import com.science.gtnl.client.GTNLCreativeTabs;
 import com.science.gtnl.common.item.ItemLoader;
 
 public class InfinityHoe extends ItemHoe {
@@ -36,7 +36,7 @@ public class InfinityHoe extends ItemHoe {
         setUnlocalizedName("InfinityHoe");
         setTextureName("reavaritia:InfinityHoe");
         this.setCreativeTab(CreativeTabs.tabTools);
-        setCreativeTab(CreativeTabsLoader.ReAvaritia);
+        setCreativeTab(GTNLCreativeTabs.ReAvaritia);
         this.setMaxDamage(9999);
     }
 

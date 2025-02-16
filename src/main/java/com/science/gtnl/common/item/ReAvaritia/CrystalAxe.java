@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.util.EnumHelper;
 
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.client.CreativeTabsLoader;
+import com.science.gtnl.client.GTNLCreativeTabs;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -30,7 +30,7 @@ public class CrystalAxe extends ItemAxe {
         this.setUnlocalizedName("CrystalAxe");
         this.setCreativeTab(CreativeTabs.tabCombat);
         this.setCreativeTab(CreativeTabs.tabTools);
-        this.setCreativeTab(CreativeTabsLoader.ReAvaritia);
+        this.setCreativeTab(GTNLCreativeTabs.ReAvaritia);
         this.setTextureName("reavaritia:CrystalAxe");
         this.setMaxDamage(8888);
     }

@@ -17,7 +17,7 @@ import net.minecraft.util.Facing;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 
-import com.science.gtnl.client.CreativeTabsLoader;
+import com.science.gtnl.client.GTNLCreativeTabs;
 import com.science.gtnl.common.block.BlockStaticDataClientOnly;
 
 import cpw.mods.fml.relauncher.Side;
@@ -35,7 +35,7 @@ public class MetaBlockGlass extends Block {
         this.setHardness(1.0F);
         this.setLightOpacity(0);
         this.setResistance(5.0F);
-        this.setCreativeTab(CreativeTabsLoader.GTNotLeisureBlock);
+        this.setCreativeTab(GTNLCreativeTabs.GTNotLeisureBlock);
     }
 
     public MetaBlockGlass(String unlocalizedName, String localName) {

@@ -32,7 +32,7 @@ import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.client.CreativeTabsLoader;
+import com.science.gtnl.client.GTNLCreativeTabs;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.registry.EntityRegistry;
@@ -48,7 +48,7 @@ public class BlazeSword extends ItemSword {
         this.setUnlocalizedName("BlazeSword");
         this.setTextureName("reavaritia:BlazeSword");
         this.setCreativeTab(CreativeTabs.tabCombat);
-        this.setCreativeTab(CreativeTabsLoader.ReAvaritia);
+        this.setCreativeTab(GTNLCreativeTabs.ReAvaritia);
         this.setMaxDamage(7777);
         MinecraftForge.EVENT_BUS.register(this);
     }

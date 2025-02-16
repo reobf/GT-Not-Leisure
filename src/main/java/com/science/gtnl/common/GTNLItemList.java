@@ -9,7 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 import com.science.gtnl.Utils.Utils;
-import com.science.gtnl.client.CreativeTabsLoader;
+import com.science.gtnl.client.GTNLCreativeTabs;
 
 import gregtech.api.GregTechAPI;
 import gregtech.api.util.GTLanguageManager;
@@ -384,7 +384,7 @@ public enum GTNLItemList {
             Item item = mStack.getItem();
             if (item == null) return this;
             if (Block.getBlockFromItem(item) == GregTechAPI.sBlockMachines) {
-                CreativeTabsLoader.addToMachineList(mStack.copy());
+                GTNLCreativeTabs.addToMachineList(mStack.copy());
             }
         }
         return this;

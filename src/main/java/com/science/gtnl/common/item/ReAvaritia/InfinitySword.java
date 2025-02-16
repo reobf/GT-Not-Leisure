@@ -33,7 +33,7 @@ import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 
 import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.Utils.item.TextUtils;
-import com.science.gtnl.client.CreativeTabsLoader;
+import com.science.gtnl.client.GTNLCreativeTabs;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.relauncher.Side;
@@ -56,7 +56,7 @@ public class InfinitySword extends ItemSword implements ICosmicRenderItem {
         setUnlocalizedName("InfinitySword");
         setTextureName("reavaritia:InfinitySword");
         setCreativeTab(CreativeTabs.tabCombat);
-        setCreativeTab(CreativeTabsLoader.ReAvaritia);
+        setCreativeTab(GTNLCreativeTabs.ReAvaritia);
         this.setMaxDamage(9999);
         MinecraftForge.EVENT_BUS.register(this);
     }

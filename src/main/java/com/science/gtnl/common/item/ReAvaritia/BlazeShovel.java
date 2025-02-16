@@ -24,7 +24,7 @@ import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.world.BlockEvent;
 
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.client.CreativeTabsLoader;
+import com.science.gtnl.client.GTNLCreativeTabs;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.relauncher.Side;
@@ -38,7 +38,7 @@ public class BlazeShovel extends ItemSpade {
         super(BLAZE);
         this.setUnlocalizedName("BlazeShovel");
         setCreativeTab(CreativeTabs.tabTools);
-        this.setCreativeTab(CreativeTabsLoader.ReAvaritia);
+        this.setCreativeTab(GTNLCreativeTabs.ReAvaritia);
         this.setTextureName("reavaritia:BlazeShovel");
         this.setMaxDamage(7777);
         MinecraftForge.EVENT_BUS.register(this);

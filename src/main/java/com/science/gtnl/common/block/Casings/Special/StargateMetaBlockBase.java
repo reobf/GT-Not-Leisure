@@ -12,7 +12,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 
-import com.science.gtnl.client.CreativeTabsLoader;
+import com.science.gtnl.client.GTNLCreativeTabs;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -27,7 +27,7 @@ public class StargateMetaBlockBase extends Block {
         this.setHardness(1.0F);
         this.setResistance(6000000.0F);
         this.setBlockName(UnlocalizedName);
-        this.setCreativeTab(CreativeTabsLoader.GTNotLeisureBlock);
+        this.setCreativeTab(GTNLCreativeTabs.GTNotLeisureBlock);
         this.TextureName = TextureName;
         this.setBlockTextureName(RESOURCE_ROOT_ID + ":" + "Stargate/" + "Stargate_Coil_Compressed");
     }

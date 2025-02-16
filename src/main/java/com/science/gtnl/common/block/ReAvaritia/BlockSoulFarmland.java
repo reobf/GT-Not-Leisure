@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.util.ForgeDirection;
 
-import com.science.gtnl.client.CreativeTabsLoader;
+import com.science.gtnl.client.GTNLCreativeTabs;
 
 public class BlockSoulFarmland extends BlockFarmland {
 
@@ -25,7 +25,7 @@ public class BlockSoulFarmland extends BlockFarmland {
     public BlockSoulFarmland() {
         super();
         this.setBlockName("BlockSoulFarmland");
-        this.setCreativeTab(CreativeTabsLoader.ReAvaritia);
+        this.setCreativeTab(GTNLCreativeTabs.ReAvaritia);
         this.setHardness(0.6F);
         this.setStepSound(soundTypeSand);
         this.setBlockTextureName("reavaritia:BlockSoulFarmland");

@@ -20,7 +20,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.util.EnumHelper;
 
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.client.CreativeTabsLoader;
+import com.science.gtnl.client.GTNLCreativeTabs;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -31,7 +31,7 @@ public class CrystalSword extends ItemSword {
         super(EnumHelper.addToolMaterial("CRYSTAL", 3, 8888, 8.0F, 48.0F, 10));
         this.setUnlocalizedName("CrystalSword");
         this.setCreativeTab(CreativeTabs.tabCombat);
-        this.setCreativeTab(CreativeTabsLoader.ReAvaritia);
+        this.setCreativeTab(GTNLCreativeTabs.ReAvaritia);
         this.setTextureName("reavaritia:CrystalSword");
         this.setMaxDamage(8888);
     }

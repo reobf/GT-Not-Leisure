@@ -18,7 +18,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 import com.science.gtnl.ScienceNotLeisure;
-import com.science.gtnl.client.CreativeTabsLoader;
+import com.science.gtnl.client.GTNLCreativeTabs;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -34,7 +34,7 @@ public class DenserNeutronCollector extends BlockContainer {
         setHardness(20.0F);
         setBlockName("DenserNeutronCollector");
         setHarvestLevel("pickaxe", 3);
-        this.setCreativeTab(CreativeTabsLoader.ReAvaritia);
+        this.setCreativeTab(GTNLCreativeTabs.ReAvaritia);
     }
 
     @SideOnly(Side.CLIENT)

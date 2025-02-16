@@ -19,7 +19,7 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-import com.science.gtnl.client.CreativeTabsLoader;
+import com.science.gtnl.client.GTNLCreativeTabs;
 import com.science.gtnl.common.block.IMetaBlock;
 
 import cpw.mods.fml.relauncher.Side;
@@ -35,7 +35,7 @@ public abstract class MetaCasingBase extends Block implements IMetaBlock {
     public MetaCasingBase(String unlocalizedName) {
         super(Material.iron);
         this.unlocalizedName = unlocalizedName;
-        this.setCreativeTab(CreativeTabsLoader.GTNotLeisureBlock);
+        this.setCreativeTab(GTNLCreativeTabs.GTNotLeisureBlock);
     }
 
     // region Abstract
