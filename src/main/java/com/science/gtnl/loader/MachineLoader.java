@@ -362,8 +362,9 @@ public class MachineLoader {
                 "NineIndustrialMultiMachine",
                 TextLocalization.NameNineIndustrialMultiMachine));
 
-        MTEHatchRack.run();
-        MTEHatchCapacitor.run();
+        // 为什么再这重复调用tt那边的用于注册的方法
+        //MTEHatchRack.run();
+        //MTEHatchCapacitor.run();
     }
 
     public static void registerMTEHatch() {
