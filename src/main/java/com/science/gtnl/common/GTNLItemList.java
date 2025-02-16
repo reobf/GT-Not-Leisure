@@ -344,7 +344,7 @@ public enum GTNLItemList {
 
     public Item getItem() {
         sanityCheck();
-        if (Utils.isStackInvalid(mStack)) return null;// TODO replace a default issue item
+        if (Utils.isStackInvalid(mStack)) return null;
         return mStack.getItem();
     }
 

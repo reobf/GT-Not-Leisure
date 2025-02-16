@@ -1494,7 +1494,7 @@ public class TextLocalization {
         "§rEntities with health below a certain threshold will be §ckilled instantly.",
         "Tooltip_WhiteNightGenerator_03");
     public static final String Tooltip_WhiteNightGenerator_04 = texter(
-        "§rDeal §cmagical damage§r equal to §c5*number of entities killed§r to players in the current dimension and apply several debuffs.",
+        "§rDeal §cmagical damage§r equal to §c5*number of entities killed§r to players and apply several debuffs.",
         "Tooltip_WhiteNightGenerator_04");
     public static final String Tooltip_WhiteNightGenerator_05 = texter(
         "§rThis machine has an §cAnti-Kabbalah Counter§r with a maximum of 3, reducing by 1 each time the machine operates, generating a redstone signal when maintenance is required.",

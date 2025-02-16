@@ -413,7 +413,7 @@ public class AssemblingLineRecipes implements IRecipePool {
                 GTModHandler.getModItem(AE2FluidCraft.ID, "fluid_part", 16, 7),
                 ItemList.Hatch_Input_Bus_ME_Advanced.get(4), ItemList.Hatch_Input_ME_Advanced.get(4),
                 GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 64, 54) },
-            new FluidStack[] { MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(73728),
+            new FluidStack[] { MaterialPool.SuperMutatedLivingSolder.getFluidOrGas(16000),
                 Materials.Infinity.getMolten(18432), Materials.RadoxPolymer.getMolten(18432),
                 MaterialsAlloy.INDALLOY_140.getFluidStack(512000) },
             GTNLItemList.SuperCraftingInputHatchME.get(1),

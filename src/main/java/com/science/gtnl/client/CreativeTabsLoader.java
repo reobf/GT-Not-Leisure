@@ -77,7 +77,8 @@ public class CreativeTabsLoader {
             p_78018_1_.add(GTNLItemList.NinefoldInputHatchUMV.get(1));
             p_78018_1_.add(GTNLItemList.NinefoldInputHatchUXV.get(1));
             p_78018_1_.add(GTNLItemList.HumongousNinefoldInputHatch.get(1));
-
+            p_78018_1_.add(GTNLItemList.QuadrupleOutputHatchEV.get(1));
+            p_78018_1_.add(GTNLItemList.NinefoldOutputHatchEV.get(1));
             p_78018_1_.add(GTNLItemList.DualInputHatchLV.get(1));
             p_78018_1_.add(GTNLItemList.DualInputHatchMV.get(1));
             p_78018_1_.add(GTNLItemList.DualInputHatchHV.get(1));
