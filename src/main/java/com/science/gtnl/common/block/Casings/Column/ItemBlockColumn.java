@@ -16,7 +16,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
-import com.science.gtnl.client.CreativeTabsLoader;
+import com.science.gtnl.client.GTNLCreativeTabs;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -38,7 +38,7 @@ public class ItemBlockColumn extends ItemBlock {
         super(aBlock);
         setHasSubtypes(true);
         setMaxDamage(0);
-        this.setCreativeTab(CreativeTabsLoader.GTNotLeisureBlock);
+        this.setCreativeTab(GTNLCreativeTabs.GTNotLeisureBlock);
     }
 
     // endregion

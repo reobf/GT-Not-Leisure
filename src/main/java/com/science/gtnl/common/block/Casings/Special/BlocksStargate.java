@@ -11,7 +11,7 @@ import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-import com.science.gtnl.client.CreativeTabsLoader;
+import com.science.gtnl.client.GTNLCreativeTabs;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -28,7 +28,7 @@ public class BlocksStargate extends Block {
         this.setBlockName("Stargate" + Tier);
         this.setBlockTextureName(RESOURCE_ROOT_ID + ":" + "Stargate/" + "Stargate");
         this.TextureName = new String[] { "Front", "Side", "Bottom", "Compressed_" + Tier };
-        this.setCreativeTab(CreativeTabsLoader.GTNotLeisureBlock);
+        this.setCreativeTab(GTNLCreativeTabs.GTNotLeisureBlock);
     }
 
     @SideOnly(Side.CLIENT)

@@ -11,7 +11,7 @@ import com.science.gtnl.common.item.ItemLoader;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class CreativeTabsLoader {
+public class GTNLCreativeTabs {
 
     public static CreativeTabs GTNotLeisureItem = new CreativeTabs("GTNotLeisureItem") {
 

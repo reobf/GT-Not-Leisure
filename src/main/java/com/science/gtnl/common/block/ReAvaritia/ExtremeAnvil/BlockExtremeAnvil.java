@@ -19,7 +19,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import com.science.gtnl.ClientProxy;
 import com.science.gtnl.ScienceNotLeisure;
-import com.science.gtnl.client.CreativeTabsLoader;
+import com.science.gtnl.client.GTNLCreativeTabs;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -30,7 +30,7 @@ public class BlockExtremeAnvil extends BlockFalling {
         super(Material.anvil);
         setBlockName("ExtremeAnvil");
         setBlockTextureName("reavaritia:ExtremeAnvil");
-        setCreativeTab(CreativeTabsLoader.ReAvaritia);
+        setCreativeTab(GTNLCreativeTabs.ReAvaritia);
         setStepSound(Block.soundTypeAnvil);
         setHardness(10.0F);
         setResistance(2000.0F);

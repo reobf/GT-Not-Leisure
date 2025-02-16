@@ -9,7 +9,7 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.client.CreativeTabsLoader;
+import com.science.gtnl.client.GTNLCreativeTabs;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -20,7 +20,7 @@ public class TestItem extends Item {
         super();
 
         this.setUnlocalizedName("TestItem");
-        this.setCreativeTab(CreativeTabsLoader.GTNotLeisureItem);
+        this.setCreativeTab(GTNLCreativeTabs.GTNotLeisureItem);
         this.setTextureName("sciencenotleisure:TestItem");
     }
 

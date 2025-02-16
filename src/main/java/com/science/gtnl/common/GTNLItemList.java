@@ -86,6 +86,8 @@ public enum GTNLItemList {
     GravitationalFocusingLensBlock,
     GaiaStabilizedForceFieldCasing,
     HyperCore,
+    ChemicallyResistantCasing,
+    UltraPoweredCasing,
 
     TrollFace,
     DepletedExcitedNaquadahFuelRod,

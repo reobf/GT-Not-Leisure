@@ -1,6 +1,6 @@
 package com.science.gtnl;
 
-import com.science.gtnl.client.CreativeTabsLoader;
+import com.science.gtnl.client.GTNLCreativeTabs;
 import com.science.gtnl.common.effect.GTNLEffect;
 import com.science.gtnl.common.item.ItemLoader;
 
@@ -14,7 +14,7 @@ public class CommonProxy {
     // preInit "Run before anything else. Read your config, create blocks, items, etc, and register them with the
     // GameRegistry." (Remove if not needed)
     public void preInit(FMLPreInitializationEvent event) {
-        CreativeTabsLoader.init();
+        GTNLCreativeTabs.init();
         ItemLoader.registerItems();
         GTNLEffect.init();
     }

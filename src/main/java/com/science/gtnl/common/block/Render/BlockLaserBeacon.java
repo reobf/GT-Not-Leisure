@@ -9,7 +9,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
-import com.science.gtnl.client.CreativeTabsLoader;
+import com.science.gtnl.client.GTNLCreativeTabs;
 import com.science.gtnl.common.GTNLItemList;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -27,7 +27,7 @@ public class BlockLaserBeacon extends Block implements ITileEntityProvider {
     public BlockLaserBeacon() {
         super(Material.iron);
         setBlockName("LaserBeacon");
-        this.setCreativeTab(CreativeTabsLoader.GTNotLeisureBlock);
+        this.setCreativeTab(GTNLCreativeTabs.GTNotLeisureBlock);
         GTLanguageManager.addStringLocalization(getUnlocalizedName() + ".name", "Laser Inducing Beacon");
         GregTechAPI.registerMachineBlock(this, -1);
         GameRegistry.registerBlock(this, ItemBlockLaserBeacon.class, getUnlocalizedName());

@@ -449,6 +449,11 @@ public class BlockRegister {
                 .initMetaBlockCasing("Gaia Stabilized Force Field Casing", (byte) 17, BasicBlocks.MetaCasing));
         GTNLItemList.HyperCore
             .set(MetaBlockConstructors.initMetaBlockCasing("Hyper Core", (byte) 18, BasicBlocks.MetaCasing));
+        GTNLItemList.ChemicallyResistantCasing.set(
+            MetaBlockConstructors
+                .initMetaBlockCasing("Chemically Resistant Casing", (byte) 19, BasicBlocks.MetaCasing));
+        GTNLItemList.UltraPoweredCasing
+            .set(MetaBlockConstructors.initMetaBlockCasing("Ultra Powered Casing", (byte) 20, BasicBlocks.MetaCasing));
     }
 
     public static void registry() {

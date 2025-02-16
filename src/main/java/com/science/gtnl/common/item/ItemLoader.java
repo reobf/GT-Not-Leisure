@@ -20,6 +20,7 @@ import com.science.gtnl.common.item.ReAvaritia.InfinityShovel;
 import com.science.gtnl.common.item.ReAvaritia.InfinitySword;
 import com.science.gtnl.common.item.ReAvaritia.InfinityTotem;
 import com.science.gtnl.common.item.ReAvaritia.MatterCluster;
+import com.science.gtnl.common.item.items.KFCFamily;
 import com.science.gtnl.common.item.items.TestItem;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -47,6 +48,7 @@ public class ItemLoader {
     public static Item InfinityTotem = new InfinityTotem();
     public static Item InfinityBucket = new InfinityBucket();
     public static Item MatterCluster = new MatterCluster();
+    public static Item KFCFamily = new KFCFamily(114514, 114514, true);
     public static Item RecordSus = new ItemRecord("sus");
     public static Item RecordNewHorizons = new ItemRecord("newhorizons");
 
@@ -71,6 +73,7 @@ public class ItemLoader {
         IRegistry(InfinityTotem, "InfinityTotem");
         IRegistry(InfinityBucket, "InfinityBucket");
         IRegistry(MatterCluster, "MatterCluster");
+        IRegistry(KFCFamily, "KFCFamily");
         IRegistry(RecordSus, "RecordSus");
         IRegistry(RecordNewHorizons, "RecordNewHorizons");
 

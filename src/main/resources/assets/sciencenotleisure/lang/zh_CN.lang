@@ -105,6 +105,8 @@ MetaCasing.15.name=ABS超固态外壳
 MetaCasing.16.name=引力聚焦方块
 MetaCasing.17.name=盖亚稳定力场机械方块
 MetaCasing.18.name=超能核心
+MetaCasing.19.name=化学防护机械方块
+MetaCasing.20.name=超能机械方块
 
 MetaBlock.0.name=测试方块
 MetaBlock.1.name=§d新视野线圈
@@ -421,6 +423,9 @@ Tooltip_Testitem_10=这是§d更加侧重于为原版GTNH添加内容的模组!
 Tooltip_Testitem_11=§f§l如果你遇到了什么问题或者想提出意见，请在Github提交issue
 Tooltip_Testitem_12=本模组添加的机器meta值从21000开始
 Tooltip_Testitem_13=§c§l另外提醒: 不要拿着这个物品右键!
+
+item.KFCFamily.name=疯狂星期四
+Tooltip_KFCFamily_00=§o疯狂星期四, v我50!
 
 item.CrystalSword.name=§d双锋裂界之剑
 Tooltip_CrystalSword_00=§8§o锋刃所向，裂界无阻；剑影所至，敌影无存。

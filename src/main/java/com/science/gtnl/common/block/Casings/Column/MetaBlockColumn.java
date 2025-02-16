@@ -18,7 +18,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 
-import com.science.gtnl.client.CreativeTabsLoader;
+import com.science.gtnl.client.GTNLCreativeTabs;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -34,7 +34,7 @@ public class MetaBlockColumn extends Block {
         this.setResistance(6000000.0F);
         this.TextureName = new String[] { "Side", "Top", "Bottom" };
         this.TextureMap = new HashMap<>();
-        this.setCreativeTab(CreativeTabsLoader.GTNotLeisureBlock);
+        this.setCreativeTab(GTNLCreativeTabs.GTNotLeisureBlock);
     }
 
     public MetaBlockColumn(String unlocalizedName, String localName) {

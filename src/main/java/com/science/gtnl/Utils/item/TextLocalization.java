@@ -56,6 +56,8 @@ public class TextLocalization {
 
     public static final String GUI_NeutronCollector_Progress = texter("Progress: ", "GUI_NeutronCollector_Progress");
 
+    public static final String Tooltip_KFCFamily_00 = texter("§oCrazy Thursday, vme50!", "Tooltip_KFCFamily_00");
+
     public static final String Tooltip_CrystalPickaxe_00 = texter(
         "§8§oLuck brings treasures; precision finds gems.",
         "Tooltip_CrystalPickaxe_00");

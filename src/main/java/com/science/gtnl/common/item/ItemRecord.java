@@ -2,7 +2,7 @@ package com.science.gtnl.common.item;
 
 import net.minecraft.util.ResourceLocation;
 
-import com.science.gtnl.client.CreativeTabsLoader;
+import com.science.gtnl.client.GTNLCreativeTabs;
 
 public class ItemRecord extends net.minecraft.item.ItemRecord {
 
@@ -10,7 +10,7 @@ public class ItemRecord extends net.minecraft.item.ItemRecord {
         super(recordName);
         setTextureName("sciencenotleisure:Record." + recordName);
         setUnlocalizedName("record");
-        setCreativeTab(CreativeTabsLoader.GTNotLeisureItem);
+        setCreativeTab(GTNLCreativeTabs.GTNotLeisureItem);
     }
 
     @Override

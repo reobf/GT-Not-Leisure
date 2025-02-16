@@ -16,7 +16,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 
-import com.science.gtnl.client.CreativeTabsLoader;
+import com.science.gtnl.client.GTNLCreativeTabs;
 import com.science.gtnl.common.block.BlockStaticDataClientOnly;
 
 import cpw.mods.fml.relauncher.Side;
@@ -34,7 +34,7 @@ public class MetaBlockGlow extends Block {
         this.setLightLevel(150);
         this.setHardness(1.0F);
         this.setResistance(5.0F);
-        this.setCreativeTab(CreativeTabsLoader.GTNotLeisureBlock);
+        this.setCreativeTab(GTNLCreativeTabs.GTNotLeisureBlock);
     }
 
     public MetaBlockGlow(String unlocalizedName, String localName) {

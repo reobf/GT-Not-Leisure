@@ -16,7 +16,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 
-import com.science.gtnl.client.CreativeTabsLoader;
+import com.science.gtnl.client.GTNLCreativeTabs;
 import com.science.gtnl.common.block.BlockStaticDataClientOnly;
 
 import cpw.mods.fml.relauncher.Side;
@@ -31,7 +31,7 @@ public class MetaBlockBase extends Block {
 
     public MetaBlockBase() {
         this(Material.iron);
-        this.setCreativeTab(CreativeTabsLoader.GTNotLeisureBlock);
+        this.setCreativeTab(GTNLCreativeTabs.GTNotLeisureBlock);
     }
 
     public MetaBlockBase(String unlocalizedName, String localName) {
