@@ -9,11 +9,15 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 import com.science.gtnl.Utils.Utils;
+import com.science.gtnl.client.GTNLCreativeTabs;
 
+import gregtech.api.GregTechAPI;
+import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.util.GTLanguageManager;
 import gregtech.api.util.GTLog;
 import gregtech.api.util.GTUtility;
 
+@SuppressWarnings("unused")
 public enum GTNLItemList {
 
     StargateCoil,
@@ -371,19 +375,27 @@ public enum GTNLItemList {
     }
 
     public GTNLItemList set(Item aItem) {
-        mHasNotBeenSet = false;
         if (aItem == null) return this;
-        ItemStack aStack = new ItemStack(aItem, 1, 0);
-        mStack = Utils.copyAmount(1, aStack);
-        return this;
+        return set(Utils.newItemStack(aItem));
     }
 
     public GTNLItemList set(ItemStack aStack) {
-        if (aStack != null) {
-            mHasNotBeenSet = false;
-            mStack = Utils.copyAmount(1, aStack);
+        if (aStack == null) return this;
+        mHasNotBeenSet = false;
+        mStack = Utils.copyAmount(1, aStack);
+        if (Utils.isClientSide()) {
+            Item item = mStack.getItem();
+            if (item == null) return this;
+            if (Block.getBlockFromItem(item) == GregTechAPI.sBlockMachines) {
+                GTNLCreativeTabs.addToMachineList(mStack.copy());
+            }
         }
         return this;
+    }
+
+    public GTNLItemList set(IMetaTileEntity metaTileEntity) {
+        if (metaTileEntity == null) throw new IllegalArgumentException();
+        return set(metaTileEntity.getStackForm(1L));
     }
 
     public boolean hasBeenSet() {
@@ -408,7 +420,8 @@ public enum GTNLItemList {
         }
     }
 
-    public ItemStack getWithName(long aAmount, String aDisplayName, Object... aReplacements) {
+    @SuppressWarnings("SizeReplaceableByIsEmpty")
+    public ItemStack getWithName(int aAmount, String aDisplayName, Object... aReplacements) {
         ItemStack rStack = get(1, aReplacements);
         if (GTUtility.isStackInvalid(rStack)) return NI;
 

@@ -315,7 +315,7 @@ public class SteamCracking extends MTESteamMultiBase<SteamCracking> implements I
 
     @Override
     public int getTierRecipes() {
-        return 1;
+        return 2;
     }
 
     @Override

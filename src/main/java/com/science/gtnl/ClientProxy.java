@@ -3,7 +3,6 @@ package com.science.gtnl;
 import net.minecraftforge.client.MinecraftForgeClient;
 
 import com.science.gtnl.Utils.GuiEventHandler;
-import com.science.gtnl.Utils.LangMerger;
 import com.science.gtnl.Utils.LanguageManager;
 import com.science.gtnl.common.block.ReAvaritia.ExtremeAnvil.RenderExtremeAnvil;
 import com.science.gtnl.common.block.ReAvaritia.ExtremeAnvil.TileEntityExtremeAnvil;
@@ -44,7 +43,6 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void preInit(FMLPreInitializationEvent event) {
         super.preInit(event);
-        new LangMerger().processLanguageFiles();
     }
 
     @Override

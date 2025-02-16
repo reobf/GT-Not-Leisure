@@ -24,7 +24,6 @@ import com.science.gtnl.Utils.item.TextUtils;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import gregtech.api.enums.Textures;
 import gregtech.api.gui.modularui.GTUIInfos;
 import gregtech.api.gui.modularui.GTUITextures;
 import gregtech.api.interfaces.ITexture;
@@ -34,8 +33,8 @@ import gregtech.api.interfaces.modularui.IAddUIWidgets;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.implementations.MTEHatchEnergy;
-import gregtech.api.objects.GTRenderedTexture;
 import gregtech.api.util.GTUtility;
+import tectech.thing.metaTileEntity.Textures;
 import tectech.thing.metaTileEntity.hatch.MTEHatchEnergyTunnel;
 import tectech.thing.metaTileEntity.pipe.MTEPipeEnergy;
 import tectech.util.CommonValues;
@@ -43,7 +42,6 @@ import tectech.util.TTUtility;
 
 public class DebugEnergyHatch extends MTEHatchEnergy implements IAddUIWidgets, IAddGregtechLogo {
 
-    public static GTRenderedTexture GENNY;
     public long EUT = 0, AMP = 0;
     public boolean producing = true;
     private static final NumberFormatMUI numberFormat = new NumberFormatMUI();
@@ -79,7 +77,6 @@ public class DebugEnergyHatch extends MTEHatchEnergy implements IAddUIWidgets, I
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister aBlockIconRegister) {
         super.registerIcons(aBlockIconRegister);
-        GENNY = new GTRenderedTexture(new Textures.BlockIcons.CustomIcon("iconsets/OVERLAY_ENERGY_ON_WIRELESS_LASER"));
     }
 
     @Override
@@ -87,9 +84,8 @@ public class DebugEnergyHatch extends MTEHatchEnergy implements IAddUIWidgets, I
         int colorIndex, boolean aActive, boolean aRedstone) {
         return new ITexture[] { super.getTexture(aBaseMetaTileEntity, side, facing, colorIndex, aActive, aRedstone)[0],
             side != facing
-                ? (aActive ? tectech.thing.metaTileEntity.Textures.OVERLAYS_ENERGY_OUT_POWER_TT[mTier]
-                    : tectech.thing.metaTileEntity.Textures.OVERLAYS_ENERGY_IN_POWER_TT[mTier])
-                : GENNY };
+                ? (aActive ? Textures.OVERLAYS_ENERGY_OUT_POWER_TT[mTier] : Textures.OVERLAYS_ENERGY_IN_POWER_TT[mTier])
+                : Textures.OVERLAYS_ENERGY_IN_WIRELESS_LASER[mTier] };
     }
 
     @Override
