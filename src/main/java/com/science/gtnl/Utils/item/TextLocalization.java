@@ -234,6 +234,17 @@ public class TextLocalization {
         " types of fluid",
         "Tooltip_NinefoldInputHatch_02_01");
 
+    public static final String QuadrupleOutputHatchEV = texter("Quadruple Output Hatch (EV)", "QuadrupleOutputHatchEV");
+    public static final String NinefoldOutputHatchEV = texter("Ninefold Output Hatch (EV)", "NinefoldOutputHatchEV");
+    public static final String Tooltip_DualOutputHatch_00 = texter(
+        "Fluid Output for Multiblocks",
+        "Tooltip_DualOutputHatch_00");
+    public static final String Tooltip_DualOutputHatch_01 = texter("Capacity: ", "Tooltip_DualOutputHatch_01");
+    public static final String Tooltip_DualOutputHatch_02_00 = texter("Can hold ", "Tooltip_DualOutputHatch_02_00");
+    public static final String Tooltip_DualOutputHatch_02_01 = texter(
+        " types of fluid",
+        "Tooltip_DualOutputHatch_02_01");
+
     public static final String SuperCraftingInputHatchME = texter(
         "Super Crafting Input Buffer (ME)",
         "SuperCraftingInputHatchME");

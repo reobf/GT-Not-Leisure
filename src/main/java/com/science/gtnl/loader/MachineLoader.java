@@ -4,13 +4,7 @@ import net.minecraft.item.ItemStack;
 
 import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.common.GTNLItemList;
-import com.science.gtnl.common.hatch.DebugEnergyHatch;
-import com.science.gtnl.common.hatch.DualInputHatch;
-import com.science.gtnl.common.hatch.HatchCustomFluid;
-import com.science.gtnl.common.hatch.HumongousNinefoldInputHatch;
-import com.science.gtnl.common.hatch.HumongousSolidifierHatch;
-import com.science.gtnl.common.hatch.NinefoldInputHatch;
-import com.science.gtnl.common.hatch.SuperCraftingInputHatchME;
+import com.science.gtnl.common.hatch.*;
 import com.science.gtnl.common.machine.multiblock.AdvancedPhotovoltaicPowerStation;
 import com.science.gtnl.common.machine.multiblock.BloodSoulSacrificialArray;
 import com.science.gtnl.common.machine.multiblock.BrickedBlastFurnace;
@@ -724,6 +718,14 @@ public class MachineLoader {
 
         GTNLItemList.DualInputHatchMAX.set(
             new DualInputHatch(21533, "Dual Input Hatch MAX", TextLocalization.DualInputHatchMAX, 14).getStackForm(1));
+
+        GTNLItemList.QuadrupleOutputHatchEV.set(
+            new DualOutputHatch(22500, 4, "Quadruple Output Hatch EV", TextLocalization.QuadrupleOutputHatchEV, 4)
+                .getStackForm(1L));
+
+        GTNLItemList.NinefoldOutputHatchEV.set(
+            new DualOutputHatch(22501, 9, "Ninefold Output Hatch EV", TextLocalization.NinefoldOutputHatchEV, 4)
+                .getStackForm(1L));
     }
 
     public static void run() {
