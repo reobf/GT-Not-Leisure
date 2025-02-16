@@ -89,8 +89,6 @@ import com.science.gtnl.common.machine.multiblock.WoodDistillation;
 
 import gtPlusPlus.api.objects.Logger;
 import gtPlusPlus.core.util.minecraft.FluidUtils;
-import tectech.thing.metaTileEntity.hatch.MTEHatchCapacitor;
-import tectech.thing.metaTileEntity.hatch.MTEHatchRack;
 
 public class MachineLoader {
 
@@ -363,8 +361,8 @@ public class MachineLoader {
                 TextLocalization.NameNineIndustrialMultiMachine));
 
         // 为什么再这重复调用tt那边的用于注册的方法
-        //MTEHatchRack.run();
-        //MTEHatchCapacitor.run();
+        // MTEHatchRack.run();
+        // MTEHatchCapacitor.run();
     }
 
     public static void registerMTEHatch() {
