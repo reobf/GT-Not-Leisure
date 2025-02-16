@@ -11,14 +11,23 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.IntFunction;
 
+import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.fluids.FluidStack;
+
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 
 import com.science.gtnl.ScienceNotLeisure;
 
+import cpw.mods.fml.common.FMLCommonHandler;
 import gregtech.api.enums.HeatingCoilLevel;
 import gregtech.api.metatileentity.MetaTileEntity;
 
+@SuppressWarnings("unused")
 public final class Utils {
 
     public static final double LOG2 = Math.log(2);
@@ -26,6 +35,18 @@ public final class Utils {
     public static final BigInteger INTEGER_MAX_VALUE = BigInteger.valueOf(Integer.MAX_VALUE);
     public static final BigInteger BIG_INTEGER_100 = BigInteger.valueOf(100);
     // region about game
+
+    public static boolean isClientSide() {
+        return FMLCommonHandler.instance()
+            .getSide()
+            .isClient();
+    }
+
+    public static boolean isServerSide() {
+        return FMLCommonHandler.instance()
+            .getSide()
+            .isServer();
+    }
 
     /**
      * LV = 1, MAX = 14
@@ -65,6 +86,20 @@ public final class Utils {
         if (a == null || b == null) return false;
         if (a == b) return true;
         return a.getItem() == b.getItem() && a.getItemDamage() == b.getItemDamage();
+    }
+
+    @Contract(value = "_ -> new", pure = true)
+    public static @NotNull ItemStack newItemStack(Item aItem) {
+        return new ItemStack(aItem, 1, 0);
+    }
+
+    @Contract(value = "_ -> new", pure = true)
+    public static @NotNull ItemStack newItemStack(Block aBlock) {
+        return new ItemStack(aBlock, 1, 0);
+    }
+
+    public static @NotNull ItemStack anErrorStack() {
+        return newItemStack(Blocks.fire).setStackDisplayName(EnumChatFormatting.DARK_RED + "ERROR_STACK!!!");
     }
 
     public static ItemStack[] copyItemStackArray(ItemStack... array) {
@@ -292,9 +327,9 @@ public final class Utils {
     public static ItemStack[] sortNoNullArray(ItemStack... itemStacks) {
         if (itemStacks == null) return null;
         List<ItemStack> list = new ArrayList<>();
-        for (int i = 0; i < itemStacks.length; i++) {
-            if (itemStacks[i] == null) continue;
-            list.add(itemStacks[i]);
+        for (ItemStack itemStack : itemStacks) {
+            if (itemStack == null) continue;
+            list.add(itemStack);
         }
         if (list.isEmpty()) return new ItemStack[0];
         return list.toArray(new ItemStack[0]);
@@ -303,9 +338,9 @@ public final class Utils {
     public static FluidStack[] sortNoNullArray(FluidStack... fluidStacks) {
         if (fluidStacks == null) return null;
         List<FluidStack> list = new ArrayList<>();
-        for (int i = 0; i < fluidStacks.length; i++) {
-            if (fluidStacks[i] == null) continue;
-            list.add(fluidStacks[i]);
+        for (FluidStack fluidStack : fluidStacks) {
+            if (fluidStack == null) continue;
+            list.add(fluidStack);
         }
         if (list.isEmpty()) return new FluidStack[0];
         return list.toArray(new FluidStack[0]);
@@ -314,9 +349,9 @@ public final class Utils {
     public static Object[] sortNoNullArray(Object... objects) {
         if (objects == null) return null;
         List<Object> list = new ArrayList<>();
-        for (int i = 0; i < objects.length; i++) {
-            if (objects[i] == null) continue;
-            list.add(objects[i]);
+        for (Object object : objects) {
+            if (object == null) continue;
+            list.add(object);
         }
         if (list.isEmpty()) return new Object[0];
         return list.toArray(new Object[0]);
