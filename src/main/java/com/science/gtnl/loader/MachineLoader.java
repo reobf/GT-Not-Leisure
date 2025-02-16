@@ -1,7 +1,5 @@
 package com.science.gtnl.loader;
 
-import net.minecraft.item.ItemStack;
-
 import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.common.hatch.*;
@@ -96,475 +94,273 @@ import tectech.thing.metaTileEntity.hatch.MTEHatchRack;
 
 public class MachineLoader {
 
-    public static ItemStack LargeSteamCircuitAssembler;
-    public static ItemStack GenerationEarthEngine;
-    public static ItemStack BloodSoulSacrificialArray;
-    public static ItemStack TeleportationArrayToAlfheim;
-    public static ItemStack LapotronChip;
-    public static ItemStack RealArtificialStar;
-    public static ItemStack EdenGarden;
-    public static ItemStack NeutroniumWireCutting;
-    public static ItemStack LargeSteamCrusher;
-    public static ItemStack ComponentAssembler;
-    public static ItemStack LargeSteamFurnace;
-    public static ItemStack LargeSteamAlloySmelter;
-    public static ItemStack LargeSteamThermalCentrifuge;
-    public static ItemStack LargeSteamChemicalBath;
-    public static ItemStack SteamCracking;
-    public static ItemStack PrimitiveDistillationTower;
-    public static ItemStack CheatOreProcessingFactory;
-    public static ItemStack MeteorMiner;
-    public static ItemStack Desulfurizer;
-    public static ItemStack LargeCircuitAssembler;
-    public static ItemStack PetrochemicalPlant;
-    public static ItemStack SmeltingMixingFurnace;
-    public static ItemStack WhiteNightGenerator;
-    public static ItemStack ProcessingArray;
-    public static ItemStack MegaBlastFurnace;
-    public static ItemStack BrickedBlastFurnace;
-    public static ItemStack RareEarthCentrifugal;
-    public static ItemStack NineIndustrialMultiMachine;
-    public static ItemStack ColdIceFreezer;
-    public static ItemStack BlazeBlastFurnace;
-    public static ItemStack ChemicalPlant;
-    public static ItemStack VacuumFreezer;
-    public static ItemStack IndustrialArcaneAssembler;
-    public static ItemStack EnergeticPhotovoltaicPowerStation;
-    public static ItemStack AdvancedPhotovoltaicPowerStation;
-    public static ItemStack VibrantPhotovoltaicPowerStation;
-    public static ItemStack LargeMacerationTower;
-    public static ItemStack HandOfJohnDavisonRockefeller;
-    public static ItemStack LargeSiftingFunnel;
-    public static ItemStack LargeCutter;
-    public static ItemStack LargeBrewer;
-    public static ItemStack LargeIndustrialLathe;
-    public static ItemStack LargeMaterialPress;
-    public static ItemStack LargeWiremill;
-    public static ItemStack LargeBender;
-    public static ItemStack ElectricImplosionCompressor;
-    public static ItemStack LargeExtruder;
-    public static ItemStack LargeArcSmelter;
-    public static ItemStack LargeForming;
-    public static ItemStack MatterFabricator;
-    public static ItemStack LargeElectrolyzer;
-    public static ItemStack LargeElectromagnet;
-    public static ItemStack LargeAssembler;
-    public static ItemStack LargeMixer;
-    public static ItemStack LargeCentrifuge;
-    public static ItemStack LibraryOfRuina;
-    public static ItemStack LargeChemicalBath;
-    public static ItemStack LargeAutoclave;
-    public static ItemStack LargeSolidifier;
-    public static ItemStack LargeExtractor;
-    public static ItemStack ReactionFurnace;
-    public static ItemStack EnergyInfuser;
-    public static ItemStack LargeCanning;
-    public static ItemStack Digester;
-    public static ItemStack AlloyBlastSmelter;
-    public static ItemStack LargeSteamExtractor;
-    public static ItemStack LargeSteamOreWasher;
-    public static ItemStack LargeHammer;
-    public static ItemStack IsaMill;
-    public static ItemStack FlotationCellRegulator;
-    public static ItemStack VacuumDryingFurnace;
-    public static ItemStack LargeDistillery;
-    public static ItemStack Incubator;
-    public static ItemStack LargeIncubator;
-    public static ItemStack LargeEngravingLaser;
-    public static ItemStack FishingGround;
-    public static ItemStack ElementCopying;
-    public static ItemStack WoodDistillation;
-    public static ItemStack LargePacker;
-    public static ItemStack LargeAlloySmelter;
-    public static ItemStack MolecularTransformer;
-    public static ItemStack LargePyrolyseOven;
-    public static ItemStack LargeNaquadahReactor;
-
     public static void loadMachines() {
 
-        EdenGarden = new EdenGarden(21004, "EdenGarden", TextLocalization.NameEdenGarden).getStackForm(1);
-        GTNLItemList.EdenGarden.set(EdenGarden);
-
-        LargeSteamCircuitAssembler = new LargeSteamCircuitAssembler(
-            21005,
-            "LargeSteamCircuitAssembler",
-            TextLocalization.NameLargeSteamCircuitAssembler).getStackForm(1);
-        GTNLItemList.LargeSteamCircuitAssembler.set(LargeSteamCircuitAssembler);
-
-        GenerationEarthEngine = new GenerationEarthEngine(
-            21006,
-            "GenerationEarthEngine",
-            TextLocalization.NameGenerationEarthEngine).getStackForm(1);
-        GTNLItemList.GenerationEarthEngine.set(GenerationEarthEngine);
-
-        BloodSoulSacrificialArray = new BloodSoulSacrificialArray(
-            21007,
-            "BloodSoulSacrificialArray",
-            TextLocalization.NameBloodSoulSacrificialArray).getStackForm(1);
-        GTNLItemList.BloodSoulSacrificialArray.set(BloodSoulSacrificialArray);
-
-        RealArtificialStar = new RealArtificialStar(
-            21008,
-            "RealArtificialStar",
-            TextLocalization.NameRealArtificialStar).getStackForm(1);
-        GTNLItemList.RealArtificialStar.set(RealArtificialStar);
-
-        TeleportationArrayToAlfheim = new TeleportationArrayToAlfheim(
-            21009,
-            "TeleportationArrayToAlfheim",
-            TextLocalization.NameTeleportationArrayToAlfheim).getStackForm(1);
-        GTNLItemList.TeleportationArrayToAlfheim.set(TeleportationArrayToAlfheim);
-
-        LapotronChip = new LapotronChip(21010, "LapotronChip", TextLocalization.NameLapotronChip).getStackForm(1);
-        GTNLItemList.LapotronChip.set(LapotronChip);
-
-        NeutroniumWireCutting = new NeutroniumWireCutting(
-            21011,
-            "NeutroniumWireCutting",
-            TextLocalization.NameNeutroniumWireCutting).getStackForm(1);
-        GTNLItemList.NeutroniumWireCutting.set(NeutroniumWireCutting);
-
-        LargeSteamCrusher = new LargeSteamCrusher(21012, "LargeSteamCrusher", TextLocalization.NameLargeSteamCrusher)
-            .getStackForm(1);
-        GTNLItemList.LargeSteamCrusher.set(LargeSteamCrusher);
-
-        ComponentAssembler = new ComponentAssembler(
-            21013,
-            "ComponentAssembler",
-            TextLocalization.NameComponentAssembler).getStackForm(1);
-        GTNLItemList.ComponentAssembler.set(ComponentAssembler);
-
-        LargeSteamFurnace = new LargeSteamFurnace(21014, "LargeSteamFurnace", TextLocalization.NameLargeSteamFurnace)
-            .getStackForm(1);
-        GTNLItemList.LargeSteamFurnace.set(LargeSteamFurnace);
-
-        LargeSteamAlloySmelter = new LargeSteamAlloySmelter(
-            21015,
-            "LargeSteamAlloySmelter",
-            TextLocalization.NameLargeSteamAlloySmelter).getStackForm(1);
-        GTNLItemList.LargeSteamAlloySmelter.set(LargeSteamAlloySmelter);
-
-        LargeSteamThermalCentrifuge = new LargeSteamThermalCentrifuge(
-            21016,
-            "LargeSteamThermalCentrifuge",
-            TextLocalization.NameLargeSteamThermalCentrifuge).getStackForm(1);
-        GTNLItemList.LargeSteamThermalCentrifuge.set(LargeSteamThermalCentrifuge);
-
-        SteamCracking = new SteamCracking(21017, "SteamCracking", TextLocalization.NameSteamCracking).getStackForm(1);
-        GTNLItemList.SteamCracking.set(SteamCracking);
-
-        LargeSteamChemicalBath = new LargeSteamChemicalBath(
-            21018,
-            "LargeSteamChemicalBath",
-            TextLocalization.NameLargeSteamChemicalBath).getStackForm(1);
-        GTNLItemList.LargeSteamChemicalBath.set(LargeSteamChemicalBath);
-
-        PrimitiveDistillationTower = new PrimitiveDistillationTower(
-            21019,
-            "PrimitiveDistillationTower",
-            TextLocalization.NamePrimitiveDistillationTower).getStackForm(1);
-        GTNLItemList.PrimitiveDistillationTower.set(PrimitiveDistillationTower);
-
-        MeteorMiner = new MeteorMiner(21020, "MeteorMiner", TextLocalization.NameMeteorMiner).getStackForm(1);
-        GTNLItemList.MeteorMiner.set(MeteorMiner);
-
-        Desulfurizer = new Desulfurizer(21021, "Desulfurizer", TextLocalization.NameDesulfurizer).getStackForm(1);
-        GTNLItemList.Desulfurizer.set(Desulfurizer);
-
-        LargeCircuitAssembler = new LargeCircuitAssembler(
-            21022,
-            "LargeCircuitAssembler",
-            TextLocalization.NameLargeCircuitAssembler).getStackForm(1);
-        GTNLItemList.LargeCircuitAssembler.set(LargeCircuitAssembler);
-
-        PetrochemicalPlant = new PetrochemicalPlant(
-            21023,
-            "PetrochemicalPlant",
-            TextLocalization.NamePetrochemicalPlant).getStackForm(1);
-        GTNLItemList.PetrochemicalPlant.set(PetrochemicalPlant);
-
-        SmeltingMixingFurnace = new SmeltingMixingFurnace(
-            21024,
-            "SmeltingMixingFurnace",
-            TextLocalization.NameSmeltingMixingFurnace).getStackForm(1);
-        GTNLItemList.SmeltingMixingFurnace.set(SmeltingMixingFurnace);
-
-        WhiteNightGenerator = new WhiteNightGenerator(
-            21025,
-            "WhiteNightGenerator",
-            TextLocalization.NameWhiteNightGenerator).getStackForm(1);
-        GTNLItemList.WhiteNightGenerator.set(WhiteNightGenerator);
-
-        ProcessingArray = new ProcessingArray(21026, "ProcessingArray", TextLocalization.NameProcessingArray)
-            .getStackForm(1);
-        GTNLItemList.ProcessingArray.set(ProcessingArray);
-
-        MegaBlastFurnace = new MegaBlastFurnace(21027, "MegaBlastFurnace", TextLocalization.NameMegaBlastFurnace)
-            .getStackForm(1);
-        GTNLItemList.MegaBlastFurnace.set(MegaBlastFurnace);
-
-        BrickedBlastFurnace = new BrickedBlastFurnace(
-            21028,
-            "BrickedBlastFurnace",
-            TextLocalization.NameBrickedBlastFurnace).getStackForm(1);
-        GTNLItemList.BrickedBlastFurnace.set(BrickedBlastFurnace);
-
-        RareEarthCentrifugal = new RareEarthCentrifugal(
-            21029,
-            "RareEarthCentrifugal",
-            TextLocalization.NameRareEarthCentrifugal).getStackForm(1);
-        GTNLItemList.RareEarthCentrifugal.set(RareEarthCentrifugal);
-
-        ColdIceFreezer = new ColdIceFreezer(21030, "ColdIceFreezer", TextLocalization.NameColdIceFreezer)
-            .getStackForm(1);
-        GTNLItemList.ColdIceFreezer.set(ColdIceFreezer);
-
-        BlazeBlastFurnace = new BlazeBlastFurnace(21031, "BlazeBlastFurnace", TextLocalization.NameBlazeBlastFurnace)
-            .getStackForm(1);
-        GTNLItemList.BlazeBlastFurnace.set(BlazeBlastFurnace);
-
-        ChemicalPlant = new ChemicalPlant(21032, "ChemicalPlant", TextLocalization.NameChemicalPlant).getStackForm(1);
-        GTNLItemList.ChemicalPlant.set(ChemicalPlant);
-
-        VacuumFreezer = new VacuumFreezer(21033, "VacuumFreezer", TextLocalization.NameVacuumFreezer).getStackForm(1);
-        GTNLItemList.VacuumFreezer.set(VacuumFreezer);
-
-        IndustrialArcaneAssembler = new IndustrialArcaneAssembler(
-            21034,
-            "IndustrialArcaneAssembler",
-            TextLocalization.NameIndustrialArcaneAssembler).getStackForm(1);
-        GTNLItemList.IndustrialArcaneAssembler.set(IndustrialArcaneAssembler);
-
-        EnergeticPhotovoltaicPowerStation = new EnergeticPhotovoltaicPowerStation(
-            21035,
-            "EnergeticPhotovoltaicPowerStation",
-            TextLocalization.NameEnergeticPhotovoltaicPowerStation).getStackForm(1);
-        GTNLItemList.EnergeticPhotovoltaicPowerStation.set(EnergeticPhotovoltaicPowerStation);
-
-        AdvancedPhotovoltaicPowerStation = new AdvancedPhotovoltaicPowerStation(
-            21036,
-            "AdvancedPhotovoltaicPowerStation",
-            TextLocalization.NameAdvancedPhotovoltaicPowerStation).getStackForm(1);
-        GTNLItemList.AdvancedPhotovoltaicPowerStation.set(AdvancedPhotovoltaicPowerStation);
-
-        VibrantPhotovoltaicPowerStation = new VibrantPhotovoltaicPowerStation(
-            21037,
-            "VibrantPhotovoltaicPowerStation",
-            TextLocalization.NameVibrantPhotovoltaicPowerStation).getStackForm(1);
-        GTNLItemList.VibrantPhotovoltaicPowerStation.set(VibrantPhotovoltaicPowerStation);
-
-        LargeMacerationTower = new LargeMacerationTower(
-            21038,
-            "LargeMacerationTower",
-            TextLocalization.NameLargeMacerationTower).getStackForm(1);
-        GTNLItemList.LargeMacerationTower.set(LargeMacerationTower);
-
-        HandOfJohnDavisonRockefeller = new HandOfJohnDavisonRockefeller(
-            21039,
-            "HandOfJohnDavisonRockefeller",
-            TextLocalization.NameHandOfJohnDavisonRockefeller).getStackForm(1);
-        GTNLItemList.HandOfJohnDavisonRockefeller.set(HandOfJohnDavisonRockefeller);
-
-        LargeSiftingFunnel = new LargeSiftingFunnel(
-            21040,
-            "LargeSiftingFunnel",
-            TextLocalization.NameLargeSiftingFunnel).getStackForm(1);
-        GTNLItemList.LargeSiftingFunnel.set(LargeSiftingFunnel);
-
-        LargeCutter = new LargeCutter(21041, "LargeCutter", TextLocalization.NameLargeCutter).getStackForm(1);
-        GTNLItemList.LargeCutter.set(LargeCutter);
-
-        LargeBrewer = new LargeBrewer(21042, "LargeBrewer", TextLocalization.NameLargeBrewer).getStackForm(1);
-        GTNLItemList.LargeBrewer.set(LargeBrewer);
-
-        LargeIndustrialLathe = new LargeIndustrialLathe(
-            21043,
-            "LargeIndustrialLathe",
-            TextLocalization.NameLargeIndustrialLathe).getStackForm(1);
-        GTNLItemList.LargeIndustrialLathe.set(LargeIndustrialLathe);
-
-        LargeMaterialPress = new LargeMaterialPress(
-            21044,
-            "LargeMaterialPress",
-            TextLocalization.NameLargeMaterialPress).getStackForm(1);
-        GTNLItemList.LargeMaterialPress.set(LargeMaterialPress);
-
-        LargeWiremill = new LargeWiremill(21045, "LargeWiremill", TextLocalization.NameLargeWiremill).getStackForm(1);
-        GTNLItemList.LargeWiremill.set(LargeWiremill);
-
-        LargeBender = new LargeBender(21046, "LargeBender", TextLocalization.NameLargeBender).getStackForm(1);
-        GTNLItemList.LargeBender.set(LargeBender);
-
-        ElectricImplosionCompressor = new ElectricImplosionCompressor(
-            21047,
-            "ElectricImplosionCompressor",
-            TextLocalization.NameElectricImplosionCompressor).getStackForm(1);
-        GTNLItemList.ElectricImplosionCompressor.set(ElectricImplosionCompressor);
-
-        LargeExtruder = new LargeExtruder(21048, "LargeExtruder", TextLocalization.NameLargeExtruder).getStackForm(1);
-        GTNLItemList.LargeExtruder.set(LargeExtruder);
-
-        LargeArcSmelter = new LargeArcSmelter(21049, "LargeArcSmelter", TextLocalization.NameLargeArcSmelter)
-            .getStackForm(1);
-        GTNLItemList.LargeArcSmelter.set(LargeArcSmelter);
-
-        LargeForming = new LargeForming(21050, "LargeForming", TextLocalization.NameLargeForming).getStackForm(1);
-        GTNLItemList.LargeForming.set(LargeForming);
-
-        MatterFabricator = new MatterFabricator(21051, "MatterFabricator", TextLocalization.NameMatterFabricator)
-            .getStackForm(1);
-        GTNLItemList.MatterFabricator.set(MatterFabricator);
-
-        LargeElectrolyzer = new LargeElectrolyzer(21052, "LargeElectrolyzer", TextLocalization.NameLargeElectrolyzer)
-            .getStackForm(1);
-        GTNLItemList.LargeElectrolyzer.set(LargeElectrolyzer);
-
-        LargeElectromagnet = new LargeElectromagnet(
-            21053,
-            "LargeElectromagnet",
-            TextLocalization.NameLargeElectromagnet).getStackForm(1);
-        GTNLItemList.LargeElectromagnet.set(LargeElectromagnet);
-
-        LargeAssembler = new LargeAssembler(21054, "LargeAssembler", TextLocalization.NameLargeAssembler)
-            .getStackForm(1);
-        GTNLItemList.LargeAssembler.set(LargeAssembler);
-
-        LargeMixer = new LargeMixer(21055, "LargeMixer", TextLocalization.NameLargeMixer).getStackForm(1);
-        GTNLItemList.LargeMixer.set(LargeMixer);
-
-        LargeCentrifuge = new LargeCentrifuge(21056, "LargeCentrifuge", TextLocalization.NameLargeCentrifuge)
-            .getStackForm(1);
-        GTNLItemList.LargeCentrifuge.set(LargeCentrifuge);
-
-        LibraryOfRuina = new LibraryOfRuina(21057, "LibraryOfRuina", TextLocalization.NameLibraryOfRuina)
-            .getStackForm(1);
-        GTNLItemList.LibraryOfRuina.set(LibraryOfRuina);
-
-        LargeChemicalBath = new LargeChemicalBath(21058, "LargeChemicalBath", TextLocalization.NameLargeChemicalBath)
-            .getStackForm(1);
-        GTNLItemList.LargeChemicalBath.set(LargeChemicalBath);
-
-        LargeAutoclave = new LargeAutoclave(21059, "LargeAutoclave", TextLocalization.NameLargeAutoclave)
-            .getStackForm(1);
-        GTNLItemList.LargeAutoclave.set(LargeAutoclave);
-
-        LargeSolidifier = new LargeSolidifier(21060, "LargeSolidifier", TextLocalization.NameLargeSolidifier)
-            .getStackForm(1);
-        GTNLItemList.LargeSolidifier.set(LargeSolidifier);
-
-        LargeExtractor = new LargeExtractor(21061, "LargeExtractor", TextLocalization.NameLargeExtractor)
-            .getStackForm(1);
-        GTNLItemList.LargeExtractor.set(LargeExtractor);
-
-        ReactionFurnace = new ReactionFurnace(21062, "ReactionFurnace", TextLocalization.NameReactionFurnace)
-            .getStackForm(1);
-        GTNLItemList.ReactionFurnace.set(ReactionFurnace);
-
-        EnergyInfuser = new EnergyInfuser(21063, "EnergyInfuser", TextLocalization.NameEnergyInfuser).getStackForm(1);
-        GTNLItemList.EnergyInfuser.set(EnergyInfuser);
-
-        LargeCanning = new LargeCanning(21064, "LargeCanning", TextLocalization.NameLargeCanning).getStackForm(1);
-        GTNLItemList.LargeCanning.set(LargeCanning);
-
-        Digester = new Digester(21065, "Digester", TextLocalization.NameDigester).getStackForm(1);
-        GTNLItemList.Digester.set(Digester);
-
-        AlloyBlastSmelter = new AlloyBlastSmelter(21066, "AlloyBlastSmelter", TextLocalization.NameAlloyBlastSmelter)
-            .getStackForm(1);
-        GTNLItemList.AlloyBlastSmelter.set(AlloyBlastSmelter);
-
-        LargeSteamExtractor = new LargeSteamExtractor(
-            21067,
-            "LargeSteamExtractor",
-            TextLocalization.NameLargeSteamExtractor).getStackForm(1);
-        GTNLItemList.LargeSteamExtractor.set(LargeSteamExtractor);
-
-        LargeSteamOreWasher = new LargeSteamOreWasher(
-            21068,
-            "LargeSteamOreWasher",
-            TextLocalization.NameLargeSteamOreWasher).getStackForm(1);
-        GTNLItemList.LargeSteamOreWasher.set(LargeSteamOreWasher);
-
-        LargeHammer = new LargeHammer(21069, "LargeHammer", TextLocalization.NameLargeHammer).getStackForm(1);
-        GTNLItemList.LargeHammer.set(LargeHammer);
-
-        IsaMill = new IsaMill(21070, "IsaMill", TextLocalization.NameIsaMill).getStackForm(1);
-        GTNLItemList.IsaMill.set(IsaMill);
-
-        FlotationCellRegulator = new FlotationCellRegulator(
-            21071,
-            "FlotationCellRegulator",
-            TextLocalization.NameFlotationCellRegulator).getStackForm(1);
-        GTNLItemList.FlotationCellRegulator.set(FlotationCellRegulator);
-
-        VacuumDryingFurnace = new VacuumDryingFurnace(
-            21072,
-            "VacuumDryingFurnace",
-            TextLocalization.NameVacuumDryingFurnace).getStackForm(1);
-        GTNLItemList.VacuumDryingFurnace.set(VacuumDryingFurnace);
-
-        LargeDistillery = new LargeDistillery(21073, "LargeDistillery", TextLocalization.NameLargeDistillery)
-            .getStackForm(1);
-        GTNLItemList.LargeDistillery.set(LargeDistillery);
-
-        Incubator = new Incubator(21074, "Incubator", TextLocalization.NameIncubator).getStackForm(1);
-        GTNLItemList.Incubator.set(Incubator);
-
-        LargeIncubator = new LargeIncubator(21075, "LargeIncubator", TextLocalization.NameLargeIncubator)
-            .getStackForm(1);
-        GTNLItemList.LargeIncubator.set(LargeIncubator);
-
-        LargeEngravingLaser = new LargeEngravingLaser(
-            21076,
-            "LargeEngravingLaser",
-            TextLocalization.NameLargeEngravingLaser).getStackForm(1);
-        GTNLItemList.LargeEngravingLaser.set(LargeEngravingLaser);
-
-        FishingGround = new FishingGround(21077, "FishingGround", TextLocalization.NameFishingGround).getStackForm(1);
-        GTNLItemList.FishingGround.set(FishingGround);
-
-        ElementCopying = new ElementCopying(21078, "ElementCopying", TextLocalization.NameElementCopying)
-            .getStackForm(1);
-        GTNLItemList.ElementCopying.set(ElementCopying);
-
-        WoodDistillation = new WoodDistillation(21079, "WoodDistillation", TextLocalization.NameWoodDistillation)
-            .getStackForm(1);
-        GTNLItemList.WoodDistillation.set(WoodDistillation);
-
-        LargePacker = new LargePacker(21080, "LargePacker", TextLocalization.NameLargePacker).getStackForm(1);
-        GTNLItemList.LargePacker.set(LargePacker);
-
-        LargeAlloySmelter = new LargeAlloySmelter(21081, "LargeAlloySmelter", TextLocalization.NameLargeAlloySmelter)
-            .getStackForm(1);
-        GTNLItemList.LargeAlloySmelter.set(LargeAlloySmelter);
-
-        MolecularTransformer = new MolecularTransformer(
-            21082,
-            "MolecularTransformer",
-            TextLocalization.NameMolecularTransformer).getStackForm(1);
-        GTNLItemList.MolecularTransformer.set(MolecularTransformer);
-
-        LargePyrolyseOven = new LargePyrolyseOven(21083, "LargePyrolyseOven", TextLocalization.NameLargePyrolyseOven)
-            .getStackForm(1);
-        GTNLItemList.LargePyrolyseOven.set(LargePyrolyseOven);
-
-        LargeNaquadahReactor = new LargeNaquadahReactor(
-            21084,
-            "LargeNaquadahReactor",
-            TextLocalization.NameLargeNaquadahReactor).getStackForm(1);
-        GTNLItemList.LargeNaquadahReactor.set(LargeNaquadahReactor);
-
-        CheatOreProcessingFactory = new CheatOreProcessingFactory(
-            21919,
-            "CheatOreProcessingFactory",
-            TextLocalization.NameCheatOreProcessingFactory).getStackForm(1);
-        GTNLItemList.CheatOreProcessingFactory.set(CheatOreProcessingFactory);
-
-        NineIndustrialMultiMachine = new NineIndustrialMultiMachine(
-            21920,
-            "NineIndustrialMultiMachine",
-            TextLocalization.NameNineIndustrialMultiMachine).getStackForm(1);
-        GTNLItemList.NineIndustrialMultiMachine.set(NineIndustrialMultiMachine);
+        GTNLItemList.EdenGarden.set(new EdenGarden(21004, "EdenGarden", TextLocalization.NameEdenGarden));
+
+        GTNLItemList.LargeSteamCircuitAssembler.set(
+            new LargeSteamCircuitAssembler(
+                21005,
+                "LargeSteamCircuitAssembler",
+                TextLocalization.NameLargeSteamCircuitAssembler));
+
+        GTNLItemList.GenerationEarthEngine
+            .set(new GenerationEarthEngine(21006, "GenerationEarthEngine", TextLocalization.NameGenerationEarthEngine));
+
+        GTNLItemList.BloodSoulSacrificialArray.set(
+            new BloodSoulSacrificialArray(
+                21007,
+                "BloodSoulSacrificialArray",
+                TextLocalization.NameBloodSoulSacrificialArray));
+
+        GTNLItemList.RealArtificialStar
+            .set(new RealArtificialStar(21008, "RealArtificialStar", TextLocalization.NameRealArtificialStar));
+
+        GTNLItemList.TeleportationArrayToAlfheim.set(
+            new TeleportationArrayToAlfheim(
+                21009,
+                "TeleportationArrayToAlfheim",
+                TextLocalization.NameTeleportationArrayToAlfheim));
+
+        GTNLItemList.LapotronChip.set(new LapotronChip(21010, "LapotronChip", TextLocalization.NameLapotronChip));
+
+        GTNLItemList.NeutroniumWireCutting
+            .set(new NeutroniumWireCutting(21011, "NeutroniumWireCutting", TextLocalization.NameNeutroniumWireCutting));
+
+        GTNLItemList.LargeSteamCrusher
+            .set(new LargeSteamCrusher(21012, "LargeSteamCrusher", TextLocalization.NameLargeSteamCrusher));
+
+        GTNLItemList.ComponentAssembler
+            .set(new ComponentAssembler(21013, "ComponentAssembler", TextLocalization.NameComponentAssembler));
+
+        GTNLItemList.LargeSteamFurnace
+            .set(new LargeSteamFurnace(21014, "LargeSteamFurnace", TextLocalization.NameLargeSteamFurnace));
+
+        GTNLItemList.LargeSteamAlloySmelter.set(
+            new LargeSteamAlloySmelter(21015, "LargeSteamAlloySmelter", TextLocalization.NameLargeSteamAlloySmelter));
+
+        GTNLItemList.LargeSteamThermalCentrifuge.set(
+            new LargeSteamThermalCentrifuge(
+                21016,
+                "LargeSteamThermalCentrifuge",
+                TextLocalization.NameLargeSteamThermalCentrifuge));
+
+        GTNLItemList.SteamCracking.set(new SteamCracking(21017, "SteamCracking", TextLocalization.NameSteamCracking));
+
+        GTNLItemList.LargeSteamChemicalBath.set(
+            new LargeSteamChemicalBath(21018, "LargeSteamChemicalBath", TextLocalization.NameLargeSteamChemicalBath));
+
+        GTNLItemList.PrimitiveDistillationTower.set(
+            new PrimitiveDistillationTower(
+                21019,
+                "PrimitiveDistillationTower",
+                TextLocalization.NamePrimitiveDistillationTower));
+
+        GTNLItemList.MeteorMiner.set(new MeteorMiner(21020, "MeteorMiner", TextLocalization.NameMeteorMiner));
+
+        GTNLItemList.Desulfurizer.set(new Desulfurizer(21021, "Desulfurizer", TextLocalization.NameDesulfurizer));
+
+        GTNLItemList.LargeCircuitAssembler
+            .set(new LargeCircuitAssembler(21022, "LargeCircuitAssembler", TextLocalization.NameLargeCircuitAssembler));
+
+        GTNLItemList.PetrochemicalPlant
+            .set(new PetrochemicalPlant(21023, "PetrochemicalPlant", TextLocalization.NamePetrochemicalPlant));
+
+        GTNLItemList.SmeltingMixingFurnace
+            .set(new SmeltingMixingFurnace(21024, "SmeltingMixingFurnace", TextLocalization.NameSmeltingMixingFurnace));
+
+        GTNLItemList.WhiteNightGenerator
+            .set(new WhiteNightGenerator(21025, "WhiteNightGenerator", TextLocalization.NameWhiteNightGenerator));
+
+        GTNLItemList.ProcessingArray
+            .set(new ProcessingArray(21026, "ProcessingArray", TextLocalization.NameProcessingArray));
+
+        GTNLItemList.MegaBlastFurnace
+            .set(new MegaBlastFurnace(21027, "MegaBlastFurnace", TextLocalization.NameMegaBlastFurnace));
+
+        GTNLItemList.BrickedBlastFurnace
+            .set(new BrickedBlastFurnace(21028, "BrickedBlastFurnace", TextLocalization.NameBrickedBlastFurnace));
+
+        GTNLItemList.RareEarthCentrifugal
+            .set(new RareEarthCentrifugal(21029, "RareEarthCentrifugal", TextLocalization.NameRareEarthCentrifugal));
+
+        GTNLItemList.ColdIceFreezer
+            .set(new ColdIceFreezer(21030, "ColdIceFreezer", TextLocalization.NameColdIceFreezer));
+
+        GTNLItemList.BlazeBlastFurnace
+            .set(new BlazeBlastFurnace(21031, "BlazeBlastFurnace", TextLocalization.NameBlazeBlastFurnace));
+
+        GTNLItemList.ChemicalPlant.set(new ChemicalPlant(21032, "ChemicalPlant", TextLocalization.NameChemicalPlant));
+
+        GTNLItemList.VacuumFreezer.set(new VacuumFreezer(21033, "VacuumFreezer", TextLocalization.NameVacuumFreezer));
+
+        GTNLItemList.IndustrialArcaneAssembler.set(
+            new IndustrialArcaneAssembler(
+                21034,
+                "IndustrialArcaneAssembler",
+                TextLocalization.NameIndustrialArcaneAssembler));
+
+        GTNLItemList.EnergeticPhotovoltaicPowerStation.set(
+            new EnergeticPhotovoltaicPowerStation(
+                21035,
+                "EnergeticPhotovoltaicPowerStation",
+                TextLocalization.NameEnergeticPhotovoltaicPowerStation));
+
+        GTNLItemList.AdvancedPhotovoltaicPowerStation.set(
+            new AdvancedPhotovoltaicPowerStation(
+                21036,
+                "AdvancedPhotovoltaicPowerStation",
+                TextLocalization.NameAdvancedPhotovoltaicPowerStation));
+
+        GTNLItemList.VibrantPhotovoltaicPowerStation.set(
+            new VibrantPhotovoltaicPowerStation(
+                21037,
+                "VibrantPhotovoltaicPowerStation",
+                TextLocalization.NameVibrantPhotovoltaicPowerStation));
+
+        GTNLItemList.LargeMacerationTower
+            .set(new LargeMacerationTower(21038, "LargeMacerationTower", TextLocalization.NameLargeMacerationTower));
+
+        GTNLItemList.HandOfJohnDavisonRockefeller.set(
+            new HandOfJohnDavisonRockefeller(
+                21039,
+                "HandOfJohnDavisonRockefeller",
+                TextLocalization.NameHandOfJohnDavisonRockefeller));
+
+        GTNLItemList.LargeSiftingFunnel
+            .set(new LargeSiftingFunnel(21040, "LargeSiftingFunnel", TextLocalization.NameLargeSiftingFunnel));
+
+        GTNLItemList.LargeCutter.set(new LargeCutter(21041, "LargeCutter", TextLocalization.NameLargeCutter));
+
+        GTNLItemList.LargeBrewer.set(new LargeBrewer(21042, "LargeBrewer", TextLocalization.NameLargeBrewer));
+
+        GTNLItemList.LargeIndustrialLathe
+            .set(new LargeIndustrialLathe(21043, "LargeIndustrialLathe", TextLocalization.NameLargeIndustrialLathe));
+
+        GTNLItemList.LargeMaterialPress
+            .set(new LargeMaterialPress(21044, "LargeMaterialPress", TextLocalization.NameLargeMaterialPress));
+
+        GTNLItemList.LargeWiremill.set(new LargeWiremill(21045, "LargeWiremill", TextLocalization.NameLargeWiremill));
+
+        GTNLItemList.LargeBender.set(new LargeBender(21046, "LargeBender", TextLocalization.NameLargeBender));
+
+        GTNLItemList.ElectricImplosionCompressor.set(
+            new ElectricImplosionCompressor(
+                21047,
+                "ElectricImplosionCompressor",
+                TextLocalization.NameElectricImplosionCompressor));
+
+        GTNLItemList.LargeExtruder.set(new LargeExtruder(21048, "LargeExtruder", TextLocalization.NameLargeExtruder));
+
+        GTNLItemList.LargeArcSmelter
+            .set(new LargeArcSmelter(21049, "LargeArcSmelter", TextLocalization.NameLargeArcSmelter));
+
+        GTNLItemList.LargeForming.set(new LargeForming(21050, "LargeForming", TextLocalization.NameLargeForming));
+
+        GTNLItemList.MatterFabricator
+            .set(new MatterFabricator(21051, "MatterFabricator", TextLocalization.NameMatterFabricator));
+
+        GTNLItemList.LargeElectrolyzer
+            .set(new LargeElectrolyzer(21052, "LargeElectrolyzer", TextLocalization.NameLargeElectrolyzer));
+
+        GTNLItemList.LargeElectromagnet
+            .set(new LargeElectromagnet(21053, "LargeElectromagnet", TextLocalization.NameLargeElectromagnet));
+
+        GTNLItemList.LargeAssembler
+            .set(new LargeAssembler(21054, "LargeAssembler", TextLocalization.NameLargeAssembler));
+
+        GTNLItemList.LargeMixer.set(new LargeMixer(21055, "LargeMixer", TextLocalization.NameLargeMixer));
+
+        GTNLItemList.LargeCentrifuge
+            .set(new LargeCentrifuge(21056, "LargeCentrifuge", TextLocalization.NameLargeCentrifuge));
+
+        GTNLItemList.LibraryOfRuina
+            .set(new LibraryOfRuina(21057, "LibraryOfRuina", TextLocalization.NameLibraryOfRuina));
+
+        GTNLItemList.LargeChemicalBath
+            .set(new LargeChemicalBath(21058, "LargeChemicalBath", TextLocalization.NameLargeChemicalBath));
+
+        GTNLItemList.LargeAutoclave
+            .set(new LargeAutoclave(21059, "LargeAutoclave", TextLocalization.NameLargeAutoclave));
+
+        GTNLItemList.LargeSolidifier
+            .set(new LargeSolidifier(21060, "LargeSolidifier", TextLocalization.NameLargeSolidifier));
+
+        GTNLItemList.LargeExtractor
+            .set(new LargeExtractor(21061, "LargeExtractor", TextLocalization.NameLargeExtractor));
+
+        GTNLItemList.ReactionFurnace
+            .set(new ReactionFurnace(21062, "ReactionFurnace", TextLocalization.NameReactionFurnace));
+
+        GTNLItemList.EnergyInfuser.set(new EnergyInfuser(21063, "EnergyInfuser", TextLocalization.NameEnergyInfuser));
+
+        GTNLItemList.LargeCanning.set(new LargeCanning(21064, "LargeCanning", TextLocalization.NameLargeCanning));
+
+        GTNLItemList.Digester.set(new Digester(21065, "Digester", TextLocalization.NameDigester));
+
+        GTNLItemList.AlloyBlastSmelter
+            .set(new AlloyBlastSmelter(21066, "AlloyBlastSmelter", TextLocalization.NameAlloyBlastSmelter));
+
+        GTNLItemList.LargeSteamExtractor
+            .set(new LargeSteamExtractor(21067, "LargeSteamExtractor", TextLocalization.NameLargeSteamExtractor));
+
+        GTNLItemList.LargeSteamOreWasher
+            .set(new LargeSteamOreWasher(21068, "LargeSteamOreWasher", TextLocalization.NameLargeSteamOreWasher));
+
+        GTNLItemList.LargeHammer.set(new LargeHammer(21069, "LargeHammer", TextLocalization.NameLargeHammer));
+
+        GTNLItemList.IsaMill.set(new IsaMill(21070, "IsaMill", TextLocalization.NameIsaMill));
+
+        GTNLItemList.FlotationCellRegulator.set(
+            new FlotationCellRegulator(21071, "FlotationCellRegulator", TextLocalization.NameFlotationCellRegulator));
+
+        GTNLItemList.VacuumDryingFurnace
+            .set(new VacuumDryingFurnace(21072, "VacuumDryingFurnace", TextLocalization.NameVacuumDryingFurnace));
+
+        GTNLItemList.LargeDistillery
+            .set(new LargeDistillery(21073, "LargeDistillery", TextLocalization.NameLargeDistillery));
+
+        GTNLItemList.Incubator.set(new Incubator(21074, "Incubator", TextLocalization.NameIncubator));
+
+        GTNLItemList.LargeIncubator
+            .set(new LargeIncubator(21075, "LargeIncubator", TextLocalization.NameLargeIncubator));
+
+        GTNLItemList.LargeEngravingLaser
+            .set(new LargeEngravingLaser(21076, "LargeEngravingLaser", TextLocalization.NameLargeEngravingLaser));
+
+        GTNLItemList.FishingGround.set(new FishingGround(21077, "FishingGround", TextLocalization.NameFishingGround));
+
+        GTNLItemList.ElementCopying
+            .set(new ElementCopying(21078, "ElementCopying", TextLocalization.NameElementCopying));
+
+        GTNLItemList.WoodDistillation
+            .set(new WoodDistillation(21079, "WoodDistillation", TextLocalization.NameWoodDistillation));
+
+        GTNLItemList.LargePacker.set(new LargePacker(21080, "LargePacker", TextLocalization.NameLargePacker));
+
+        GTNLItemList.LargeAlloySmelter
+            .set(new LargeAlloySmelter(21081, "LargeAlloySmelter", TextLocalization.NameLargeAlloySmelter));
+
+        GTNLItemList.MolecularTransformer
+            .set(new MolecularTransformer(21082, "MolecularTransformer", TextLocalization.NameMolecularTransformer));
+
+        GTNLItemList.LargePyrolyseOven
+            .set(new LargePyrolyseOven(21083, "LargePyrolyseOven", TextLocalization.NameLargePyrolyseOven));
+
+        GTNLItemList.LargeNaquadahReactor
+            .set(new LargeNaquadahReactor(21084, "LargeNaquadahReactor", TextLocalization.NameLargeNaquadahReactor));
+
+        GTNLItemList.CheatOreProcessingFactory.set(
+            new CheatOreProcessingFactory(
+                21919,
+                "CheatOreProcessingFactory",
+                TextLocalization.NameCheatOreProcessingFactory));
+
+        GTNLItemList.NineIndustrialMultiMachine.set(
+            new NineIndustrialMultiMachine(
+                21920,
+                "NineIndustrialMultiMachine",
+                TextLocalization.NameNineIndustrialMultiMachine));
 
         MTEHatchRack.run();
         MTEHatchCapacitor.run();
@@ -580,7 +376,7 @@ public class MachineLoader {
                 21501,
                 "Fluid Mana Input Hatch",
                 TextLocalization.FluidManaInputHatch,
-                6).getStackForm(1L));
+                6));
 
         GTNLItemList.FluidIceInputHatch.set(
             new HatchCustomFluid(
@@ -590,7 +386,7 @@ public class MachineLoader {
                 21502,
                 "Fluid Ice Input Hatch",
                 TextLocalization.FluidIceInputHatch,
-                5).getStackForm(1L));
+                5));
 
         GTNLItemList.FluidBlazeInputHatch.set(
             new HatchCustomFluid(
@@ -600,132 +396,119 @@ public class MachineLoader {
                 21503,
                 "Fluid Blaze Input Hatch",
                 TextLocalization.FluidBlazeInputHatch,
-                5).getStackForm(1L));
+                5));
 
         GTNLItemList.SuperCraftingInputHatchME.set(
             new SuperCraftingInputHatchME(
                 21504,
                 "Super Crafting Input Buffer (ME)",
                 TextLocalization.SuperCraftingInputHatchME,
-                true).getStackForm(1L));
+                true));
 
         GTNLItemList.SuperCraftingInputBusME.set(
             new SuperCraftingInputHatchME(
                 21505,
                 "Super Crafting Input Bus (ME)",
                 TextLocalization.SuperCraftingInputBusME,
-                false).getStackForm(1L));
+                false));
 
         GTNLItemList.HumongousSolidifierHatch.set(
             new HumongousSolidifierHatch(
                 21506,
                 "Humongous Solidifier Hatch",
                 TextLocalization.HumongousSolidifierHatch,
-                14).getStackForm(1L));
+                14));
 
-        GTNLItemList.DebugEnergyHatch.set(
-            new DebugEnergyHatch(21507, "Debug Energy Hatch", TextLocalization.DebugEnergyHatch, 14).getStackForm(1L));
+        GTNLItemList.DebugEnergyHatch
+            .set(new DebugEnergyHatch(21507, "Debug Energy Hatch", TextLocalization.DebugEnergyHatch, 14));
 
-        GTNLItemList.NinefoldInputHatchEV.set(
-            new NinefoldInputHatch(21508, 9, "Ninefold Input Hatch EV", TextLocalization.NinefoldInputHatchEV, 4)
-                .getStackForm(1L));
+        GTNLItemList.NinefoldInputHatchEV
+            .set(new NinefoldInputHatch(21508, 9, "Ninefold Input Hatch EV", TextLocalization.NinefoldInputHatchEV, 4));
 
-        GTNLItemList.NinefoldInputHatchIV.set(
-            new NinefoldInputHatch(21509, 9, "Ninefold Input Hatch IV", TextLocalization.NinefoldInputHatchIV, 5)
-                .getStackForm(1L));
+        GTNLItemList.NinefoldInputHatchIV
+            .set(new NinefoldInputHatch(21509, 9, "Ninefold Input Hatch IV", TextLocalization.NinefoldInputHatchIV, 5));
 
         GTNLItemList.NinefoldInputHatchLuV.set(
-            new NinefoldInputHatch(21510, 9, "Ninefold Input Hatch LuV", TextLocalization.NinefoldInputHatchLuV, 6)
-                .getStackForm(1L));
+            new NinefoldInputHatch(21510, 9, "Ninefold Input Hatch LuV", TextLocalization.NinefoldInputHatchLuV, 6));
 
         GTNLItemList.NinefoldInputHatchZPM.set(
-            new NinefoldInputHatch(21511, 9, "Ninefold Input Hatch ZPM", TextLocalization.NinefoldInputHatchZPM, 7)
-                .getStackForm(1L));
+            new NinefoldInputHatch(21511, 9, "Ninefold Input Hatch ZPM", TextLocalization.NinefoldInputHatchZPM, 7));
 
-        GTNLItemList.NinefoldInputHatchUV.set(
-            new NinefoldInputHatch(21512, 9, "Ninefold Input Hatch UV", TextLocalization.NinefoldInputHatchUV, 8)
-                .getStackForm(1L));
+        GTNLItemList.NinefoldInputHatchUV
+            .set(new NinefoldInputHatch(21512, 9, "Ninefold Input Hatch UV", TextLocalization.NinefoldInputHatchUV, 8));
 
         GTNLItemList.NinefoldInputHatchUHV.set(
-            new NinefoldInputHatch(21513, 9, "Ninefold Input Hatch UHV", TextLocalization.NinefoldInputHatchUHV, 9)
-                .getStackForm(1L));
+            new NinefoldInputHatch(21513, 9, "Ninefold Input Hatch UHV", TextLocalization.NinefoldInputHatchUHV, 9));
 
         GTNLItemList.NinefoldInputHatchUEV.set(
-            new NinefoldInputHatch(21514, 9, "Ninefold Input Hatch UEV", TextLocalization.NinefoldInputHatchUEV, 10)
-                .getStackForm(1L));
+            new NinefoldInputHatch(21514, 9, "Ninefold Input Hatch UEV", TextLocalization.NinefoldInputHatchUEV, 10));
 
         GTNLItemList.NinefoldInputHatchUIV.set(
-            new NinefoldInputHatch(21515, 9, "Ninefold Input Hatch UIV", TextLocalization.NinefoldInputHatchUIV, 11)
-                .getStackForm(1L));
+            new NinefoldInputHatch(21515, 9, "Ninefold Input Hatch UIV", TextLocalization.NinefoldInputHatchUIV, 11));
 
         GTNLItemList.NinefoldInputHatchUMV.set(
-            new NinefoldInputHatch(21516, 9, "Ninefold Input Hatch UMV", TextLocalization.NinefoldInputHatchUMV, 12)
-                .getStackForm(1L));
+            new NinefoldInputHatch(21516, 9, "Ninefold Input Hatch UMV", TextLocalization.NinefoldInputHatchUMV, 12));
 
         GTNLItemList.NinefoldInputHatchUXV.set(
-            new NinefoldInputHatch(21517, 9, "Ninefold Input Hatch UXV", TextLocalization.NinefoldInputHatchUXV, 13)
-                .getStackForm(1L));
+            new NinefoldInputHatch(21517, 9, "Ninefold Input Hatch UXV", TextLocalization.NinefoldInputHatchUXV, 13));
 
         GTNLItemList.NinefoldInputHatchMAX.set(
-            new NinefoldInputHatch(21518, 9, "Ninefold Input Hatch MAX", TextLocalization.NinefoldInputHatchMAX, 14)
-                .getStackForm(1L));
+            new NinefoldInputHatch(21518, 9, "Ninefold Input Hatch MAX", TextLocalization.NinefoldInputHatchMAX, 14));
 
         GTNLItemList.HumongousNinefoldInputHatch.set(
             new HumongousNinefoldInputHatch(
                 21519,
                 9,
                 "Humongous Ninefold Input Hatch",
-                TextLocalization.HumongousNinefoldInputHatch).getStackForm(1L));
+                TextLocalization.HumongousNinefoldInputHatch));
 
-        GTNLItemList.DualInputHatchLV.set(
-            new DualInputHatch(21520, "Dual Input Hatch LV", TextLocalization.DualInputHatchLV, 1).getStackForm(1));
+        GTNLItemList.DualInputHatchLV
+            .set(new DualInputHatch(21520, "Dual Input Hatch LV", TextLocalization.DualInputHatchLV, 1));
 
-        GTNLItemList.DualInputHatchMV.set(
-            new DualInputHatch(21521, "Dual Input Hatch MV", TextLocalization.DualInputHatchMV, 2).getStackForm(1));
+        GTNLItemList.DualInputHatchMV
+            .set(new DualInputHatch(21521, "Dual Input Hatch MV", TextLocalization.DualInputHatchMV, 2));
 
-        GTNLItemList.DualInputHatchHV.set(
-            new DualInputHatch(21522, "Dual Input Hatch HV", TextLocalization.DualInputHatchHV, 3).getStackForm(1));
+        GTNLItemList.DualInputHatchHV
+            .set(new DualInputHatch(21522, "Dual Input Hatch HV", TextLocalization.DualInputHatchHV, 3));
 
-        GTNLItemList.DualInputHatchEV.set(
-            new DualInputHatch(21523, "Dual Input Hatch EV", TextLocalization.DualInputHatchEV, 4).getStackForm(1));
+        GTNLItemList.DualInputHatchEV
+            .set(new DualInputHatch(21523, "Dual Input Hatch EV", TextLocalization.DualInputHatchEV, 4));
 
-        GTNLItemList.DualInputHatchIV.set(
-            new DualInputHatch(21524, "Dual Input Hatch IV", TextLocalization.DualInputHatchIV, 5).getStackForm(1));
+        GTNLItemList.DualInputHatchIV
+            .set(new DualInputHatch(21524, "Dual Input Hatch IV", TextLocalization.DualInputHatchIV, 5));
 
-        GTNLItemList.DualInputHatchLuV.set(
-            new DualInputHatch(21525, "Dual Input Hatch LuV", TextLocalization.DualInputHatchLuV, 6).getStackForm(1));
+        GTNLItemList.DualInputHatchLuV
+            .set(new DualInputHatch(21525, "Dual Input Hatch LuV", TextLocalization.DualInputHatchLuV, 6));
 
-        GTNLItemList.DualInputHatchZPM.set(
-            new DualInputHatch(21526, "Dual Input Hatch ZPM", TextLocalization.DualInputHatchZPM, 7).getStackForm(1));
+        GTNLItemList.DualInputHatchZPM
+            .set(new DualInputHatch(21526, "Dual Input Hatch ZPM", TextLocalization.DualInputHatchZPM, 7));
 
-        GTNLItemList.DualInputHatchUV.set(
-            new DualInputHatch(21527, "Dual Input Hatch UV", TextLocalization.DualInputHatchUV, 8).getStackForm(1));
+        GTNLItemList.DualInputHatchUV
+            .set(new DualInputHatch(21527, "Dual Input Hatch UV", TextLocalization.DualInputHatchUV, 8));
 
-        GTNLItemList.DualInputHatchUHV.set(
-            new DualInputHatch(21528, "Dual Input Hatch UHV", TextLocalization.DualInputHatchUHV, 9).getStackForm(1));
+        GTNLItemList.DualInputHatchUHV
+            .set(new DualInputHatch(21528, "Dual Input Hatch UHV", TextLocalization.DualInputHatchUHV, 9));
 
-        GTNLItemList.DualInputHatchUEV.set(
-            new DualInputHatch(21529, "Dual Input Hatch UEV", TextLocalization.DualInputHatchUEV, 10).getStackForm(1));
+        GTNLItemList.DualInputHatchUEV
+            .set(new DualInputHatch(21529, "Dual Input Hatch UEV", TextLocalization.DualInputHatchUEV, 10));
 
-        GTNLItemList.DualInputHatchUIV.set(
-            new DualInputHatch(21530, "Dual Input Hatch UIV", TextLocalization.DualInputHatchUIV, 11).getStackForm(1));
+        GTNLItemList.DualInputHatchUIV
+            .set(new DualInputHatch(21530, "Dual Input Hatch UIV", TextLocalization.DualInputHatchUIV, 11));
 
-        GTNLItemList.DualInputHatchUMV.set(
-            new DualInputHatch(21531, "Dual Input Hatch UMV", TextLocalization.DualInputHatchUMV, 12).getStackForm(1));
+        GTNLItemList.DualInputHatchUMV
+            .set(new DualInputHatch(21531, "Dual Input Hatch UMV", TextLocalization.DualInputHatchUMV, 12));
 
-        GTNLItemList.DualInputHatchUXV.set(
-            new DualInputHatch(21532, "Dual Input Hatch UXV", TextLocalization.DualInputHatchUXV, 13).getStackForm(1));
+        GTNLItemList.DualInputHatchUXV
+            .set(new DualInputHatch(21532, "Dual Input Hatch UXV", TextLocalization.DualInputHatchUXV, 13));
 
-        GTNLItemList.DualInputHatchMAX.set(
-            new DualInputHatch(21533, "Dual Input Hatch MAX", TextLocalization.DualInputHatchMAX, 14).getStackForm(1));
+        GTNLItemList.DualInputHatchMAX
+            .set(new DualInputHatch(21533, "Dual Input Hatch MAX", TextLocalization.DualInputHatchMAX, 14));
 
         GTNLItemList.QuadrupleOutputHatchEV.set(
-            new DualOutputHatch(22500, 4, "Quadruple Output Hatch EV", TextLocalization.QuadrupleOutputHatchEV, 4)
-                .getStackForm(1L));
+            new DualOutputHatch(22500, 4, "Quadruple Output Hatch EV", TextLocalization.QuadrupleOutputHatchEV, 4));
 
-        GTNLItemList.NinefoldOutputHatchEV.set(
-            new DualOutputHatch(22501, 9, "Ninefold Output Hatch EV", TextLocalization.NinefoldOutputHatchEV, 4)
-                .getStackForm(1L));
+        GTNLItemList.NinefoldOutputHatchEV
+            .set(new DualOutputHatch(22501, 9, "Ninefold Output Hatch EV", TextLocalization.NinefoldOutputHatchEV, 4));
     }
 
     public static void run() {
