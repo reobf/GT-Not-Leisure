@@ -103,13 +103,13 @@ public class PrimitiveDistillationTower extends MTESteamMultiBase<PrimitiveDisti
                         ofHatchAdder(PrimitiveDistillationTower::addOutputToMachineList, CASING_INDEX, 1)),
                     onElementPass(t -> t.onTopLayerFound(true), ofBlock(GregTechAPI.sBlockCasings2, 0)),
                     isAir()))
+            .addElement('D', ofBlock(GregTechAPI.sBlockCasings2, 0))
             .addElement(
                 'D',
-                ofChain(
-                    buildHatchAdder(PrimitiveDistillationTower.class).casingIndex(CASING_INDEX)
-                        .dot(1)
-                        .atLeast(layeredOutputHatch)
-                        .buildAndChain(GregTechAPI.sBlockCasings2, 0)))
+                buildHatchAdder(PrimitiveDistillationTower.class).casingIndex(CASING_INDEX)
+                    .atLeast(OutputHatch)
+                    .dot(1)
+                    .buildAndChain(GregTechAPI.sBlockCasings2, 0))
             .build();
     }
 
