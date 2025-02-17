@@ -5,14 +5,7 @@ import static com.gtnewhorizon.gtnhlib.util.AnimatedTooltipHandler.addItemToolti
 import com.science.gtnl.Utils.AnimatedText;
 import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.common.GTNLItemList;
-import com.science.gtnl.common.hatch.DebugEnergyHatch;
-import com.science.gtnl.common.hatch.DualInputHatch;
-import com.science.gtnl.common.hatch.DualOutputHatch;
-import com.science.gtnl.common.hatch.HatchCustomFluid;
-import com.science.gtnl.common.hatch.HumongousNinefoldInputHatch;
-import com.science.gtnl.common.hatch.HumongousSolidifierHatch;
-import com.science.gtnl.common.hatch.NinefoldInputHatch;
-import com.science.gtnl.common.hatch.SuperCraftingInputHatchME;
+import com.science.gtnl.common.hatch.*;
 import com.science.gtnl.common.machine.multiblock.AdvancedPhotovoltaicPowerStation;
 import com.science.gtnl.common.machine.multiblock.BloodSoulSacrificialArray;
 import com.science.gtnl.common.machine.multiblock.BrickedBlastFurnace;
@@ -624,6 +617,11 @@ public class MachineLoader {
         GTNLItemList.DualInputHatchMAX
             .set(new DualInputHatch(21533, "Dual Input Hatch MAX", TextLocalization.DualInputHatchMAX, 14));
         addItemTooltip(GTNLItemList.DualInputHatchMAX.get(1), AnimatedText.SCIENCE_NOT_LEISURE);
+
+        GTNLItemList.SuperCraftingInputProxy.set(
+            new SuperCraftingInputProxy(21534, "Super Crafting Input Proxy", TextLocalization.SuperCraftingInputProxy)
+                .getStackForm(1L));
+        addItemTooltip(GTNLItemList.SuperCraftingInputProxy.get(1), AnimatedText.SCIENCE_NOT_LEISURE);
 
         GTNLItemList.QuadrupleOutputHatchEV.set(
             new DualOutputHatch(22500, 4, "Quadruple Output Hatch EV", TextLocalization.QuadrupleOutputHatchEV, 4));

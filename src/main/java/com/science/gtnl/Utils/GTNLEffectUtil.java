@@ -25,7 +25,9 @@ public class GTNLEffectUtil extends Potion {
     public GTNLEffectUtil(int id, String name, boolean badEffect, int color, int iconIndex) {
         super(id, badEffect, color);
         setPotionName("gtnl.potion." + name);
-        setIconIndex(iconIndex % 8 * 144, iconIndex / 8 * 144);
+        int x = ((iconIndex - 1) % 13 + 1);
+        int y = ((iconIndex - 1) / 13) * 144;
+        setIconIndex(x, y);
     }
 
     @Override

@@ -6,15 +6,18 @@ import java.lang.reflect.Modifier;
 import net.minecraft.potion.Potion;
 
 import com.science.gtnl.common.effect.effects.AweEffect;
+import com.science.gtnl.common.effect.effects.PerfectPhysiqueEffect;
 
 public class GTNLEffect {
 
     public static Potion awe;
+    public static Potion perfect_physique;
 
     public static void init() {
         if (Potion.potionTypes.length < 256) extendPotionArray();
 
         awe = new AweEffect();
+        perfect_physique = new PerfectPhysiqueEffect();
     }
 
     private static void extendPotionArray() {

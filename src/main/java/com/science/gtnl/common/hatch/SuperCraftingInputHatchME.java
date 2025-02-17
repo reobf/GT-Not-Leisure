@@ -942,16 +942,16 @@ public class SuperCraftingInputHatchME extends MTEHatchInputBus
         if (!ItemList.Tool_DataStick.isStackEqual(dataStick, false, true)) return;
 
         NBTTagCompound tag = new NBTTagCompound();
-        tag.setString("type", "CraftingInputBuffer");
-        tag.setInteger("x", aBaseMetaTileEntity.getXCoord());
-        tag.setInteger("y", aBaseMetaTileEntity.getYCoord());
-        tag.setInteger("z", aBaseMetaTileEntity.getZCoord());
+        tag.setString("typeSuper", "SuperCraftingInputBuffer");
+        tag.setInteger("xSuper", aBaseMetaTileEntity.getXCoord());
+        tag.setInteger("ySuper", aBaseMetaTileEntity.getYCoord());
+        tag.setInteger("zSuper", aBaseMetaTileEntity.getZCoord());
 
         dataStick.stackTagCompound = tag;
         dataStick.setStackDisplayName(
-            "Crafting Input Buffer Link Data Stick (" + aBaseMetaTileEntity
+            "Super Crafting Input Buffer Link Data Stick (" + aBaseMetaTileEntity
                 .getXCoord() + ", " + aBaseMetaTileEntity.getYCoord() + ", " + aBaseMetaTileEntity.getZCoord() + ")");
-        aPlayer.addChatMessage(new ChatComponentText("Saved Link Data to Data Stick"));
+        aPlayer.addChatMessage(new ChatComponentText(TextLocalization.Tooltip_SuperCraftingInputHatchME_05));
     }
 
     @Override

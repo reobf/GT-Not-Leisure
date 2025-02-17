@@ -280,7 +280,7 @@ public class AnimatedText {
 
     public static final Supplier<String> INFINITY_SWORD = chain(
         animatedText(
-            TextLocalization.StructuralReconstructionPlan,
+            TextLocalization.Damage_InfinitySword,
             1,
             50,
             BLUE,

@@ -5,6 +5,8 @@ import java.util.List;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.PotionEffect;
+import net.minecraft.world.World;
 
 import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.client.GTNLCreativeTabs;
@@ -19,6 +21,14 @@ public class KFCFamily extends ItemFood {
         this.setUnlocalizedName("KFCFamily");
         this.setTextureName("sciencenotleisure:KFCFamily");
         this.setCreativeTab(GTNLCreativeTabs.GTNotLeisureItem);
+    }
+
+    @Override
+    protected void onFoodEaten(ItemStack stack, World world, EntityPlayer player) {
+        super.onFoodEaten(stack, world, player);
+        if (!world.isRemote) {
+            player.addPotionEffect(new PotionEffect(187, 12000, 1));
+        }
     }
 
     @Override

@@ -274,6 +274,9 @@ public class TextLocalization {
     public static final String Tooltip_SuperCraftingInputHatchME_04 = texter(
         "Change ME connection behavior by right-clicking with wire cutter",
         "Tooltip_SuperCraftingInputHatchME_04");
+    public static final String Tooltip_SuperCraftingInputHatchME_05 = texter(
+        "Saved Link Data to Data Stick",
+        "Tooltip_SuperCraftingInputHatchME_05");
     public static final String Button_Tooltip_SuperCraftingInputHatchME_00 = texter(
         "Place manual items",
         "Button_Tooltip_SuperCraftingInputHatchME_00");
@@ -286,6 +289,46 @@ public class TextLocalization {
     public static final String Button_Tooltip_SuperCraftingInputHatchME_02_01 = texter(
         "Pattern Optimization:\n§7Disabled",
         "Button_Tooltip_SuperCraftingInputHatchME_02_01");
+
+    public static final String SuperCraftingInputProxy = texter(
+        "Super Crafting Input Proxy",
+        "SuperCraftingInputProxy");
+    public static final String Tooltip_SuperCraftingInputProxy_00 = texter(
+        "Proxy for Super Crafting Input Buffer/Bus",
+        "Tooltip_SuperCraftingInputProxy_00");
+    public static final String Tooltip_SuperCraftingInputProxy_01 = texter(
+        "Link with Super Crafting Input Buffer/Bus using Data Stick to share inventory",
+        "Tooltip_SuperCraftingInputProxy_01");
+    public static final String Tooltip_SuperCraftingInputProxy_02 = texter(
+        "Left click on the Super Crafting Input Buffer/Bus, then right click on this block to link them",
+        "Tooltip_SuperCraftingInputProxy_02");
+    public static final String Tooltip_SuperCraftingInputProxy_03 = texter(
+        "Support Vanilla Crafting Input Buffer/Bus!",
+        "Tooltip_SuperCraftingInputProxy_03");
+    public static final String Tooltip_SuperCraftingInputProxy_04 = texter(
+        "Bound to ",
+        "Tooltip_SuperCraftingInputProxy_04");
+    public static final String Tooltip_SuperCraftingInputProxy_05_00 = texter(
+        "Linked",
+        "Tooltip_SuperCraftingInputProxy_05_00");
+    public static final String Tooltip_SuperCraftingInputProxy_05_01 = texter(
+        "Not linked",
+        "Tooltip_SuperCraftingInputProxy_05_01");
+    public static final String Chat_SuperCraftingInputProxy_00_00 = texter(
+        "This bus is linked to the Super Crafting Input Buffer at ",
+        "Chat_SuperCraftingInputProxy_00_00");
+    public static final String Chat_SuperCraftingInputProxy_00_01 = texter(
+        "This bus is linked to the Crafting Input Buffer at ",
+        "Chat_SuperCraftingInputProxy_00_01");
+    public static final String Chat_SuperCraftingInputProxy_01 = texter(
+        "This bus is not linked to any Crafting Input Buffer.",
+        "Chat_SuperCraftingInputProxy_01");
+    public static final String Chat_SuperCraftingInputProxy_02 = texter(
+        "Link successful",
+        "Chat_SuperCraftingInputProxy_02");
+    public static final String Chat_SuperCraftingInputProxy_03 = texter(
+        "Link failed",
+        "Chat_SuperCraftingInputProxy_03");
 
     public static final String Tooltip_LaserBeacon = texter(
         "Produces a high precision laser from a powerful current.",

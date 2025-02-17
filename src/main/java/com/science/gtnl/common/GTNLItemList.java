@@ -298,6 +298,7 @@ public enum GTNLItemList {
     FluidBlazeInputHatch,
     SuperCraftingInputHatchME,
     SuperCraftingInputBusME,
+    SuperCraftingInputProxy,
     HumongousSolidifierHatch,
     DebugEnergyHatch,
     NinefoldInputHatchEV,
