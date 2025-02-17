@@ -32,7 +32,6 @@ import com.gtnewhorizons.modularui.api.screen.ModularWindow;
 import com.gtnewhorizons.modularui.api.screen.UIBuildContext;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.Utils.rewrites.GTNL_ItemID;
 import com.science.gtnl.common.hatch.HatchCustomFluid;
 import com.science.gtnl.common.machine.Special.PortalToAlfheimExplosion;
@@ -299,7 +298,7 @@ public class TeleportationArrayToAlfheim extends MultiMachineBase<TeleportationA
                 TextLocalization.FluidManaInputHatch,
                 TextLocalization.Tooltip_TeleportationArrayToAlfheim_Casing,
                 1)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.NLC);
+            .toolTipFinisher();
         return tt;
     }
 

@@ -20,7 +20,6 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.MultiMachineBase;
 
 import gregtech.api.enums.Materials;
@@ -114,7 +113,7 @@ public class BrickedBlastFurnace extends MultiMachineBase<BrickedBlastFurnace> i
             .addStructureInfo(TextLocalization.Tooltip_BrickBlastFurnace_Casing_02)
             .addStructureInfo(TextLocalization.Tooltip_BrickBlastFurnace_Casing_03)
             .addStructureInfo(TextLocalization.Tooltip_BrickBlastFurnace_Casing_04)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY + " §rX " + TextUtils.SRP);
+            .toolTipFinisher();
         return tt;
     }
 

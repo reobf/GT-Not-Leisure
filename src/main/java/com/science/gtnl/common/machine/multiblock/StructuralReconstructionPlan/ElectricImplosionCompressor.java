@@ -17,7 +17,6 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
 
 import bartworks.API.recipe.BartWorksRecipeMaps;
@@ -111,7 +110,7 @@ public class ElectricImplosionCompressor extends GTMMultiMachineBase<ElectricImp
             .addOutputBus(TextLocalization.Tooltip_ElectricImplosionCompressor_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_ElectricImplosionCompressor_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_ElectricImplosionCompressor_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY + " §rX " + TextUtils.SRP);
+            .toolTipFinisher();
         return tt;
     }
 

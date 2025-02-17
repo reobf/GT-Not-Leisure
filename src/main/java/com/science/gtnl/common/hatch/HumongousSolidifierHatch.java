@@ -1,7 +1,6 @@
 package com.science.gtnl.common.hatch;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.StatCollector;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidTankInfo;
@@ -16,7 +15,6 @@ import com.gtnewhorizons.modularui.common.internal.wrapper.BaseSlot;
 import com.gtnewhorizons.modularui.common.widget.FluidSlotWidget;
 import com.gtnewhorizons.modularui.common.widget.SlotWidget;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 
 import ggfab.GGItemList;
 import gregtech.api.enums.ItemList;
@@ -87,8 +85,7 @@ public class HumongousSolidifierHatch extends MTEHatchSolidifier {
     @Override
     public String[] getDescription() {
         return new String[] { TextLocalization.Tooltip_HumongousSolidifierHatch_00,
-            TextLocalization.Tooltip_HumongousSolidifierHatch_01,
-            StatCollector.translateToLocal("GT5U.MBTT.Mod") + TextUtils.SCIENCE_NOT_LEISURE };
+            TextLocalization.Tooltip_HumongousSolidifierHatch_01 };
     }
 
     @Override

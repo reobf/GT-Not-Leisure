@@ -24,7 +24,6 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
 
 import bartworks.util.BWUtil;
@@ -138,7 +137,7 @@ public class MegaBlastFurnace extends GTMMultiMachineBase<MegaBlastFurnace> impl
             .addEnergyHatch(TextLocalization.Tooltip_MegaBlastFurnace_Casing_00)
             .addMaintenanceHatch(TextLocalization.Tooltip_MegaBlastFurnace_Casing_00)
             .addMufflerHatch(TextLocalization.Tooltip_MegaBlastFurnace_Casing_02)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY + " §rX " + TextUtils.SRP);
+            .toolTipFinisher();
         return tt;
     }
 

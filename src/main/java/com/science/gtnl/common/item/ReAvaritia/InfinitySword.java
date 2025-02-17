@@ -31,8 +31,8 @@ import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 
+import com.science.gtnl.Utils.AnimatedText;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.client.GTNLCreativeTabs;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
@@ -318,7 +318,7 @@ public class InfinitySword extends ItemSword implements ICosmicRenderItem {
                     event.toolTip.set(
                         x,
                         EnumChatFormatting.BLUE + "+"
-                            + TextUtils.makeFabulous(TextLocalization.Damage_InfinitySword)
+                            + AnimatedText.INFINITY_SWORD
                             + " "
                             + EnumChatFormatting.BLUE
                             + StatCollector.translateToLocal("attribute.name.generic.attackDamage"));

@@ -25,7 +25,6 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
 
 import bartworks.util.BWUtil;
@@ -131,7 +130,7 @@ public class Digester extends GTMMultiMachineBase<Digester> implements ISurvival
             .addOutputBus(TextLocalization.Tooltip_Digester_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_Digester_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_Digester_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
+            .toolTipFinisher();
         return tt;
     }
 

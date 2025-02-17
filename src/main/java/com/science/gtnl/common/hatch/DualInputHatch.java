@@ -8,7 +8,6 @@ import java.util.Optional;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.StatCollector;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidTankInfo;
@@ -22,7 +21,6 @@ import com.gtnewhorizons.modularui.common.fluid.FluidStackTank;
 import com.gtnewhorizons.modularui.common.widget.FluidSlotWidget;
 import com.gtnewhorizons.modularui.common.widget.SlotWidget;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -101,8 +99,7 @@ public class DualInputHatch extends MTEHatchInputBus implements IAddUIWidgets, I
             aNameRegional,
             aTier,
             aTier * aTier + 1,
-            new String[] { TextLocalization.Tooltip_DualInputHatch_00, "", "",
-                StatCollector.translateToLocal("GT5U.MBTT.Mod") + TextUtils.SCIENCE_NOT_LEISURE });
+            new String[] { TextLocalization.Tooltip_DualInputHatch_00, "", "" });
         this.mStoredFluid = new FluidStack[aTier];
         this.fluidTanks = new FluidStackTank[aTier];
         this.mCapacityPer = getCapacityPerTank(aTier);

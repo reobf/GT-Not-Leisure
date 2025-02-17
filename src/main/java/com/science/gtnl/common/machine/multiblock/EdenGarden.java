@@ -66,7 +66,6 @@ import com.gtnewhorizons.modularui.common.widget.SlotWidget;
 import com.gtnewhorizons.modularui.common.widget.TextWidget;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.EdenGardenManager.EIGBucket;
 import com.science.gtnl.common.machine.multiMachineClasses.EdenGardenManager.EIGDropTable;
 import com.science.gtnl.common.machine.multiMachineClasses.EdenGardenManager.EIGDynamicInventory;
@@ -231,7 +230,7 @@ public class EdenGarden extends MultiMachineBase<EdenGarden> {
             .addInputHatch(TextLocalization.Tooltip_EdenGarden_Casing, 1)
             .addEnergyHatch(TextLocalization.Tooltip_EdenGarden_Casing, 1)
             .addMaintenanceHatch(TextLocalization.Tooltip_EdenGarden_Casing, 1)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + "§r X §l§o§e伊甸生态园§f by 茯角");
+            .toolTipFinisher();
         return tt;
     }
 

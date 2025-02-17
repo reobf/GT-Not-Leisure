@@ -24,7 +24,6 @@ import com.gtnewhorizons.modularui.api.screen.ModularWindow;
 import com.gtnewhorizons.modularui.api.screen.UIBuildContext;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
 
 import bartworks.util.BWUtil;
@@ -130,7 +129,7 @@ public class VacuumDryingFurnace extends GTMMultiMachineBase<VacuumDryingFurnace
             .addOutputHatch(TextLocalization.Tooltip_VacuumDryingFurnace_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_VacuumDryingFurnace_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_VacuumDryingFurnace_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
+            .toolTipFinisher();
         return tt;
     }
 

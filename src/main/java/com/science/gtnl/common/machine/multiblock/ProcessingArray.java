@@ -32,7 +32,6 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTNLProcessingArrayManager;
 import com.science.gtnl.common.machine.multiMachineClasses.MultiMachineBase;
 
@@ -135,7 +134,7 @@ public class ProcessingArray extends MultiMachineBase<ProcessingArray> implement
             .addInputHatch(TextLocalization.Tooltip_ProcessingArray_Casing, 1)
             .addOutputBus(TextLocalization.Tooltip_ProcessingArray_Casing, 1)
             .addOutputHatch(TextLocalization.Tooltip_ProcessingArray_Casing, 1)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY + " §rX " + TextUtils.SRP);
+            .toolTipFinisher();
         return tt;
     }
 

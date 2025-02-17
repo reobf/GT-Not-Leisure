@@ -6,7 +6,6 @@ StructuralReconstructionPlan=结构代替计划
 AppliedEnergistics2=应用能源2
 
 Adder=添加模组: 
-Science_Not_Leisure=§4S§6c§ei§2e§bn§9c§de §4N§6o§et §2L§be§9i§ds§4u§6r§ee
 Tooltip_Tectech_Hatch=支持§9Tec§1Tech§r能源仓！
 
 Waila.General.WirelessMode=无线模式
@@ -53,11 +52,19 @@ NinefoldInputHatchUEV=九重输入仓(UEV)
 NinefoldInputHatchUIV=九重输入仓(UIV)
 NinefoldInputHatchUMV=九重输入仓(UMV)
 NinefoldInputHatchUXV=九重输入仓(UXV)
+NinefoldInputHatchMAX=九重输入仓(MAX)
 HumongousNinefoldInputHatch=巨型九重输入仓
 Tooltip_NinefoldInputHatch_00=为多方块机器输入流体
 Tooltip_NinefoldInputHatch_01=容量: 
 Tooltip_NinefoldInputHatch_02_00=可容纳
 Tooltip_NinefoldInputHatch_02_01=种流体
+
+QuadrupleOutputHatchEV=四重输出仓(EV)
+NinefoldOutputHatchEV=九重输出仓(EV)
+Tooltip_DualOutputHatch_00=为多方块机器输出流体
+Tooltip_DualOutputHatch_01=容量: 
+Tooltip_DualOutputHatch_02_00=可容纳
+Tooltip_DualOutputHatch_02_01=种流体
 
 DualInputHatchLV=输入总成(LV)
 DualInputHatchMV=输入总成(MV)
@@ -97,6 +104,8 @@ MetaCasing.15.name=ABS超固态外壳
 MetaCasing.16.name=引力聚焦方块
 MetaCasing.17.name=盖亚稳定力场机械方块
 MetaCasing.18.name=超能核心
+MetaCasing.19.name=化学防护机械方块
+MetaCasing.20.name=超能机械方块
 
 MetaBlock.0.name=测试方块
 MetaBlock.1.name=§d新视野线圈
@@ -413,6 +422,9 @@ Tooltip_Testitem_10=这是§d更加侧重于为原版GTNH添加内容的模组!
 Tooltip_Testitem_11=§f§l如果你遇到了什么问题或者想提出意见，请在Github提交issue
 Tooltip_Testitem_12=本模组添加的机器meta值从21000开始
 Tooltip_Testitem_13=§c§l另外提醒: 不要拿着这个物品右键!
+
+item.KFCFamily.name=疯狂星期四
+Tooltip_KFCFamily_00=§o疯狂星期四, v我50!
 
 item.CrystalSword.name=§d双锋裂界之剑
 Tooltip_CrystalSword_00=§8§o锋刃所向，裂界无阻；剑影所至，敌影无存。
@@ -1464,7 +1476,7 @@ Tooltip_WhiteNightGenerator_00=§f§l§o起来吧，我的仆从，欢唱着迎�
 Tooltip_WhiteNightGenerator_01=§r对大面积的实体造成伤害并发电, 实体被造成伤害次数过多将会§c直接击杀
 Tooltip_WhiteNightGenerator_02=§r如果同一种实体类型的被造成伤害次数过多将会直接跳过这种实体!
 Tooltip_WhiteNightGenerator_03=§r血量低于一定值将会被§c直接击杀
-Tooltip_WhiteNightGenerator_04=§r并对当前维度的玩家造成一次 §c5*实体击杀数量 §r的魔法伤害并施加若干debuff
+Tooltip_WhiteNightGenerator_04=§r并对机器的所有者造成一次 §c5*实体击杀数量 §r的魔法伤害并施加若干debuff
 Tooltip_WhiteNightGenerator_05=§r此机器有一个§c逆卡巴拉计数器§r, 上限为3, 每次机器运行时减一, 需要维护时会产生红石信号
 Tooltip_WhiteNightGenerator_06=§r红石信号强度将解释为一个从0到15的4位二进制数
 Tooltip_WhiteNightGenerator_07=§r将最低位标记为位4，最高位为位1

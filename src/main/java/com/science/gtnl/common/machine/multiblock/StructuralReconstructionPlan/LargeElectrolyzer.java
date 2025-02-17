@@ -16,7 +16,6 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
 
 import gregtech.api.enums.TAE;
@@ -100,7 +99,7 @@ public class LargeElectrolyzer extends GTMMultiMachineBase<LargeElectrolyzer> im
             .addOutputBus(TextLocalization.Tooltip_LargeElectrolyzer_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeElectrolyzer_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeElectrolyzer_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
+            .toolTipFinisher();
         return tt;
     }
 

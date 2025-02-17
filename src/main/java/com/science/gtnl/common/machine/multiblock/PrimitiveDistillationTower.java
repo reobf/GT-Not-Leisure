@@ -22,7 +22,6 @@ import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.SoundResource;
@@ -179,7 +178,7 @@ public class PrimitiveDistillationTower extends MTESteamMultiBase<PrimitiveDisti
             .addOutputBus(TextLocalization.Tooltip_PrimitiveDistillationTower_Casing_01, 1)
             .addInputHatch(TextLocalization.Tooltip_PrimitiveDistillationTower_Casing_01, 1)
             .addOutputHatch(TextLocalization.Tooltip_PrimitiveDistillationTower_Casing_02, 1)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
+            .toolTipFinisher();
         return tt;
     }
 

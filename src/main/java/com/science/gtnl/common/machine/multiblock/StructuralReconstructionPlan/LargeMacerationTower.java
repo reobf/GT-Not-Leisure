@@ -15,7 +15,6 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
 
 import gregtech.api.enums.Textures;
@@ -98,7 +97,7 @@ public class LargeMacerationTower extends GTMMultiMachineBase<LargeMacerationTow
             .addOutputBus(TextLocalization.Tooltip_LargeMacerationTower_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeMacerationTower_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeMacerationTower_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
+            .toolTipFinisher();
         return tt;
     }
 

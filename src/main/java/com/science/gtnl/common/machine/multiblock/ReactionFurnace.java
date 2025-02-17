@@ -19,7 +19,6 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
 
 import gregtech.api.GregTechAPI;
@@ -111,7 +110,7 @@ public class ReactionFurnace extends GTMMultiMachineBase<ReactionFurnace> implem
             .addOutputBus(TextLocalization.Tooltip_ReactionFurnace_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_ReactionFurnace_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_ReactionFurnace_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.NLC);
+            .toolTipFinisher();
         return tt;
     }
 

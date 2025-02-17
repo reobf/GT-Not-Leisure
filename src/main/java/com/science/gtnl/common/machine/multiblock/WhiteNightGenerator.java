@@ -30,7 +30,6 @@ import com.gtnewhorizons.gtnhintergalactic.block.IGBlocks;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.Utils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.MultiMachineBase;
 
 import galaxyspace.core.register.GSBlocks;
@@ -327,7 +326,7 @@ public class WhiteNightGenerator extends MultiMachineBase<WhiteNightGenerator>
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
             .beginStructureBlock(99, 84, 48, false)
             .addStructureInfo(TextLocalization.Tooltip_RealArtificialStar_02_01)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE);
+            .toolTipFinisher();
         return tt;
     }
 

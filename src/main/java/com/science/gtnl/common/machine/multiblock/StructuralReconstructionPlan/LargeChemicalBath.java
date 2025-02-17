@@ -29,7 +29,6 @@ import com.gtnewhorizons.modularui.api.screen.ModularWindow;
 import com.gtnewhorizons.modularui.api.screen.UIBuildContext;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
 
 import cpw.mods.fml.relauncher.Side;
@@ -139,7 +138,7 @@ public class LargeChemicalBath extends GTMMultiMachineBase<LargeChemicalBath> im
             .addOutputBus(TextLocalization.Tooltip_LargeChemicalBath_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeChemicalBath_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeChemicalBath_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
+            .toolTipFinisher();
         return tt;
     }
 

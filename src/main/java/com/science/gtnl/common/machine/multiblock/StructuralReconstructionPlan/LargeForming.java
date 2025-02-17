@@ -20,7 +20,6 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -104,7 +103,7 @@ public class LargeForming extends GTMMultiMachineBase<LargeForming> implements I
             .addOutputBus(TextLocalization.Tooltip_LargeForming_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeForming_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeForming_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY + " §rX " + TextUtils.SRP);
+            .toolTipFinisher();
         return tt;
     }
 

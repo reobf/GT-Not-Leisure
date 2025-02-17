@@ -29,7 +29,6 @@ import com.gtnewhorizons.modularui.api.screen.ModularWindow;
 import com.gtnewhorizons.modularui.api.screen.UIBuildContext;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -166,7 +165,7 @@ public class LargeCanning extends GTMMultiMachineBase<LargeCanning> implements I
             .addOutputBus(TextLocalization.Tooltip_LargeCanning_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeCanning_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeCanning_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY + " §rX " + TextUtils.SRP);
+            .toolTipFinisher();
         return tt;
     }
 

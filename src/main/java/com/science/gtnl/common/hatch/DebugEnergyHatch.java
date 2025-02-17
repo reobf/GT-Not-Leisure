@@ -9,7 +9,6 @@ import java.util.function.LongSupplier;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.StatCollector;
 import net.minecraftforge.common.util.ForgeDirection;
 
 import com.gtnewhorizons.modularui.api.NumberFormatMUI;
@@ -21,7 +20,6 @@ import com.gtnewhorizons.modularui.common.widget.DrawableWidget;
 import com.gtnewhorizons.modularui.common.widget.TextWidget;
 import com.gtnewhorizons.modularui.common.widget.textfield.NumericWidget;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -54,8 +52,7 @@ public class DebugEnergyHatch extends MTEHatchEnergy implements IAddUIWidgets, I
             aNameRegional,
             aTier,
             new String[] { TextLocalization.Tooltip_DebugEnergyHatch_00, TextLocalization.Tooltip_DebugEnergyHatch_01,
-                TextLocalization.Tooltip_DebugEnergyHatch_02,
-                StatCollector.translateToLocal("GT5U.MBTT.Mod") + TextUtils.SCIENCE_NOT_LEISURE });
+                TextLocalization.Tooltip_DebugEnergyHatch_02 });
         TTUtility.setTier(aTier, this);
     }
 

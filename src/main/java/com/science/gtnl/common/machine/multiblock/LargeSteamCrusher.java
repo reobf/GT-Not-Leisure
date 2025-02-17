@@ -36,7 +36,6 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.Textures;
@@ -379,7 +378,7 @@ public class LargeSteamCrusher extends MTESteamMultiBase<LargeSteamCrusher> impl
             .beginStructureBlock(7, 8, 11, false)
             .addInputBus(TextLocalization.Tooltip_LargeSteamCrusher_Casing, 1)
             .addOutputBus(TextLocalization.Tooltip_LargeSteamCrusher_Casing, 1)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
+            .toolTipFinisher();
         return tt;
     }
 

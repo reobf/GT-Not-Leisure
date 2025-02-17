@@ -2,7 +2,6 @@ package com.science.gtnl.common.hatch;
 
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.StatCollector;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidTankInfo;
@@ -14,7 +13,6 @@ import com.gtnewhorizons.modularui.api.screen.UIBuildContext;
 import com.gtnewhorizons.modularui.common.fluid.FluidStackTank;
 import com.gtnewhorizons.modularui.common.widget.FluidSlotWidget;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -45,8 +43,7 @@ public class NinefoldInputHatch extends MTEHatchMultiInput implements IAddUIWidg
             aTier,
             new String[] { TextLocalization.Tooltip_NinefoldInputHatch_00, "",
                 TextLocalization.Tooltip_NinefoldInputHatch_02_00 + GTUtility.formatNumbers(aSlot)
-                    + TextLocalization.Tooltip_NinefoldInputHatch_02_01,
-                StatCollector.translateToLocal("GT5U.MBTT.Mod") + TextUtils.SCIENCE_NOT_LEISURE });
+                    + TextLocalization.Tooltip_NinefoldInputHatch_02_01 });
         this.mStoredFluid = new FluidStack[aSlot];
         fluidTanks = new FluidStackTank[aSlot];
         mCapacityPer = getCapacityPerTank(aTier, aSlot);

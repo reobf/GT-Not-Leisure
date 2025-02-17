@@ -25,7 +25,6 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Textures;
@@ -80,7 +79,7 @@ public class EnergeticPhotovoltaicPowerStation extends MTEEnhancedMultiBlockBase
             .addInputHatch(TextLocalization.Tooltip_EnergeticPhotovoltaicPowerStation_Casing)
             .addDynamoHatch(TextLocalization.Tooltip_EnergeticPhotovoltaicPowerStation_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_EnergeticPhotovoltaicPowerStation_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
+            .toolTipFinisher();
         return tt;
     }
 

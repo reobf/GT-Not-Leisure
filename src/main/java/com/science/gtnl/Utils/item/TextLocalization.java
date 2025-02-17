@@ -8,9 +8,6 @@ import gregtech.api.util.GTLanguageManager;
 
 public class TextLocalization {
 
-    public static final String Science_Not_Leisure = texter(
-        "§4S§6c§ei§2e§bn§9c§de §4N§6o§et §2L§be§9i§ds§4u§6r§ee",
-        "Science_Not_Leisure");
     public static final String Tooltip_Tectech_Hatch = texter(
         "Support §9Tec§1Tech §rLaser Hatch!",
         "Tooltip_Tectech_Hatch");

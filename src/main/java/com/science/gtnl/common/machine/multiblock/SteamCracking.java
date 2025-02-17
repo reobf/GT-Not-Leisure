@@ -34,7 +34,6 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.recipe.RecipeRegister;
 
 import gregtech.api.GregTechAPI;
@@ -331,7 +330,7 @@ public class SteamCracking extends MTESteamMultiBase<SteamCracking> implements I
             .beginStructureBlock(7, 4, 4, false)
             .addInputBus(TextLocalization.Tooltip_SteamCracking_Casing, 1)
             .addOutputBus(TextLocalization.Tooltip_SteamCracking_Casing, 1)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
+            .toolTipFinisher();
         return tt;
     }
 

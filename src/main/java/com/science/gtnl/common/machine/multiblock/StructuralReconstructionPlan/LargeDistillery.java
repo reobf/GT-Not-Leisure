@@ -30,7 +30,6 @@ import com.gtnewhorizons.modularui.api.screen.ModularWindow;
 import com.gtnewhorizons.modularui.api.screen.UIBuildContext;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
 
 import gregtech.api.enums.SoundResource;
@@ -115,7 +114,7 @@ public class LargeDistillery extends GTMMultiMachineBase<LargeDistillery> implem
             .addOutputBus(TextLocalization.Tooltip_LargeDistillery_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeDistillery_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeDistillery_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
+            .toolTipFinisher();
         return tt;
     }
 

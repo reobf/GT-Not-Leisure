@@ -27,7 +27,6 @@ import com.gtnewhorizons.modularui.api.screen.ModularWindow;
 import com.gtnewhorizons.modularui.api.screen.UIBuildContext;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
 
 import gregtech.api.enums.TAE;
@@ -121,7 +120,7 @@ public class LargeArcSmelter extends GTMMultiMachineBase<LargeArcSmelter> implem
             .addOutputBus(TextLocalization.Tooltip_LargeArcSmelter_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeArcSmelter_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeArcSmelter_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
+            .toolTipFinisher();
         return tt;
     }
 

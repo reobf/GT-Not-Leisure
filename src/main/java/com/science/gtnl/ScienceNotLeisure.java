@@ -8,7 +8,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.science.gtnl.Utils.item.TextHandler;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.block.Casings.Special.CrushingWheelsEventHandler;
 import com.science.gtnl.common.block.ReAvaritia.ExtremeAnvil.AnvilEventHandler;
 import com.science.gtnl.common.block.ReAvaritia.GooeyHandler;
@@ -148,6 +147,5 @@ public class ScienceNotLeisure {
         MinecraftForge.EVENT_BUS.register(new ToolEvents());
         MinecraftForge.EVENT_BUS.register(new CrushingWheelsEventHandler());
         MinecraftForge.EVENT_BUS.register(new AnvilEventHandler());
-        MinecraftForge.EVENT_BUS.register(new TextUtils());
     }
 }

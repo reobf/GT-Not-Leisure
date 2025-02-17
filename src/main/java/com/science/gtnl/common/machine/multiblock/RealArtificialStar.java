@@ -42,7 +42,6 @@ import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.Utils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.Utils.rewrites.GTNL_ItemID;
 import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.common.block.Casings.BasicBlocks;
@@ -535,7 +534,7 @@ public class RealArtificialStar extends MultiMachineBase<RealArtificialStar>
             .addStructureInfo(TextLocalization.Tooltip_RealArtificialStarInfo_12)
             .addStructureInfo(TextLocalization.Tooltip_RealArtificialStarInfo_13)
             .addStructureInfo(TextLocalization.Tooltip_RealArtificialStarInfo_14)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
+            .toolTipFinisher();
         return tt;
     }
 

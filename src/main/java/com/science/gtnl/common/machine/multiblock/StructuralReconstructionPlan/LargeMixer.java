@@ -18,7 +18,6 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
 
 import gregtech.api.enums.Materials;
@@ -103,7 +102,7 @@ public class LargeMixer extends GTMMultiMachineBase<LargeMixer> implements ISurv
             .addOutputBus(TextLocalization.Tooltip_LargeMixer_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeMixer_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeMixer_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
+            .toolTipFinisher();
         return tt;
     }
 

@@ -34,7 +34,6 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -327,7 +326,7 @@ public class LargeSteamOreWasher extends MTESteamMultiBase<LargeSteamOreWasher> 
             .beginStructureBlock(9, 5, 9, false)
             .addInputBus(TextLocalization.Tooltip_LargeSteamOreWasher_Casing, 1)
             .addOutputBus(TextLocalization.Tooltip_LargeSteamOreWasher_Casing, 1)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY + " §rX " + TextUtils.SRP);
+            .toolTipFinisher();
         return tt;
     }
 

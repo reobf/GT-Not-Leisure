@@ -17,7 +17,6 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -111,7 +110,7 @@ public class LargeMaterialPress extends GTMMultiMachineBase<LargeMaterialPress> 
             .addOutputBus(TextLocalization.Tooltip_LargeMaterialPress_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeMaterialPress_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeMaterialPress_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
+            .toolTipFinisher();
         return tt;
     }
 

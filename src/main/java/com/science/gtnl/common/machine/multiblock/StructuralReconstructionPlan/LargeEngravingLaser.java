@@ -16,7 +16,6 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
 
 import bartworks.API.BorosilicateGlass;
@@ -126,7 +125,7 @@ public class LargeEngravingLaser extends GTMMultiMachineBase<LargeEngravingLaser
             .addOutputBus(TextLocalization.Tooltip_LargeEngravingLaser_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeEngravingLaser_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeEngravingLaser_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
+            .toolTipFinisher();
         return tt;
     }
 

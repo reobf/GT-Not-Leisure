@@ -21,7 +21,6 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
 import com.science.gtnl.common.recipe.RecipeRegister;
 
@@ -121,7 +120,7 @@ public class WoodDistillation extends GTMMultiMachineBase<WoodDistillation> impl
             .addOutputBus(TextLocalization.Tooltip_WoodDistillation_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_WoodDistillation_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_WoodDistillation_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
+            .toolTipFinisher();
         return tt;
     }
 

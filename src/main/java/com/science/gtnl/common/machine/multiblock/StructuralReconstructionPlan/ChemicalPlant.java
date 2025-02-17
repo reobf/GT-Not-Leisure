@@ -18,7 +18,6 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
 
 import gregtech.api.enums.HeatingCoilLevel;
@@ -124,7 +123,7 @@ public class ChemicalPlant extends GTMMultiMachineBase<ChemicalPlant> implements
             .addOutputBus(TextLocalization.Tooltip_ChemicalPlant_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_ChemicalPlant_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_ChemicalPlant_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
+            .toolTipFinisher();
         return tt;
     }
 

@@ -16,7 +16,6 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
 
 import gregtech.api.enums.Materials;
@@ -102,7 +101,7 @@ public class LargeHammer extends GTMMultiMachineBase<LargeHammer> implements ISu
             .addOutputBus(TextLocalization.Tooltip_LargeHammer_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeHammer_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeHammer_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY + " §rX " + TextUtils.SRP);
+            .toolTipFinisher();
         return tt;
     }
 

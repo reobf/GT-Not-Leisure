@@ -20,7 +20,6 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.MultiMachineBase;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -130,7 +129,7 @@ public class VacuumFreezer extends MultiMachineBase<VacuumFreezer> implements IS
             .addOutputBus(TextLocalization.Tooltip_VacuumFreezer_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_VacuumFreezer_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_VacuumFreezer_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
+            .toolTipFinisher();
         return tt;
     }
 

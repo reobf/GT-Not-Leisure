@@ -19,7 +19,6 @@ import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 
 import cofh.api.energy.IEnergyContainerItem;
 import gregtech.api.enums.Materials;
@@ -253,7 +252,7 @@ public class EnergyInfuser extends TTMultiblockBase implements IConstructable {
             .addOutputBus(TextLocalization.Tooltip_EnergyInfuser_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_EnergyInfuser_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_EnergyInfuser_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
+            .toolTipFinisher();
         return tt;
     }
 

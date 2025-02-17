@@ -6,14 +6,12 @@ import static gregtech.api.enums.Textures.BlockIcons.OVERLAY_PIPE_IN;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
-import net.minecraft.util.StatCollector;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.gtnewhorizons.modularui.common.widget.FluidSlotWidget;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 
 import gregtech.GTMod;
 import gregtech.api.gui.modularui.GTUIInfos;
@@ -177,8 +175,7 @@ public class HatchCustomFluid extends MTEHatch {
             + (mLockedStack != null ? mLockedStack.getLocalizedName() : TextLocalization.HatchCustomFluid_03)
             + EnumChatFormatting.RESET;
         return new String[] { TextLocalization.HatchCustomFluid_00,
-            TextLocalization.HatchCustomFluid_01 + getCapacity() + "L", aFluidName,
-            StatCollector.translateToLocal("GT5U.MBTT.Mod") + TextUtils.SCIENCE_NOT_LEISURE };
+            TextLocalization.HatchCustomFluid_01 + getCapacity() + "L", aFluidName };
     }
 
     @Override

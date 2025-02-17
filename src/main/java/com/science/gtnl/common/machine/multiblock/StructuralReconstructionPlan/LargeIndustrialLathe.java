@@ -17,7 +17,6 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
 
 import gregtech.api.enums.Materials;
@@ -110,7 +109,7 @@ public class LargeIndustrialLathe extends GTMMultiMachineBase<LargeIndustrialLat
             .addOutputBus(TextLocalization.Tooltip_LargeIndustrialLathe_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeIndustrialLathe_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeIndustrialLathe_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
+            .toolTipFinisher();
         return tt;
     }
 

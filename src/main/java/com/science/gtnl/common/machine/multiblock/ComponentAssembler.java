@@ -29,7 +29,6 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.MultiMachineBase;
 
 import bartworks.API.BorosilicateGlass;
@@ -162,7 +161,7 @@ public class ComponentAssembler extends MultiMachineBase<ComponentAssembler> imp
             .addEnergyHatch(TextLocalization.Tooltip_ComponentAssembler_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_ComponentAssembler_Casing)
             .addInputHatch(TextLocalization.Tooltip_ComponentAssembler_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
+            .toolTipFinisher();
         return tt;
     }
 

@@ -32,7 +32,6 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.recipe.RecipeRegister;
 
 import gregtech.api.enums.Materials;
@@ -95,7 +94,7 @@ public class LargeNaquadahReactor extends TTMultiblockBase implements IConstruct
             .addInputHatch(TextLocalization.Tooltip_LargeNaquadahReactor_Casing)
             .addDynamoHatch(TextLocalization.Tooltip_LargeNaquadahReactor_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeNaquadahReactor_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
+            .toolTipFinisher();
         return tt;
     }
 

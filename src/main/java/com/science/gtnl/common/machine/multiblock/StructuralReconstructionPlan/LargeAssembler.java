@@ -16,7 +16,6 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
 
 import bartworks.API.BorosilicateGlass;
@@ -119,7 +118,7 @@ public class LargeAssembler extends GTMMultiMachineBase<LargeAssembler> implemen
             .addOutputBus(TextLocalization.Tooltip_LargeAssembler_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeAssembler_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeAssembler_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
+            .toolTipFinisher();
         return tt;
     }
 

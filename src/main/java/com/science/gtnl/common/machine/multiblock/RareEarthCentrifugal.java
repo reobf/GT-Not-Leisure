@@ -15,7 +15,6 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.MultiMachineBase;
 import com.science.gtnl.common.recipe.RecipeRegister;
 
@@ -117,7 +116,7 @@ public class RareEarthCentrifugal extends MultiMachineBase<RareEarthCentrifugal>
             .addOutputBus(TextLocalization.Tooltip_RareEarthCentrifugal_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_RareEarthCentrifugal_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_RareEarthCentrifugal_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
+            .toolTipFinisher();
         return tt;
     }
 

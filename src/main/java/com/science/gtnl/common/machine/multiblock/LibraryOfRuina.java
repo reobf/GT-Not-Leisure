@@ -25,7 +25,6 @@ import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.gtnewhorizons.gtnhintergalactic.block.IGBlocks;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
 import com.science.gtnl.common.recipe.RecipeRegister;
 
@@ -124,7 +123,7 @@ public class LibraryOfRuina extends GTMMultiMachineBase<LibraryOfRuina> implemen
             .addOutputBus(TextLocalization.Tooltip_LibraryOfRuina_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LibraryOfRuina_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LibraryOfRuina_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.NLC);
+            .toolTipFinisher();
         return tt;
     }
 

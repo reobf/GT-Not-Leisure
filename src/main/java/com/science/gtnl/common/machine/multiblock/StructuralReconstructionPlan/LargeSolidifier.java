@@ -25,7 +25,6 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.GTNLItemList;
 
 import ggfab.api.GGFabRecipeMaps;
@@ -265,7 +264,7 @@ public class LargeSolidifier extends MTEExtendedPowerMultiBlockBase<LargeSolidif
             .addOutputBus(TextLocalization.Tooltip_LargeSolidifier_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeSolidifier_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeSolidifier_Casing)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
+            .toolTipFinisher();
         return tt;
     }
 

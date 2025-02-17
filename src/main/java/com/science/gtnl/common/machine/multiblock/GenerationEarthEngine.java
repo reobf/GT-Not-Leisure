@@ -18,7 +18,6 @@ import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.gtnewhorizons.gtnhintergalactic.block.IGBlocks;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.recipe.RecipeRegister;
 
 import crazypants.enderio.EnderIO;
@@ -102,7 +101,7 @@ public class GenerationEarthEngine extends GTPPMultiBlockBase<GenerationEarthEng
             .addOutputHatch(TextLocalization.Tooltip_GenerationEarthEngine_Casing, 1)
             .addEnergyHatch(TextLocalization.Tooltip_GenerationEarthEngine_Casing, 1)
             .addMaintenanceHatch(TextLocalization.Tooltip_GenerationEarthEngine_Casing, 1)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE);
+            .toolTipFinisher();
         return tt;
     }
 

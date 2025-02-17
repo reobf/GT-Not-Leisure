@@ -21,7 +21,6 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.hatch.HatchCustomFluid;
 import com.science.gtnl.common.machine.multiMachineClasses.MultiMachineBase;
 
@@ -108,7 +107,7 @@ public class BlazeBlastFurnace extends MultiMachineBase<BlazeBlastFurnace> imple
                 TextLocalization.FluidBlazeInputHatch,
                 TextLocalization.Tooltip_BlazeBlastFurnace_Casing_00,
                 1)
-            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY + " §rX " + TextUtils.SRP);
+            .toolTipFinisher();
         return tt;
     }
 

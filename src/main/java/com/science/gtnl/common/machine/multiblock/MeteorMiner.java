@@ -41,7 +41,6 @@ import com.gtnewhorizons.modularui.api.screen.ModularWindow;
 import com.gtnewhorizons.modularui.api.screen.UIBuildContext;
 import com.gtnewhorizons.modularui.common.widget.ButtonWidget;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.common.block.Render.TileEntityLaserBeacon;
 
@@ -338,11 +337,7 @@ public class MeteorMiner extends MTEEnhancedMultiBlockBase<MeteorMiner> implemen
             .addOutputBus(TextLocalization.Tooltip_MeteorMiner_Casing_02_02, 3)
             .addEnergyHatch(TextLocalization.Tooltip_MeteorMiner_Casing_02_02, 3)
             .addMaintenanceHatch(TextLocalization.Tooltip_MeteorMiner_Casing_02_02, 3)
-            .toolTipFinisher(
-                TextUtils.SCIENCE_NOT_LEISURE + " X Author: "
-                    + EnumChatFormatting.AQUA
-                    + EnumChatFormatting.BOLD
-                    + "Totto");
+            .toolTipFinisher();
         return tt;
     }
 

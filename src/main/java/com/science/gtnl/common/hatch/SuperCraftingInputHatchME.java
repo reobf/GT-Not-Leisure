@@ -28,7 +28,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.EnumChatFormatting;
-import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.common.util.ForgeDirection;
@@ -51,7 +50,6 @@ import com.gtnewhorizons.modularui.common.widget.Scrollable;
 import com.gtnewhorizons.modularui.common.widget.SlotGroup;
 import com.gtnewhorizons.modularui.common.widget.SlotWidget;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.Utils.item.TextUtils;
 
 import appeng.api.AEApi;
 import appeng.api.implementations.ICraftingPatternItem;
@@ -355,8 +353,7 @@ public class SuperCraftingInputHatchME extends MTEHatchInputBus
                 TextLocalization.Tooltip_SuperCraftingInputHatchME_02,
                 supportFluids ? TextLocalization.Tooltip_SuperCraftingInputHatchME_03_00
                     : TextLocalization.Tooltip_SuperCraftingInputHatchME_03_01,
-                TextLocalization.Tooltip_SuperCraftingInputHatchME_04,
-                StatCollector.translateToLocal("GT5U.MBTT.Mod") + TextUtils.SCIENCE_NOT_LEISURE });
+                TextLocalization.Tooltip_SuperCraftingInputHatchME_04 });
         disableSort = true;
         this.supportFluids = supportFluids;
     }
