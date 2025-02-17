@@ -20,25 +20,16 @@ public class TextUtils {
     public static final String SQY = "§r§6§l§o犰狳重工";
     public static final String NLC = "§r X §l§o§f年§6轮§f新§6城§f计§6划 §r§fby 咸到老时变成鱼";
 
-    private static final EnumChatFormatting[] fabulousness = new EnumChatFormatting[] { EnumChatFormatting.RED,
+    private static final EnumChatFormatting[] colors = new EnumChatFormatting[] { EnumChatFormatting.RED,
         EnumChatFormatting.GOLD, EnumChatFormatting.YELLOW, EnumChatFormatting.GREEN, EnumChatFormatting.AQUA,
         EnumChatFormatting.BLUE, EnumChatFormatting.LIGHT_PURPLE };
 
     public static String makeFabulous(String input) {
-        return ludicrousFormatting(input, fabulousness, 80.0, 1, 1);
+        return ludicrousFormatting(input, colors, 80.0, 1, 1);
     }
 
-    private static final EnumChatFormatting[][] color = new EnumChatFormatting[][] {
-        { EnumChatFormatting.BOLD, EnumChatFormatting.UNDERLINE, EnumChatFormatting.RED },
-        { EnumChatFormatting.BOLD, EnumChatFormatting.UNDERLINE, EnumChatFormatting.GOLD },
-        { EnumChatFormatting.BOLD, EnumChatFormatting.UNDERLINE, EnumChatFormatting.YELLOW },
-        { EnumChatFormatting.BOLD, EnumChatFormatting.UNDERLINE, EnumChatFormatting.GREEN },
-        { EnumChatFormatting.BOLD, EnumChatFormatting.UNDERLINE, EnumChatFormatting.AQUA },
-        { EnumChatFormatting.BOLD, EnumChatFormatting.UNDERLINE, EnumChatFormatting.BLUE },
-        { EnumChatFormatting.BOLD, EnumChatFormatting.UNDERLINE, EnumChatFormatting.LIGHT_PURPLE } };
-
     public static String makeColor(String input) {
-        return ludicrousFormatting(input, color, 100.0, 1, 1);
+        return ludicrousFormatting(input, colors, 100.0, 1, 1);
     }
 
     private static final EnumChatFormatting[] sanic = new EnumChatFormatting[] { BLUE, BLUE, BLUE, BLUE, WHITE, BLUE,
@@ -71,37 +62,6 @@ public class TextUtils {
             int col = ((i * posstep) + colours.length - offset) % colours.length;
 
             sb.append(colours[col].toString());
-            sb.append(c);
-        }
-
-        return sb.toString();
-    }
-
-    public static String ludicrousFormatting(String input, EnumChatFormatting[][] colourSets, double delay, int step,
-        int posstep) {
-        if (Minecraft.getMinecraft() == null) {
-            return input;
-        }
-
-        StringBuilder sb = new StringBuilder(input.length() * 3);
-        if (delay <= 0) {
-            delay = 0.001;
-        }
-
-        int offset = (int) Math.floor(
-            Minecraft.getMinecraft()
-                .getSystemTime() / delay)
-            % colourSets.length;
-
-        for (int i = 0; i < input.length(); i++) {
-            char c = input.charAt(i);
-
-            int colIndex = ((i * posstep) + colourSets.length - offset) % colourSets.length;
-            EnumChatFormatting[] selectedColours = colourSets[colIndex];
-
-            for (EnumChatFormatting colour : selectedColours) {
-                sb.append(colour.toString());
-            }
             sb.append(c);
         }
 
