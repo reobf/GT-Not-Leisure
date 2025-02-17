@@ -215,8 +215,7 @@ public class Digester extends GTMMultiMachineBase<Digester> implements ISurvival
             @NotNull
             @Override
             public OverclockCalculator createOverclockCalculator(@NotNull GTRecipe recipe) {
-                return OverclockCalculator.ofNoOverclock(recipe)
-                    .setMachineHeat(Digester.this.mHeatingCapacity)
+                return super.createOverclockCalculator(recipe).setMachineHeat(Digester.this.mHeatingCapacity)
                     .setHeatOC(true)
                     .setHeatDiscount(true)
                     .enablePerfectOC()

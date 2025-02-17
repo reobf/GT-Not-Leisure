@@ -225,8 +225,7 @@ public class HandOfJohnDavisonRockefeller extends MultiMachineBase<HandOfJohnDav
             @NotNull
             @Override
             public OverclockCalculator createOverclockCalculator(@NotNull GTRecipe recipe) {
-                return OverclockCalculator.ofNoOverclock(recipe)
-                    .setEUtDiscount(1 - EUtDiscount / 100.0)
+                return super.createOverclockCalculator(recipe).setEUtDiscount(1 - EUtDiscount / 100.0)
                     .setSpeedBoost(1 - SpeedBoost / 50.0);
             }
 

@@ -225,8 +225,7 @@ public class ComponentAssembler extends MultiMachineBase<ComponentAssembler> imp
             @Override
             @Nonnull
             protected OverclockCalculator createOverclockCalculator(@NotNull GTRecipe recipe) {
-                return OverclockCalculator.ofNoOverclock(recipe)
-                    .setEUtDiscount(0.8)
+                return super.createOverclockCalculator(recipe).setEUtDiscount(0.8)
                     .setSpeedBoost(0.5);
             }
         }.setMaxParallelSupplier(this::getMaxParallelRecipes);

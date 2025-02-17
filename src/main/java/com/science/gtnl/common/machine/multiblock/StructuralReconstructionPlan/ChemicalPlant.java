@@ -189,7 +189,7 @@ public class ChemicalPlant extends GTMMultiMachineBase<ChemicalPlant> implements
             @NotNull
             @Override
             public OverclockCalculator createOverclockCalculator(@NotNull GTRecipe recipe) {
-                return OverclockCalculator.ofNoOverclock(recipe)
+                return super.createOverclockCalculator(recipe).setNoOverclock(false)
                     .setEUtDiscount(1 + (getCoilLevel().getTier() - 1) * 0.05)
                     .setSpeedBoost(1 - (getCoilLevel().getTier() - 1) * 0.05);
             }

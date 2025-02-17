@@ -239,8 +239,7 @@ public class Incubator extends MultiMachineBase<Incubator> implements ISurvivalC
             @NotNull
             @Override
             public OverclockCalculator createOverclockCalculator(@NotNull GTRecipe recipe) {
-                return OverclockCalculator.ofNoOverclock(recipe)
-                    .setEUtDiscount(0.8)
+                return super.createOverclockCalculator(recipe).setEUtDiscount(0.8)
                     .setSpeedBoost(0.6);
             }
 

@@ -215,8 +215,7 @@ public class LargeCircuitAssembler extends MultiMachineBase<LargeCircuitAssemble
             @NotNull
             @Override
             public OverclockCalculator createOverclockCalculator(@NotNull GTRecipe recipe) {
-                return OverclockCalculator.ofNoOverclock(recipe)
-                    .setEUtDiscount(0.8)
+                return super.createOverclockCalculator(recipe).setEUtDiscount(0.8)
                     .setSpeedBoost(0.6);
             }
         }.setMaxParallelSupplier(this::getMaxParallelRecipes);
