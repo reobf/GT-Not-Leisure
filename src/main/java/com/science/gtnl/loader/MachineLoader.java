@@ -635,7 +635,8 @@ public class MachineLoader {
     }
 
     public static void run() {
-        Logger.INFO("GTNL Content | Registering Custom MTE Hatches.");
+        Logger.INFO("GTNL Content | Registering MTE Block Machine.");
         registerMTEHatch();
+        loadMachines();
     }
 }

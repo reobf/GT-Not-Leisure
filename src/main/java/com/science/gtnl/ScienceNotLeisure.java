@@ -87,7 +87,6 @@ public class ScienceNotLeisure {
     public void init(FMLInitializationEvent event) {
         proxy.init(event);
         new LazyStaticsInitLoader().initStaticsOnInit();
-        MachineLoader.loadMachines();
         MachineLoader.run();
     }
 
