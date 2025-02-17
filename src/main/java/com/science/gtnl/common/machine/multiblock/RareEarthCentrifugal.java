@@ -117,7 +117,7 @@ public class RareEarthCentrifugal extends MultiMachineBase<RareEarthCentrifugal>
             .addOutputBus(TextLocalization.Tooltip_RareEarthCentrifugal_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_RareEarthCentrifugal_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_RareEarthCentrifugal_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
         return tt;
     }
 

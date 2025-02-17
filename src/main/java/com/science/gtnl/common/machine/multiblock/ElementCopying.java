@@ -103,7 +103,7 @@ public class ElementCopying extends GTMMultiMachineBase<ElementCopying> implemen
             .addOutputBus(TextLocalization.Tooltip_ElementCopying_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_ElementCopying_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_ElementCopying_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
         return tt;
     }
 

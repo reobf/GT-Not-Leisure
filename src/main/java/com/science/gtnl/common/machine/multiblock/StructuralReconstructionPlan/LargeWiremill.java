@@ -3,7 +3,6 @@ package com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan;
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
 import static gregtech.api.GregTechAPI.sBlockCasings2;
 import static gregtech.api.enums.HatchElement.*;
-import static gregtech.api.enums.Textures.BlockIcons.*;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
 import static gtPlusPlus.core.block.ModBlocks.blockCasings3Misc;
 import static gtPlusPlus.xmod.gregtech.common.blocks.textures.TexturesGtBlock.oMCDIndustrialWireMill;
@@ -100,7 +99,7 @@ public class LargeWiremill extends GTMMultiMachineBase<LargeWiremill> implements
             .addOutputBus(TextLocalization.Tooltip_LargeWiremill_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeWiremill_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeWiremill_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
         return tt;
     }
 

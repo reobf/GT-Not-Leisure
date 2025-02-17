@@ -124,7 +124,7 @@ public class LibraryOfRuina extends GTMMultiMachineBase<LibraryOfRuina> implemen
             .addOutputBus(TextLocalization.Tooltip_LibraryOfRuina_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LibraryOfRuina_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LibraryOfRuina_Casing)
-            .toolTipFinisher(TextUtils.SNL + "§r X §l§o§f年§6轮§f新§6城§f计§6划 §r§fby 咸到老时变成鱼");
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.NLC);
         return tt;
     }
 

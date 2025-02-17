@@ -111,7 +111,7 @@ public class ElectricImplosionCompressor extends GTMMultiMachineBase<ElectricImp
             .addOutputBus(TextLocalization.Tooltip_ElectricImplosionCompressor_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_ElectricImplosionCompressor_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_ElectricImplosionCompressor_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY + " §rX " + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY + " §rX " + TextUtils.SRP);
         return tt;
     }
 

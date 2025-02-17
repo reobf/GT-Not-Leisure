@@ -265,7 +265,7 @@ public class LargeSolidifier extends MTEExtendedPowerMultiBlockBase<LargeSolidif
             .addOutputBus(TextLocalization.Tooltip_LargeSolidifier_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeSolidifier_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeSolidifier_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
         return tt;
     }
 

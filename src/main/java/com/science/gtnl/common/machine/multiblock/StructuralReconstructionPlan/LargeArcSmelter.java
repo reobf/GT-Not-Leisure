@@ -121,7 +121,7 @@ public class LargeArcSmelter extends GTMMultiMachineBase<LargeArcSmelter> implem
             .addOutputBus(TextLocalization.Tooltip_LargeArcSmelter_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeArcSmelter_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeArcSmelter_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
         return tt;
     }
 

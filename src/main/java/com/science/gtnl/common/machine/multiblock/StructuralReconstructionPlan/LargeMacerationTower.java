@@ -98,7 +98,7 @@ public class LargeMacerationTower extends GTMMultiMachineBase<LargeMacerationTow
             .addOutputBus(TextLocalization.Tooltip_LargeMacerationTower_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeMacerationTower_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeMacerationTower_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
         return tt;
     }
 

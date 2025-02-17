@@ -6,6 +6,7 @@ import static gregtech.api.enums.Textures.BlockIcons.OVERLAY_PIPE_IN;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.util.StatCollector;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
@@ -177,7 +178,7 @@ public class HatchCustomFluid extends MTEHatch {
             + EnumChatFormatting.RESET;
         return new String[] { TextLocalization.HatchCustomFluid_00,
             TextLocalization.HatchCustomFluid_01 + getCapacity() + "L", aFluidName,
-            TextLocalization.Adder + TextUtils.SCIENCE_NOT_LEISURE };
+            StatCollector.translateToLocal("GT5U.MBTT.Mod") + TextUtils.SCIENCE_NOT_LEISURE };
     }
 
     @Override

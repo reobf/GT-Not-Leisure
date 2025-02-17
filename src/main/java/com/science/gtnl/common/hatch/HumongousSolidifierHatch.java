@@ -1,6 +1,7 @@
 package com.science.gtnl.common.hatch;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.StatCollector;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidTankInfo;
@@ -87,7 +88,7 @@ public class HumongousSolidifierHatch extends MTEHatchSolidifier {
     public String[] getDescription() {
         return new String[] { TextLocalization.Tooltip_HumongousSolidifierHatch_00,
             TextLocalization.Tooltip_HumongousSolidifierHatch_01,
-            TextLocalization.Adder + TextUtils.SCIENCE_NOT_LEISURE };
+            StatCollector.translateToLocal("GT5U.MBTT.Mod") + TextUtils.SCIENCE_NOT_LEISURE };
     }
 
     @Override

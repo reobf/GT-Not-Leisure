@@ -120,7 +120,7 @@ public class LargeCutter extends GTMMultiMachineBase<LargeCutter> implements ISu
             .addOutputBus(TextLocalization.Tooltip_LargeCutter_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeCutter_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeCutter_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
         return tt;
     }
 

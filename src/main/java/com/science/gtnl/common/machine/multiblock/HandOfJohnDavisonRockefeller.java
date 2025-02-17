@@ -134,7 +134,7 @@ public class HandOfJohnDavisonRockefeller extends MultiMachineBase<HandOfJohnDav
             .addInputBus(TextLocalization.Tooltip_HandOfJohnDavisonRockefeller_Casing)
             .addOutputBus(TextLocalization.Tooltip_HandOfJohnDavisonRockefeller_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_HandOfJohnDavisonRockefeller_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
         return tt;
     }
 

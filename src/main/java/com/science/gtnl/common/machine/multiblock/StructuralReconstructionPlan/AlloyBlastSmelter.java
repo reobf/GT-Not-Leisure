@@ -110,7 +110,7 @@ public class AlloyBlastSmelter extends GTMMultiMachineBase<AlloyBlastSmelter> im
             .addOutputBus(TextLocalization.Tooltip_AlloyBlastSmelter_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_AlloyBlastSmelter_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_AlloyBlastSmelter_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
         return tt;
     }
 

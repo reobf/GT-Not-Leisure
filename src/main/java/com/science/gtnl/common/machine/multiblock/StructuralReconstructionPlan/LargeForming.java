@@ -104,7 +104,7 @@ public class LargeForming extends GTMMultiMachineBase<LargeForming> implements I
             .addOutputBus(TextLocalization.Tooltip_LargeForming_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeForming_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeForming_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY + " §rX " + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY + " §rX " + TextUtils.SRP);
         return tt;
     }
 

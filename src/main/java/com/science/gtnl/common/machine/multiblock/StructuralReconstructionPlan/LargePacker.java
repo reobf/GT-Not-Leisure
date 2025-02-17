@@ -117,7 +117,7 @@ public class LargePacker extends GTMMultiMachineBase<LargePacker> implements ISu
             .addOutputBus(TextLocalization.Tooltip_LargePacker_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargePacker_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargePacker_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
         return tt;
     }
 

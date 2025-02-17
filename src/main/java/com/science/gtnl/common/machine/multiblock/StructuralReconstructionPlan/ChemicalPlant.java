@@ -124,7 +124,7 @@ public class ChemicalPlant extends GTMMultiMachineBase<ChemicalPlant> implements
             .addOutputBus(TextLocalization.Tooltip_ChemicalPlant_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_ChemicalPlant_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_ChemicalPlant_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
         return tt;
     }
 

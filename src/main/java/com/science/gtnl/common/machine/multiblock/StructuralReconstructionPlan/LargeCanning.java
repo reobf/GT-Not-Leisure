@@ -166,7 +166,7 @@ public class LargeCanning extends GTMMultiMachineBase<LargeCanning> implements I
             .addOutputBus(TextLocalization.Tooltip_LargeCanning_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeCanning_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeCanning_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY + " §rX " + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY + " §rX " + TextUtils.SRP);
         return tt;
     }
 

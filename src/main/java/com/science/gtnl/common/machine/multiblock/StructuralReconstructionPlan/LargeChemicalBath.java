@@ -139,7 +139,7 @@ public class LargeChemicalBath extends GTMMultiMachineBase<LargeChemicalBath> im
             .addOutputBus(TextLocalization.Tooltip_LargeChemicalBath_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeChemicalBath_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeChemicalBath_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
         return tt;
     }
 

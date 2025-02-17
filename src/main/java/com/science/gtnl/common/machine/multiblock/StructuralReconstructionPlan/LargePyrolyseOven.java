@@ -102,7 +102,7 @@ public class LargePyrolyseOven extends GTMMultiMachineBase<LargePyrolyseOven> im
             .addOutputBus(TextLocalization.Tooltip_LargePyrolyseOven_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargePyrolyseOven_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargePyrolyseOven_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY + " §rX " + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY + " §rX " + TextUtils.SRP);
         return tt;
     }
 

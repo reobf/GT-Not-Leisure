@@ -141,7 +141,7 @@ public class Incubator extends MultiMachineBase<Incubator> implements ISurvivalC
             .addInputHatch(TextLocalization.Tooltip_Incubator_Casing, 1)
             .addOutputHatch(TextLocalization.Tooltip_Incubator_Casing, 1)
             .addEnergyHatch(TextLocalization.Tooltip_Incubator_Casing, 1)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY + " §rX " + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY + " §rX " + TextUtils.SRP);
         return tt;
     }
 

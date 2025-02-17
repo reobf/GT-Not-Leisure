@@ -135,7 +135,7 @@ public class ProcessingArray extends MultiMachineBase<ProcessingArray> implement
             .addInputHatch(TextLocalization.Tooltip_ProcessingArray_Casing, 1)
             .addOutputBus(TextLocalization.Tooltip_ProcessingArray_Casing, 1)
             .addOutputHatch(TextLocalization.Tooltip_ProcessingArray_Casing, 1)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY + " §rX " + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY + " §rX " + TextUtils.SRP);
         return tt;
     }
 

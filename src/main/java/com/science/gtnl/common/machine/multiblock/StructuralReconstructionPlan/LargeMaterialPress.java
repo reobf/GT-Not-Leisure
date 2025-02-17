@@ -111,7 +111,7 @@ public class LargeMaterialPress extends GTMMultiMachineBase<LargeMaterialPress> 
             .addOutputBus(TextLocalization.Tooltip_LargeMaterialPress_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeMaterialPress_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeMaterialPress_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
         return tt;
     }
 

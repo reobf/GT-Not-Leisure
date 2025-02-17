@@ -110,7 +110,7 @@ public class LargeIndustrialLathe extends GTMMultiMachineBase<LargeIndustrialLat
             .addOutputBus(TextLocalization.Tooltip_LargeIndustrialLathe_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeIndustrialLathe_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeIndustrialLathe_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
         return tt;
     }
 

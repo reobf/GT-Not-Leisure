@@ -121,7 +121,7 @@ public class LargeCentrifuge extends GTMMultiMachineBase<LargeCentrifuge> implem
             .addOutputBus(TextLocalization.Tooltip_LargeCentrifuge_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeCentrifuge_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeCentrifuge_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
         return tt;
     }
 

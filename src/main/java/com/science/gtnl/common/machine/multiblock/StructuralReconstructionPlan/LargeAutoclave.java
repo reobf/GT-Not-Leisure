@@ -101,7 +101,7 @@ public class LargeAutoclave extends GTMMultiMachineBase<LargeAutoclave> implemen
             .addOutputBus(TextLocalization.Tooltip_LargeAutoclave_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeAutoclave_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeAutoclave_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
         return tt;
     }
 

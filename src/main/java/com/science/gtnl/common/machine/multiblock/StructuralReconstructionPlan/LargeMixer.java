@@ -103,7 +103,7 @@ public class LargeMixer extends GTMMultiMachineBase<LargeMixer> implements ISurv
             .addOutputBus(TextLocalization.Tooltip_LargeMixer_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeMixer_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeMixer_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
         return tt;
     }
 

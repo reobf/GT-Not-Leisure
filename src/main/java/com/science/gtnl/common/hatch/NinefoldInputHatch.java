@@ -2,6 +2,7 @@ package com.science.gtnl.common.hatch;
 
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.StatCollector;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidTankInfo;
@@ -45,7 +46,7 @@ public class NinefoldInputHatch extends MTEHatchMultiInput implements IAddUIWidg
             new String[] { TextLocalization.Tooltip_NinefoldInputHatch_00, "",
                 TextLocalization.Tooltip_NinefoldInputHatch_02_00 + GTUtility.formatNumbers(aSlot)
                     + TextLocalization.Tooltip_NinefoldInputHatch_02_01,
-                TextLocalization.Adder + TextUtils.SCIENCE_NOT_LEISURE });
+                StatCollector.translateToLocal("GT5U.MBTT.Mod") + TextUtils.SCIENCE_NOT_LEISURE });
         this.mStoredFluid = new FluidStack[aSlot];
         fluidTanks = new FluidStackTank[aSlot];
         mCapacityPer = getCapacityPerTank(aTier, aSlot);

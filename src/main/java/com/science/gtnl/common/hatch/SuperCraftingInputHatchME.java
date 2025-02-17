@@ -28,6 +28,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.common.util.ForgeDirection;
@@ -355,7 +356,7 @@ public class SuperCraftingInputHatchME extends MTEHatchInputBus
                 supportFluids ? TextLocalization.Tooltip_SuperCraftingInputHatchME_03_00
                     : TextLocalization.Tooltip_SuperCraftingInputHatchME_03_01,
                 TextLocalization.Tooltip_SuperCraftingInputHatchME_04,
-                TextLocalization.Adder + TextUtils.SCIENCE_NOT_LEISURE });
+                StatCollector.translateToLocal("GT5U.MBTT.Mod") + TextUtils.SCIENCE_NOT_LEISURE });
         disableSort = true;
         this.supportFluids = supportFluids;
     }

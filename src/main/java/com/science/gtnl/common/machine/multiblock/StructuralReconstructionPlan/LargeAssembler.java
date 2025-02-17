@@ -119,7 +119,7 @@ public class LargeAssembler extends GTMMultiMachineBase<LargeAssembler> implemen
             .addOutputBus(TextLocalization.Tooltip_LargeAssembler_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeAssembler_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeAssembler_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
         return tt;
     }
 

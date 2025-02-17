@@ -130,7 +130,7 @@ public class VacuumDryingFurnace extends GTMMultiMachineBase<VacuumDryingFurnace
             .addOutputHatch(TextLocalization.Tooltip_VacuumDryingFurnace_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_VacuumDryingFurnace_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_VacuumDryingFurnace_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
         return tt;
     }
 

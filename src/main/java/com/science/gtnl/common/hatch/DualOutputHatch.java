@@ -5,6 +5,7 @@ import static gregtech.api.enums.Textures.BlockIcons.OVERLAY_INPUT_HATCH_2x2;
 import javax.annotation.Nonnull;
 
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.StatCollector;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.FluidStack;
 
@@ -41,7 +42,7 @@ public class DualOutputHatch extends MTEHatchOutput implements IAddUIWidgets {
             new String[] { TextLocalization.Tooltip_DualOutputHatch_00, "",
                 TextLocalization.Tooltip_DualOutputHatch_02_00 + GTUtility.formatNumbers(aSlot)
                     + TextLocalization.Tooltip_DualOutputHatch_02_01,
-                TextLocalization.Adder + TextUtils.SCIENCE_NOT_LEISURE },
+                StatCollector.translateToLocal("GT5U.MBTT.Mod") + TextUtils.SCIENCE_NOT_LEISURE },
             4);
         this.mStoredFluid = new FluidStack[aSlot];
         fluidTanks = new FluidStackTank[aSlot];

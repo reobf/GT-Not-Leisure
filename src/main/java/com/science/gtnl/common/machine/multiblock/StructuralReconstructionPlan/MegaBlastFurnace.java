@@ -138,7 +138,7 @@ public class MegaBlastFurnace extends GTMMultiMachineBase<MegaBlastFurnace> impl
             .addEnergyHatch(TextLocalization.Tooltip_MegaBlastFurnace_Casing_00)
             .addMaintenanceHatch(TextLocalization.Tooltip_MegaBlastFurnace_Casing_00)
             .addMufflerHatch(TextLocalization.Tooltip_MegaBlastFurnace_Casing_02)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY + " §rX " + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY + " §rX " + TextUtils.SRP);
         return tt;
     }
 

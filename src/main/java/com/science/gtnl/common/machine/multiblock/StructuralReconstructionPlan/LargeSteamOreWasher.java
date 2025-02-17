@@ -327,7 +327,7 @@ public class LargeSteamOreWasher extends MTESteamMultiBase<LargeSteamOreWasher> 
             .beginStructureBlock(9, 5, 9, false)
             .addInputBus(TextLocalization.Tooltip_LargeSteamOreWasher_Casing, 1)
             .addOutputBus(TextLocalization.Tooltip_LargeSteamOreWasher_Casing, 1)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY + " §rX " + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY + " §rX " + TextUtils.SRP);
         return tt;
     }
 

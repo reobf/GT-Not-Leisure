@@ -102,7 +102,7 @@ public class LargeHammer extends GTMMultiMachineBase<LargeHammer> implements ISu
             .addOutputBus(TextLocalization.Tooltip_LargeHammer_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeHammer_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeHammer_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY + " §rX " + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY + " §rX " + TextUtils.SRP);
         return tt;
     }
 

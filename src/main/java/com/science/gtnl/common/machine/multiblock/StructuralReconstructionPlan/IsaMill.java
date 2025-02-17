@@ -94,7 +94,7 @@ public class IsaMill extends GTMMultiMachineBase<IsaMill> implements ISurvivalCo
             .addOutputBus(TextLocalization.Tooltip_IsaMill_Casing, 1)
             .addEnergyHatch(TextLocalization.Tooltip_IsaMill_Casing, 1)
             .addMaintenanceHatch(TextLocalization.Tooltip_IsaMill_Casing, 1)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY + " §rX " + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY + " §rX " + TextUtils.SRP);
         return tt;
     }
 

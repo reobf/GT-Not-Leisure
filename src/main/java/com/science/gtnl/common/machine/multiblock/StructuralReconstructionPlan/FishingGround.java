@@ -106,7 +106,7 @@ public class FishingGround extends GTMMultiMachineBase<FishingGround> implements
             .addOutputBus(TextLocalization.Tooltip_FishingGround_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_FishingGround_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_FishingGround_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY + " §rX " + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY + " §rX " + TextUtils.SRP);
         return tt;
     }
 

@@ -155,7 +155,7 @@ public class NineIndustrialMultiMachine extends WirelessEnergyMultiMachineBase<N
             .addInputHatch(TextLocalization.Tooltip_NineIndustrialMultiMachine_Casing)
             .addOutputHatch(TextLocalization.Tooltip_NineIndustrialMultiMachine_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_NineIndustrialMultiMachine_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
         return tt;
     }
 

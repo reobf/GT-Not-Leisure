@@ -107,7 +107,7 @@ public class LargeAlloySmelter extends GTMMultiMachineBase<LargeAlloySmelter> im
             .addOutputBus(TextLocalization.Tooltip_LargeAlloySmelter_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeAlloySmelter_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeAlloySmelter_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY + " §rX " + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY + " §rX " + TextUtils.SRP);
         return tt;
     }
 

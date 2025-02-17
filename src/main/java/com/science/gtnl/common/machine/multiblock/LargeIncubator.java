@@ -119,7 +119,7 @@ public class LargeIncubator extends MultiMachineBase<LargeIncubator> implements 
             .addInputHatch(TextLocalization.Tooltip_LargeIncubator_Casing, 1)
             .addOutputHatch(TextLocalization.Tooltip_LargeIncubator_Casing, 1)
             .addEnergyHatch(TextLocalization.Tooltip_LargeIncubator_Casing, 1)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
         return tt;
     }
 

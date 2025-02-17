@@ -122,7 +122,7 @@ public class MatterFabricator extends GTMMultiMachineBase<MatterFabricator> impl
             .addOutputBus(TextLocalization.Tooltip_MatterFabricator_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_MatterFabricator_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_MatterFabricator_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
         return tt;
     }
 

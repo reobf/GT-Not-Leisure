@@ -101,7 +101,7 @@ public class MolecularTransformer extends GTMMultiMachineBase<MolecularTransform
             .addOutputBus(TextLocalization.Tooltip_MolecularTransformer_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_MolecularTransformer_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_MolecularTransformer_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY + " §rX " + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY + " §rX " + TextUtils.SRP);
         return tt;
     }
 

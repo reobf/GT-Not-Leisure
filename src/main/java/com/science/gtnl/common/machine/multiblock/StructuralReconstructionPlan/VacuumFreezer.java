@@ -130,7 +130,7 @@ public class VacuumFreezer extends MultiMachineBase<VacuumFreezer> implements IS
             .addOutputBus(TextLocalization.Tooltip_VacuumFreezer_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_VacuumFreezer_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_VacuumFreezer_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
         return tt;
     }
 

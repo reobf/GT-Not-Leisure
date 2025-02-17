@@ -126,7 +126,7 @@ public class LargeEngravingLaser extends GTMMultiMachineBase<LargeEngravingLaser
             .addOutputBus(TextLocalization.Tooltip_LargeEngravingLaser_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeEngravingLaser_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeEngravingLaser_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
         return tt;
     }
 

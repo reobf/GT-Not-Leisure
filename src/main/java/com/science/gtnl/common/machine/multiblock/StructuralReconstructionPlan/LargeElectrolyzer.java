@@ -100,7 +100,7 @@ public class LargeElectrolyzer extends GTMMultiMachineBase<LargeElectrolyzer> im
             .addOutputBus(TextLocalization.Tooltip_LargeElectrolyzer_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeElectrolyzer_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeElectrolyzer_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
         return tt;
     }
 

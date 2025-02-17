@@ -95,7 +95,7 @@ public class LargeNaquadahReactor extends TTMultiblockBase implements IConstruct
             .addInputHatch(TextLocalization.Tooltip_LargeNaquadahReactor_Casing)
             .addDynamoHatch(TextLocalization.Tooltip_LargeNaquadahReactor_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeNaquadahReactor_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
         return tt;
     }
 

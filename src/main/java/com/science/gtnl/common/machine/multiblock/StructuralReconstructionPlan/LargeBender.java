@@ -98,7 +98,7 @@ public class LargeBender extends GTMMultiMachineBase<LargeBender> implements ISu
             .addOutputBus(TextLocalization.Tooltip_LargeBender_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeBender_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeBender_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY + " §rX " + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY + " §rX " + TextUtils.SRP);
         return tt;
     }
 

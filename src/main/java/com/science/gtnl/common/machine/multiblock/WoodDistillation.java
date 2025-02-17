@@ -121,7 +121,7 @@ public class WoodDistillation extends GTMMultiMachineBase<WoodDistillation> impl
             .addOutputBus(TextLocalization.Tooltip_WoodDistillation_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_WoodDistillation_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_WoodDistillation_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
         return tt;
     }
 

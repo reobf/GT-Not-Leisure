@@ -162,7 +162,7 @@ public class ComponentAssembler extends MultiMachineBase<ComponentAssembler> imp
             .addEnergyHatch(TextLocalization.Tooltip_ComponentAssembler_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_ComponentAssembler_Casing)
             .addInputHatch(TextLocalization.Tooltip_ComponentAssembler_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
         return tt;
     }
 

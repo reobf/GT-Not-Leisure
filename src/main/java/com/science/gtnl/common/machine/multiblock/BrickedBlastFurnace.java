@@ -114,7 +114,7 @@ public class BrickedBlastFurnace extends MultiMachineBase<BrickedBlastFurnace> i
             .addStructureInfo(TextLocalization.Tooltip_BrickBlastFurnace_Casing_02)
             .addStructureInfo(TextLocalization.Tooltip_BrickBlastFurnace_Casing_03)
             .addStructureInfo(TextLocalization.Tooltip_BrickBlastFurnace_Casing_04)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY + " §rX " + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY + " §rX " + TextUtils.SRP);
         return tt;
     }
 

@@ -131,7 +131,7 @@ public class Digester extends GTMMultiMachineBase<Digester> implements ISurvival
             .addOutputBus(TextLocalization.Tooltip_Digester_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_Digester_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_Digester_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
         return tt;
     }
 

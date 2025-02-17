@@ -100,7 +100,7 @@ public class LargeSiftingFunnel extends GTMMultiMachineBase<LargeSiftingFunnel> 
             .addOutputBus(TextLocalization.Tooltip_LargeSiftingFunnel_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeSiftingFunnel_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeSiftingFunnel_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
         return tt;
     }
 

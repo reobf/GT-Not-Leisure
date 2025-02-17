@@ -347,7 +347,7 @@ public class LargeSteamExtractor extends MTESteamMultiBase<LargeSteamExtractor> 
             .beginStructureBlock(5, 5, 5, false)
             .addInputBus(TextLocalization.Tooltip_LargeSteamExtractor_Casing, 1)
             .addOutputBus(TextLocalization.Tooltip_LargeSteamExtractor_Casing, 1)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
         return tt;
     }
 

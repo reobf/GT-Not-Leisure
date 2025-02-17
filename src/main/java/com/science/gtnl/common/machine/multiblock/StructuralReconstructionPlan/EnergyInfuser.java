@@ -253,7 +253,7 @@ public class EnergyInfuser extends TTMultiblockBase implements IConstructable {
             .addOutputBus(TextLocalization.Tooltip_EnergyInfuser_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_EnergyInfuser_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_EnergyInfuser_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
         return tt;
     }
 

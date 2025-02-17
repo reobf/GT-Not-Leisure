@@ -137,7 +137,7 @@ public class PetrochemicalPlant extends MultiMachineBase<PetrochemicalPlant> imp
             .addEnergyHatch(TextLocalization.Tooltip_PetrochemicalPlant_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_PetrochemicalPlant_Casing)
             .addMufflerHatch(TextLocalization.Tooltip_PetrochemicalPlant_Muffler, 8)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SQY);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SQY);
         return tt;
     }
 

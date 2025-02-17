@@ -128,7 +128,7 @@ public class LargeBrewer extends GTMMultiMachineBase<LargeBrewer> implements ISu
             .addOutputBus(TextLocalization.Tooltip_LargeBrewer_Casing)
             .addEnergyHatch(TextLocalization.Tooltip_LargeBrewer_Casing)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeBrewer_Casing)
-            .toolTipFinisher(TextUtils.SNL + TextUtils.SRP);
+            .toolTipFinisher(TextUtils.SCIENCE_NOT_LEISURE + TextUtils.SRP);
         return tt;
     }
 
