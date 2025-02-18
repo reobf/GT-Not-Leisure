@@ -234,6 +234,20 @@ public class TextLocalization {
         "Tooltip_NinefoldInputHatch_02_01");
 
     public static final String HumongousInputBusULV = texter("Humongous Input Bus (ULV)", "HumongousInputBusLV");
+    public static final String HumongousInputBusLV = texter("Humongous Input Bus (LV)", "HumongousInputBusLV");
+    public static final String HumongousInputBusMV = texter("Humongous Input Bus (MV)", "HumongousInputBusMV");
+    public static final String HumongousInputBusHV = texter("Humongous Input Bus (HV)", "HumongousInputBusHV");
+    public static final String HumongousInputBusEV = texter("Humongous Input Bus (EV)", "HumongousInputBusEV");
+    public static final String HumongousInputBusIV = texter("Humongous Input Bus (IV)", "HumongousInputBusIV");
+    public static final String HumongousInputBusLuV = texter("Humongous Input Bus (LuV)", "HumongousInputBusLuV");
+    public static final String HumongousInputBusZPM = texter("Humongous Input Bus (ZPM)", "HumongousInputBusZPM");
+    public static final String HumongousInputBusUV = texter("Humongous Input Bus (UV)", "HumongousInputBusUV");
+    public static final String HumongousInputBusUHV = texter("Humongous Input Bus (UHV)", "HumongousInputBusUHV");
+    public static final String HumongousInputBusUEV = texter("Humongous Input Bus (UEV)", "HumongousInputBusUEV");
+    public static final String HumongousInputBusUIV = texter("Humongous Input Bus (UIV)", "HumongousInputBusUIV");
+    public static final String HumongousInputBusUMV = texter("Humongous Input Bus (UMV)", "HumongousInputBusUMV");
+    public static final String HumongousInputBusUXV = texter("Humongous Input Bus (UXV)", "HumongousInputBusUXV");
+    public static final String HumongousInputBusMAX = texter("Humongous Input Bus (MAX)", "HumongousInputBusMAX");
 
     public static final String QuadrupleOutputHatchEV = texter("Quadruple Output Hatch (EV)", "QuadrupleOutputHatchEV");
     public static final String NinefoldOutputHatchEV = texter("Ninefold Output Hatch (EV)", "NinefoldOutputHatchEV");

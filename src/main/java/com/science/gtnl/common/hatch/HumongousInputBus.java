@@ -1,9 +1,10 @@
 package com.science.gtnl.common.hatch;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
+import com.gtnewhorizons.modularui.api.math.Color;
+import com.gtnewhorizons.modularui.common.widget.TextWidget;
+import net.minecraft.client.renderer.texture.Stitcher;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -79,20 +80,59 @@ public class HumongousInputBus extends MTEHatchInputBus {
 
     @Override
     public void addUIWidgets(ModularWindow.Builder builder, UIBuildContext buildContext) {
-        int slotCount = (mTier + 1) * 2 + 1;
-        if (allowSelectCircuit()) {
-            slotCount = slotCount - 1;
+        int maxItemTypes = (mTier + 1) * 2 + 1;
+
+        int maxSlots = inventoryHandler.getSlots();
+
+        Set<String> itemTypes = new HashSet<>();
+        for (int i = 0; i < maxSlots; i++) {
+            ItemStack itemStack = inventoryHandler.getStackInSlot(i);
+            if (itemStack != null && itemStack.stackSize > 0) {
+                itemTypes.add(itemStack.getDisplayName());
+            }
+        }
+        int itemTypeCount = itemTypes.size();
+
+        int slotCount = Math.min(maxItemTypes, itemTypeCount);
+
+        builder.widget(
+            new TextWidget("物品槽位: " + itemTypeCount + "/" + slotCount)
+                .setPos(79, 18)
+                .addTooltip("当前物品类型数量 / 最大允许类型数量")
+        );
+
+        Map<String, Integer> itemCountMap = new HashMap<>();
+        for (int i = 0; i < maxSlots; i++) {
+            ItemStack itemStack = inventoryHandler.getStackInSlot(i);
+            if (itemStack != null && itemStack.stackSize > 0) {
+                String itemName = itemStack.getDisplayName();
+                itemCountMap.put(itemName, itemCountMap.getOrDefault(itemName, 0) + itemStack.stackSize);
+            }
         }
 
-        for (int row = 0; row < slotCount; row++) {
-            for (int col = 0; col < slotCount; col++) {
-                int slotIndex = row * slotCount + col;
-                if (slotIndex < slotCount - 1) {
-                    builder.widget(
-                        new SlotWidget(inventoryHandler, slotIndex).setBackground(ModularUITextures.ITEM_SLOT)
-                            .setPos(79 + col * 18, 36 + row * 18));
-                }
+        int yOffset = 36;
+        if (itemCountMap.isEmpty()) {
+            builder.widget(
+                new TextWidget("空")
+                    .setPos(79, yOffset)
+                    .addTooltip("没有物品")
+            );
+        } else {
+            for (Map.Entry<String, Integer> entry : itemCountMap.entrySet()) {
+                builder.widget(
+                    new TextWidget(entry.getKey() + ": " + entry.getValue())
+                        .setPos(79, yOffset)
+                        .addTooltip("物品数量")
+                );
+                yOffset += 10;
             }
+        }
+
+        for (int i = 0; i < slotCount; i++) {
+            builder.widget(
+                new SlotWidget(inventoryHandler, i)
+                    .setEnabled(false)
+            );
         }
     }
 
@@ -121,7 +161,7 @@ public class HumongousInputBus extends MTEHatchInputBus {
 
     @Override
     public boolean allowPutStack(IGregTechTileEntity aBaseMetaTileEntity, int aIndex, ForgeDirection side,
-        ItemStack aStack) {
+                                 ItemStack aStack) {
         return side == getBaseMetaTileEntity().getFrontFacing() && aIndex != getCircuitSlot()
             && (mRecipeMap == null || mRecipeMap.containsInput(aStack));
     }
