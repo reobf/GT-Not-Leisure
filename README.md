@@ -11,4 +11,4 @@
 ---
 
 ## 开源许可
-此模组遵循[MIT License](https://opensource.org/licenses/MIT)。
+此模组遵循[GPLv3 License](https://www.gnu.org/licenses/gpl-3.0.html)。
