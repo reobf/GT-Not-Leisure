@@ -1,5 +1,6 @@
 package com.science.gtnl.common.item.ReAvaritia;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.client.Minecraft;
@@ -108,10 +109,15 @@ public class InfinitySword extends ItemSword implements ICosmicRenderItem {
                     player.extinguish();
                 }
 
+                List<Integer> badEffects = new ArrayList<>();
                 for (PotionEffect effect : player.getActivePotionEffects()) {
                     if (Potion.potionTypes[effect.getPotionID()].isBadEffect()) {
-                        player.removePotionEffect(effect.getPotionID());
+                        badEffects.add(effect.getPotionID());
                     }
+                }
+
+                for (int potionID : badEffects) {
+                    player.removePotionEffect(potionID);
                 }
 
                 player.setHealth(player.getMaxHealth());

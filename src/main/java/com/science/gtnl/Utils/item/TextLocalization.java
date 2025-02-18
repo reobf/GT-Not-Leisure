@@ -233,6 +233,8 @@ public class TextLocalization {
         " types of fluid",
         "Tooltip_NinefoldInputHatch_02_01");
 
+    public static final String HumongousInputBusULV = texter("Humongous Input Bus (ULV)", "HumongousInputBusLV");
+
     public static final String QuadrupleOutputHatchEV = texter("Quadruple Output Hatch (EV)", "QuadrupleOutputHatchEV");
     public static final String NinefoldOutputHatchEV = texter("Ninefold Output Hatch (EV)", "NinefoldOutputHatchEV");
     public static final String Tooltip_DualOutputHatch_00 = texter(

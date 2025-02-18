@@ -100,6 +100,8 @@ Tooltip_DualInputHatch_01=物品槽位数量:
 Tooltip_DualInputHatch_02_00=流体容量: 共
 Tooltip_DualInputHatch_02_01=个流体槽, 每个
 
+HumongousInputBusLV=巨型输入总线 (ULV)
+
 MetaCasing.0.name=测试机械方块
 MetaCasing.1.name=蒸汽装配机械方块
 MetaCasing.2.name=散热片

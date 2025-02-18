@@ -294,6 +294,8 @@ public enum GTNLItemList {
     LargeSteamCircuitAssembler,
     GenerationEarthEngine,
 
+    HumongousInputBusULV,
+
     FluidManaInputHatch,
     FluidIceInputHatch,
     FluidBlazeInputHatch,

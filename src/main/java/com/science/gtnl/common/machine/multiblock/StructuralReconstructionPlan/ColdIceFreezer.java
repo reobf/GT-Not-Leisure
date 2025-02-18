@@ -20,7 +20,7 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import com.science.gtnl.Utils.StructureUtils;
 import com.science.gtnl.Utils.item.TextLocalization;
-import com.science.gtnl.common.hatch.HatchCustomFluid;
+import com.science.gtnl.common.hatch.CustomFluidHatch;
 import com.science.gtnl.common.machine.multiMachineClasses.MultiMachineBase;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -58,7 +58,7 @@ public class ColdIceFreezer extends MultiMachineBase<ColdIceFreezer> implements 
     public final int depthOffSet = 0;
     public static IStructureDefinition<ColdIceFreezer> STRUCTURE_DEFINITION = null;
 
-    public final ArrayList<HatchCustomFluid> FluidIceInputHatch = new ArrayList<>();
+    public final ArrayList<CustomFluidHatch> FluidIceInputHatch = new ArrayList<>();
 
     public ColdIceFreezer(final int aID, final String aName, final String aNameRegional) {
         super(aID, aName, aNameRegional);
@@ -168,7 +168,7 @@ public class ColdIceFreezer extends MultiMachineBase<ColdIceFreezer> implements 
             return false;
         } else {
             IMetaTileEntity aMetaTileEntity = aTileEntity.getMetaTileEntity();
-            if (aMetaTileEntity instanceof HatchCustomFluid && aMetaTileEntity.getBaseMetaTileEntity()
+            if (aMetaTileEntity instanceof CustomFluidHatch && aMetaTileEntity.getBaseMetaTileEntity()
                 .getMetaTileID() == 21502) {
                 return addToMachineListInternal(FluidIceInputHatch, aTileEntity, aBaseCasingIndex);
             }
@@ -178,7 +178,7 @@ public class ColdIceFreezer extends MultiMachineBase<ColdIceFreezer> implements 
 
     @Override
     public void updateSlots() {
-        for (HatchCustomFluid tHatch : validMTEList(FluidIceInputHatch)) tHatch.updateSlots();
+        for (CustomFluidHatch tHatch : validMTEList(FluidIceInputHatch)) tHatch.updateSlots();
         super.updateSlots();
     }
 

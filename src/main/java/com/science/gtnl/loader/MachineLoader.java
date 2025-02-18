@@ -5,10 +5,11 @@ import static com.gtnewhorizon.gtnhlib.util.AnimatedTooltipHandler.addItemToolti
 import com.science.gtnl.Utils.AnimatedText;
 import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.common.GTNLItemList;
+import com.science.gtnl.common.hatch.CustomFluidHatch;
 import com.science.gtnl.common.hatch.DebugEnergyHatch;
 import com.science.gtnl.common.hatch.DualInputHatch;
 import com.science.gtnl.common.hatch.DualOutputHatch;
-import com.science.gtnl.common.hatch.HatchCustomFluid;
+import com.science.gtnl.common.hatch.HumongousInputBus;
 import com.science.gtnl.common.hatch.HumongousNinefoldInputHatch;
 import com.science.gtnl.common.hatch.HumongousSolidifierHatch;
 import com.science.gtnl.common.hatch.NinefoldInputHatch;
@@ -463,7 +464,7 @@ public class MachineLoader {
     public static void registerMTEHatch() {
 
         GTNLItemList.FluidManaInputHatch.set(
-            new HatchCustomFluid(
+            new CustomFluidHatch(
                 FluidUtils.getFluidStack("fluidmana", 1)
                     .getFluid(),
                 512000,
@@ -474,7 +475,7 @@ public class MachineLoader {
         addItemTooltip(GTNLItemList.FluidManaInputHatch.get(1), AnimatedText.SCIENCE_NOT_LEISURE);
 
         GTNLItemList.FluidIceInputHatch.set(
-            new HatchCustomFluid(
+            new CustomFluidHatch(
                 FluidUtils.getFluidStack("ice", 1)
                     .getFluid(),
                 256000,
@@ -485,7 +486,7 @@ public class MachineLoader {
         addItemTooltip(GTNLItemList.FluidIceInputHatch.get(1), AnimatedText.SCIENCE_NOT_LEISURE);
 
         GTNLItemList.FluidBlazeInputHatch.set(
-            new HatchCustomFluid(
+            new CustomFluidHatch(
                 FluidUtils.getFluidStack("molten.blaze", 1)
                     .getFluid(),
                 256000,
@@ -643,6 +644,10 @@ public class MachineLoader {
         GTNLItemList.NinefoldOutputHatchEV
             .set(new DualOutputHatch(22501, 9, "Ninefold Output Hatch EV", TextLocalization.NinefoldOutputHatchEV, 4));
         addItemTooltip(GTNLItemList.NinefoldOutputHatchEV.get(1), AnimatedText.SCIENCE_NOT_LEISURE);
+
+        GTNLItemList.HumongousInputBusULV
+            .set(new HumongousInputBus(22502, "Humongous Input Bus ULV", TextLocalization.HumongousInputBusULV, 0));
+        addItemTooltip(GTNLItemList.HumongousInputBusULV.get(1), AnimatedText.SCIENCE_NOT_LEISURE);
     }
 
     public static void run() {
