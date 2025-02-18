@@ -31,7 +31,6 @@ import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 
-import com.science.gtnl.Utils.AnimatedText;
 import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.client.GTNLCreativeTabs;
 
@@ -39,6 +38,7 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import fox.spiteful.avaritia.DamageSourceInfinitySword;
+import fox.spiteful.avaritia.LudicrousText;
 import fox.spiteful.avaritia.achievements.Achievements;
 import fox.spiteful.avaritia.entity.EntityImmortalItem;
 import fox.spiteful.avaritia.items.LudicrousItems;
@@ -318,7 +318,7 @@ public class InfinitySword extends ItemSword implements ICosmicRenderItem {
                     event.toolTip.set(
                         x,
                         EnumChatFormatting.BLUE + "+"
-                            + AnimatedText.INFINITY_SWORD
+                            + LudicrousText.makeFabulous(TextLocalization.Damage_InfinitySword)
                             + " "
                             + EnumChatFormatting.BLUE
                             + StatCollector.translateToLocal("attribute.name.generic.attackDamage"));

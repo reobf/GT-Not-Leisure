@@ -20,6 +20,7 @@ import com.science.gtnl.common.machine.multiblock.BrickedBlastFurnace;
 import com.science.gtnl.common.machine.multiblock.CheatOreProcessingFactory;
 import com.science.gtnl.common.machine.multiblock.ComponentAssembler;
 import com.science.gtnl.common.machine.multiblock.Desulfurizer;
+import com.science.gtnl.common.machine.multiblock.DraconicFusionCrafting;
 import com.science.gtnl.common.machine.multiblock.EdenGarden;
 import com.science.gtnl.common.machine.multiblock.ElementCopying;
 import com.science.gtnl.common.machine.multiblock.EnergeticPhotovoltaicPowerStation;
@@ -439,6 +440,10 @@ public class MachineLoader {
         GTNLItemList.LargeNaquadahReactor
             .set(new LargeNaquadahReactor(21084, "LargeNaquadahReactor", TextLocalization.NameLargeNaquadahReactor));
         addItemTooltip(GTNLItemList.LargeNaquadahReactor.get(1), AnimatedText.SNL_QYZG);
+
+        GTNLItemList.DraconicFusionCrafting.set(
+            new DraconicFusionCrafting(21085, "DraconicFusionCrafting", TextLocalization.NameDraconicFusionCrafting));
+        addItemTooltip(GTNLItemList.DraconicFusionCrafting.get(1), AnimatedText.SNL_NLXCJH);
 
         GTNLItemList.CheatOreProcessingFactory.set(
             new CheatOreProcessingFactory(

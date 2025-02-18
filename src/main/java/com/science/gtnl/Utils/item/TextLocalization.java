@@ -1113,6 +1113,25 @@ public class TextLocalization {
         "Insert the parallel control core into the controller to increase the maximum parallelism and reduce power consumption!",
         "Tooltip_GTMMultiMachine_03");
 
+    public static final String NameDraconicFusionCrafting = texter(
+        "Draconic Fusion Crafting",
+        "NameDraconicFusionCrafting");
+    public static final String DraconicFusionCraftingRecipeType = texter(
+        "Fusion Crafter",
+        "DraconicFusionCraftingRecipeType");
+    public static final String Tooltip_DraconicFusionCrafting_00 = texter(
+        "200%% faster than Fusion Crafter",
+        "Tooltip_DraconicFusionCrafting_00");
+    public static final String Tooltip_DraconicFusionCrafting_01 = texter(
+        "Only uses 50%% of the EU/t normally required",
+        "Tooltip_DraconicFusionCrafting_01");
+    public static final String Tooltip_DraconicFusionCrafting_02 = texter(
+        "§rEnable §cperfect overclock§7§r when the mechanical block level exceeds 4!",
+        "Tooltip_DraconicFusionCrafting_02");
+    public static final String Tooltip_DraconicFusionCrafting_Casing = texter(
+        "Any Background Radiation Absorbent Casing",
+        "Tooltip_DraconicFusionCrafting_Casing");
+
     public static final String NameMatterFabricator = texter("Matter Fabricator", "NameMatterFabricator");
     public static final String MatterFabricatorRecipeType = texter("Matter Fabricator", "MatterFabricatorRecipeType");
     public static final String Tooltip_MatterFabricator_Casing = texter(

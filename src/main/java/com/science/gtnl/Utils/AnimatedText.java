@@ -278,41 +278,6 @@ public class AnimatedText {
             AQUA + OBFUSCATED + BOLD + UNDERLINE,
             BLUE + OBFUSCATED + BOLD + UNDERLINE));
 
-    public static final Supplier<String> INFINITY_SWORD = chain(
-        animatedText(
-            TextLocalization.Damage_InfinitySword,
-            1,
-            50,
-            BLUE,
-            BLUE,
-            BLUE,
-            WHITE,
-            BLUE,
-            WHITE,
-            WHITE,
-            BLUE,
-            WHITE,
-            WHITE,
-            BLUE,
-            RED,
-            WHITE,
-            GRAY,
-            GRAY,
-            GRAY,
-            GRAY,
-            GRAY,
-            GRAY,
-            GRAY,
-            GRAY,
-            GRAY,
-            GRAY,
-            GRAY,
-            GRAY,
-            GRAY,
-            GRAY,
-            GRAY,
-            GRAY));
-
     public static final Supplier<String> NEW_HORIZONS_COIL_0 = chain(
         animatedText(
             "179,769,313,486,231,590,772,930,519,078,902,473,361,797,697,894,230,657,273,430,081,",

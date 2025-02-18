@@ -501,6 +501,7 @@ item.record.sus.desc=Software Update Services
 item.record.newhorizons.desc=Sweet Dreams (Bonus Track)
 
 item.milledNaquadahEnriched.name=研磨富集硅岩矿
+item.FrothNaquadahEnrichedflotation=富集硅岩浮选泡沫单元
 item.FrothNaquadahEnrichedflotation.name=富集硅岩浮选泡沫单元
 gtplusplus.fluid.naquadahenrichedfroth=富集硅岩泡沫
 fluid.froth.naquadahenrichedflotation=富集硅岩泡沫
@@ -816,6 +817,13 @@ Tooltip_GTMMultiMachine_03=在控制器内放入并行控制核心来提升最�
 NameLargeHammer=大型锻造锤
 LargeHammerRecipeType=锻造锤
 Tooltip_LargeHammer_Casing=任意强化镍铬机械方块
+
+NameDraconicFusionCrafting=神龙聚合装置
+DraconicFusionCraftingRecipeType=聚合装置
+Tooltip_DraconicFusionCrafting_00=比龙研聚合装置快200%%
+Tooltip_DraconicFusionCrafting_01=只需要使用配方要求功率的50%%
+Tooltip_DraconicFusionCrafting_02=当机械方块等级超过4时开启§c无损超频§7
+Tooltip_DraconicFusionCrafting_Casing=任意背景辐射吸收机械方块
 
 NameIsaMill=艾萨研磨机
 gtnl.recipe.IsaMillRecipes=湿法碾磨
