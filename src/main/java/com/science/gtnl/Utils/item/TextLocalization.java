@@ -1487,7 +1487,7 @@ public class TextLocalization {
         "Any Molecular Casing",
         "Tooltip_EnergyInfuser_Casing");
 
-    public static final String NameProcessingArray = texter("Re:Processing Array", "NameProcessingArray");
+    public static final String NameProcessingArrayGTNL = texter("Re:Processing Array", "NameProcessingArrayGTNL");
     public static final String ProcessingArrayRecipeType = texter("Processing Array", "ProcessingArrayRecipeType");
     public static final String Tooltip_ProcessingArray_00 = texter(
         "Runs supplied machines as if placed in the world",

@@ -28,10 +28,25 @@ Tooltip_SuperCraftingInputHatchME_02=根据放入其中的样板对接ME系统�
 Tooltip_SuperCraftingInputHatchME_03_00=支持包含流体的样板
 Tooltip_SuperCraftingInputHatchME_03_01=不支持包含流体的样板
 Tooltip_SuperCraftingInputHatchME_04=手持剪线钳右键以改变仓室与ME网络的连接模式
+Tooltip_SuperCraftingInputHatchME_05=已保存连接数据到闪存
 Button_Tooltip_SuperCraftingInputHatchME_00=放置"不消耗物品"
 Button_Tooltip_SuperCraftingInputHatchME_01=将所有的已存储物品返回到AE网络
 Button_Tooltip_SuperCraftingInputHatchME_02_00=样板优化: 允许
 Button_Tooltip_SuperCraftingInputHatchME_02_01=样板优化: 关闭
+
+SuperCraftingInputProxy=超级样板输入镜像
+Tooltip_SuperCraftingInputProxy_00=超级样板输入总成/总线的镜像端
+Tooltip_SuperCraftingInputProxy_01=将所绑定的超级样板输入总成/总线的内容物共享过来，不需要连接me网络
+Tooltip_SuperCraftingInputProxy_02=闪存左键点击超级样板输入总成/总线，然后右键点击超级样板输入镜像完成链接绑定
+Tooltip_SuperCraftingInputProxy_03=支持原版样板输入总成/总线!
+Tooltip_SuperCraftingInputProxy_04=连接到 
+Tooltip_SuperCraftingInputProxy_05_00=已连接
+Tooltip_SuperCraftingInputProxy_05_01=无连接
+Chat_SuperCraftingInputProxy_00_00=这个超级样板输入镜像已连接到位于此坐标的超级样板输入总成/总线: 
+Chat_SuperCraftingInputProxy_00_01=这个超级样板输入镜像已连接到位于此坐标的样板输入总成/总线: 
+Chat_SuperCraftingInputProxy_01=这个超级样板输入镜像没有连接到任何超级样板输入总成/总线
+Chat_SuperCraftingInputProxy_02=连接成功
+Chat_SuperCraftingInputProxy_03=连接失败
 
 HumongousSolidifierHatch=巨型固化仓
 Tooltip_HumongousSolidifierHatch_00=为§e流体塑形机§r带模具输入流体
@@ -84,6 +99,22 @@ Tooltip_DualInputHatch_00=为多方块机器输入物品和流体
 Tooltip_DualInputHatch_01=物品槽位数量: 
 Tooltip_DualInputHatch_02_00=流体容量: 共
 Tooltip_DualInputHatch_02_01=个流体槽, 每个
+
+HumongousInputBusLV=巨型输入总线 (ULV)
+HumongousInputBusLV=巨型输入总线 (LV)
+HumongousInputBusMV=巨型输入总线 (MV)
+HumongousInputBusHV=巨型输入总线 (HV)
+HumongousInputBusEV=巨型输入总线 (EV)
+HumongousInputBusIV=巨型输入总线 (IV)
+HumongousInputBusLuV=巨型输入总线 (LuV)
+HumongousInputBusZPM=巨型输入总线 (ZPM)
+HumongousInputBusUV=巨型输入总线 (UV)
+HumongousInputBusUHV=巨型输入总线 (UHV)
+HumongousInputBusUEV=巨型输入总线 (UEV)
+HumongousInputBusUIV=巨型输入总线 (UIV)
+HumongousInputBusUMV=巨型输入总线 (UMV)
+HumongousInputBusUXV=巨型输入总线 (UXV)
+HumongousInputBusMAX=巨型输入总线 (MAX)
 
 MetaCasing.0.name=测试机械方块
 MetaCasing.1.name=蒸汽装配机械方块
@@ -425,6 +456,7 @@ Tooltip_Testitem_13=§c§l另外提醒: 不要拿着这个物品右键!
 
 item.KFCFamily.name=疯狂星期四
 Tooltip_KFCFamily_00=§o疯狂星期四, v我50!
+gtnl.potion.perfect_physique=完美体魄
 
 item.CrystalSword.name=§d双锋裂界之剑
 Tooltip_CrystalSword_00=§8§o锋刃所向，裂界无阻；剑影所至，敌影无存。
@@ -485,6 +517,7 @@ item.record.sus.desc=Software Update Services
 item.record.newhorizons.desc=Sweet Dreams (Bonus Track)
 
 item.milledNaquadahEnriched.name=研磨富集硅岩矿
+item.FrothNaquadahEnrichedflotation=富集硅岩浮选泡沫单元
 item.FrothNaquadahEnrichedflotation.name=富集硅岩浮选泡沫单元
 gtplusplus.fluid.naquadahenrichedfroth=富集硅岩泡沫
 fluid.froth.naquadahenrichedflotation=富集硅岩泡沫
@@ -800,6 +833,13 @@ Tooltip_GTMMultiMachine_03=在控制器内放入并行控制核心来提升最�
 NameLargeHammer=大型锻造锤
 LargeHammerRecipeType=锻造锤
 Tooltip_LargeHammer_Casing=任意强化镍铬机械方块
+
+NameDraconicFusionCrafting=神龙聚合装置
+DraconicFusionCraftingRecipeType=聚合装置
+Tooltip_DraconicFusionCrafting_00=比龙研聚合装置快200%%
+Tooltip_DraconicFusionCrafting_01=只需要使用配方要求功率的50%%
+Tooltip_DraconicFusionCrafting_02=当机械方块等级超过4时开启§c无损超频§7
+Tooltip_DraconicFusionCrafting_Casing=任意背景辐射吸收机械方块
 
 NameIsaMill=艾萨研磨机
 gtnl.recipe.IsaMillRecipes=湿法碾磨
@@ -1288,7 +1328,7 @@ SmeltingMixingFurnaceRecipeType=合金搅拌
 gtnl.recipe.SmeltingMixingFurnaceRecipes=合金搅拌
 Tooltip_SmeltingMixingFurnace_Casing=任意超能机械方块
 
-NameProcessingArray=处理阵列：重生
+NameProcessingArrayGTNL=处理阵列：重生
 ProcessingArrayRecipeType=处理阵列
 Tooltip_ProcessingArray_00=让其中的机器如同放置在世界中一样运行
 Tooltip_ProcessingArray_01=在控制器GUI中放置至多64个GT单方块机器

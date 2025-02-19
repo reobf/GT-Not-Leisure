@@ -206,7 +206,7 @@ public class MachineLoader {
         addItemTooltip(GTNLItemList.WhiteNightGenerator.get(1), AnimatedText.SCIENCE_NOT_LEISURE);
 
         GTNLItemList.ProcessingArray
-            .set(new ProcessingArray(21026, "ProcessingArray", TextLocalization.NameProcessingArray));
+            .set(new ProcessingArray(21026, "ProcessingArray", TextLocalization.NameProcessingArrayGTNL));
         addItemTooltip(GTNLItemList.ProcessingArray.get(1), AnimatedText.SNL_QYZG_SRP);
 
         GTNLItemList.MegaBlastFurnace
