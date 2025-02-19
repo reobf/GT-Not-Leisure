@@ -124,7 +124,7 @@ public class VibrantPhotovoltaicPowerStation extends MTEEnhancedMultiBlockBase<V
 
     @Override
     public boolean isCorrectMachinePart(ItemStack aStack) {
-        return false;
+        return true;
     }
 
     @Override
