@@ -220,7 +220,14 @@ public class LargeIncubator extends MultiMachineBase<LargeIncubator> implements 
             @NotNull
             @Override
             public OverclockCalculator createOverclockCalculator(@NotNull GTRecipe recipe) {
-                return super.createOverclockCalculator(recipe).setEUtDiscount(0.6)
+                return super.createOverclockCalculator(recipe).setRecipeEUt(recipe.mEUt)
+                    .setAmperage(availableAmperage)
+                    .setEUt(availableVoltage)
+                    .setDuration(recipe.mDuration)
+                    .setAmperageOC(true)
+                    .setDurationDecreasePerOC(4)
+                    .setEUtIncreasePerOC(4)
+                    .setEUtDiscount(0.6)
                     .setSpeedBoost(0.2);
             }
 

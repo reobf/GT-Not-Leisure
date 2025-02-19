@@ -196,7 +196,14 @@ public class Desulfurizer extends MultiMachineBase<Desulfurizer> implements ISur
             @NotNull
             @Override
             public OverclockCalculator createOverclockCalculator(@NotNull GTRecipe recipe) {
-                return super.createOverclockCalculator(recipe).setSpeedBoost(100.0 / (100 + 10 * mLevel))
+                return super.createOverclockCalculator(recipe).setRecipeEUt(recipe.mEUt)
+                    .setAmperage(availableAmperage)
+                    .setEUt(availableVoltage)
+                    .setDuration(recipe.mDuration)
+                    .setAmperageOC(true)
+                    .setDurationDecreasePerOC(4)
+                    .setEUtIncreasePerOC(4)
+                    .setSpeedBoost(100.0 / (100 + 10 * mLevel))
                     .setHeatOC(true)
                     .setRecipeHeat(0)
                     .setMachineHeat((int) (getCoilLevel().getHeat() * 2));

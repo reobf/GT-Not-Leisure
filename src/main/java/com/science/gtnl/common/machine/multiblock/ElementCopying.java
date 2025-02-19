@@ -166,7 +166,14 @@ public class ElementCopying extends GTMMultiMachineBase<ElementCopying> implemen
             @NotNull
             @Override
             public OverclockCalculator createOverclockCalculator(@NotNull GTRecipe recipe) {
-                return super.createOverclockCalculator(recipe).setEUtDiscount(1 - (ParallelTier / 50.0))
+                return super.createOverclockCalculator(recipe).setRecipeEUt(recipe.mEUt)
+                    .setAmperage(availableAmperage)
+                    .setEUt(availableVoltage)
+                    .setDuration(recipe.mDuration)
+                    .setAmperageOC(true)
+                    .setDurationDecreasePerOC(4)
+                    .setEUtIncreasePerOC(4)
+                    .setEUtDiscount(1 - (ParallelTier / 50.0))
                     .setSpeedBoost(1 - (ParallelTier / 200.0));
             }
         }.setMaxParallelSupplier(this::getMaxParallelRecipes);

@@ -247,7 +247,7 @@ public class SmeltingMixingFurnace extends WirelessEnergyMultiMachineBase<Smelti
                 return super.process();
             }
 
-        }.setMaxParallelSupplier(this::getLimitedMaxParallel);
+        }.setMaxParallelSupplier(this::getMaxParallelRecipes);
     }
 
     @Override
