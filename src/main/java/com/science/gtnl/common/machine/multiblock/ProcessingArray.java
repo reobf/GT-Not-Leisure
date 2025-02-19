@@ -127,6 +127,7 @@ public class ProcessingArray extends MultiMachineBase<ProcessingArray> implement
             .addInfo(TextLocalization.Tooltip_ProcessingArray_05)
             .addInfo(TextLocalization.Tooltip_ProcessingArray_06)
             .addInfo(TextLocalization.Tooltip_ProcessingArray_07)
+            .addInfo(TextLocalization.Tooltip_ProcessingArray_08)
             .beginStructureBlock(5, 5, 5, true)
             .addEnergyHatch(TextLocalization.Tooltip_ProcessingArray_Casing, 1)
             .addMaintenanceHatch(TextLocalization.Tooltip_ProcessingArray_Casing, 1)
@@ -389,6 +390,7 @@ public class ProcessingArray extends MultiMachineBase<ProcessingArray> implement
     public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
         mCasing = 0;
         setCoilLevel(HeatingCoilLevel.None);
+        tTier = 0;
 
         if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffset, verticalOffset, depthOffset) && checkHatch()) {
             return false;

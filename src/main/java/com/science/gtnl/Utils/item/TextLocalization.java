@@ -1513,6 +1513,9 @@ public class TextLocalization {
     public static final String Tooltip_ProcessingArray_07 = texter(
         "Parallel : Singleblocks * 2 + Voltage level * 4 + Coil level * 4",
         "Tooltip_ProcessingArray_07");
+    public static final String Tooltip_ProcessingArray_08 = texter(
+        "Energy Hatch level cannot exceed the single block machine level +4!",
+        "Tooltip_ProcessingArray_08");
     public static final String Tooltip_ProcessingArray_Casing = texter(
         "Any Stable Titanium Machine Casing",
         "Tooltip_ProcessingArray_Casing");

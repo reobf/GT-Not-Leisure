@@ -100,7 +100,7 @@ Tooltip_DualInputHatch_01=物品槽位数量:
 Tooltip_DualInputHatch_02_00=流体容量: 共
 Tooltip_DualInputHatch_02_01=个流体槽, 每个
 
-HumongousInputBusLV=巨型输入总线 (ULV)
+HumongousInputBusULV=巨型输入总线 (ULV)
 HumongousInputBusLV=巨型输入总线 (LV)
 HumongousInputBusMV=巨型输入总线 (MV)
 HumongousInputBusHV=巨型输入总线 (HV)
@@ -1338,6 +1338,7 @@ Tooltip_ProcessingArray_04=对特定机器无效
 Tooltip_ProcessingArray_05=比相同电压的单方块机器快111%%
 Tooltip_ProcessingArray_06=只需要使用配方要求功率的(100 - 线圈等级 * 3)%%
 Tooltip_ProcessingArray_07=并行数：单方块GT机器数量 * 2 + 电压等级 * 4 + 线圈等级 * 4
+Tooltip_ProcessingArray_08=能源仓等级不可高过控制器GUI内的GT单方块机器等级+4!
 Tooltip_ProcessingArray_Casing=任意加强钛机械方块
 
 NameEnergyInfuser=能量注入仪
