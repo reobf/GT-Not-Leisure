@@ -6,6 +6,7 @@ import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaBlockColumn;
 import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.GregTechAPI.sBlockFrames;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
+import static gregtech.api.util.GTUtility.validMTEList;
 import static gtPlusPlus.core.block.ModBlocks.blockCustomMachineCasings;
 
 import java.util.ArrayList;
@@ -18,6 +19,7 @@ import javax.annotation.Nonnull;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
@@ -44,6 +46,8 @@ import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.logic.ProcessingLogic;
 import gregtech.api.metatileentity.implementations.MTEHatch;
+import gregtech.api.metatileentity.implementations.MTEHatchInputBus;
+import gregtech.api.metatileentity.implementations.MTEHatchOutputBus;
 import gregtech.api.objects.GTRenderedTexture;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMaps;
@@ -54,6 +58,8 @@ import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.OverclockCalculator;
 import gregtech.common.blocks.BlockCasings1;
 import gregtech.common.blocks.BlockCasings2;
+import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.MTEHatchSteamBusOutput;
+import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.MteHatchSteamBusInput;
 import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.base.MTESteamMultiBase;
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
@@ -471,5 +477,75 @@ public class LargeSteamFurnace extends MTESteamMultiBase<LargeSteamFurnace> impl
                 isBroken = true;
             }
         }
+    }
+
+    @Override
+    public ArrayList<ItemStack> getStoredInputs() {
+        ArrayList<ItemStack> rList = new ArrayList<>();
+        for (MteHatchSteamBusInput tHatch : validMTEList(mSteamInputs)) {
+            tHatch.mRecipeMap = getRecipeMap();
+            for (int i = tHatch.getBaseMetaTileEntity()
+                .getSizeInventory() - 1; i >= 0; i--) {
+                if (tHatch.getBaseMetaTileEntity()
+                    .getStackInSlot(i) != null) {
+                    rList.add(
+                        tHatch.getBaseMetaTileEntity()
+                            .getStackInSlot(i));
+                }
+            }
+        }
+        for (MTEHatchInputBus tHatch : validMTEList(mInputBusses)) {
+            tHatch.mRecipeMap = getRecipeMap();
+            for (int i = tHatch.getBaseMetaTileEntity()
+                .getSizeInventory() - 1; i >= 0; i--) {
+                if (tHatch.getBaseMetaTileEntity()
+                    .getStackInSlot(i) != null) {
+                    rList.add(
+                        tHatch.getBaseMetaTileEntity()
+                            .getStackInSlot(i));
+                }
+            }
+        }
+        return rList;
+    }
+
+    @Override
+    public ArrayList<ItemStack> getStoredOutputs() {
+        ArrayList<ItemStack> rList = new ArrayList<>();
+        for (MTEHatchSteamBusOutput tHatch : validMTEList(mSteamOutputs)) {
+            for (int i = tHatch.getBaseMetaTileEntity()
+                .getSizeInventory() - 1; i >= 0; i--) {
+                rList.add(
+                    tHatch.getBaseMetaTileEntity()
+                        .getStackInSlot(i));
+            }
+        }
+        for (MTEHatchOutputBus tHatch : validMTEList(mOutputBusses)) {
+            for (int i = tHatch.getBaseMetaTileEntity()
+                .getSizeInventory() - 1; i >= 0; i--) {
+                rList.add(
+                    tHatch.getBaseMetaTileEntity()
+                        .getStackInSlot(i));
+            }
+        }
+        return rList;
+    }
+
+    @Override
+    public List<ItemStack> getItemOutputSlots(ItemStack[] toOutput) {
+        List<ItemStack> ret = new ArrayList<>();
+        for (final MTEHatch tBus : validMTEList(mSteamOutputs)) {
+            final IInventory tBusInv = tBus.getBaseMetaTileEntity();
+            for (int i = 0; i < tBusInv.getSizeInventory(); i++) {
+                ret.add(tBus.getStackInSlot(i));
+            }
+        }
+        for (final MTEHatch tBus : validMTEList(mOutputBusses)) {
+            final IInventory tBusInv = tBus.getBaseMetaTileEntity();
+            for (int i = 0; i < tBusInv.getSizeInventory(); i++) {
+                ret.add(tBus.getStackInSlot(i));
+            }
+        }
+        return ret;
     }
 }

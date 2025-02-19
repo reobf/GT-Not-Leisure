@@ -392,9 +392,11 @@ public class ProcessingArray extends MultiMachineBase<ProcessingArray> implement
         setCoilLevel(HeatingCoilLevel.None);
         tTier = 0;
 
-        if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffset, verticalOffset, depthOffset) && checkHatch()) {
+        if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffset, verticalOffset, depthOffset)) {
             return false;
         }
+
+        setTierAndMult();
 
         if (GTUtility.getTier(this.getMaxInputVoltage()) > tTier + 4) {
             return false;
