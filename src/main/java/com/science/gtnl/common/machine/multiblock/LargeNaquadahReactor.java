@@ -150,6 +150,8 @@ public class LargeNaquadahReactor extends TTMultiblockBase implements IConstruct
     @Override
     @NotNull
     public CheckRecipeResult checkProcessing_EM() {
+        startRecipeProcessing();
+
         boolean fuelTierI = false;
         boolean fuelTierII = false;
         boolean hydrogen = false;
@@ -160,13 +162,14 @@ public class LargeNaquadahReactor extends TTMultiblockBase implements IConstruct
         multiplier = 1;
 
         List<FluidStack> tFluids = getStoredFluids();
-        if (tFluids.isEmpty()) return CheckRecipeResultRegistry.NO_RECIPE;
+        if (tFluids.isEmpty()) {
+            endRecipeProcessing();
+            return CheckRecipeResultRegistry.NO_RECIPE;
+        }
 
         int count = 0;
         for (FluidStack fs : tFluids) {
-            if (count >= 6) {
-                break;
-            }
+            if (count >= 6) break;
             Fluid fluid = fs.getFluid();
             switch (fluid.getName()) {
                 case "naquadah based liquid fuel mki" -> fuelTierI = true;
@@ -180,10 +183,12 @@ public class LargeNaquadahReactor extends TTMultiblockBase implements IConstruct
         }
 
         if (!fuelTierI && !fuelTierII) {
+            endRecipeProcessing();
             return CheckRecipeResultRegistry.NO_RECIPE;
         }
 
         if (!(oxygenPlasma ^ nitrogenPlasma ^ hydrogen)) {
+            endRecipeProcessing();
             return CheckRecipeResultRegistry.NO_RECIPE;
         }
 
@@ -196,9 +201,16 @@ public class LargeNaquadahReactor extends TTMultiblockBase implements IConstruct
                     int maxHydroMulti = Math.min(hydroAvailable / 80, 4);
                     multiplier = Math.min(maxFuelMulti, maxHydroMulti);
 
-                    if (multiplier < 1) return CheckRecipeResultRegistry.NO_RECIPE;
-                    if (!drainFluid("naquadah based liquid fuel mki", 16 * multiplier)
-                        || !drainFluid("hydrogen", 80 * multiplier)) {
+                    if (multiplier < 1) {
+                        endRecipeProcessing();
+                        return CheckRecipeResultRegistry.NO_RECIPE;
+                    }
+
+                    // 尝试消耗液体
+                    boolean success = drainFluid("naquadah based liquid fuel mki", 16 * multiplier)
+                        && drainFluid("hydrogen", 80 * multiplier);
+                    if (!success) {
+                        endRecipeProcessing();
                         return CheckRecipeResultRegistry.NO_RECIPE;
                     }
                 } else if (oxygenPlasma) {
@@ -208,9 +220,16 @@ public class LargeNaquadahReactor extends TTMultiblockBase implements IConstruct
                     int maxOxyMulti = Math.min(oxyPlasmaAvailable / 40, 4);
                     multiplier = Math.min(maxFuelMulti, maxOxyMulti);
 
-                    if (multiplier < 1) return CheckRecipeResultRegistry.NO_RECIPE;
-                    if (!drainFluid("naquadah based liquid fuel mki", 160 * multiplier)
-                        || !drainFluid("plasma.oxygen", 40 * multiplier)) {
+                    if (multiplier < 1) {
+                        endRecipeProcessing();
+                        return CheckRecipeResultRegistry.NO_RECIPE;
+                    }
+
+                    // 尝试消耗液体
+                    boolean success = drainFluid("naquadah based liquid fuel mki", 160 * multiplier)
+                        && drainFluid("plasma.oxygen", 40 * multiplier);
+                    if (!success) {
+                        endRecipeProcessing();
                         return CheckRecipeResultRegistry.NO_RECIPE;
                     }
                 }
@@ -222,9 +241,16 @@ public class LargeNaquadahReactor extends TTMultiblockBase implements IConstruct
                     int maxHydroMulti = Math.min(hydroAvailable / 80, 4);
                     multiplier = Math.min(maxFuelMulti, maxHydroMulti);
 
-                    if (multiplier < 1) return CheckRecipeResultRegistry.NO_RECIPE;
-                    if (!drainFluid("naquadah based liquid fuel mkii", 16 * multiplier)
-                        || !drainFluid("hydrogen", 80 * multiplier)) {
+                    if (multiplier < 1) {
+                        endRecipeProcessing();
+                        return CheckRecipeResultRegistry.NO_RECIPE;
+                    }
+
+                    // 尝试消耗液体
+                    boolean success = drainFluid("naquadah based liquid fuel mkii", 16 * multiplier)
+                        && drainFluid("hydrogen", 80 * multiplier);
+                    if (!success) {
+                        endRecipeProcessing();
                         return CheckRecipeResultRegistry.NO_RECIPE;
                     }
                 } else if (nitrogenPlasma) {
@@ -234,14 +260,22 @@ public class LargeNaquadahReactor extends TTMultiblockBase implements IConstruct
                     int maxNitroMulti = Math.min(nitroPlasmaAvailable / 40, 4);
                     multiplier = Math.min(maxFuelMulti, maxNitroMulti);
 
-                    if (multiplier < 1) return CheckRecipeResultRegistry.NO_RECIPE;
-                    if (!drainFluid("naquadah based liquid fuel mkii", 160 * multiplier)
-                        || !drainFluid("plasma.nitrogen", 40 * multiplier)) {
+                    if (multiplier < 1) {
+                        endRecipeProcessing();
+                        return CheckRecipeResultRegistry.NO_RECIPE;
+                    }
+
+                    // 尝试消耗液体
+                    boolean success = drainFluid("naquadah based liquid fuel mkii", 160 * multiplier)
+                        && drainFluid("plasma.nitrogen", 40 * multiplier);
+                    if (!success) {
+                        endRecipeProcessing();
                         return CheckRecipeResultRegistry.NO_RECIPE;
                     }
                 }
             }
         } catch (Exception e) {
+            endRecipeProcessing();
             return CheckRecipeResultRegistry.NO_RECIPE;
         }
 
@@ -264,6 +298,7 @@ public class LargeNaquadahReactor extends TTMultiblockBase implements IConstruct
         this.mEfficiency = 10000;
         this.mProgresstime = 0;
 
+        endRecipeProcessing();
         return CheckRecipeResultRegistry.GENERATING;
     }
 
@@ -297,11 +332,18 @@ public class LargeNaquadahReactor extends TTMultiblockBase implements IConstruct
     @Override
     public boolean onRunningTick(ItemStack stack) {
         if ((this.mProgresstime + 1) % 20 == 0 && this.mProgresstime > 0) {
+            startRecipeProcessing();
+
+            boolean success = true;
             if (Oxygen) {
-                if (!drainFluid("oxygen", 2000)) {
-                    stopMachine(ShutDownReasonRegistry.NONE);
-                    return false;
-                }
+                success = drainFluid("oxygen", 2000);
+            }
+
+            endRecipeProcessing();
+
+            if (!success) {
+                stopMachine(ShutDownReasonRegistry.NONE);
+                return false;
             }
 
             BigInteger euPerSecond = BigInteger.valueOf(SetEUt)
