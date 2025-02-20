@@ -140,8 +140,6 @@ public class AdvancedPhotovoltaicPowerStation extends MTEEnhancedMultiBlockBase<
     @Override
     @NotNull
     public CheckRecipeResult checkProcessing() {
-        // 开始处理配方
-        startRecipeProcessing();
 
         ArrayList<FluidStack> tFluids = getStoredFluids();
 
@@ -198,8 +196,6 @@ public class AdvancedPhotovoltaicPowerStation extends MTEEnhancedMultiBlockBase<
                     this.mProgresstime = 0;
                     this.mMaxProgresstime = 1024;
 
-                    // 结束配方处理
-                    endRecipeProcessing();
                     return CheckRecipeResultRegistry.GENERATING;
                 }
             }
@@ -208,8 +204,6 @@ public class AdvancedPhotovoltaicPowerStation extends MTEEnhancedMultiBlockBase<
         this.mEUt = 0;
         this.mEfficiency = 0;
 
-        // 结束配方处理
-        endRecipeProcessing();
         return CheckRecipeResultRegistry.NO_FUEL_FOUND;
     }
 
