@@ -107,6 +107,7 @@ public class LargeIncubator extends MultiMachineBase<LargeIncubator> implements 
             .addInfo(TextLocalization.Tooltip_LargeIncubator_03)
             .addInfo(TextLocalization.Tooltip_LargeIncubator_04)
             .addInfo(TextLocalization.Tooltip_LargeIncubator_05)
+            .addInfo(TextLocalization.Tooltip_Tectech_Hatch)
             .beginStructureBlock(13, 9, 13, false)
             .addMaintenanceHatch(TextLocalization.Tooltip_LargeIncubator_Casing, 1)
             .addOtherStructurePart(
@@ -143,7 +144,6 @@ public class LargeIncubator extends MultiMachineBase<LargeIncubator> implements 
                 .addElement(
                     'E',
                     ofChain(
-                        ofHatchAdder(LargeIncubator::addRadiationInputToMachineList, CASING_INDEX, 1),
                         ofHatchAdder(LargeIncubator::addRadiationInputToMachineList, CASING_INDEX, 1),
                         buildHatchAdder(LargeIncubator.class)
                             .atLeast(InputBus, OutputBus, InputHatch, OutputHatch, Energy.or(ExoticEnergy))

@@ -25,10 +25,12 @@ import gregtech.api.enums.Textures;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
+import gregtech.api.metatileentity.implementations.MTEHatch;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.render.TextureFactory;
 import gregtech.api.util.MultiblockTooltipBuilder;
+import tectech.thing.metaTileEntity.hatch.MTEHatchEnergyTunnel;
 
 public class LargeIndustrialLathe extends GTMMultiMachineBase<LargeIndustrialLathe> implements ISurvivalConstructable {
 
@@ -101,6 +103,7 @@ public class LargeIndustrialLathe extends GTMMultiMachineBase<LargeIndustrialLat
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_01)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_02)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_03)
+            .addInfo(TextLocalization.Tooltip_GTMMultiMachine_04)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
@@ -126,7 +129,7 @@ public class LargeIndustrialLathe extends GTMMultiMachineBase<LargeIndustrialLat
                     'E',
                     buildHatchAdder(LargeIndustrialLathe.class).casingIndex(CASING_INDEX)
                         .dot(1)
-                        .atLeast(InputBus, OutputBus, Maintenance, Energy)
+                        .atLeast(InputBus, OutputBus, Maintenance, Energy.or(ExoticEnergy))
                         .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(blockCasings3Misc, 1))))
                 .build();
         }
@@ -140,6 +143,12 @@ public class LargeIndustrialLathe extends GTMMultiMachineBase<LargeIndustrialLat
 
         if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && checkHatch()) {
             return false;
+        }
+
+        for (MTEHatch hatch : getExoticEnergyHatches()) {
+            if (hatch instanceof MTEHatchEnergyTunnel) {
+                return false;
+            }
         }
 
         ParallelTier = getParallelTier(aStack);

@@ -26,6 +26,7 @@ import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.logic.ProcessingLogic;
+import gregtech.api.metatileentity.implementations.MTEHatch;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.render.TextureFactory;
@@ -33,6 +34,7 @@ import gregtech.api.util.GTRecipe;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.OverclockCalculator;
 import gregtech.common.blocks.BlockCasings8;
+import tectech.thing.metaTileEntity.hatch.MTEHatchEnergyTunnel;
 
 public class ChemicalPlant extends GTMMultiMachineBase<ChemicalPlant> implements ISurvivalConstructable {
 
@@ -113,6 +115,7 @@ public class ChemicalPlant extends GTMMultiMachineBase<ChemicalPlant> implements
             .addInfo(TextLocalization.Tooltip_ChemicalPlant_02)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_02)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_03)
+            .addInfo(TextLocalization.Tooltip_GTMMultiMachine_04)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
@@ -137,7 +140,7 @@ public class ChemicalPlant extends GTMMultiMachineBase<ChemicalPlant> implements
                     'B',
                     buildHatchAdder(ChemicalPlant.class).casingIndex(CASING_INDEX)
                         .dot(1)
-                        .atLeast(InputHatch, OutputHatch, InputBus, OutputBus, Maintenance, Energy)
+                        .atLeast(InputHatch, OutputHatch, InputBus, OutputBus, Maintenance, Energy.or(ExoticEnergy))
                         .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(sBlockCasings8, 0))))
                 .addElement('C', ofBlock(sBlockCasings8, 1))
                 .build();
@@ -176,6 +179,12 @@ public class ChemicalPlant extends GTMMultiMachineBase<ChemicalPlant> implements
         }
 
         if (getCoilLevel() == HeatingCoilLevel.None) return false;
+
+        for (MTEHatch hatch : getExoticEnergyHatches()) {
+            if (hatch instanceof MTEHatchEnergyTunnel) {
+                return false;
+            }
+        }
 
         ParallelTier = getParallelTier(aStack);
         return mCasing >= 50;

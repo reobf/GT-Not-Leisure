@@ -3,6 +3,7 @@ package com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan;
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
 import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.util.GTStructureUtility.*;
+import static gregtech.api.util.GTUtility.validMTEList;
 import static gtPlusPlus.core.block.ModBlocks.blockCasingsMisc;
 import static gtPlusPlus.xmod.gregtech.common.blocks.textures.TexturesGtBlock.*;
 
@@ -20,6 +21,7 @@ import com.science.gtnl.Utils.item.TextLocalization;
 import com.science.gtnl.common.machine.multiMachineClasses.GTMMultiMachineBase;
 
 import bartworks.util.BWUtil;
+import gregtech.api.enums.GTValues;
 import gregtech.api.enums.HeatingCoilLevel;
 import gregtech.api.enums.TAE;
 import gregtech.api.enums.Textures;
@@ -27,12 +29,15 @@ import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.logic.ProcessingLogic;
+import gregtech.api.metatileentity.implementations.MTEHatch;
+import gregtech.api.metatileentity.implementations.MTEHatchEnergy;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.render.TextureFactory;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.OverclockCalculator;
 import gtPlusPlus.api.recipe.GTPPRecipeMaps;
+import tectech.thing.metaTileEntity.hatch.MTEHatchEnergyTunnel;
 
 public class AlloyBlastSmelter extends GTMMultiMachineBase<AlloyBlastSmelter> implements ISurvivalConstructable {
 
@@ -41,6 +46,7 @@ public class AlloyBlastSmelter extends GTMMultiMachineBase<AlloyBlastSmelter> im
     public static final String LIL_STRUCTURE_FILE_PATH = "sciencenotleisure:multiblock/alloy_blast_smelter";
     public static final int CASING_INDEX = TAE.GTPP_INDEX(15);
     private int mHeatingCapacity = 0;
+    protected int energyHatchTier;
     private HeatingCoilLevel heatLevel;
     public final int horizontalOffSet = 2;
     public final int verticalOffSet = 4;
@@ -99,6 +105,8 @@ public class AlloyBlastSmelter extends GTMMultiMachineBase<AlloyBlastSmelter> im
             .addInfo(TextLocalization.Tooltip_AlloyBlastSmelter_03)
             .addInfo(TextLocalization.Tooltip_AlloyBlastSmelter_04)
             .addInfo(TextLocalization.Tooltip_AlloyBlastSmelter_05)
+            .addInfo(TextLocalization.Tooltip_AlloyBlastSmelter_06)
+            .addInfo(TextLocalization.Tooltip_GTMMultiMachine_04)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
@@ -136,12 +144,19 @@ public class AlloyBlastSmelter extends GTMMultiMachineBase<AlloyBlastSmelter> im
     public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
         mCasing = 0;
         ParallelTier = 0;
+        this.energyHatchTier = 0;
 
         if (checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && checkHatch()
             && mEnergyHatches.size() <= 1
             && mMufflerHatches.size() == 1
             && mCasing >= 55) {
             ParallelTier = getParallelTier(aStack);
+            energyHatchTier = checkEnergyHatchTier();
+            for (MTEHatch hatch : getExoticEnergyHatches()) {
+                if (hatch instanceof MTEHatchEnergyTunnel) {
+                    return false;
+                }
+            }
             this.mHeatingCapacity = (int) this.getCoilLevel()
                 .getHeat() + 100 * (BWUtil.getTier(this.getMaxInputEu()) - 2);
             return true;
@@ -193,6 +208,29 @@ public class AlloyBlastSmelter extends GTMMultiMachineBase<AlloyBlastSmelter> im
             }
 
         }.setMaxParallelSupplier(this::getMaxParallelRecipes);
+    }
+
+    @Override
+    protected void setProcessingLogicPower(ProcessingLogic logic) {
+        boolean useSingleAmp = mEnergyHatches.size() == 1 && mExoticEnergyHatches.isEmpty();
+        logic.setAvailableVoltage(getMachineVoltageLimit());
+        logic.setAvailableAmperage(useSingleAmp ? 1 : getMaxInputAmps());
+        logic.setAmperageOC(true);
+    }
+
+    public long getMachineVoltageLimit() {
+        return GTValues.V[energyHatchTier];
+    }
+
+    private int checkEnergyHatchTier() {
+        int tier = 0;
+        for (MTEHatchEnergy tHatch : validMTEList(mEnergyHatches)) {
+            tier = Math.max(tHatch.mTier, tier);
+        }
+        for (MTEHatch tHatch : validMTEList(mExoticEnergyHatches)) {
+            tier = Math.max(tHatch.mTier, tier);
+        }
+        return tier;
     }
 
     @Override

@@ -25,6 +25,7 @@ import gregtech.api.enums.VoltageIndex;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
+import gregtech.api.metatileentity.implementations.MTEHatch;
 import gregtech.api.metatileentity.implementations.MTEHatchEnergy;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMaps;
@@ -32,6 +33,7 @@ import gregtech.api.render.TextureFactory;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.common.blocks.BlockCasings10;
+import tectech.thing.metaTileEntity.hatch.MTEHatchEnergyTunnel;
 
 public class LargeEngravingLaser extends GTMMultiMachineBase<LargeEngravingLaser> implements ISurvivalConstructable {
 
@@ -117,6 +119,7 @@ public class LargeEngravingLaser extends GTMMultiMachineBase<LargeEngravingLaser
             .addInfo(TextLocalization.Tooltip_LargeEngravingLaser_00)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_02)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_03)
+            .addInfo(TextLocalization.Tooltip_GTMMultiMachine_04)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
@@ -148,7 +151,7 @@ public class LargeEngravingLaser extends GTMMultiMachineBase<LargeEngravingLaser
                     'B',
                     buildHatchAdder(LargeEngravingLaser.class).casingIndex(CASING_INDEX)
                         .dot(1)
-                        .atLeast(InputBus, OutputBus, InputHatch, OutputHatch, Maintenance, Energy)
+                        .atLeast(InputBus, OutputBus, InputHatch, OutputHatch, Maintenance, Energy.or(ExoticEnergy))
                         .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(sBlockCasings10, 1))))
                 .addElement('C', ofBlock(sBlockCasings2, 15))
                 .addElement('D', ofBlock(sBlockCasings3, 10))
@@ -169,6 +172,12 @@ public class LargeEngravingLaser extends GTMMultiMachineBase<LargeEngravingLaser
 
         for (MTEHatchEnergy mEnergyHatch : this.mEnergyHatches) {
             if (glassTier < VoltageIndex.UHV & mEnergyHatch.mTier > glassTier) {
+                return false;
+            }
+        }
+
+        for (MTEHatch hatch : getExoticEnergyHatches()) {
+            if (hatch instanceof MTEHatchEnergyTunnel) {
                 return false;
             }
         }

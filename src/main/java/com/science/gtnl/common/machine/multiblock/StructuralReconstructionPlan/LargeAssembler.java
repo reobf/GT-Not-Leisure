@@ -33,6 +33,7 @@ import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.render.TextureFactory;
 import gregtech.api.util.MultiblockTooltipBuilder;
+import tectech.thing.metaTileEntity.hatch.MTEHatchEnergyTunnel;
 
 public class LargeAssembler extends GTMMultiMachineBase<LargeAssembler> implements ISurvivalConstructable {
 
@@ -109,6 +110,7 @@ public class LargeAssembler extends GTMMultiMachineBase<LargeAssembler> implemen
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_01)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_02)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_03)
+            .addInfo(TextLocalization.Tooltip_GTMMultiMachine_04)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
@@ -141,7 +143,7 @@ public class LargeAssembler extends GTMMultiMachineBase<LargeAssembler> implemen
                     'B',
                     buildHatchAdder(LargeAssembler.class).casingIndex(CASING_INDEX)
                         .dot(1)
-                        .atLeast(InputHatch, InputBus, OutputBus, Maintenance, Energy)
+                        .atLeast(InputHatch, InputBus, OutputBus, Maintenance, Energy.or(ExoticEnergy))
                         .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(blockCasings2Misc, 12))))
                 .build();
         }
@@ -161,6 +163,12 @@ public class LargeAssembler extends GTMMultiMachineBase<LargeAssembler> implemen
         energyHatchTier = checkEnergyHatchTier();
         for (MTEHatchEnergy mEnergyHatch : this.mEnergyHatches) {
             if (glassTier < VoltageIndex.UEV & mEnergyHatch.mTier > glassTier) {
+                return false;
+            }
+        }
+
+        for (MTEHatch hatch : getExoticEnergyHatches()) {
+            if (hatch instanceof MTEHatchEnergyTunnel) {
                 return false;
             }
         }

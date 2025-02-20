@@ -34,12 +34,14 @@ import gregtech.api.gui.modularui.GTUITextures;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
+import gregtech.api.metatileentity.implementations.MTEHatch;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.render.TextureFactory;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gtPlusPlus.xmod.gregtech.common.blocks.textures.TexturesGtBlock;
+import tectech.thing.metaTileEntity.hatch.MTEHatchEnergyTunnel;
 
 public class LargeBrewer extends GTMMultiMachineBase<LargeBrewer> implements ISurvivalConstructable {
 
@@ -117,6 +119,7 @@ public class LargeBrewer extends GTMMultiMachineBase<LargeBrewer> implements ISu
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_01)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_02)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_03)
+            .addInfo(TextLocalization.Tooltip_GTMMultiMachine_04)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
@@ -142,7 +145,7 @@ public class LargeBrewer extends GTMMultiMachineBase<LargeBrewer> implements ISu
                     'C',
                     buildHatchAdder(LargeBrewer.class).casingIndex(getCasingTextureID())
                         .dot(1)
-                        .atLeast(InputHatch, OutputHatch, InputBus, OutputBus, Maintenance, Energy)
+                        .atLeast(InputHatch, OutputHatch, InputBus, OutputBus, Maintenance, Energy.or(ExoticEnergy))
                         .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(blockCasingsMisc, 1))))
                 .addElement('D', Muffler.newAny(TAE.GTPP_INDEX(1), 1))
                 .build();
@@ -195,6 +198,12 @@ public class LargeBrewer extends GTMMultiMachineBase<LargeBrewer> implements ISu
 
         if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && checkHatch()) {
             return false;
+        }
+
+        for (MTEHatch hatch : getExoticEnergyHatches()) {
+            if (hatch instanceof MTEHatchEnergyTunnel) {
+                return false;
+            }
         }
 
         ParallelTier = getParallelTier(aStack);

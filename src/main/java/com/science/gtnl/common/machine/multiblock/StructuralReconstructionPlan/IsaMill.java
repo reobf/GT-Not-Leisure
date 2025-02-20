@@ -36,6 +36,7 @@ import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.logic.ProcessingLogic;
+import gregtech.api.metatileentity.implementations.MTEHatch;
 import gregtech.api.metatileentity.implementations.MTEHatchEnergy;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.check.CheckRecipeResult;
@@ -49,6 +50,7 @@ import gtPlusPlus.core.item.chemistry.general.ItemGenericChemBase;
 import gtPlusPlus.core.util.math.MathUtils;
 import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.nbthandlers.MTEHatchMillingBalls;
 import gtPlusPlus.xmod.gregtech.common.blocks.textures.TexturesGtBlock;
+import tectech.thing.metaTileEntity.hatch.MTEHatchEnergyTunnel;
 
 public class IsaMill extends GTMMultiMachineBase<IsaMill> implements ISurvivalConstructable {
 
@@ -84,6 +86,7 @@ public class IsaMill extends GTMMultiMachineBase<IsaMill> implements ISurvivalCo
             .addInfo(TextLocalization.Tooltip_IsaMill_02)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_02)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_03)
+            .addInfo(TextLocalization.Tooltip_GTMMultiMachine_04)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
@@ -121,7 +124,8 @@ public class IsaMill extends GTMMultiMachineBase<IsaMill> implements ISurvivalCo
                             .casingIndex(CASING_INDEX)
                             .dot(1)
                             .build(),
-                        buildHatchAdder(IsaMill.class).atLeast(InputBus, OutputBus, InputHatch, Maintenance, Energy)
+                        buildHatchAdder(IsaMill.class)
+                            .atLeast(InputBus, OutputBus, InputHatch, Maintenance, Energy.or(ExoticEnergy))
                             .casingIndex(CASING_INDEX)
                             .dot(1)
                             .build(),
@@ -166,6 +170,12 @@ public class IsaMill extends GTMMultiMachineBase<IsaMill> implements ISurvivalCo
 
         for (MTEHatchEnergy mEnergyHatch : this.mEnergyHatches) {
             if (glassTier < VoltageIndex.UHV & mEnergyHatch.mTier > glassTier) {
+                return false;
+            }
+        }
+
+        for (MTEHatch hatch : getExoticEnergyHatches()) {
+            if (hatch instanceof MTEHatchEnergyTunnel) {
                 return false;
             }
         }

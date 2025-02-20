@@ -125,6 +125,7 @@ public class PetrochemicalPlant extends MultiMachineBase<PetrochemicalPlant> imp
             .addInfo(TextLocalization.Tooltip_PetrochemicalPlant_01)
             .addInfo(TextLocalization.Tooltip_PetrochemicalPlant_02)
             .addInfo(TextLocalization.Tooltip_PetrochemicalPlant_03)
+            .addInfo(TextLocalization.Tooltip_Tectech_Hatch)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)

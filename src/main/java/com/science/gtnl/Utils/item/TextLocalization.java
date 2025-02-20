@@ -1036,6 +1036,9 @@ public class TextLocalization {
     public static final String Tooltip_AlloyBlastSmelter_05 = texter(
         "Insert the parallel control core into the controller to reduce power consumption!",
         "Tooltip_AlloyBlastSmelter_05");
+    public static final String Tooltip_AlloyBlastSmelter_06 = texter(
+        "Energy Hatch limits the voltage tier the machine can work on.",
+        "Tooltip_AlloyBlastSmelter_06");
     public static final String Tooltip_AlloyBlastSmelter_Casing = texter(
         "Any Blast Smelter Casing Block",
         "Tooltip_AlloyBlastSmelter_Casing");
@@ -1128,6 +1131,9 @@ public class TextLocalization {
     public static final String Tooltip_GTMMultiMachine_03 = texter(
         "Insert the parallel control core into the controller to increase the maximum parallelism and reduce power consumption!",
         "Tooltip_GTMMultiMachine_03");
+    public static final String Tooltip_GTMMultiMachine_04 = texter(
+        "Support §9Tec§1Tech §rAdditional Amp Hatch!",
+        "Tooltip_GTMMultiMachine_04");
 
     public static final String NameDraconicFusionCrafting = texter(
         "Draconic Fusion Crafting",

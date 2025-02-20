@@ -41,6 +41,7 @@ import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.fluid.IFluidStore;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
+import gregtech.api.metatileentity.implementations.MTEHatch;
 import gregtech.api.metatileentity.implementations.MTEHatchOutput;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMaps;
@@ -48,6 +49,7 @@ import gregtech.api.render.TextureFactory;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.common.tileentities.machines.MTEHatchOutputME;
+import tectech.thing.metaTileEntity.hatch.MTEHatchEnergyTunnel;
 
 public class LargeDistillery extends GTMMultiMachineBase<LargeDistillery> implements ISurvivalConstructable {
 
@@ -104,6 +106,7 @@ public class LargeDistillery extends GTMMultiMachineBase<LargeDistillery> implem
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_01)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_02)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_03)
+            .addInfo(TextLocalization.Tooltip_GTMMultiMachine_04)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
@@ -247,7 +250,7 @@ public class LargeDistillery extends GTMMultiMachineBase<LargeDistillery> implem
                     'A',
                     ofChain(
                         buildHatchAdder(LargeDistillery.class)
-                            .atLeast(Energy, OutputBus, InputHatch, InputBus, Maintenance)
+                            .atLeast(Energy.or(ExoticEnergy), OutputBus, InputHatch, InputBus, Maintenance)
                             .casingIndex(CASING_INDEX)
                             .dot(1)
                             .build(),
@@ -307,6 +310,12 @@ public class LargeDistillery extends GTMMultiMachineBase<LargeDistillery> implem
         }
 
         if (!checkPiece(STRUCTURE_PIECE_TOP_HINT, horizontalOffSet, mHeight, depthOffSet)) return false;
+
+        for (MTEHatch hatch : getExoticEnergyHatches()) {
+            if (hatch instanceof MTEHatchEnergyTunnel) {
+                return false;
+            }
+        }
 
         return mCasing >= 5 * (mHeight + 1) - 5 && mHeight + 1 >= 3
             && mMaintenanceHatches.size() == 1

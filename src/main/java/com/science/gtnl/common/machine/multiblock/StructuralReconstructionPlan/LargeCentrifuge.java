@@ -33,6 +33,7 @@ import gregtech.api.gui.modularui.GTUITextures;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
+import gregtech.api.metatileentity.implementations.MTEHatch;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.render.TextureFactory;
@@ -40,6 +41,7 @@ import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gtPlusPlus.api.recipe.GTPPRecipeMaps;
 import gtPlusPlus.xmod.gregtech.common.blocks.textures.TexturesGtBlock;
+import tectech.thing.metaTileEntity.hatch.MTEHatchEnergyTunnel;
 
 public class LargeCentrifuge extends GTMMultiMachineBase<LargeCentrifuge> implements ISurvivalConstructable {
 
@@ -110,6 +112,7 @@ public class LargeCentrifuge extends GTMMultiMachineBase<LargeCentrifuge> implem
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_01)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_02)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_03)
+            .addInfo(TextLocalization.Tooltip_GTMMultiMachine_04)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
@@ -134,7 +137,7 @@ public class LargeCentrifuge extends GTMMultiMachineBase<LargeCentrifuge> implem
                     'B',
                     buildHatchAdder(LargeCentrifuge.class).casingIndex(getCasingTextureID())
                         .dot(1)
-                        .atLeast(InputHatch, OutputHatch, InputBus, OutputBus, Maintenance, Energy)
+                        .atLeast(InputHatch, OutputHatch, InputBus, OutputBus, Maintenance, Energy.or(ExoticEnergy))
                         .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(blockCasingsMisc, 0))))
                 .build();
         }
@@ -185,6 +188,12 @@ public class LargeCentrifuge extends GTMMultiMachineBase<LargeCentrifuge> implem
 
         if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && checkHatch()) {
             return false;
+        }
+
+        for (MTEHatch hatch : getExoticEnergyHatches()) {
+            if (hatch instanceof MTEHatchEnergyTunnel) {
+                return false;
+            }
         }
 
         ParallelTier = getParallelTier(aStack);

@@ -43,6 +43,7 @@ import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.logic.ProcessingLogic;
+import gregtech.api.metatileentity.implementations.MTEHatch;
 import gregtech.api.metatileentity.implementations.MTEHatchEnergy;
 import gregtech.api.metatileentity.implementations.MTEHatchMaintenance;
 import gregtech.api.recipe.RecipeMap;
@@ -54,6 +55,7 @@ import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.OverclockCalculator;
 import gregtech.common.blocks.BlockCasings2;
+import tectech.thing.metaTileEntity.hatch.MTEHatchEnergyTunnel;
 
 public class ComponentAssembler extends MultiMachineBase<ComponentAssembler> implements ISurvivalConstructable {
 
@@ -96,7 +98,7 @@ public class ComponentAssembler extends MultiMachineBase<ComponentAssembler> imp
                 .addElement(
                     'C',
                     buildHatchAdder(ComponentAssembler.class)
-                        .atLeast(InputBus, OutputBus, InputHatch, Maintenance, Energy)
+                        .atLeast(InputBus, OutputBus, InputHatch, Maintenance, Energy.or(ExoticEnergy))
                         .dot(1)
                         .casingIndex(getCasingTextureID())
                         .buildAndChain(onElementPass(ComponentAssembler::onCasingAdded, ofBlock(sBlockCasings2, 0))))
@@ -151,6 +153,7 @@ public class ComponentAssembler extends MultiMachineBase<ComponentAssembler> imp
             .addInfo(TextLocalization.Tooltip_ComponentAssembler_03)
             .addInfo(TextLocalization.Tooltip_ComponentAssembler_04)
             .addInfo(TextLocalization.Tooltip_ComponentAssembler_05)
+            .addInfo(TextLocalization.Tooltip_GTMMultiMachine_04)
             .addPollutionAmount(getPollutionPerSecond(null))
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
@@ -304,6 +307,12 @@ public class ComponentAssembler extends MultiMachineBase<ComponentAssembler> imp
 
         for (MTEHatchEnergy mEnergyHatch : this.mEnergyHatches) {
             if (glassTier < VoltageIndex.UMV & mEnergyHatch.mTier > glassTier) {
+                return false;
+            }
+        }
+
+        for (MTEHatch hatch : getExoticEnergyHatches()) {
+            if (hatch instanceof MTEHatchEnergyTunnel) {
                 return false;
             }
         }

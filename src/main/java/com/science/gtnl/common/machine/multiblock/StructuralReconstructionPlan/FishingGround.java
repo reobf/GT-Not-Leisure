@@ -30,11 +30,13 @@ import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.logic.ProcessingLogic;
+import gregtech.api.metatileentity.implementations.MTEHatch;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.render.TextureFactory;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.OverclockCalculator;
+import tectech.thing.metaTileEntity.hatch.MTEHatchEnergyTunnel;
 
 public class FishingGround extends GTMMultiMachineBase<FishingGround> implements ISurvivalConstructable {
 
@@ -97,6 +99,7 @@ public class FishingGround extends GTMMultiMachineBase<FishingGround> implements
             .addInfo(TextLocalization.Tooltip_FishingGround_01)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_02)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_03)
+            .addInfo(TextLocalization.Tooltip_GTMMultiMachine_04)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
@@ -120,7 +123,7 @@ public class FishingGround extends GTMMultiMachineBase<FishingGround> implements
                     'C',
                     buildHatchAdder(FishingGround.class).casingIndex(CASING_INDEX)
                         .dot(1)
-                        .atLeast(InputBus, InputHatch, OutputBus, Maintenance, Energy)
+                        .atLeast(InputBus, InputHatch, OutputBus, Maintenance, Energy.or(ExoticEnergy))
                         .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(blockCasings2Misc, 2))))
                 .addElement('D', ofBlockAnyMeta(Blocks.water))
                 .build();
@@ -135,6 +138,12 @@ public class FishingGround extends GTMMultiMachineBase<FishingGround> implements
 
         if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && checkHatch()) {
             return false;
+        }
+
+        for (MTEHatch hatch : getExoticEnergyHatches()) {
+            if (hatch instanceof MTEHatchEnergyTunnel) {
+                return false;
+            }
         }
 
         ParallelTier = getParallelTier(aStack);

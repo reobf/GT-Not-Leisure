@@ -114,6 +114,7 @@ public class LibraryOfRuina extends GTMMultiMachineBase<LibraryOfRuina> implemen
             .addInfo(TextLocalization.Tooltip_LibraryOfRuina_04)
             .addInfo(TextLocalization.Tooltip_LibraryOfRuina_05)
             .addInfo(TextLocalization.Tooltip_LibraryOfRuina_06)
+            .addInfo(TextLocalization.Tooltip_Tectech_Hatch)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)

@@ -2,7 +2,9 @@ package com.science.gtnl.common.machine.multiblock.StructuralReconstructionPlan;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
 import static gregtech.api.GregTechAPI.*;
+import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.enums.Textures.BlockIcons.*;
+import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
 import static gregtech.api.util.GTStructureUtility.ofHatchAdder;
 import static gregtech.api.util.GTUtility.validMTEList;
 
@@ -53,6 +55,7 @@ import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.logic.ProcessingLogic;
+import gregtech.api.metatileentity.implementations.MTEHatch;
 import gregtech.api.metatileentity.implementations.MTEHatchEnergy;
 import gregtech.api.metatileentity.implementations.MTEHatchInput;
 import gregtech.api.metatileentity.implementations.MTEHatchMaintenance;
@@ -65,6 +68,7 @@ import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.OverclockCalculator;
 import gregtech.api.util.ParallelHelper;
+import tectech.thing.metaTileEntity.hatch.MTEHatchEnergyTunnel;
 
 public class Incubator extends MultiMachineBase<Incubator> implements ISurvivalConstructable {
 
@@ -129,6 +133,7 @@ public class Incubator extends MultiMachineBase<Incubator> implements ISurvivalC
             .addInfo(TextLocalization.Tooltip_Incubator_00)
             .addInfo(TextLocalization.Tooltip_Incubator_01)
             .addInfo(TextLocalization.Tooltip_Incubator_02)
+            .addInfo(TextLocalization.Tooltip_GTMMultiMachine_04)
             .beginStructureBlock(5, 5, 5, false)
             .addMaintenanceHatch(TextLocalization.Tooltip_Incubator_Casing, 1)
             .addOtherStructurePart(
@@ -163,11 +168,11 @@ public class Incubator extends MultiMachineBase<Incubator> implements ISurvivalC
                 .addElement(
                     'C',
                     ofChain(
-                        ofHatchAdder(Incubator::addMaintenanceToMachineList, CASING_INDEX, 1),
-                        ofHatchAdder(Incubator::addOutputToMachineList, CASING_INDEX, 1),
-                        ofHatchAdder(Incubator::addInputToMachineList, CASING_INDEX, 1),
+                        buildHatchAdder(Incubator.class).casingIndex(CASING_INDEX)
+                            .dot(1)
+                            .atLeast(InputHatch, OutputHatch, InputBus, OutputBus, Maintenance, Energy.or(ExoticEnergy))
+                            .buildAndChain(),
                         ofHatchAdder(Incubator::addRadiationInputToMachineList, CASING_INDEX, 1),
-                        ofHatchAdder(Incubator::addEnergyInputToMachineList, CASING_INDEX, 1),
                         onElementPass(e -> e.mCasing++, ofBlock(sBlockReinforced, 2))))
                 .addElement('D', ofBlockAnyMeta(Blocks.sponge))
                 .addElement('E', ofChain(isAir(), ofBlockAnyMeta(FluidLoader.bioFluidBlock)))
@@ -304,6 +309,12 @@ public class Incubator extends MultiMachineBase<Incubator> implements ISurvivalC
 
         for (MTEHatchEnergy mEnergyHatch : this.mEnergyHatches) {
             if (glassTier < VoltageIndex.UHV & mEnergyHatch.mTier > glassTier) {
+                return false;
+            }
+        }
+
+        for (MTEHatch hatch : getExoticEnergyHatches()) {
+            if (hatch instanceof MTEHatchEnergyTunnel) {
                 return false;
             }
         }

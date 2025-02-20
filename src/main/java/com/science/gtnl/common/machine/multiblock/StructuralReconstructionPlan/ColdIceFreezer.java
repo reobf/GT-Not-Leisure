@@ -35,6 +35,7 @@ import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.logic.ProcessingLogic;
+import gregtech.api.metatileentity.implementations.MTEHatch;
 import gregtech.api.metatileentity.implementations.MTEHatchMaintenance;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.render.TextureFactory;
@@ -45,6 +46,7 @@ import gtPlusPlus.api.recipe.GTPPRecipeMaps;
 import gtPlusPlus.core.block.ModBlocks;
 import gtPlusPlus.core.util.minecraft.FluidUtils;
 import gtPlusPlus.xmod.gregtech.common.blocks.textures.TexturesGtBlock;
+import tectech.thing.metaTileEntity.hatch.MTEHatchEnergyTunnel;
 
 public class ColdIceFreezer extends MultiMachineBase<ColdIceFreezer> implements ISurvivalConstructable {
 
@@ -83,6 +85,7 @@ public class ColdIceFreezer extends MultiMachineBase<ColdIceFreezer> implements 
             .addInfo(TextLocalization.Tooltip_ColdIceFreezer_01)
             .addInfo(TextLocalization.Tooltip_ColdIceFreezer_02)
             .addInfo(TextLocalization.Tooltip_ColdIceFreezer_03)
+            .addInfo(TextLocalization.Tooltip_GTMMultiMachine_04)
             .beginStructureBlock(5, 5, 9, true)
             .addInputBus(TextLocalization.Tooltip_ColdIceFreezer_Casing_00, 1)
             .addOutputBus(TextLocalization.Tooltip_ColdIceFreezer_Casing_00, 1)
@@ -153,9 +156,16 @@ public class ColdIceFreezer extends MultiMachineBase<ColdIceFreezer> implements 
     public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
         mCasing = 0;
         FluidIceInputHatch.clear();
-        return checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && mCasing >= 50
-            && checkHatch()
-            && this.mMufflerHatches.size() == 1;
+
+        if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet)) return false;
+
+        for (MTEHatch hatch : getExoticEnergyHatches()) {
+            if (hatch instanceof MTEHatchEnergyTunnel) {
+                return false;
+            }
+        }
+
+        return mCasing >= 50 && checkHatch() && this.mMufflerHatches.size() == 1;
     }
 
     @Override

@@ -28,6 +28,7 @@ import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.logic.ProcessingLogic;
+import gregtech.api.metatileentity.implementations.MTEHatch;
 import gregtech.api.metatileentity.implementations.MTEHatchMaintenance;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.render.TextureFactory;
@@ -35,6 +36,7 @@ import gregtech.api.util.GTRecipe;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.OverclockCalculator;
 import gregtech.common.blocks.BlockCasings4;
+import tectech.thing.metaTileEntity.hatch.MTEHatchEnergyTunnel;
 
 public class Desulfurizer extends MultiMachineBase<Desulfurizer> implements ISurvivalConstructable {
 
@@ -118,6 +120,7 @@ public class Desulfurizer extends MultiMachineBase<Desulfurizer> implements ISur
             .addInfo(TextLocalization.Tooltip_Desulfurizer_00)
             .addInfo(TextLocalization.Tooltip_Desulfurizer_01)
             .addInfo(TextLocalization.Tooltip_Desulfurizer_02)
+            .addInfo(TextLocalization.Tooltip_GTMMultiMachine_04)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
@@ -142,7 +145,8 @@ public class Desulfurizer extends MultiMachineBase<Desulfurizer> implements ISur
                 .addElement('D', ofBlock(sBlockCasings2, 13))
                 .addElement(
                     'E',
-                    buildHatchAdder(Desulfurizer.class).atLeast(InputHatch, OutputHatch, OutputBus, Maintenance, Energy)
+                    buildHatchAdder(Desulfurizer.class)
+                        .atLeast(InputHatch, OutputHatch, OutputBus, Maintenance, Energy.or(ExoticEnergy))
                         .casingIndex(((BlockCasings4) sBlockCasings4).getTextureIndex(1))
                         .dot(1)
                         .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(sBlockCasings4, 1))))
@@ -178,8 +182,16 @@ public class Desulfurizer extends MultiMachineBase<Desulfurizer> implements ISur
         mCasing = 0;
         mLevel = 0;
         setCoilLevel(HeatingCoilLevel.None);
-        return checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && mCasing >= 20
-            && getCoilLevel() != HeatingCoilLevel.None
+
+        if (!this.checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet)) return false;
+
+        for (MTEHatch hatch : getExoticEnergyHatches()) {
+            if (hatch instanceof MTEHatchEnergyTunnel) {
+                return false;
+            }
+        }
+
+        return mCasing >= 20 && getCoilLevel() != HeatingCoilLevel.None
             && (mLevel = getCoilLevel().getTier() + 1) > 0
             && checkHatch();
     }

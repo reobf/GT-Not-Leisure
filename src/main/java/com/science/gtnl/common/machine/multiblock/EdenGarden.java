@@ -4,11 +4,7 @@ import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
 import static com.science.gtnl.Utils.item.ItemUtils.readItemStackFromNBT;
 import static com.science.gtnl.common.block.Casings.BasicBlocks.MetaBlockGlow;
 import static gregtech.api.GregTechAPI.*;
-import static gregtech.api.enums.HatchElement.Energy;
-import static gregtech.api.enums.HatchElement.InputBus;
-import static gregtech.api.enums.HatchElement.InputHatch;
-import static gregtech.api.enums.HatchElement.Maintenance;
-import static gregtech.api.enums.HatchElement.OutputBus;
+import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.enums.Textures.BlockIcons.*;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
 import static gregtech.api.util.GTUtility.validMTEList;
@@ -154,7 +150,8 @@ public class EdenGarden extends MultiMachineBase<EdenGarden> {
                 .addElement(
                     'B',
                     ofChain(
-                        buildHatchAdder(EdenGarden.class).atLeast(InputBus, OutputBus, InputHatch, Maintenance, Energy)
+                        buildHatchAdder(EdenGarden.class)
+                            .atLeast(InputBus, OutputBus, InputHatch, Maintenance, Energy.or(ExoticEnergy))
                             .dot(1)
                             .casingIndex(((BlockCasings10) sBlockCasings10).getTextureIndex(4))
                             .build(),
@@ -221,6 +218,7 @@ public class EdenGarden extends MultiMachineBase<EdenGarden> {
             .addInfo(TextLocalization.Tooltip_EdenGarden_03)
             .addInfo(TextLocalization.Tooltip_EdenGarden_04)
             .addInfo(TextLocalization.Tooltip_EdenGarden_05)
+            .addInfo(TextLocalization.Tooltip_Tectech_Hatch)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)

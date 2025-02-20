@@ -51,6 +51,7 @@ import gregtech.api.util.shutdown.ShutDownReasonRegistry;
 import gtPlusPlus.core.block.ModBlocks;
 import gtPlusPlus.core.util.minecraft.FluidUtils;
 import gtPlusPlus.xmod.gregtech.common.blocks.textures.TexturesGtBlock;
+import tectech.thing.metaTileEntity.hatch.MTEHatchEnergyTunnel;
 
 public class BlazeBlastFurnace extends MultiMachineBase<BlazeBlastFurnace> implements ISurvivalConstructable {
 
@@ -94,6 +95,7 @@ public class BlazeBlastFurnace extends MultiMachineBase<BlazeBlastFurnace> imple
             .addInfo(TextLocalization.Tooltip_BlazeBlastFurnace_01)
             .addInfo(TextLocalization.Tooltip_BlazeBlastFurnace_02)
             .addInfo(TextLocalization.Tooltip_BlazeBlastFurnace_03)
+            .addInfo(TextLocalization.Tooltip_GTMMultiMachine_04)
             .beginStructureBlock(7, 6, 7, true)
             .addInputBus(TextLocalization.Tooltip_BlazeBlastFurnace_Casing_00, 1)
             .addOutputBus(TextLocalization.Tooltip_BlazeBlastFurnace_Casing_00, 1)
@@ -132,7 +134,7 @@ public class BlazeBlastFurnace extends MultiMachineBase<BlazeBlastFurnace> imple
                     'E',
                     ofChain(
                         buildHatchAdder(BlazeBlastFurnace.class)
-                            .atLeast(InputBus, OutputBus, InputHatch, OutputHatch, Energy, Maintenance)
+                            .atLeast(InputBus, OutputBus, InputHatch, OutputHatch, Energy.or(ExoticEnergy), Maintenance)
                             .dot(1)
                             .casingIndex(CASING_INDEX)
                             .build(),
@@ -193,6 +195,12 @@ public class BlazeBlastFurnace extends MultiMachineBase<BlazeBlastFurnace> imple
         if (mMaintenanceHatches.size() != 1 && mMufflerHatches.size() != 1) return false;
 
         this.mHeatingCapacity = (int) getCoilLevel().getHeat() + 100 * (BWUtil.getTier(getMaxInputVoltage()) - 2);
+
+        for (MTEHatch hatch : getExoticEnergyHatches()) {
+            if (hatch instanceof MTEHatchEnergyTunnel) {
+                return false;
+            }
+        }
 
         return mCasing >= 50 && checkHatch();
     }

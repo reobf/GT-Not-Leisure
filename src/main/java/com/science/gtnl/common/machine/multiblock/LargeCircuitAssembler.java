@@ -29,6 +29,7 @@ import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.logic.ProcessingLogic;
+import gregtech.api.metatileentity.implementations.MTEHatch;
 import gregtech.api.metatileentity.implementations.MTEHatchEnergy;
 import gregtech.api.metatileentity.implementations.MTEHatchMaintenance;
 import gregtech.api.recipe.RecipeMap;
@@ -38,6 +39,7 @@ import gregtech.api.util.GTRecipe;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.OverclockCalculator;
+import tectech.thing.metaTileEntity.hatch.MTEHatchEnergyTunnel;
 
 public class LargeCircuitAssembler extends MultiMachineBase<LargeCircuitAssembler> implements ISurvivalConstructable {
 
@@ -123,6 +125,7 @@ public class LargeCircuitAssembler extends MultiMachineBase<LargeCircuitAssemble
             .addInfo(TextLocalization.Tooltip_LargeCircuitAssembler_03)
             .addInfo(TextLocalization.Tooltip_LargeCircuitAssembler_04)
             .addInfo(TextLocalization.Tooltip_LargeCircuitAssembler_05)
+            .addInfo(TextLocalization.Tooltip_GTMMultiMachine_04)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
@@ -198,6 +201,13 @@ public class LargeCircuitAssembler extends MultiMachineBase<LargeCircuitAssemble
                 return false;
             }
         }
+
+        for (MTEHatch hatch : getExoticEnergyHatches()) {
+            if (hatch instanceof MTEHatchEnergyTunnel) {
+                return false;
+            }
+        }
+
         if (this.mEnergyHatches.size() >= 2) return false;
         return mCasing >= 30;
     }

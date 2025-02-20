@@ -35,6 +35,7 @@ import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.logic.ProcessingLogic;
 import gregtech.api.metatileentity.implementations.MTEExtendedPowerMultiBlockBase;
+import gregtech.api.metatileentity.implementations.MTEHatch;
 import gregtech.api.metatileentity.implementations.MTEHatchInput;
 import gregtech.api.metatileentity.implementations.MTEHatchInputBus;
 import gregtech.api.recipe.RecipeMap;
@@ -49,6 +50,7 @@ import gregtech.common.tileentities.machines.IDualInputHatch;
 import gregtech.common.tileentities.machines.IDualInputInventory;
 import gregtech.common.tileentities.machines.MTEHatchCraftingInputME;
 import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.MTEHatchSolidifier;
+import tectech.thing.metaTileEntity.hatch.MTEHatchEnergyTunnel;
 
 public class LargeSolidifier extends MTEExtendedPowerMultiBlockBase<LargeSolidifier> implements ISurvivalConstructable {
 
@@ -254,6 +256,7 @@ public class LargeSolidifier extends MTEExtendedPowerMultiBlockBase<LargeSolidif
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_01)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_02)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_03)
+            .addInfo(TextLocalization.Tooltip_GTMMultiMachine_04)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
@@ -278,7 +281,7 @@ public class LargeSolidifier extends MTEExtendedPowerMultiBlockBase<LargeSolidif
                     'B',
                     buildHatchAdder(LargeSolidifier.class).casingIndex(CASING_INDEX)
                         .dot(1)
-                        .atLeast(InputHatch, OutputHatch, InputBus, OutputBus, Maintenance, Energy)
+                        .atLeast(InputHatch, OutputHatch, InputBus, OutputBus, Maintenance, Energy.or(ExoticEnergy))
                         .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(blockCasings2Misc, 4))))
                 .build();
         }
@@ -292,6 +295,12 @@ public class LargeSolidifier extends MTEExtendedPowerMultiBlockBase<LargeSolidif
 
         if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && checkHatch()) {
             return false;
+        }
+
+        for (MTEHatch hatch : getExoticEnergyHatches()) {
+            if (hatch instanceof MTEHatchEnergyTunnel) {
+                return false;
+            }
         }
 
         ParallelTier = getParallelTier(aStack);

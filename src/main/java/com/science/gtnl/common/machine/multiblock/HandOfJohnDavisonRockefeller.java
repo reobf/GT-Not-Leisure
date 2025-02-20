@@ -124,6 +124,7 @@ public class HandOfJohnDavisonRockefeller extends MultiMachineBase<HandOfJohnDav
             .addInfo(TextLocalization.Tooltip_HandOfJohnDavisonRockefeller_06)
             .addInfo(TextLocalization.Tooltip_HandOfJohnDavisonRockefeller_07)
             .addInfo(TextLocalization.Tooltip_HandOfJohnDavisonRockefeller_08)
+            .addInfo(TextLocalization.Tooltip_Tectech_Hatch)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)

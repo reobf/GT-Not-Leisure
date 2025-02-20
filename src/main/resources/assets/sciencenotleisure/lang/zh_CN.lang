@@ -6,7 +6,7 @@ StructuralReconstructionPlan=结构代替计划
 AppliedEnergistics2=应用能源2
 
 Adder=添加模组: 
-Tooltip_Tectech_Hatch=支持§9Tec§1Tech§r能源仓！
+Tooltip_Tectech_Hatch=支持§9Tec§1Tech§r激光仓！
 
 Waila.General.WirelessMode=无线模式
 Waila.General.CurrentEuCost=当前EU消耗
@@ -829,6 +829,7 @@ Tooltip_GTMMultiMachine_00=比相同电压的单方块机器快167%%
 Tooltip_GTMMultiMachine_01=只需要使用配方要求功率的80%%
 Tooltip_GTMMultiMachine_02=初始并行为8
 Tooltip_GTMMultiMachine_03=在控制器内放入并行控制核心来提升最大并行数和减少耗电！
+Tooltip_GTMMultiMachine_04=支持§9Tec§1Tech§r多安能源仓！
 
 NameLargeHammer=大型锻造锤
 LargeHammerRecipeType=锻造锤
@@ -1301,6 +1302,7 @@ Tooltip_AlloyBlastSmelter_02=超过MV后的每一级电压，都会将温度提�
 Tooltip_AlloyBlastSmelter_03=只能安装一个能源仓!
 Tooltip_AlloyBlastSmelter_04=固定并行为16
 Tooltip_AlloyBlastSmelter_05=在控制器内放入并行控制核心来减少耗电！
+Tooltip_AlloyBlastSmelter_06=能源仓限制了机器工作的电压等级
 Tooltip_AlloyBlastSmelter_Casing=任意冶炼炉机械方块
 
 NamePetrochemicalPlant=石化工厂

@@ -35,6 +35,7 @@ import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.logic.ProcessingLogic;
+import gregtech.api.metatileentity.implementations.MTEHatch;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.check.CheckRecipeResult;
 import gregtech.api.recipe.check.CheckRecipeResultRegistry;
@@ -49,6 +50,7 @@ import gtPlusPlus.core.util.minecraft.FluidUtils;
 import gtnhlanth.api.recipe.LanthanidesRecipeMaps;
 import ic2.core.init.BlocksItems;
 import ic2.core.init.InternalName;
+import tectech.thing.metaTileEntity.hatch.MTEHatchEnergyTunnel;
 
 public class Digester extends GTMMultiMachineBase<Digester> implements ISurvivalConstructable {
 
@@ -120,6 +122,7 @@ public class Digester extends GTMMultiMachineBase<Digester> implements ISurvival
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_01)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_02)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_03)
+            .addInfo(TextLocalization.Tooltip_GTMMultiMachine_04)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
@@ -144,7 +147,7 @@ public class Digester extends GTMMultiMachineBase<Digester> implements ISurvival
                     'B',
                     buildHatchAdder(Digester.class).casingIndex(CASING_INDEX)
                         .dot(1)
-                        .atLeast(InputHatch, OutputHatch, InputBus, OutputBus, Maintenance, Energy)
+                        .atLeast(InputHatch, OutputHatch, InputBus, OutputBus, Maintenance, Energy.or(ExoticEnergy))
                         .buildAndChain(onElementPass(x -> ++x.mCasing, ofBlock(sBlockCasings4, 0))))
                 .addElement('C', ofBlock(sBlockCasings4, 1))
                 .addElement('D', ofCoil(Digester::setCoilLevel, Digester::getCoilLevel))
@@ -163,6 +166,11 @@ public class Digester extends GTMMultiMachineBase<Digester> implements ISurvival
             this.mHeatingCapacity = (int) this.getCoilLevel()
                 .getHeat() + 100 * (BWUtil.getTier(this.getMaxInputEu()) - 2);
             ParallelTier = getParallelTier(aStack);
+            for (MTEHatch hatch : getExoticEnergyHatches()) {
+                if (hatch instanceof MTEHatchEnergyTunnel) {
+                    return false;
+                }
+            }
             return true;
         } else {
             return false;

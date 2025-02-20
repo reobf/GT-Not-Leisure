@@ -113,6 +113,7 @@ public class MatterFabricator extends GTMMultiMachineBase<MatterFabricator> impl
         tt.addMachineType(TextLocalization.MatterFabricatorRecipeType)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_02)
             .addInfo(TextLocalization.Tooltip_GTMMultiMachine_03)
+            .addInfo(TextLocalization.Tooltip_Tectech_Hatch)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)

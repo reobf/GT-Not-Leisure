@@ -138,6 +138,7 @@ public class IndustrialArcaneAssembler extends MultiMachineBase<IndustrialArcane
             .addInfo(TextLocalization.Tooltip_IndustrialArcaneAssembler_00)
             .addInfo(TextLocalization.Tooltip_IndustrialArcaneAssembler_01)
             .addInfo(TextLocalization.Tooltip_IndustrialArcaneAssembler_02)
+            .addInfo(TextLocalization.Tooltip_Tectech_Hatch)
             .addSeparator()
             .addInfo(TextLocalization.StructureTooComplex)
             .addInfo(TextLocalization.BLUE_PRINT_INFO)
