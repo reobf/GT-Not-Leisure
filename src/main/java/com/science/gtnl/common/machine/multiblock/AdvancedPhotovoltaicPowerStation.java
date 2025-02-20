@@ -140,6 +140,9 @@ public class AdvancedPhotovoltaicPowerStation extends MTEEnhancedMultiBlockBase<
     @Override
     @NotNull
     public CheckRecipeResult checkProcessing() {
+        // 开始处理配方
+        startRecipeProcessing();
+
         ArrayList<FluidStack> tFluids = getStoredFluids();
 
         if (!tFluids.isEmpty()) {
@@ -194,12 +197,19 @@ public class AdvancedPhotovoltaicPowerStation extends MTEEnhancedMultiBlockBase<
                     this.mEfficiency = 10000;
                     this.mProgresstime = 0;
                     this.mMaxProgresstime = 1024;
+
+                    // 结束配方处理
+                    endRecipeProcessing();
                     return CheckRecipeResultRegistry.GENERATING;
                 }
             }
         }
+
         this.mEUt = 0;
         this.mEfficiency = 0;
+
+        // 结束配方处理
+        endRecipeProcessing();
         return CheckRecipeResultRegistry.NO_FUEL_FOUND;
     }
 
@@ -208,6 +218,9 @@ public class AdvancedPhotovoltaicPowerStation extends MTEEnhancedMultiBlockBase<
         super.onPostTick(aBaseMetaTileEntity, aTick);
 
         if (this.mProgresstime % 20 == 0 && mProgresstime != 0) {
+            // 开始处理配方
+            startRecipeProcessing();
+
             ArrayList<FluidStack> tFluids = getStoredFluids();
 
             if (!tFluids.isEmpty()) {
@@ -217,23 +230,46 @@ public class AdvancedPhotovoltaicPowerStation extends MTEEnhancedMultiBlockBase<
                         .equals("ic2distilledwater")) {
                         int waterPerSecond = this.mEUt / 4;
 
-                        if (tFluid.amount < waterPerSecond) {
+                        // 尝试消耗蒸馏水
+                        boolean success = drainFluid("ic2distilledwater", waterPerSecond);
+
+                        // 结束配方处理
+                        endRecipeProcessing();
+
+                        // 如果消耗失败，停止机器
+                        if (!success) {
                             this.stopMachine(ShutDownReasonRegistry.NO_REPAIR);
                             return;
                         }
 
-                        FluidStack consumedWater = tFluid.copy();
-                        consumedWater.amount = waterPerSecond;
-
-                        tFluid.amount -= waterPerSecond;
                         return;
                     }
                 }
             }
+
+            // 结束配方处理
+            endRecipeProcessing();
+
+            // 如果没有蒸馏水，停止机器
             if (tFluids.isEmpty()) {
                 this.stopMachine(ShutDownReasonRegistry.NO_REPAIR);
             }
         }
+    }
+
+    private boolean drainFluid(String fluidName, int amount) {
+        int remaining = amount;
+        for (FluidStack fs : getStoredFluids()) {
+            if (fs.getFluid()
+                .getName()
+                .equals(fluidName)) {
+                int drained = Math.min(fs.amount, remaining);
+                fs.amount -= drained;
+                remaining -= drained;
+                if (remaining <= 0) break;
+            }
+        }
+        return remaining <= 0;
     }
 
     @Override

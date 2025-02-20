@@ -6,6 +6,7 @@ import static gregtech.api.GregTechAPI.*;
 import static gregtech.api.enums.HatchElement.InputBus;
 import static gregtech.api.enums.HatchElement.OutputBus;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
+import static gregtech.api.util.GTUtility.filterValidMTEs;
 import static gregtech.api.util.GTUtility.validMTEList;
 import static gtPlusPlus.core.block.ModBlocks.blockCustomMachineCasings;
 
@@ -50,6 +51,7 @@ import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.logic.ProcessingLogic;
 import gregtech.api.metatileentity.implementations.MTEHatch;
 import gregtech.api.metatileentity.implementations.MTEHatchInputBus;
+import gregtech.api.metatileentity.implementations.MTEHatchOutput;
 import gregtech.api.metatileentity.implementations.MTEHatchOutputBus;
 import gregtech.api.objects.GTRenderedTexture;
 import gregtech.api.recipe.RecipeMap;
@@ -563,5 +565,50 @@ public class LargeSteamCrusher extends MTESteamMultiBase<LargeSteamCrusher> impl
         }
 
         return ret;
+    }
+
+    private boolean dumpItem(List<MTEHatchOutputBus> outputBuses, ItemStack itemStack, boolean restrictiveBusesOnly) {
+        for (MTEHatchOutputBus outputBus : outputBuses) {
+            if (restrictiveBusesOnly && !outputBus.isLocked()) {
+                continue;
+            }
+
+            if (outputBus.storeAll(itemStack)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    @Override
+    public boolean addOutput(ItemStack aStack) {
+        if (GTUtility.isStackInvalid(aStack)) return false;
+        aStack = GTUtility.copy(aStack);
+        boolean outputSuccess = true;
+        final List<MTEHatchOutputBus> filteredBuses = filterValidMTEs(mOutputBusses);
+        if (dumpItem(filteredBuses, aStack, true) || dumpItem(filteredBuses, aStack, false)) {
+            return true;
+        }
+
+        while (outputSuccess && aStack.stackSize > 0) {
+            outputSuccess = false;
+            ItemStack single = aStack.splitStack(1);
+            for (MTEHatchSteamBusOutput tHatch : validMTEList(mSteamOutputs)) {
+                if (!outputSuccess) {
+                    for (int i = tHatch.getSizeInventory() - 1; i >= 0 && !outputSuccess; i--) {
+                        if (tHatch.getBaseMetaTileEntity()
+                            .addStackToSlot(i, single)) outputSuccess = true;
+                    }
+                }
+            }
+            for (MTEHatchOutput tHatch : validMTEList(mOutputHatches)) {
+                if (!outputSuccess && tHatch.outputsItems()) {
+                    if (tHatch.getBaseMetaTileEntity()
+                        .addStackToSlot(1, single)) outputSuccess = true;
+                }
+            }
+        }
+        return outputSuccess;
     }
 }
