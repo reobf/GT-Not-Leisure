@@ -1,5 +1,7 @@
 package com.science.gtnl.common.recipe.GregTech;
 
+import static gregtech.api.enums.Mods.DraconicEvolution;
+import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.util.GTRecipeConstants.DEFC_CASING_TIER;
 
 import com.science.gtnl.common.materials.MaterialPool;
@@ -11,6 +13,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.recipe.RecipeMap;
+import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.core.material.MaterialMisc;
@@ -41,6 +44,32 @@ public class DragonEvolutionFusionCraftingRecipes implements IRecipePool {
             .eut(TierEU.RECIPE_UEV)
             .duration(1200)
             .metadata(DEFC_CASING_TIER, 3)
+            .addTo(DEFCR);
+
+        GTValues.RA.stdBuilder()
+            .itemInputsUnsafe(
+                GTUtility.copyAmount(0, GTModHandler.getModItem(DraconicEvolution.ID, "draconicCore", 1)),
+                GTModHandler.getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1, 14),
+                GTOreDictUnificator.get(OrePrefixes.gem, Materials.InfusedEntropy, 512),
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Draconium, 16),
+                GTModHandler.getModItem(DraconicEvolution.ID, "awakenedCore", 8))
+            .itemOutputs(GTModHandler.getModItem(DraconicEvolution.ID, "chaosShard", 2))
+            .fluidInputs(Materials.DraconiumAwakened.getMolten(576))
+            .eut(TierEU.RECIPE_UHV)
+            .duration(300)
+            .metadata(DEFC_CASING_TIER, 3)
+            .addTo(DEFCR);
+
+        GTValues.RA.stdBuilder()
+            .itemInputsUnsafe(
+                GTModHandler.getModItem(DraconicEvolution.ID, "chaosFragment", 1, 1),
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Draconium, 1),
+                ItemList.NuclearStar.get(1))
+            .fluidInputs(Materials.Void.getMolten(1440))
+            .fluidOutputs(MaterialsElements.STANDALONE.DRAGON_METAL.getFluidStack(1440))
+            .eut(TierEU.RECIPE_UEV)
+            .duration(300)
+            .metadata(DEFC_CASING_TIER, 4)
             .addTo(DEFCR);
 
     }

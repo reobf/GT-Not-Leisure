@@ -453,7 +453,7 @@ public class AssemblingLineRecipes implements IRecipePool {
                 GTModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockQuantumRing", 8),
                 GTModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockQuantumLinkChamber", 1), },
             new FluidStack[] { MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(16000),
-                Materials.Infinity.getMolten(36864), Materials.Grade6PurifiedWater.getMolten(16000),
+                Materials.Infinity.getMolten(36864), Materials.Grade6PurifiedWater.getFluid(16000),
                 MaterialsAlloy.INDALLOY_140.getFluidStack(25600) },
             GTNLItemList.SuperCraftingInputProxy.get(1),
             30 * SECONDS,
@@ -658,5 +658,28 @@ public class AssemblingLineRecipes implements IRecipePool {
             GTNLItemList.UMVParallelControllerCore.get(1),
             20 * SECONDS,
             (int) TierEU.RECIPE_UMV);
+
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
+            DraconicEvolution.isModLoaded() ? kubatech.api.enums.ItemList.DraconicEvolutionFusionCrafter.get(1)
+                : GTNLItemList.BlazeCubeBlock.get(1),
+            25600000,
+            51200,
+            (int) TierEU.RECIPE_UMV,
+            1,
+            new ItemStack[] {
+                DraconicEvolution.isModLoaded() ? kubatech.api.enums.ItemList.DraconicEvolutionFusionCrafter.get(1)
+                    : GTNLItemList.BlazeCubeBlock.get(1),
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Draconium, 4L),
+                ItemList.Emitter_UHV.get(16), ItemList.Field_Generator_UHV.get(16),
+                GTModHandler.getModItem(DraconicEvolution.ID, "draconicCore", 32),
+                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 16L), ItemList.ZPM2.get(4),
+                ItemList.NuclearStar.get(4), GTModHandler.getModItem(DraconicEvolution.ID, "dragonHeart", 1),
+                GTModHandler.getModItem(DraconicEvolution.ID, "chaosShard", 1),
+                GregtechItemList.Laser_Lens_Special.get(4) },
+            new FluidStack[] { Materials.DraconiumAwakened.getMolten(36864), Materials.Void.getMolten(73728),
+                MaterialsAlloy.INDALLOY_140.getFluidStack(32000), },
+            GTNLItemList.DraconicFusionCrafting.get(1),
+            120 * SECONDS,
+            (int) TierEU.RECIPE_UEV);
     }
 }
