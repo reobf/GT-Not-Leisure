@@ -488,6 +488,21 @@ public class TextLocalization {
         "Ang Bronze Plated Bricks or Solid Steel Machine Casing",
         "Tooltip_LargeSteamCrusher_Casing");
 
+    public static final String NameLargeSteamExtruder = texter("Large Steam Extruder", "NameLargeSteamExtruder");
+    public static final String LargeSteamExtruderRecipeType = texter("Extruder", "LargeSteamExtruderRecipeType");
+    public static final String Tooltip_LargeSteamExtruder_00 = texter(
+        "10%% slower than using single block steam machines of the same macerator",
+        "Tooltip_LargeSteamExtruder_00");
+    public static final String Tooltip_LargeSteamExtruder_01 = texter(
+        "Only consumes steam at 125%% of the L/s normally required",
+        "Tooltip_LargeSteamExtruder_01");
+    public static final String Tooltip_LargeSteamExtruder_02 = texter(
+        "Processes up to 8 items at once",
+        "Tooltip_LargeSteamExtruder_02");
+    public static final String Tooltip_LargeSteamExtruder_Casing = texter(
+        "Ang Bronze Plated Bricks or Solid Steel Machine Casing",
+        "Tooltip_LargeSteamExtruder_Casing");
+
     public static final String NameLargeSteamAlloySmelter = texter(
         "Large Steam Alloy Smelter",
         "NameLargeSteamAlloySmelter");

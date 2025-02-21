@@ -38,6 +38,7 @@ import com.science.gtnl.common.machine.multiblock.LargeSteamChemicalBath;
 import com.science.gtnl.common.machine.multiblock.LargeSteamCircuitAssembler;
 import com.science.gtnl.common.machine.multiblock.LargeSteamCrusher;
 import com.science.gtnl.common.machine.multiblock.LargeSteamExtractor;
+import com.science.gtnl.common.machine.multiblock.LargeSteamExtruder;
 import com.science.gtnl.common.machine.multiblock.LargeSteamFurnace;
 import com.science.gtnl.common.machine.multiblock.LargeSteamThermalCentrifuge;
 import com.science.gtnl.common.machine.multiblock.LibraryOfRuina;
@@ -445,6 +446,10 @@ public class MachineLoader {
         GTNLItemList.DraconicFusionCrafting.set(
             new DraconicFusionCrafting(21085, "DraconicFusionCrafting", TextLocalization.NameDraconicFusionCrafting));
         addItemTooltip(GTNLItemList.DraconicFusionCrafting.get(1), AnimatedText.SNL_NLXCJH);
+
+        GTNLItemList.LargeSteamExtruder
+            .set(new LargeSteamExtruder(21086, "LargeSteamExtruder", TextLocalization.NameLargeSteamExtruder));
+        addItemTooltip(GTNLItemList.LargeSteamExtruder.get(1), AnimatedText.SNL_QYZG);
 
         GTNLItemList.CheatOreProcessingFactory.set(
             new CheatOreProcessingFactory(

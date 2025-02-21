@@ -1,5 +1,9 @@
 package com.science.gtnl;
 
+import static com.science.gtnl.Mods.*;
+import static com.science.gtnl.ScienceNotLeisure.MODID;
+import static com.science.gtnl.ScienceNotLeisure.MODNAME;
+
 import java.io.File;
 
 import net.minecraftforge.common.MinecraftForge;
@@ -36,9 +40,9 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 
 // after
 @Mod(
-    modid = ScienceNotLeisure.MODID,
-    version = ScienceNotLeisure.VERSION,
-    name = ScienceNotLeisure.MODNAME,
+    modid = MODID,
+    version = Tags.VERSION,
+    name = MODNAME,
     dependencies = "required-after:IC2;" + "required-after:structurelib;"
         + "required-before:Avaritia;"
         + "required-after:AWWayofTime;"
@@ -58,17 +62,11 @@ public class ScienceNotLeisure {
 
     @Mod.Instance
     public static ScienceNotLeisure instance;
-
     public static final String MODID = "ScienceNotLeisure";
-
     public static final String MODNAME = "GTNotLeisure";
-
-    public static final String VERSION = "v0.1.8";
-
+    public static final String VERSION = Tags.VERSION;
     public static final String Arthor = "HFstudio";
-
     public static final String RESOURCE_ROOT_ID = "sciencenotleisure";
-
     public static final Logger LOG = LogManager.getLogger(MODID);
 
     /**
@@ -146,5 +144,18 @@ public class ScienceNotLeisure {
         MinecraftForge.EVENT_BUS.register(new ToolEvents());
         MinecraftForge.EVENT_BUS.register(new CrushingWheelsEventHandler());
         MinecraftForge.EVENT_BUS.register(new AnvilEventHandler());
+
+        /*
+         * if (OTHTechnology.isModLoaded() && EyeOfHarmonyBuffer.isModLoaded()
+         * && ProgrammableHatches.isModLoaded()
+         * && TwistSpaceTechnology.isModLoaded()
+         * && NHUtilities.isModLoaded()
+         * && AE2Thing.isModLoaded()
+         * && QzMiner.isModLoaded()) {
+         * FMLCommonHandler.instance()
+         * .bus()
+         * .register(new CheatRecipes());
+         * }
+         */
     }
 }

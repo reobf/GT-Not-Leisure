@@ -3,11 +3,11 @@ package com.science.gtnl.common.block.Casings.Special;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingEvent;
 
 import com.science.gtnl.common.GTNLItemList;
 
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class CrushingWheelsEventHandler {
@@ -15,7 +15,9 @@ public class CrushingWheelsEventHandler {
     private static final int DAMAGE_INTERVAL = 20; // 每秒一次 (20 ticks)
 
     public CrushingWheelsEventHandler() {
-        MinecraftForge.EVENT_BUS.register(this);
+        FMLCommonHandler.instance()
+            .bus()
+            .register(this);
     }
 
     @SubscribeEvent

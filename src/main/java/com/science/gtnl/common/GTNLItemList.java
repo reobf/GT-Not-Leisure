@@ -251,6 +251,7 @@ public enum GTNLItemList {
     LargeAlloySmelter,
     LargePyrolyseOven,
 
+    LargeSteamExtruder,
     DraconicFusionCrafting,
     LargeNaquadahReactor,
     MolecularTransformer,

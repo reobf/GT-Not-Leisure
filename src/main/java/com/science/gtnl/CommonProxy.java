@@ -31,5 +31,4 @@ public class CommonProxy {
     public void serverStarting(FMLServerStartingEvent event) {}
 
     public void makeThingsPretty() {}
-
 }

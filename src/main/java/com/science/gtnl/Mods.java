@@ -8,11 +8,27 @@ import cpw.mods.fml.common.Loader;
 
 public enum Mods {
 
-    ScienceNotLeisure(Names.SCIENCENOTLEISURE);
+    ScienceNotLeisure(Names.SCIENCENOTLEISURE),
+    EyeOfHarmonyBuffer(Names.EYEOFHARMONYBUFFER),
+    ProgrammableHatches(Names.PROGRAMMABLEHATCHES),
+    TwistSpaceTechnology(Names.TWISTSPACETECHNOLOGY),
+    BoxPlusPlus(Names.BOXPLUSPLUS),
+    NHUtilities(Names.NHUTILITIES),
+    AE2Thing(Names.AE2THING),
+    QzMiner(Names.QZMINER),
+    OTHTechnology(Names.OTHTECHNOLOGY);
 
     public static class Names {
 
         public static final String SCIENCENOTLEISURE = "ScienceNotLeisure";
+        public static final String EYEOFHARMONYBUFFER = "eyeofharmonybuffer";
+        public static final String PROGRAMMABLEHATCHES = "programmablehatches";
+        public static final String TWISTSPACETECHNOLOGY = "TwistSpaceTechnology";
+        public static final String BOXPLUSPLUS = "boxplusplus";
+        public static final String NHUTILITIES = "NHUtilities";
+        public static final String AE2THING = "ae2thing";
+        public static final String QZMINER = "qz_miner";
+        public static final String OTHTECHNOLOGY = "123Technology";
     }
 
     public final String ID;

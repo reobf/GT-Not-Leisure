@@ -1,6 +1,7 @@
 package com.science.gtnl.common.recipe.GregTech;
 
 import static com.science.gtnl.loader.IScriptLoader.missing;
+import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.util.GTModHandler.getModItem;
 
@@ -12,8 +13,10 @@ import com.science.gtnl.Utils.recipes.RecipeBuilder;
 import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.common.recipe.IRecipePool;
 
+import gregtech.api.enums.Materials;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMaps;
+import gregtech.api.util.GTModHandler;
 
 public class ChemicalBathRecipes implements IRecipePool {
 
@@ -49,6 +52,16 @@ public class ChemicalBathRecipes implements IRecipePool {
             .noOptimize()
             .duration(100)
             .eut(16)
+            .addTo(cBR);
+
+        RecipeBuilder.builder()
+            .itemInputs(new ItemStack(Blocks.dragon_egg, 1))
+            .fluidInputs(Materials.DraconiumAwakened.getMolten(576))
+            .itemOutputs(GTModHandler.getModItem(DraconicEvolution.ID, "dragonHeart", 1))
+            .specialValue(0)
+            .noOptimize()
+            .duration(100)
+            .eut(1966080)
             .addTo(cBR);
     }
 }
