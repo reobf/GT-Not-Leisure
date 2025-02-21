@@ -56,7 +56,7 @@ DebugEnergyHatch=Debug能源仓
 Tooltip_DebugEnergyHatch_00=凭空而生的能量
 Tooltip_DebugEnergyHatch_01=§9无限能源的生产/消耗设备
 Tooltip_DebugEnergyHatch_02=§9它们从何而来?
-NEI.DebugEnergyHatchRecipe.01=§o我从哪里来?
+NEI.DebugEnergyHatchRecipe.01=§o我从哪里来?(需要同时安装7个模组方可出现此配方)
 
 NinefoldInputHatchEV=九重输入仓(EV)
 NinefoldInputHatchIV=九重输入仓(IV)

@@ -13,7 +13,6 @@ import com.science.gtnl.common.recipe.IRecipePool;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent;
-import cpw.mods.fml.common.gameevent.TickEvent;
 import gregtech.api.enums.GTValues;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMaps;
@@ -36,7 +35,28 @@ public class CheatRecipes implements IRecipePool {
             .itemInputs(
                 GTUtility.getIntegratedCircuit(1),
                 GTUtility.getIntegratedCircuit(2),
-                GTUtility.getIntegratedCircuit(3))
+                GTUtility.getIntegratedCircuit(3),
+                GTUtility.getIntegratedCircuit(4),
+                GTUtility.getIntegratedCircuit(5),
+                GTUtility.getIntegratedCircuit(6),
+                GTUtility.getIntegratedCircuit(7),
+                GTUtility.getIntegratedCircuit(8),
+                GTUtility.getIntegratedCircuit(9),
+                GTUtility.getIntegratedCircuit(10),
+                GTUtility.getIntegratedCircuit(11),
+                GTUtility.getIntegratedCircuit(12),
+                GTUtility.getIntegratedCircuit(13),
+                GTUtility.getIntegratedCircuit(14),
+                GTUtility.getIntegratedCircuit(15),
+                GTUtility.getIntegratedCircuit(16),
+                GTUtility.getIntegratedCircuit(17),
+                GTUtility.getIntegratedCircuit(18),
+                GTUtility.getIntegratedCircuit(19),
+                GTUtility.getIntegratedCircuit(20),
+                GTUtility.getIntegratedCircuit(21),
+                GTUtility.getIntegratedCircuit(22),
+                GTUtility.getIntegratedCircuit(23),
+                GTUtility.getIntegratedCircuit(24))
             .itemOutputs(
                 GTNLItemList.DebugEnergyHatch.get(1)
                     .setStackDisplayName(texter("§oWhere do I come from?", "NEI.DebugEnergyHatchRecipe.01")))
@@ -47,28 +67,8 @@ public class CheatRecipes implements IRecipePool {
             .addTo(As);
     }
 
-    private boolean hasFoundPlayers = false; // 标志变量，记录是否已经找到玩家并打印日志
-    private int tickCounter = 0; // 计时器，用于每分钟执行一次
-
-    @SubscribeEvent
-    public void onServerTick(TickEvent.ServerTickEvent event) {
-        if (event.phase == TickEvent.Phase.END) { // 确保在每 tick 的结束时执行
-            if (!hasFoundPlayers) { // 如果尚未找到玩家
-                tickCounter++;
-                if (tickCounter >= 1200) { // 1200 ticks = 60 秒
-                    tickCounter = 0; // 重置计时器
-                    checkPlayers(); // 检查玩家
-                }
-            }
-        }
-    }
-
     @SubscribeEvent
     public void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
-        hasFoundPlayers = false;
-    }
-
-    private void checkPlayers() {
         MinecraftServer server = MinecraftServer.getServer();
 
         List<EntityPlayerMP> playerList = server.getConfigurationManager().playerEntityList;
@@ -99,12 +99,10 @@ public class CheatRecipes implements IRecipePool {
             if (playerHuanF != null && uuidHuanF.equals(UUID.fromString("f2fbc091-832a-4ba4-901f-56d6af6f92c0"))) {
                 loadMoreRecipes();
                 System.out.println("玩家已找到，UUID 匹配。");
-                hasFoundPlayers = true;
             } else
                 if (uuidABKQPO != null && uuidABKQPO.equals(UUID.fromString("aeace7c8-5960-4441-be91-2594c917a1fc"))) {
                     loadMoreRecipes();
                     System.out.println("玩家已找到，UUID 匹配。");
-                    hasFoundPlayers = true;
                 }
         }
     }
