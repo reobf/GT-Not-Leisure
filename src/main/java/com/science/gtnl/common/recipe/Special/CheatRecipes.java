@@ -7,7 +7,6 @@ import java.util.UUID;
 
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.server.MinecraftServer;
-import net.minecraftforge.common.MinecraftForge;
 
 import com.science.gtnl.common.GTNLItemList;
 import com.science.gtnl.common.recipe.IRecipePool;
@@ -21,10 +20,6 @@ import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.util.GTUtility;
 
 public class CheatRecipes implements IRecipePool {
-
-    public CheatRecipes() {
-        MinecraftForge.EVENT_BUS.register(this);
-    }
 
     final RecipeMap<?> As = RecipeMaps.assemblerRecipes;
 
