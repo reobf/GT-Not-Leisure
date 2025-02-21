@@ -404,21 +404,21 @@ public class AssemblingLineRecipes implements IRecipePool {
             ItemList.Hatch_CraftingInput_Bus_ME.get(1),
             1920000,
             4000,
-            (int) TierEU.RECIPE_UEV,
+            (int) TierEU.RECIPE_UHV,
             1,
-            new ItemStack[] { ItemList.Hatch_CraftingInput_Bus_ME.get(1), ItemRefer.Fluid_Storage_Core_T7.get(4),
-                GTModHandler.getModItem(AvaritiaAddons.ID, "InfinityChest", 4),
+            new ItemStack[] { ItemList.Hatch_CraftingInput_Bus_ME.get(1), ItemRefer.Fluid_Storage_Core_T6.get(4),
+                GTModHandler.getModItem(AvaritiaAddons.ID, "CompressedChest", 4),
                 GTModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockCreativeEnergyCell", 1),
                 GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 16, 60),
                 GTModHandler.getModItem(AE2FluidCraft.ID, "fluid_part", 16, 7),
                 ItemList.Hatch_Input_Bus_ME_Advanced.get(4), ItemList.Hatch_Input_ME_Advanced.get(4),
                 GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 64, 54) },
-            new FluidStack[] { MaterialPool.SuperMutatedLivingSolder.getFluidOrGas(16000),
-                Materials.Infinity.getMolten(18432), Materials.RadoxPolymer.getMolten(18432),
+            new FluidStack[] { MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(16000),
+                Materials.Infinity.getMolten(18432), Materials.Grade5PurifiedWater.getMolten(64000),
                 MaterialsAlloy.INDALLOY_140.getFluidStack(512000) },
             GTNLItemList.SuperCraftingInputHatchME.get(1),
             60 * SECONDS,
-            (int) TierEU.RECIPE_UHV);
+            (int) TierEU.RECIPE_UV);
 
         GTValues.RA.stdBuilder()
             .metadata(RESEARCH_ITEM, GTNLItemList.DualInputHatchLuV.get(1))
@@ -439,6 +439,25 @@ public class AssemblingLineRecipes implements IRecipePool {
             .eut(TierEU.RECIPE_LuV)
             .duration(30 * SECONDS)
             .addTo(AssemblyLine);
+
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
+            ItemList.Hatch_CraftingInput_Bus_Slave.get(1),
+            3840000,
+            16000,
+            (int) TierEU.RECIPE_UHV,
+            1,
+            new ItemStack[] { ItemList.Hatch_CraftingInput_Bus_Slave.get(1), ItemList.Tool_DataOrb.get(32),
+                ItemList.Tool_DataStick.get(32),
+                GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 32, 41),
+                ItemList.Emitter_UV.get(4), GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 1L),
+                GTModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockQuantumRing", 8),
+                GTModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockQuantumLinkChamber", 1), },
+            new FluidStack[] { MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(16000),
+                Materials.Infinity.getMolten(36864), Materials.Grade6PurifiedWater.getMolten(16000),
+                MaterialsAlloy.INDALLOY_140.getFluidStack(25600) },
+            GTNLItemList.SuperCraftingInputProxy.get(1),
+            30 * SECONDS,
+            (int) TierEU.RECIPE_UHV);
 
         GTValues.RA.stdBuilder()
             .metadata(RESEARCH_ITEM, ItemList.Hatch_CraftingInput_Bus_ME.get(1))
