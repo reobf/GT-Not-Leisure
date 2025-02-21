@@ -777,10 +777,10 @@ public class TextLocalization {
         "Energy hatch limited by glass tier - 1, UIV Glass unlocks all",
         "Tooltip_HandOfJohnDavisonRockefeller_04");
     public static final String Tooltip_HandOfJohnDavisonRockefeller_05 = texter(
-        "For every increase of one level in glass or voltage, EU consumption is reduced by 1%%",
+        "For each level increase in glass or voltage, the EU consumption multiplies by 95%%",
         "Tooltip_HandOfJohnDavisonRockefeller_05");
     public static final String Tooltip_HandOfJohnDavisonRockefeller_06 = texter(
-        "For every increase of one level in glass or voltage, speed increases by approximately 2%%",
+        "For each level increase in glass or voltage, the speed increases by 2.5%%, but it will not be less than 0.1 times the recipe duration",
         "Tooltip_HandOfJohnDavisonRockefeller_06");
     public static final String Tooltip_HandOfJohnDavisonRockefeller_07 = texter(
         "Ignore the required tier of the recipe!",

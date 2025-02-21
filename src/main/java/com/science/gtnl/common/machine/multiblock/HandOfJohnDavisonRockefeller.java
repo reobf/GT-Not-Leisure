@@ -48,8 +48,7 @@ public class HandOfJohnDavisonRockefeller extends MultiMachineBase<HandOfJohnDav
 
     public int mCasing;
     public byte glassTier = 0;
-    public int EUtDiscount = 0;
-    public int SpeedBoost = 0;
+    public int SpeedCount = 0;
     public static IStructureDefinition<HandOfJohnDavisonRockefeller> STRUCTURE_DEFINITION = null;
     public static final String STRUCTURE_PIECE_MAIN = "main";
     public static String[][] shape;
@@ -195,16 +194,14 @@ public class HandOfJohnDavisonRockefeller extends MultiMachineBase<HandOfJohnDav
     public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
         mCasing = 0;
         glassTier = 0;
-        EUtDiscount = 0;
-        SpeedBoost = 0;
+        SpeedCount = 0;
 
         if (!checkPiece(STRUCTURE_PIECE_MAIN, horizontalOffSet, verticalOffSet, depthOffSet) && checkHatch()) {
             return false;
         }
 
         for (MTEHatchEnergy mEnergyHatch : this.mEnergyHatches) {
-            EUtDiscount = glassTier + GTUtility.getTier(this.getMaxInputVoltage());
-            SpeedBoost = glassTier + GTUtility.getTier(this.getMaxInputVoltage());
+            SpeedCount = glassTier + GTUtility.getTier(this.getMaxInputVoltage());
 
             if (glassTier < VoltageIndex.UEV & mEnergyHatch.mTier > glassTier - 1) {
                 return false;
@@ -234,10 +231,32 @@ public class HandOfJohnDavisonRockefeller extends MultiMachineBase<HandOfJohnDav
                         .setAmperageOC(true)
                         .setDurationDecreasePerOC(4)
                         .setEUtIncreasePerOC(4)
-                        .setEUtDiscount(1 - EUtDiscount / 100.0)
-                        .setSpeedBoost(1 - SpeedBoost / 50.0);
-                } else return super.createOverclockCalculator(recipe).setEUtDiscount(1 - EUtDiscount / 100.0)
-                    .setSpeedBoost(1 - SpeedBoost / 50.0);
+                        .setEUtDiscount(calculateEUtDiscount(SpeedCount)) // 计算 EUt 折扣
+                        .setSpeedBoost(calculateSpeedBoost(SpeedCount)); // 计算速度提升
+                } else {
+                    return super.createOverclockCalculator(recipe).setEUtDiscount(calculateEUtDiscount(SpeedCount))
+                        .setSpeedBoost(calculateSpeedBoost(SpeedCount));
+                }
+            }
+
+            private double calculateEUtDiscount(double levels) {
+                double discount = 1.0;
+                for (int i = 0; i < levels; i++) {
+                    discount *= 0.95;
+                }
+                return discount;
+            }
+
+            private double calculateSpeedBoost(double levels) {
+                double speedBoost = 1.0;
+                for (int i = 0; i < levels; i++) {
+                    speedBoost -= 0.025;
+                    if (speedBoost < 0.1) {
+                        speedBoost = 0.1;
+                        break;
+                    }
+                }
+                return speedBoost;
             }
 
             @NotNull
