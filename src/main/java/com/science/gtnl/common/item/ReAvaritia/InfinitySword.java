@@ -8,6 +8,7 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumRarity;
@@ -140,6 +141,28 @@ public class InfinitySword extends ItemSword implements ICosmicRenderItem {
 
     @Override
     public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
+        if (!player.isSneaking()) {
+            AxisAlignedBB area = player.boundingBox.expand(50.0, 50.0, 50.0);
+            List<Entity> entities = world.getEntitiesWithinAABB(Entity.class, area);
+
+            for (Entity entity : entities) {
+                if (entity instanceof EntityItem) {
+                    EntityItem item = (EntityItem) entity;
+                    ItemStack itemStack = item.getEntityItem();
+
+                    if (player.inventory.addItemStackToInventory(itemStack)) {
+                        item.setDead();
+                    } else {
+                        double centerX = player.posX;
+                        double centerY = player.posY + (player.height / 2.0);
+                        double centerZ = player.posZ;
+                        item.setPosition(centerX, centerY, centerZ);
+                    }
+                }
+            }
+        }
+
+        // 原有的右键点击逻辑
         handleSwordAttack(stack, world, player);
         player.setItemInUse(stack, this.getMaxItemUseDuration(stack));
         return stack;
